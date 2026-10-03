@@ -1,13 +1,12 @@
-const CACHE_NAME = 'study-app-shell-v0.19';
+const CACHE_NAME = 'study-app-shell-v0.20.2';
 const APP_SHELL = [
   '/',
   '/index.html',
-  '/style.css?v=0.19',
-  '/app.js?v=0.19',
+  '/style.css?v=0.20.2',
+  '/app.js?v=0.20.2',
   '/manifest.webmanifest',
   '/data/curriculum.js',
   '/data/questions.js',
-  '/data/textbooks.js',
   '/icons/icon-192.png',
   '/icons/icon-512.png'
 ];

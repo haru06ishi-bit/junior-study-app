@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.19" />
+  <link rel="stylesheet" href="style.css?v=0.20.2" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -82,6 +82,26 @@
         <p class="help">静岡県教育委員会の市町立中学校の採択結果を使用しています。</p>
       </div>
       <div class="textbook-setting-toolbar"><p id="textbookSettingStatus" class="summary">地区を選ぶと9教科をまとめて設定します。</p><button id="resetTextbookOverrides" class="secondary" type="button" hidden>手動変更をすべて解除</button></div>
+      <div id="japaneseTextbookHost" class="textbook-single-host"></div>
+
+      <div id="textbookRangeManager" class="step-card textbook-range-manager">
+        <div class="textbook-head">
+          <div><h3>教材・作品を登録</h3><p class="help">国語の教材・作品名や英語のUnit名を登録し、小テストの範囲をワンタップで選べるようにします。</p></div>
+          <span class="textbook-badge">端末内保存</span>
+        </div>
+        <div class="textbook-range-form">
+          <label><strong>教科</strong><select id="rangeSubject"><option value="japanese">📕 国語</option><option value="english">🔤 英語</option></select></label>
+          <label><strong>学年</strong><select id="rangeGrade"><option value="1">中1</option><option value="2" selected>中2</option><option value="3">中3</option></select></label>
+          <label><strong>教材名 / Unit名</strong><input id="rangeTitle" type="text" placeholder="例：Unit 3 / 作品名"></label>
+          <label><strong>ページ（任意）</strong><input id="rangePages" type="text" placeholder="例：p.42〜57"></label>
+        </div>
+        <p id="rangePublisher" class="help"></p>
+        <div><strong>関連する単元</strong><p class="help">この教材を選んだときに一括でチェックする単元を選びます。</p><div id="rangeUnitChoices" class="range-unit-choices"></div></div>
+        <button id="saveTextbookRange" class="primary" type="button">教材 / Unitを登録</button>
+        <p id="rangeStatus" class="summary"></p>
+        <div id="textbookRangeList" class="textbook-range-list"></div>
+      </div>
+
       <div id="allTextbookGrid" class="all-textbook-grid"></div>
     </section>
 
@@ -108,6 +128,11 @@
           <button class="unit-bulk-btn" type="button" data-action="textbooks">設定変更</button>
         </div>
         <div id="subjectTextbookList" class="textbook-inline-list"></div>
+      </div>
+      <div id="textbookRangeQuickCard" class="step-card textbook-card" hidden>
+        <h3>教科書の教材 / Unitから選ぶ</h3>
+        <p class="help">登録済みの教材を押すと、関連する単元をまとめて選択します。</p>
+        <div id="textbookRangeQuickList" class="textbook-range-quick-list"></div>
       </div>
       <div class="step-card">
         <h3>3. 分野・単元</h3>
@@ -410,7 +435,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="data/textbooks.js"></script>
-  <script src="app.js?v=0.19"></script>
+  <script src="app.js?v=0.20.2"></script>
 </body>
 </html>

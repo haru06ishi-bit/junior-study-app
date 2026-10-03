@@ -69,3 +69,13 @@ progress{width:100%;height:12px;margin:10px 0}.import-question-editor{display:gr
 .manual-note{display:block;color:#b54708;font-size:.72rem;font-weight:700;margin-top:3px}
 .textbook-chip.manual{border-color:#f2c94c;background:#fffaf0}
 @media(max-width:680px){.textbook-setting-toolbar{align-items:stretch;flex-direction:column}.textbook-setting-toolbar .secondary{width:100%}.textbook-part-edit{display:grid;grid-template-columns:1fr;gap:5px}.textbook-part-edit>div{min-width:0;text-align:left}}
+
+/* v0.20 textbook range presets */
+.textbook-range-manager{margin-top:16px}.textbook-range-form{display:grid;grid-template-columns:1fr 110px 1.4fr 1fr;gap:10px;margin:12px 0}.textbook-range-form label{margin:0}.range-unit-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:8px 0 14px}.range-unit-item{display:flex;gap:8px;align-items:flex-start;padding:9px 10px;border:1px solid #e4e7ec;border-radius:12px;background:#fff;font-size:.85rem}.range-unit-item input{margin-top:2px}.textbook-range-list{display:grid;gap:8px;margin-top:14px}.textbook-range-row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 12px;border:1px solid #e4e7ec;border-radius:13px;background:#fff}.textbook-range-row strong{display:block}.textbook-range-row small{color:#667085}.textbook-range-row button{width:auto}.textbook-range-quick-list{display:flex;flex-wrap:wrap;gap:8px}.range-quick-btn{border:1px solid #cfd7e6;background:#fff;border-radius:14px;padding:10px 12px;text-align:left;cursor:pointer;font:inherit}.range-quick-btn strong{display:block;font-size:.86rem}.range-quick-btn small{color:#667085;font-size:.72rem}.range-quick-btn:hover{background:#f8fafc}
+@media(max-width:760px){.textbook-range-form{grid-template-columns:1fr 1fr}.textbook-range-form label:nth-child(3),.textbook-range-form label:nth-child(4){grid-column:1/-1}.range-unit-choices{grid-template-columns:1fr}.textbook-range-row{align-items:flex-start;flex-direction:column}.textbook-range-row button{width:100%}}
+
+/* v0.20.1: 国語カード直下の教材・作品登録 */
+.textbook-range-inline{grid-column:1 / -1;margin-top:0}
+.textbook-range-mount{grid-column:1 / -1}
+
+.textbook-single-host{margin-top:12px}.textbook-single-host .textbook-subject-card{max-width:100%}.textbook-range-manager{margin-top:12px;margin-bottom:12px}

@@ -1,4 +1,5 @@
 const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
+const SHIZUOKA_TEXTBOOK_FALLBACK={version:'2026-10-shizuoka-r7-r10',prefecture:'静岡県',validFrom:2025,validTo:2028,publishers:{sanseido:{name:'三省堂'},mitsumura:{name:'光村図書'},'kyoiku-shuppan':{name:'教育出版'}},districts:[{id:'kamo',name:'賀茂',publisher:'sanseido',municipalities:['下田市','東伊豆町','河津町','南伊豆町','松崎町','西伊豆町']},{id:'tagata',name:'田方',publisher:'mitsumura',municipalities:['三島市','熱海市','伊東市','伊豆市','伊豆の国市','函南町']},{id:'sunto-numazu',name:'駿東沼津',publisher:'sanseido',municipalities:['沼津市','裾野市','御殿場市','清水町','長泉町','小山町']},{id:'fuji',name:'富士',publisher:'kyoiku-shuppan',municipalities:['富士市','富士宮市']},{id:'shizuoka',name:'静岡',publisher:'sanseido',municipalities:['静岡市']},{id:'shida',name:'志太',publisher:'kyoiku-shuppan',municipalities:['焼津市','藤枝市','島田市']},{id:'haibara',name:'榛原',publisher:'mitsumura',municipalities:['牧之原市','吉田町','川根本町']},{id:'ogasa',name:'小笠',publisher:'mitsumura',municipalities:['掛川市','御前崎市','菊川市']},{id:'iwata-shuchi',name:'磐田周智',publisher:'mitsumura',municipalities:['森町','袋井市','磐田市']},{id:'hamamatsu',name:'浜松',publisher:'mitsumura',municipalities:['浜松市']},{id:'kosai',name:'湖西',publisher:'mitsumura',municipalities:['湖西市']} ]};
 const views=[...document.querySelectorAll('.view')];
 let cameraStream=null;
 let facingMode='environment';
@@ -27,7 +28,7 @@ function handleAction(action){
 }
 
 async function init(){
- state.textbookData=window.JAPANESE_TEXTBOOK_DATA||null;
+ state.textbookData=window.JAPANESE_TEXTBOOK_DATA||SHIZUOKA_TEXTBOOK_FALLBACK;
  initJapaneseTextbookSelectors();
  try{
    // index.html を直接開いた場合でも動くよう、同梱JSデータを優先する。
@@ -51,7 +52,7 @@ async function init(){
  }
  document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;
 }
-function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();renderJapaneseTextbookPanel();renderUnits();updateSummary();}
+function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();initJapaneseTextbookSelectors();renderJapaneseTextbookPanel();renderUnits();updateSummary();}
 function renderGrades(){const el=document.getElementById('gradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.grade=g;state.units.clear();renderQuiz()};el.append(b)})}
 function renderSubjects(){const el=document.getElementById('subjectChoices');el.innerHTML='';state.curriculum.subjects.forEach(s=>{const b=document.createElement('button');b.className='subject-btn'+(state.subject===s.id?' selected':'');b.innerHTML=`<span>${s.icon}</span><strong>${s.name}</strong>`;b.onclick=()=>{state.subject=s.id;state.units.clear();renderQuiz()};el.append(b)})}
 function loadJapaneseTextbookPreference(){
@@ -92,20 +93,24 @@ function renderUnits(){
  subject.fields.forEach(f=>{
    const fieldUnits=f.units.filter(u=>u.grades.includes(state.grade));
    if(!fieldUnits.length)return;
+   const visibleUnits=fieldUnits.filter(u=>{const label=`${f.name} ${u.name} ${(u.topics||[]).join(' ')}`;return !q||label.toLowerCase().includes(q)});
+   if(!visibleUnits.length)return;
    const group=document.createElement('div');group.className='unit-group';
-   const title=document.createElement('h4');title.textContent=f.name;group.append(title);
-   let count=0;
-   fieldUnits.forEach(u=>{
-     const label=`${f.name} ${u.name} ${(u.topics||[]).join(' ')}`;
-     if(q&&!label.toLowerCase().includes(q))return;
-     count++;
+   const head=document.createElement('div');head.className='unit-group-head';
+   const title=document.createElement('h4');title.textContent=f.name;head.append(title);
+   const fieldKeys=visibleUnits.map(u=>unitKey(subject.id,f.id,u.id));
+   const allSelected=fieldKeys.every(k=>state.units.has(k));
+   const bulk=document.createElement('button');bulk.type='button';bulk.className='unit-bulk-btn';bulk.textContent=allSelected?'この分野をすべて解除':'この分野をすべて選択';
+   bulk.onclick=()=>{if(allSelected)fieldKeys.forEach(k=>state.units.delete(k));else fieldKeys.forEach(k=>state.units.add(k));renderUnits();updateSummary();};
+   head.append(bulk);group.append(head);
+   visibleUnits.forEach(u=>{
      const key=unitKey(subject.id,f.id,u.id);
      const available=state.questionBank.filter(x=>x.subject===subject.id&&x.unit===u.id&&x.grades.includes(state.grade)&&matchesJapaneseTextbook(x)).length;
      const row=document.createElement('label');row.className='unit-item';
      row.innerHTML=`<input type="checkbox" ${state.units.has(key)?'checked':''}><span><strong>${u.name}</strong><small>${(u.topics||[]).join('・')}</small><em>${available?`${available}問収録`:'問題追加予定'}</em></span>`;
-     row.querySelector('input').onchange=e=>{e.target.checked?state.units.add(key):state.units.delete(key);updateSummary()};group.append(row);
+     row.querySelector('input').onchange=e=>{e.target.checked?state.units.add(key):state.units.delete(key);renderUnits();updateSummary()};group.append(row);
    });
-   if(count)el.append(group);
+   el.append(group);
  });
  if(!el.children.length)el.innerHTML='<p class="help">検索条件に一致する単元がありません。</p>';
 }
@@ -334,10 +339,22 @@ function openExamEditor(id=null){
 }
 function renderExamGrades(){const el=document.getElementById('examGradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.exam.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.exam.grade=g;state.exam.units.clear();renderExamGrades();renderExamRanges();updateExamEditSummary()};el.append(b)})}
 function renderExamRanges(){
- const el=document.getElementById('examRangeChoices');el.innerHTML='';state.curriculum.subjects.forEach(sub=>{const units=[];sub.fields.forEach(f=>f.units.filter(u=>u.grades.includes(state.exam.grade)).forEach(u=>units.push({field:f,unit:u})));if(!units.length)return;
-  const details=document.createElement('details');details.className='exam-subject-group';const selected=units.filter(x=>state.exam.units.has(unitKey(sub.id,x.field.id,x.unit.id))).length;details.innerHTML=`<summary><span>${sub.icon} <strong>${sub.name}</strong></span><em>${selected}/${units.length}単元</em></summary><div class="exam-unit-grid"></div>`;const grid=details.querySelector('.exam-unit-grid');
-  const countLabel=details.querySelector('summary em');
-  units.forEach(({field,unit})=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);const nowSelected=units.filter(x=>state.exam.units.has(unitKey(sub.id,x.field.id,x.unit.id))).length;countLabel.textContent=`${nowSelected}/${units.length}単元`;updateExamEditSummary()};grid.append(row)});el.append(details);
+ const el=document.getElementById('examRangeChoices');el.innerHTML='';state.curriculum.subjects.forEach(sub=>{
+  const allUnits=[];sub.fields.forEach(f=>f.units.filter(u=>u.grades.includes(state.exam.grade)).forEach(u=>allUnits.push({field:f,unit:u})));if(!allUnits.length)return;
+  const details=document.createElement('details');details.className='exam-subject-group';details.open=false;const selected=allUnits.filter(x=>state.exam.units.has(unitKey(sub.id,x.field.id,x.unit.id))).length;
+  details.innerHTML=`<summary><span>${sub.icon} <strong>${sub.name}</strong></span><em>${selected}/${allUnits.length}単元</em></summary><div class="exam-unit-grid"></div>`;
+  const grid=details.querySelector('.exam-unit-grid');
+  sub.fields.forEach(field=>{
+    const fieldUnits=field.units.filter(u=>u.grades.includes(state.exam.grade));if(!fieldUnits.length)return;
+    const fieldWrap=document.createElement('div');fieldWrap.className='exam-field-group';
+    const fieldHead=document.createElement('div');fieldHead.className='unit-group-head';const h=document.createElement('strong');h.textContent=field.name;fieldHead.append(h);
+    const keys=fieldUnits.map(u=>unitKey(sub.id,field.id,u.id));const allFieldSelected=keys.every(k=>state.exam.units.has(k));
+    const bulk=document.createElement('button');bulk.type='button';bulk.className='unit-bulk-btn';bulk.textContent=allFieldSelected?'分野をすべて解除':'分野をすべて選択';
+    bulk.onclick=e=>{e.preventDefault();e.stopPropagation();if(allFieldSelected)keys.forEach(k=>state.exam.units.delete(k));else keys.forEach(k=>state.exam.units.add(k));renderExamRanges();updateExamEditSummary();};fieldHead.append(bulk);fieldWrap.append(fieldHead);
+    fieldUnits.forEach(unit=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)&&matchesJapaneseTextbook(q)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);renderExamRanges();updateExamEditSummary()};fieldWrap.append(row)});
+    grid.append(fieldWrap);
+  });
+  el.append(details);
  });
 }
 function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=new Set([...state.exam.units].map(k=>k.split('/')[2]));const qCount=state.questionBank.filter(q=>ids.has(q.unit)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択 / 現在${qCount}問出題可能`;}

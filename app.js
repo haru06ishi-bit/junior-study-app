@@ -1,4 +1,82 @@
-const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
+const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
+
+const TEXTBOOK_CANDIDATES={
+ version:'r7-2025-2028',validYears:[2025,2026,2027,2028],
+ japanese:{
+  'sanseido':{
+   1:[
+    ['朝のリレー','poetry'],['竜','literature'],['ペンギンの防寒着','expository'],['クジラの飲み水','expository'],['空中ブランコ乗りのキキ','literature'],['字のない葉書','literature'],['一〇〇〇円の価値を考える','expository'],['竹取物語','classics'],['矛盾―故事成語','classics'],['トロッコ','literature'],['少年の日の思い出','literature']
+   ],
+   2:[
+    ['名づけられた葉','poetry'],['セミロングホームルーム','literature'],['宇宙に行くための素材','expository'],['人間は他の星に住むことができるのか','expository'],['短歌十首','poetry'],['壁に残された伝言','expository'],['味は味覚だけでは決まらない','expository'],['枕草子・徒然草','classics'],['平家物語','classics'],['漢詩の世界','classics'],['小さな手袋','literature'],['走れメロス','literature']
+   ],
+   3:[
+    ['言の森','poetry'],['握手','literature'],['「批判的に読む」とは','expository'],['間の文化','expository'],['俳句十句','poetry'],['海を越えた故郷の味','literature'],['フロン規制の物語','expository'],['万葉集・古今和歌集・新古今和歌集','classics'],['おくのほそ道','classics'],['論語','classics'],['初恋','poetry'],['故郷','literature'],['私とは何か','expository'],['坊っちゃん','literature']
+   ]
+  },
+  'mitsumura':{
+   1:[
+    ['朝のリレー','poetry'],['はじまりの風','literature'],['ダイコンは大きな根？','expository'],['ちょっと立ち止まって','expository'],['空の詩 三編','poetry'],['大人になれなかった弟たちに……','literature'],['星の花が降るころに','literature'],['「言葉」をもつ鳥、シジュウカラ','expository'],['蓬莱の玉の枝―「竹取物語」から','classics'],['少年の日の思い出','literature']
+   ],
+   2:[
+    ['見えないだけ','poetry'],['アイスプラネット','literature'],['枕草子','classics'],['クマゼミ増加の原因を探る','expository'],['字のない葉書','literature'],['モアイは語る―地球の未来','expository'],['平家物語','classics'],['仁和寺にある法師','classics'],['漢詩の風景','classics'],['君は「最後の晩餐」を知っているか','expository'],['走れメロス','literature']
+   ],
+   3:[
+    ['世界はうつくしいと','poetry'],['握手','literature'],['作られた「物語」を超えて','expository'],['俳句の可能性','poetry'],['故郷','literature'],['人工知能との未来','expository'],['おくのほそ道','classics'],['学びて時にこれを習ふ―「論語」から','classics'],['誰かの代わりに','expository'],['温かいスープ','literature'],['わたしを束ねないで','poetry']
+   ]
+  },
+  'kyoiku-shuppan':{
+   1:[
+    ['聞くということ','literature'],['桜蝶','literature'],['自分の脳を知っていますか','expository'],['ベンチ','literature'],['森には魔法つかいがいる','expository'],['昔話と古典―箱に入った桃太郎―','classics'],['物語の始まり―竹取物語―','classics'],['故事成語―中国の名言―','classics'],['河童と蛙','poetry'],['オツベルと象','literature'],['少年の日の思い出','literature']
+   ],
+   2:[
+    ['虹の足','poetry'],['タオル','literature'],['日本の花火の楽しみ','expository'],['水の山 富士山','expository'],['夢を跳ぶ','literature'],['紙の建築','expository'],['敦盛の最期―平家物語―','classics'],['随筆の味わい―枕草子・徒然草―','classics'],['二千五百年前からのメッセージ―孔子の言葉―','classics'],['短歌の味わい','poetry'],['夏の葬列','literature'],['走れメロス','literature']
+   ],
+   3:[
+    ['春に','poetry'],['立ってくる春','literature'],['なぜ物語が必要なのか','expository'],['ＡＩは哲学できるか','expository'],['問いかける言葉','expository'],['旅への思い―芭蕉と「おくのほそ道」―','classics'],['和歌の調べ―万葉集・古今和歌集・新古今和歌集―','classics'],['風景と心情―漢詩を味わう―','classics'],['俳句の味わい','poetry'],['初恋','poetry'],['故郷','literature'],['バースデイ・ガール','literature']
+   ]
+  }
+ },
+ english:{
+  'mitsumura':{
+   1:['Unit 1 Here We Go!','Unit 2 School Activities','Unit 3 Enjoy the Summer','Unit 4 Our New Friend','Unit 5 Hi, David!','Unit 6 Cheer Up, Tina','Unit 7 The New Year in Japan','Unit 8 Getting Ready for the Party'],
+   2:["Unit 1 Hajin's Diary",'Unit 2 Basketball Tournament','Unit 3 Plans for the Summer','Unit 4 Tour in Singapore','Unit 5 How Do We Stay Safe?','Unit 6 Guide Dogs','Unit 7 Working Together','Unit 8 Performing a Play'],
+   3:['Unit 1 Virtual Safari Tour','Unit 2 Our School Trip','Unit 3 Lessons From Hiroshima','Unit 4 AI Technology and Language','Unit 5 My Dreams for the Future','Unit 6 The Chorus Contest',"Unit 7 Tina's Speech",'Unit 8 Goodbye, Tina']
+  },
+  'sanseido':{
+   1:['Lesson 1 About Me','Lesson 2 My Hero','Lesson 3 My Treasure','Lesson 4 My Summer Plans',"Lesson 5 Ms. Brown's Family",'Lesson 6 School Life in the U.S.A.','Lesson 7 Athletes with Spirit','Lesson 8 Discover Japan','Lesson 9 Emergency Food'],
+   2:['Lesson 1 Meet New Friends','Lesson 2 Fun with Books','Lesson 3 My Dream','Lesson 4','Lesson 5','Lesson 6','Lesson 7','Lesson 8'],
+   3:['Lesson 1','Lesson 2','Lesson 3','Lesson 4','Lesson 5','Lesson 6','Lesson 7','Lesson 8']
+  },
+  'tokyo-shoseki':{
+   1:['Unit 0','Unit 1','Unit 2','Unit 3','Unit 4','Unit 5','Unit 6','Unit 7','Unit 8'],
+   2:['Unit 0','Unit 1','Unit 2','Unit 3','Unit 4','Unit 5','Unit 6','Unit 7'],
+   3:['Unit 0','Unit 1','Unit 2','Unit 3','Unit 4','Unit 5','Unit 6']
+  },
+  'kairyudo':{
+   1:['Get Ready 1-6','PROGRAM 1','PROGRAM 2','PROGRAM 3','PROGRAM 4','PROGRAM 5','PROGRAM 6','PROGRAM 7','PROGRAM 8'],
+   2:['PROGRAM 1 New Start','PROGRAM 2','PROGRAM 3','PROGRAM 4','PROGRAM 5','PROGRAM 6','PROGRAM 7','PROGRAM 8'],
+   3:['PROGRAM 1 Japanese Bentos Are Interesting!','PROGRAM 2','PROGRAM 3','PROGRAM 4','PROGRAM 5','PROGRAM 6','PROGRAM 7','PROGRAM 8']
+  }
+ }
+};
+function japaneseMaterialUnitKey(kind){return `japanese/reading/${kind||'literature'}`;}
+function englishCandidateUnitKeys(title,grade){
+ const keys=['english/communication/reading','english/communication/conversation'];
+ const t=String(title).toLowerCase();
+ if(grade===1){keys.push('english/language/basic-sentences');if(/7|8|9|past|new year|party|emergency/.test(t))keys.push('english/language/past-progressive');}
+ if(grade===2){if(/1|diary|new start/.test(t))keys.push('english/language/past-progressive');if(/2|3|dream|plans/.test(t))keys.push('english/language/infinitive-gerund');if(/3|4|5/.test(t))keys.push('english/language/future-modal');if(/7|8|performing/.test(t))keys.push('english/language/comparison-passive');}
+ if(grade===3){keys.push('english/language/present-perfect');if(/4|5|6|7|8/.test(t))keys.push('english/language/relative-clauses');if(/1|2/.test(t))keys.push('english/language/comparison-passive');}
+ return [...new Set(keys)];
+}
+function textbookCandidateRows(subjectId,publisher,grade,year){
+ if(!TEXTBOOK_CANDIDATES.validYears.includes(Number(year)))return[];
+ const raw=TEXTBOOK_CANDIDATES?.[subjectId]?.[publisher]?.[Number(grade)]||[];
+ if(subjectId==='japanese')return raw.map((x,i)=>({id:`j-${publisher}-${grade}-${i}`,title:x[0],unitKeys:[japaneseMaterialUnitKey(x[1]),'japanese/language/kanji-vocab']}));
+ if(subjectId==='english')return raw.map((title,i)=>({id:`e-${publisher}-${grade}-${i}`,title,unitKeys:englishCandidateUnitKeys(title,Number(grade))}));
+ return[];
+}
+
 const SHIZUOKA_TEXTBOOK_FALLBACK={"version":"2026-10-shizuoka-r7-r10-all-subjects","prefecture":"静岡県","validFrom":2025,"validTo":2028,"scope":"市町立中学校","source":"静岡県教育委員会 中学校教科用図書一覧（令和7～10年度使用）","publishers":{"tokyo-shoseki":{"name":"東京書籍","short":"東書"},"sanseido":{"name":"三省堂","short":"三省堂"},"mitsumura":{"name":"光村図書","short":"光村"},"kyoiku-shuppan":{"name":"教育出版","short":"教出"},"teikoku":{"name":"帝国書院","short":"帝国"},"gakko-tosho":{"name":"学校図書","short":"学図"},"keirinkan":{"name":"啓林館","short":"啓林館"},"kyoiku-geijutsusha":{"name":"教育芸術社","short":"教芸"},"nihon-bunkyo":{"name":"日本文教出版","short":"日文"},"kairyudo":{"name":"開隆堂出版","short":"開隆堂"},"taishukan":{"name":"大修館書店","short":"大修館"},"gakken":{"name":"Gakken","short":"学研"}},"subjects":{"japanese":{"name":"国語","icon":"📕","parts":{"language":"国語","handwriting":"書写"}},"social":{"name":"社会","icon":"🌍","parts":{"geography":"地理","history":"歴史","civics":"公民","atlas":"地図"}},"math":{"name":"数学","icon":"📘","parts":{"main":"数学"}},"science":{"name":"理科","icon":"🔬","parts":{"main":"理科"}},"music":{"name":"音楽","icon":"🎵","parts":{"general":"一般","instrumental":"器楽合奏"}},"art":{"name":"美術","icon":"🎨","parts":{"main":"美術"}},"pe":{"name":"保健体育","icon":"🏃","parts":{"main":"保健体育"}},"tech-home":{"name":"技術・家庭","icon":"🛠️","parts":{"technology":"技術","home":"家庭"}},"english":{"name":"英語","icon":"🔤","parts":{"main":"英語"}}},"districts":[{"id":"kamo","name":"賀茂","municipalities":["下田市","東伊豆町","河津町","南伊豆町","松崎町","西伊豆町"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},{"id":"tagata","name":"田方","municipalities":["三島市","熱海市","伊東市","伊豆市","伊豆の国市","函南町"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"nihon-bunkyo","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-shuppan","instrumental":"kyoiku-shuppan"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"kairyudo"}}},{"id":"sunto-numazu","name":"駿東沼津","municipalities":["沼津市","裾野市","御殿場市","清水町","長泉町","小山町"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"tokyo-shoseki"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},{"id":"fuji","name":"富士","municipalities":["富士市","富士宮市"],"adoptions":{"japanese":{"language":"kyoiku-shuppan","handwriting":"kyoiku-shuppan"},"social":{"geography":"kyoiku-shuppan","history":"kyoiku-shuppan","civics":"kyoiku-shuppan","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},{"id":"shizuoka","name":"静岡","municipalities":["静岡市"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"keirinkan"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"mitsumura"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},{"id":"shida","name":"志太","municipalities":["焼津市","藤枝市","島田市"],"adoptions":{"japanese":{"language":"kyoiku-shuppan","handwriting":"kyoiku-shuppan"},"social":{"geography":"kyoiku-shuppan","history":"kyoiku-shuppan","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"sanseido"}}},{"id":"haibara","name":"榛原","municipalities":["牧之原市","吉田町","川根本町"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"kyoiku-shuppan"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"taishukan"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},{"id":"ogasa","name":"小笠","municipalities":["掛川市","御前崎市","菊川市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"kyoiku-shuppan"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"gakken"},"tech-home":{"technology":"tokyo-shoseki","home":"tokyo-shoseki"},"english":{"main":"mitsumura"}}},{"id":"iwata-shuchi","name":"磐田周智","municipalities":["森町","袋井市","磐田市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"taishukan"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"kairyudo"}}},{"id":"hamamatsu","name":"浜松","municipalities":["浜松市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"kyoiku-shuppan"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"gakken"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},{"id":"kosai","name":"湖西","municipalities":["湖西市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"kyoiku-shuppan"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"mitsumura"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"tokyo-shoseki","home":"tokyo-shoseki"},"english":{"main":"mitsumura"}}}]};
 const views=[...document.querySelectorAll('.view')];
 let cameraStream=null;
@@ -424,10 +502,29 @@ function renderExamPlanList(){
  });
 }
 function openExamEditor(id=null){
- const existing=id?loadExamPlans().find(x=>x.id===id):null;state.exam.editId=id;state.exam.grade=existing?.grade||2;state.exam.units=new Set(existing?.units||[]);showView('examEditView');
- document.getElementById('examEditTitle').textContent=existing?'テストを編集':'テストを登録';document.getElementById('examName').value=existing?.name||'';document.getElementById('examDate').value=existing?.date||'';renderExamGrades();renderExamRanges();updateExamEditSummary();
+ const existing=id?loadExamPlans().find(x=>x.id===id):null;const nowYear=new Date().getFullYear();state.exam.editId=id;state.exam.grade=existing?.grade||2;state.exam.units=new Set(existing?.units||[]);state.exam.textbookYear=Number(existing?.textbookYear||((nowYear>=2025&&nowYear<=2028)?nowYear:2025));state.exam.materials=new Set(existing?.materials||[]);showView('examEditView');
+ document.getElementById('examEditTitle').textContent=existing?'テストを編集':'テストを登録';document.getElementById('examName').value=existing?.name||'';document.getElementById('examDate').value=existing?.date||'';const y=document.getElementById('examTextbookYear');if(y)y.value=String(state.exam.textbookYear);renderExamGrades();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();
 }
-function renderExamGrades(){const el=document.getElementById('examGradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.exam.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.exam.grade=g;state.exam.units.clear();renderExamGrades();renderExamRanges();updateExamEditSummary()};el.append(b)})}
+function renderExamGrades(){const el=document.getElementById('examGradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.exam.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.exam.grade=g;state.exam.units.clear();state.exam.materials.clear();renderExamGrades();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary()};el.append(b)})}
+
+function renderExamTextbookCandidates(){
+ const host=document.getElementById('examTextbookCandidates');if(!host)return;host.innerHTML='';
+ const year=Number(state.exam.textbookYear||2025);
+ for(const sid of ['japanese','english']){
+  const publisher=rangePublisher(sid);const sub=state.curriculum?.subjects?.find(x=>x.id===sid);const rows=textbookCandidateRows(sid,publisher,state.exam.grade,year);
+  const card=document.createElement('article');card.className='exam-textbook-candidate-card';
+  const yearLabel=`令和${year-2018}年度`;const pubName=publisher?publisherLabel(publisher):'未設定';
+  card.innerHTML=`<div class="exam-textbook-candidate-head"><div><strong>${sub?.icon||''} ${sub?.name||sid}</strong><small>${yearLabel}・${escapeHtml(pubName)}・中${state.exam.grade}</small></div></div><div class="exam-textbook-candidate-list"></div>`;
+  const list=card.querySelector('.exam-textbook-candidate-list');
+  if(!publisher){list.innerHTML='<p class="help">教科書会社が未設定です。先に「教科書設定」で採択地区または出版社を設定してください。</p>';}
+  else if(!rows.length){list.innerHTML='<p class="help">この年度・出版社・学年の候補データはまだ登録されていません。下の単元一覧から選択できます。</p>';}
+  else rows.forEach(r=>{const selected=state.exam.materials.has(r.id);const b=document.createElement('button');b.type='button';b.className='exam-material-btn'+(selected?' selected':'');b.innerHTML=`<strong>${escapeHtml(r.title)}</strong><small>${selected?'追加済み':'範囲に追加'}</small>`;b.onclick=()=>{state.exam.materials.add(r.id);for(const k of r.unitKeys)state.exam.units.add(k);renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();};list.append(b)});
+  host.append(card);
+ }
+}
+document.getElementById('examTextbookYear')?.addEventListener('change',e=>{state.exam.textbookYear=Number(e.target.value||2025);state.exam.materials.clear();renderExamTextbookCandidates();updateExamEditSummary();});
+document.getElementById('examDate')?.addEventListener('change',e=>{const y=Number(String(e.target.value||'').slice(0,4));if(TEXTBOOK_CANDIDATES.validYears.includes(y)){state.exam.textbookYear=y;const sel=document.getElementById('examTextbookYear');if(sel)sel.value=String(y);state.exam.materials.clear();renderExamTextbookCandidates();updateExamEditSummary();}});
+
 function renderExamRanges(){
  const el=document.getElementById('examRangeChoices');el.innerHTML='';state.curriculum.subjects.forEach(sub=>{
   const allUnits=[];sub.fields.forEach(f=>f.units.filter(u=>u.grades.includes(state.exam.grade)).forEach(u=>allUnits.push({field:f,unit:u})));if(!allUnits.length)return;
@@ -447,8 +544,8 @@ function renderExamRanges(){
   el.append(details);
  });
 }
-function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=new Set([...state.exam.units].map(k=>k.split('/')[2]));const qCount=state.questionBank.filter(q=>ids.has(q.unit)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択 / 現在${qCount}問出題可能`;}
-function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
+function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=new Set([...state.exam.units].map(k=>k.split('/')[2]));const qCount=state.questionBank.filter(q=>ids.has(q.unit)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択${state.exam.materials.size?` / 教材・Unit候補 ${state.exam.materials.size}件`:''} / 現在${qCount}問出題可能`;}
+function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],textbookYear:state.exam.textbookYear,materials:[...state.exam.materials],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
 function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)return;if(!confirm(`「${p.name}」を削除しますか？`))return;saveExamPlans(loadExamPlans().filter(x=>x.id!==id));localStorage.setItem('examStudyLogs',JSON.stringify(loadExamStudyLogs().filter(x=>x.examId!==id)));}
 function buildExamSession(plan,count=20){
  const pool=examQuestionPool(plan);if(!pool.length)return[];return pickSmartQuestions(pool,Math.min(count,pool.length));
@@ -484,7 +581,7 @@ function startDailyStudy(){
  const built=buildDailySession(20);if(!built.session.length){alert('出題できる問題がありません。');return}state.session=built.session;state.index=0;state.score=0;state.answers=[];state.grade=built.plan?.grade||state.grade;state.subject=null;state.sessionContext={mode:'daily',examId:built.plan?.id||null};showView('playView');renderQuestion();
 }
 document.getElementById('createExamPlan').onclick=()=>openExamEditor();
-document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();renderExamRanges();updateExamEditSummary();};
+document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();state.exam.materials.clear();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();};
 
 
 function openStats(){showView('statsView');renderStatsDashboard();}

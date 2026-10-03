@@ -205,13 +205,25 @@ function newImportQuestion(text=''){return{id:crypto.randomUUID?.()||String(Date
 
 // OCR結果から、タイトル・氏名欄・注意書きなどを除き、問題部分を抽出する。
 // AIや外部APIへ本文を送らず、端末内のルール処理だけで動作する。
-const QUESTION_START_RE=/^\s*(?:(?:問|Q|Ｑ)\s*[0-9０-９]{1,3}\s*[.．、:：)）\-]?|[0-9０-９]{1,3}\s*[.．、:：)）\-])\s*/i;
-const CHOICE_RE=/^\s*(?:([A-DＡ-Ｄa-d]|[ア-エ])\s*[.．、:：)）]|([①②③④])|([1-4１-４])\s*[)）])\s*(.+?)\s*$/;
-function normalizeOcrLine(line){return String(line||'').replace(/[\u00a0\u3000]/g,' ').replace(/\s+/g,' ').trim();}
+// OCRは「問 1.」「問　1」「Q 1」「1 .」のように番号の周囲へ空白を入れることがあるため、
+// 問題番号の検出前に文字幅・空白を正規化する。
+const QUESTION_START_RE=/^\s*(?:(?:問\s*|Q\s*|Ｑ\s*)[0-9０-９]{1,3}|[0-9０-９]{1,3})\s*[.．、:：)）\-]?\s*/i;
+const EMBEDDED_QUESTION_RE=/(?:^|\s)((?:問\s*|Q\s*|Ｑ\s*)[0-9０-９]{1,3}\s*[.．、:：)）\-]?)/gi;
+const CHOICE_RE=/^\s*(?:([A-DＡ-Ｄa-d]|[ア-エ])\s*[.．、:：)）]?|([①②③④])|([1-4１-４])\s*[)）])\s*(.+?)\s*$/;
+function normalizeOcrLine(line){return String(line||'').normalize('NFKC').replace(/[\u00a0\u3000]/g,' ').replace(/\s+/g,' ').trim();}
+function compactJapaneseSpacing(text){
+ let t=String(text||'');
+ // 日本語文字同士の間にOCRが挿入した不要な空白だけを除去する。
+ const jp='\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff';
+ const re=new RegExp(`([${jp}])\\s+([${jp}])`,'g');
+ let prev='';
+ while(prev!==t){prev=t;t=t.replace(re,'$1$2');}
+ return t.replace(/\s+([、。！？・])/g,'$1').replace(/([（「『])\s+/g,'$1').replace(/\s+([）」』])/g,'$1').trim();
+}
 function isPageMarker(line){return /^-+\s*[0-9０-９]+\s*ページ目\s*-+$/i.test(line);}
 function isLikelyFooterOrNote(line){
  const t=normalizeOcrLine(line);
- return !t||/^[-－—―_=＿]{3,}$/.test(t)||/^\d+\s*\/\s*\d+$/.test(t)||/^ページ\s*\d+$/i.test(t)||/^※/.test(t)||/^(氏名|名前|学年|組|番号|日付|得点|点数)\s*[：:]/.test(t)||/^(答え|解答)\s*[：:]\s*[_＿-]*$/.test(t);
+ return !t||/^[-－—―_=＿]{3,}$/.test(t)||/^\d+\s*\/\s*\d+$/.test(t)||/^ページ\s*\d+$/i.test(t)||/^※/.test(t)||/^(氏名|名前|学年|組|番号|日付|得点|点数)\s*[：:].*$/.test(t)||/^(答え|解答)(?:\s*[：:]\s*[_＿-]*)?\s*$/.test(t);
 }
 function stripQuestionNumber(text){return String(text||'').replace(QUESTION_START_RE,'').trim();}
 function splitPagesFromOcr(raw){
@@ -224,9 +236,13 @@ function splitPagesFromOcr(raw){
  if(current.some(x=>x.trim()))pages.push(current);
  return pages.length?pages:[lines];
 }
+function ensureQuestionStartsOnOwnLine(raw){
+ // OCRによって「答え 問 2. ...」のように同一行へ連結された場合にも対応する。
+ return String(raw||'').replace(/([^\n])\s+((?:問\s*|Q\s*|Ｑ\s*)[0-9０-９]{1,3}\s*[.．、:：)）\-]?\s*)/gi,'$1\n$2');
+}
 function extractQuestionBlocks(raw){
  const blocks=[];
- for(const rawPage of splitPagesFromOcr(raw)){
+ for(const rawPage of splitPagesFromOcr(ensureQuestionStartsOnOwnLine(raw))){
   let lines=rawPage.map(normalizeOcrLine).filter(Boolean);
   const firstQuestion=lines.findIndex(line=>QUESTION_START_RE.test(line));
   // 問題番号が見つかったページは、それ以前をタイトル・氏名欄などとして除外。
@@ -237,29 +253,29 @@ function extractQuestionBlocks(raw){
     if(current.length)blocks.push(current.join('\n').trim());
     current=[line];
    }else if(current.length){
-    // 問題開始後の脚注・ページ番号等は登録対象にしない。
+    // 問題開始後の「答え」、脚注、ページ番号等は登録対象にしない。
     if(!isLikelyFooterOrNote(line))current.push(line);
    }
   }
   if(current.length)blocks.push(current.join('\n').trim());
  }
- // OCRで問題番号を認識できなかった場合だけ、空行区切りをフォールバックにする。
+ // 問題番号をまったく認識できなかったときだけ、空行区切りをフォールバックにする。
  if(!blocks.length){
   return String(raw||'').split(/\n\s*\n+/).map(x=>x.trim()).filter(x=>x&&!isLikelyFooterOrNote(x));
  }
  return blocks;
 }
 function inferImportedQuestion(block){
- const lines=String(block||'').split('\n').map(normalizeOcrLine).filter(Boolean);
+ const lines=String(block||'').split('\n').map(normalizeOcrLine).filter(Boolean).filter(x=>!isLikelyFooterOrNote(x));
  if(!lines.length)return newImportQuestion('');
  lines[0]=stripQuestionNumber(lines[0]);
  const choices=[];const body=[];
  for(const line of lines){
   const m=line.match(CHOICE_RE);
-  if(m&&body.length){choices.push(m[4]);}
-  else body.push(line);
+  if(m&&body.length){choices.push(compactJapaneseSpacing(m[4]));}
+  else body.push(compactJapaneseSpacing(line));
  }
- const questionText=body.join(' ').trim();
+ const questionText=compactJapaneseSpacing(body.join(' '));
  const q=newImportQuestion(questionText);
  if(choices.length>=2){
   q.type='choice';q.choices=choices.slice(0,4);while(q.choices.length<4)q.choices.push('');q.answer=0;
@@ -277,7 +293,7 @@ function splitRecognizedText(){
  state.importQuestions=blocks.map(inferImportedQuestion).filter(q=>q.question.trim());
  const status=document.getElementById('ocrStatus');
  if(status)status.textContent=state.importQuestions.length
-  ?`タイトル・氏名欄・注意書き等を除外し、${state.importQuestions.length}問を抽出しました。問題文・解答形式・正解を確認して修正してください。`
+  ?`問題番号を基準に${state.importQuestions.length}問へ分割しました。タイトル・氏名欄・「答え」・ページ番号は除外しています。問題文・解答形式・正解を確認して修正してください。`
   :'問題を自動抽出できませんでした。OCR結果を修正するか「＋ 問題を手動追加」を使ってください。';
  renderImportQuestions();
 }

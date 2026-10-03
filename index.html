@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.14" />
+  <link rel="stylesheet" href="style.css?v=0.15" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -60,6 +60,7 @@
         <button class="mode-card" data-action="stats"><span>📊</span><strong>学習記録</strong><small>成績と苦手を確認</small></button>
         <button class="mode-card" data-action="import"><span>📷</span><strong>紙から登録</strong><small>撮影・画像・PDFに対応</small></button>
         <button class="mode-card" data-action="manage"><span>🗂️</span><strong>登録問題を管理</strong><small>追加した問題を編集・削除</small></button>
+        <button class="mode-card" data-action="backup"><span>💾</span><strong>データを引き継ぐ</strong><small>バックアップ・復元</small></button>
       </div>
     </section>
 
@@ -278,6 +279,37 @@
       <p id="draftStatus" class="summary"></p>
     </section>
 
+
+    <section id="backupView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">データ管理</p><h2>バックアップ・引き継ぎ</h2></div>
+      </div>
+      <div class="notice">学習データは通常、この端末のブラウザ内だけに保存されています。スマホとPCの間で移すときは、バックアップファイルを書き出して読み込んでください。</div>
+      <div class="step-card">
+        <h3>1. バックアップを書き出す</h3>
+        <p class="help">学習履歴、苦手問題、定期テスト予定、紙から登録した問題、下書きなどを1つのJSONファイルに保存します。PDFや撮影画像そのものは含みません。</p>
+        <button id="exportBackup" class="primary" type="button">バックアップを保存</button>
+        <p id="exportBackupStatus" class="summary"></p>
+      </div>
+      <div class="step-card">
+        <h3>2. 別の端末で読み込む</h3>
+        <p class="help">このアプリが作成したバックアップ（.json）のみ読み込めます。まず内容を確認してから反映します。</p>
+        <label class="capture-card compact" for="backupFile"><span>📂</span><strong>バックアップを選ぶ</strong><small>study-backup-*.json</small></label>
+        <input id="backupFile" class="visually-hidden" type="file" accept="application/json,.json" />
+        <div id="backupPreview" class="backup-preview" hidden></div>
+        <div id="backupImportActions" class="backup-actions" hidden>
+          <button id="mergeBackup" class="primary" type="button">現在のデータに追加</button>
+          <button id="replaceBackup" class="secondary wide" type="button">この端末のデータを置き換える</button>
+        </div>
+        <p id="importBackupStatus" class="summary"></p>
+      </div>
+      <div class="step-card warning-card">
+        <h3>安全について</h3>
+        <p class="help">バックアップには学習履歴や自分で登録した問題が含まれます。氏名や画像は通常含みませんが、紙テストの下書きへ個人情報を入力した場合はその文字も含まれる可能性があります。ファイルは自分で管理してください。</p>
+      </div>
+    </section>
+
     <section id="manageView" class="view">
       <div class="section-head">
         <button class="back" data-back aria-label="ホームへ戻る">←</button>
@@ -345,6 +377,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.14"></script>
+  <script src="app.js?v=0.15"></script>
 </body>
 </html>

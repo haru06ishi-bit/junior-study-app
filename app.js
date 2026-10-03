@@ -1,4 +1,4 @@
-const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null};
+const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 const views=[...document.querySelectorAll('.view')];
 let cameraStream=null;
 let facingMode='environment';
@@ -27,6 +27,8 @@ function handleAction(action){
 }
 
 async function init(){
+ state.textbookData=window.JAPANESE_TEXTBOOK_DATA||null;
+ initJapaneseTextbookSelectors();
  try{
    // index.html を直接開いた場合でも動くよう、同梱JSデータを優先する。
    if(window.CURRICULUM_DATA && window.QUESTION_DATA){
@@ -49,9 +51,38 @@ async function init(){
  }
  document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;
 }
-function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();renderUnits();updateSummary();}
+function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();renderJapaneseTextbookPanel();renderUnits();updateSummary();}
 function renderGrades(){const el=document.getElementById('gradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.grade=g;state.units.clear();renderQuiz()};el.append(b)})}
 function renderSubjects(){const el=document.getElementById('subjectChoices');el.innerHTML='';state.curriculum.subjects.forEach(s=>{const b=document.createElement('button');b.className='subject-btn'+(state.subject===s.id?' selected':'');b.innerHTML=`<span>${s.icon}</span><strong>${s.name}</strong>`;b.onclick=()=>{state.subject=s.id;state.units.clear();renderQuiz()};el.append(b)})}
+function loadJapaneseTextbookPreference(){
+ try{return JSON.parse(localStorage.getItem('japaneseTextbookPreference')||'{}')||{}}catch{return{}}
+}
+function saveJapaneseTextbookPreference(pref){localStorage.setItem('japaneseTextbookPreference',JSON.stringify(pref));}
+function currentJapanesePublisher(){return loadJapaneseTextbookPreference().publisher||'';}
+function publisherLabel(id){return state.textbookData?.publishers?.[id]?.name||id||'';}
+function initJapaneseTextbookSelectors(){
+ const data=state.textbookData, district=document.getElementById('japaneseDistrict'), publisher=document.getElementById('japanesePublisher');
+ if(!data||!district||!publisher)return;
+ district.innerHTML='<option value="">地区を選択</option>'+data.districts.map(d=>`<option value="${d.id}">${d.name}地区</option>`).join('');
+ publisher.innerHTML='<option value="">教科書会社を選択</option>'+Object.entries(data.publishers).map(([id,p])=>`<option value="${id}">${p.name}</option>`).join('');
+ const pref=loadJapaneseTextbookPreference();district.value=pref.district||'';publisher.value=pref.publisher||'';
+ district.onchange=()=>{
+  const d=data.districts.find(x=>x.id===district.value);const next={...loadJapaneseTextbookPreference(),district:district.value||'',publisher:d?.publisher||publisher.value||''};
+  if(d)publisher.value=d.publisher;saveJapaneseTextbookPreference(next);renderJapaneseTextbookPanel();renderUnits();updateSummary();
+ };
+ publisher.onchange=()=>{const pref2={...loadJapaneseTextbookPreference(),publisher:publisher.value||''};saveJapaneseTextbookPreference(pref2);renderJapaneseTextbookPanel();renderUnits();updateSummary();};
+}
+function renderJapaneseTextbookPanel(){
+ const card=document.getElementById('japaneseTextbookCard');if(!card)return;const show=state.subject==='japanese';card.hidden=!show;if(!show)return;
+ const data=state.textbookData;if(!data)return;const pref=loadJapaneseTextbookPreference();const district=document.getElementById('japaneseDistrict'),publisher=document.getElementById('japanesePublisher');
+ if(district&&district.value!==String(pref.district||''))district.value=pref.district||'';if(publisher&&publisher.value!==String(pref.publisher||''))publisher.value=pref.publisher||'';
+ const d=data.districts.find(x=>x.id===(district?.value||pref.district));const mun=document.getElementById('japaneseDistrictMunicipalities');
+ if(mun)mun.textContent=d?`対象市町：${d.municipalities.join('・')}`:'採択地区が分からない場合は、教科書会社だけ手動で選べます。';
+ const suggestion=document.getElementById('japanesePublisherSuggestion');if(suggestion){if(d){suggestion.hidden=false;suggestion.innerHTML=`<strong>自動候補：${publisherLabel(d.publisher)}</strong><span>令和7〜10年度の静岡県採択結果</span>`;}else suggestion.hidden=true;}
+}
+function matchesJapaneseTextbook(q){
+ if(q?.subject!=='japanese')return true;const tagged=q.textbookPublisher||q.publisher||'common';if(tagged==='common'||!tagged)return true;const selected=currentJapanesePublisher();return !selected||tagged===selected;
+}
 function unitKey(subjectId,fieldId,unitId){return `${subjectId}/${fieldId}/${unitId}`}
 function renderUnits(){
  const el=document.getElementById('unitChoices');el.innerHTML='';
@@ -69,7 +100,7 @@ function renderUnits(){
      if(q&&!label.toLowerCase().includes(q))return;
      count++;
      const key=unitKey(subject.id,f.id,u.id);
-     const available=state.questionBank.filter(x=>x.subject===subject.id&&x.unit===u.id&&x.grades.includes(state.grade)).length;
+     const available=state.questionBank.filter(x=>x.subject===subject.id&&x.unit===u.id&&x.grades.includes(state.grade)&&matchesJapaneseTextbook(x)).length;
      const row=document.createElement('label');row.className='unit-item';
      row.innerHTML=`<input type="checkbox" ${state.units.has(key)?'checked':''}><span><strong>${u.name}</strong><small>${(u.topics||[]).join('・')}</small><em>${available?`${available}問収録`:'問題追加予定'}</em></span>`;
      row.querySelector('input').onchange=e=>{e.target.checked?state.units.add(key):state.units.delete(key);updateSummary()};group.append(row);
@@ -82,7 +113,7 @@ function selectedUnitIds(){return [...state.units].map(k=>k.split('/')[2]);}
 function availableQuestions(){
  if(!state.subject)return[];
  const ids=new Set(selectedUnitIds());
- return state.questionBank.filter(q=>q.subject===state.subject&&ids.has(q.unit)&&q.grades.includes(state.grade));
+ return state.questionBank.filter(q=>q.subject===state.subject&&ids.has(q.unit)&&q.grades.includes(state.grade)&&matchesJapaneseTextbook(q));
 }
 
 function questionDifficulty(q){const d=Number(q?.difficulty)||1;return Math.max(1,Math.min(3,d));}
@@ -122,7 +153,7 @@ function smartQuestionOrder(pool){
 function pickSmartQuestions(pool,count){const ordered=smartQuestionOrder(pool);return count==='all'?ordered:ordered.slice(0,Math.min(Number(count)||0,ordered.length));}
 function updateSummary(){
  const s=state.curriculum?.subjects.find(x=>x.id===state.subject);const n=availableQuestions().length;
- document.getElementById('selectionSummary').textContent=s?`中${state.grade}・${s.name}・${state.units.size}単元を選択 / 現在${n}問出題可能`:'学年・教科・単元を選んでください。';
+ const book=state.subject==='japanese'&&currentJapanesePublisher()?`・${publisherLabel(currentJapanesePublisher())}`:'';document.getElementById('selectionSummary').textContent=s?`中${state.grade}・${s.name}${book}・${state.units.size}単元を選択 / 現在${n}問出題可能`:'学年・教科・単元を選んでください。';
 }
 document.getElementById('unitSearch').addEventListener('input',renderUnits);
 document.getElementById('countChoices').addEventListener('click',e=>{const b=e.target.closest('[data-count]');if(!b)return;document.querySelectorAll('[data-count]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');state.count=b.dataset.count==='all'?'all':Number(b.dataset.count);updateSummary()});

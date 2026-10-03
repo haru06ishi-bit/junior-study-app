@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.16" />
+  <link rel="stylesheet" href="style.css?v=0.17" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -77,6 +77,24 @@
       <div class="step-card">
         <h3>2. 教科</h3>
         <div id="subjectChoices" class="subject-grid"></div>
+      </div>
+      <div id="japaneseTextbookCard" class="step-card textbook-card" hidden>
+        <div class="textbook-head">
+          <div>
+            <h3>国語の教科書</h3>
+            <p class="help">静岡県では採択地区によって国語の教科書会社が異なります。</p>
+          </div>
+          <span class="textbook-badge">国語のみ</span>
+        </div>
+        <label><strong>採択地区</strong>
+          <select id="japaneseDistrict"><option value="">地区を選択</option></select>
+        </label>
+        <p id="japaneseDistrictMunicipalities" class="help textbook-municipalities"></p>
+        <div id="japanesePublisherSuggestion" class="textbook-suggestion" hidden></div>
+        <label><strong>使用する教科書会社</strong>
+          <select id="japanesePublisher"><option value="">教科書会社を選択</option></select>
+        </label>
+        <p class="help">地区を選ぶと自動候補を設定します。学校で別の教科書を使っている場合は手動で変更できます。</p>
       </div>
       <div class="step-card">
         <h3>3. 分野・単元</h3>
@@ -377,6 +395,7 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.16"></script>
+  <script src="data/textbooks.js"></script>
+  <script src="app.js?v=0.17"></script>
 </body>
 </html>

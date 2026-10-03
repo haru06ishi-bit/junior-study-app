@@ -1,4 +1,4 @@
-const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
+const state={grade:2,subject:null,units:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
  version:'r7-2025-2028',validYears:[2025,2026,2027,2028],
@@ -132,7 +132,7 @@ async function init(){
  }
  document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;
 }
-function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();renderSubjectTextbookPanel();renderTextbookRangeQuickPresets();renderUnits();updateSummary();}
+function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();renderSubjectTextbookPanel();renderQuizTextbookCandidates();renderTextbookRangeQuickPresets();renderUnits();updateSummary();}
 function renderGrades(){const el=document.getElementById('gradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.grade=g;state.units.clear();renderQuiz()};el.append(b)})}
 function renderSubjects(){const el=document.getElementById('subjectChoices');el.innerHTML='';state.curriculum.subjects.forEach(s=>{const b=document.createElement('button');b.className='subject-btn'+(state.subject===s.id?' selected':'');b.innerHTML=`<span>${s.icon}</span><strong>${s.name}</strong>`;b.onclick=()=>{state.subject=s.id;state.units.clear();renderQuiz()};el.append(b)})}
 function loadSchoolTextbookPreference(){
@@ -251,6 +251,32 @@ function renderTextbookRangeQuickPresets(){
 document.getElementById('rangeSubject')?.addEventListener('change',renderTextbookRangeManager);
 document.getElementById('rangeGrade')?.addEventListener('change',renderTextbookRangeManager);
 document.getElementById('saveTextbookRange')?.addEventListener('click',saveCurrentTextbookRange);
+
+function renderQuizTextbookCandidates(){
+ const card=document.getElementById('quizTextbookCandidateCard'),host=document.getElementById('quizTextbookCandidates'),yearSel=document.getElementById('quizTextbookYear');
+ if(!card||!host)return;
+ const sid=state.subject;
+ if(!['japanese','english'].includes(sid)){card.hidden=true;host.innerHTML='';return;}
+ card.hidden=false;
+ const year=Number(state.quizTextbookYear||2026);if(yearSel)yearSel.value=String(year);
+ const publisher=rangePublisher(sid);const sub=state.curriculum?.subjects?.find(x=>x.id===sid);const rows=textbookCandidateRows(sid,publisher,state.grade,year);
+ host.innerHTML='';
+ const block=document.createElement('article');block.className='exam-textbook-candidate-card';
+ const yearLabel=`令和${year-2018}年度`;const pubName=publisher?publisherLabel(publisher):'未設定';
+ block.innerHTML=`<div class="exam-textbook-candidate-head"><div><strong>${sub?.icon||''} ${sub?.name||sid}</strong><small>${yearLabel}・${escapeHtml(pubName)}・中${state.grade}</small></div></div><div class="exam-textbook-candidate-list"></div>`;
+ const list=block.querySelector('.exam-textbook-candidate-list');
+ if(!publisher){list.innerHTML='<p class="help">教科書会社が未設定です。先に「教科書設定」で採択地区または出版社を設定してください。</p>';}
+ else if(!rows.length){list.innerHTML='<p class="help">この年度・出版社・学年の候補データはまだありません。下の分野・単元から選択できます。</p>';}
+ else rows.forEach(r=>{
+   const selected=(r.unitKeys||[]).length>0&&(r.unitKeys||[]).every(k=>state.units.has(k));
+   const b=document.createElement('button');b.type='button';b.className='exam-material-btn'+(selected?' selected':'');
+   b.innerHTML=`<strong>${escapeHtml(r.title)}</strong><small>${selected?'選択済み':'範囲に追加'}</small>`;
+   b.onclick=()=>{for(const k of r.unitKeys||[]){if(k.startsWith(`${sid}/`))state.units.add(k)}renderQuizTextbookCandidates();renderUnits();updateSummary();document.getElementById('selectionSummary').textContent=`「${r.title}」に関連する単元を追加しました。`;};
+   list.append(b);
+ });
+ host.append(block);
+}
+document.getElementById('quizTextbookYear')?.addEventListener('change',e=>{state.quizTextbookYear=Number(e.target.value||2026);renderQuizTextbookCandidates();});
 
 function unitKey(subjectId,fieldId,unitId){return `${subjectId}/${fieldId}/${unitId}`}
 function renderUnits(){

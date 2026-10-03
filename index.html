@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.21" />
+  <link rel="stylesheet" href="style.css?v=0.21.1" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -129,9 +129,26 @@
         </div>
         <div id="subjectTextbookList" class="textbook-inline-list"></div>
       </div>
+      <div id="quizTextbookCandidateCard" class="step-card exam-textbook-picker" hidden>
+        <div class="exam-range-head">
+          <div>
+            <h3>教科書の教材 / Unit候補</h3>
+            <p class="help">年度・現在設定中の出版社・学年から候補を表示します。候補を押すと関連する単元をまとめて選択します。</p>
+          </div>
+          <label class="exam-year-select"><span>教科書年度</span>
+            <select id="quizTextbookYear">
+              <option value="2025">令和7年度（2025）</option>
+              <option value="2026" selected>令和8年度（2026）</option>
+              <option value="2027">令和9年度（2027）</option>
+              <option value="2028">令和10年度（2028）</option>
+            </select>
+          </label>
+        </div>
+        <div id="quizTextbookCandidates" class="exam-textbook-candidates"></div>
+      </div>
       <div id="textbookRangeQuickCard" class="step-card textbook-card" hidden>
-        <h3>教科書の教材 / Unitから選ぶ</h3>
-        <p class="help">登録済みの教材を押すと、関連する単元をまとめて選択します。</p>
+        <h3>自分で登録した教材 / Unit</h3>
+        <p class="help">教科書設定で自分で登録した教材を押すと、関連する単元をまとめて選択します。</p>
         <div id="textbookRangeQuickList" class="textbook-range-quick-list"></div>
       </div>
       <div class="step-card">
@@ -452,6 +469,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.21"></script>
+  <script src="app.js?v=0.21.1"></script>
 </body>
 </html>

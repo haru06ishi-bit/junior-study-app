@@ -69,6 +69,39 @@
     </section>
 
 
+    <section id="examView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">定期テスト対策</p><h2>テスト予定</h2></div>
+      </div>
+      <div id="examPlanList" class="exam-plan-list"></div>
+      <button id="createExamPlan" class="primary" type="button">＋ 定期テストを登録</button>
+      <p class="help">テスト日と範囲を登録すると、その範囲から今日の学習問題を作ります。苦手問題は優先して出題します。</p>
+    </section>
+
+    <section id="examEditView" class="view">
+      <div class="section-head">
+        <button id="cancelExamEditTop" class="back" type="button" aria-label="定期テスト一覧へ戻る">←</button>
+        <div><p class="eyebrow">定期テスト対策</p><h2 id="examEditTitle">テストを登録</h2></div>
+      </div>
+      <div class="step-card">
+        <label><strong>テスト名</strong><input id="examName" type="text" placeholder="例：第2回定期テスト"></label>
+        <label><strong>テスト日</strong><input id="examDate" type="date"></label>
+      </div>
+      <div class="step-card">
+        <h3>学年</h3>
+        <div id="examGradeChoices" class="chip-row"></div>
+      </div>
+      <div class="step-card">
+        <div class="exam-range-head"><h3>出題範囲</h3><button id="clearExamUnits" class="secondary" type="button">選択を解除</button></div>
+        <p class="help">複数教科・複数単元をまとめて選択できます。</p>
+        <div id="examRangeChoices" class="exam-range-choices"></div>
+      </div>
+      <p id="examEditSummary" class="summary"></p>
+      <button id="saveExamPlan" class="primary" type="button">テスト予定を保存</button>
+      <button id="cancelExamEdit" class="secondary wide" type="button">キャンセル</button>
+    </section>
+
     <section id="reviewView" class="view">
       <div class="section-head">
         <button class="back" data-back aria-label="ホームへ戻る">←</button>
@@ -244,6 +277,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.9.1"></script>
+  <script src="app.js?v=0.10.0"></script>
 </body>
 </html>

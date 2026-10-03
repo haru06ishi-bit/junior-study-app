@@ -1,4 +1,4 @@
-const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null};
+const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null};
 const views=[...document.querySelectorAll('.view')];
 let cameraStream=null;
 let facingMode='environment';
@@ -16,6 +16,8 @@ document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>showView(b.data
 document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>handleAction(b.dataset.action));
 function handleAction(action){
  if(action==='quiz'){showView('quizView');renderQuiz();}
+ else if(action==='exam'){openExamPlans();}
+ else if(action==='daily'){startDailyStudy();}
  else if(action==='import'){showView('importView');}
  else if(action==='review'){openReview();}
  else if(action==='manage'){openManage();}
@@ -28,7 +30,7 @@ async function init(){
    if(window.CURRICULUM_DATA && window.QUESTION_DATA){
      state.curriculum=window.CURRICULUM_DATA;
      state.builtInQuestions=[...(window.QUESTION_DATA.questions||[])];refreshQuestionBank();
-     renderQuiz();fillImportSubjects();fillManageSubjects();
+     renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();
      document.getElementById('dataVersion').textContent=`単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}`;
    }else{
      const [cr,qr]=await Promise.all([fetch('data/curriculum.json'),fetch('data/questions.json')]);
@@ -36,7 +38,7 @@ async function init(){
      state.curriculum=await cr.json();
      const qdata=await qr.json();
      state.builtInQuestions=[...(qdata.questions||[])];refreshQuestionBank();
-     renderQuiz();fillImportSubjects();fillManageSubjects();
+     renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();
      document.getElementById('dataVersion').textContent=`単元 ${state.curriculum.version} / 問題 ${qdata.version}`;
    }
  }catch(error){
@@ -90,7 +92,7 @@ document.getElementById('startQuiz').onclick=()=>{
  if(!state.subject||!state.units.size){alert('教科と単元を選んでください。');return}
  const pool=availableQuestions();if(!pool.length){alert('選んだ単元には、まだ問題が登録されていません。別の単元を選ぶか、紙テストから問題を追加してください。');return}
  const shuffled=[...pool].sort(()=>Math.random()-.5);const limit=state.count==='all'?shuffled.length:Math.min(state.count,shuffled.length);
- state.session=shuffled.slice(0,limit);state.index=0;state.score=0;state.answers=[];
+ state.session=shuffled.slice(0,limit);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'quiz'};
  localStorage.setItem('lastQuizSelection',JSON.stringify({grade:state.grade,subject:state.subject,units:[...state.units],count:state.count}));
  showView('playView');renderQuestion();
 };
@@ -136,7 +138,8 @@ document.getElementById('quitQuiz').onclick=()=>{if(confirm('この小テスト�
 function finishQuiz(){
  const total=state.session.length;const rate=total?Math.round(state.score/total*100):0;
  document.getElementById('resultScore').textContent=`${state.score} / ${total}`;document.getElementById('resultRate').textContent=`正答率 ${rate}%`;
- const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-100)));
+ const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate,mode:state.sessionContext?.mode||'quiz',examId:state.sessionContext?.examId||null,questionIds:state.session.map(q=>q.id)});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-200)));
+ if(state.sessionContext?.examId){const logs=loadExamStudyLogs();logs.push({id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,at:new Date().toISOString(),questionIds:state.session.map(q=>q.id),score:state.score,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));}
  updateStreak();showView('resultView');
 }
 function updateStreak(){const today=new Date().toISOString().slice(0,10);const last=localStorage.getItem('lastStudyDate');let streak=Number(localStorage.getItem('streakDays')||0);if(last!==today){const y=new Date();y.setDate(y.getDate()-1);streak=last===y.toISOString().slice(0,10)?streak+1:1;localStorage.setItem('lastStudyDate',today);localStorage.setItem('streakDays',streak)}document.getElementById('streakDays').textContent=streak;}
@@ -189,7 +192,58 @@ function filteredReviewPool(){
  return pool;
 }
 function updateReviewSummary(){const n=filteredReviewPool().length;document.getElementById('reviewSummary').textContent=`現在 ${n}問が条件に一致しています。`;}
-document.getElementById('startFilteredReview').onclick=()=>{const pool=filteredReviewPool();if(!pool.length){alert('この条件に復習問題はありません。');return}const shuffled=[...pool].sort(()=>Math.random()-.5);const limit=state.review.count==='all'?shuffled.length:Math.min(state.review.count,shuffled.length);state.session=shuffled.slice(0,limit);state.index=0;state.score=0;state.answers=[];showView('playView');renderQuestion();};
+document.getElementById('startFilteredReview').onclick=()=>{const pool=filteredReviewPool();if(!pool.length){alert('この条件に復習問題はありません。');return}const shuffled=[...pool].sort(()=>Math.random()-.5);const limit=state.review.count==='all'?shuffled.length:Math.min(state.review.count,shuffled.length);state.session=shuffled.slice(0,limit);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'review'};showView('playView');renderQuestion();};
+
+
+function loadExamPlans(){try{return JSON.parse(localStorage.getItem('examPlans')||'[]')}catch{return[]}}
+function saveExamPlans(items){localStorage.setItem('examPlans',JSON.stringify(items));renderExamPlanList();}
+function loadExamStudyLogs(){try{return JSON.parse(localStorage.getItem('examStudyLogs')||'[]')}catch{return[]}}
+function dateOnlyLocal(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`;}
+function daysUntil(dateStr){if(!dateStr)return null;const [y,m,d]=dateStr.split('-').map(Number);const target=new Date(y,m-1,d);const now=new Date();const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());return Math.round((target-today)/86400000);}
+function examUnitIds(plan){return new Set((plan.units||[]).map(k=>k.split('/')[2]));}
+function examQuestionPool(plan){const ids=examUnitIds(plan);return state.questionBank.filter(q=>ids.has(q.unit)&&q.grades.includes(plan.grade));}
+function subjectForUnitKey(key){return key.split('/')[0];}
+function examSubjectCount(plan){return new Set((plan.units||[]).map(subjectForUnitKey)).size;}
+function examProgress(plan){
+ const pool=examQuestionPool(plan);if(!pool.length)return{attempted:0,total:0,percent:0};
+ const ids=new Set(pool.map(q=>q.id));const attempted=new Set();loadExamStudyLogs().filter(x=>x.examId===plan.id).forEach(l=>(l.questionIds||[]).forEach(id=>{if(ids.has(id))attempted.add(id)}));
+ return{attempted:attempted.size,total:pool.length,percent:Math.round(attempted.size/pool.length*100)};
+}
+function openExamPlans(){showView('examView');renderExamPlanList();}
+function renderExamPlanList(){
+ const el=document.getElementById('examPlanList');if(!el||!state.curriculum)return;const plans=loadExamPlans().sort((a,b)=>String(a.date).localeCompare(String(b.date)));el.innerHTML='';
+ if(!plans.length){el.innerHTML='<div class="empty-card"><strong>まだ定期テストが登録されていません</strong><p>テスト日と範囲を登録すると、今日やる問題を自動で作れます。</p></div>';return}
+ plans.forEach(plan=>{const days=daysUntil(plan.date);const prog=examProgress(plan);const card=document.createElement('article');card.className='exam-plan-card';
+  const dayLabel=days===0?'今日':days>0?`あと${days}日`:`${Math.abs(days)}日前に終了`;
+  card.innerHTML=`<div class="exam-plan-top"><div><p class="eyebrow">${escapeHtml(plan.date||'日付未設定')}</p><h3>${escapeHtml(plan.name||'定期テスト')}</h3></div><span class="exam-countdown ${days<0?'past':''}">${dayLabel}</span></div><p class="help">中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元</p><div class="progress-track"><span style="width:${prog.percent}%"></span></div><p class="exam-progress">このテスト向け学習 ${prog.attempted}/${prog.total}問</p><div class="exam-card-actions"><button class="primary exam-study" type="button">今日の学習を始める</button><button class="secondary exam-edit" type="button">編集</button><button class="secondary exam-delete" type="button">削除</button></div>`;
+  card.querySelector('.exam-study').disabled=days<0;card.querySelector('.exam-study').onclick=()=>startExamStudy(plan.id);card.querySelector('.exam-edit').onclick=()=>openExamEditor(plan.id);card.querySelector('.exam-delete').onclick=()=>deleteExamPlan(plan.id);el.append(card);
+ });
+}
+function openExamEditor(id=null){
+ const existing=id?loadExamPlans().find(x=>x.id===id):null;state.exam.editId=id;state.exam.grade=existing?.grade||2;state.exam.units=new Set(existing?.units||[]);showView('examEditView');
+ document.getElementById('examEditTitle').textContent=existing?'テストを編集':'テストを登録';document.getElementById('examName').value=existing?.name||'';document.getElementById('examDate').value=existing?.date||'';renderExamGrades();renderExamRanges();updateExamEditSummary();
+}
+function renderExamGrades(){const el=document.getElementById('examGradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.exam.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.exam.grade=g;state.exam.units.clear();renderExamGrades();renderExamRanges();updateExamEditSummary()};el.append(b)})}
+function renderExamRanges(){
+ const el=document.getElementById('examRangeChoices');el.innerHTML='';state.curriculum.subjects.forEach(sub=>{const units=[];sub.fields.forEach(f=>f.units.filter(u=>u.grades.includes(state.exam.grade)).forEach(u=>units.push({field:f,unit:u})));if(!units.length)return;
+  const details=document.createElement('details');details.className='exam-subject-group';const selected=units.filter(x=>state.exam.units.has(unitKey(sub.id,x.field.id,x.unit.id))).length;details.innerHTML=`<summary><span>${sub.icon} <strong>${sub.name}</strong></span><em>${selected}/${units.length}単元</em></summary><div class="exam-unit-grid"></div>`;const grid=details.querySelector('.exam-unit-grid');
+  units.forEach(({field,unit})=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);renderExamRanges();updateExamEditSummary()};grid.append(row)});el.append(details);
+ });
+}
+function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=new Set([...state.exam.units].map(k=>k.split('/')[2]));const qCount=state.questionBank.filter(q=>ids.has(q.unit)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択 / 現在${qCount}問出題可能`;}
+function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
+function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)return;if(!confirm(`「${p.name}」を削除しますか？`))return;saveExamPlans(loadExamPlans().filter(x=>x.id!==id));localStorage.setItem('examStudyLogs',JSON.stringify(loadExamStudyLogs().filter(x=>x.examId!==id)));}
+function buildExamSession(plan,count=20){
+ const pool=examQuestionPool(plan);if(!pool.length)return[];const missedIds=new Set(JSON.parse(localStorage.getItem('missedQuestions')||'[]').map(x=>x.questionId));const logs=loadExamStudyLogs().filter(x=>x.examId===plan.id);const seen=new Set(logs.flatMap(x=>x.questionIds||[]));
+ const rank=q=>(missedIds.has(q.id)?0:seen.has(q.id)?2:1)+Math.random()*.2;return [...pool].sort((a,b)=>rank(a)-rank(b)).slice(0,Math.min(count,pool.length));
+}
+function startExamStudy(id){const plan=loadExamPlans().find(x=>x.id===id);if(!plan)return;const session=buildExamSession(plan,20);if(!session.length){alert('このテスト範囲には出題できる問題がありません。');return}state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;state.sessionContext={mode:'exam',examId:plan.id};showView('playView');renderQuestion();}
+function startDailyStudy(){
+ const future=loadExamPlans().filter(p=>daysUntil(p.date)>=0).sort((a,b)=>String(a.date).localeCompare(String(b.date)));if(future.length){startExamStudy(future[0].id);return}
+ const missed=getMissedPool();let pool=missed.length?missed:state.questionBank;if(!pool.length){alert('出題できる問題がありません。');return}state.session=[...pool].sort(()=>Math.random()-.5).slice(0,Math.min(20,pool.length));state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'daily'};showView('playView');renderQuestion();
+}
+document.getElementById('createExamPlan').onclick=()=>openExamEditor();
+document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();renderExamRanges();updateExamEditSummary();};
 
 function fillImportSubjects(){
  const sel=document.getElementById('importSubject');state.curriculum.subjects.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=`${s.icon} ${s.name}`;sel.append(o)});

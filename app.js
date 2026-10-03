@@ -123,13 +123,34 @@ function finishAnswer(correct,dontKnow=false,answerLabel=''){
  state.answers.push({questionId:q.id,correct,dontKnow,answeredAt:new Date().toISOString()});
  document.getElementById('dontKnow').disabled=true;
  const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback '+(correct?'ok':'ng');
- const label=answerLabel||formatCorrectAnswer(q);fb.innerHTML=`<strong>${correct?'正解！':'復習しよう'}</strong><p>答え：${escapeHtml(label)}</p><p>${escapeHtml(q.explanation||'')}</p>`;
+ const label=answerLabel||formatCorrectAnswer(q);fb.innerHTML=`<strong>${correct?'正解！':'復習しよう'}</strong><p>答え：${escapeHtml(label)}</p><p>${escapeHtml(q.explanation||'')}</p>`;appendAiExplanationControl(fb,q);
  document.getElementById('nextQuestion').hidden=false;if(!correct)saveMissed(q,dontKnow);
 }
 function formatCorrectAnswer(q){if(q.type==='choice')return q.choices?.[q.answer]??'';if(q.type==='word')return acceptedTextAnswers(q).join(' / ');return q.modelAnswer||q.answerText||'';}
+function appendAiExplanationControl(host,q){
+ const wrap=document.createElement('div');wrap.className='ai-explain-box';
+ const btn=document.createElement('button');btn.type='button';btn.className='secondary ai-explain-btn';btn.textContent='✨ AIで詳しく解説';
+ const note=document.createElement('p');note.className='ai-privacy-note';note.textContent='押したときだけ、問題文と正解をCloudflare Workers AIへ送信します。氏名・テスト名・学習履歴は送信しません。';
+ const out=document.createElement('div');out.className='ai-explain-result';out.hidden=true;
+ btn.onclick=async()=>{
+  btn.disabled=true;btn.textContent='AIが考えています…';out.hidden=false;out.textContent='解説を作成しています。';
+  try{
+   const subject=state.curriculum?.subjects.find(x=>x.id===q.subject)?.name||'';
+   const payload={grade:Number(q.grades?.[0]||state.grade||2),subject,question:String(q.question||'').slice(0,1200),answer:String(formatCorrectAnswer(q)||'').slice(0,800),choices:Array.isArray(q.choices)?q.choices.slice(0,6).map(x=>String(x).slice(0,300)):[]};
+   const res=await fetch('/api/explain',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+   const data=await res.json().catch(()=>({}));
+   if(!res.ok)throw new Error(data.error||`HTTP ${res.status}`);
+   out.textContent=data.explanation||'AI解説を取得できませんでした。';
+   btn.textContent='AI解説を更新';btn.disabled=false;
+  }catch(err){
+   console.error(err);out.textContent='AI解説を取得できませんでした。通常の解説を利用してください。';btn.textContent='もう一度試す';btn.disabled=false;
+  }
+ };
+ wrap.append(btn,note,out);host.append(wrap);
+}
 function gradeChoiceAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&answer===q.answer;document.querySelectorAll('.answer-btn').forEach((b,i)=>{b.disabled=true;if(i===q.answer)b.classList.add('correct');if(button===b&&!correct)b.classList.add('wrong')});finishAnswer(correct,dontKnow);}
 function gradeWordAnswer(value,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(value));document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
-function showTextSelfCheck(userText){const q=state.session[state.index];document.querySelectorAll('#answerArea textarea,#answerArea button').forEach(x=>x.disabled=true);document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えと比べて判定してください。</p><div class="self-check-row"><button id="selfOk" class="primary" type="button">できた</button><button id="selfNg" class="secondary" type="button">できなかった</button></div>`;document.getElementById('selfOk').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(true,false)};document.getElementById('selfNg').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(false,false)};}
+function showTextSelfCheck(userText){const q=state.session[state.index];document.querySelectorAll('#answerArea textarea,#answerArea button').forEach(x=>x.disabled=true);document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えと比べて判定してください。</p><div class="self-check-row"><button id="selfOk" class="primary" type="button">できた</button><button id="selfNg" class="secondary" type="button">できなかった</button></div>`;appendAiExplanationControl(fb,q);document.getElementById('selfOk').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(true,false)};document.getElementById('selfNg').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(false,false)};}
 function gradeAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];if(q.type==='choice')gradeChoiceAnswer(answer,button,dontKnow);else if(q.type==='word')gradeWordAnswer('',dontKnow);else finishAnswer(false,true);}
 function saveMissed(q,dontKnow){const arr=JSON.parse(localStorage.getItem('missedQuestions')||'[]');const old=arr.find(x=>x.questionId===q.id);if(old){old.count=(old.count||1)+1;old.lastAt=new Date().toISOString();old.dontKnow=old.dontKnow||dontKnow}else arr.push({questionId:q.id,count:1,lastAt:new Date().toISOString(),dontKnow});localStorage.setItem('missedQuestions',JSON.stringify(arr));}
 document.getElementById('dontKnow').onclick=()=>gradeAnswer(null,null,true);
@@ -227,7 +248,8 @@ function renderExamGrades(){const el=document.getElementById('examGradeChoices')
 function renderExamRanges(){
  const el=document.getElementById('examRangeChoices');el.innerHTML='';state.curriculum.subjects.forEach(sub=>{const units=[];sub.fields.forEach(f=>f.units.filter(u=>u.grades.includes(state.exam.grade)).forEach(u=>units.push({field:f,unit:u})));if(!units.length)return;
   const details=document.createElement('details');details.className='exam-subject-group';const selected=units.filter(x=>state.exam.units.has(unitKey(sub.id,x.field.id,x.unit.id))).length;details.innerHTML=`<summary><span>${sub.icon} <strong>${sub.name}</strong></span><em>${selected}/${units.length}単元</em></summary><div class="exam-unit-grid"></div>`;const grid=details.querySelector('.exam-unit-grid');
-  units.forEach(({field,unit})=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);renderExamRanges();updateExamEditSummary()};grid.append(row)});el.append(details);
+  const countLabel=details.querySelector('summary em');
+  units.forEach(({field,unit})=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);const nowSelected=units.filter(x=>state.exam.units.has(unitKey(sub.id,x.field.id,x.unit.id))).length;countLabel.textContent=`${nowSelected}/${units.length}単元`;updateExamEditSummary()};grid.append(row)});el.append(details);
  });
 }
 function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=new Set([...state.exam.units].map(k=>k.split('/')[2]));const qCount=state.questionBank.filter(q=>ids.has(q.unit)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択 / 現在${qCount}問出題可能`;}

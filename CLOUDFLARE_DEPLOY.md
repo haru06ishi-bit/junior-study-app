@@ -35,3 +35,9 @@ npx wrangler pages deploy . --project-name junior-study-app
 - PDF.js と Tesseract.js はブラウザ内で処理します。
 - 初回利用時にはライブラリ・日本語OCR言語データを外部配信元から取得します。
 - カメラ権限はブラウザが管理し、ユーザー操作時だけ要求します。
+
+## Ver.0.11: AI解説を有効にする
+
+Cloudflare Dashboardの Pages project → Settings → Bindings から Workers AI binding を追加し、Variable nameを `AI` にしてください。設定後は再デプロイが必要です。
+
+AI bindingを設定しなくても、AI解説以外の機能は利用できます。

@@ -1,43 +1,46 @@
-# 30分スタディ Ver.0.10
+# 30分スタディ Ver.0.11
 
-中学生向けの小テスト・定期テスト対策Webアプリです。
+中学生向けの小テスト・定期テスト対策Webアプリです。Cloudflare Pages（HTTPS）での利用を前提にしています。
 
-## Ver.0.10 の変更
+## Ver.0.11 の変更
 
-- Cloudflare Pages / HTTPS 前提へ移行
-- `START_APP.bat` を廃止
-- PDF.js のWorker、CMap、標準フォントをHTTPS配信環境向けに整理
-- PDF関連アセットのCDNを2系統にしてフォールバック可能に変更
-- OCRライブラリも2系統の配信元へフォールバック
-- 紙登録画面に動作環境チェックを追加
-- `file://` で直接開いた場合はPDF/OCR非対応であることを明示
-- Cloudflare Pages用 `_headers`、`_redirects`、`wrangler.toml` を追加
+- 定期テストの出題範囲で単元を選んでも、その教科パネルを開いたままに変更
+- 通常解説に加えて「AIで詳しく解説」を追加
+- AI解説はユーザーがボタンを押したときだけ実行
+- AIへ送信するのは、問題文・正解・教科・学年・必要な場合の選択肢のみ
+- 氏名、テスト名、OCR全文、学習履歴、ユーザーIDはAI解説APIへ送信しない
+- AI呼び出しはCloudflare Pages Function経由で行い、ブラウザへAPIキーを置かない
+- AIが利用できない場合も、既存の解説だけで学習を継続可能
 
-## 重要
+## Cloudflare Workers AI の設定
 
-この版は `index.html` を直接ダブルクリックして使用しません。
-Cloudflare Pagesへ公開した `https://...pages.dev/` などのURLから利用してください。
+Ver.0.11のAI解説を使うには、Cloudflare PagesプロジェクトにWorkers AI bindingを追加してください。
 
-公開方法は `CLOUDFLARE_DEPLOY.md` を参照してください。
+1. Cloudflare Dashboardで対象のPagesプロジェクトを開く
+2. Settings → Bindingsへ進む
+3. Workers AIを追加
+4. Variable nameを `AI` にする
+5. 保存後にPagesを再デプロイする
 
-## データとプライバシー
+`wrangler.toml` にも次の設定を含めています。
 
-学習履歴・苦手問題・追加した問題は現在ブラウザのLocalStorageへ保存します。同じURLでも別端末には自動同期されません。
+```toml
+[ai]
+binding = "AI"
+```
 
+AI bindingを設定しなくても、小テスト・定期テスト・OCR・通常解説は利用できます。「AIで詳しく解説」だけが利用できません。
 
-## Ver.0.10 の変更
-- OCR全文から、問題番号より前のタイトル・氏名欄などを自動除外
-- ページ番号・注記・一般的な氏名/日付/得点欄を除外
-- 問題番号（問1 / 1. / Q1 など）単位で問題を抽出
-- A〜D、ア〜エ、①〜④などの選択肢を自動認識
-- 問題文から「選択」「単語・短答」「文章・記述」を自動推定
-- 自動抽出後も従来どおり手動編集してから登録可能
-- 問題本文の整理には外部AI/APIを使用せず、ブラウザ内ルール処理のみを使用
+## AI解説で送信しないデータ
 
+AI解説エンドポイント `/api/explain` は、ブラウザから送信された問題文と正解など学習に必要な最小限の内容だけを受け取ります。登録済みテスト名、氏名欄、OCRの元画像/PDF、学習履歴は送信しません。
 
-## Ver.0.10 定期テスト対策
-- 複数の定期テスト予定を登録・編集・削除できます。
-- テスト日、学年、複数教科・複数単元を範囲として保存します。
-- テストまでの日数と、そのテスト向けに学習した問題数を表示します。
-- 「今日の学習」は直近の定期テストを優先し、範囲内の苦手問題と未学習問題を優先して最大20問出題します。
-- データは端末のLocalStorageに保存します。
+## 公開
+
+GitHub連携済みのCloudflare Pagesであれば、ファイル更新後に以下で反映できます。
+
+```bash
+git add .
+git commit -m "Add optional AI explanations and keep exam subject open"
+git push
+```

@@ -6,7 +6,7 @@
   <meta name="description" content="中学生向けの小テスト・定期テスト対策学習アプリ" />
   <meta name="theme-color" content="#f6f7fb" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=0.12" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -24,8 +24,20 @@
     <section id="homeView" class="view active">
       <button class="hero-card" data-action="daily">
         <span class="hero-icon">⏱️</span>
-        <span><strong>今日の30分</strong><small>苦手を混ぜて自動出題</small></span>
+        <span><strong>今日の30分</strong><small id="dailyHeroSubtitle">苦手・未学習を優先して20問</small></span>
       </button>
+
+      <section id="dailyPlanCard" class="daily-plan-card" aria-live="polite">
+        <div class="daily-plan-head">
+          <div><p class="eyebrow">今日のメニュー</p><h2 id="dailyPlanTitle">学習データを準備中...</h2></div>
+          <span id="dailyPlanBadge" class="daily-plan-badge">20問</span>
+        </div>
+        <p id="dailyPlanLead" class="help">定期テスト・苦手・学習履歴から自動で組みます。</p>
+        <div id="dailyPlanStats" class="daily-stat-grid"></div>
+        <div id="dailySubjectMix" class="daily-subject-mix"></div>
+        <div class="progress-track"><span id="todayProgressBar" style="width:0%"></span></div>
+        <p id="todayProgressText" class="exam-progress">今日 0問</p>
+      </section>
 
       <div class="mode-grid">
         <button class="mode-card" data-action="quiz"><span>📝</span><strong>小テスト対策</strong><small>範囲を細かく選ぶ</small></button>
@@ -277,6 +289,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.11.1"></script>
+  <script src="app.js?v=0.12"></script>
 </body>
 </html>

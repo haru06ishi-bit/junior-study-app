@@ -9,7 +9,7 @@ function showView(id){
   document.querySelectorAll('[data-nav]').forEach(b=>b.classList.toggle('active',b.dataset.nav===id));
   window.scrollTo({top:0,behavior:'instant'});
 }
-function goHome(){stopCamera();showView('homeView')}
+function goHome(){stopCamera();showView('homeView');renderDailyPlanPreview()}
 
 document.querySelectorAll('[data-back]').forEach(b=>b.onclick=goHome);
 document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>showView(b.dataset.nav));
@@ -30,7 +30,7 @@ async function init(){
    if(window.CURRICULUM_DATA && window.QUESTION_DATA){
      state.curriculum=window.CURRICULUM_DATA;
      state.builtInQuestions=[...(window.QUESTION_DATA.questions||[])];refreshQuestionBank();
-     renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();
+     renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
      document.getElementById('dataVersion').textContent=`単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}`;
    }else{
      const [cr,qr]=await Promise.all([fetch('data/curriculum.json'),fetch('data/questions.json')]);
@@ -38,7 +38,7 @@ async function init(){
      state.curriculum=await cr.json();
      const qdata=await qr.json();
      state.builtInQuestions=[...(qdata.questions||[])];refreshQuestionBank();
-     renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();
+     renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
      document.getElementById('dataVersion').textContent=`単元 ${state.curriculum.version} / 問題 ${qdata.version}`;
    }
  }catch(error){
@@ -182,7 +182,7 @@ function finishQuiz(){
  if(state.sessionContext?.examId){const logs=loadExamStudyLogs();logs.push({id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,at:new Date().toISOString(),questionIds:state.session.map(q=>q.id),score:state.score,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));}
  updateStreak();showView('resultView');
 }
-function updateStreak(){const today=new Date().toISOString().slice(0,10);const last=localStorage.getItem('lastStudyDate');let streak=Number(localStorage.getItem('streakDays')||0);if(last!==today){const y=new Date();y.setDate(y.getDate()-1);streak=last===y.toISOString().slice(0,10)?streak+1:1;localStorage.setItem('lastStudyDate',today);localStorage.setItem('streakDays',streak)}document.getElementById('streakDays').textContent=streak;}
+function updateStreak(){const today=new Date().toISOString().slice(0,10);const last=localStorage.getItem('lastStudyDate');let streak=Number(localStorage.getItem('streakDays')||0);if(last!==today){const y=new Date();y.setDate(y.getDate()-1);streak=last===y.toISOString().slice(0,10)?streak+1:1;localStorage.setItem('lastStudyDate',today);localStorage.setItem('streakDays',streak)}document.getElementById('streakDays').textContent=streak;renderDailyPlanPreview();}
 document.getElementById('backHomeResult').onclick=goHome;
 document.getElementById('retryQuiz').onclick=()=>{state.index=0;state.score=0;state.answers=[];state.session=[...state.session].sort(()=>Math.random()-.5);showView('playView');renderQuestion()};
 function loadCustomQuestions(){
@@ -236,7 +236,7 @@ document.getElementById('startFilteredReview').onclick=()=>{const pool=filteredR
 
 
 function loadExamPlans(){try{return JSON.parse(localStorage.getItem('examPlans')||'[]')}catch{return[]}}
-function saveExamPlans(items){localStorage.setItem('examPlans',JSON.stringify(items));renderExamPlanList();}
+function saveExamPlans(items){localStorage.setItem('examPlans',JSON.stringify(items));renderExamPlanList();renderDailyPlanPreview();}
 function loadExamStudyLogs(){try{return JSON.parse(localStorage.getItem('examStudyLogs')||'[]')}catch{return[]}}
 function dateOnlyLocal(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`;}
 function daysUntil(dateStr){if(!dateStr)return null;const [y,m,d]=dateStr.split('-').map(Number);const target=new Date(y,m-1,d);const now=new Date();const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());return Math.round((target-today)/86400000);}
@@ -279,9 +279,34 @@ function buildExamSession(plan,count=20){
  const rank=q=>(missedIds.has(q.id)?0:seen.has(q.id)?2:1)+Math.random()*.2;return [...pool].sort((a,b)=>rank(a)-rank(b)).slice(0,Math.min(count,pool.length));
 }
 function startExamStudy(id){const plan=loadExamPlans().find(x=>x.id===id);if(!plan)return;const session=buildExamSession(plan,20);if(!session.length){alert('このテスト範囲には出題できる問題がありません。');return}state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;state.sessionContext={mode:'exam',examId:plan.id};showView('playView');renderQuestion();}
+function studyHistory(){try{return JSON.parse(localStorage.getItem('studyHistory')||'[]')}catch{return[]}}
+function answeredQuestionIds(){const ids=new Set();studyHistory().forEach(h=>(h.questionIds||[]).forEach(id=>ids.add(id)));return ids;}
+function shuffleCopy(items){return [...items].sort(()=>Math.random()-.5)}
+function takeUnique(target,source,count,used){for(const q of shuffleCopy(source)){if(target.length>=count)break;if(used.has(q.id))continue;used.add(q.id);target.push(q)}}
+function buildDailySession(count=20){
+ const future=loadExamPlans().filter(p=>daysUntil(p.date)>=0).sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+ const plan=future[0]||null;const pool=plan?examQuestionPool(plan):state.questionBank;if(!pool.length)return{plan:null,session:[],stats:{missed:0,unseen:0,review:0}};
+ const missedIds=new Set((JSON.parse(localStorage.getItem('missedQuestions')||'[]')||[]).map(x=>x.questionId));
+ const seen=plan?new Set(loadExamStudyLogs().filter(x=>x.examId===plan.id).flatMap(x=>x.questionIds||[])):answeredQuestionIds();
+ const missed=pool.filter(q=>missedIds.has(q.id));const unseen=pool.filter(q=>!missedIds.has(q.id)&&!seen.has(q.id));const review=pool.filter(q=>!missedIds.has(q.id)&&seen.has(q.id));
+ const target=Math.min(count,pool.length),session=[],used=new Set();
+ // 20問なら目安として、苦手8・未学習8・復習4。足りない枠は他カテゴリで補う。
+ takeUnique(session,missed,Math.min(target,8),used);takeUnique(session,unseen,Math.min(target,16),used);takeUnique(session,review,target,used);
+ if(session.length<target)takeUnique(session,pool,target,used);
+ const stats={missed:session.filter(q=>missedIds.has(q.id)).length,unseen:session.filter(q=>!missedIds.has(q.id)&&!seen.has(q.id)).length,review:session.filter(q=>!missedIds.has(q.id)&&seen.has(q.id)).length};
+ return{plan,session,stats};
+}
+function todayStudyCount(){const today=dateOnlyLocal();return studyHistory().filter(h=>dateOnlyLocal(new Date(h.at))===today).reduce((sum,h)=>sum+(Number(h.total)||0),0)}
+function renderDailyPlanPreview(){
+ const card=document.getElementById('dailyPlanCard');if(!card||!state.curriculum||!state.questionBank.length)return;const built=buildDailySession(20);const {plan,session,stats}=built;
+ const title=document.getElementById('dailyPlanTitle'),lead=document.getElementById('dailyPlanLead'),badge=document.getElementById('dailyPlanBadge'),hero=document.getElementById('dailyHeroSubtitle');
+ if(plan){const d=daysUntil(plan.date);title.textContent=`${plan.name}まで${d===0?'今日':`あと${d}日`}`;lead.textContent='登録したテスト範囲から、苦手と未学習を優先して出題します。';hero.textContent=`${plan.name}を優先して20問`;}else{title.textContent='苦手と未学習をバランスよく';lead.textContent='定期テスト予定がないため、全教科から苦手と未学習を優先します。';hero.textContent='苦手・未学習を優先して20問';}
+ badge.textContent=`${session.length}問`;document.getElementById('dailyPlanStats').innerHTML=`<div class="daily-stat"><strong>${stats.missed}</strong><small>苦手</small></div><div class="daily-stat"><strong>${stats.unseen}</strong><small>未学習</small></div><div class="daily-stat"><strong>${stats.review}</strong><small>復習</small></div>`;
+ const counts={};session.forEach(q=>counts[q.subject]=(counts[q.subject]||0)+1);const mix=document.getElementById('dailySubjectMix');mix.innerHTML='';Object.entries(counts).sort((a,b)=>b[1]-a[1]).forEach(([sid,n])=>{const sub=state.curriculum.subjects.find(s=>s.id===sid);if(!sub)return;const span=document.createElement('span');span.className='daily-subject-pill';span.textContent=`${sub.icon} ${sub.name} ${n}問`;mix.append(span)});
+ const done=todayStudyCount(),goal=20,pct=Math.min(100,Math.round(done/goal*100));document.getElementById('todayProgressBar').style.width=`${pct}%`;document.getElementById('todayProgressText').textContent=done>=goal?`今日 ${done}問クリア ✓`:`今日 ${done}/${goal}問`;
+}
 function startDailyStudy(){
- const future=loadExamPlans().filter(p=>daysUntil(p.date)>=0).sort((a,b)=>String(a.date).localeCompare(String(b.date)));if(future.length){startExamStudy(future[0].id);return}
- const missed=getMissedPool();let pool=missed.length?missed:state.questionBank;if(!pool.length){alert('出題できる問題がありません。');return}state.session=[...pool].sort(()=>Math.random()-.5).slice(0,Math.min(20,pool.length));state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'daily'};showView('playView');renderQuestion();
+ const built=buildDailySession(20);if(!built.session.length){alert('出題できる問題がありません。');return}state.session=built.session;state.index=0;state.score=0;state.answers=[];state.grade=built.plan?.grade||state.grade;state.subject=null;state.sessionContext={mode:'daily',examId:built.plan?.id||null};showView('playView');renderQuestion();
 }
 document.getElementById('createExamPlan').onclick=()=>openExamEditor();
 document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();renderExamRanges();updateExamEditSummary();};

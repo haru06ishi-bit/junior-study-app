@@ -20,6 +20,7 @@ function handleAction(action){
  else if(action==='daily'){startDailyStudy();}
  else if(action==='import'){showView('importView');}
  else if(action==='review'){openReview();}
+ else if(action==='stats'){openStats();}
  else if(action==='manage'){openManage();}
  else alert('この機能は今後追加します。');
 }
@@ -178,7 +179,7 @@ document.getElementById('quitQuiz').onclick=()=>{if(confirm('この小テスト�
 function finishQuiz(){
  const total=state.session.length;const rate=total?Math.round(state.score/total*100):0;
  document.getElementById('resultScore').textContent=`${state.score} / ${total}`;document.getElementById('resultRate').textContent=`正答率 ${rate}%`;
- const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate,mode:state.sessionContext?.mode||'quiz',examId:state.sessionContext?.examId||null,questionIds:state.session.map(q=>q.id)});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-200)));
+ const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate,mode:state.sessionContext?.mode||'quiz',examId:state.sessionContext?.examId||null,questionIds:state.session.map(q=>q.id),answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt}))});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-300)));
  if(state.sessionContext?.examId){const logs=loadExamStudyLogs();logs.push({id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,at:new Date().toISOString(),questionIds:state.session.map(q=>q.id),score:state.score,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));}
  updateStreak();showView('resultView');
 }
@@ -310,6 +311,68 @@ function startDailyStudy(){
 }
 document.getElementById('createExamPlan').onclick=()=>openExamEditor();
 document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();renderExamRanges();updateExamEditSummary();};
+
+
+function openStats(){showView('statsView');renderStatsDashboard();}
+function statsQuestionMap(){return new Map(state.questionBank.map(q=>[q.id,q]));}
+function statsSubjectName(id){const s=state.curriculum?.subjects.find(x=>x.id===id);return s?`${s.icon} ${s.name}`:'不明';}
+function statsUnitInfo(q){
+ const subject=state.curriculum?.subjects.find(s=>s.id===q?.subject);if(!subject)return null;
+ for(const field of subject.fields||[]){const unit=(field.units||[]).find(u=>u.id===q.unit);if(unit)return{subject,field,unit};}
+ return null;
+}
+function detailedAnswerRecords(){
+ const map=statsQuestionMap(),out=[];
+ for(const h of studyHistory())for(const a of h.answerResults||[]){const q=map.get(a.questionId);if(q)out.push({...a,at:a.answeredAt||h.at,question:q});}
+ return out;
+}
+function aggregateSubjectStats(){
+ const result=new Map();
+ const add=(sid,total,correct)=>{if(!sid||!total)return;const x=result.get(sid)||{total:0,correct:0};x.total+=total;x.correct+=correct;result.set(sid,x)};
+ const map=statsQuestionMap();
+ for(const h of studyHistory()){
+  if(Array.isArray(h.answerResults)&&h.answerResults.length){for(const a of h.answerResults){const q=map.get(a.questionId);if(q)add(q.subject,1,a.correct?1:0)}}
+  else if(h.subject)add(h.subject,Number(h.total)||0,Number(h.score)||0);
+ }
+ return result;
+}
+function modeLabel(mode){return({quiz:'小テスト',review:'苦手復習',exam:'定期テスト',daily:'今日の30分'})[mode]||'学習';}
+function formatStudyDate(iso){const d=new Date(iso);if(Number.isNaN(d.getTime()))return'';return `${d.getMonth()+1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;}
+function renderStatsDashboard(){
+ if(!state.curriculum)return;
+ const history=studyHistory();
+ const total=history.reduce((n,h)=>n+(Number(h.total)||0),0),correct=history.reduce((n,h)=>n+(Number(h.score)||0),0),rate=total?Math.round(correct/total*100):0;
+ const streak=Number(localStorage.getItem('streakDays')||0);const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]').length;
+ const summary=document.getElementById('statsSummary');
+ summary.innerHTML=`<div class="stats-summary-card"><small>解いた問題</small><strong>${total}</strong><span>問</span></div><div class="stats-summary-card"><small>正答率</small><strong>${rate}</strong><span>%</span></div><div class="stats-summary-card"><small>連続学習</small><strong>${streak}</strong><span>日</span></div><div class="stats-summary-card"><small>苦手問題</small><strong>${missed}</strong><span>問</span></div>`;
+ renderWeeklyStudy(history);renderSubjectStats();renderWeakUnitStats();renderRecentHistory(history);
+}
+function renderWeeklyStudy(history){
+ const days=[];const now=new Date();now.setHours(0,0,0,0);
+ for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(now.getDate()-i);days.push({date:dateOnlyLocal(d),label:['日','月','火','水','木','金','土'][d.getDay()],count:0});}
+ history.forEach(h=>{const day=days.find(x=>x.date===dateOnlyLocal(new Date(h.at)));if(day)day.count+=Number(h.total)||0});
+ const max=Math.max(1,...days.map(d=>d.count)),sum=days.reduce((n,d)=>n+d.count,0);document.getElementById('statsWeekTotal').textContent=`合計 ${sum}問`;
+ const el=document.getElementById('weeklyStudyChart');el.innerHTML='';
+ days.forEach(d=>{const item=document.createElement('div');item.className='week-bar-item';item.innerHTML=`<span class="week-count">${d.count||''}</span><div class="week-bar-track"><span style="height:${Math.max(d.count?8:2,Math.round(d.count/max*100))}%"></span></div><small>${d.label}</small>`;el.append(item)});
+}
+function renderSubjectStats(){
+ const stats=aggregateSubjectStats(),el=document.getElementById('subjectStats');el.innerHTML='';
+ const rows=[...stats.entries()].sort((a,b)=>b[1].total-a[1].total);
+ if(!rows.length){el.innerHTML='<p class="help">まだ教科別の学習記録がありません。</p>';return;}
+ rows.forEach(([sid,x])=>{const rate=x.total?Math.round(x.correct/x.total*100):0;const row=document.createElement('div');row.className='subject-stat-row';row.innerHTML=`<div class="subject-stat-head"><strong>${escapeHtml(statsSubjectName(sid))}</strong><span>${x.correct}/${x.total}問・${rate}%</span></div><div class="progress-track"><span style="width:${rate}%"></span></div>`;el.append(row)});
+}
+function renderWeakUnitStats(){
+ const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]'),map=statsQuestionMap(),groups=new Map();
+ for(const m of missed){const q=map.get(m.questionId),info=statsUnitInfo(q);if(!q||!info)continue;const key=`${q.subject}/${q.unit}`;const x=groups.get(key)||{count:0,subject:info.subject,field:info.field,unit:info.unit};x.count++;groups.set(key,x);}
+ const el=document.getElementById('weakUnitStats');el.innerHTML='';const rows=[...groups.values()].sort((a,b)=>b.count-a.count).slice(0,8);
+ if(!rows.length){el.innerHTML='<p class="help">現在、苦手として登録されている問題はありません。</p>';return;}
+ rows.forEach(x=>{const row=document.createElement('div');row.className='weak-unit-row';row.innerHTML=`<div><strong>${x.subject.icon} ${escapeHtml(x.unit.name)}</strong><small>${escapeHtml(x.subject.name)} ＞ ${escapeHtml(x.field.name)}</small></div><span>${x.count}問</span>`;el.append(row)});
+}
+function renderRecentHistory(history){
+ const el=document.getElementById('recentStudyHistory');el.innerHTML='';const rows=[...history].sort((a,b)=>new Date(b.at)-new Date(a.at)).slice(0,10);
+ if(!rows.length){el.innerHTML='<p class="help">まだ学習履歴がありません。小テストを解くとここに記録されます。</p>';return;}
+ rows.forEach(h=>{const row=document.createElement('div');row.className='history-row';const subj=h.subject?statsSubjectName(h.subject):'複数教科';row.innerHTML=`<div><strong>${escapeHtml(modeLabel(h.mode))}</strong><small>${escapeHtml(formatStudyDate(h.at))}・${escapeHtml(subj)}</small></div><span>${Number(h.score)||0}/${Number(h.total)||0}・${Number(h.rate)||0}%</span>`;el.append(row)});
+}
 
 function fillImportSubjects(){
  const sel=document.getElementById('importSubject');state.curriculum.subjects.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=`${s.icon} ${s.name}`;sel.append(o)});

@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.13" />
+  <link rel="stylesheet" href="style.css?v=0.14" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -57,6 +57,7 @@
         <button class="mode-card" data-action="quiz"><span>📝</span><strong>小テスト対策</strong><small>範囲を細かく選ぶ</small></button>
         <button class="mode-card" data-action="exam"><span>📚</span><strong>定期テスト対策</strong><small>複数教科をまとめる</small></button>
         <button class="mode-card" data-action="review"><span>🔁</span><strong>苦手を復習</strong><small>間違えた問題を優先</small></button>
+        <button class="mode-card" data-action="stats"><span>📊</span><strong>学習記録</strong><small>成績と苦手を確認</small></button>
         <button class="mode-card" data-action="import"><span>📷</span><strong>紙から登録</strong><small>撮影・画像・PDFに対応</small></button>
         <button class="mode-card" data-action="manage"><span>🗂️</span><strong>登録問題を管理</strong><small>追加した問題を編集・削除</small></button>
       </div>
@@ -185,6 +186,37 @@
       </div>
     </section>
 
+    <section id="statsView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">学習記録</p><h2>成績ダッシュボード</h2></div>
+      </div>
+
+      <div id="statsSummary" class="stats-summary-grid"></div>
+
+      <div class="step-card">
+        <div class="stats-section-head"><h3>直近7日間</h3><span id="statsWeekTotal" class="stats-muted"></span></div>
+        <div id="weeklyStudyChart" class="weekly-study-chart"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>教科別の成績</h3>
+        <div id="subjectStats" class="subject-stats-list"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>苦手単元</h3>
+        <p class="help">現在「苦手を復習」に残っている問題を単元ごとに集計します。</p>
+        <div id="weakUnitStats" class="weak-unit-list"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>最近の学習</h3>
+        <div id="recentStudyHistory" class="recent-history-list"></div>
+      </div>
+      <p class="help stats-note">単元ごとの詳細な正答データはVer.0.14以降の回答から蓄積されます。データはこの端末のブラウザ内に保存されます。</p>
+    </section>
+
     <section id="importView" class="view">
       <div class="section-head">
         <button class="back" data-back aria-label="ホームへ戻る">←</button>
@@ -278,8 +310,8 @@
     <button data-nav="homeView" class="active">🏠<span>ホーム</span></button>
     <button data-action="quiz">📝<span>小テスト</span></button>
     <button data-action="review">🔁<span>復習</span></button>
+    <button data-action="stats">📊<span>記録</span></button>
     <button data-action="import">📷<span>紙登録</span></button>
-    <button data-action="manage">🗂️<span>問題管理</span></button>
   </nav>
 
   <div id="installModal" class="camera-modal" hidden>
@@ -313,6 +345,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.13"></script>
+  <script src="app.js?v=0.14"></script>
 </body>
 </html>

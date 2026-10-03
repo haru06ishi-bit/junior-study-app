@@ -1,0 +1,37 @@
+# Cloudflare Pages 公開手順（Ver.0.8）
+
+この版は `file://` で `index.html` を直接開く使い方ではなく、Cloudflare Pages の HTTPS URL で利用することを前提にしています。
+
+## ダッシュボードから公開する場合
+
+1. このフォルダを GitHub リポジトリへ配置します。
+2. Cloudflare Dashboard → Workers & Pages → Create → Pages → Git に接続します。
+3. 対象リポジトリを選びます。
+4. Framework preset は `None`。
+5. Build command は空欄。
+6. Build output directory は `/` またはリポジトリのルートを指定します。
+7. Deploy を実行します。
+8. 発行された `https://...pages.dev/` を開きます。
+
+## Wrangler を使う場合
+
+```bash
+npx wrangler pages deploy . --project-name junior-study-app
+```
+
+## 公開後の確認
+
+紙登録 → 動作環境チェックで以下がすべて ✓ になっていることを確認します。
+
+- HTTPS / 安全な接続
+- カメラ利用条件
+- 起動方法
+
+その後、PDFを選択し、プレビューに本文が表示されることを確認してからOCRを実行します。
+
+## セキュリティ方針
+
+- 選択したPDF・画像そのものを外部OCR APIへ送信しません。
+- PDF.js と Tesseract.js はブラウザ内で処理します。
+- 初回利用時にはライブラリ・日本語OCR言語データを外部配信元から取得します。
+- カメラ権限はブラウザが管理し、ユーザー操作時だけ要求します。

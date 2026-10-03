@@ -202,7 +202,85 @@ function updateImportFields(){
 document.getElementById('importSubject').addEventListener('change',updateImportFields);
 document.getElementById('importField').addEventListener('change',()=>{const sid=document.getElementById('importSubject').value;const fid=document.getElementById('importField').value;const us=document.getElementById('importUnit');us.innerHTML='<option value="">単元を選択</option>';const f=state.curriculum.subjects.find(s=>s.id===sid)?.fields.find(x=>x.id===fid);(f?.units||[]).filter(u=>u.grades.includes(state.importGrade)).forEach(u=>{const o=document.createElement('option');o.value=u.id;o.textContent=u.name;us.append(o)})});
 function newImportQuestion(text=''){return{id:crypto.randomUUID?.()||String(Date.now()+Math.random()),type:'choice',question:text,choices:['','','',''],answer:0,answers:[''],modelAnswer:'',explanation:''}}
-function splitRecognizedText(){const text=document.getElementById('ocrText').value.trim();if(!text){alert('先に読み取り結果または手入力の文章を用意してください。');return}let parts=text.split(/\n\s*\n+/).map(x=>x.trim()).filter(Boolean);if(parts.length===1){parts=text.split(/(?=^\s*(?:問)?\d+[.．、)）]\s*)/m).map(x=>x.trim()).filter(Boolean)}state.importQuestions=parts.map(p=>newImportQuestion(p.replace(/^\s*(?:問)?\d+[.．、)）]\s*/,'')));renderImportQuestions();}
+
+// OCR結果から、タイトル・氏名欄・注意書きなどを除き、問題部分を抽出する。
+// AIや外部APIへ本文を送らず、端末内のルール処理だけで動作する。
+const QUESTION_START_RE=/^\s*(?:(?:問|Q|Ｑ)\s*[0-9０-９]{1,3}\s*[.．、:：)）\-]?|[0-9０-９]{1,3}\s*[.．、:：)）\-])\s*/i;
+const CHOICE_RE=/^\s*(?:([A-DＡ-Ｄa-d]|[ア-エ])\s*[.．、:：)）]|([①②③④])|([1-4１-４])\s*[)）])\s*(.+?)\s*$/;
+function normalizeOcrLine(line){return String(line||'').replace(/[\u00a0\u3000]/g,' ').replace(/\s+/g,' ').trim();}
+function isPageMarker(line){return /^-+\s*[0-9０-９]+\s*ページ目\s*-+$/i.test(line);}
+function isLikelyFooterOrNote(line){
+ const t=normalizeOcrLine(line);
+ return !t||/^[-－—―_=＿]{3,}$/.test(t)||/^\d+\s*\/\s*\d+$/.test(t)||/^ページ\s*\d+$/i.test(t)||/^※/.test(t)||/^(氏名|名前|学年|組|番号|日付|得点|点数)\s*[：:]/.test(t)||/^(答え|解答)\s*[：:]\s*[_＿-]*$/.test(t);
+}
+function stripQuestionNumber(text){return String(text||'').replace(QUESTION_START_RE,'').trim();}
+function splitPagesFromOcr(raw){
+ const lines=String(raw||'').replace(/\r/g,'').split('\n');
+ const pages=[];let current=[];
+ for(const line of lines){
+  if(isPageMarker(normalizeOcrLine(line))){if(current.some(x=>x.trim()))pages.push(current);current=[];continue}
+  current.push(line);
+ }
+ if(current.some(x=>x.trim()))pages.push(current);
+ return pages.length?pages:[lines];
+}
+function extractQuestionBlocks(raw){
+ const blocks=[];
+ for(const rawPage of splitPagesFromOcr(raw)){
+  let lines=rawPage.map(normalizeOcrLine).filter(Boolean);
+  const firstQuestion=lines.findIndex(line=>QUESTION_START_RE.test(line));
+  // 問題番号が見つかったページは、それ以前をタイトル・氏名欄などとして除外。
+  if(firstQuestion>=0)lines=lines.slice(firstQuestion);
+  let current=[];
+  for(const line of lines){
+   if(QUESTION_START_RE.test(line)){
+    if(current.length)blocks.push(current.join('\n').trim());
+    current=[line];
+   }else if(current.length){
+    // 問題開始後の脚注・ページ番号等は登録対象にしない。
+    if(!isLikelyFooterOrNote(line))current.push(line);
+   }
+  }
+  if(current.length)blocks.push(current.join('\n').trim());
+ }
+ // OCRで問題番号を認識できなかった場合だけ、空行区切りをフォールバックにする。
+ if(!blocks.length){
+  return String(raw||'').split(/\n\s*\n+/).map(x=>x.trim()).filter(x=>x&&!isLikelyFooterOrNote(x));
+ }
+ return blocks;
+}
+function inferImportedQuestion(block){
+ const lines=String(block||'').split('\n').map(normalizeOcrLine).filter(Boolean);
+ if(!lines.length)return newImportQuestion('');
+ lines[0]=stripQuestionNumber(lines[0]);
+ const choices=[];const body=[];
+ for(const line of lines){
+  const m=line.match(CHOICE_RE);
+  if(m&&body.length){choices.push(m[4]);}
+  else body.push(line);
+ }
+ const questionText=body.join(' ').trim();
+ const q=newImportQuestion(questionText);
+ if(choices.length>=2){
+  q.type='choice';q.choices=choices.slice(0,4);while(q.choices.length<4)q.choices.push('');q.answer=0;
+ }else if(/(?:説明|理由|根拠|考え|述べ|文章で|詳しく|なぜ)/.test(questionText)){
+  q.type='text';q.modelAnswer='';
+ }else{
+  q.type='word';q.answers=[''];
+ }
+ return q;
+}
+function splitRecognizedText(){
+ const text=document.getElementById('ocrText').value.trim();
+ if(!text){alert('先に読み取り結果または手入力の文章を用意してください。');return}
+ const blocks=extractQuestionBlocks(text);
+ state.importQuestions=blocks.map(inferImportedQuestion).filter(q=>q.question.trim());
+ const status=document.getElementById('ocrStatus');
+ if(status)status.textContent=state.importQuestions.length
+  ?`タイトル・氏名欄・注意書き等を除外し、${state.importQuestions.length}問を抽出しました。問題文・解答形式・正解を確認して修正してください。`
+  :'問題を自動抽出できませんでした。OCR結果を修正するか「＋ 問題を手動追加」を使ってください。';
+ renderImportQuestions();
+}
 function renderImportQuestions(){const el=document.getElementById('importQuestionEditor');el.innerHTML='';state.importQuestions.forEach((q,idx)=>{const card=document.createElement('div');card.className='import-question-card';card.innerHTML=`<div class="import-question-head"><strong>問題 ${idx+1}</strong><button type="button" class="remove-question" aria-label="問題を削除">削除</button></div><label>解答形式<select data-iq="type"><option value="choice" ${q.type==='choice'?'selected':''}>選択</option><option value="word" ${q.type==='word'?'selected':''}>単語・短答</option><option value="text" ${q.type==='text'?'selected':''}>文章・記述</option></select></label><textarea data-iq="question" rows="3" placeholder="問題文">${escapeHtml(q.question)}</textarea><div data-type-area></div><textarea data-iq="explanation" rows="2" placeholder="解説（任意）">${escapeHtml(q.explanation)}</textarea>`;
  const renderType=()=>{const a=card.querySelector('[data-type-area]');a.innerHTML='';if(q.type==='choice'){a.className='choice-editor';a.innerHTML=q.choices.map((c,i)=>`<label><input type="radio" name="ans-${q.id}" value="${i}" ${q.answer===i?'checked':''}><input type="text" data-choice="${i}" value="${escapeAttr(c)}" placeholder="選択肢 ${String.fromCharCode(65+i)}"></label>`).join('');a.querySelectorAll('[data-choice]').forEach(x=>x.oninput=e=>q.choices[Number(e.target.dataset.choice)]=e.target.value);a.querySelectorAll('input[type=radio]').forEach(x=>x.onchange=e=>q.answer=Number(e.target.value));}else if(q.type==='word'){a.innerHTML=`<label>正解（複数ある場合は | で区切る）<input type="text" data-answer-word value="${escapeAttr((q.answers||[]).join(' | '))}" placeholder="例：源頼朝 | みなもとのよりとも"></label>`;a.querySelector('[data-answer-word]').oninput=e=>q.answers=e.target.value.split('|').map(x=>x.trim()).filter(Boolean);}else{a.innerHTML=`<label>模範解答<textarea data-model-answer rows="4" placeholder="文章・記述問題の模範解答">${escapeHtml(q.modelAnswer||'')}</textarea></label>`;a.querySelector('[data-model-answer]').oninput=e=>q.modelAnswer=e.target.value;}};
  card.querySelector('[data-iq="question"]').oninput=e=>q.question=e.target.value;card.querySelector('[data-iq="explanation"]').oninput=e=>q.explanation=e.target.value;card.querySelector('[data-iq="type"]').onchange=e=>{q.type=e.target.value;renderType()};card.querySelector('.remove-question').onclick=()=>{state.importQuestions.splice(idx,1);renderImportQuestions()};renderType();el.append(card)});}

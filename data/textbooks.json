@@ -1,134 +1,46 @@
 {
-  "version": "2026-10-shizuoka-r7-r10",
+  "version": "2026-10-shizuoka-r7-r10-all-subjects",
   "prefecture": "静岡県",
   "validFrom": 2025,
   "validTo": 2028,
+  "scope": "市町立中学校",
+  "source": "静岡県教育委員会 中学校教科用図書一覧（令和7～10年度使用）",
   "publishers": {
-    "sanseido": {
-      "name": "三省堂",
-      "fullName": "株式会社三省堂"
-    },
-    "mitsumura": {
-      "name": "光村図書",
-      "fullName": "光村図書出版株式会社"
-    },
-    "kyoiku-shuppan": {
-      "name": "教育出版",
-      "fullName": "教育出版株式会社"
-    }
+    "tokyo-shoseki": {"name": "東京書籍", "short": "東書"},
+    "sanseido": {"name": "三省堂", "short": "三省堂"},
+    "mitsumura": {"name": "光村図書", "short": "光村"},
+    "kyoiku-shuppan": {"name": "教育出版", "short": "教出"},
+    "teikoku": {"name": "帝国書院", "short": "帝国"},
+    "gakko-tosho": {"name": "学校図書", "short": "学図"},
+    "keirinkan": {"name": "啓林館", "short": "啓林館"},
+    "kyoiku-geijutsusha": {"name": "教育芸術社", "short": "教芸"},
+    "nihon-bunkyo": {"name": "日本文教出版", "short": "日文"},
+    "kairyudo": {"name": "開隆堂出版", "short": "開隆堂"},
+    "taishukan": {"name": "大修館書店", "short": "大修館"},
+    "gakken": {"name": "Gakken", "short": "学研"}
+  },
+  "subjects": {
+    "japanese": {"name": "国語", "icon": "📕", "parts": {"language": "国語", "handwriting": "書写"}},
+    "social": {"name": "社会", "icon": "🌍", "parts": {"geography": "地理", "history": "歴史", "civics": "公民", "atlas": "地図"}},
+    "math": {"name": "数学", "icon": "📘", "parts": {"main": "数学"}},
+    "science": {"name": "理科", "icon": "🔬", "parts": {"main": "理科"}},
+    "music": {"name": "音楽", "icon": "🎵", "parts": {"general": "一般", "instrumental": "器楽合奏"}},
+    "art": {"name": "美術", "icon": "🎨", "parts": {"main": "美術"}},
+    "pe": {"name": "保健体育", "icon": "🏃", "parts": {"main": "保健体育"}},
+    "tech-home": {"name": "技術・家庭", "icon": "🛠️", "parts": {"technology": "技術", "home": "家庭"}},
+    "english": {"name": "英語", "icon": "🔤", "parts": {"main": "英語"}}
   },
   "districts": [
-    {
-      "id": "kamo",
-      "name": "賀茂",
-      "publisher": "sanseido",
-      "municipalities": [
-        "下田市",
-        "東伊豆町",
-        "河津町",
-        "南伊豆町",
-        "松崎町",
-        "西伊豆町"
-      ]
-    },
-    {
-      "id": "tagata",
-      "name": "田方",
-      "publisher": "mitsumura",
-      "municipalities": [
-        "三島市",
-        "熱海市",
-        "伊東市",
-        "伊豆市",
-        "伊豆の国市",
-        "函南町"
-      ]
-    },
-    {
-      "id": "sunto-numazu",
-      "name": "駿東沼津",
-      "publisher": "sanseido",
-      "municipalities": [
-        "沼津市",
-        "裾野市",
-        "御殿場市",
-        "清水町",
-        "長泉町",
-        "小山町"
-      ]
-    },
-    {
-      "id": "fuji",
-      "name": "富士",
-      "publisher": "kyoiku-shuppan",
-      "municipalities": [
-        "富士市",
-        "富士宮市"
-      ]
-    },
-    {
-      "id": "shizuoka",
-      "name": "静岡",
-      "publisher": "sanseido",
-      "municipalities": [
-        "静岡市"
-      ]
-    },
-    {
-      "id": "shida",
-      "name": "志太",
-      "publisher": "kyoiku-shuppan",
-      "municipalities": [
-        "焼津市",
-        "藤枝市",
-        "島田市"
-      ]
-    },
-    {
-      "id": "haibara",
-      "name": "榛原",
-      "publisher": "mitsumura",
-      "municipalities": [
-        "牧之原市",
-        "吉田町",
-        "川根本町"
-      ]
-    },
-    {
-      "id": "ogasa",
-      "name": "小笠",
-      "publisher": "mitsumura",
-      "municipalities": [
-        "掛川市",
-        "御前崎市",
-        "菊川市"
-      ]
-    },
-    {
-      "id": "iwata-shuchi",
-      "name": "磐田周智",
-      "publisher": "mitsumura",
-      "municipalities": [
-        "森町",
-        "袋井市",
-        "磐田市"
-      ]
-    },
-    {
-      "id": "hamamatsu",
-      "name": "浜松",
-      "publisher": "mitsumura",
-      "municipalities": [
-        "浜松市"
-      ]
-    },
-    {
-      "id": "kosai",
-      "name": "湖西",
-      "publisher": "mitsumura",
-      "municipalities": [
-        "湖西市"
-      ]
-    }
+    {"id":"kamo","name":"賀茂","municipalities":["下田市","東伊豆町","河津町","南伊豆町","松崎町","西伊豆町"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},
+    {"id":"tagata","name":"田方","municipalities":["三島市","熱海市","伊東市","伊豆市","伊豆の国市","函南町"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"nihon-bunkyo","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-shuppan","instrumental":"kyoiku-shuppan"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"kairyudo"}}},
+    {"id":"sunto-numazu","name":"駿東沼津","municipalities":["沼津市","裾野市","御殿場市","清水町","長泉町","小山町"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"tokyo-shoseki"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},
+    {"id":"fuji","name":"富士","municipalities":["富士市","富士宮市"],"adoptions":{"japanese":{"language":"kyoiku-shuppan","handwriting":"kyoiku-shuppan"},"social":{"geography":"kyoiku-shuppan","history":"kyoiku-shuppan","civics":"kyoiku-shuppan","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},
+    {"id":"shizuoka","name":"静岡","municipalities":["静岡市"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"keirinkan"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"mitsumura"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},
+    {"id":"shida","name":"志太","municipalities":["焼津市","藤枝市","島田市"],"adoptions":{"japanese":{"language":"kyoiku-shuppan","handwriting":"kyoiku-shuppan"},"social":{"geography":"kyoiku-shuppan","history":"kyoiku-shuppan","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"sanseido"}}},
+    {"id":"haibara","name":"榛原","municipalities":["牧之原市","吉田町","川根本町"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"kyoiku-shuppan"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"taishukan"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},
+    {"id":"ogasa","name":"小笠","municipalities":["掛川市","御前崎市","菊川市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"kyoiku-shuppan"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"gakken"},"tech-home":{"technology":"tokyo-shoseki","home":"tokyo-shoseki"},"english":{"main":"mitsumura"}}},
+    {"id":"iwata-shuchi","name":"磐田周智","municipalities":["森町","袋井市","磐田市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"taishukan"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"kairyudo"}}},
+    {"id":"hamamatsu","name":"浜松","municipalities":["浜松市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"kyoiku-shuppan"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"gakken"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},
+    {"id":"kosai","name":"湖西","municipalities":["湖西市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"kyoiku-shuppan"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"mitsumura"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"tokyo-shoseki","home":"tokyo-shoseki"},"english":{"main":"mitsumura"}}}
   ]
 }

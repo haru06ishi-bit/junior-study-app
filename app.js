@@ -1,5 +1,5 @@
 const state={grade:2,subject:null,units:new Set(),count:5,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
-const SHIZUOKA_TEXTBOOK_FALLBACK={version:'2026-10-shizuoka-r7-r10',prefecture:'静岡県',validFrom:2025,validTo:2028,publishers:{sanseido:{name:'三省堂'},mitsumura:{name:'光村図書'},'kyoiku-shuppan':{name:'教育出版'}},districts:[{id:'kamo',name:'賀茂',publisher:'sanseido',municipalities:['下田市','東伊豆町','河津町','南伊豆町','松崎町','西伊豆町']},{id:'tagata',name:'田方',publisher:'mitsumura',municipalities:['三島市','熱海市','伊東市','伊豆市','伊豆の国市','函南町']},{id:'sunto-numazu',name:'駿東沼津',publisher:'sanseido',municipalities:['沼津市','裾野市','御殿場市','清水町','長泉町','小山町']},{id:'fuji',name:'富士',publisher:'kyoiku-shuppan',municipalities:['富士市','富士宮市']},{id:'shizuoka',name:'静岡',publisher:'sanseido',municipalities:['静岡市']},{id:'shida',name:'志太',publisher:'kyoiku-shuppan',municipalities:['焼津市','藤枝市','島田市']},{id:'haibara',name:'榛原',publisher:'mitsumura',municipalities:['牧之原市','吉田町','川根本町']},{id:'ogasa',name:'小笠',publisher:'mitsumura',municipalities:['掛川市','御前崎市','菊川市']},{id:'iwata-shuchi',name:'磐田周智',publisher:'mitsumura',municipalities:['森町','袋井市','磐田市']},{id:'hamamatsu',name:'浜松',publisher:'mitsumura',municipalities:['浜松市']},{id:'kosai',name:'湖西',publisher:'mitsumura',municipalities:['湖西市']} ]};
+const SHIZUOKA_TEXTBOOK_FALLBACK={"version":"2026-10-shizuoka-r7-r10-all-subjects","prefecture":"静岡県","validFrom":2025,"validTo":2028,"scope":"市町立中学校","source":"静岡県教育委員会 中学校教科用図書一覧（令和7～10年度使用）","publishers":{"tokyo-shoseki":{"name":"東京書籍","short":"東書"},"sanseido":{"name":"三省堂","short":"三省堂"},"mitsumura":{"name":"光村図書","short":"光村"},"kyoiku-shuppan":{"name":"教育出版","short":"教出"},"teikoku":{"name":"帝国書院","short":"帝国"},"gakko-tosho":{"name":"学校図書","short":"学図"},"keirinkan":{"name":"啓林館","short":"啓林館"},"kyoiku-geijutsusha":{"name":"教育芸術社","short":"教芸"},"nihon-bunkyo":{"name":"日本文教出版","short":"日文"},"kairyudo":{"name":"開隆堂出版","short":"開隆堂"},"taishukan":{"name":"大修館書店","short":"大修館"},"gakken":{"name":"Gakken","short":"学研"}},"subjects":{"japanese":{"name":"国語","icon":"📕","parts":{"language":"国語","handwriting":"書写"}},"social":{"name":"社会","icon":"🌍","parts":{"geography":"地理","history":"歴史","civics":"公民","atlas":"地図"}},"math":{"name":"数学","icon":"📘","parts":{"main":"数学"}},"science":{"name":"理科","icon":"🔬","parts":{"main":"理科"}},"music":{"name":"音楽","icon":"🎵","parts":{"general":"一般","instrumental":"器楽合奏"}},"art":{"name":"美術","icon":"🎨","parts":{"main":"美術"}},"pe":{"name":"保健体育","icon":"🏃","parts":{"main":"保健体育"}},"tech-home":{"name":"技術・家庭","icon":"🛠️","parts":{"technology":"技術","home":"家庭"}},"english":{"name":"英語","icon":"🔤","parts":{"main":"英語"}}},"districts":[{"id":"kamo","name":"賀茂","municipalities":["下田市","東伊豆町","河津町","南伊豆町","松崎町","西伊豆町"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},{"id":"tagata","name":"田方","municipalities":["三島市","熱海市","伊東市","伊豆市","伊豆の国市","函南町"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"nihon-bunkyo","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-shuppan","instrumental":"kyoiku-shuppan"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"kairyudo"}}},{"id":"sunto-numazu","name":"駿東沼津","municipalities":["沼津市","裾野市","御殿場市","清水町","長泉町","小山町"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"tokyo-shoseki"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},{"id":"fuji","name":"富士","municipalities":["富士市","富士宮市"],"adoptions":{"japanese":{"language":"kyoiku-shuppan","handwriting":"kyoiku-shuppan"},"social":{"geography":"kyoiku-shuppan","history":"kyoiku-shuppan","civics":"kyoiku-shuppan","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},{"id":"shizuoka","name":"静岡","municipalities":["静岡市"],"adoptions":{"japanese":{"language":"sanseido","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"keirinkan"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"mitsumura"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},{"id":"shida","name":"志太","municipalities":["焼津市","藤枝市","島田市"],"adoptions":{"japanese":{"language":"kyoiku-shuppan","handwriting":"kyoiku-shuppan"},"social":{"geography":"kyoiku-shuppan","history":"kyoiku-shuppan","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"sanseido"}}},{"id":"haibara","name":"榛原","municipalities":["牧之原市","吉田町","川根本町"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"kyoiku-shuppan"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"keirinkan"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"kairyudo"},"pe":{"main":"taishukan"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"tokyo-shoseki"}}},{"id":"ogasa","name":"小笠","municipalities":["掛川市","御前崎市","菊川市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"kyoiku-shuppan"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"gakken"},"tech-home":{"technology":"tokyo-shoseki","home":"tokyo-shoseki"},"english":{"main":"mitsumura"}}},{"id":"iwata-shuchi","name":"磐田周智","municipalities":["森町","袋井市","磐田市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"tokyo-shoseki","history":"tokyo-shoseki","civics":"tokyo-shoseki","atlas":"teikoku"},"math":{"main":"gakko-tosho"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"taishukan"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"kairyudo"}}},{"id":"hamamatsu","name":"浜松","municipalities":["浜松市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"kyoiku-shuppan"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"nihon-bunkyo"},"pe":{"main":"gakken"},"tech-home":{"technology":"kairyudo","home":"kairyudo"},"english":{"main":"mitsumura"}}},{"id":"kosai","name":"湖西","municipalities":["湖西市"],"adoptions":{"japanese":{"language":"mitsumura","handwriting":"mitsumura"},"social":{"geography":"teikoku","history":"teikoku","civics":"teikoku","atlas":"teikoku"},"math":{"main":"kyoiku-shuppan"},"science":{"main":"tokyo-shoseki"},"music":{"general":"kyoiku-geijutsusha","instrumental":"kyoiku-geijutsusha"},"art":{"main":"mitsumura"},"pe":{"main":"tokyo-shoseki"},"tech-home":{"technology":"tokyo-shoseki","home":"tokyo-shoseki"},"english":{"main":"mitsumura"}}}]};
 const views=[...document.querySelectorAll('.view')];
 let cameraStream=null;
 let facingMode='environment';
@@ -24,12 +24,14 @@ function handleAction(action){
  else if(action==='stats'){openStats();}
  else if(action==='manage'){openManage();}
  else if(action==='backup'){openBackup();}
+ else if(action==='textbooks'){openTextbookSettings();}
  else alert('この機能は今後追加します。');
 }
 
 async function init(){
- state.textbookData=window.JAPANESE_TEXTBOOK_DATA||SHIZUOKA_TEXTBOOK_FALLBACK;
- initJapaneseTextbookSelectors();
+ state.textbookData=window.TEXTBOOK_DATA||window.JAPANESE_TEXTBOOK_DATA||SHIZUOKA_TEXTBOOK_FALLBACK;
+ migrateTextbookPreference();
+ initSchoolTextbookSettings();
  try{
    // index.html を直接開いた場合でも動くよう、同梱JSデータを優先する。
    if(window.CURRICULUM_DATA && window.QUESTION_DATA){
@@ -52,37 +54,62 @@ async function init(){
  }
  document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;
 }
-function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();initJapaneseTextbookSelectors();renderJapaneseTextbookPanel();renderUnits();updateSummary();}
+function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();renderSubjectTextbookPanel();renderUnits();updateSummary();}
 function renderGrades(){const el=document.getElementById('gradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.grade=g;state.units.clear();renderQuiz()};el.append(b)})}
 function renderSubjects(){const el=document.getElementById('subjectChoices');el.innerHTML='';state.curriculum.subjects.forEach(s=>{const b=document.createElement('button');b.className='subject-btn'+(state.subject===s.id?' selected':'');b.innerHTML=`<span>${s.icon}</span><strong>${s.name}</strong>`;b.onclick=()=>{state.subject=s.id;state.units.clear();renderQuiz()};el.append(b)})}
-function loadJapaneseTextbookPreference(){
- try{return JSON.parse(localStorage.getItem('japaneseTextbookPreference')||'{}')||{}}catch{return{}}
+function loadSchoolTextbookPreference(){
+ try{return JSON.parse(localStorage.getItem('schoolTextbookPreference')||'{}')||{}}catch{return{}}
 }
-function saveJapaneseTextbookPreference(pref){localStorage.setItem('japaneseTextbookPreference',JSON.stringify(pref));}
-function currentJapanesePublisher(){return loadJapaneseTextbookPreference().publisher||'';}
+function saveSchoolTextbookPreference(pref){localStorage.setItem('schoolTextbookPreference',JSON.stringify(pref));}
+function migrateTextbookPreference(){
+ if(localStorage.getItem('schoolTextbookPreference'))return;
+ try{const old=JSON.parse(localStorage.getItem('japaneseTextbookPreference')||'{}');if(old?.district)saveSchoolTextbookPreference({district:old.district});}catch{}
+}
+function selectedTextbookDistrict(){const id=loadSchoolTextbookPreference().district||'';return state.textbookData?.districts?.find(d=>d.id===id)||null;}
 function publisherLabel(id){return state.textbookData?.publishers?.[id]?.name||id||'';}
-function initJapaneseTextbookSelectors(){
- const data=state.textbookData, district=document.getElementById('japaneseDistrict'), publisher=document.getElementById('japanesePublisher');
- if(!data||!district||!publisher)return;
- district.innerHTML='<option value="">地区を選択</option>'+data.districts.map(d=>`<option value="${d.id}">${d.name}地区</option>`).join('');
- publisher.innerHTML='<option value="">教科書会社を選択</option>'+Object.entries(data.publishers).map(([id,p])=>`<option value="${id}">${p.name}</option>`).join('');
- const pref=loadJapaneseTextbookPreference();district.value=pref.district||'';publisher.value=pref.publisher||'';
- district.onchange=()=>{
-  const d=data.districts.find(x=>x.id===district.value);const next={...loadJapaneseTextbookPreference(),district:district.value||'',publisher:d?.publisher||publisher.value||''};
-  if(d)publisher.value=d.publisher;saveJapaneseTextbookPreference(next);renderJapaneseTextbookPanel();renderUnits();updateSummary();
- };
- publisher.onchange=()=>{const pref2={...loadJapaneseTextbookPreference(),publisher:publisher.value||''};saveJapaneseTextbookPreference(pref2);renderJapaneseTextbookPanel();renderUnits();updateSummary();};
+function subjectTextbookPart(q){
+ if(q?.textbookComponent)return q.textbookComponent;
+ if(q?.subject==='social'&&['geography','history','civics'].includes(q.field))return q.field;
+ if(q?.subject==='tech-home'&&['technology','home'].includes(q.field))return q.field;
+ if(q?.subject==='japanese')return 'language';
+ if(q?.subject==='music')return 'general';
+ return 'main';
 }
-function renderJapaneseTextbookPanel(){
- const card=document.getElementById('japaneseTextbookCard');if(!card)return;const show=state.subject==='japanese';card.hidden=!show;if(!show)return;
- const data=state.textbookData;if(!data)return;const pref=loadJapaneseTextbookPreference();const district=document.getElementById('japaneseDistrict'),publisher=document.getElementById('japanesePublisher');
- if(district&&district.value!==String(pref.district||''))district.value=pref.district||'';if(publisher&&publisher.value!==String(pref.publisher||''))publisher.value=pref.publisher||'';
- const d=data.districts.find(x=>x.id===(district?.value||pref.district));const mun=document.getElementById('japaneseDistrictMunicipalities');
- if(mun)mun.textContent=d?`対象市町：${d.municipalities.join('・')}`:'採択地区が分からない場合は、教科書会社だけ手動で選べます。';
- const suggestion=document.getElementById('japanesePublisherSuggestion');if(suggestion){if(d){suggestion.hidden=false;suggestion.innerHTML=`<strong>自動候補：${publisherLabel(d.publisher)}</strong><span>令和7〜10年度の静岡県採択結果</span>`;}else suggestion.hidden=true;}
+function subjectAdoption(subjectId){return selectedTextbookDistrict()?.adoptions?.[subjectId]||null;}
+function matchesSelectedTextbook(q){
+ const tagged=q?.textbookPublisher||q?.publisher||'common';
+ if(tagged==='common'||!tagged)return true;
+ const adoption=subjectAdoption(q?.subject);if(!adoption)return true;
+ const selected=adoption[subjectTextbookPart(q)];return !selected||tagged===selected;
 }
-function matchesJapaneseTextbook(q){
- if(q?.subject!=='japanese')return true;const tagged=q.textbookPublisher||q.publisher||'common';if(tagged==='common'||!tagged)return true;const selected=currentJapanesePublisher();return !selected||tagged===selected;
+function textbookSummaryItems(subjectId){
+ const data=state.textbookData, adoption=subjectAdoption(subjectId), subject=data?.subjects?.[subjectId];if(!adoption||!subject)return[];
+ return Object.entries(adoption).map(([part,publisher])=>({part:subject.parts?.[part]||part,publisher,publisherName:publisherLabel(publisher)}));
+}
+function renderSubjectTextbookPanel(){
+ const card=document.getElementById('subjectTextbookCard');if(!card)return;
+ const district=selectedTextbookDistrict(), items=state.subject?textbookSummaryItems(state.subject):[];
+ card.hidden=!state.subject;if(!state.subject)return;
+ const subject=state.textbookData?.subjects?.[state.subject];
+ document.getElementById('subjectTextbookTitle').textContent=`${subject?.name||'この教科'}の教科書`;
+ const lead=document.getElementById('subjectTextbookLead');
+ lead.textContent=district?`${district.name}地区の令和7〜10年度採択結果`:'採択地区を設定すると、この教科の教科書会社を自動表示します。';
+ const list=document.getElementById('subjectTextbookList');
+ list.innerHTML=items.length?items.map(x=>`<span class="textbook-chip"><small>${escapeHtml(x.part)}</small><strong>${escapeHtml(x.publisherName)}</strong></span>`).join(''):'<span class="help">教科書設定がまだありません。</span>';
+}
+function initSchoolTextbookSettings(){
+ const sel=document.getElementById('schoolDistrict');if(!sel||!state.textbookData)return;
+ sel.innerHTML='<option value="">採択地区を選択</option>'+state.textbookData.districts.map(d=>`<option value="${d.id}">${d.name}地区</option>`).join('');
+ sel.value=loadSchoolTextbookPreference().district||'';
+ sel.onchange=()=>{saveSchoolTextbookPreference({district:sel.value||''});renderTextbookSettings();renderSubjectTextbookPanel();renderUnits();updateSummary();};
+}
+function openTextbookSettings(){showView('textbookView');initSchoolTextbookSettings();renderTextbookSettings();}
+function renderTextbookSettings(){
+ const d=selectedTextbookDistrict(), mun=document.getElementById('schoolDistrictMunicipalities'), grid=document.getElementById('allTextbookGrid'), status=document.getElementById('textbookSettingStatus');
+ if(mun)mun.textContent=d?`対象市町：${d.municipalities.join('・')}`:'静岡県の採択地区を選んでください。';
+ if(status)status.textContent=d?`${d.name}地区の教科書を自動設定しました。`:'地区を選ぶと9教科をまとめて設定します。';
+ if(!grid)return;if(!d){grid.innerHTML='<p class="help">地区を選択すると、9教科の教科書会社がここに表示されます。</p>';return;}
+ grid.innerHTML=Object.entries(state.textbookData.subjects).map(([sid,sub])=>{const adoption=d.adoptions?.[sid]||{};const parts=Object.entries(adoption).map(([part,pub])=>`<div class="textbook-part"><span>${escapeHtml(sub.parts?.[part]||part)}</span><strong>${escapeHtml(publisherLabel(pub))}</strong></div>`).join('');return `<article class="textbook-subject-card"><h3><span>${sub.icon||''}</span>${escapeHtml(sub.name)}</h3>${parts}</article>`}).join('');
 }
 function unitKey(subjectId,fieldId,unitId){return `${subjectId}/${fieldId}/${unitId}`}
 function renderUnits(){
@@ -105,7 +132,7 @@ function renderUnits(){
    head.append(bulk);group.append(head);
    visibleUnits.forEach(u=>{
      const key=unitKey(subject.id,f.id,u.id);
-     const available=state.questionBank.filter(x=>x.subject===subject.id&&x.unit===u.id&&x.grades.includes(state.grade)&&matchesJapaneseTextbook(x)).length;
+     const available=state.questionBank.filter(x=>x.subject===subject.id&&x.unit===u.id&&x.grades.includes(state.grade)&&matchesSelectedTextbook(x)).length;
      const row=document.createElement('label');row.className='unit-item';
      row.innerHTML=`<input type="checkbox" ${state.units.has(key)?'checked':''}><span><strong>${u.name}</strong><small>${(u.topics||[]).join('・')}</small><em>${available?`${available}問収録`:'問題追加予定'}</em></span>`;
      row.querySelector('input').onchange=e=>{e.target.checked?state.units.add(key):state.units.delete(key);renderUnits();updateSummary()};group.append(row);
@@ -118,7 +145,7 @@ function selectedUnitIds(){return [...state.units].map(k=>k.split('/')[2]);}
 function availableQuestions(){
  if(!state.subject)return[];
  const ids=new Set(selectedUnitIds());
- return state.questionBank.filter(q=>q.subject===state.subject&&ids.has(q.unit)&&q.grades.includes(state.grade)&&matchesJapaneseTextbook(q));
+ return state.questionBank.filter(q=>q.subject===state.subject&&ids.has(q.unit)&&q.grades.includes(state.grade)&&matchesSelectedTextbook(q));
 }
 
 function questionDifficulty(q){const d=Number(q?.difficulty)||1;return Math.max(1,Math.min(3,d));}
@@ -158,7 +185,7 @@ function smartQuestionOrder(pool){
 function pickSmartQuestions(pool,count){const ordered=smartQuestionOrder(pool);return count==='all'?ordered:ordered.slice(0,Math.min(Number(count)||0,ordered.length));}
 function updateSummary(){
  const s=state.curriculum?.subjects.find(x=>x.id===state.subject);const n=availableQuestions().length;
- const book=state.subject==='japanese'&&currentJapanesePublisher()?`・${publisherLabel(currentJapanesePublisher())}`:'';document.getElementById('selectionSummary').textContent=s?`中${state.grade}・${s.name}${book}・${state.units.size}単元を選択 / 現在${n}問出題可能`:'学年・教科・単元を選んでください。';
+ const district=selectedTextbookDistrict();const book=district?`・${district.name}地区`:'';document.getElementById('selectionSummary').textContent=s?`中${state.grade}・${s.name}${book}・${state.units.size}単元を選択 / 現在${n}問出題可能`:'学年・教科・単元を選んでください。';
 }
 document.getElementById('unitSearch').addEventListener('input',renderUnits);
 document.getElementById('countChoices').addEventListener('click',e=>{const b=e.target.closest('[data-count]');if(!b)return;document.querySelectorAll('[data-count]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');state.count=b.dataset.count==='all'?'all':Number(b.dataset.count);updateSummary()});
@@ -351,7 +378,7 @@ function renderExamRanges(){
     const keys=fieldUnits.map(u=>unitKey(sub.id,field.id,u.id));const allFieldSelected=keys.every(k=>state.exam.units.has(k));
     const bulk=document.createElement('button');bulk.type='button';bulk.className='unit-bulk-btn';bulk.textContent=allFieldSelected?'分野をすべて解除':'分野をすべて選択';
     bulk.onclick=e=>{e.preventDefault();e.stopPropagation();if(allFieldSelected)keys.forEach(k=>state.exam.units.delete(k));else keys.forEach(k=>state.exam.units.add(k));renderExamRanges();updateExamEditSummary();};fieldHead.append(bulk);fieldWrap.append(fieldHead);
-    fieldUnits.forEach(unit=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)&&matchesJapaneseTextbook(q)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);renderExamRanges();updateExamEditSummary()};fieldWrap.append(row)});
+    fieldUnits.forEach(unit=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)&&matchesSelectedTextbook(q)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);renderExamRanges();updateExamEditSummary()};fieldWrap.append(row)});
     grid.append(fieldWrap);
   });
   el.append(details);
@@ -843,7 +870,7 @@ if('serviceWorker' in navigator && location.protocol === 'https:'){
 // Data backup / transfer (v0.15)
 const BACKUP_KEYS=[
  'lastQuizSelection','missedQuestions','studyHistory','examStudyLogs','examPlans',
- 'customQuestions','lastStudyDate','streakDays','paperDrafts'
+ 'customQuestions','lastStudyDate','streakDays','paperDrafts','schoolTextbookPreference'
 ];
 let pendingBackupData=null;
 function safeJsonParse(value,fallback){try{return JSON.parse(value)}catch{return fallback}}
@@ -864,7 +891,7 @@ function backupSummaryFromData(data){
 }
 function openBackup(){showView('backupView');pendingBackupData=null;const p=document.getElementById('backupPreview');if(p)p.hidden=true;const a=document.getElementById('backupImportActions');if(a)a.hidden=true;const f=document.getElementById('backupFile');if(f)f.value='';document.getElementById('importBackupStatus').textContent='';}
 function downloadBackup(){
- const payload={app:'30min-study',schemaVersion:1,appVersion:'0.15',exportedAt:new Date().toISOString(),data:backupDataSnapshot()};
+ const payload={app:'30min-study',schemaVersion:1,appVersion:'0.18',exportedAt:new Date().toISOString(),data:backupDataSnapshot()};
  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
  const url=URL.createObjectURL(blob);const a=document.createElement('a');const d=new Date();const ymd=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
  a.href=url;a.download=`study-backup-${ymd}.json`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
@@ -892,10 +919,11 @@ function mergeBackupData(data){
  };
  Object.entries(arrayKeys).forEach(([key,keyFn])=>{const incoming=safeJsonParse(data[key]||'[]',[]);if(!Array.isArray(incoming)||!incoming.length)return;const current=safeJsonParse(localStorage.getItem(key)||'[]',[]);localStorage.setItem(key,JSON.stringify(uniqueMerge(current,incoming,keyFn).slice(key==='studyHistory'||key==='examStudyLogs'?-300:0)));});
  if(!localStorage.getItem('lastQuizSelection')&&data.lastQuizSelection)localStorage.setItem('lastQuizSelection',data.lastQuizSelection);
+ if(!localStorage.getItem('schoolTextbookPreference')&&data.schoolTextbookPreference)localStorage.setItem('schoolTextbookPreference',data.schoolTextbookPreference);
  const curDate=localStorage.getItem('lastStudyDate')||'';const inDate=data.lastStudyDate||'';if(inDate>curDate){localStorage.setItem('lastStudyDate',inDate);if(data.streakDays)localStorage.setItem('streakDays',data.streakDays)}
 }
 function replaceBackupData(data){BACKUP_KEYS.forEach(k=>localStorage.removeItem(k));BACKUP_KEYS.forEach(k=>{if(typeof data[k]==='string')localStorage.setItem(k,data[k])});}
-function refreshAfterBackup(){refreshQuestionBank();renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;}
+function refreshAfterBackup(){refreshQuestionBank();migrateTextbookPreference();initSchoolTextbookSettings();renderTextbookSettings();renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;}
 document.getElementById('exportBackup')?.addEventListener('click',downloadBackup);
 document.getElementById('backupFile')?.addEventListener('change',async e=>{
  const file=e.target.files?.[0];if(!file)return;try{if(file.size>5*1024*1024)throw new Error('バックアップファイルが大きすぎます（上限5MB）。');const text=await file.text();const obj=validateBackup(JSON.parse(text));pendingBackupData=obj;renderBackupPreview(obj);document.getElementById('importBackupStatus').textContent='内容を確認して、追加または置き換えを選んでください。';}catch(err){pendingBackupData=null;document.getElementById('backupPreview').hidden=true;document.getElementById('backupImportActions').hidden=true;document.getElementById('importBackupStatus').textContent=`読み込めませんでした：${err.message}`;}

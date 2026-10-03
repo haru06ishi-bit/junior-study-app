@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.17.1" />
+  <link rel="stylesheet" href="style.css?v=0.18" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -61,7 +61,28 @@
         <button class="mode-card" data-action="import"><span>📷</span><strong>紙から登録</strong><small>撮影・画像・PDFに対応</small></button>
         <button class="mode-card" data-action="manage"><span>🗂️</span><strong>登録問題を管理</strong><small>追加した問題を編集・削除</small></button>
         <button class="mode-card" data-action="backup"><span>💾</span><strong>データを引き継ぐ</strong><small>バックアップ・復元</small></button>
+        <button class="mode-card" data-action="textbooks"><span>🏫</span><strong>教科書設定</strong><small>採択地区から9教科を自動設定</small></button>
       </div>
+    </section>
+
+    <section id="textbookView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">学校設定</p><h2>教科書を自動設定</h2></div>
+      </div>
+      <div class="step-card textbook-card">
+        <div class="textbook-head">
+          <div><h3>静岡県の採択地区</h3><p class="help">地区を1つ選ぶだけで、9教科の教科書会社をまとめて設定します。</p></div>
+          <span class="textbook-badge">令和7〜10年度</span>
+        </div>
+        <label><strong>採択地区</strong>
+          <select id="schoolDistrict"><option value="">採択地区を選択</option></select>
+        </label>
+        <p id="schoolDistrictMunicipalities" class="help textbook-municipalities">静岡県の採択地区を選んでください。</p>
+        <p class="help">静岡県教育委員会の市町立中学校の採択結果を使用しています。</p>
+      </div>
+      <p id="textbookSettingStatus" class="summary">地区を選ぶと9教科をまとめて設定します。</p>
+      <div id="allTextbookGrid" class="all-textbook-grid"></div>
     </section>
 
     <section id="quizView" class="view">
@@ -78,23 +99,15 @@
         <h3>2. 教科</h3>
         <div id="subjectChoices" class="subject-grid"></div>
       </div>
-      <div id="japaneseTextbookCard" class="step-card textbook-card" hidden>
+      <div id="subjectTextbookCard" class="step-card textbook-card" hidden>
         <div class="textbook-head">
           <div>
-            <h3>国語の教科書</h3>
-            <p class="help">静岡県では採択地区によって国語の教科書会社が異なります。</p>
+            <h3 id="subjectTextbookTitle">この教科の教科書</h3>
+            <p id="subjectTextbookLead" class="help">採択地区を設定すると教科書会社を自動表示します。</p>
           </div>
-          <span class="textbook-badge">国語のみ</span>
+          <button class="unit-bulk-btn" type="button" data-action="textbooks">設定変更</button>
         </div>
-        <label><strong>採択地区</strong>
-          <select id="japaneseDistrict"><option value="">地区を選択</option></select>
-        </label>
-        <p id="japaneseDistrictMunicipalities" class="help textbook-municipalities"></p>
-        <div id="japanesePublisherSuggestion" class="textbook-suggestion" hidden></div>
-        <label><strong>使用する教科書会社</strong>
-          <select id="japanesePublisher"><option value="">教科書会社を選択</option></select>
-        </label>
-        <p class="help">地区を選ぶと自動候補を設定します。学校で別の教科書を使っている場合は手動で変更できます。</p>
+        <div id="subjectTextbookList" class="textbook-inline-list"></div>
       </div>
       <div class="step-card">
         <h3>3. 分野・単元</h3>
@@ -396,6 +409,6 @@
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
   <script src="data/textbooks.js"></script>
-  <script src="app.js?v=0.17.1"></script>
+  <script src="app.js?v=0.18"></script>
 </body>
 </html>

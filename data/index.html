@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.20" />
+  <link rel="stylesheet" href="style.css?v=0.20.1" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -84,9 +84,9 @@
       <div class="textbook-setting-toolbar"><p id="textbookSettingStatus" class="summary">地区を選ぶと9教科をまとめて設定します。</p><button id="resetTextbookOverrides" class="secondary" type="button" hidden>手動変更をすべて解除</button></div>
       <div id="allTextbookGrid" class="all-textbook-grid"></div>
 
-      <div class="step-card textbook-range-manager">
+      <div id="textbookRangeManager" class="step-card textbook-range-manager">
         <div class="textbook-head">
-          <div><h3>国語・英語の教材 / Unitプリセット</h3><p class="help">教科書に載っている教材名やUnit名を登録し、小テストの範囲をワンタップで選べるようにします。</p></div>
+          <div><h3>教材・作品を登録</h3><p class="help">国語の教材・作品名や英語のUnit名を登録し、小テストの範囲をワンタップで選べるようにします。</p></div>
           <span class="textbook-badge">端末内保存</span>
         </div>
         <div class="textbook-range-form">
@@ -434,6 +434,6 @@
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
   <script src="data/textbooks.js"></script>
-  <script src="app.js?v=0.20"></script>
+  <script src="app.js?v=0.20.1"></script>
 </body>
 </html>

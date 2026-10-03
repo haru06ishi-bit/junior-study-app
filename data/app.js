@@ -124,21 +124,28 @@ function initSchoolTextbookSettings(){
 function openTextbookSettings(){showView('textbookView');initSchoolTextbookSettings();renderTextbookSettings();renderTextbookRangeManager();}
 function renderTextbookSettings(){
  const d=selectedTextbookDistrict(), mun=document.getElementById('schoolDistrictMunicipalities'), grid=document.getElementById('allTextbookGrid'), status=document.getElementById('textbookSettingStatus');
+ const manager=document.getElementById('textbookRangeManager');
  const pref=loadSchoolTextbookPreference();const manualCount=Object.values(pref.overrides||{}).reduce((n,x)=>n+Object.keys(x||{}).length,0);
  if(mun)mun.textContent=d?`対象市町：${d.municipalities.join('・')}`:'静岡県の採択地区を選んでください。手動設定だけでも利用できます。';
  if(status)status.textContent=d?`${d.name}地区を基準に設定中${manualCount?`・手動変更 ${manualCount}件`:''}`:(manualCount?`地区未設定・手動変更 ${manualCount}件`:'地区を選ぶと9教科をまとめて設定します。');
  const reset=document.getElementById('resetTextbookOverrides');if(reset){reset.hidden=!manualCount;reset.onclick=()=>{if(confirm('手動で変更した教科書をすべて地区の自動設定へ戻しますか？'))clearAllTextbookOverrides();};}
  if(!grid)return;
+ // 前回の描画で教材登録パネルがグリッド内へ移動している場合、innerHTML更新前に退避する。
+ if(manager&&grid.contains(manager))grid.parentNode.insertBefore(manager,grid.nextSibling);
  grid.innerHTML=Object.entries(state.textbookData.subjects).map(([sid,sub])=>{
   const base=d?.adoptions?.[sid]||{};const effective=subjectAdoption(sid)||{};const partIds=Object.keys(sub.parts||{});
-  const parts=partIds.map(part=>{const auto=base[part]||'';const current=effective[part]||'';const manual=isManualTextbook(sid,part);const pubs=availablePublishersForPart(sid,part);
+  const parts=partIds.map(part=>{
+   const auto=base[part]||'';const current=effective[part]||'';const manual=isManualTextbook(sid,part);const pubs=availablePublishersForPart(sid,part);
    const autoLabel=auto?`自動（${publisherLabel(auto)}）`:'自動（未設定）';
    const opts=[`<option value="">${escapeHtml(autoLabel)}</option>`].concat(pubs.map(pub=>`<option value="${escapeAttr(pub)}" ${manual&&current===pub?'selected':''}>${escapeHtml(publisherLabel(pub))}</option>`)).join('');
    return `<div class="textbook-part textbook-part-edit"><span>${escapeHtml(sub.parts?.[part]||part)}</span><div><select data-textbook-subject="${sid}" data-textbook-part="${part}">${opts}</select>${manual?'<small class="manual-note">手動設定</small>':''}</div></div>`;
   }).join('');
-  return `<article class="textbook-subject-card"><h3><span>${sub.icon||''}</span>${escapeHtml(sub.name)}</h3>${parts}</article>`;
+  const card=`<article class="textbook-subject-card" data-textbook-card="${sid}"><h3><span>${sub.icon||''}</span>${escapeHtml(sub.name)}</h3>${parts}</article>`;
+  return sid==='japanese'?`${card}<div class="textbook-range-mount" data-textbook-range-mount></div>`:card;
  }).join('');
  grid.querySelectorAll('[data-textbook-subject]').forEach(sel=>{sel.onchange=()=>setTextbookOverride(sel.dataset.textbookSubject,sel.dataset.textbookPart,sel.value);});
+ const mount=grid.querySelector('[data-textbook-range-mount]');
+ if(manager&&mount){mount.replaceWith(manager);manager.classList.add('textbook-range-inline');}
 }
 
 function loadTextbookStudyRanges(){try{const x=JSON.parse(localStorage.getItem('textbookStudyRanges')||'[]');return Array.isArray(x)?x:[]}catch{return[]}}

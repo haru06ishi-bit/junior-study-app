@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="中学生向けの小テスト・定期テスト対策学習アプリ" />
+  <meta name="theme-color" content="#1d2939" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="30分スタディ" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  <title>30分スタディ</title>
+  <link rel="stylesheet" href="style.css?v=0.20" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">30分スタディ</p>
+      <h1>今日も少しだけ進めよう</h1>
+    </div>
+    <div class="streak" aria-label="連続学習日数">🔥 <span id="streakDays">0</span>日</div>
+  </header>
+
+  <main>
+    <section id="homeView" class="view active">
+      <button class="hero-card" data-action="daily">
+        <span class="hero-icon">⏱️</span>
+        <span><strong>今日の30分</strong><small id="dailyHeroSubtitle">苦手・未学習を優先して20問</small></span>
+      </button>
+
+      <section id="dailyPlanCard" class="daily-plan-card" aria-live="polite">
+        <div class="daily-plan-head">
+          <div><p class="eyebrow">今日のメニュー</p><h2 id="dailyPlanTitle">学習データを準備中...</h2></div>
+          <span id="dailyPlanBadge" class="daily-plan-badge">20問</span>
+        </div>
+        <p id="dailyPlanLead" class="help">定期テスト・苦手・学習履歴から自動で組みます。</p>
+        <div id="dailyPlanStats" class="daily-stat-grid"></div>
+        <div id="dailySubjectMix" class="daily-subject-mix"></div>
+        <div class="progress-track"><span id="todayProgressBar" style="width:0%"></span></div>
+        <p id="todayProgressText" class="exam-progress">今日 0問</p>
+      </section>
+
+      <section id="installCard" class="install-card" hidden>
+        <div>
+          <p class="eyebrow">スマホですぐ開ける</p>
+          <h2>ホーム画面に追加</h2>
+          <p class="help">アプリのように1タップで起動できます。通知機能は使用しません。</p>
+        </div>
+        <button id="installApp" class="primary" type="button">ホーム画面に追加</button>
+      </section>
+
+      <div class="mode-grid">
+        <button class="mode-card" data-action="quiz"><span>📝</span><strong>小テスト対策</strong><small>範囲を細かく選ぶ</small></button>
+        <button class="mode-card" data-action="exam"><span>📚</span><strong>定期テスト対策</strong><small>複数教科をまとめる</small></button>
+        <button class="mode-card" data-action="review"><span>🔁</span><strong>苦手を復習</strong><small>間違えた問題を優先</small></button>
+        <button class="mode-card" data-action="stats"><span>📊</span><strong>学習記録</strong><small>成績と苦手を確認</small></button>
+        <button class="mode-card" data-action="import"><span>📷</span><strong>紙から登録</strong><small>撮影・画像・PDFに対応</small></button>
+        <button class="mode-card" data-action="manage"><span>🗂️</span><strong>登録問題を管理</strong><small>追加した問題を編集・削除</small></button>
+        <button class="mode-card" data-action="backup"><span>💾</span><strong>データを引き継ぐ</strong><small>バックアップ・復元</small></button>
+        <button class="mode-card" data-action="textbooks"><span>🏫</span><strong>教科書設定</strong><small>採択地区から9教科を自動設定</small></button>
+      </div>
+    </section>
+
+    <section id="textbookView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">学校設定</p><h2>教科書を自動設定</h2></div>
+      </div>
+      <div class="step-card textbook-card">
+        <div class="textbook-head">
+          <div><h3>静岡県の採択地区</h3><p class="help">地区を1つ選ぶだけで、9教科の教科書会社をまとめて設定します。</p></div>
+          <span class="textbook-badge">令和7〜10年度</span>
+        </div>
+        <label><strong>採択地区</strong>
+          <select id="schoolDistrict"><option value="">採択地区を選択</option></select>
+        </label>
+        <p id="schoolDistrictMunicipalities" class="help textbook-municipalities">静岡県の採択地区を選んでください。</p>
+        <p class="help">静岡県教育委員会の市町立中学校の採択結果を使用しています。</p>
+      </div>
+      <div class="textbook-setting-toolbar"><p id="textbookSettingStatus" class="summary">地区を選ぶと9教科をまとめて設定します。</p><button id="resetTextbookOverrides" class="secondary" type="button" hidden>手動変更をすべて解除</button></div>
+      <div id="allTextbookGrid" class="all-textbook-grid"></div>
+
+      <div class="step-card textbook-range-manager">
+        <div class="textbook-head">
+          <div><h3>国語・英語の教材 / Unitプリセット</h3><p class="help">教科書に載っている教材名やUnit名を登録し、小テストの範囲をワンタップで選べるようにします。</p></div>
+          <span class="textbook-badge">端末内保存</span>
+        </div>
+        <div class="textbook-range-form">
+          <label><strong>教科</strong><select id="rangeSubject"><option value="japanese">📕 国語</option><option value="english">🔤 英語</option></select></label>
+          <label><strong>学年</strong><select id="rangeGrade"><option value="1">中1</option><option value="2" selected>中2</option><option value="3">中3</option></select></label>
+          <label><strong>教材名 / Unit名</strong><input id="rangeTitle" type="text" placeholder="例：Unit 3 / 作品名"></label>
+          <label><strong>ページ（任意）</strong><input id="rangePages" type="text" placeholder="例：p.42〜57"></label>
+        </div>
+        <p id="rangePublisher" class="help"></p>
+        <div><strong>関連する単元</strong><p class="help">この教材を選んだときに一括でチェックする単元を選びます。</p><div id="rangeUnitChoices" class="range-unit-choices"></div></div>
+        <button id="saveTextbookRange" class="primary" type="button">教材 / Unitを登録</button>
+        <p id="rangeStatus" class="summary"></p>
+        <div id="textbookRangeList" class="textbook-range-list"></div>
+      </div>
+    </section>
+
+    <section id="quizView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">小テスト対策</p><h2>範囲を選ぶ</h2></div>
+      </div>
+
+      <div class="step-card">
+        <h3>1. 学年</h3>
+        <div id="gradeChoices" class="chip-row"></div>
+      </div>
+      <div class="step-card">
+        <h3>2. 教科</h3>
+        <div id="subjectChoices" class="subject-grid"></div>
+      </div>
+      <div id="subjectTextbookCard" class="step-card textbook-card" hidden>
+        <div class="textbook-head">
+          <div>
+            <h3 id="subjectTextbookTitle">この教科の教科書</h3>
+            <p id="subjectTextbookLead" class="help">採択地区を設定すると教科書会社を自動表示します。</p>
+          </div>
+          <button class="unit-bulk-btn" type="button" data-action="textbooks">設定変更</button>
+        </div>
+        <div id="subjectTextbookList" class="textbook-inline-list"></div>
+      </div>
+      <div id="textbookRangeQuickCard" class="step-card textbook-card" hidden>
+        <h3>教科書の教材 / Unitから選ぶ</h3>
+        <p class="help">登録済みの教材を押すと、関連する単元をまとめて選択します。</p>
+        <div id="textbookRangeQuickList" class="textbook-range-quick-list"></div>
+      </div>
+      <div class="step-card">
+        <h3>3. 分野・単元</h3>
+        <input id="unitSearch" class="search" type="search" placeholder="例：鎌倉、一次関数、植物" />
+        <div id="unitChoices" class="unit-list"></div>
+      </div>
+      <div class="step-card">
+        <h3>4. 問題数</h3>
+        <div class="chip-row" id="countChoices">
+          <button class="chip selected" data-count="5">5問</button>
+          <button class="chip" data-count="10">10問</button>
+          <button class="chip" data-count="20">20問</button>
+          <button class="chip" data-count="all">全部</button>
+        </div>
+      </div>
+      <button id="startQuiz" class="primary">この範囲でスタート</button>
+      <p id="selectionSummary" class="summary">学年・教科・単元を選んでください。</p>
+    </section>
+
+
+    <section id="examView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">定期テスト対策</p><h2>テスト予定</h2></div>
+      </div>
+      <div id="examPlanList" class="exam-plan-list"></div>
+      <button id="createExamPlan" class="primary" type="button">＋ 定期テストを登録</button>
+      <p class="help">テスト日と範囲を登録すると、その範囲から今日の学習問題を作ります。苦手問題は優先して出題します。</p>
+    </section>
+
+    <section id="examEditView" class="view">
+      <div class="section-head">
+        <button id="cancelExamEditTop" class="back" type="button" aria-label="定期テスト一覧へ戻る">←</button>
+        <div><p class="eyebrow">定期テスト対策</p><h2 id="examEditTitle">テストを登録</h2></div>
+      </div>
+      <div class="step-card">
+        <label><strong>テスト名</strong><input id="examName" type="text" placeholder="例：第2回定期テスト"></label>
+        <label><strong>テスト日</strong><input id="examDate" type="date"></label>
+      </div>
+      <div class="step-card">
+        <h3>学年</h3>
+        <div id="examGradeChoices" class="chip-row"></div>
+      </div>
+      <div class="step-card">
+        <div class="exam-range-head"><h3>出題範囲</h3><button id="clearExamUnits" class="secondary" type="button">選択を解除</button></div>
+        <p class="help">複数教科・複数単元をまとめて選択できます。</p>
+        <div id="examRangeChoices" class="exam-range-choices"></div>
+      </div>
+      <p id="examEditSummary" class="summary"></p>
+      <button id="saveExamPlan" class="primary" type="button">テスト予定を保存</button>
+      <button id="cancelExamEdit" class="secondary wide" type="button">キャンセル</button>
+    </section>
+
+    <section id="reviewView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">苦手を復習</p><h2>復習する範囲を絞る</h2></div>
+      </div>
+      <div class="step-card">
+        <h3>1. 学年</h3>
+        <div id="reviewGradeChoices" class="chip-row"></div>
+      </div>
+      <div class="step-card">
+        <h3>2. 教科</h3>
+        <div id="reviewSubjectChoices" class="subject-grid"></div>
+      </div>
+      <div class="step-card">
+        <h3>3. 分野・単元</h3>
+        <select id="reviewField"><option value="">すべての分野</option></select>
+        <div id="reviewUnitChoices" class="unit-list"></div>
+      </div>
+      <div class="step-card">
+        <h3>4. 問題数</h3>
+        <div id="reviewCountChoices" class="chip-row">
+          <button class="chip selected" data-review-count="5">5問</button>
+          <button class="chip" data-review-count="10">10問</button>
+          <button class="chip" data-review-count="all">全部</button>
+        </div>
+      </div>
+      <button id="startFilteredReview" class="primary" type="button">この範囲を復習</button>
+      <p id="reviewSummary" class="summary"></p>
+    </section>
+
+    <section id="playView" class="view">
+      <div class="quiz-topbar">
+        <button id="quitQuiz" class="back" aria-label="小テストを終了">✕</button>
+        <div><p id="quizSubject" class="eyebrow"></p><strong id="quizProgress"></strong></div>
+      </div>
+      <div class="question-card">
+        <p class="question-label">問題</p>
+        <h2 id="questionText"></h2>
+        <div id="answerArea" class="answer-list"></div>
+        <button id="dontKnow" class="dont-know" type="button">わからない</button>
+        <div id="feedback" class="feedback" hidden></div>
+        <button id="nextQuestion" class="primary" type="button" hidden>次の問題</button>
+      </div>
+    </section>
+
+    <section id="resultView" class="view">
+      <div class="result-card">
+        <div class="result-icon">🎉</div>
+        <p class="eyebrow">小テスト完了</p>
+        <h2 id="resultScore">0 / 0</h2>
+        <p id="resultRate" class="result-rate">正答率 0%</p>
+        <p class="help">間違えた問題は「苦手を復習」からもう一度解けます。</p>
+        <button id="retryQuiz" class="primary" type="button">もう一度挑戦</button>
+        <button id="backHomeResult" class="secondary wide" type="button">ホームへ戻る</button>
+      </div>
+    </section>
+
+    <section id="statsView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">学習記録</p><h2>成績ダッシュボード</h2></div>
+      </div>
+
+      <div id="statsSummary" class="stats-summary-grid"></div>
+
+      <div class="step-card">
+        <div class="stats-section-head"><h3>直近7日間</h3><span id="statsWeekTotal" class="stats-muted"></span></div>
+        <div id="weeklyStudyChart" class="weekly-study-chart"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>教科別の成績</h3>
+        <div id="subjectStats" class="subject-stats-list"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>苦手単元</h3>
+        <p class="help">現在「苦手を復習」に残っている問題を単元ごとに集計します。</p>
+        <div id="weakUnitStats" class="weak-unit-list"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>最近の学習</h3>
+        <div id="recentStudyHistory" class="recent-history-list"></div>
+      </div>
+      <p class="help stats-note">単元ごとの詳細な正答データはVer.0.14以降の回答から蓄積されます。データはこの端末のブラウザ内に保存されます。</p>
+    </section>
+
+    <section id="importView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">紙テスト登録</p><h2>紙の小テストを取り込む</h2></div>
+      </div>
+
+      <div id="runtimeNotice" class="notice">Cloudflare Pages（HTTPS）での利用を前提にしています。PDFのページ変換とOCRはブラウザ内で行い、選択した画像・PDFそのものを外部OCRサービスへアップロードしません。初回のみPDF/OCRライブラリと言語データを配信元から読み込みます。</div>
+      <div class="step-card runtime-check-card">
+        <div class="runtime-check-head"><h3>動作環境チェック</h3><button id="runEnvironmentCheck" class="secondary" type="button">再チェック</button></div>
+        <div id="environmentCheck" class="environment-check" aria-live="polite"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>1. 紙を取り込む</h3>
+        <div class="capture-grid">
+          <button id="openCamera" class="capture-card" type="button"><span>📷</span><strong>カメラで撮る</strong><small>スマホは背面カメラを優先</small></button>
+          <label class="capture-card" for="paperImage"><span>📄</span><strong>画像・PDFを選ぶ</strong><small>JPG / PNG / WEBP / PDF</small></label>
+        </div>
+        <div id="dropZone" class="drop-zone" tabindex="0" role="button" aria-label="画像またはPDFをここにドラッグ＆ドロップ">
+          <span class="drop-icon">⬇️</span>
+          <strong>ここに画像・PDFをドロップ</strong>
+          <small>PCではドラッグ＆ドロップでも追加できます</small>
+        </div>
+        <input id="paperImage" class="visually-hidden" type="file" accept="image/*,application/pdf,.pdf" multiple />
+        <div id="previewArea" class="preview-area" hidden>
+          <div id="fileSummary" class="file-summary"></div>
+          <div id="pagePreviewList" class="page-preview-list"></div>
+          <div class="preview-actions">
+            <button id="retakePhoto" class="secondary" type="button">カメラで撮り直す</button>
+            <button id="clearPhoto" class="secondary" type="button">取り込みを消す</button>
+          </div>
+          <p id="imageStatus" class="help"></p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <h3>2. 文字を読み取る</h3>
+        <button id="runOcr" class="primary" type="button">取り込んだページから文字を読み取る</button>
+        <p id="ocrStatus" class="help">画像・PDFがなくても、下の欄へ手入力できます。</p>
+        <progress id="ocrProgress" max="100" value="0" hidden></progress>
+        <textarea id="ocrText" rows="10" placeholder="OCR結果を確認し、誤字や文字抜けをここで修正してください。"></textarea>
+      </div>
+      <div class="step-card">
+        <h3>3. 問題だけを抽出して修正</h3>
+        <p class="help">タイトル・氏名欄・日付・注意書き・ページ番号などを除外し、問題番号から問題だけを抽出します。選択肢があれば選択問題、問題文から単語・短答／文章・記述も自動推定します。最後に必ず内容を確認してください。</p>
+        <button id="splitQuestions" class="secondary wide" type="button">問題だけを抽出して分割</button>
+        <div id="importQuestionEditor" class="import-question-editor"></div>
+        <button id="addImportQuestion" class="secondary wide" type="button">＋ 問題を手動追加</button>
+      </div>
+      <div class="step-card">
+        <h3>4. 登録先</h3>
+        <div class="chip-row" id="importGradeChoices"></div>
+        <select id="importSubject"><option value="">教科を選択</option></select>
+        <select id="importField"><option value="">分野を選択</option></select>
+        <select id="importUnit"><option value="">単元を選択</option></select>
+        <label><strong>教科書との関係</strong><select id="importTextbookScope"><option value="common">共通問題として登録</option><option value="current">現在設定中の教科書に限定</option></select></label>
+        <p id="importTextbookHint" class="help">教科書設定に応じて登録先を選べます。</p>
+      </div>
+      <button class="primary" id="saveQuestions">確認した問題を端末に登録</button>
+      <button class="secondary wide" id="saveDraft" type="button">編集途中を下書き保存</button>
+      <p id="draftStatus" class="summary"></p>
+    </section>
+
+
+    <section id="backupView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">データ管理</p><h2>バックアップ・引き継ぎ</h2></div>
+      </div>
+      <div class="notice">学習データは通常、この端末のブラウザ内だけに保存されています。スマホとPCの間で移すときは、バックアップファイルを書き出して読み込んでください。</div>
+      <div class="step-card">
+        <h3>1. バックアップを書き出す</h3>
+        <p class="help">学習履歴、苦手問題、定期テスト予定、紙から登録した問題、下書きなどを1つのJSONファイルに保存します。PDFや撮影画像そのものは含みません。</p>
+        <button id="exportBackup" class="primary" type="button">バックアップを保存</button>
+        <p id="exportBackupStatus" class="summary"></p>
+      </div>
+      <div class="step-card">
+        <h3>2. 別の端末で読み込む</h3>
+        <p class="help">このアプリが作成したバックアップ（.json）のみ読み込めます。まず内容を確認してから反映します。</p>
+        <label class="backup-file-label" for="backupFile"><span class="backup-file-icon">📂</span><span class="backup-file-copy"><strong>バックアップを選ぶ</strong><small>study-backup-*.json</small></span></label>
+        <input id="backupFile" class="visually-hidden" type="file" accept="application/json,.json" />
+        <div id="backupPreview" class="backup-preview" hidden></div>
+        <div id="backupImportActions" class="backup-actions" hidden>
+          <button id="mergeBackup" class="primary" type="button">現在のデータに追加</button>
+          <button id="replaceBackup" class="secondary wide" type="button">この端末のデータを置き換える</button>
+        </div>
+        <p id="importBackupStatus" class="summary"></p>
+      </div>
+      <div class="step-card warning-card">
+        <h3>安全について</h3>
+        <p class="help">バックアップには学習履歴や自分で登録した問題が含まれます。氏名や画像は通常含みませんが、紙テストの下書きへ個人情報を入力した場合はその文字も含まれる可能性があります。ファイルは自分で管理してください。</p>
+      </div>
+    </section>
+
+    <section id="manageView" class="view">
+      <div class="section-head">
+        <button class="back" data-back aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">登録問題</p><h2>追加した問題を管理</h2></div>
+      </div>
+      <div class="step-card">
+        <label for="manageSubject"><strong>教科で絞る</strong></label>
+        <select id="manageSubject"><option value="all">すべての教科</option></select>
+        <p id="manageSummary" class="summary"></p>
+      </div>
+      <div id="manageQuestionList" class="manage-question-list"></div>
+    </section>
+
+    <section id="manageEditView" class="view">
+      <div class="section-head">
+        <button id="cancelManageEditTop" class="back" type="button" aria-label="管理一覧へ戻る">←</button>
+        <div><p class="eyebrow">登録問題</p><h2>問題を編集</h2></div>
+      </div>
+      <div class="step-card">
+        <div id="manageEditForm"></div>
+        <button id="saveManagedQuestion" class="primary" type="button">変更を保存</button>
+        <button id="cancelManageEdit" class="secondary wide" type="button">キャンセル</button>
+        <p id="manageEditStatus" class="summary"></p>
+      </div>
+    </section>
+        <p id="dataVersion" class="data-version"></p>
+  </main>
+
+  <nav class="bottom-nav" aria-label="メインメニュー">
+    <button data-nav="homeView" class="active">🏠<span>ホーム</span></button>
+    <button data-action="quiz">📝<span>小テスト</span></button>
+    <button data-action="review">🔁<span>復習</span></button>
+    <button data-action="stats">📊<span>記録</span></button>
+    <button data-action="import">📷<span>紙登録</span></button>
+  </nav>
+
+  <div id="installModal" class="camera-modal" hidden>
+    <div class="install-modal-shell" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+      <div class="camera-topbar">
+        <div><p class="eyebrow">PWA</p><h2 id="installTitle">ホーム画面に追加</h2></div>
+        <button id="closeInstallModal" class="camera-close" type="button" aria-label="閉じる">✕</button>
+      </div>
+      <div id="installInstructions" class="install-instructions"></div>
+    </div>
+  </div>
+
+  <div id="cameraModal" class="camera-modal" hidden>
+    <div class="camera-shell" role="dialog" aria-modal="true" aria-labelledby="cameraTitle">
+      <div class="camera-topbar">
+        <div><p class="eyebrow">紙テスト撮影</p><h2 id="cameraTitle">紙全体が入るように撮影</h2></div>
+        <button id="closeCamera" class="camera-close" type="button" aria-label="カメラを閉じる">✕</button>
+      </div>
+      <div class="camera-frame">
+        <video id="cameraVideo" autoplay playsinline muted></video>
+        <div class="paper-guide" aria-hidden="true"></div>
+      </div>
+      <p id="cameraStatus" class="camera-help">明るい場所で、影が入らないように撮影してください。</p>
+      <div class="camera-actions">
+        <button id="switchCamera" class="secondary" type="button">🔄 カメラ切替</button>
+        <button id="takePhoto" class="shutter" type="button" aria-label="撮影する"><span></span></button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="captureCanvas" hidden></canvas>
+  <script src="data/curriculum.js"></script>
+  <script src="data/questions.js"></script>
+  <script src="data/textbooks.js"></script>
+  <script src="app.js?v=0.20"></script>
+</body>
+</html>

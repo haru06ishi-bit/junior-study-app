@@ -41,3 +41,7 @@ npx wrangler pages deploy . --project-name junior-study-app
 Cloudflare Dashboardの Pages project → Settings → Bindings から Workers AI binding を追加し、Variable nameを `AI` にしてください。設定後は再デプロイが必要です。
 
 AI bindingを設定しなくても、AI解説以外の機能は利用できます。
+
+
+## PWA確認
+デプロイ後、`https://study.mytools-lab.com/manifest.webmanifest` と `https://study.mytools-lab.com/sw.js` が開けることを確認してください。PWAはHTTPS上でのみService Workerを登録します。

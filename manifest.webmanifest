@@ -1,0 +1,19 @@
+{
+  "name": "30分スタディ",
+  "short_name": "30分スタディ",
+  "description": "中学生向けの小テスト・定期テスト対策学習アプリ",
+  "lang": "ja-JP",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f7fb",
+  "theme_color": "#1d2939",
+  "categories": ["education"],
+  "icons": [
+    {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"/icons/icon-maskable-192.png","sizes":"192x192","type":"image/png","purpose":"maskable"},
+    {"src":"/icons/icon-maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ]
+}

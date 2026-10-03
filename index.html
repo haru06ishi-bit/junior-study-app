@@ -4,9 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="description" content="中学生向けの小テスト・定期テスト対策学習アプリ" />
-  <meta name="theme-color" content="#f6f7fb" />
+  <meta name="theme-color" content="#1d2939" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="30分スタディ" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.12" />
+  <link rel="stylesheet" href="style.css?v=0.13" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -37,6 +42,15 @@
         <div id="dailySubjectMix" class="daily-subject-mix"></div>
         <div class="progress-track"><span id="todayProgressBar" style="width:0%"></span></div>
         <p id="todayProgressText" class="exam-progress">今日 0問</p>
+      </section>
+
+      <section id="installCard" class="install-card" hidden>
+        <div>
+          <p class="eyebrow">スマホですぐ開ける</p>
+          <h2>ホーム画面に追加</h2>
+          <p class="help">アプリのように1タップで起動できます。通知機能は使用しません。</p>
+        </div>
+        <button id="installApp" class="primary" type="button">ホーム画面に追加</button>
       </section>
 
       <div class="mode-grid">
@@ -268,6 +282,16 @@
     <button data-action="manage">🗂️<span>問題管理</span></button>
   </nav>
 
+  <div id="installModal" class="camera-modal" hidden>
+    <div class="install-modal-shell" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+      <div class="camera-topbar">
+        <div><p class="eyebrow">PWA</p><h2 id="installTitle">ホーム画面に追加</h2></div>
+        <button id="closeInstallModal" class="camera-close" type="button" aria-label="閉じる">✕</button>
+      </div>
+      <div id="installInstructions" class="install-instructions"></div>
+    </div>
+  </div>
+
   <div id="cameraModal" class="camera-modal" hidden>
     <div class="camera-shell" role="dialog" aria-modal="true" aria-labelledby="cameraTitle">
       <div class="camera-topbar">
@@ -289,6 +313,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.12"></script>
+  <script src="app.js?v=0.13"></script>
 </body>
 </html>

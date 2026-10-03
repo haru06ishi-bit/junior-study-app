@@ -647,3 +647,47 @@ function renderEnvironmentCheck(){
 init();
 renderEnvironmentCheck();
 const envBtn=document.getElementById('runEnvironmentCheck');if(envBtn)envBtn.onclick=renderEnvironmentCheck;
+
+
+// PWA / home-screen install
+let deferredInstallPrompt = null;
+function isStandaloneMode(){
+ return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+function isIosDevice(){return /iphone|ipad|ipod/i.test(navigator.userAgent)}
+function isAndroidDevice(){return /android/i.test(navigator.userAgent)}
+function updateInstallCard(){
+ const card=document.getElementById('installCard');
+ if(!card)return;
+ if(isStandaloneMode()){card.hidden=true;return;}
+ const mobile=isIosDevice()||isAndroidDevice()||window.matchMedia?.('(max-width: 820px)').matches;
+ card.hidden=!mobile;
+}
+function showInstallInstructions(){
+ const modal=document.getElementById('installModal');
+ const box=document.getElementById('installInstructions');
+ if(!modal||!box)return;
+ if(isIosDevice()){
+  box.innerHTML='<p><strong>iPhone / iPad</strong></p><ol><li>Safariでこのサイトを開きます。</li><li>画面下の「共有」ボタンを押します。</li><li>「ホーム画面に追加」を選びます。</li><li>右上の「追加」を押します。</li></ol><p class="help">Chromeなどで開いている場合は、Safariで開いてから追加してください。</p>';
+ }else{
+  box.innerHTML='<p><strong>ホーム画面への追加方法</strong></p><ol><li>ブラウザのメニューを開きます。</li><li>「アプリをインストール」または「ホーム画面に追加」を選びます。</li><li>確認画面で追加します。</li></ol>';
+ }
+ modal.hidden=false;document.body.style.overflow='hidden';
+}
+function closeInstallInstructions(){const modal=document.getElementById('installModal');if(modal)modal.hidden=true;document.body.style.overflow='';}
+window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event;updateInstallCard();});
+window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;updateInstallCard();});
+document.getElementById('installApp')?.addEventListener('click',async()=>{
+ if(deferredInstallPrompt){
+  deferredInstallPrompt.prompt();
+  try{await deferredInstallPrompt.userChoice}catch(_){ }
+  deferredInstallPrompt=null;updateInstallCard();
+ }else showInstallInstructions();
+});
+document.getElementById('closeInstallModal')?.addEventListener('click',closeInstallInstructions);
+document.getElementById('installModal')?.addEventListener('click',e=>{if(e.target.id==='installModal')closeInstallInstructions();});
+updateInstallCard();
+
+if('serviceWorker' in navigator && location.protocol === 'https:'){
+ window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(err=>console.warn('Service Worker registration failed',err)));
+}

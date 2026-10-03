@@ -127,6 +127,25 @@ function finishAnswer(correct,dontKnow=false,answerLabel=''){
  document.getElementById('nextQuestion').hidden=false;if(!correct)saveMissed(q,dontKnow);
 }
 function formatCorrectAnswer(q){if(q.type==='choice')return q.choices?.[q.answer]??'';if(q.type==='word')return acceptedTextAnswers(q).join(' / ');return q.modelAnswer||q.answerText||'';}
+function renderAiExplanation(target,text){
+ target.replaceChildren();
+ const normalized=String(text||'').replace(/\r\n?/g,'\n').trim();
+ if(!normalized){target.textContent='AI解説を取得できませんでした。';return;}
+ const lines=normalized.split('\n');
+ let list=null;
+ for(const raw of lines){
+  const line=raw.trim();
+  if(!line){list=null;continue;}
+  if(/^【[^】]+】$/.test(line)){
+   list=null;const h=document.createElement('h4');h.className='ai-section-title';h.textContent=line;target.append(h);continue;
+  }
+  if(/^[・•-]\s*/.test(line)){
+   if(!list){list=document.createElement('ul');list.className='ai-bullet-list';target.append(list)}
+   const li=document.createElement('li');li.textContent=line.replace(/^[・•-]\s*/,'');list.append(li);continue;
+  }
+  list=null;const p=document.createElement('p');p.textContent=line;target.append(p);
+ }
+}
 function appendAiExplanationControl(host,q){
  const wrap=document.createElement('div');wrap.className='ai-explain-box';
  const btn=document.createElement('button');btn.type='button';btn.className='secondary ai-explain-btn';btn.textContent='✨ AIで詳しく解説';
@@ -140,7 +159,7 @@ function appendAiExplanationControl(host,q){
    const res=await fetch('/api/explain',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
    const data=await res.json().catch(()=>({}));
    if(!res.ok)throw new Error(data.error||`HTTP ${res.status}`);
-   out.textContent=data.explanation||'AI解説を取得できませんでした。';
+   renderAiExplanation(out,data.explanation||'AI解説を取得できませんでした。');
    btn.textContent='AI解説を更新';btn.disabled=false;
   }catch(err){
    console.error(err);out.textContent='AI解説を取得できませんでした。通常の解説を利用してください。';btn.textContent='もう一度試す';btn.disabled=false;

@@ -84,6 +84,42 @@ function availableQuestions(){
  const ids=new Set(selectedUnitIds());
  return state.questionBank.filter(q=>q.subject===state.subject&&ids.has(q.unit)&&q.grades.includes(state.grade));
 }
+
+function questionDifficulty(q){const d=Number(q?.difficulty)||1;return Math.max(1,Math.min(3,d));}
+function difficultyLabel(q){return({1:'基礎',2:'標準',3:'応用'})[questionDifficulty(q)]||'基礎';}
+function questionAttemptStats(){
+ const map=new Map();
+ for(const h of studyHistory()){
+  for(const a of h.answerResults||[]){
+   const x=map.get(a.questionId)||{attempts:0,correct:0,lastAt:null};
+   x.attempts++;if(a.correct)x.correct++;const at=a.answeredAt||h.at;if(at&&(!x.lastAt||new Date(at)>new Date(x.lastAt)))x.lastAt=at;map.set(a.questionId,x);
+  }
+ }
+ return map;
+}
+function unitAccuracyMap(){
+ const qmap=new Map(state.questionBank.map(q=>[q.id,q])),groups=new Map();
+ for(const h of studyHistory())for(const a of h.answerResults||[]){const q=qmap.get(a.questionId);if(!q)continue;const key=`${q.subject}/${q.unit}`;const x=groups.get(key)||{total:0,correct:0};x.total++;if(a.correct)x.correct++;groups.set(key,x);}
+ const out=new Map();for(const [k,x] of groups)out.set(k,x.total?x.correct/x.total:null);return out;
+}
+function smartQuestionOrder(pool){
+ const attempts=questionAttemptStats(), mastery=unitAccuracyMap();
+ const missed=new Map((JSON.parse(localStorage.getItem('missedQuestions')||'[]')||[]).map(x=>[x.questionId,x]));
+ const now=Date.now();
+ return [...pool].map(q=>{
+  const st=attempts.get(q.id)||{attempts:0,correct:0,lastAt:null};const acc=mastery.get(`${q.subject}/${q.unit}`);
+  const target=acc==null?1:acc<0.6?1:acc<0.8?2:3;const diff=questionDifficulty(q);
+  let score=0;
+  if(missed.has(q.id))score+=58+Math.min(12,(missed.get(q.id).count||1)*2);
+  if(!st.attempts)score+=42;
+  score+=Math.max(0,14-Math.abs(diff-target)*7);
+  if(st.lastAt){const days=Math.max(0,(now-new Date(st.lastAt).getTime())/86400000);score+=Math.min(18,days);if(days<1)score-=38;else if(days<3)score-=20;else if(days<7)score-=8;}
+  score-=Math.min(12,st.attempts*2);
+  score+=Math.random()*5;
+  return{q,score};
+ }).sort((a,b)=>b.score-a.score).map(x=>x.q);
+}
+function pickSmartQuestions(pool,count){const ordered=smartQuestionOrder(pool);return count==='all'?ordered:ordered.slice(0,Math.min(Number(count)||0,ordered.length));}
 function updateSummary(){
  const s=state.curriculum?.subjects.find(x=>x.id===state.subject);const n=availableQuestions().length;
  document.getElementById('selectionSummary').textContent=s?`中${state.grade}・${s.name}・${state.units.size}単元を選択 / 現在${n}問出題可能`:'学年・教科・単元を選んでください。';
@@ -93,8 +129,8 @@ document.getElementById('countChoices').addEventListener('click',e=>{const b=e.t
 document.getElementById('startQuiz').onclick=()=>{
  if(!state.subject||!state.units.size){alert('教科と単元を選んでください。');return}
  const pool=availableQuestions();if(!pool.length){alert('選んだ単元には、まだ問題が登録されていません。別の単元を選ぶか、紙テストから問題を追加してください。');return}
- const shuffled=[...pool].sort(()=>Math.random()-.5);const limit=state.count==='all'?shuffled.length:Math.min(state.count,shuffled.length);
- state.session=shuffled.slice(0,limit);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'quiz'};
+ const limit=state.count==='all'?'all':Math.min(state.count,pool.length);
+ state.session=pickSmartQuestions(pool,limit);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'quiz'};
  localStorage.setItem('lastQuizSelection',JSON.stringify({grade:state.grade,subject:state.subject,units:[...state.units],count:state.count}));
  showView('playView');renderQuestion();
 };
@@ -103,7 +139,7 @@ function renderQuestion(){
  const q=state.session[state.index];if(!q){finishQuiz();return}
  const s=state.curriculum.subjects.find(x=>x.id===q.subject);
  document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length}`;
- document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''}`;
+ document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)}`;
  document.getElementById('questionText').textContent=q.question;
  document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
  const area=document.getElementById('answerArea');
@@ -234,7 +270,7 @@ function filteredReviewPool(){
  return pool;
 }
 function updateReviewSummary(){const n=filteredReviewPool().length;document.getElementById('reviewSummary').textContent=`現在 ${n}問が条件に一致しています。`;}
-document.getElementById('startFilteredReview').onclick=()=>{const pool=filteredReviewPool();if(!pool.length){alert('この条件に復習問題はありません。');return}const shuffled=[...pool].sort(()=>Math.random()-.5);const limit=state.review.count==='all'?shuffled.length:Math.min(state.review.count,shuffled.length);state.session=shuffled.slice(0,limit);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'review'};showView('playView');renderQuestion();};
+document.getElementById('startFilteredReview').onclick=()=>{const pool=filteredReviewPool();if(!pool.length){alert('この条件に復習問題はありません。');return}const limit=state.review.count==='all'?'all':Math.min(state.review.count,pool.length);state.session=pickSmartQuestions(pool,limit);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'review'};showView('playView');renderQuestion();};
 
 
 function loadExamPlans(){try{return JSON.parse(localStorage.getItem('examPlans')||'[]')}catch{return[]}}
@@ -277,14 +313,13 @@ function updateExamEditSummary(){const el=document.getElementById('examEditSumma
 function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
 function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)return;if(!confirm(`「${p.name}」を削除しますか？`))return;saveExamPlans(loadExamPlans().filter(x=>x.id!==id));localStorage.setItem('examStudyLogs',JSON.stringify(loadExamStudyLogs().filter(x=>x.examId!==id)));}
 function buildExamSession(plan,count=20){
- const pool=examQuestionPool(plan);if(!pool.length)return[];const missedIds=new Set(JSON.parse(localStorage.getItem('missedQuestions')||'[]').map(x=>x.questionId));const logs=loadExamStudyLogs().filter(x=>x.examId===plan.id);const seen=new Set(logs.flatMap(x=>x.questionIds||[]));
- const rank=q=>(missedIds.has(q.id)?0:seen.has(q.id)?2:1)+Math.random()*.2;return [...pool].sort((a,b)=>rank(a)-rank(b)).slice(0,Math.min(count,pool.length));
+ const pool=examQuestionPool(plan);if(!pool.length)return[];return pickSmartQuestions(pool,Math.min(count,pool.length));
 }
 function startExamStudy(id){const plan=loadExamPlans().find(x=>x.id===id);if(!plan)return;const session=buildExamSession(plan,20);if(!session.length){alert('このテスト範囲には出題できる問題がありません。');return}state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;state.sessionContext={mode:'exam',examId:plan.id};showView('playView');renderQuestion();}
 function studyHistory(){try{return JSON.parse(localStorage.getItem('studyHistory')||'[]')}catch{return[]}}
 function answeredQuestionIds(){const ids=new Set();studyHistory().forEach(h=>(h.questionIds||[]).forEach(id=>ids.add(id)));return ids;}
 function shuffleCopy(items){return [...items].sort(()=>Math.random()-.5)}
-function takeUnique(target,source,count,used){for(const q of shuffleCopy(source)){if(target.length>=count)break;if(used.has(q.id))continue;used.add(q.id);target.push(q)}}
+function takeUnique(target,source,count,used){for(const q of smartQuestionOrder(source)){if(target.length>=count)break;if(used.has(q.id))continue;used.add(q.id);target.push(q)}}
 function buildDailySession(count=20){
  const future=loadExamPlans().filter(p=>daysUntil(p.date)>=0).sort((a,b)=>String(a.date).localeCompare(String(b.date)));
  const plan=future[0]||null;const pool=plan?examQuestionPool(plan):state.questionBank;if(!pool.length)return{plan:null,session:[],stats:{missed:0,unseen:0,review:0}};

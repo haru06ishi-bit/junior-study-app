@@ -27,3 +27,12 @@ progress{width:100%;height:12px;margin:10px 0}.import-question-editor{display:gr
 .backup-actions{display:grid;gap:10px;margin-top:14px}
 .warning-card{border-color:#f3c678;background:#fffaf0}
 @media(max-width:520px){.backup-summary{grid-template-columns:1fr}}
+
+/* v0.15.1 backup picker layout */
+.backup-file-label{display:flex;align-items:center;gap:12px;width:100%;margin-top:12px;padding:14px 16px;border:1px solid #d0d5dd;border-radius:14px;background:#fff;cursor:pointer;min-height:64px}
+.backup-file-label:hover{background:#f9fafb}
+.backup-file-icon{font-size:1.6rem;line-height:1;flex:0 0 auto}
+.backup-file-copy{min-width:0;display:block}
+.backup-file-copy strong{display:block}
+.backup-file-copy small{display:block;margin-top:2px;color:#667085;overflow-wrap:anywhere}
+@media(max-width:620px){.backup-file-label{padding:13px 14px}}

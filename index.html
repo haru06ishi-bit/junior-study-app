@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.18" />
+  <link rel="stylesheet" href="style.css?v=0.19" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -81,7 +81,7 @@
         <p id="schoolDistrictMunicipalities" class="help textbook-municipalities">静岡県の採択地区を選んでください。</p>
         <p class="help">静岡県教育委員会の市町立中学校の採択結果を使用しています。</p>
       </div>
-      <p id="textbookSettingStatus" class="summary">地区を選ぶと9教科をまとめて設定します。</p>
+      <div class="textbook-setting-toolbar"><p id="textbookSettingStatus" class="summary">地区を選ぶと9教科をまとめて設定します。</p><button id="resetTextbookOverrides" class="secondary" type="button" hidden>手動変更をすべて解除</button></div>
       <div id="allTextbookGrid" class="all-textbook-grid"></div>
     </section>
 
@@ -304,6 +304,8 @@
         <select id="importSubject"><option value="">教科を選択</option></select>
         <select id="importField"><option value="">分野を選択</option></select>
         <select id="importUnit"><option value="">単元を選択</option></select>
+        <label><strong>教科書との関係</strong><select id="importTextbookScope"><option value="common">共通問題として登録</option><option value="current">現在設定中の教科書に限定</option></select></label>
+        <p id="importTextbookHint" class="help">教科書設定に応じて登録先を選べます。</p>
       </div>
       <button class="primary" id="saveQuestions">確認した問題を端末に登録</button>
       <button class="secondary wide" id="saveDraft" type="button">編集途中を下書き保存</button>
@@ -409,6 +411,6 @@
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
   <script src="data/textbooks.js"></script>
-  <script src="app.js?v=0.18"></script>
+  <script src="app.js?v=0.19"></script>
 </body>
 </html>

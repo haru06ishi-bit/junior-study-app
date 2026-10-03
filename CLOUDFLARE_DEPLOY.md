@@ -45,3 +45,9 @@ AI bindingを設定しなくても、AI解説以外の機能は利用できま�
 
 ## PWA確認
 デプロイ後、`https://study.mytools-lab.com/manifest.webmanifest` と `https://study.mytools-lab.com/sw.js` が開けることを確認してください。PWAはHTTPS上でのみService Workerを登録します。
+
+## v0.19 更新
+
+- 教科書設定は採択地区の自動設定後に、各教科・分冊ごと手動変更できます。
+- 手動変更はブラウザ内の設定に保存され、出題条件にも反映されます。
+- 紙から登録する問題は「共通問題」または「現在設定中の教科書に限定」を選べます。

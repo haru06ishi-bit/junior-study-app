@@ -1,5 +1,5 @@
 {
-  "version": "0.32.0",
+  "version": "0.33.0",
   "questions": [
     {
       "id": "ja001",
@@ -13225,7 +13225,966 @@
       ],
       "explanation": "災害リスクの確認、避難場所確認、備蓄などは基本的な防災行動です。",
       "difficulty": 1
+    },
+    {
+      "id": "v033_ma_exp_01",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "topic": "展開・途中式",
+      "type": "fill",
+      "question": "途中式の空欄を埋めなさい。 (x+4)(x−2)=x²+（1）x−8=x²+（2）x−8",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "2"
+        ]
+      ],
+      "explanation": "x×(−2)+4x=2xなので、x²+2x−8です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_exp_02",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "topic": "展開公式",
+      "type": "fill",
+      "question": "(x+5)²=x²+（1）x+（2）となる。空欄を埋めなさい。",
+      "blanks": [
+        [
+          "10"
+        ],
+        [
+          "25"
+        ]
+      ],
+      "explanation": "(a+b)²=a²+2ab+b²を使うと、x²+10x+25です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v033_ma_exp_03",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "topic": "因数分解・途中式",
+      "type": "fill",
+      "question": "x²+7x+12を因数分解する。積が12、和が7になる2数を小さい順に（1）（2）とすると、（1）=（　）、（2）=（　）、よって(x+（3）)(x+（4）)となる。",
+      "blanks": [
+        [
+          "3"
+        ],
+        [
+          "4"
+        ],
+        [
+          "3"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "explanation": "3×4=12、3+4=7なので、(x+3)(x+4)です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_exp_04",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "topic": "平方差",
+      "type": "fill",
+      "question": "4x²−25=(（1）x)²−（2）²=(2x−5)(2x+5)。空欄を埋めなさい。",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "5"
+        ]
+      ],
+      "explanation": "4x²=(2x)²、25=5²なので平方差の公式を使えます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_exp_05",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "topic": "因数分解",
+      "type": "multi",
+      "question": "正しく因数分解されているものをすべて選びなさい。",
+      "choices": [
+        "x²+6x+9=(x+3)²",
+        "x²−16=(x−4)(x+4)",
+        "x²+5x+6=(x+1)(x+6)",
+        "x²−10x+25=(x−5)²"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "3つ目は(x+2)(x+3)が正しい因数分解です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_exp_06",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "topic": "式の利用・複数ステップ",
+      "type": "fill",
+      "question": "縦が(x+3)cm、横が(x+5)cmの長方形がある。面積を展開すると x²+（1）x+（2）cm² となる。",
+      "blanks": [
+        [
+          "8"
+        ],
+        [
+          "15"
+        ]
+      ],
+      "explanation": "(x+3)(x+5)=x²+5x+3x+15=x²+8x+15です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_sqrt_01",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "topic": "根号の計算・途中式",
+      "type": "fill",
+      "question": "√75=√(（1）×3)=（2）√3。空欄を埋めなさい。",
+      "blanks": [
+        [
+          "25"
+        ],
+        [
+          "5"
+        ]
+      ],
+      "explanation": "75=25×3で、√25=5だから5√3です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v033_ma_sqrt_02",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "topic": "根号の加法・複数ステップ",
+      "type": "fill",
+      "question": "√18+√8=（1）√2+（2）√2=（3）√2。",
+      "blanks": [
+        [
+          "3"
+        ],
+        [
+          "2"
+        ],
+        [
+          "5"
+        ]
+      ],
+      "explanation": "√18=3√2、√8=2√2なので、合わせて5√2です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_sqrt_03",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "topic": "根号の乗法",
+      "type": "fill",
+      "question": "(√5+√2)(√5−√2)=（1）−（2）=（3）。",
+      "blanks": [
+        [
+          "5"
+        ],
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "explanation": "(a+b)(a−b)=a²−b²より、5−2=3です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_sqrt_04",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "topic": "分母の有理化",
+      "type": "fill",
+      "question": "3/√3 の分母を有理化する。分子・分母に√3をかけると 3√3/（1）=（2）となる。",
+      "blanks": [
+        [
+          "3"
+        ],
+        [
+          "√3",
+          "sqrt3"
+        ]
+      ],
+      "explanation": "√3×√3=3なので、3√3/3=√3です。",
+      "difficulty": 3
+    },
+    {
+      "id": "v033_ma_sqrt_05",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "topic": "平方根の大小",
+      "type": "multi",
+      "question": "正しいものをすべて選びなさい。",
+      "choices": [
+        "3<√10<4",
+        "√16=4",
+        "√12=6√2",
+        "√2×√8=4"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "√12=2√3です。√2×√8=√16=4です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_sqrt_06",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "topic": "根号の計算・複数ステップ",
+      "type": "fill",
+      "question": "2√3×√12=2√(（1）)=2×（2）=（3）。",
+      "blanks": [
+        [
+          "36"
+        ],
+        [
+          "6"
+        ],
+        [
+          "12"
+        ]
+      ],
+      "explanation": "√3×√12=√36=6なので、2×6=12です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_quad_01",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "topic": "因数分解による解法・途中式",
+      "type": "fill",
+      "question": "x²−7x+12=0を解く。(x−（1）)(x−（2）)=0 より、x=（3）,（4）。小さい順に答えなさい。",
+      "blanks": [
+        [
+          "3"
+        ],
+        [
+          "4"
+        ],
+        [
+          "3"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "explanation": "積が12、和が7の2数は3と4です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_quad_02",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "topic": "平方根による解法",
+      "type": "fill",
+      "question": "2x²−8=0 → 2x²=8 → x²=（1） → x=（2）。",
+      "blanks": [
+        [
+          "4"
+        ],
+        [
+          "±2",
+          "2,-2",
+          "-2,2"
+        ]
+      ],
+      "explanation": "x²=4なので、x=2と−2です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_quad_03",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "topic": "因数分解による解法",
+      "type": "fill",
+      "question": "x²+6x+5=0を解く。(x+（1）)(x+（2）)=0 より、解を小さい順に x=（3）,（4）とする。",
+      "blanks": [
+        [
+          "1"
+        ],
+        [
+          "5"
+        ],
+        [
+          "-5",
+          "−5"
+        ],
+        [
+          "-1",
+          "−1"
+        ]
+      ],
+      "explanation": "(x+1)(x+5)=0より、x=−5,−1です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_quad_04",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "topic": "解の公式・複数ステップ",
+      "type": "fill",
+      "question": "x²−4x−1=0に解の公式を使う。x={4±√(16+4)}/2={4±√（1）}/2=（2）±√（3）。",
+      "blanks": [
+        [
+          "20"
+        ],
+        [
+          "2"
+        ],
+        [
+          "5"
+        ]
+      ],
+      "explanation": "√20=2√5なので、(4±2√5)/2=2±√5です。",
+      "difficulty": 3
+    },
+    {
+      "id": "v033_ma_quad_05",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "topic": "文章題・複数ステップ",
+      "type": "fill",
+      "question": "連続する正の整数をx,x+1とし、その積が56である。x(x+1)=56 → x²+x−56=0 → (x+8)(x−7)=0。正の整数は（1）と（2）。",
+      "blanks": [
+        [
+          "7"
+        ],
+        [
+          "8"
+        ]
+      ],
+      "explanation": "x=7を採用し、連続する2数は7と8です。",
+      "difficulty": 3
+    },
+    {
+      "id": "v033_ma_quad_06",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "topic": "二次方程式の解法",
+      "type": "multi",
+      "question": "二次方程式 x²−9=0 を解く途中として正しいものをすべて選びなさい。",
+      "choices": [
+        "x²=9と変形できる",
+        "(x−3)(x+3)=0と因数分解できる",
+        "解はx=3だけである",
+        "解はx=3,−3である"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "平方根を取ると正負の2つの解が出ます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_func_01",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "topic": "値の計算",
+      "type": "fill",
+      "question": "y=3x²でx=−2のとき、y=3×(−2)²=3×（1）=（2）。",
+      "blanks": [
+        [
+          "4"
+        ],
+        [
+          "12"
+        ]
+      ],
+      "explanation": "(−2)²=4なので、y=12です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v033_ma_func_02",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "topic": "比例定数・途中式",
+      "type": "fill",
+      "question": "y=ax²のグラフが点(2,8)を通る。8=a×2²=4a より a=（1）。したがって式は y=（2）x²。",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "2"
+        ]
+      ],
+      "explanation": "8=4aなのでa=2です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_func_03",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "topic": "変化の割合・複数ステップ",
+      "type": "fill",
+      "question": "y=x²でxが1から3まで増加するとき、yは1から（1）へ変化する。変化の割合は {(（1）−1)/(3−1)}=（2）。",
+      "blanks": [
+        [
+          "9"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "explanation": "y(3)=9で、(9−1)/(3−1)=8/2=4です。",
+      "difficulty": 3
+    },
+    {
+      "id": "v033_ma_func_04",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "topic": "グラフの性質",
+      "type": "multi",
+      "question": "関数y=2x²について正しいものをすべて選びなさい。",
+      "choices": [
+        "グラフは原点を通る",
+        "x=2とx=−2でyの値は等しい",
+        "グラフは下に開く",
+        "xの絶対値が大きくなるほどyは大きくなる"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "a=2>0なので上に開く放物線です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_func_05",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "topic": "変域・複数ステップ",
+      "type": "fill",
+      "question": "y=x²で−2≦x≦3のとき、yの最小値は（1）、最大値は（2）。",
+      "blanks": [
+        [
+          "0"
+        ],
+        [
+          "9"
+        ]
+      ],
+      "explanation": "x=0で最小0、|x|が最大のx=3で最大9です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_func_06",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "topic": "式の決定",
+      "type": "fill",
+      "question": "y=ax²で、x=3のときy=−18である。−18=9a より a=（1）、式は y=（2）x²。",
+      "blanks": [
+        [
+          "-2",
+          "−2"
+        ],
+        [
+          "-2",
+          "−2"
+        ]
+      ],
+      "explanation": "a=−18/9=−2です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_sim_01",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "topic": "相似比・途中式",
+      "type": "fill",
+      "question": "相似な2つの三角形の相似比が2:3で、小さい三角形の対応する辺が6cmである。大きい三角形の辺をxcmとすると 2:3=6:x より x=（1）cm。",
+      "blanks": [
+        [
+          "9"
+        ]
+      ],
+      "explanation": "2:3=6:xから2x=18、x=9です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_sim_02",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "topic": "面積比",
+      "type": "fill",
+      "question": "相似比が3:5の相似な図形の面積比は 3²:5²=（1）:（2）。",
+      "blanks": [
+        [
+          "9"
+        ],
+        [
+          "25"
+        ]
+      ],
+      "explanation": "面積比は相似比の2乗です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_sim_03",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "topic": "体積比",
+      "type": "fill",
+      "question": "相似比が2:3の相似な立体の体積比は 2³:3³=（1）:（2）。",
+      "blanks": [
+        [
+          "8"
+        ],
+        [
+          "27"
+        ]
+      ],
+      "explanation": "体積比は相似比の3乗です。",
+      "difficulty": 3
+    },
+    {
+      "id": "v033_ma_sim_04",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "topic": "円周角・途中式",
+      "type": "fill",
+      "question": "ある弧に対する中心角が100°のとき、同じ弧に対する円周角は100÷（1）=（2）°。",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "50"
+        ]
+      ],
+      "explanation": "円周角は同じ弧に対する中心角の半分です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v033_ma_sim_05",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "topic": "円周角の定理",
+      "type": "fill",
+      "question": "直径ABを見込む円周角∠ACBは（1）°である。",
+      "blanks": [
+        [
+          "90"
+        ]
+      ],
+      "explanation": "半円に対する円周角は90°です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v033_ma_sim_06",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "topic": "相似条件",
+      "type": "multi",
+      "question": "三角形の相似を示す条件として正しいものをすべて選びなさい。",
+      "choices": [
+        "3組の辺の比がすべて等しい",
+        "2組の辺の比とその間の角がそれぞれ等しい",
+        "2組の角がそれぞれ等しい",
+        "1組の辺の長さが等しいだけでよい"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "中学校で用いる三角形の相似条件はこの3つです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_pyth_01",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "topic": "三平方の定理・途中式",
+      "type": "fill",
+      "question": "直角をはさむ2辺が6cm、8cmの直角三角形で、斜辺をcとする。c²=6²+8²=（1）+（2）=（3）より、c=（4）cm。",
+      "blanks": [
+        [
+          "36"
+        ],
+        [
+          "64"
+        ],
+        [
+          "100"
+        ],
+        [
+          "10"
+        ]
+      ],
+      "explanation": "6²+8²=100なのでc=10です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_pyth_02",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "topic": "辺の長さ・複数ステップ",
+      "type": "fill",
+      "question": "斜辺13cm、他の1辺5cmの直角三角形で、残りの辺をxとする。x²=13²−5²=（1）−（2）=（3）より、x=（4）cm。",
+      "blanks": [
+        [
+          "169"
+        ],
+        [
+          "25"
+        ],
+        [
+          "144"
+        ],
+        [
+          "12"
+        ]
+      ],
+      "explanation": "x²=144なのでx=12です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_pyth_03",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "topic": "正方形の対角線",
+      "type": "fill",
+      "question": "1辺4cmの正方形の対角線をdとすると、d²=4²+4²=（1）。よってd=（2）cm。",
+      "blanks": [
+        [
+          "32"
+        ],
+        [
+          "4√2",
+          "4sqrt2"
+        ]
+      ],
+      "explanation": "√32=4√2です。",
+      "difficulty": 3
+    },
+    {
+      "id": "v033_ma_pyth_04",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "topic": "座標と距離・複数ステップ",
+      "type": "fill",
+      "question": "点A(1,2)、B(4,6)の距離ABを求める。x方向の差は（1）、y方向の差は（2）なので、AB²=3²+4²=25、AB=（3）。",
+      "blanks": [
+        [
+          "3"
+        ],
+        [
+          "4"
+        ],
+        [
+          "5"
+        ]
+      ],
+      "explanation": "座標の差を直角三角形の2辺と考えると三平方の定理を使えます。",
+      "difficulty": 3
+    },
+    {
+      "id": "v033_ma_pyth_05",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "topic": "長方形の対角線",
+      "type": "fill",
+      "question": "縦9cm、横12cmの長方形の対角線をdとする。d²=9²+12²=81+144=（1）、d=（2）cm。",
+      "blanks": [
+        [
+          "225"
+        ],
+        [
+          "15"
+        ]
+      ],
+      "explanation": "√225=15です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_pyth_06",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "topic": "直角三角形の判定",
+      "type": "multi",
+      "question": "3辺の長さが次の組のとき、直角三角形になるものをすべて選びなさい。",
+      "choices": [
+        "3,4,5",
+        "5,12,13",
+        "6,8,11",
+        "8,15,17"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "最大の辺cについてa²+b²=c²となる組が直角三角形です。",
+      "difficulty": 3
+    },
+    {
+      "id": "v033_ma_samp_01",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "topic": "母集団と標本",
+      "type": "fill",
+      "question": "調べたい対象全体を（1）、そこから取り出して実際に調べる一部を（2）という。",
+      "blanks": [
+        [
+          "母集団"
+        ],
+        [
+          "標本"
+        ]
+      ],
+      "explanation": "全体が母集団、そこから取り出した一部が標本です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v033_ma_samp_02",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "topic": "標本からの推定・複数ステップ",
+      "type": "fill",
+      "question": "500個の製品から無作為に50個を調べたところ、不良品が10個あった。不良品の割合は10÷50=（1）%、全体では約500×（2）=（3）個と推定できる。",
+      "blanks": [
+        [
+          "20"
+        ],
+        [
+          "0.2",
+          "20%"
+        ],
+        [
+          "100"
+        ]
+      ],
+      "explanation": "標本の不良率は20%=0.2なので、500×0.2=100個と推定します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_samp_03",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "topic": "割合の推定",
+      "type": "fill",
+      "question": "200人を無作為抽出して60人が賛成だった。賛成割合は60÷200=（1）%。全体1500人なら、賛成は約1500×0.（2）=（3）人と推定できる。",
+      "blanks": [
+        [
+          "30"
+        ],
+        [
+          "3"
+        ],
+        [
+          "450"
+        ]
+      ],
+      "explanation": "60/200=0.30なので、1500×0.30=450人です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_samp_04",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "topic": "無作為抽出",
+      "type": "multi",
+      "question": "偏りを小さくする標本の取り方として適切なものをすべて選びなさい。",
+      "choices": [
+        "名簿から乱数を使って選ぶ",
+        "休み時間に自分の友人だけに聞く",
+        "番号を書いたくじで選ぶ",
+        "成績上位者だけを選ぶ"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "母集団から無作為に選ぶことで偏りを小さくできます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_samp_05",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "topic": "標本平均・途中式",
+      "type": "fill",
+      "question": "5人の標本の値が12,14,15,13,16である。合計は（1）、標本平均は（1）÷5=（2）。",
+      "blanks": [
+        [
+          "70"
+        ],
+        [
+          "14"
+        ]
+      ],
+      "explanation": "合計70を5で割ると平均14です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v033_ma_samp_06",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "topic": "標本調査の考え方",
+      "type": "multi",
+      "question": "標本調査について正しいものをすべて選びなさい。",
+      "choices": [
+        "母集団の特徴を標本から推定する",
+        "標本はできるだけ偏りなく選ぶ",
+        "標本数が多ければ選び方に偏りがあっても必ず正確になる",
+        "全数調査より時間や費用を抑えられる場合がある"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "標本の選び方に偏りがあると、標本数が多くても適切な推定にならないことがあります。",
+      "difficulty": 2
     }
   ],
-  "notes": "Ver.0.32: 中3社会36問・中3理科40問、合計76問の穴埋め・複数選択中心の実戦問題を追加。"
+  "notes": "Ver.0.33: 中3数学7単元に、穴埋め・途中式・複数ステップ中心の実戦問題42問を追加。"
 }

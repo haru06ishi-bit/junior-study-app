@@ -346,6 +346,7 @@
         <select id="importField"><option value="">分野を選択</option></select>
         <select id="importUnit"><option value="">単元を選択</option></select>
         <label><strong>教科書との関係</strong><select id="importTextbookScope"><option value="common">共通問題として登録</option><option value="current">現在設定中の教科書に限定</option></select></label>
+        <label id="importMaterialWrap" hidden><strong>教材 / Unit（任意）</strong><select id="importMaterial"><option value="">教材 / Unitを指定しない</option></select></label>
         <p id="importTextbookHint" class="help">教科書設定に応じて登録先を選べます。</p>
       </div>
       <button class="primary" id="saveQuestions">確認した問題を端末に登録</button>
@@ -451,6 +452,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.22.2"></script>
+  <script src="app.js?v=0.23.0"></script>
 </body>
 </html>

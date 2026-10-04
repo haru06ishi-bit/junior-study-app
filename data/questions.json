@@ -1,5 +1,5 @@
 {
-  "version": "0.16.0",
+  "version": "0.23.0",
   "questions": [
     {
       "id": "ja001",
@@ -7377,7 +7377,141 @@
       "explanation": "文章の構成や言葉遣いを見直して修正することを推敲といいます。",
       "variantOf": "v04_ja_writing_2",
       "source": "built-in-recall"
+    },
+    {
+      "id": "mat_runmelos_01",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『走れメロス』の作者は誰？",
+      "choices": [
+        "太宰治",
+        "夏目漱石",
+        "芥川龍之介",
+        "宮沢賢治"
+      ],
+      "answer": 0,
+      "explanation": "『走れメロス』は太宰治の作品です。",
+      "materialIds": [
+        "j-sanseido-2-11",
+        "j-mitsumura-2-10",
+        "j-kyoiku-shuppan-2-11"
+      ]
+    },
+    {
+      "id": "mat_runmelos_02",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "word",
+      "difficulty": 1,
+      "question": "『走れメロス』の主人公の名前を答えなさい。",
+      "answers": [
+        "メロス"
+      ],
+      "explanation": "物語の主人公はメロスです。",
+      "materialIds": [
+        "j-sanseido-2-11",
+        "j-mitsumura-2-10",
+        "j-kyoiku-shuppan-2-11"
+      ]
+    },
+    {
+      "id": "mat_runmelos_03",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『走れメロス』を読むとき、人物の心情の変化を捉えるために特に注目したいものは？",
+      "choices": [
+        "行動や会話の変化",
+        "漢字の画数だけ",
+        "ページ番号だけ",
+        "段落数だけ"
+      ],
+      "answer": 0,
+      "explanation": "文学的文章では、人物の行動・会話・情景などの変化を手がかりに心情を捉えます。",
+      "materialIds": [
+        "j-sanseido-2-11",
+        "j-mitsumura-2-10",
+        "j-kyoiku-shuppan-2-11"
+      ]
+    },
+    {
+      "id": "mat_hw2_u1_01",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "Hajin's Diary の学習に関連して、yesterday を使う文で基本となる時制はどれ？",
+      "choices": [
+        "過去形",
+        "未来形",
+        "現在完了進行形",
+        "仮定法"
+      ],
+      "answer": 0,
+      "explanation": "yesterday は過去の出来事を表すため、基本的に過去形と組み合わせます。",
+      "materialIds": [
+        "e-mitsumura-2-0"
+      ]
+    },
+    {
+      "id": "mat_hw2_u3_01",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "Plans for the Summer のように予定を表すとき使える表現はどれ？",
+      "choices": [
+        "be going to",
+        "was born",
+        "have been",
+        "as ... as"
+      ],
+      "answer": 0,
+      "explanation": "be going to は予定や意図を表す基本表現です。",
+      "materialIds": [
+        "e-mitsumura-2-2"
+      ]
+    },
+    {
+      "id": "mat_hw2_u3_02",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "夏休みにしたいことを表す I want (   ) Kyoto. の空欄に最も適切なのは？",
+      "choices": [
+        "to visit",
+        "visit",
+        "visited",
+        "visiting to"
+      ],
+      "answer": 0,
+      "explanation": "want の後ろでは want to + 動詞の原形を使います。",
+      "materialIds": [
+        "e-mitsumura-2-2"
+      ]
     }
   ],
-  "notes": "Ver.0.16: 主要5教科の全単元に短答式の追加問題を収録。既存問題に難易度1〜3を付与し、出題履歴を使うスマート出題に対応。追加157問。"
+  "notes": "Ver.0.16: 主要5教科の全単元に短答式の追加問題を収録。既存問題に難易度1〜3を付与し、出題履歴を使うスマート出題に対応。追加157問。 教材/Unit専用問題タグ(materialIds)と専用問題サンプルを追加。"
 }

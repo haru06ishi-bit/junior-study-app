@@ -1,4 +1,4 @@
-const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
+const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
  version:'r7-2025-2028',validYears:[2025,2026,2027,2028],
@@ -546,10 +546,10 @@ function renderExamPlanList(){
  });
 }
 function openExamEditor(id=null){
- const existing=id?loadExamPlans().find(x=>x.id===id):null;const nowYear=new Date().getFullYear();state.exam.editId=id;state.exam.grade=existing?.grade||2;state.exam.units=new Set(existing?.units||[]);state.exam.textbookYear=Number(existing?.textbookYear||((nowYear>=2025&&nowYear<=2028)?nowYear:2025));state.exam.materials=new Set(existing?.materials||[]);showView('examEditView');
+ const existing=id?loadExamPlans().find(x=>x.id===id):null;const nowYear=new Date().getFullYear();state.exam.editId=id;state.exam.grade=existing?.grade||2;state.exam.units=new Set(existing?.units||[]);state.exam.textbookYear=Number(existing?.textbookYear||((nowYear>=2025&&nowYear<=2028)?nowYear:2025));state.exam.materials=new Set(existing?.materials||[]);state.exam.openSubjects=new Set();showView('examEditView');
  document.getElementById('examEditTitle').textContent=existing?'テストを編集':'テストを登録';document.getElementById('examName').value=existing?.name||'';document.getElementById('examDate').value=existing?.date||'';const y=document.getElementById('examTextbookYear');if(y)y.value=String(state.exam.textbookYear);renderExamGrades();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();
 }
-function renderExamGrades(){const el=document.getElementById('examGradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.exam.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.exam.grade=g;state.exam.units.clear();state.exam.materials.clear();renderExamGrades();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary()};el.append(b)})}
+function renderExamGrades(){const el=document.getElementById('examGradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.exam.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.exam.grade=g;state.exam.units.clear();state.exam.materials.clear();state.exam.openSubjects.clear();renderExamGrades();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary()};el.append(b)})}
 
 function renderExamTextbookCandidates(){
  const host=document.getElementById('examTextbookCandidates');if(!host)return;host.innerHTML='';
@@ -572,8 +572,9 @@ document.getElementById('examDate')?.addEventListener('change',e=>{const y=Numbe
 function renderExamRanges(){
  const el=document.getElementById('examRangeChoices');el.innerHTML='';state.curriculum.subjects.forEach(sub=>{
   const allUnits=[];sub.fields.forEach(f=>f.units.filter(u=>u.grades.includes(state.exam.grade)).forEach(u=>allUnits.push({field:f,unit:u})));if(!allUnits.length)return;
-  const details=document.createElement('details');details.className='exam-subject-group';details.open=false;const selected=allUnits.filter(x=>state.exam.units.has(unitKey(sub.id,x.field.id,x.unit.id))).length;
+  const details=document.createElement('details');details.className='exam-subject-group';details.open=state.exam.openSubjects.has(sub.id);const selected=allUnits.filter(x=>state.exam.units.has(unitKey(sub.id,x.field.id,x.unit.id))).length;
   details.innerHTML=`<summary><span>${sub.icon} <strong>${sub.name}</strong></span><em>${selected}/${allUnits.length}単元</em></summary><div class="exam-unit-grid"></div>`;
+  details.addEventListener('toggle',()=>{if(details.open)state.exam.openSubjects.add(sub.id);else state.exam.openSubjects.delete(sub.id);});
   const grid=details.querySelector('.exam-unit-grid');
   sub.fields.forEach(field=>{
     const fieldUnits=field.units.filter(u=>u.grades.includes(state.exam.grade));if(!fieldUnits.length)return;
@@ -581,8 +582,8 @@ function renderExamRanges(){
     const fieldHead=document.createElement('div');fieldHead.className='unit-group-head';const h=document.createElement('strong');h.textContent=field.name;fieldHead.append(h);
     const keys=fieldUnits.map(u=>unitKey(sub.id,field.id,u.id));const allFieldSelected=keys.every(k=>state.exam.units.has(k));
     const bulk=document.createElement('button');bulk.type='button';bulk.className='unit-bulk-btn';bulk.textContent=allFieldSelected?'分野をすべて解除':'分野をすべて選択';
-    bulk.onclick=e=>{e.preventDefault();e.stopPropagation();if(allFieldSelected)keys.forEach(k=>state.exam.units.delete(k));else keys.forEach(k=>state.exam.units.add(k));renderExamRanges();updateExamEditSummary();};fieldHead.append(bulk);fieldWrap.append(fieldHead);
-    fieldUnits.forEach(unit=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)&&matchesSelectedTextbook(q)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);renderExamRanges();updateExamEditSummary()};fieldWrap.append(row)});
+    bulk.onclick=e=>{e.preventDefault();e.stopPropagation();state.exam.openSubjects.add(sub.id);if(allFieldSelected)keys.forEach(k=>state.exam.units.delete(k));else keys.forEach(k=>state.exam.units.add(k));renderExamRanges();updateExamEditSummary();};fieldHead.append(bulk);fieldWrap.append(fieldHead);
+    fieldUnits.forEach(unit=>{const key=unitKey(sub.id,field.id,unit.id);const available=state.questionBank.filter(q=>q.subject===sub.id&&q.unit===unit.id&&q.grades.includes(state.exam.grade)&&matchesSelectedTextbook(q)).length;const row=document.createElement('label');row.className='unit-item';row.innerHTML=`<input type="checkbox" ${state.exam.units.has(key)?'checked':''}><span><strong>${unit.name}</strong><small>${field.name}</small><em>${available}問</em></span>`;row.querySelector('input').onchange=e=>{state.exam.openSubjects.add(sub.id);e.target.checked?state.exam.units.add(key):state.exam.units.delete(key);renderExamRanges();updateExamEditSummary()};fieldWrap.append(row)});
     grid.append(fieldWrap);
   });
   el.append(details);
@@ -625,7 +626,7 @@ function startDailyStudy(){
  const built=buildDailySession(20);if(!built.session.length){alert('出題できる問題がありません。');return}state.session=built.session;state.index=0;state.score=0;state.answers=[];state.grade=built.plan?.grade||state.grade;state.subject=null;state.sessionContext={mode:'daily',examId:built.plan?.id||null};showView('playView');renderQuestion();
 }
 document.getElementById('createExamPlan').onclick=()=>openExamEditor();
-document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();state.exam.materials.clear();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();};
+document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();state.exam.materials.clear();state.exam.openSubjects.clear();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();};
 
 
 function openStats(){showView('statsView');renderStatsDashboard();}

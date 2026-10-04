@@ -66,7 +66,7 @@ function englishCandidateUnitKeys(title,grade){
  const t=String(title).toLowerCase();
  if(grade===1){keys.push('english/language/basic-sentences');if(/7|8|9|past|new year|party|emergency/.test(t))keys.push('english/language/past-progressive');}
  if(grade===2){if(/1|diary|new start/.test(t))keys.push('english/language/past-progressive');if(/2|3|dream|plans/.test(t))keys.push('english/language/infinitive-gerund');if(/3|4|5/.test(t))keys.push('english/language/future-modal');if(/7|8|performing/.test(t))keys.push('english/language/comparison-passive');}
- if(grade===3){keys.push('english/language/present-perfect');if(/4|5|6|7|8/.test(t))keys.push('english/language/relative-clauses');if(/1|2/.test(t))keys.push('english/language/comparison-passive');}
+ if(grade===3){if(/unit 1|lesson 1|program 1/.test(t))keys.push('english/language/comparison-passive');if(/unit 2|unit 3|lesson 2|lesson 3|program 2|program 3/.test(t))keys.push('english/language/present-perfect');if(/unit 4|unit 5|unit 6|lesson 4|lesson 5|lesson 6|program 4|program 5|program 6/.test(t))keys.push('english/language/relative-clauses');if(/unit 7|lesson 7|program 7/.test(t))keys.push('english/language/conditional');if(/unit 8|lesson 8|program 8/.test(t))keys.push('english/communication/writing');}
  return [...new Set(keys)];
 }
 function textbookCandidateRows(subjectId,publisher,grade,year){

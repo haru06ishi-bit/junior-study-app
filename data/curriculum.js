@@ -1,5 +1,5 @@
 window.CURRICULUM_DATA = {
-  "version": "0.4.0",
+  "version": "0.4.1",
   "basis": {
     "title": "中学校学習指導要領（平成29年告示）",
     "curriculumCode": "83V11",
@@ -910,6 +910,18 @@ window.CURRICULUM_DATA = {
                 "which",
                 "that",
                 "分詞による修飾"
+              ]
+            },
+            {
+              "id": "conditional",
+              "name": "仮定法",
+              "grades": [
+                3
+              ],
+              "topics": [
+                "If + 過去形",
+                "would / could",
+                "I wish"
               ]
             }
           ]

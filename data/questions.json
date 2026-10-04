@@ -1,5 +1,5 @@
 {
-  "version": "0.35.0",
+  "version": "0.36.0",
   "questions": [
     {
       "id": "ja001",
@@ -25085,7 +25085,7978 @@
       ],
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original"
+    },
+    {
+      "id": "v036soc_tokyoshoseki_worldoverview_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "緯度0度の緯線を何という？",
+      "choices": [
+        "赤道",
+        "本初子午線",
+        "日付変更線",
+        "北回帰線"
+      ],
+      "answer": 0,
+      "explanation": "緯度0度の緯線は赤道です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_worldoverview_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "東経135度の地点は、東経0度の地点より標準時が（1）時間進んでいる。",
+      "blanks": [
+        [
+          "9"
+        ]
+      ],
+      "explanation": "経度15度で1時間の時差が生じるので、135÷15=9時間です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_worldoverview_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "世界の位置を表すときに使うものをすべて選びなさい。",
+      "choices": [
+        "緯度",
+        "経度",
+        "標高だけ",
+        "方位"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "緯度・経度・方位は位置を表す基本的な情報です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_worldoverview_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "緯度0度の緯線を何という？",
+      "choices": [
+        "赤道",
+        "本初子午線",
+        "日付変更線",
+        "北回帰線"
+      ],
+      "answer": 0,
+      "explanation": "緯度0度の緯線は赤道です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_worldoverview_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "東経135度の地点は、東経0度の地点より標準時が（1）時間進んでいる。",
+      "blanks": [
+        [
+          "9"
+        ]
+      ],
+      "explanation": "経度15度で1時間の時差が生じるので、135÷15=9時間です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_worldoverview_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "世界の位置を表すときに使うものをすべて選びなさい。",
+      "choices": [
+        "緯度",
+        "経度",
+        "標高だけ",
+        "方位"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "緯度・経度・方位は位置を表す基本的な情報です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_worldoverview_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "緯度0度の緯線を何という？",
+      "choices": [
+        "赤道",
+        "本初子午線",
+        "日付変更線",
+        "北回帰線"
+      ],
+      "answer": 0,
+      "explanation": "緯度0度の緯線は赤道です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_worldoverview_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "東経135度の地点は、東経0度の地点より標準時が（1）時間進んでいる。",
+      "blanks": [
+        [
+          "9"
+        ]
+      ],
+      "explanation": "経度15度で1時間の時差が生じるので、135÷15=9時間です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_worldoverview_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "世界の位置を表すときに使うものをすべて選びなさい。",
+      "choices": [
+        "緯度",
+        "経度",
+        "標高だけ",
+        "方位"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "緯度・経度・方位は位置を表す基本的な情報です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_worldregions_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "季節風（モンスーン）の影響を強く受ける地域として最も適切なのは？",
+      "choices": [
+        "東アジア・南アジア",
+        "北極圏",
+        "南極大陸",
+        "西ヨーロッパだけ"
+      ],
+      "answer": 0,
+      "explanation": "東アジアや南アジアでは季節風の影響が大きく、降水や農業と関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_worldregions_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "EUはヨーロッパの国々が政治・経済面で協力する（1）の略称である。",
+      "blanks": [
+        [
+          "ヨーロッパ連合"
+        ]
+      ],
+      "explanation": "EUはEuropean Union、ヨーロッパ連合です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_worldregions_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "アジア州で人口が多い国をすべて選びなさい。",
+      "choices": [
+        "インド",
+        "中国",
+        "日本",
+        "ブラジル"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "インド・中国・日本はいずれもアジア州にあります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_worldregions_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "季節風（モンスーン）の影響を強く受ける地域として最も適切なのは？",
+      "choices": [
+        "東アジア・南アジア",
+        "北極圏",
+        "南極大陸",
+        "西ヨーロッパだけ"
+      ],
+      "answer": 0,
+      "explanation": "東アジアや南アジアでは季節風の影響が大きく、降水や農業と関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_worldregions_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "EUはヨーロッパの国々が政治・経済面で協力する（1）の略称である。",
+      "blanks": [
+        [
+          "ヨーロッパ連合"
+        ]
+      ],
+      "explanation": "EUはEuropean Union、ヨーロッパ連合です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_worldregions_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "アジア州で人口が多い国をすべて選びなさい。",
+      "choices": [
+        "インド",
+        "中国",
+        "日本",
+        "ブラジル"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "インド・中国・日本はいずれもアジア州にあります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_worldregions_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "季節風（モンスーン）の影響を強く受ける地域として最も適切なのは？",
+      "choices": [
+        "東アジア・南アジア",
+        "北極圏",
+        "南極大陸",
+        "西ヨーロッパだけ"
+      ],
+      "answer": 0,
+      "explanation": "東アジアや南アジアでは季節風の影響が大きく、降水や農業と関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_worldregions_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "EUはヨーロッパの国々が政治・経済面で協力する（1）の略称である。",
+      "blanks": [
+        [
+          "ヨーロッパ連合"
+        ]
+      ],
+      "explanation": "EUはEuropean Union、ヨーロッパ連合です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_worldregions_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "world-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "アジア州で人口が多い国をすべて選びなさい。",
+      "choices": [
+        "インド",
+        "中国",
+        "日本",
+        "ブラジル"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "インド・中国・日本はいずれもアジア州にあります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_japanoverview_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "日本で最も面積が大きい都道府県は？",
+      "choices": [
+        "北海道",
+        "岩手県",
+        "長野県",
+        "東京都"
+      ],
+      "answer": 0,
+      "explanation": "北海道が日本で最も面積の大きい都道府県です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_japanoverview_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "日本の標準時の基準となる経線は東経（1）度である。",
+      "blanks": [
+        [
+          "135"
+        ]
+      ],
+      "explanation": "日本標準時は東経135度を基準にしています。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_japanoverview_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "日本の領域に含まれるものをすべて選びなさい。",
+      "choices": [
+        "領土",
+        "領海",
+        "領空",
+        "公海すべて"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "国家の領域は領土・領海・領空からなります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_japanoverview_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "日本で最も面積が大きい都道府県は？",
+      "choices": [
+        "北海道",
+        "岩手県",
+        "長野県",
+        "東京都"
+      ],
+      "answer": 0,
+      "explanation": "北海道が日本で最も面積の大きい都道府県です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_japanoverview_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "日本の標準時の基準となる経線は東経（1）度である。",
+      "blanks": [
+        [
+          "135"
+        ]
+      ],
+      "explanation": "日本標準時は東経135度を基準にしています。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_japanoverview_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "日本の領域に含まれるものをすべて選びなさい。",
+      "choices": [
+        "領土",
+        "領海",
+        "領空",
+        "公海すべて"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "国家の領域は領土・領海・領空からなります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_japanoverview_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "日本で最も面積が大きい都道府県は？",
+      "choices": [
+        "北海道",
+        "岩手県",
+        "長野県",
+        "東京都"
+      ],
+      "answer": 0,
+      "explanation": "北海道が日本で最も面積の大きい都道府県です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_japanoverview_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "日本の標準時の基準となる経線は東経（1）度である。",
+      "blanks": [
+        [
+          "135"
+        ]
+      ],
+      "explanation": "日本標準時は東経135度を基準にしています。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_japanoverview_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-overview",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "日本の領域に含まれるものをすべて選びなさい。",
+      "choices": [
+        "領土",
+        "領海",
+        "領空",
+        "公海すべて"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "国家の領域は領土・領海・領空からなります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_japanregions_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "自動車工業が特に盛んな中京工業地帯の中心となる県は？",
+      "choices": [
+        "愛知県",
+        "北海道",
+        "高知県",
+        "沖縄県"
+      ],
+      "answer": 0,
+      "explanation": "愛知県を中心とする中京工業地帯では自動車工業が盛んです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_japanregions_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "関東地方に広がる、日本最大の平野を（1）平野という。",
+      "blanks": [
+        [
+          "関東"
+        ]
+      ],
+      "explanation": "関東平野は日本最大の平野です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_japanregions_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "日本の三大都市圏に含まれるものをすべて選びなさい。",
+      "choices": [
+        "東京大都市圏",
+        "大阪大都市圏",
+        "名古屋大都市圏",
+        "札幌大都市圏"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_japanregions_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "自動車工業が特に盛んな中京工業地帯の中心となる県は？",
+      "choices": [
+        "愛知県",
+        "北海道",
+        "高知県",
+        "沖縄県"
+      ],
+      "answer": 0,
+      "explanation": "愛知県を中心とする中京工業地帯では自動車工業が盛んです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_japanregions_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "関東地方に広がる、日本最大の平野を（1）平野という。",
+      "blanks": [
+        [
+          "関東"
+        ]
+      ],
+      "explanation": "関東平野は日本最大の平野です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_japanregions_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "日本の三大都市圏に含まれるものをすべて選びなさい。",
+      "choices": [
+        "東京大都市圏",
+        "大阪大都市圏",
+        "名古屋大都市圏",
+        "札幌大都市圏"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_japanregions_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "自動車工業が特に盛んな中京工業地帯の中心となる県は？",
+      "choices": [
+        "愛知県",
+        "北海道",
+        "高知県",
+        "沖縄県"
+      ],
+      "answer": 0,
+      "explanation": "愛知県を中心とする中京工業地帯では自動車工業が盛んです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_japanregions_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "関東地方に広がる、日本最大の平野を（1）平野という。",
+      "blanks": [
+        [
+          "関東"
+        ]
+      ],
+      "explanation": "関東平野は日本最大の平野です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_japanregions_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "japan-regions",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "日本の三大都市圏に含まれるものをすべて選びなさい。",
+      "choices": [
+        "東京大都市圏",
+        "大阪大都市圏",
+        "名古屋大都市圏",
+        "札幌大都市圏"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_regionalstudy_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "地形図で同じ高さの地点を結んだ線を何という？",
+      "choices": [
+        "等高線",
+        "経線",
+        "緯線",
+        "海岸線"
+      ],
+      "answer": 0,
+      "explanation": "同じ標高の地点を結んだ線が等高線です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_regionalstudy_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "縮尺1:25000の地図上で4cmの距離は、実際には（1）kmである。",
+      "blanks": [
+        [
+          "1"
+        ]
+      ],
+      "explanation": "4cm×25000=100000cm=1kmです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_regionalstudy_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "地域調査で資料として利用できるものをすべて選びなさい。",
+      "choices": [
+        "統計資料",
+        "地形図",
+        "聞き取り調査",
+        "根拠のないうわさ"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "統計・地図・聞き取りなど複数の資料を組み合わせます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_regionalstudy_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "地形図で同じ高さの地点を結んだ線を何という？",
+      "choices": [
+        "等高線",
+        "経線",
+        "緯線",
+        "海岸線"
+      ],
+      "answer": 0,
+      "explanation": "同じ標高の地点を結んだ線が等高線です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_regionalstudy_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "縮尺1:25000の地図上で4cmの距離は、実際には（1）kmである。",
+      "blanks": [
+        [
+          "1"
+        ]
+      ],
+      "explanation": "4cm×25000=100000cm=1kmです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_regionalstudy_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "地域調査で資料として利用できるものをすべて選びなさい。",
+      "choices": [
+        "統計資料",
+        "地形図",
+        "聞き取り調査",
+        "根拠のないうわさ"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "統計・地図・聞き取りなど複数の資料を組み合わせます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_regionalstudy_1",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "地形図で同じ高さの地点を結んだ線を何という？",
+      "choices": [
+        "等高線",
+        "経線",
+        "緯線",
+        "海岸線"
+      ],
+      "answer": 0,
+      "explanation": "同じ標高の地点を結んだ線が等高線です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_regionalstudy_2",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "縮尺1:25000の地図上で4cmの距離は、実際には（1）kmである。",
+      "blanks": [
+        [
+          "1"
+        ]
+      ],
+      "explanation": "4cm×25000=100000cm=1kmです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_regionalstudy_3",
+      "subject": "social",
+      "field": "geography",
+      "unit": "regional-study",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "geography",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "地域調査で資料として利用できるものをすべて選びなさい。",
+      "choices": [
+        "統計資料",
+        "地形図",
+        "聞き取り調査",
+        "根拠のないうわさ"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "統計・地図・聞き取りなど複数の資料を組み合わせます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_ancient_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "聖徳太子が定めたとされる役人の心構えは？",
+      "choices": [
+        "十七条の憲法",
+        "御成敗式目",
+        "武家諸法度",
+        "五箇条の御誓文"
+      ],
+      "answer": 0,
+      "explanation": "十七条の憲法は役人の心構えを示したとされます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_ancient_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "710年に都が置かれた都市を（1）という。",
+      "blanks": [
+        [
+          "平城京"
+        ]
+      ],
+      "explanation": "710年に平城京へ遷都しました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_ancient_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "古代の日本に関係するものをすべて選びなさい。",
+      "choices": [
+        "大化の改新",
+        "律令制度",
+        "遣唐使",
+        "参勤交代"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "参勤交代は江戸時代の制度です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_ancient_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "聖徳太子が定めたとされる役人の心構えは？",
+      "choices": [
+        "十七条の憲法",
+        "御成敗式目",
+        "武家諸法度",
+        "五箇条の御誓文"
+      ],
+      "answer": 0,
+      "explanation": "十七条の憲法は役人の心構えを示したとされます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_ancient_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "710年に都が置かれた都市を（1）という。",
+      "blanks": [
+        [
+          "平城京"
+        ]
+      ],
+      "explanation": "710年に平城京へ遷都しました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_ancient_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "古代の日本に関係するものをすべて選びなさい。",
+      "choices": [
+        "大化の改新",
+        "律令制度",
+        "遣唐使",
+        "参勤交代"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "参勤交代は江戸時代の制度です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_ancient_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "聖徳太子が定めたとされる役人の心構えは？",
+      "choices": [
+        "十七条の憲法",
+        "御成敗式目",
+        "武家諸法度",
+        "五箇条の御誓文"
+      ],
+      "answer": 0,
+      "explanation": "十七条の憲法は役人の心構えを示したとされます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_ancient_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "710年に都が置かれた都市を（1）という。",
+      "blanks": [
+        [
+          "平城京"
+        ]
+      ],
+      "explanation": "710年に平城京へ遷都しました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_ancient_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "ancient",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "古代の日本に関係するものをすべて選びなさい。",
+      "choices": [
+        "大化の改新",
+        "律令制度",
+        "遣唐使",
+        "参勤交代"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "参勤交代は江戸時代の制度です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_medieval_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "鎌倉幕府を開いた人物は？",
+      "choices": [
+        "源頼朝",
+        "足利尊氏",
+        "徳川家康",
+        "織田信長"
+      ],
+      "answer": 0,
+      "explanation": "源頼朝が鎌倉幕府を開きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_medieval_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "元が日本へ二度攻めてきた出来事を（1）という。",
+      "blanks": [
+        [
+          "元寇"
+        ],
+        [
+          "蒙古襲来"
+        ]
+      ],
+      "explanation": "元寇（蒙古襲来）は1274年と1281年に起きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_medieval_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "室町時代に関係するものをすべて選びなさい。",
+      "choices": [
+        "足利氏",
+        "勘合貿易",
+        "応仁の乱",
+        "参勤交代"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "参勤交代は江戸時代です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_medieval_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "鎌倉幕府を開いた人物は？",
+      "choices": [
+        "源頼朝",
+        "足利尊氏",
+        "徳川家康",
+        "織田信長"
+      ],
+      "answer": 0,
+      "explanation": "源頼朝が鎌倉幕府を開きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_medieval_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "元が日本へ二度攻めてきた出来事を（1）という。",
+      "blanks": [
+        [
+          "元寇"
+        ],
+        [
+          "蒙古襲来"
+        ]
+      ],
+      "explanation": "元寇（蒙古襲来）は1274年と1281年に起きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_medieval_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "室町時代に関係するものをすべて選びなさい。",
+      "choices": [
+        "足利氏",
+        "勘合貿易",
+        "応仁の乱",
+        "参勤交代"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "参勤交代は江戸時代です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_medieval_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "鎌倉幕府を開いた人物は？",
+      "choices": [
+        "源頼朝",
+        "足利尊氏",
+        "徳川家康",
+        "織田信長"
+      ],
+      "answer": 0,
+      "explanation": "源頼朝が鎌倉幕府を開きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_medieval_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "元が日本へ二度攻めてきた出来事を（1）という。",
+      "blanks": [
+        [
+          "元寇"
+        ],
+        [
+          "蒙古襲来"
+        ]
+      ],
+      "explanation": "元寇（蒙古襲来）は1274年と1281年に起きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_medieval_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "medieval",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "室町時代に関係するものをすべて選びなさい。",
+      "choices": [
+        "足利氏",
+        "勘合貿易",
+        "応仁の乱",
+        "参勤交代"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "参勤交代は江戸時代です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_earlymodern_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "江戸幕府を開いた人物は？",
+      "choices": [
+        "徳川家康",
+        "豊臣秀吉",
+        "源頼朝",
+        "足利義満"
+      ],
+      "answer": 0,
+      "explanation": "徳川家康が1603年に江戸幕府を開きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_earlymodern_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "大名を統制するため、江戸と領地を往復させた制度を（1）という。",
+      "blanks": [
+        [
+          "参勤交代"
+        ]
+      ],
+      "explanation": "参勤交代は幕府による大名統制策です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_earlymodern_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "江戸時代の対外関係として正しいものをすべて選びなさい。",
+      "choices": [
+        "長崎でオランダと交易した",
+        "朝鮮通信使が来日した",
+        "琉球王国を通じた交流があった",
+        "外国との交流を完全にゼロにした"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "鎖国下でも複数の窓口を通じて対外交流が続きました。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_earlymodern_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "江戸幕府を開いた人物は？",
+      "choices": [
+        "徳川家康",
+        "豊臣秀吉",
+        "源頼朝",
+        "足利義満"
+      ],
+      "answer": 0,
+      "explanation": "徳川家康が1603年に江戸幕府を開きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_earlymodern_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "大名を統制するため、江戸と領地を往復させた制度を（1）という。",
+      "blanks": [
+        [
+          "参勤交代"
+        ]
+      ],
+      "explanation": "参勤交代は幕府による大名統制策です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_earlymodern_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "江戸時代の対外関係として正しいものをすべて選びなさい。",
+      "choices": [
+        "長崎でオランダと交易した",
+        "朝鮮通信使が来日した",
+        "琉球王国を通じた交流があった",
+        "外国との交流を完全にゼロにした"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "鎖国下でも複数の窓口を通じて対外交流が続きました。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_earlymodern_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "江戸幕府を開いた人物は？",
+      "choices": [
+        "徳川家康",
+        "豊臣秀吉",
+        "源頼朝",
+        "足利義満"
+      ],
+      "answer": 0,
+      "explanation": "徳川家康が1603年に江戸幕府を開きました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_earlymodern_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "大名を統制するため、江戸と領地を往復させた制度を（1）という。",
+      "blanks": [
+        [
+          "参勤交代"
+        ]
+      ],
+      "explanation": "参勤交代は幕府による大名統制策です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_earlymodern_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "early-modern",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "江戸時代の対外関係として正しいものをすべて選びなさい。",
+      "choices": [
+        "長崎でオランダと交易した",
+        "朝鮮通信使が来日した",
+        "琉球王国を通じた交流があった",
+        "外国との交流を完全にゼロにした"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "鎖国下でも複数の窓口を通じて対外交流が続きました。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_modern_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "明治政府が藩を廃止して府県を置いた政策は？",
+      "choices": [
+        "廃藩置県",
+        "版籍奉還",
+        "地租改正",
+        "徴兵令"
+      ],
+      "answer": 0,
+      "explanation": "1871年の廃藩置県で中央集権化を進めました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_modern_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "1889年に発布された憲法を（1）という。",
+      "blanks": [
+        [
+          "大日本帝国憲法"
+        ]
+      ],
+      "explanation": "大日本帝国憲法は1889年に発布されました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_modern_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "明治時代の近代化に関係するものをすべて選びなさい。",
+      "choices": [
+        "学制",
+        "徴兵令",
+        "地租改正",
+        "鎖国令"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "鎖国令は江戸時代の対外政策に関係します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_modern_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "明治政府が藩を廃止して府県を置いた政策は？",
+      "choices": [
+        "廃藩置県",
+        "版籍奉還",
+        "地租改正",
+        "徴兵令"
+      ],
+      "answer": 0,
+      "explanation": "1871年の廃藩置県で中央集権化を進めました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_modern_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "1889年に発布された憲法を（1）という。",
+      "blanks": [
+        [
+          "大日本帝国憲法"
+        ]
+      ],
+      "explanation": "大日本帝国憲法は1889年に発布されました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_modern_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "明治時代の近代化に関係するものをすべて選びなさい。",
+      "choices": [
+        "学制",
+        "徴兵令",
+        "地租改正",
+        "鎖国令"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "鎖国令は江戸時代の対外政策に関係します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_modern_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "明治政府が藩を廃止して府県を置いた政策は？",
+      "choices": [
+        "廃藩置県",
+        "版籍奉還",
+        "地租改正",
+        "徴兵令"
+      ],
+      "answer": 0,
+      "explanation": "1871年の廃藩置県で中央集権化を進めました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_modern_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "1889年に発布された憲法を（1）という。",
+      "blanks": [
+        [
+          "大日本帝国憲法"
+        ]
+      ],
+      "explanation": "大日本帝国憲法は1889年に発布されました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_modern_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "modern",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "明治時代の近代化に関係するものをすべて選びなさい。",
+      "choices": [
+        "学制",
+        "徴兵令",
+        "地租改正",
+        "鎖国令"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "鎖国令は江戸時代の対外政策に関係します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_contemporary_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "第二次世界大戦後、日本で新しく制定された憲法は？",
+      "choices": [
+        "日本国憲法",
+        "大日本帝国憲法",
+        "十七条の憲法",
+        "武家諸法度"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法は1946年公布、1947年施行です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_contemporary_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "アメリカとソ連を中心とした東西陣営の対立を（1）という。",
+      "blanks": [
+        [
+          "冷戦"
+        ]
+      ],
+      "explanation": "直接の全面戦争を避けながら対立した状態を冷戦といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_contemporary_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "戦後の日本に関係するものをすべて選びなさい。",
+      "choices": [
+        "高度経済成長",
+        "日本国憲法の施行",
+        "国際連合への加盟",
+        "廃藩置県"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "廃藩置県は明治時代です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_contemporary_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "第二次世界大戦後、日本で新しく制定された憲法は？",
+      "choices": [
+        "日本国憲法",
+        "大日本帝国憲法",
+        "十七条の憲法",
+        "武家諸法度"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法は1946年公布、1947年施行です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_contemporary_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "アメリカとソ連を中心とした東西陣営の対立を（1）という。",
+      "blanks": [
+        [
+          "冷戦"
+        ]
+      ],
+      "explanation": "直接の全面戦争を避けながら対立した状態を冷戦といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_contemporary_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "戦後の日本に関係するものをすべて選びなさい。",
+      "choices": [
+        "高度経済成長",
+        "日本国憲法の施行",
+        "国際連合への加盟",
+        "廃藩置県"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "廃藩置県は明治時代です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_contemporary_1",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "第二次世界大戦後、日本で新しく制定された憲法は？",
+      "choices": [
+        "日本国憲法",
+        "大日本帝国憲法",
+        "十七条の憲法",
+        "武家諸法度"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法は1946年公布、1947年施行です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_contemporary_2",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "アメリカとソ連を中心とした東西陣営の対立を（1）という。",
+      "blanks": [
+        [
+          "冷戦"
+        ]
+      ],
+      "explanation": "直接の全面戦争を避けながら対立した状態を冷戦といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_contemporary_3",
+      "subject": "social",
+      "field": "history",
+      "unit": "contemporary",
+      "grades": [
+        2,
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "history",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "戦後の日本に関係するものをすべて選びなさい。",
+      "choices": [
+        "高度経済成長",
+        "日本国憲法の施行",
+        "国際連合への加盟",
+        "廃藩置県"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "廃藩置県は明治時代です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_modernsociety_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "出生率の低下と高齢者人口の増加が同時に進むことを何という？",
+      "choices": [
+        "少子高齢化",
+        "都市化",
+        "国際化",
+        "工業化"
+      ],
+      "answer": 0,
+      "explanation": "少子高齢化は現代日本の重要な社会課題です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_modernsociety_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "インターネットなどを通じて大量の情報が流通する社会を（1）社会という。",
+      "blanks": [
+        [
+          "情報"
+        ],
+        [
+          "情報化"
+        ]
+      ],
+      "explanation": "情報社会・情報化社会と表現します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_modernsociety_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "現代社会の課題として考えられるものをすべて選びなさい。",
+      "choices": [
+        "少子高齢化",
+        "情報格差",
+        "環境問題",
+        "身分制度の固定"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "少子高齢化・情報格差・環境問題などが現代的課題です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_modernsociety_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "出生率の低下と高齢者人口の増加が同時に進むことを何という？",
+      "choices": [
+        "少子高齢化",
+        "都市化",
+        "国際化",
+        "工業化"
+      ],
+      "answer": 0,
+      "explanation": "少子高齢化は現代日本の重要な社会課題です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_modernsociety_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "インターネットなどを通じて大量の情報が流通する社会を（1）社会という。",
+      "blanks": [
+        [
+          "情報"
+        ],
+        [
+          "情報化"
+        ]
+      ],
+      "explanation": "情報社会・情報化社会と表現します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_modernsociety_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "現代社会の課題として考えられるものをすべて選びなさい。",
+      "choices": [
+        "少子高齢化",
+        "情報格差",
+        "環境問題",
+        "身分制度の固定"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "少子高齢化・情報格差・環境問題などが現代的課題です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_modernsociety_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "出生率の低下と高齢者人口の増加が同時に進むことを何という？",
+      "choices": [
+        "少子高齢化",
+        "都市化",
+        "国際化",
+        "工業化"
+      ],
+      "answer": 0,
+      "explanation": "少子高齢化は現代日本の重要な社会課題です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_modernsociety_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "インターネットなどを通じて大量の情報が流通する社会を（1）社会という。",
+      "blanks": [
+        [
+          "情報"
+        ],
+        [
+          "情報化"
+        ]
+      ],
+      "explanation": "情報社会・情報化社会と表現します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_modernsociety_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "現代社会の課題として考えられるものをすべて選びなさい。",
+      "choices": [
+        "少子高齢化",
+        "情報格差",
+        "環境問題",
+        "身分制度の固定"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "少子高齢化・情報格差・環境問題などが現代的課題です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_nihonbunkyo_modernsociety_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "出生率の低下と高齢者人口の増加が同時に進むことを何という？",
+      "choices": [
+        "少子高齢化",
+        "都市化",
+        "国際化",
+        "工業化"
+      ],
+      "answer": 0,
+      "explanation": "少子高齢化は現代日本の重要な社会課題です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_modernsociety_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "インターネットなどを通じて大量の情報が流通する社会を（1）社会という。",
+      "blanks": [
+        [
+          "情報"
+        ],
+        [
+          "情報化"
+        ]
+      ],
+      "explanation": "情報社会・情報化社会と表現します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_modernsociety_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "現代社会の課題として考えられるものをすべて選びなさい。",
+      "choices": [
+        "少子高齢化",
+        "情報格差",
+        "環境問題",
+        "身分制度の固定"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "少子高齢化・情報格差・環境問題などが現代的課題です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_constitution_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "日本国憲法の基本原理に含まれないものは？",
+      "choices": [
+        "鎖国主義",
+        "国民主権",
+        "基本的人権の尊重",
+        "平和主義"
+      ],
+      "answer": 0,
+      "explanation": "三大原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_constitution_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "日本国憲法第9条は戦争の放棄などを定め、（1）主義に関係する。",
+      "blanks": [
+        [
+          "平和"
+        ]
+      ],
+      "explanation": "第9条は平和主義の重要な条文です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_constitution_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "基本的人権に含まれるものをすべて選びなさい。",
+      "choices": [
+        "自由権",
+        "社会権",
+        "参政権",
+        "世襲による特権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "自由権・社会権・参政権などが基本的人権として保障されます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_constitution_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "日本国憲法の基本原理に含まれないものは？",
+      "choices": [
+        "鎖国主義",
+        "国民主権",
+        "基本的人権の尊重",
+        "平和主義"
+      ],
+      "answer": 0,
+      "explanation": "三大原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_constitution_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "日本国憲法第9条は戦争の放棄などを定め、（1）主義に関係する。",
+      "blanks": [
+        [
+          "平和"
+        ]
+      ],
+      "explanation": "第9条は平和主義の重要な条文です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_constitution_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "基本的人権に含まれるものをすべて選びなさい。",
+      "choices": [
+        "自由権",
+        "社会権",
+        "参政権",
+        "世襲による特権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "自由権・社会権・参政権などが基本的人権として保障されます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_constitution_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "日本国憲法の基本原理に含まれないものは？",
+      "choices": [
+        "鎖国主義",
+        "国民主権",
+        "基本的人権の尊重",
+        "平和主義"
+      ],
+      "answer": 0,
+      "explanation": "三大原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_constitution_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "日本国憲法第9条は戦争の放棄などを定め、（1）主義に関係する。",
+      "blanks": [
+        [
+          "平和"
+        ]
+      ],
+      "explanation": "第9条は平和主義の重要な条文です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_constitution_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "基本的人権に含まれるものをすべて選びなさい。",
+      "choices": [
+        "自由権",
+        "社会権",
+        "参政権",
+        "世襲による特権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "自由権・社会権・参政権などが基本的人権として保障されます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_nihonbunkyo_constitution_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "日本国憲法の基本原理に含まれないものは？",
+      "choices": [
+        "鎖国主義",
+        "国民主権",
+        "基本的人権の尊重",
+        "平和主義"
+      ],
+      "answer": 0,
+      "explanation": "三大原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_constitution_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "日本国憲法第9条は戦争の放棄などを定め、（1）主義に関係する。",
+      "blanks": [
+        [
+          "平和"
+        ]
+      ],
+      "explanation": "第9条は平和主義の重要な条文です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_constitution_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "基本的人権に含まれるものをすべて選びなさい。",
+      "choices": [
+        "自由権",
+        "社会権",
+        "参政権",
+        "世襲による特権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "自由権・社会権・参政権などが基本的人権として保障されます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_politics_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "法律を制定する国の機関は？",
+      "choices": [
+        "国会",
+        "内閣",
+        "最高裁判所",
+        "地方公共団体"
+      ],
+      "answer": 0,
+      "explanation": "国会は国権の最高機関で、唯一の立法機関です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_politics_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "行政を担当する国の機関は（1）である。",
+      "blanks": [
+        [
+          "内閣"
+        ]
+      ],
+      "explanation": "内閣が行政権を担います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_politics_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "三権分立の三つの権力をすべて選びなさい。",
+      "choices": [
+        "立法",
+        "行政",
+        "司法",
+        "報道"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "立法・行政・司法の三権が相互に抑制します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_politics_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "法律を制定する国の機関は？",
+      "choices": [
+        "国会",
+        "内閣",
+        "最高裁判所",
+        "地方公共団体"
+      ],
+      "answer": 0,
+      "explanation": "国会は国権の最高機関で、唯一の立法機関です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_politics_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "行政を担当する国の機関は（1）である。",
+      "blanks": [
+        [
+          "内閣"
+        ]
+      ],
+      "explanation": "内閣が行政権を担います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_politics_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "三権分立の三つの権力をすべて選びなさい。",
+      "choices": [
+        "立法",
+        "行政",
+        "司法",
+        "報道"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "立法・行政・司法の三権が相互に抑制します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_politics_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "法律を制定する国の機関は？",
+      "choices": [
+        "国会",
+        "内閣",
+        "最高裁判所",
+        "地方公共団体"
+      ],
+      "answer": 0,
+      "explanation": "国会は国権の最高機関で、唯一の立法機関です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_politics_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "行政を担当する国の機関は（1）である。",
+      "blanks": [
+        [
+          "内閣"
+        ]
+      ],
+      "explanation": "内閣が行政権を担います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_politics_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "三権分立の三つの権力をすべて選びなさい。",
+      "choices": [
+        "立法",
+        "行政",
+        "司法",
+        "報道"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "立法・行政・司法の三権が相互に抑制します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_nihonbunkyo_politics_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "法律を制定する国の機関は？",
+      "choices": [
+        "国会",
+        "内閣",
+        "最高裁判所",
+        "地方公共団体"
+      ],
+      "answer": 0,
+      "explanation": "国会は国権の最高機関で、唯一の立法機関です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_politics_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "行政を担当する国の機関は（1）である。",
+      "blanks": [
+        [
+          "内閣"
+        ]
+      ],
+      "explanation": "内閣が行政権を担います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_politics_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "三権分立の三つの権力をすべて選びなさい。",
+      "choices": [
+        "立法",
+        "行政",
+        "司法",
+        "報道"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "立法・行政・司法の三権が相互に抑制します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_economy_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "商品の価格が需要と供給の関係で決まりやすい経済を何という？",
+      "choices": [
+        "市場経済",
+        "計画経済のみ",
+        "自給自足経済",
+        "封建経済"
+      ],
+      "answer": 0,
+      "explanation": "市場経済では需要と供給が価格形成に大きく関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_economy_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "国や地方公共団体が税金を集め、公共サービスなどに使う活動を（1）という。",
+      "blanks": [
+        [
+          "財政"
+        ]
+      ],
+      "explanation": "政府の収入と支出に関する活動を財政といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_economy_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "労働者の権利に関係するものをすべて選びなさい。",
+      "choices": [
+        "団結権",
+        "団体交渉権",
+        "団体行動権",
+        "納税免除権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "労働三権は団結権・団体交渉権・団体行動権です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_economy_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "商品の価格が需要と供給の関係で決まりやすい経済を何という？",
+      "choices": [
+        "市場経済",
+        "計画経済のみ",
+        "自給自足経済",
+        "封建経済"
+      ],
+      "answer": 0,
+      "explanation": "市場経済では需要と供給が価格形成に大きく関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_economy_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "国や地方公共団体が税金を集め、公共サービスなどに使う活動を（1）という。",
+      "blanks": [
+        [
+          "財政"
+        ]
+      ],
+      "explanation": "政府の収入と支出に関する活動を財政といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_economy_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "労働者の権利に関係するものをすべて選びなさい。",
+      "choices": [
+        "団結権",
+        "団体交渉権",
+        "団体行動権",
+        "納税免除権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "労働三権は団結権・団体交渉権・団体行動権です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_economy_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "商品の価格が需要と供給の関係で決まりやすい経済を何という？",
+      "choices": [
+        "市場経済",
+        "計画経済のみ",
+        "自給自足経済",
+        "封建経済"
+      ],
+      "answer": 0,
+      "explanation": "市場経済では需要と供給が価格形成に大きく関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_economy_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "国や地方公共団体が税金を集め、公共サービスなどに使う活動を（1）という。",
+      "blanks": [
+        [
+          "財政"
+        ]
+      ],
+      "explanation": "政府の収入と支出に関する活動を財政といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_economy_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "労働者の権利に関係するものをすべて選びなさい。",
+      "choices": [
+        "団結権",
+        "団体交渉権",
+        "団体行動権",
+        "納税免除権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "労働三権は団結権・団体交渉権・団体行動権です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_nihonbunkyo_economy_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "商品の価格が需要と供給の関係で決まりやすい経済を何という？",
+      "choices": [
+        "市場経済",
+        "計画経済のみ",
+        "自給自足経済",
+        "封建経済"
+      ],
+      "answer": 0,
+      "explanation": "市場経済では需要と供給が価格形成に大きく関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_economy_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "国や地方公共団体が税金を集め、公共サービスなどに使う活動を（1）という。",
+      "blanks": [
+        [
+          "財政"
+        ]
+      ],
+      "explanation": "政府の収入と支出に関する活動を財政といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_economy_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "労働者の権利に関係するものをすべて選びなさい。",
+      "choices": [
+        "団結権",
+        "団体交渉権",
+        "団体行動権",
+        "納税免除権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "労働三権は団結権・団体交渉権・団体行動権です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_tokyoshoseki_international_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "国際連合の本部が置かれている都市は？",
+      "choices": [
+        "ニューヨーク",
+        "東京",
+        "ロンドン",
+        "北京"
+      ],
+      "answer": 0,
+      "explanation": "国連本部はアメリカのニューヨークにあります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_international_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "将来世代の必要を損なわずに発展を目指す考え方を（1）な開発という。",
+      "blanks": [
+        [
+          "持続可能"
+        ]
+      ],
+      "explanation": "持続可能な開発はSDGsにもつながる考え方です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_tokyoshoseki_international_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "国際協力に関係するものをすべて選びなさい。",
+      "choices": [
+        "ODA",
+        "NGO",
+        "国際連合",
+        "鎖国"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "ODA・NGO・国連はいずれも国際協力と関係します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_teikoku_international_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "国際連合の本部が置かれている都市は？",
+      "choices": [
+        "ニューヨーク",
+        "東京",
+        "ロンドン",
+        "北京"
+      ],
+      "answer": 0,
+      "explanation": "国連本部はアメリカのニューヨークにあります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_international_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "将来世代の必要を損なわずに発展を目指す考え方を（1）な開発という。",
+      "blanks": [
+        [
+          "持続可能"
+        ]
+      ],
+      "explanation": "持続可能な開発はSDGsにもつながる考え方です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_teikoku_international_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "teikoku",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "国際協力に関係するものをすべて選びなさい。",
+      "choices": [
+        "ODA",
+        "NGO",
+        "国際連合",
+        "鎖国"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "ODA・NGO・国連はいずれも国際協力と関係します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_kyoikushuppan_international_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "国際連合の本部が置かれている都市は？",
+      "choices": [
+        "ニューヨーク",
+        "東京",
+        "ロンドン",
+        "北京"
+      ],
+      "answer": 0,
+      "explanation": "国連本部はアメリカのニューヨークにあります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_international_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "将来世代の必要を損なわずに発展を目指す考え方を（1）な開発という。",
+      "blanks": [
+        [
+          "持続可能"
+        ]
+      ],
+      "explanation": "持続可能な開発はSDGsにもつながる考え方です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_kyoikushuppan_international_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "国際協力に関係するものをすべて選びなさい。",
+      "choices": [
+        "ODA",
+        "NGO",
+        "国際連合",
+        "鎖国"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "ODA・NGO・国連はいずれも国際協力と関係します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036soc_nihonbunkyo_international_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "国際連合の本部が置かれている都市は？",
+      "choices": [
+        "ニューヨーク",
+        "東京",
+        "ロンドン",
+        "北京"
+      ],
+      "answer": 0,
+      "explanation": "国連本部はアメリカのニューヨークにあります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_international_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "将来世代の必要を損なわずに発展を目指す考え方を（1）な開発という。",
+      "blanks": [
+        [
+          "持続可能"
+        ]
+      ],
+      "explanation": "持続可能な開発はSDGsにもつながる考え方です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036soc_nihonbunkyo_international_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "nihon-bunkyo",
+      "textbookComponent": "civics",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "国際協力に関係するものをすべて選びなさい。",
+      "choices": [
+        "ODA",
+        "NGO",
+        "国際連合",
+        "鎖国"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "ODA・NGO・国連はいずれも国際協力と関係します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_lightsoundforce_1",
+      "subject": "science",
+      "field": "physics",
+      "unit": "light-sound-force",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "光が鏡に当たる角度と反射する角度の関係は？",
+      "choices": [
+        "等しい",
+        "必ず2倍",
+        "必ず半分",
+        "関係しない"
+      ],
+      "answer": 0,
+      "explanation": "反射の法則では入射角と反射角は等しくなります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_lightsoundforce_2",
+      "subject": "science",
+      "field": "physics",
+      "unit": "light-sound-force",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "音の高さは主に振動数が大きいほど（1）くなる。",
+      "blanks": [
+        [
+          "高"
+        ]
+      ],
+      "explanation": "振動数が大きいほど高い音になります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_lightsoundforce_3",
+      "subject": "science",
+      "field": "physics",
+      "unit": "light-sound-force",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "力の三要素をすべて選びなさい。",
+      "choices": [
+        "力の大きさ",
+        "力の向き",
+        "作用点",
+        "物体の色"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "力は大きさ・向き・作用点で表します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_lightsoundforce_1",
+      "subject": "science",
+      "field": "physics",
+      "unit": "light-sound-force",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "光が鏡に当たる角度と反射する角度の関係は？",
+      "choices": [
+        "等しい",
+        "必ず2倍",
+        "必ず半分",
+        "関係しない"
+      ],
+      "answer": 0,
+      "explanation": "反射の法則では入射角と反射角は等しくなります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_lightsoundforce_2",
+      "subject": "science",
+      "field": "physics",
+      "unit": "light-sound-force",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "音の高さは主に振動数が大きいほど（1）くなる。",
+      "blanks": [
+        [
+          "高"
+        ]
+      ],
+      "explanation": "振動数が大きいほど高い音になります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_lightsoundforce_3",
+      "subject": "science",
+      "field": "physics",
+      "unit": "light-sound-force",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "力の三要素をすべて選びなさい。",
+      "choices": [
+        "力の大きさ",
+        "力の向き",
+        "作用点",
+        "物体の色"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "力は大きさ・向き・作用点で表します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_electricity_1",
+      "subject": "science",
+      "field": "physics",
+      "unit": "electricity",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "電圧・電流・抵抗の関係を表す法則は？",
+      "choices": [
+        "オームの法則",
+        "フックの法則",
+        "慣性の法則",
+        "質量保存の法則"
+      ],
+      "answer": 0,
+      "explanation": "V=IRで表されるオームの法則です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_electricity_2",
+      "subject": "science",
+      "field": "physics",
+      "unit": "electricity",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "抵抗10Ωに2Aの電流が流れるとき、電圧は（1）Vである。",
+      "blanks": [
+        [
+          "20"
+        ]
+      ],
+      "explanation": "V=IR=2×10=20Vです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_electricity_3",
+      "subject": "science",
+      "field": "physics",
+      "unit": "electricity",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "電流がつくる磁界について正しいものをすべて選びなさい。",
+      "choices": [
+        "電流の向きで磁界の向きが変わる",
+        "コイルに電流を流すと磁界ができる",
+        "電流が大きいほど磁界は強くなりやすい",
+        "磁界は電流と無関係である"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "電流と磁界には密接な関係があります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_electricity_1",
+      "subject": "science",
+      "field": "physics",
+      "unit": "electricity",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "電圧・電流・抵抗の関係を表す法則は？",
+      "choices": [
+        "オームの法則",
+        "フックの法則",
+        "慣性の法則",
+        "質量保存の法則"
+      ],
+      "answer": 0,
+      "explanation": "V=IRで表されるオームの法則です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_electricity_2",
+      "subject": "science",
+      "field": "physics",
+      "unit": "electricity",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "抵抗10Ωに2Aの電流が流れるとき、電圧は（1）Vである。",
+      "blanks": [
+        [
+          "20"
+        ]
+      ],
+      "explanation": "V=IR=2×10=20Vです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_electricity_3",
+      "subject": "science",
+      "field": "physics",
+      "unit": "electricity",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "電流がつくる磁界について正しいものをすべて選びなさい。",
+      "choices": [
+        "電流の向きで磁界の向きが変わる",
+        "コイルに電流を流すと磁界ができる",
+        "電流が大きいほど磁界は強くなりやすい",
+        "磁界は電流と無関係である"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "電流と磁界には密接な関係があります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_motionenergy_1",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "速さを求める基本式は？",
+      "choices": [
+        "道のり÷時間",
+        "時間÷道のり",
+        "道のり×時間",
+        "質量÷体積"
+      ],
+      "answer": 0,
+      "explanation": "速さ=道のり÷時間です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_motionenergy_2",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "10Nの力で物体を力の向きに3m動かしたとき、仕事は（1）Jである。",
+      "blanks": [
+        [
+          "30"
+        ]
+      ],
+      "explanation": "仕事=力×力の向きに動いた距離=10×3=30Jです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_motionenergy_3",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "力学的エネルギーに含まれるものをすべて選びなさい。",
+      "choices": [
+        "位置エネルギー",
+        "運動エネルギー",
+        "化学エネルギーだけ",
+        "音の大きさ"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "力学的エネルギーは位置エネルギーと運動エネルギーの和です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_motionenergy_1",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "速さを求める基本式は？",
+      "choices": [
+        "道のり÷時間",
+        "時間÷道のり",
+        "道のり×時間",
+        "質量÷体積"
+      ],
+      "answer": 0,
+      "explanation": "速さ=道のり÷時間です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_motionenergy_2",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "10Nの力で物体を力の向きに3m動かしたとき、仕事は（1）Jである。",
+      "blanks": [
+        [
+          "30"
+        ]
+      ],
+      "explanation": "仕事=力×力の向きに動いた距離=10×3=30Jです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_motionenergy_3",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "力学的エネルギーに含まれるものをすべて選びなさい。",
+      "choices": [
+        "位置エネルギー",
+        "運動エネルギー",
+        "化学エネルギーだけ",
+        "音の大きさ"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "力学的エネルギーは位置エネルギーと運動エネルギーの和です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_substances_1",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "substances",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "密度を求める式は？",
+      "choices": [
+        "質量÷体積",
+        "体積÷質量",
+        "質量×体積",
+        "質量＋体積"
+      ],
+      "answer": 0,
+      "explanation": "密度=質量÷体積です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_substances_2",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "substances",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "液体が気体になる状態変化を（1）という。",
+      "blanks": [
+        [
+          "気化"
+        ]
+      ],
+      "explanation": "液体から気体への変化を気化といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_substances_3",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "substances",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "気体を集める方法をすべて選びなさい。",
+      "choices": [
+        "水上置換法",
+        "上方置換法",
+        "下方置換法",
+        "蒸留法"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "気体の性質に応じて三つの置換法を使い分けます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_substances_1",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "substances",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "密度を求める式は？",
+      "choices": [
+        "質量÷体積",
+        "体積÷質量",
+        "質量×体積",
+        "質量＋体積"
+      ],
+      "answer": 0,
+      "explanation": "密度=質量÷体積です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_substances_2",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "substances",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "液体が気体になる状態変化を（1）という。",
+      "blanks": [
+        [
+          "気化"
+        ]
+      ],
+      "explanation": "液体から気体への変化を気化といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_substances_3",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "substances",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "気体を集める方法をすべて選びなさい。",
+      "choices": [
+        "水上置換法",
+        "上方置換法",
+        "下方置換法",
+        "蒸留法"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "気体の性質に応じて三つの置換法を使い分けます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_chemicalchange_1",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "chemical-change",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "化学変化の前後で全体の質量が変わらないことを表す法則は？",
+      "choices": [
+        "質量保存の法則",
+        "オームの法則",
+        "慣性の法則",
+        "反射の法則"
+      ],
+      "answer": 0,
+      "explanation": "閉じた系では化学変化の前後で質量が保存されます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_chemicalchange_2",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "chemical-change",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "物質をつくる基本的な粒子で、化学変化でそれ以上分けられないものを（1）という。",
+      "blanks": [
+        [
+          "原子"
+        ]
+      ],
+      "explanation": "化学変化では原子の組み合わせが変化します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_chemicalchange_3",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "chemical-change",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "化学変化に当てはまるものをすべて選びなさい。",
+      "choices": [
+        "鉄がさびる",
+        "炭酸水素ナトリウムを加熱する",
+        "水が凍る",
+        "木が燃える"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "水が凍るのは状態変化で、新しい物質はできません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_chemicalchange_1",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "chemical-change",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "化学変化の前後で全体の質量が変わらないことを表す法則は？",
+      "choices": [
+        "質量保存の法則",
+        "オームの法則",
+        "慣性の法則",
+        "反射の法則"
+      ],
+      "answer": 0,
+      "explanation": "閉じた系では化学変化の前後で質量が保存されます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_chemicalchange_2",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "chemical-change",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "物質をつくる基本的な粒子で、化学変化でそれ以上分けられないものを（1）という。",
+      "blanks": [
+        [
+          "原子"
+        ]
+      ],
+      "explanation": "化学変化では原子の組み合わせが変化します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_chemicalchange_3",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "chemical-change",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "化学変化に当てはまるものをすべて選びなさい。",
+      "choices": [
+        "鉄がさびる",
+        "炭酸水素ナトリウムを加熱する",
+        "水が凍る",
+        "木が燃える"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "水が凍るのは状態変化で、新しい物質はできません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_ions_1",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "酸性の水溶液に共通して含まれる陽イオンは？",
+      "choices": [
+        "水素イオン",
+        "水酸化物イオン",
+        "ナトリウムイオン",
+        "塩化物イオン"
+      ],
+      "answer": 0,
+      "explanation": "酸性の性質には水素イオンが関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_ions_2",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "酸とアルカリが互いの性質を打ち消し合う反応を（1）という。",
+      "blanks": [
+        [
+          "中和"
+        ]
+      ],
+      "explanation": "酸とアルカリの反応を中和といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_ions_3",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "電解質について正しいものをすべて選びなさい。",
+      "choices": [
+        "水溶液が電流を通す",
+        "水中でイオンに分かれる物質がある",
+        "食塩は電解質である",
+        "砂糖水は強い電解質である"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "砂糖は水に溶けてもほとんどイオンにならないため非電解質です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_ions_1",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "酸性の水溶液に共通して含まれる陽イオンは？",
+      "choices": [
+        "水素イオン",
+        "水酸化物イオン",
+        "ナトリウムイオン",
+        "塩化物イオン"
+      ],
+      "answer": 0,
+      "explanation": "酸性の性質には水素イオンが関係します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_ions_2",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "酸とアルカリが互いの性質を打ち消し合う反応を（1）という。",
+      "blanks": [
+        [
+          "中和"
+        ]
+      ],
+      "explanation": "酸とアルカリの反応を中和といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_ions_3",
+      "subject": "science",
+      "field": "chemistry",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "電解質について正しいものをすべて選びなさい。",
+      "choices": [
+        "水溶液が電流を通す",
+        "水中でイオンに分かれる物質がある",
+        "食塩は電解質である",
+        "砂糖水は強い電解質である"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "砂糖は水に溶けてもほとんどイオンにならないため非電解質です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_plantsanimals_1",
+      "subject": "science",
+      "field": "biology",
+      "unit": "plants-animals",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "光合成を行う細胞小器官は？",
+      "choices": [
+        "葉緑体",
+        "核",
+        "液胞",
+        "細胞膜"
+      ],
+      "answer": 0,
+      "explanation": "植物細胞の葉緑体で光合成が行われます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_plantsanimals_2",
+      "subject": "science",
+      "field": "biology",
+      "unit": "plants-animals",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "背骨をもつ動物を（1）動物という。",
+      "blanks": [
+        [
+          "脊椎"
+        ],
+        [
+          "せきつい"
+        ]
+      ],
+      "explanation": "背骨をもつ動物は脊椎動物です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_plantsanimals_3",
+      "subject": "science",
+      "field": "biology",
+      "unit": "plants-animals",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "植物と動物の細胞の両方に見られるものをすべて選びなさい。",
+      "choices": [
+        "核",
+        "細胞膜",
+        "細胞質",
+        "葉緑体"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "葉緑体は主に植物細胞に見られます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_plantsanimals_1",
+      "subject": "science",
+      "field": "biology",
+      "unit": "plants-animals",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "光合成を行う細胞小器官は？",
+      "choices": [
+        "葉緑体",
+        "核",
+        "液胞",
+        "細胞膜"
+      ],
+      "answer": 0,
+      "explanation": "植物細胞の葉緑体で光合成が行われます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_plantsanimals_2",
+      "subject": "science",
+      "field": "biology",
+      "unit": "plants-animals",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "背骨をもつ動物を（1）動物という。",
+      "blanks": [
+        [
+          "脊椎"
+        ],
+        [
+          "せきつい"
+        ]
+      ],
+      "explanation": "背骨をもつ動物は脊椎動物です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_plantsanimals_3",
+      "subject": "science",
+      "field": "biology",
+      "unit": "plants-animals",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "植物と動物の細胞の両方に見られるものをすべて選びなさい。",
+      "choices": [
+        "核",
+        "細胞膜",
+        "細胞質",
+        "葉緑体"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "葉緑体は主に植物細胞に見られます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_cellsbody_1",
+      "subject": "science",
+      "field": "biology",
+      "unit": "cells-body",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "小腸で吸収された養分の多くが運ばれる器官は？",
+      "choices": [
+        "肝臓",
+        "肺",
+        "腎臓",
+        "気管"
+      ],
+      "answer": 0,
+      "explanation": "小腸で吸収された養分の多くは血液で肝臓へ運ばれます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_cellsbody_2",
+      "subject": "science",
+      "field": "biology",
+      "unit": "cells-body",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "酸素を取り入れ、二酸化炭素を出すはたらきを（1）という。",
+      "blanks": [
+        [
+          "呼吸"
+        ]
+      ],
+      "explanation": "生物は呼吸によってエネルギーを取り出します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_cellsbody_3",
+      "subject": "science",
+      "field": "biology",
+      "unit": "cells-body",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "血液の成分をすべて選びなさい。",
+      "choices": [
+        "赤血球",
+        "白血球",
+        "血小板",
+        "胆汁"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "胆汁は消化液で、血液の成分ではありません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_cellsbody_1",
+      "subject": "science",
+      "field": "biology",
+      "unit": "cells-body",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "小腸で吸収された養分の多くが運ばれる器官は？",
+      "choices": [
+        "肝臓",
+        "肺",
+        "腎臓",
+        "気管"
+      ],
+      "answer": 0,
+      "explanation": "小腸で吸収された養分の多くは血液で肝臓へ運ばれます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_cellsbody_2",
+      "subject": "science",
+      "field": "biology",
+      "unit": "cells-body",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "酸素を取り入れ、二酸化炭素を出すはたらきを（1）という。",
+      "blanks": [
+        [
+          "呼吸"
+        ]
+      ],
+      "explanation": "生物は呼吸によってエネルギーを取り出します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_cellsbody_3",
+      "subject": "science",
+      "field": "biology",
+      "unit": "cells-body",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "血液の成分をすべて選びなさい。",
+      "choices": [
+        "赤血球",
+        "白血球",
+        "血小板",
+        "胆汁"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "胆汁は消化液で、血液の成分ではありません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_reproductiongenetics_1",
+      "subject": "science",
+      "field": "biology",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "遺伝情報を担う物質は？",
+      "choices": [
+        "DNA",
+        "デンプン",
+        "脂肪",
+        "酸素"
+      ],
+      "answer": 0,
+      "explanation": "DNAが遺伝情報を担います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_reproductiongenetics_2",
+      "subject": "science",
+      "field": "biology",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "親の形質が子に伝わる現象を（1）という。",
+      "blanks": [
+        [
+          "遺伝"
+        ]
+      ],
+      "explanation": "形質が親から子へ伝わることを遺伝といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_reproductiongenetics_3",
+      "subject": "science",
+      "field": "biology",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "無性生殖の特徴として正しいものをすべて選びなさい。",
+      "choices": [
+        "一個体から子ができる場合がある",
+        "子は親と同じ遺伝情報をもちやすい",
+        "受精を必要としない",
+        "必ず雌雄二個体が必要"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "無性生殖では基本的に受精を行いません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_reproductiongenetics_1",
+      "subject": "science",
+      "field": "biology",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "遺伝情報を担う物質は？",
+      "choices": [
+        "DNA",
+        "デンプン",
+        "脂肪",
+        "酸素"
+      ],
+      "answer": 0,
+      "explanation": "DNAが遺伝情報を担います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_reproductiongenetics_2",
+      "subject": "science",
+      "field": "biology",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "親の形質が子に伝わる現象を（1）という。",
+      "blanks": [
+        [
+          "遺伝"
+        ]
+      ],
+      "explanation": "形質が親から子へ伝わることを遺伝といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_reproductiongenetics_3",
+      "subject": "science",
+      "field": "biology",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "無性生殖の特徴として正しいものをすべて選びなさい。",
+      "choices": [
+        "一個体から子ができる場合がある",
+        "子は親と同じ遺伝情報をもちやすい",
+        "受精を必要としない",
+        "必ず雌雄二個体が必要"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "無性生殖では基本的に受精を行いません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_earthchange_1",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-change",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "地震の最初の小さな揺れを何という？",
+      "choices": [
+        "初期微動",
+        "主要動",
+        "余震",
+        "津波"
+      ],
+      "answer": 0,
+      "explanation": "P波による最初の小さな揺れが初期微動です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_earthchange_2",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-change",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "地下で地震が発生した地点を（1）という。",
+      "blanks": [
+        [
+          "震源"
+        ]
+      ],
+      "explanation": "震源の真上の地表の地点は震央です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_earthchange_3",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-change",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "地層から過去の環境を考える手がかりになるものをすべて選びなさい。",
+      "choices": [
+        "化石",
+        "堆積物",
+        "地層の重なり",
+        "現在の天気予報だけ"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "化石や堆積物、地層の重なりから過去の環境を推定します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_earthchange_1",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-change",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "地震の最初の小さな揺れを何という？",
+      "choices": [
+        "初期微動",
+        "主要動",
+        "余震",
+        "津波"
+      ],
+      "answer": 0,
+      "explanation": "P波による最初の小さな揺れが初期微動です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_earthchange_2",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-change",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "地下で地震が発生した地点を（1）という。",
+      "blanks": [
+        [
+          "震源"
+        ]
+      ],
+      "explanation": "震源の真上の地表の地点は震央です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_earthchange_3",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-change",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "地層から過去の環境を考える手がかりになるものをすべて選びなさい。",
+      "choices": [
+        "化石",
+        "堆積物",
+        "地層の重なり",
+        "現在の天気予報だけ"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "化石や堆積物、地層の重なりから過去の環境を推定します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_weather_1",
+      "subject": "science",
+      "field": "earth",
+      "unit": "weather",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "空気中の水蒸気が水滴になり始める温度を何という？",
+      "choices": [
+        "露点",
+        "沸点",
+        "融点",
+        "絶対零度"
+      ],
+      "answer": 0,
+      "explanation": "水蒸気が凝結し始める温度が露点です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_weather_2",
+      "subject": "science",
+      "field": "earth",
+      "unit": "weather",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "低気圧では一般に上昇気流が生じ、雲が（1）やすい。",
+      "blanks": [
+        [
+          "でき"
+        ],
+        [
+          "発生し"
+        ]
+      ],
+      "explanation": "上昇した空気が冷えると水蒸気が凝結し、雲ができやすくなります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_weather_3",
+      "subject": "science",
+      "field": "earth",
+      "unit": "weather",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "温暖前線が近づくときに見られやすい特徴をすべて選びなさい。",
+      "choices": [
+        "広い範囲で弱い雨が続くことがある",
+        "層状の雲が現れやすい",
+        "通過後に気温が上がることがある",
+        "必ず快晴になる"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "温暖前線では比較的穏やかな天気変化が見られます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_weather_1",
+      "subject": "science",
+      "field": "earth",
+      "unit": "weather",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "空気中の水蒸気が水滴になり始める温度を何という？",
+      "choices": [
+        "露点",
+        "沸点",
+        "融点",
+        "絶対零度"
+      ],
+      "answer": 0,
+      "explanation": "水蒸気が凝結し始める温度が露点です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_weather_2",
+      "subject": "science",
+      "field": "earth",
+      "unit": "weather",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "低気圧では一般に上昇気流が生じ、雲が（1）やすい。",
+      "blanks": [
+        [
+          "でき"
+        ],
+        [
+          "発生し"
+        ]
+      ],
+      "explanation": "上昇した空気が冷えると水蒸気が凝結し、雲ができやすくなります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_weather_3",
+      "subject": "science",
+      "field": "earth",
+      "unit": "weather",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "温暖前線が近づくときに見られやすい特徴をすべて選びなさい。",
+      "choices": [
+        "広い範囲で弱い雨が続くことがある",
+        "層状の雲が現れやすい",
+        "通過後に気温が上がることがある",
+        "必ず快晴になる"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "温暖前線では比較的穏やかな天気変化が見られます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_earthspace_1",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "地球が1日に1回転する運動を何という？",
+      "choices": [
+        "自転",
+        "公転",
+        "歳差",
+        "日食"
+      ],
+      "answer": 0,
+      "explanation": "地球は約24時間で1回自転します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_earthspace_2",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "地球が太陽のまわりを1年かけて回る運動を（1）という。",
+      "blanks": [
+        [
+          "公転"
+        ]
+      ],
+      "explanation": "地球の公転周期は約1年です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_earthspace_3",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "太陽系の惑星をすべて選びなさい。",
+      "choices": [
+        "地球",
+        "火星",
+        "木星",
+        "月"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "月は地球の衛星で、惑星ではありません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_earthspace_1",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "地球が1日に1回転する運動を何という？",
+      "choices": [
+        "自転",
+        "公転",
+        "歳差",
+        "日食"
+      ],
+      "answer": 0,
+      "explanation": "地球は約24時間で1回自転します。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_earthspace_2",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "地球が太陽のまわりを1年かけて回る運動を（1）という。",
+      "blanks": [
+        [
+          "公転"
+        ]
+      ],
+      "explanation": "地球の公転周期は約1年です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_earthspace_3",
+      "subject": "science",
+      "field": "earth",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "太陽系の惑星をすべて選びなさい。",
+      "choices": [
+        "地球",
+        "火星",
+        "木星",
+        "月"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "月は地球の衛星で、惑星ではありません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_tokyoshoseki_naturehuman_1",
+      "subject": "science",
+      "field": "environment",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "生物どうしの「食べる・食べられる」のつながりを何という？",
+      "choices": [
+        "食物連鎖",
+        "中和",
+        "蒸留",
+        "電磁誘導"
+      ],
+      "answer": 0,
+      "explanation": "生物の食う・食われる関係のつながりを食物連鎖といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_naturehuman_2",
+      "subject": "science",
+      "field": "environment",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "太陽光や風力のように繰り返し利用しやすいエネルギーを（1）可能エネルギーという。",
+      "blanks": [
+        [
+          "再生"
+        ],
+        [
+          "再生可能"
+        ]
+      ],
+      "explanation": "再生可能エネルギーには太陽光・風力などがあります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_tokyoshoseki_naturehuman_3",
+      "subject": "science",
+      "field": "environment",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "持続可能な社会につながる行動をすべて選びなさい。",
+      "choices": [
+        "省エネルギー",
+        "資源の再利用",
+        "生物多様性の保全",
+        "資源を無制限に使う"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "資源・エネルギーを適切に使い、環境を守ることが重要です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036sci_keirinkan_naturehuman_1",
+      "subject": "science",
+      "field": "environment",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "生物どうしの「食べる・食べられる」のつながりを何という？",
+      "choices": [
+        "食物連鎖",
+        "中和",
+        "蒸留",
+        "電磁誘導"
+      ],
+      "answer": 0,
+      "explanation": "生物の食う・食われる関係のつながりを食物連鎖といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_naturehuman_2",
+      "subject": "science",
+      "field": "environment",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "太陽光や風力のように繰り返し利用しやすいエネルギーを（1）可能エネルギーという。",
+      "blanks": [
+        [
+          "再生"
+        ],
+        [
+          "再生可能"
+        ]
+      ],
+      "explanation": "再生可能エネルギーには太陽光・風力などがあります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036sci_keirinkan_naturehuman_3",
+      "subject": "science",
+      "field": "environment",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "持続可能な社会につながる行動をすべて選びなさい。",
+      "choices": [
+        "省エネルギー",
+        "資源の再利用",
+        "生物多様性の保全",
+        "資源を無制限に使う"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "資源・エネルギーを適切に使い、環境を守ることが重要です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_gakkotosho_positivenegative_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "−7+12の値は？",
+      "choices": [
+        "5",
+        "−5",
+        "19",
+        "−19"
+      ],
+      "answer": 0,
+      "explanation": "−7+12=5です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_positivenegative_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "（−3）×（−4）＝（1）",
+      "blanks": [
+        [
+          "12"
+        ]
+      ],
+      "explanation": "負の数どうしの積は正になります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_positivenegative_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "−7+12の値は？",
+      "choices": [
+        "5",
+        "−5",
+        "19",
+        "−19"
+      ],
+      "answer": 0,
+      "explanation": "−7+12=5です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_positivenegative_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "（−3）×（−4）＝（1）",
+      "blanks": [
+        [
+          "12"
+        ]
+      ],
+      "explanation": "負の数どうしの積は正になります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_positivenegative_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "−7+12の値は？",
+      "choices": [
+        "5",
+        "−5",
+        "19",
+        "−19"
+      ],
+      "answer": 0,
+      "explanation": "−7+12=5です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_positivenegative_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "（−3）×（−4）＝（1）",
+      "blanks": [
+        [
+          "12"
+        ]
+      ],
+      "explanation": "負の数どうしの積は正になります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_algebraicexpressions_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x=3のとき、2x+5＝（1）",
+      "blanks": [
+        [
+          "11"
+        ]
+      ],
+      "explanation": "2×3+5=11です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_algebraicexpressions_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "3a+2aを簡単にすると？",
+      "choices": [
+        "5a",
+        "5a²",
+        "6a",
+        "a"
+      ],
+      "answer": 0,
+      "explanation": "同類項をまとめると5aです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_algebraicexpressions_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x=3のとき、2x+5＝（1）",
+      "blanks": [
+        [
+          "11"
+        ]
+      ],
+      "explanation": "2×3+5=11です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_algebraicexpressions_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "3a+2aを簡単にすると？",
+      "choices": [
+        "5a",
+        "5a²",
+        "6a",
+        "a"
+      ],
+      "answer": 0,
+      "explanation": "同類項をまとめると5aです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_algebraicexpressions_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x=3のとき、2x+5＝（1）",
+      "blanks": [
+        [
+          "11"
+        ]
+      ],
+      "explanation": "2×3+5=11です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_algebraicexpressions_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "3a+2aを簡単にすると？",
+      "choices": [
+        "5a",
+        "5a²",
+        "6a",
+        "a"
+      ],
+      "answer": 0,
+      "explanation": "同類項をまとめると5aです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_polynomials_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "3x+2y−x+5y＝（1）x＋（2）y",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "7"
+        ]
+      ],
+      "explanation": "同類項をまとめます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_polynomials_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "6x²y÷3xyを簡単にすると？",
+      "choices": [
+        "2x",
+        "2y",
+        "3x",
+        "2xy"
+      ],
+      "answer": 0,
+      "explanation": "係数と文字をそれぞれ割ると2xです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_keirinkan_polynomials_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "3x+2y−x+5y＝（1）x＋（2）y",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "7"
+        ]
+      ],
+      "explanation": "同類項をまとめます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_polynomials_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "6x²y÷3xyを簡単にすると？",
+      "choices": [
+        "2x",
+        "2y",
+        "3x",
+        "2xy"
+      ],
+      "answer": 0,
+      "explanation": "係数と文字をそれぞれ割ると2xです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_kyoikushuppan_polynomials_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "3x+2y−x+5y＝（1）x＋（2）y",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "7"
+        ]
+      ],
+      "explanation": "同類項をまとめます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_polynomials_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "6x²y÷3xyを簡単にすると？",
+      "choices": [
+        "2x",
+        "2y",
+        "3x",
+        "2xy"
+      ],
+      "answer": 0,
+      "explanation": "係数と文字をそれぞれ割ると2xです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_gakkotosho_expansionfactorization_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "(x+3)(x+5)=x²＋（1）x＋（2）",
+      "blanks": [
+        [
+          "8"
+        ],
+        [
+          "15"
+        ]
+      ],
+      "explanation": "展開するとx²+8x+15です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_expansionfactorization_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x²−9を因数分解すると？",
+      "choices": [
+        "(x+3)(x−3)",
+        "(x−9)(x+1)",
+        "(x−3)²",
+        "(x+9)(x−1)"
+      ],
+      "answer": 0,
+      "explanation": "平方差の公式を使います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_expansionfactorization_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "(x+3)(x+5)=x²＋（1）x＋（2）",
+      "blanks": [
+        [
+          "8"
+        ],
+        [
+          "15"
+        ]
+      ],
+      "explanation": "展開するとx²+8x+15です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_expansionfactorization_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x²−9を因数分解すると？",
+      "choices": [
+        "(x+3)(x−3)",
+        "(x−9)(x+1)",
+        "(x−3)²",
+        "(x+9)(x−1)"
+      ],
+      "answer": 0,
+      "explanation": "平方差の公式を使います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_expansionfactorization_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "(x+3)(x+5)=x²＋（1）x＋（2）",
+      "blanks": [
+        [
+          "8"
+        ],
+        [
+          "15"
+        ]
+      ],
+      "explanation": "展開するとx²+8x+15です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_expansionfactorization_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x²−9を因数分解すると？",
+      "choices": [
+        "(x+3)(x−3)",
+        "(x−9)(x+1)",
+        "(x−3)²",
+        "(x+9)(x−1)"
+      ],
+      "answer": 0,
+      "explanation": "平方差の公式を使います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_squareroots_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "√50＝（1）√2",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "50=25×2なので√50=5√2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_squareroots_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "√12+√27を簡単にすると？",
+      "choices": [
+        "5√3",
+        "3√3",
+        "√39",
+        "7√3"
+      ],
+      "answer": 0,
+      "explanation": "2√3+3√3=5√3です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_keirinkan_squareroots_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "√50＝（1）√2",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "50=25×2なので√50=5√2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_squareroots_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "√12+√27を簡単にすると？",
+      "choices": [
+        "5√3",
+        "3√3",
+        "√39",
+        "7√3"
+      ],
+      "answer": 0,
+      "explanation": "2√3+3√3=5√3です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_kyoikushuppan_squareroots_1",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "√50＝（1）√2",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "50=25×2なので√50=5√2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_squareroots_2",
+      "subject": "math",
+      "field": "numbers",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "√12+√27を簡単にすると？",
+      "choices": [
+        "5√3",
+        "3√3",
+        "√39",
+        "7√3"
+      ],
+      "answer": 0,
+      "explanation": "2√3+3√3=5√3です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_gakkotosho_linearequation_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "3x+5=20のとき、x＝（1）",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "3x=15よりx=5です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_linearequation_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "2x−6=10の解は？",
+      "choices": [
+        "8",
+        "2",
+        "−8",
+        "−2"
+      ],
+      "answer": 0,
+      "explanation": "2x=16なのでx=8です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_linearequation_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "3x+5=20のとき、x＝（1）",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "3x=15よりx=5です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_linearequation_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "2x−6=10の解は？",
+      "choices": [
+        "8",
+        "2",
+        "−8",
+        "−2"
+      ],
+      "answer": 0,
+      "explanation": "2x=16なのでx=8です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_linearequation_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "3x+5=20のとき、x＝（1）",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "3x=15よりx=5です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_linearequation_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "2x−6=10の解は？",
+      "choices": [
+        "8",
+        "2",
+        "−8",
+        "−2"
+      ],
+      "answer": 0,
+      "explanation": "2x=16なのでx=8です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_simultaneous_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x+y=7、x−y=1を加えると2x=（1）なのでx=（2）。",
+      "blanks": [
+        [
+          "8"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "explanation": "2式を加えるとyが消去できます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_simultaneous_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x+y=5、x−y=3の解は？",
+      "choices": [
+        "x=4,y=1",
+        "x=1,y=4",
+        "x=5,y=3",
+        "x=3,y=2"
+      ],
+      "answer": 0,
+      "explanation": "2式を加えてx=4、代入してy=1です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_keirinkan_simultaneous_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x+y=7、x−y=1を加えると2x=（1）なのでx=（2）。",
+      "blanks": [
+        [
+          "8"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "explanation": "2式を加えるとyが消去できます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_simultaneous_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x+y=5、x−y=3の解は？",
+      "choices": [
+        "x=4,y=1",
+        "x=1,y=4",
+        "x=5,y=3",
+        "x=3,y=2"
+      ],
+      "answer": 0,
+      "explanation": "2式を加えてx=4、代入してy=1です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_kyoikushuppan_simultaneous_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x+y=7、x−y=1を加えると2x=（1）なのでx=（2）。",
+      "blanks": [
+        [
+          "8"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "explanation": "2式を加えるとyが消去できます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_simultaneous_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x+y=5、x−y=3の解は？",
+      "choices": [
+        "x=4,y=1",
+        "x=1,y=4",
+        "x=5,y=3",
+        "x=3,y=2"
+      ],
+      "answer": 0,
+      "explanation": "2式を加えてx=4、代入してy=1です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_gakkotosho_quadratic_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x²−5x+6=0を因数分解すると(x−（1）)(x−（2）)=0。",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "explanation": "積が6、和が5になる2と3を使います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_quadratic_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x²=49の解は？",
+      "choices": [
+        "x=±7",
+        "x=7だけ",
+        "x=−7だけ",
+        "x=49"
+      ],
+      "answer": 0,
+      "explanation": "平方して49になる数は±7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_quadratic_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x²−5x+6=0を因数分解すると(x−（1）)(x−（2）)=0。",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "explanation": "積が6、和が5になる2と3を使います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_quadratic_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x²=49の解は？",
+      "choices": [
+        "x=±7",
+        "x=7だけ",
+        "x=−7だけ",
+        "x=49"
+      ],
+      "answer": 0,
+      "explanation": "平方して49になる数は±7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_quadratic_1",
+      "subject": "math",
+      "field": "equations",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "x²−5x+6=0を因数分解すると(x−（1）)(x−（2）)=0。",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "explanation": "積が6、和が5になる2と3を使います。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_quadratic_2",
+      "subject": "math",
+      "field": "equations",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "x²=49の解は？",
+      "choices": [
+        "x=±7",
+        "x=7だけ",
+        "x=−7だけ",
+        "x=49"
+      ],
+      "answer": 0,
+      "explanation": "平方して49になる数は±7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_proportion_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=3xでx=4のとき、y＝（1）",
+      "blanks": [
+        [
+          "12"
+        ]
+      ],
+      "explanation": "3×4=12です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_proportion_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "反比例y=12/xでx=3のときyは？",
+      "choices": [
+        "4",
+        "9",
+        "15",
+        "36"
+      ],
+      "answer": 0,
+      "explanation": "12÷3=4です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_proportion_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=3xでx=4のとき、y＝（1）",
+      "blanks": [
+        [
+          "12"
+        ]
+      ],
+      "explanation": "3×4=12です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_proportion_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "反比例y=12/xでx=3のときyは？",
+      "choices": [
+        "4",
+        "9",
+        "15",
+        "36"
+      ],
+      "answer": 0,
+      "explanation": "12÷3=4です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_proportion_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=3xでx=4のとき、y＝（1）",
+      "blanks": [
+        [
+          "12"
+        ]
+      ],
+      "explanation": "3×4=12です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_proportion_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "反比例y=12/xでx=3のときyは？",
+      "choices": [
+        "4",
+        "9",
+        "15",
+        "36"
+      ],
+      "answer": 0,
+      "explanation": "12÷3=4です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_linearfunction_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=2x+1でx=3のとき、y＝（1）",
+      "blanks": [
+        [
+          "7"
+        ]
+      ],
+      "explanation": "2×3+1=7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_linearfunction_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "一次関数y=−3x+5の傾きは？",
+      "choices": [
+        "−3",
+        "3",
+        "5",
+        "−5"
+      ],
+      "answer": 0,
+      "explanation": "xの係数が傾きです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_linearfunction_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=2x+1でx=3のとき、y＝（1）",
+      "blanks": [
+        [
+          "7"
+        ]
+      ],
+      "explanation": "2×3+1=7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_linearfunction_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "一次関数y=−3x+5の傾きは？",
+      "choices": [
+        "−3",
+        "3",
+        "5",
+        "−5"
+      ],
+      "answer": 0,
+      "explanation": "xの係数が傾きです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_linearfunction_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=2x+1でx=3のとき、y＝（1）",
+      "blanks": [
+        [
+          "7"
+        ]
+      ],
+      "explanation": "2×3+1=7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_linearfunction_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "一次関数y=−3x+5の傾きは？",
+      "choices": [
+        "−3",
+        "3",
+        "5",
+        "−5"
+      ],
+      "answer": 0,
+      "explanation": "xの係数が傾きです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_quadraticfunction_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=2x²でx=−3のとき、y＝（1）",
+      "blanks": [
+        [
+          "18"
+        ]
+      ],
+      "explanation": "2×(−3)²=18です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_quadraticfunction_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "y=ax²でa>0のグラフはどの向きに開く？",
+      "choices": [
+        "上",
+        "下",
+        "右",
+        "左"
+      ],
+      "answer": 0,
+      "explanation": "a>0なら上に開く放物線です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_quadraticfunction_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=2x²でx=−3のとき、y＝（1）",
+      "blanks": [
+        [
+          "18"
+        ]
+      ],
+      "explanation": "2×(−3)²=18です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_quadraticfunction_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "y=ax²でa>0のグラフはどの向きに開く？",
+      "choices": [
+        "上",
+        "下",
+        "右",
+        "左"
+      ],
+      "answer": 0,
+      "explanation": "a>0なら上に開く放物線です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_quadraticfunction_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "y=2x²でx=−3のとき、y＝（1）",
+      "blanks": [
+        [
+          "18"
+        ]
+      ],
+      "explanation": "2×(−3)²=18です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_quadraticfunction_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "y=ax²でa>0のグラフはどの向きに開く？",
+      "choices": [
+        "上",
+        "下",
+        "右",
+        "左"
+      ],
+      "answer": 0,
+      "explanation": "a>0なら上に開く放物線です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_planespace_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "三角形の内角の和は？",
+      "choices": [
+        "180°",
+        "90°",
+        "270°",
+        "360°"
+      ],
+      "answer": 0,
+      "explanation": "三角形の内角の和は180°です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_planespace_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "半径3cmの円の面積は（1）π cm²。",
+      "blanks": [
+        [
+          "9"
+        ]
+      ],
+      "explanation": "πr²=9πです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_planespace_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "三角形の内角の和は？",
+      "choices": [
+        "180°",
+        "90°",
+        "270°",
+        "360°"
+      ],
+      "answer": 0,
+      "explanation": "三角形の内角の和は180°です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_planespace_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "半径3cmの円の面積は（1）π cm²。",
+      "blanks": [
+        [
+          "9"
+        ]
+      ],
+      "explanation": "πr²=9πです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_planespace_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "三角形の内角の和は？",
+      "choices": [
+        "180°",
+        "90°",
+        "270°",
+        "360°"
+      ],
+      "answer": 0,
+      "explanation": "三角形の内角の和は180°です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_planespace_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "半径3cmの円の面積は（1）π cm²。",
+      "blanks": [
+        [
+          "9"
+        ]
+      ],
+      "explanation": "πr²=9πです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_congruence_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "三角形の合同条件に含まれるものをすべて選びなさい。",
+      "choices": [
+        "3組の辺がそれぞれ等しい",
+        "2組の辺とその間の角がそれぞれ等しい",
+        "1組の辺だけが等しい",
+        "1組の辺とその両端の角がそれぞれ等しい"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "三角形の代表的な合同条件は3種類です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_gakkotosho_congruence_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "合同な図形では対応する辺の長さや角の大きさが（1）。",
+      "blanks": [
+        [
+          "等しい"
+        ]
+      ],
+      "explanation": "合同なら対応する辺と角はそれぞれ等しいです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_congruence_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "三角形の合同条件に含まれるものをすべて選びなさい。",
+      "choices": [
+        "3組の辺がそれぞれ等しい",
+        "2組の辺とその間の角がそれぞれ等しい",
+        "1組の辺だけが等しい",
+        "1組の辺とその両端の角がそれぞれ等しい"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "三角形の代表的な合同条件は3種類です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_keirinkan_congruence_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "合同な図形では対応する辺の長さや角の大きさが（1）。",
+      "blanks": [
+        [
+          "等しい"
+        ]
+      ],
+      "explanation": "合同なら対応する辺と角はそれぞれ等しいです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_congruence_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "multi",
+      "question": "三角形の合同条件に含まれるものをすべて選びなさい。",
+      "choices": [
+        "3組の辺がそれぞれ等しい",
+        "2組の辺とその間の角がそれぞれ等しい",
+        "1組の辺だけが等しい",
+        "1組の辺とその両端の角がそれぞれ等しい"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "三角形の代表的な合同条件は3種類です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_kyoikushuppan_congruence_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "合同な図形では対応する辺の長さや角の大きさが（1）。",
+      "blanks": [
+        [
+          "等しい"
+        ]
+      ],
+      "explanation": "合同なら対応する辺と角はそれぞれ等しいです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_similaritycircle_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "相似比が2:3のとき、面積比は（1）:（2）。",
+      "blanks": [
+        [
+          "4"
+        ],
+        [
+          "9"
+        ]
+      ],
+      "explanation": "面積比は相似比の2乗です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_similaritycircle_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "同じ弧に対する円周角は？",
+      "choices": [
+        "等しい",
+        "必ず90°",
+        "中心角の2倍",
+        "一定でない"
+      ],
+      "answer": 0,
+      "explanation": "同じ弧に対する円周角は等しくなります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_similaritycircle_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "相似比が2:3のとき、面積比は（1）:（2）。",
+      "blanks": [
+        [
+          "4"
+        ],
+        [
+          "9"
+        ]
+      ],
+      "explanation": "面積比は相似比の2乗です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_similaritycircle_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "同じ弧に対する円周角は？",
+      "choices": [
+        "等しい",
+        "必ず90°",
+        "中心角の2倍",
+        "一定でない"
+      ],
+      "answer": 0,
+      "explanation": "同じ弧に対する円周角は等しくなります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_similaritycircle_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "相似比が2:3のとき、面積比は（1）:（2）。",
+      "blanks": [
+        [
+          "4"
+        ],
+        [
+          "9"
+        ]
+      ],
+      "explanation": "面積比は相似比の2乗です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_similaritycircle_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "同じ弧に対する円周角は？",
+      "choices": [
+        "等しい",
+        "必ず90°",
+        "中心角の2倍",
+        "一定でない"
+      ],
+      "answer": 0,
+      "explanation": "同じ弧に対する円周角は等しくなります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_pythagorean_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "直角三角形の2辺が3,4のとき斜辺は（1）。",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "3²+4²=5²です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_pythagorean_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "直角三角形で斜辺10、一辺6のとき他の辺は？",
+      "choices": [
+        "8",
+        "4",
+        "16",
+        "√136"
+      ],
+      "answer": 0,
+      "explanation": "10²−6²=64より8です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_keirinkan_pythagorean_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "直角三角形の2辺が3,4のとき斜辺は（1）。",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "3²+4²=5²です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_pythagorean_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "直角三角形で斜辺10、一辺6のとき他の辺は？",
+      "choices": [
+        "8",
+        "4",
+        "16",
+        "√136"
+      ],
+      "answer": 0,
+      "explanation": "10²−6²=64より8です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_kyoikushuppan_pythagorean_1",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "直角三角形の2辺が3,4のとき斜辺は（1）。",
+      "blanks": [
+        [
+          "5"
+        ]
+      ],
+      "explanation": "3²+4²=5²です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_pythagorean_2",
+      "subject": "math",
+      "field": "geometry",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "直角三角形で斜辺10、一辺6のとき他の辺は？",
+      "choices": [
+        "8",
+        "4",
+        "16",
+        "√136"
+      ],
+      "answer": 0,
+      "explanation": "10²−6²=64より8です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v036math_gakkotosho_datadistribution_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "data-distribution",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "データを小さい順に並べたとき中央に位置する値を何という？",
+      "choices": [
+        "中央値",
+        "平均値",
+        "最頻値",
+        "範囲"
+      ],
+      "answer": 0,
+      "explanation": "中央値はデータを順に並べた中央の値です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_datadistribution_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "data-distribution",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "最大値12、最小値5のデータの範囲は（1）。",
+      "blanks": [
+        [
+          "7"
+        ]
+      ],
+      "explanation": "範囲=最大値−最小値=7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_datadistribution_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "data-distribution",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "データを小さい順に並べたとき中央に位置する値を何という？",
+      "choices": [
+        "中央値",
+        "平均値",
+        "最頻値",
+        "範囲"
+      ],
+      "answer": 0,
+      "explanation": "中央値はデータを順に並べた中央の値です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_datadistribution_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "data-distribution",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "最大値12、最小値5のデータの範囲は（1）。",
+      "blanks": [
+        [
+          "7"
+        ]
+      ],
+      "explanation": "範囲=最大値−最小値=7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_datadistribution_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "data-distribution",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "データを小さい順に並べたとき中央に位置する値を何という？",
+      "choices": [
+        "中央値",
+        "平均値",
+        "最頻値",
+        "範囲"
+      ],
+      "answer": 0,
+      "explanation": "中央値はデータを順に並べた中央の値です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_datadistribution_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "data-distribution",
+      "grades": [
+        1,
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "最大値12、最小値5のデータの範囲は（1）。",
+      "blanks": [
+        [
+          "7"
+        ]
+      ],
+      "explanation": "範囲=最大値−最小値=7です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_probability_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "硬貨を1回投げて表が出る確率は（1）/（2）。",
+      "blanks": [
+        [
+          "1"
+        ],
+        [
+          "2"
+        ]
+      ],
+      "explanation": "表と裏が同様に確からしいとき1/2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_probability_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "さいころ1個を投げて偶数が出る確率は？",
+      "choices": [
+        "1/2",
+        "1/3",
+        "1/6",
+        "2/3"
+      ],
+      "answer": 0,
+      "explanation": "偶数は2,4,6の3通りで3/6=1/2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_probability_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "硬貨を1回投げて表が出る確率は（1）/（2）。",
+      "blanks": [
+        [
+          "1"
+        ],
+        [
+          "2"
+        ]
+      ],
+      "explanation": "表と裏が同様に確からしいとき1/2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_probability_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "さいころ1個を投げて偶数が出る確率は？",
+      "choices": [
+        "1/2",
+        "1/3",
+        "1/6",
+        "2/3"
+      ],
+      "answer": 0,
+      "explanation": "偶数は2,4,6の3通りで3/6=1/2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_probability_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "硬貨を1回投げて表が出る確率は（1）/（2）。",
+      "blanks": [
+        [
+          "1"
+        ],
+        [
+          "2"
+        ]
+      ],
+      "explanation": "表と裏が同様に確からしいとき1/2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_probability_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "さいころ1個を投げて偶数が出る確率は？",
+      "choices": [
+        "1/2",
+        "1/3",
+        "1/6",
+        "2/3"
+      ],
+      "answer": 0,
+      "explanation": "偶数は2,4,6の3通りで3/6=1/2です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_sampling_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "母集団の一部を取り出して調べる方法は？",
+      "choices": [
+        "標本調査",
+        "全数調査",
+        "実験だけ",
+        "作図"
+      ],
+      "answer": 0,
+      "explanation": "母集団の一部を標本として調べるのが標本調査です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_gakkotosho_sampling_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "gakko-tosho",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "100人を無作為抽出し60人が賛成なら、賛成の標本比率は（1）%。",
+      "blanks": [
+        [
+          "60"
+        ]
+      ],
+      "explanation": "60÷100×100=60%です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_sampling_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "母集団の一部を取り出して調べる方法は？",
+      "choices": [
+        "標本調査",
+        "全数調査",
+        "実験だけ",
+        "作図"
+      ],
+      "answer": 0,
+      "explanation": "母集団の一部を標本として調べるのが標本調査です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_keirinkan_sampling_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "keirinkan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "100人を無作為抽出し60人が賛成なら、賛成の標本比率は（1）%。",
+      "blanks": [
+        [
+          "60"
+        ]
+      ],
+      "explanation": "60÷100×100=60%です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_sampling_1",
+      "subject": "math",
+      "field": "data",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "choice",
+      "question": "母集団の一部を取り出して調べる方法は？",
+      "choices": [
+        "標本調査",
+        "全数調査",
+        "実験だけ",
+        "作図"
+      ],
+      "answer": 0,
+      "explanation": "母集団の一部を標本として調べるのが標本調査です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v036math_kyoikushuppan_sampling_2",
+      "subject": "math",
+      "field": "data",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "textbookComponent": "main",
+      "source": "original-publisher-balance-v036",
+      "type": "fill",
+      "question": "100人を無作為抽出し60人が賛成なら、賛成の標本比率は（1）%。",
+      "blanks": [
+        [
+          "60"
+        ]
+      ],
+      "explanation": "60÷100×100=60%です。",
+      "difficulty": 1
     }
   ],
-  "notes": "Ver.0.35: 出版社×学年×教材の専用問題数を再監査し、専用問題が2問未満だった中1・中2の国語・英語教材を優先して259問追加。全対象教材で最低2問を確保。"
+  "notes": "Ver.0.36: 静岡県採択出版社を基準に社会・理科の出版社別専用問題を優先補強し、各対象単元へ3問ずつ追加。続いて数学も各採択出版社×単元へ2問ずつ追加。"
 }

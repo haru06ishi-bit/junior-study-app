@@ -72,7 +72,7 @@ function englishCandidateUnitKeys(title,grade){
 function textbookCandidateRows(subjectId,publisher,grade,year){
  if(!TEXTBOOK_CANDIDATES.validYears.includes(Number(year)))return[];
  const raw=TEXTBOOK_CANDIDATES?.[subjectId]?.[publisher]?.[Number(grade)]||[];
- if(subjectId==='japanese')return raw.map((x,i)=>({id:`j-${publisher}-${grade}-${i}`,title:x[0],unitKeys:[japaneseMaterialUnitKey(x[1]),'japanese/language/kanji-vocab']}));
+ if(subjectId==='japanese')return raw.map((x,i)=>({id:`j-${publisher}-${grade}-${i}`,title:x[0],unitKeys:[japaneseMaterialUnitKey(x[1])]}));
  if(subjectId==='english')return raw.map((title,i)=>({id:`e-${publisher}-${grade}-${i}`,title,unitKeys:englishCandidateUnitKeys(title,Number(grade))}));
  return[];
 }

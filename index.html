@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.27.0" />
+  <link rel="stylesheet" href="style.css?v=0.28.0" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -202,6 +202,43 @@
       <button id="cancelExamEdit" class="secondary wide" type="button">キャンセル</button>
     </section>
 
+
+    <section id="mockExamSetupView" class="view">
+      <div class="section-head">
+        <button id="cancelMockExam" class="back" type="button" aria-label="定期テスト一覧へ戻る">←</button>
+        <div><p class="eyebrow">定期テスト対策</p><h2>模擬テストを作る</h2></div>
+      </div>
+      <div class="step-card mock-setup-hero">
+        <p class="eyebrow">対象テスト</p>
+        <h3 id="mockExamName">定期テスト</h3>
+        <p id="mockExamMeta" class="help"></p>
+      </div>
+      <div class="step-card">
+        <h3>1. 問題数</h3>
+        <div id="mockCountChoices" class="chip-row">
+          <button class="chip" data-mock-count="10" type="button">10問</button>
+          <button class="chip selected" data-mock-count="20" type="button">20問</button>
+          <button class="chip" data-mock-count="30" type="button">30問</button>
+          <button class="chip" data-mock-count="all" type="button">全部</button>
+        </div>
+      </div>
+      <div class="step-card">
+        <h3>2. 制限時間</h3>
+        <div id="mockMinuteChoices" class="chip-row">
+          <button class="chip" data-mock-minutes="15" type="button">15分</button>
+          <button class="chip selected" data-mock-minutes="30" type="button">30分</button>
+          <button class="chip" data-mock-minutes="45" type="button">45分</button>
+          <button class="chip" data-mock-minutes="60" type="button">60分</button>
+        </div>
+      </div>
+      <div class="step-card">
+        <h3>出題ルール</h3>
+        <p class="help">登録した定期テスト範囲から、選択式・短答式の自動採点できる問題を出題します。教材 / Unit専用問題を優先し、基礎・標準・応用と教科の偏りを調整します。正解・解説は終了後にまとめて表示します。</p>
+      </div>
+      <p id="mockExamSetupSummary" class="summary"></p>
+      <button id="startMockExam" class="primary" type="button">模擬テストを開始</button>
+    </section>
+
     <section id="reviewView" class="view">
       <div class="section-head">
         <button class="back" data-back aria-label="ホームへ戻る">←</button>
@@ -235,7 +272,7 @@
     <section id="playView" class="view">
       <div class="quiz-topbar">
         <button id="quitQuiz" class="back" aria-label="小テストを終了">✕</button>
-        <div><p id="quizSubject" class="eyebrow"></p><strong id="quizProgress"></strong></div>
+        <div><p id="quizSubject" class="eyebrow"></p><strong id="quizProgress"></strong></div><div id="mockTimerBox" class="mock-timer" hidden><span>⏱️</span><strong id="mockTimer">残り 30:00</strong></div>
       </div>
       <div class="question-card">
         <p class="question-label">問題</p>
@@ -251,10 +288,10 @@
     <section id="resultView" class="view">
       <div class="result-card">
         <div class="result-icon">🎉</div>
-        <p class="eyebrow">小テスト完了</p>
+        <p id="resultEyebrow" class="eyebrow">小テスト完了</p>
         <h2 id="resultScore">0 / 0</h2>
         <p id="resultRate" class="result-rate">正答率 0%</p>
-        <p class="help">間違えた問題は「苦手を復習」からもう一度解けます。</p>
+        <p class="help">間違えた問題は「苦手を復習」からもう一度解けます。</p><div id="mockResultDetails" class="mock-result-details" hidden></div>
         <button id="retryQuiz" class="primary" type="button">もう一度挑戦</button>
         <button id="backHomeResult" class="secondary wide" type="button">ホームへ戻る</button>
       </div>
@@ -453,6 +490,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.27.0"></script>
+  <script src="app.js?v=0.28.0"></script>
 </body>
 </html>

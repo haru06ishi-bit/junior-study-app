@@ -1,4 +1,4 @@
-const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
+const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
  version:'r7-2025-2028',validYears:[2025,2026,2027,2028],
@@ -215,7 +215,7 @@ function showView(id){
   document.querySelectorAll('[data-nav]').forEach(b=>b.classList.toggle('active',b.dataset.nav===id));
   window.scrollTo({top:0,behavior:'instant'});
 }
-function goHome(){stopCamera();showView('homeView');renderDailyPlanPreview()}
+function goHome(){stopCamera();stopMockTimer();showView('homeView');renderDailyPlanPreview()}
 
 document.querySelectorAll('[data-back]').forEach(b=>b.onclick=goHome);
 document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>showView(b.dataset.nav));
@@ -570,6 +570,7 @@ function renderReferencePages(q){
  box.innerHTML=`<p>教科書参照</p>${items}`;box.hidden=false;
 }
 function renderQuestion(){
+ if(state.sessionContext?.mode==='mockExam'){renderMockExamQuestion();return;}
  const q=state.session[state.index];if(!q){finishQuiz();return}
  const s=state.curriculum.subjects.find(x=>x.id===q.subject);
  document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length}`;
@@ -645,10 +646,13 @@ function gradeWordAnswer(value,dontKnow=false){const q=state.session[state.index
 function showTextSelfCheck(userText){const q=state.session[state.index];document.querySelectorAll('#answerArea textarea,#answerArea button').forEach(x=>x.disabled=true);document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えと比べて判定してください。</p><div class="self-check-row"><button id="selfOk" class="primary" type="button">できた</button><button id="selfNg" class="secondary" type="button">できなかった</button></div>`;appendAiExplanationControl(fb,q);document.getElementById('selfOk').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(true,false)};document.getElementById('selfNg').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(false,false)};}
 function gradeAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];if(q.type==='choice')gradeChoiceAnswer(answer,button,dontKnow);else if(q.type==='word')gradeWordAnswer('',dontKnow);else finishAnswer(false,true);}
 function saveMissed(q,dontKnow){const arr=JSON.parse(localStorage.getItem('missedQuestions')||'[]');const old=arr.find(x=>x.questionId===q.id);if(old){old.count=(old.count||1)+1;old.lastAt=new Date().toISOString();old.dontKnow=old.dontKnow||dontKnow}else arr.push({questionId:q.id,count:1,lastAt:new Date().toISOString(),dontKnow});localStorage.setItem('missedQuestions',JSON.stringify(arr));}
-document.getElementById('dontKnow').onclick=()=>gradeAnswer(null,null,true);
+document.getElementById('dontKnow').onclick=()=>{if(state.sessionContext?.mode==='mockExam')submitMockAnswer({dontKnow:true});else gradeAnswer(null,null,true)};
 document.getElementById('nextQuestion').onclick=()=>{state.index++;renderQuestion()};
-document.getElementById('quitQuiz').onclick=()=>{if(confirm('この小テストを終了しますか？'))goHome()};
+document.getElementById('quitQuiz').onclick=()=>{const label=state.sessionContext?.mode==='mockExam'?'模擬テスト':'小テスト';if(confirm(`この${label}を終了しますか？`))goHome()};
 function finishQuiz(){
+ if(state.sessionContext?.mode==='mockExam'){finishMockExam(false);return;}
+ document.getElementById('mockResultDetails').hidden=true;
+ document.getElementById('resultEyebrow').textContent='小テスト完了';
  const total=state.session.length;const rate=total?Math.round(state.score/total*100):0;
  document.getElementById('resultScore').textContent=`${state.score} / ${total}`;document.getElementById('resultRate').textContent=`正答率 ${rate}%`;
  const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate,mode:state.sessionContext?.mode||'quiz',examId:state.sessionContext?.examId||null,materials:state.sessionContext?.materials||[],textbookYear:state.sessionContext?.textbookYear||null,questionIds:state.session.map(q=>q.id),answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt}))});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-300)));
@@ -657,7 +661,7 @@ function finishQuiz(){
 }
 function updateStreak(){const today=new Date().toISOString().slice(0,10);const last=localStorage.getItem('lastStudyDate');let streak=Number(localStorage.getItem('streakDays')||0);if(last!==today){const y=new Date();y.setDate(y.getDate()-1);streak=last===y.toISOString().slice(0,10)?streak+1:1;localStorage.setItem('lastStudyDate',today);localStorage.setItem('streakDays',streak)}document.getElementById('streakDays').textContent=streak;renderDailyPlanPreview();}
 document.getElementById('backHomeResult').onclick=goHome;
-document.getElementById('retryQuiz').onclick=()=>{state.index=0;state.score=0;state.answers=[];state.session=[...state.session].sort(()=>Math.random()-.5);showView('playView');renderQuestion()};
+document.getElementById('retryQuiz').onclick=()=>{if(state.sessionContext?.mode==='mockExam'){openMockExamSetup(state.sessionContext.examId);return;}state.index=0;state.score=0;state.answers=[];state.session=[...state.session].sort(()=>Math.random()-.5);showView('playView');renderQuestion()};
 function loadCustomQuestions(){
  try{return JSON.parse(localStorage.getItem('customQuestions')||'[]')}catch{return []}
 }
@@ -728,8 +732,8 @@ function renderExamPlanList(){
  if(!plans.length){el.innerHTML='<div class="empty-card"><strong>まだ定期テストが登録されていません</strong><p>テスト日と範囲を登録すると、今日やる問題を自動で作れます。</p></div>';return}
  plans.forEach(plan=>{const days=daysUntil(plan.date);const prog=examProgress(plan);const card=document.createElement('article');card.className='exam-plan-card';
   const dayLabel=days===0?'今日':days>0?`あと${days}日`:`${Math.abs(days)}日前に終了`;
-  card.innerHTML=`<div class="exam-plan-top"><div><p class="eyebrow">${escapeHtml(plan.date||'日付未設定')}</p><h3>${escapeHtml(plan.name||'定期テスト')}</h3></div><span class="exam-countdown ${days<0?'past':''}">${dayLabel}</span></div><p class="help">中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元${(plan.materials||[]).length?`・教材/Unit ${(plan.materials||[]).map(materialTitleById).map(x=>`「${escapeHtml(x)}」`).join('、')}`:''}</p><div class="progress-track"><span style="width:${prog.percent}%"></span></div><p class="exam-progress">このテスト向け学習 ${prog.attempted}/${prog.total}問</p><div class="exam-card-actions"><button class="primary exam-study" type="button">今日の学習を始める</button><button class="secondary exam-edit" type="button">編集</button><button class="secondary exam-delete" type="button">削除</button></div>`;
-  card.querySelector('.exam-study').disabled=days<0;card.querySelector('.exam-study').onclick=()=>startExamStudy(plan.id);card.querySelector('.exam-edit').onclick=()=>openExamEditor(plan.id);card.querySelector('.exam-delete').onclick=()=>deleteExamPlan(plan.id);el.append(card);
+  card.innerHTML=`<div class="exam-plan-top"><div><p class="eyebrow">${escapeHtml(plan.date||'日付未設定')}</p><h3>${escapeHtml(plan.name||'定期テスト')}</h3></div><span class="exam-countdown ${days<0?'past':''}">${dayLabel}</span></div><p class="help">中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元${(plan.materials||[]).length?`・教材/Unit ${(plan.materials||[]).map(materialTitleById).map(x=>`「${escapeHtml(x)}」`).join('、')}`:''}</p><div class="progress-track"><span style="width:${prog.percent}%"></span></div><p class="exam-progress">このテスト向け学習 ${prog.attempted}/${prog.total}問</p><div class="exam-card-actions"><button class="primary exam-study" type="button">今日の学習を始める</button><button class="secondary exam-mock" type="button">模擬テスト</button><button class="secondary exam-edit" type="button">編集</button><button class="secondary exam-delete" type="button">削除</button></div>`;
+  card.querySelector('.exam-study').disabled=days<0;card.querySelector('.exam-study').onclick=()=>startExamStudy(plan.id);card.querySelector('.exam-mock').onclick=()=>openMockExamSetup(plan.id);card.querySelector('.exam-edit').onclick=()=>openExamEditor(plan.id);card.querySelector('.exam-delete').onclick=()=>deleteExamPlan(plan.id);el.append(card);
  });
 }
 function openExamEditor(id=null){
@@ -782,6 +786,87 @@ function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)ret
 function buildExamSession(plan,count=20){
  const pool=examQuestionPool(plan);if(!pool.length)return[];return pickQuestionsForMaterials(pool,Math.min(count,pool.length),new Set(plan.materials||[]));
 }
+
+let mockTimerId=null;
+function loadMockExamResults(){try{return JSON.parse(localStorage.getItem('mockExamResults')||'[]')}catch{return[]}}
+function saveMockExamResult(item){const arr=loadMockExamResults();arr.push(item);localStorage.setItem('mockExamResults',JSON.stringify(arr.slice(-100)));}
+function stopMockTimer(){if(mockTimerId){clearInterval(mockTimerId);mockTimerId=null;}const box=document.getElementById('mockTimerBox');if(box)box.hidden=true;}
+function mockExamAutoPool(plan){return examQuestionPool(plan).filter(q=>q.type==='choice'||q.type==='word');}
+function balancedMockQuestions(plan,count){
+ const pool=mockExamAutoPool(plan);if(!pool.length)return[];
+ const n=Math.min(count==='all'?pool.length:Number(count)||20,pool.length);
+ const materials=new Set(plan.materials||[]);
+ const preferred=materialPriorityOrder(pool,materials);
+ const target={1:Math.round(n*.3),2:Math.round(n*.5),3:0};target[3]=Math.max(0,n-target[1]-target[2]);
+ const selected=[];const used=new Set();
+ const takeRoundRobin=(candidates,need)=>{
+  const by={};candidates.forEach(q=>{(by[q.subject]??=[]).push(q)});Object.values(by).forEach(a=>a.sort(()=>Math.random()-.5));
+  const subjects=Object.keys(by).sort(()=>Math.random()-.5);let progressed=true;
+  while(selected.length<n&&need>0&&progressed){progressed=false;for(const sid of subjects){const arr=by[sid];while(arr?.length&&used.has(arr[0].id))arr.shift();if(arr?.length){const q=arr.shift();selected.push(q);used.add(q.id);need--;progressed=true;if(need<=0||selected.length>=n)break;}}}
+ };
+ [1,2,3].forEach(d=>takeRoundRobin(preferred.filter(q=>questionDifficulty(q)===d),target[d]));
+ takeRoundRobin(preferred.filter(q=>!used.has(q.id)),n-selected.length);
+ return selected.slice(0,n);
+}
+function openMockExamSetup(id){
+ const plan=loadExamPlans().find(x=>x.id===id);if(!plan)return;
+ state.mockExam.planId=id;state.mockExam.count=20;state.mockExam.minutes=30;showView('mockExamSetupView');
+ const pool=mockExamAutoPool(plan);const total=examQuestionPool(plan).length;
+ document.getElementById('mockExamName').textContent=plan.name||'定期テスト';
+ document.getElementById('mockExamMeta').textContent=`中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元 / 自動採点可能 ${pool.length}問（範囲全体 ${total}問）`;
+ renderMockSetupChoices();updateMockSetupSummary();
+}
+function renderMockSetupChoices(){
+ document.querySelectorAll('[data-mock-count]').forEach(b=>b.classList.toggle('selected',String(state.mockExam.count)===b.dataset.mockCount));
+ document.querySelectorAll('[data-mock-minutes]').forEach(b=>b.classList.toggle('selected',String(state.mockExam.minutes)===b.dataset.mockMinutes));
+}
+function updateMockSetupSummary(){
+ const plan=loadExamPlans().find(x=>x.id===state.mockExam.planId);if(!plan)return;const pool=mockExamAutoPool(plan);const wanted=state.mockExam.count==='all'?pool.length:Math.min(Number(state.mockExam.count)||20,pool.length);
+ const el=document.getElementById('mockExamSetupSummary');el.textContent=`${wanted}問・${state.mockExam.minutes}分・100点満点 / 基礎30%・標準50%・応用20%を目安に、教科が偏りすぎないよう出題します。`;
+}
+function startMockExam(){
+ const plan=loadExamPlans().find(x=>x.id===state.mockExam.planId);if(!plan)return;const session=balancedMockQuestions(plan,state.mockExam.count);
+ if(!session.length){alert('この範囲には自動採点できる選択・短答問題がありません。');return;}
+ const base=Math.floor(100/session.length),rem=100-base*session.length;const points={};session.forEach((q,i)=>points[q.id]=base+(i<rem?1:0));
+ state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;
+ state.sessionContext={mode:'mockExam',examId:plan.id,examName:plan.name,materials:plan.materials||[],textbookYear:plan.textbookYear||null,points,minutes:state.mockExam.minutes,startedAt:new Date().toISOString(),deadline:Date.now()+state.mockExam.minutes*60000};
+ document.getElementById('mockResultDetails').hidden=true;showView('playView');startMockTimer();renderQuestion();
+}
+function startMockTimer(){stopMockTimer();const box=document.getElementById('mockTimerBox');if(box)box.hidden=false;const tick=()=>{const left=Math.max(0,(state.sessionContext?.deadline||0)-Date.now());const sec=Math.ceil(left/1000),m=Math.floor(sec/60),s=sec%60;const label=document.getElementById('mockTimer');if(label)label.textContent=`残り ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(left<=0){stopMockTimer();finishMockExam(true);}};tick();mockTimerId=setInterval(tick,1000);}
+function renderMockExamQuestion(){
+ const q=state.session[state.index];if(!q){finishMockExam(false);return;}const s=state.curriculum.subjects.find(x=>x.id===q.subject);const pts=state.sessionContext?.points?.[q.id]||0;
+ document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length} ・ ${pts}点`;
+ document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)} ・ 模擬テスト`;
+ renderReferencePages(q);document.getElementById('questionText').textContent=q.question;document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
+ const area=document.getElementById('answerArea');
+ if(q.type==='choice'){
+  (q.choices||[]).forEach((c,i)=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=c;b.onclick=()=>submitMockAnswer({choice:i,answerLabel:c});area.append(b)});
+ }else{
+  const input=document.createElement('input');input.type='text';input.className='answer-input';input.placeholder='答えを入力';input.autocomplete='off';const submit=document.createElement('button');submit.className='primary';submit.type='button';submit.textContent='解答して次へ';submit.onclick=()=>submitMockAnswer({text:input.value,answerLabel:input.value});input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submit.click()}});area.append(input,submit);setTimeout(()=>input.focus(),0);
+ }
+}
+function submitMockAnswer({choice=null,text='',answerLabel='',dontKnow=false}={}){
+ const q=state.session[state.index];if(!q)return;let correct=false;
+ if(!dontKnow){if(q.type==='choice')correct=choice===q.answer;else correct=acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(text));}
+ const pts=state.sessionContext?.points?.[q.id]||0;if(correct)state.score+=pts;
+ state.answers.push({questionId:q.id,correct,dontKnow,answer:answerLabel,points:correct?pts:0,maxPoints:pts,answeredAt:new Date().toISOString()});if(!correct)saveMissed(q,dontKnow);
+ state.index++;renderQuestion();
+}
+function mockSubjectBreakdown(){
+ const map={};state.session.forEach(q=>{const sub=state.curriculum.subjects.find(s=>s.id===q.subject);const a=state.answers.find(x=>x.questionId===q.id);const row=map[q.subject]??={name:sub?.name||q.subject,icon:sub?.icon||'',correct:0,total:0,points:0,max:0};row.total++;row.max+=state.sessionContext?.points?.[q.id]||0;if(a?.correct)row.correct++;row.points+=a?.points||0;map[q.subject]=row;});return Object.values(map);
+}
+function mockWeakUnits(){
+ const map={};state.session.forEach(q=>{const a=state.answers.find(x=>x.questionId===q.id);if(a?.correct)return;const sub=state.curriculum.subjects.find(s=>s.id===q.subject);const field=q.field||fieldIdForUnit(q.subject,q.unit);const unit=sub?.fields?.find(f=>f.id===field)?.units?.find(u=>u.id===q.unit);const key=`${q.subject}/${q.unit}`;map[key]??={label:`${sub?.name||q.subject}：${unit?.name||q.unit}`,miss:0};map[key].miss++;});return Object.values(map).sort((a,b)=>b.miss-a.miss).slice(0,5);
+}
+function finishMockExam(timeUp=false){
+ if(state.sessionContext?.mode!=='mockExam')return;stopMockTimer();const total=state.session.length,correct=state.answers.filter(a=>a.correct).length,score=Math.round(state.score),rate=total?Math.round(correct/total*100):0;const unanswered=Math.max(0,total-state.answers.length);
+ document.getElementById('resultEyebrow').textContent=timeUp?'時間終了・模擬テスト完了':'模擬テスト完了';document.getElementById('resultScore').textContent=`${score} / 100点`;document.getElementById('resultRate').textContent=`${correct}/${total}問正解・正答率 ${rate}%${unanswered?`・未解答 ${unanswered}問`:''}`;
+ const breakdown=mockSubjectBreakdown();const weak=mockWeakUnits();const box=document.getElementById('mockResultDetails');box.hidden=false;box.innerHTML=`<div class="mock-result-grid">${breakdown.map(r=>`<div class="mock-result-stat"><strong>${r.icon} ${escapeHtml(r.name)}</strong><span>${r.points}/${r.max}点</span><small>${r.correct}/${r.total}問正解</small></div>`).join('')}</div><div class="mock-analysis"><h3>復習優先</h3>${weak.length?weak.map(x=>`<p>・${escapeHtml(x.label)} <strong>${x.miss}問ミス</strong></p>`).join(''):'<p>全問正解です。この範囲はよく仕上がっています。</p>'}</div><details class="mock-review"><summary>問題ごとの結果を見る</summary>${state.session.map((q,i)=>{const a=state.answers.find(x=>x.questionId===q.id);const sub=state.curriculum.subjects.find(s=>s.id===q.subject);return `<article class="mock-review-item ${a?.correct?'ok':'ng'}"><strong>問${i+1} ${sub?.icon||''} ${escapeHtml(sub?.name||'')} ${state.sessionContext.points[q.id]}点</strong><p>${escapeHtml(q.question)}</p><p>あなたの答え：${escapeHtml(a?.answer||'未解答')}</p><p>正解：${escapeHtml(formatCorrectAnswer(q))}</p><small>${escapeHtml(q.explanation||'')}</small></article>`}).join('')}</details>`;
+ const item={id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,examName:state.sessionContext.examName,at:new Date().toISOString(),grade:state.grade,score,totalPoints:100,correct,total,rate,timeUp,minutes:state.sessionContext.minutes,questionIds:state.session.map(q=>q.id),answers:state.answers};saveMockExamResult(item);
+ const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:item.at,grade:state.grade,subject:null,total,score:correct,rate,mode:'mockExam',examId:item.examId,materials:state.sessionContext.materials||[],textbookYear:state.sessionContext.textbookYear||null,questionIds:item.questionIds,answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt}))});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-300)));
+ const logs=loadExamStudyLogs();logs.push({id:item.id,examId:item.examId,at:item.at,questionIds:state.answers.map(a=>a.questionId),score:correct,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));updateStreak();showView('resultView');
+}
+
 function startExamStudy(id){const plan=loadExamPlans().find(x=>x.id===id);if(!plan)return;const session=buildExamSession(plan,20);if(!session.length){alert('このテスト範囲には出題できる問題がありません。');return}state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;state.sessionContext={mode:'exam',examId:plan.id};showView('playView');renderQuestion();}
 function studyHistory(){try{return JSON.parse(localStorage.getItem('studyHistory')||'[]')}catch{return[]}}
 function answeredQuestionIds(){const ids=new Set();studyHistory().forEach(h=>(h.questionIds||[]).forEach(id=>ids.add(id)));return ids;}
@@ -814,6 +899,7 @@ function startDailyStudy(){
 }
 document.getElementById('createExamPlan').onclick=()=>openExamEditor();
 document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();state.exam.materials.clear();state.exam.openSubjects.clear();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();};
+document.getElementById('cancelMockExam')?.addEventListener('click',openExamPlans);document.getElementById('startMockExam')?.addEventListener('click',startMockExam);document.getElementById('mockCountChoices')?.addEventListener('click',e=>{const b=e.target.closest('[data-mock-count]');if(!b)return;state.mockExam.count=b.dataset.mockCount==='all'?'all':Number(b.dataset.mockCount);renderMockSetupChoices();updateMockSetupSummary();});document.getElementById('mockMinuteChoices')?.addEventListener('click',e=>{const b=e.target.closest('[data-mock-minutes]');if(!b)return;state.mockExam.minutes=Number(b.dataset.mockMinutes);renderMockSetupChoices();updateMockSetupSummary();});
 
 
 function openStats(){showView('statsView');renderStatsDashboard();}
@@ -839,7 +925,7 @@ function aggregateSubjectStats(){
  }
  return result;
 }
-function modeLabel(mode){return({quiz:'小テスト',review:'苦手復習',exam:'定期テスト',daily:'今日の30分'})[mode]||'学習';}
+function modeLabel(mode){return({quiz:'小テスト',review:'苦手復習',exam:'定期テスト',daily:'今日の30分',mockExam:'模擬テスト'})[mode]||'学習';}
 function formatStudyDate(iso){const d=new Date(iso);if(Number.isNaN(d.getTime()))return'';return `${d.getMonth()+1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;}
 function renderStatsDashboard(){
  if(!state.curriculum)return;
@@ -1276,7 +1362,7 @@ if('serviceWorker' in navigator && location.protocol === 'https:'){
 
 // Data backup / transfer (v0.15)
 const BACKUP_KEYS=[
- 'lastQuizSelection','missedQuestions','studyHistory','examStudyLogs','examPlans',
+ 'lastQuizSelection','missedQuestions','studyHistory','examStudyLogs','examPlans','mockExamResults',
  'customQuestions','lastStudyDate','streakDays','paperDrafts','schoolTextbookPreference','textbookStudyRanges'
 ];
 let pendingBackupData=null;
@@ -1298,7 +1384,7 @@ function backupSummaryFromData(data){
 }
 function openBackup(){showView('backupView');pendingBackupData=null;const p=document.getElementById('backupPreview');if(p)p.hidden=true;const a=document.getElementById('backupImportActions');if(a)a.hidden=true;const f=document.getElementById('backupFile');if(f)f.value='';document.getElementById('importBackupStatus').textContent='';}
 function downloadBackup(){
- const payload={app:'30min-study',schemaVersion:1,appVersion:'0.20',exportedAt:new Date().toISOString(),data:backupDataSnapshot()};
+ const payload={app:'30min-study',schemaVersion:1,appVersion:'0.28',exportedAt:new Date().toISOString(),data:backupDataSnapshot()};
  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
  const url=URL.createObjectURL(blob);const a=document.createElement('a');const d=new Date();const ymd=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
  a.href=url;a.download=`study-backup-${ymd}.json`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
@@ -1322,6 +1408,7 @@ function mergeBackupData(data){
   examPlans:x=>x?.id,
   examStudyLogs:x=>x?.id||`${x?.examId||''}|${x?.at||''}`,
   paperDrafts:x=>x?.id,
+  mockExamResults:x=>x?.id||`${x?.examId||''}|${x?.at||''}`,
   studyHistory:x=>`${x?.at||''}|${x?.mode||''}|${x?.score??''}|${(x?.questionIds||[]).join(',')}`
  };
  Object.entries(arrayKeys).forEach(([key,keyFn])=>{const incoming=safeJsonParse(data[key]||'[]',[]);if(!Array.isArray(incoming)||!incoming.length)return;const current=safeJsonParse(localStorage.getItem(key)||'[]',[]);localStorage.setItem(key,JSON.stringify(uniqueMerge(current,incoming,keyFn).slice(key==='studyHistory'||key==='examStudyLogs'?-300:0)));});

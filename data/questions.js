@@ -1,5 +1,5 @@
 window.QUESTION_DATA = {
-  "version": "0.38.0",
+  "version": "0.39.0",
   "questions": [
     {
       "id": "ja001",
@@ -49068,7 +49068,6769 @@ window.QUESTION_DATA = {
       ],
       "explanation": "want to の後ろには動詞の原形を置くので visit が入ります。",
       "difficulty": 1
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_singing_g1_4",
+      "subject": "music",
+      "unit": "singing",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "合唱でフレーズのまとまりを感じて歌うために最も適切な工夫は？",
+      "choices": [
+        "息の流れや言葉のまとまりを意識する",
+        "すべての音を同じ強さで歌う",
+        "伴奏を聞かず自分の声だけを聞く",
+        "音程を変えて目立つ"
+      ],
+      "answer": 0,
+      "explanation": "フレーズのまとまりは、息の流れや言葉のまとまりを意識すると表現しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_singing_g1_4",
+      "subject": "music",
+      "unit": "singing",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "合唱でフレーズのまとまりを感じて歌うために最も適切な工夫は？",
+      "choices": [
+        "息の流れや言葉のまとまりを意識する",
+        "すべての音を同じ強さで歌う",
+        "伴奏を聞かず自分の声だけを聞く",
+        "音程を変えて目立つ"
+      ],
+      "answer": 0,
+      "explanation": "フレーズのまとまりは、息の流れや言葉のまとまりを意識すると表現しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_singing_g2_4",
+      "subject": "music",
+      "unit": "singing",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "二部合唱で自分と異なる声部との調和を確かめるとき、最も大切なのは？",
+      "choices": [
+        "相手の声部との音量・音程の関係を聴く",
+        "自分の声部だけを最大音量で歌う",
+        "テンポを毎回変える",
+        "歌詞を省略する"
+      ],
+      "answer": 0,
+      "explanation": "合唱では他声部を聴き、音量・音程・響きの関係を調整することが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_singing_g2_4",
+      "subject": "music",
+      "unit": "singing",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "二部合唱で自分と異なる声部との調和を確かめるとき、最も大切なのは？",
+      "choices": [
+        "相手の声部との音量・音程の関係を聴く",
+        "自分の声部だけを最大音量で歌う",
+        "テンポを毎回変える",
+        "歌詞を省略する"
+      ],
+      "answer": 0,
+      "explanation": "合唱では他声部を聴き、音量・音程・響きの関係を調整することが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_singing_g3_4",
+      "subject": "music",
+      "unit": "singing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "歌唱表現を仕上げるとき、曲の構成と強弱を関連付けて考える理由は？",
+      "choices": [
+        "曲全体の変化や山場を伝えやすくなるから",
+        "音符の数を減らせるから",
+        "歌詞を暗記しなくてよくなるから",
+        "必ず速く歌えるから"
+      ],
+      "answer": 0,
+      "explanation": "構成と強弱を結び付けると、曲の流れや山場を聴き手に伝えやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_singing_g3_4",
+      "subject": "music",
+      "unit": "singing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "歌唱表現を仕上げるとき、曲の構成と強弱を関連付けて考える理由は？",
+      "choices": [
+        "曲全体の変化や山場を伝えやすくなるから",
+        "音符の数を減らせるから",
+        "歌詞を暗記しなくてよくなるから",
+        "必ず速く歌えるから"
+      ],
+      "answer": 0,
+      "explanation": "構成と強弱を結び付けると、曲の流れや山場を聴き手に伝えやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_instruments_g1_4",
+      "subject": "music",
+      "unit": "instruments",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "器楽合奏で一定のテンポを保つために有効な練習は？",
+      "choices": [
+        "拍を感じながら互いの音を聴く",
+        "自分だけ速く演奏する",
+        "休符をすべて飛ばす",
+        "強弱記号を無視する"
+      ],
+      "answer": 0,
+      "explanation": "拍を共有し、互いの音を聴くことがアンサンブルのテンポ安定につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_instruments_g1_4",
+      "subject": "music",
+      "unit": "instruments",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "器楽合奏で一定のテンポを保つために有効な練習は？",
+      "choices": [
+        "拍を感じながら互いの音を聴く",
+        "自分だけ速く演奏する",
+        "休符をすべて飛ばす",
+        "強弱記号を無視する"
+      ],
+      "answer": 0,
+      "explanation": "拍を共有し、互いの音を聴くことがアンサンブルのテンポ安定につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_instruments_g2_4",
+      "subject": "music",
+      "unit": "instruments",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "合奏で主旋律と伴奏のバランスを整えるとき、適切なのは？",
+      "choices": [
+        "役割に応じて音量や音色を調整する",
+        "全員が常に同じ音量にする",
+        "伴奏を主旋律より必ず大きくする",
+        "休符でも音を出す"
+      ],
+      "answer": 0,
+      "explanation": "パートの役割に応じて音量や音色を調整すると、音楽の構造が明確になります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_instruments_g2_4",
+      "subject": "music",
+      "unit": "instruments",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "合奏で主旋律と伴奏のバランスを整えるとき、適切なのは？",
+      "choices": [
+        "役割に応じて音量や音色を調整する",
+        "全員が常に同じ音量にする",
+        "伴奏を主旋律より必ず大きくする",
+        "休符でも音を出す"
+      ],
+      "answer": 0,
+      "explanation": "パートの役割に応じて音量や音色を調整すると、音楽の構造が明確になります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_instruments_g3_4",
+      "subject": "music",
+      "unit": "instruments",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "器楽合奏で表現を高めるため、各パートの役割を理解することが重要な理由は？",
+      "choices": [
+        "全体の響きの中で自分の演奏を調整できるから",
+        "楽器を持たなくてよくなるから",
+        "楽譜を読まなくてよくなるから",
+        "必ず独奏になるから"
+      ],
+      "answer": 0,
+      "explanation": "各パートの役割を理解すると、全体の響きに合わせて自分の演奏を調整できます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_instruments_g3_4",
+      "subject": "music",
+      "unit": "instruments",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "器楽合奏で表現を高めるため、各パートの役割を理解することが重要な理由は？",
+      "choices": [
+        "全体の響きの中で自分の演奏を調整できるから",
+        "楽器を持たなくてよくなるから",
+        "楽譜を読まなくてよくなるから",
+        "必ず独奏になるから"
+      ],
+      "answer": 0,
+      "explanation": "各パートの役割を理解すると、全体の響きに合わせて自分の演奏を調整できます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_creation_g1_4",
+      "subject": "music",
+      "unit": "creation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "短い旋律をつくるとき、まとまりを感じさせる工夫として適切なのは？",
+      "choices": [
+        "同じリズムや音型を一部繰り返す",
+        "すべての音を無関係に並べる",
+        "拍子を毎小節必ず変える",
+        "休符を使わない"
+      ],
+      "answer": 0,
+      "explanation": "反復は旋律にまとまりや統一感を生みやすい方法です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_creation_g1_4",
+      "subject": "music",
+      "unit": "creation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "短い旋律をつくるとき、まとまりを感じさせる工夫として適切なのは？",
+      "choices": [
+        "同じリズムや音型を一部繰り返す",
+        "すべての音を無関係に並べる",
+        "拍子を毎小節必ず変える",
+        "休符を使わない"
+      ],
+      "answer": 0,
+      "explanation": "反復は旋律にまとまりや統一感を生みやすい方法です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_creation_g2_4",
+      "subject": "music",
+      "unit": "creation",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "リズムを組み合わせて創作するとき、対比をつくる方法として適切なのは？",
+      "choices": [
+        "一部で異なるリズム型を用いる",
+        "最初から最後まで完全に同じにする",
+        "拍を無視する",
+        "音を一つも使わない"
+      ],
+      "answer": 0,
+      "explanation": "反復だけでなく異なるリズム型を入れると、対比や変化をつくれます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_creation_g2_4",
+      "subject": "music",
+      "unit": "creation",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "リズムを組み合わせて創作するとき、対比をつくる方法として適切なのは？",
+      "choices": [
+        "一部で異なるリズム型を用いる",
+        "最初から最後まで完全に同じにする",
+        "拍を無視する",
+        "音を一つも使わない"
+      ],
+      "answer": 0,
+      "explanation": "反復だけでなく異なるリズム型を入れると、対比や変化をつくれます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_creation_g3_4",
+      "subject": "music",
+      "unit": "creation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "創作した音楽を推敲するときに確認するとよいことは？",
+      "choices": [
+        "意図したイメージと音の組合せが合っているか",
+        "音符の数が必ず100個あるか",
+        "すべて同じ高さの音か",
+        "演奏時間が必ず1分か"
+      ],
+      "answer": 0,
+      "explanation": "創作では表したいイメージと、リズム・旋律・構成などの選択が合っているかを確かめます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_creation_g3_4",
+      "subject": "music",
+      "unit": "creation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "創作した音楽を推敲するときに確認するとよいことは？",
+      "choices": [
+        "意図したイメージと音の組合せが合っているか",
+        "音符の数が必ず100個あるか",
+        "すべて同じ高さの音か",
+        "演奏時間が必ず1分か"
+      ],
+      "answer": 0,
+      "explanation": "創作では表したいイメージと、リズム・旋律・構成などの選択が合っているかを確かめます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_elements_g1_4",
+      "subject": "music",
+      "unit": "elements",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "同じ旋律でも速さを変えると曲の感じが変わる。この『速さ』を表す音楽の要素は？",
+      "choices": [
+        "速度（テンポ）",
+        "音色",
+        "調性だけ",
+        "歌詞"
+      ],
+      "answer": 0,
+      "explanation": "テンポは音楽を形づくる重要な要素で、曲想にも影響します。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_elements_g1_4",
+      "subject": "music",
+      "unit": "elements",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "同じ旋律でも速さを変えると曲の感じが変わる。この『速さ』を表す音楽の要素は？",
+      "choices": [
+        "速度（テンポ）",
+        "音色",
+        "調性だけ",
+        "歌詞"
+      ],
+      "answer": 0,
+      "explanation": "テンポは音楽を形づくる重要な要素で、曲想にも影響します。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_elements_g2_4",
+      "subject": "music",
+      "unit": "elements",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "旋律がだんだん高くなるときに感じられる変化を考える際、注目する要素は？",
+      "choices": [
+        "音の高さ",
+        "拍子だけ",
+        "歌詞の文字数",
+        "楽器の値段"
+      ],
+      "answer": 0,
+      "explanation": "音の高さの動きは旋律の特徴や曲想を捉える手掛かりになります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_elements_g2_4",
+      "subject": "music",
+      "unit": "elements",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "旋律がだんだん高くなるときに感じられる変化を考える際、注目する要素は？",
+      "choices": [
+        "音の高さ",
+        "拍子だけ",
+        "歌詞の文字数",
+        "楽器の値段"
+      ],
+      "answer": 0,
+      "explanation": "音の高さの動きは旋律の特徴や曲想を捉える手掛かりになります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_elements_g3_4",
+      "subject": "music",
+      "unit": "elements",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "音楽を分析するとき、反復・変化・対照に注目する主な目的は？",
+      "choices": [
+        "曲の構成やまとまりを捉えるため",
+        "演奏者の年齢を当てるため",
+        "楽譜の紙質を調べるため",
+        "音量を常に最大にするため"
+      ],
+      "answer": 0,
+      "explanation": "反復・変化・対照は、曲の構成やまとまりを理解する手掛かりです。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_elements_g3_4",
+      "subject": "music",
+      "unit": "elements",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "音楽を分析するとき、反復・変化・対照に注目する主な目的は？",
+      "choices": [
+        "曲の構成やまとまりを捉えるため",
+        "演奏者の年齢を当てるため",
+        "楽譜の紙質を調べるため",
+        "音量を常に最大にするため"
+      ],
+      "answer": 0,
+      "explanation": "反復・変化・対照は、曲の構成やまとまりを理解する手掛かりです。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_culture_g1_4",
+      "subject": "music",
+      "unit": "culture",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "日本の伝統音楽を鑑賞するとき、理解を深める観点として適切なのは？",
+      "choices": [
+        "使われる楽器や演奏の場面・文化的背景",
+        "演奏者の服の値段だけ",
+        "曲名の文字数だけ",
+        "録音機器のメーカーだけ"
+      ],
+      "answer": 0,
+      "explanation": "楽器・演奏形態・文化的背景を関連付けると音楽文化への理解が深まります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_culture_g1_4",
+      "subject": "music",
+      "unit": "culture",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "日本の伝統音楽を鑑賞するとき、理解を深める観点として適切なのは？",
+      "choices": [
+        "使われる楽器や演奏の場面・文化的背景",
+        "演奏者の服の値段だけ",
+        "曲名の文字数だけ",
+        "録音機器のメーカーだけ"
+      ],
+      "answer": 0,
+      "explanation": "楽器・演奏形態・文化的背景を関連付けると音楽文化への理解が深まります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_culture_g2_4",
+      "subject": "music",
+      "unit": "culture",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "異なる地域の音楽を比べて鑑賞するときに適切な方法は？",
+      "choices": [
+        "リズム・音色・使われる楽器などを比べる",
+        "どちらか一方だけを聞く",
+        "音量だけで優劣を決める",
+        "曲の長さだけで判断する"
+      ],
+      "answer": 0,
+      "explanation": "複数の音楽的特徴を比較すると、それぞれの文化的特徴を捉えやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_culture_g2_4",
+      "subject": "music",
+      "unit": "culture",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "異なる地域の音楽を比べて鑑賞するときに適切な方法は？",
+      "choices": [
+        "リズム・音色・使われる楽器などを比べる",
+        "どちらか一方だけを聞く",
+        "音量だけで優劣を決める",
+        "曲の長さだけで判断する"
+      ],
+      "answer": 0,
+      "explanation": "複数の音楽的特徴を比較すると、それぞれの文化的特徴を捉えやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikugeijutsusha_culture_g3_4",
+      "subject": "music",
+      "unit": "culture",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "音楽作品を時代や社会との関わりから考える意義として最も適切なのは？",
+      "choices": [
+        "作品が生まれた背景と表現の特徴を関連付けられる",
+        "必ず作曲年を暗記できる",
+        "演奏せずに済む",
+        "音楽の要素を考えなくてよくなる"
+      ],
+      "answer": 0,
+      "explanation": "時代・社会背景と音楽表現を関連付けると、作品を多面的に理解できます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-geijutsusha",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_music_kyoikushuppan_culture_g3_4",
+      "subject": "music",
+      "unit": "culture",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "音楽作品を時代や社会との関わりから考える意義として最も適切なのは？",
+      "choices": [
+        "作品が生まれた背景と表現の特徴を関連付けられる",
+        "必ず作曲年を暗記できる",
+        "演奏せずに済む",
+        "音楽の要素を考えなくてよくなる"
+      ],
+      "answer": 0,
+      "explanation": "時代・社会背景と音楽表現を関連付けると、作品を多面的に理解できます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_paintingsculpture_g1_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "鉛筆で物体の立体感を表すとき、効果的な方法は？",
+      "choices": [
+        "明るい部分と暗い部分の差を捉える",
+        "輪郭線をすべて同じ太さにするだけ",
+        "影を描かない",
+        "画面全体を同じ濃さで塗る"
+      ],
+      "answer": 0,
+      "explanation": "明暗の変化を捉えると、面の向きや立体感を表現できます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_paintingsculpture_g1_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "鉛筆で物体の立体感を表すとき、効果的な方法は？",
+      "choices": [
+        "明るい部分と暗い部分の差を捉える",
+        "輪郭線をすべて同じ太さにするだけ",
+        "影を描かない",
+        "画面全体を同じ濃さで塗る"
+      ],
+      "answer": 0,
+      "explanation": "明暗の変化を捉えると、面の向きや立体感を表現できます。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_paintingsculpture_g1_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "鉛筆で物体の立体感を表すとき、効果的な方法は？",
+      "choices": [
+        "明るい部分と暗い部分の差を捉える",
+        "輪郭線をすべて同じ太さにするだけ",
+        "影を描かない",
+        "画面全体を同じ濃さで塗る"
+      ],
+      "answer": 0,
+      "explanation": "明暗の変化を捉えると、面の向きや立体感を表現できます。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_paintingsculpture_g2_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "人物の動きを表すスケッチで、まず意識するとよいものは？",
+      "choices": [
+        "体全体の傾きや大きな動き",
+        "指先だけの細部",
+        "背景の文字だけ",
+        "紙の余白を完全になくすこと"
+      ],
+      "answer": 0,
+      "explanation": "最初に大きな動きや全体のバランスを捉えると、自然な動勢を表しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_paintingsculpture_g2_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "人物の動きを表すスケッチで、まず意識するとよいものは？",
+      "choices": [
+        "体全体の傾きや大きな動き",
+        "指先だけの細部",
+        "背景の文字だけ",
+        "紙の余白を完全になくすこと"
+      ],
+      "answer": 0,
+      "explanation": "最初に大きな動きや全体のバランスを捉えると、自然な動勢を表しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_paintingsculpture_g2_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "人物の動きを表すスケッチで、まず意識するとよいものは？",
+      "choices": [
+        "体全体の傾きや大きな動き",
+        "指先だけの細部",
+        "背景の文字だけ",
+        "紙の余白を完全になくすこと"
+      ],
+      "answer": 0,
+      "explanation": "最初に大きな動きや全体のバランスを捉えると、自然な動勢を表しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_paintingsculpture_g3_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "彫刻作品の表現を考えるとき、『空間』も作品の一部として捉えるとはどういうこと？",
+      "choices": [
+        "形と周囲の空間の関係を考えること",
+        "作品を必ず箱に入れること",
+        "表面をすべて平らにすること",
+        "色を使わないこと"
+      ],
+      "answer": 0,
+      "explanation": "立体作品では形そのものだけでなく、周囲や内部の空間との関係も表現になります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_paintingsculpture_g3_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "彫刻作品の表現を考えるとき、『空間』も作品の一部として捉えるとはどういうこと？",
+      "choices": [
+        "形と周囲の空間の関係を考えること",
+        "作品を必ず箱に入れること",
+        "表面をすべて平らにすること",
+        "色を使わないこと"
+      ],
+      "answer": 0,
+      "explanation": "立体作品では形そのものだけでなく、周囲や内部の空間との関係も表現になります。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_paintingsculpture_g3_4",
+      "subject": "art",
+      "unit": "painting-sculpture",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "彫刻作品の表現を考えるとき、『空間』も作品の一部として捉えるとはどういうこと？",
+      "choices": [
+        "形と周囲の空間の関係を考えること",
+        "作品を必ず箱に入れること",
+        "表面をすべて平らにすること",
+        "色を使わないこと"
+      ],
+      "answer": 0,
+      "explanation": "立体作品では形そのものだけでなく、周囲や内部の空間との関係も表現になります。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_designcraft_g1_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "ポスターで情報を伝わりやすくするために有効なのは？",
+      "choices": [
+        "文字の大きさや配置に強弱をつける",
+        "すべての文字を同じ大きさで詰め込む",
+        "背景と文字を同じ色にする",
+        "重要な情報を最小にする"
+      ],
+      "answer": 0,
+      "explanation": "情報の優先順位に合わせて文字や配置に強弱をつけると伝わりやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_designcraft_g1_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "ポスターで情報を伝わりやすくするために有効なのは？",
+      "choices": [
+        "文字の大きさや配置に強弱をつける",
+        "すべての文字を同じ大きさで詰め込む",
+        "背景と文字を同じ色にする",
+        "重要な情報を最小にする"
+      ],
+      "answer": 0,
+      "explanation": "情報の優先順位に合わせて文字や配置に強弱をつけると伝わりやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_designcraft_g1_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "ポスターで情報を伝わりやすくするために有効なのは？",
+      "choices": [
+        "文字の大きさや配置に強弱をつける",
+        "すべての文字を同じ大きさで詰め込む",
+        "背景と文字を同じ色にする",
+        "重要な情報を最小にする"
+      ],
+      "answer": 0,
+      "explanation": "情報の優先順位に合わせて文字や配置に強弱をつけると伝わりやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_designcraft_g2_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "身近な製品をデザインするとき、使いやすさを高める視点は？",
+      "choices": [
+        "使う人の動作や安全性を考える",
+        "見た目だけで決める",
+        "材料の性質を無視する",
+        "用途を考えない"
+      ],
+      "answer": 0,
+      "explanation": "デザインでは目的・利用者・安全性・材料などを総合して考えます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_designcraft_g2_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "身近な製品をデザインするとき、使いやすさを高める視点は？",
+      "choices": [
+        "使う人の動作や安全性を考える",
+        "見た目だけで決める",
+        "材料の性質を無視する",
+        "用途を考えない"
+      ],
+      "answer": 0,
+      "explanation": "デザインでは目的・利用者・安全性・材料などを総合して考えます。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_designcraft_g2_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "身近な製品をデザインするとき、使いやすさを高める視点は？",
+      "choices": [
+        "使う人の動作や安全性を考える",
+        "見た目だけで決める",
+        "材料の性質を無視する",
+        "用途を考えない"
+      ],
+      "answer": 0,
+      "explanation": "デザインでは目的・利用者・安全性・材料などを総合して考えます。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_designcraft_g3_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "工芸品の形や材料に地域性が表れることがあるのはなぜ？",
+      "choices": [
+        "地域の生活・自然・技術と関わって発展するから",
+        "すべて世界共通の規格で作るから",
+        "材料を使わないから",
+        "用途が存在しないから"
+      ],
+      "answer": 0,
+      "explanation": "工芸は地域の材料、生活、伝統的な技術などと結び付いて発展してきました。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_designcraft_g3_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "工芸品の形や材料に地域性が表れることがあるのはなぜ？",
+      "choices": [
+        "地域の生活・自然・技術と関わって発展するから",
+        "すべて世界共通の規格で作るから",
+        "材料を使わないから",
+        "用途が存在しないから"
+      ],
+      "answer": 0,
+      "explanation": "工芸は地域の材料、生活、伝統的な技術などと結び付いて発展してきました。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_designcraft_g3_4",
+      "subject": "art",
+      "unit": "design-craft",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "工芸品の形や材料に地域性が表れることがあるのはなぜ？",
+      "choices": [
+        "地域の生活・自然・技術と関わって発展するから",
+        "すべて世界共通の規格で作るから",
+        "材料を使わないから",
+        "用途が存在しないから"
+      ],
+      "answer": 0,
+      "explanation": "工芸は地域の材料、生活、伝統的な技術などと結び付いて発展してきました。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_visualelements_g1_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "赤と緑のように色相環で向かい合う関係の色を何という？",
+      "choices": [
+        "補色",
+        "同系色",
+        "無彩色",
+        "中間色だけ"
+      ],
+      "answer": 0,
+      "explanation": "色相環で反対側に位置する色どうしを補色といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_visualelements_g1_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "赤と緑のように色相環で向かい合う関係の色を何という？",
+      "choices": [
+        "補色",
+        "同系色",
+        "無彩色",
+        "中間色だけ"
+      ],
+      "answer": 0,
+      "explanation": "色相環で反対側に位置する色どうしを補色といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_visualelements_g1_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "赤と緑のように色相環で向かい合う関係の色を何という？",
+      "choices": [
+        "補色",
+        "同系色",
+        "無彩色",
+        "中間色だけ"
+      ],
+      "answer": 0,
+      "explanation": "色相環で反対側に位置する色どうしを補色といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_visualelements_g2_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "画面の中で大きさの違いを利用すると、どのような効果を出しやすい？",
+      "choices": [
+        "強調や奥行き",
+        "必ず無彩色になる",
+        "線が消える",
+        "形がすべて同じになる"
+      ],
+      "answer": 0,
+      "explanation": "大きさの差は視線を集めたり、遠近感や強弱を表したりする手掛かりになります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_visualelements_g2_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "画面の中で大きさの違いを利用すると、どのような効果を出しやすい？",
+      "choices": [
+        "強調や奥行き",
+        "必ず無彩色になる",
+        "線が消える",
+        "形がすべて同じになる"
+      ],
+      "answer": 0,
+      "explanation": "大きさの差は視線を集めたり、遠近感や強弱を表したりする手掛かりになります。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_visualelements_g2_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "画面の中で大きさの違いを利用すると、どのような効果を出しやすい？",
+      "choices": [
+        "強調や奥行き",
+        "必ず無彩色になる",
+        "線が消える",
+        "形がすべて同じになる"
+      ],
+      "answer": 0,
+      "explanation": "大きさの差は視線を集めたり、遠近感や強弱を表したりする手掛かりになります。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_visualelements_g3_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "作品の印象を分析するとき、形・色・材料を関連付けて見る理由は？",
+      "choices": [
+        "複数の造形要素が組み合わさって印象を生むから",
+        "色だけですべて決まるから",
+        "材料は作品に影響しないから",
+        "形は鑑賞に不要だから"
+      ],
+      "answer": 0,
+      "explanation": "作品の印象は複数の造形要素の関係から生まれるため、関連付けて見ることが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_visualelements_g3_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "作品の印象を分析するとき、形・色・材料を関連付けて見る理由は？",
+      "choices": [
+        "複数の造形要素が組み合わさって印象を生むから",
+        "色だけですべて決まるから",
+        "材料は作品に影響しないから",
+        "形は鑑賞に不要だから"
+      ],
+      "answer": 0,
+      "explanation": "作品の印象は複数の造形要素の関係から生まれるため、関連付けて見ることが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_visualelements_g3_4",
+      "subject": "art",
+      "unit": "visual-elements",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "作品の印象を分析するとき、形・色・材料を関連付けて見る理由は？",
+      "choices": [
+        "複数の造形要素が組み合わさって印象を生むから",
+        "色だけですべて決まるから",
+        "材料は作品に影響しないから",
+        "形は鑑賞に不要だから"
+      ],
+      "answer": 0,
+      "explanation": "作品の印象は複数の造形要素の関係から生まれるため、関連付けて見ることが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_artculture_g1_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "美術作品を鑑賞するとき、作者の意図を考える手掛かりとして適切なのは？",
+      "choices": [
+        "題材・構図・色・材料などの表現",
+        "額縁の値段だけ",
+        "展示室の広さだけ",
+        "作品番号だけ"
+      ],
+      "answer": 0,
+      "explanation": "題材や造形的な工夫を根拠にすると、作者の意図や表現の特徴を考えられます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_artculture_g1_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "美術作品を鑑賞するとき、作者の意図を考える手掛かりとして適切なのは？",
+      "choices": [
+        "題材・構図・色・材料などの表現",
+        "額縁の値段だけ",
+        "展示室の広さだけ",
+        "作品番号だけ"
+      ],
+      "answer": 0,
+      "explanation": "題材や造形的な工夫を根拠にすると、作者の意図や表現の特徴を考えられます。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_artculture_g1_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "美術作品を鑑賞するとき、作者の意図を考える手掛かりとして適切なのは？",
+      "choices": [
+        "題材・構図・色・材料などの表現",
+        "額縁の値段だけ",
+        "展示室の広さだけ",
+        "作品番号だけ"
+      ],
+      "answer": 0,
+      "explanation": "題材や造形的な工夫を根拠にすると、作者の意図や表現の特徴を考えられます。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_artculture_g2_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域の文化財を鑑賞する際、その価値を考える視点として適切なのは？",
+      "choices": [
+        "歴史や地域の暮らしとの関わり",
+        "新しいか古いかだけ",
+        "大きさだけ",
+        "色数だけ"
+      ],
+      "answer": 0,
+      "explanation": "文化財は歴史や地域社会との関わりを含めて捉えると価値を理解しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_artculture_g2_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域の文化財を鑑賞する際、その価値を考える視点として適切なのは？",
+      "choices": [
+        "歴史や地域の暮らしとの関わり",
+        "新しいか古いかだけ",
+        "大きさだけ",
+        "色数だけ"
+      ],
+      "answer": 0,
+      "explanation": "文化財は歴史や地域社会との関わりを含めて捉えると価値を理解しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_artculture_g2_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域の文化財を鑑賞する際、その価値を考える視点として適切なのは？",
+      "choices": [
+        "歴史や地域の暮らしとの関わり",
+        "新しいか古いかだけ",
+        "大きさだけ",
+        "色数だけ"
+      ],
+      "answer": 0,
+      "explanation": "文化財は歴史や地域社会との関わりを含めて捉えると価値を理解しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_kairyudo_artculture_g3_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "異なる時代の作品を比較鑑賞することで分かりやすくなることは？",
+      "choices": [
+        "表現方法や価値観の変化",
+        "作品の正解が一つに決まること",
+        "作者の身長",
+        "展示室の温度"
+      ],
+      "answer": 0,
+      "explanation": "比較鑑賞は、時代による表現や価値観の共通点・相違点を捉えるのに役立ちます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_mitsumura_artculture_g3_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "異なる時代の作品を比較鑑賞することで分かりやすくなることは？",
+      "choices": [
+        "表現方法や価値観の変化",
+        "作品の正解が一つに決まること",
+        "作者の身長",
+        "展示室の温度"
+      ],
+      "answer": 0,
+      "explanation": "比較鑑賞は、時代による表現や価値観の共通点・相違点を捉えるのに役立ちます。",
+      "difficulty": 2,
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_art_nihonbunkyo_artculture_g3_4",
+      "subject": "art",
+      "unit": "art-culture",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "異なる時代の作品を比較鑑賞することで分かりやすくなることは？",
+      "choices": [
+        "表現方法や価値観の変化",
+        "作品の正解が一つに決まること",
+        "作者の身長",
+        "展示室の温度"
+      ],
+      "answer": 0,
+      "explanation": "比較鑑賞は、時代による表現や価値観の共通点・相違点を捉えるのに役立ちます。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_healthdevelopment_g1_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "成長期に睡眠を十分にとることが重要な理由として適切なのは？",
+      "choices": [
+        "心身の回復や成長に関わるから",
+        "睡眠中は栄養が不要になるから",
+        "運動が一切不要になるから",
+        "昼間の活動量と無関係だから"
+      ],
+      "answer": 0,
+      "explanation": "睡眠は疲労回復や心身の成長、生活リズムの維持に関わります。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_healthdevelopment_g1_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "成長期に睡眠を十分にとることが重要な理由として適切なのは？",
+      "choices": [
+        "心身の回復や成長に関わるから",
+        "睡眠中は栄養が不要になるから",
+        "運動が一切不要になるから",
+        "昼間の活動量と無関係だから"
+      ],
+      "answer": 0,
+      "explanation": "睡眠は疲労回復や心身の成長、生活リズムの維持に関わります。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_healthdevelopment_g1_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "成長期に睡眠を十分にとることが重要な理由として適切なのは？",
+      "choices": [
+        "心身の回復や成長に関わるから",
+        "睡眠中は栄養が不要になるから",
+        "運動が一切不要になるから",
+        "昼間の活動量と無関係だから"
+      ],
+      "answer": 0,
+      "explanation": "睡眠は疲労回復や心身の成長、生活リズムの維持に関わります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_healthdevelopment_g2_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "ストレスへの対処法を選ぶときに大切なのは？",
+      "choices": [
+        "自分の状態に合う健康的な方法を複数持つ",
+        "必ず一人で抱え込む",
+        "睡眠時間を削る",
+        "食事を抜く"
+      ],
+      "answer": 0,
+      "explanation": "休養、運動、相談など、自分に合う健康的な対処法を持つことが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_healthdevelopment_g2_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "ストレスへの対処法を選ぶときに大切なのは？",
+      "choices": [
+        "自分の状態に合う健康的な方法を複数持つ",
+        "必ず一人で抱え込む",
+        "睡眠時間を削る",
+        "食事を抜く"
+      ],
+      "answer": 0,
+      "explanation": "休養、運動、相談など、自分に合う健康的な対処法を持つことが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_healthdevelopment_g2_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "ストレスへの対処法を選ぶときに大切なのは？",
+      "choices": [
+        "自分の状態に合う健康的な方法を複数持つ",
+        "必ず一人で抱え込む",
+        "睡眠時間を削る",
+        "食事を抜く"
+      ],
+      "answer": 0,
+      "explanation": "休養、運動、相談など、自分に合う健康的な対処法を持つことが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_healthdevelopment_g3_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "生活習慣を改善する際、記録を取る利点は？",
+      "choices": [
+        "自分の傾向を客観的に振り返りやすい",
+        "必ず病気を治せる",
+        "運動が不要になる",
+        "睡眠時間をゼロにできる"
+      ],
+      "answer": 0,
+      "explanation": "記録は生活の傾向や改善点を客観的に把握する助けになります。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_healthdevelopment_g3_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "生活習慣を改善する際、記録を取る利点は？",
+      "choices": [
+        "自分の傾向を客観的に振り返りやすい",
+        "必ず病気を治せる",
+        "運動が不要になる",
+        "睡眠時間をゼロにできる"
+      ],
+      "answer": 0,
+      "explanation": "記録は生活の傾向や改善点を客観的に把握する助けになります。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_healthdevelopment_g3_4",
+      "subject": "pe",
+      "unit": "health-development",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "生活習慣を改善する際、記録を取る利点は？",
+      "choices": [
+        "自分の傾向を客観的に振り返りやすい",
+        "必ず病気を治せる",
+        "運動が不要になる",
+        "睡眠時間をゼロにできる"
+      ],
+      "answer": 0,
+      "explanation": "記録は生活の傾向や改善点を客観的に把握する助けになります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_injuryprevention_g1_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "運動前に周囲や用具を確認する主な目的は？",
+      "choices": [
+        "事故やけがの危険を減らすため",
+        "運動時間を短くするためだけ",
+        "用具を壊すため",
+        "ルールをなくすため"
+      ],
+      "answer": 0,
+      "explanation": "環境や用具の安全確認は傷害の予防につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_injuryprevention_g1_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "運動前に周囲や用具を確認する主な目的は？",
+      "choices": [
+        "事故やけがの危険を減らすため",
+        "運動時間を短くするためだけ",
+        "用具を壊すため",
+        "ルールをなくすため"
+      ],
+      "answer": 0,
+      "explanation": "環境や用具の安全確認は傷害の予防につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_injuryprevention_g1_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "運動前に周囲や用具を確認する主な目的は？",
+      "choices": [
+        "事故やけがの危険を減らすため",
+        "運動時間を短くするためだけ",
+        "用具を壊すため",
+        "ルールをなくすため"
+      ],
+      "answer": 0,
+      "explanation": "環境や用具の安全確認は傷害の予防につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_injuryprevention_g2_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "ねんざが疑われるときの初期対応として適切なのは？",
+      "choices": [
+        "無理に動かさず冷却などを行う",
+        "痛くても全力で走る",
+        "強くもみ続ける",
+        "すぐ熱い湯につける"
+      ],
+      "answer": 0,
+      "explanation": "けが直後は無理に動かさず、状態に応じて冷却・安静などの対応を行います。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_injuryprevention_g2_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "ねんざが疑われるときの初期対応として適切なのは？",
+      "choices": [
+        "無理に動かさず冷却などを行う",
+        "痛くても全力で走る",
+        "強くもみ続ける",
+        "すぐ熱い湯につける"
+      ],
+      "answer": 0,
+      "explanation": "けが直後は無理に動かさず、状態に応じて冷却・安静などの対応を行います。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_injuryprevention_g2_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "ねんざが疑われるときの初期対応として適切なのは？",
+      "choices": [
+        "無理に動かさず冷却などを行う",
+        "痛くても全力で走る",
+        "強くもみ続ける",
+        "すぐ熱い湯につける"
+      ],
+      "answer": 0,
+      "explanation": "けが直後は無理に動かさず、状態に応じて冷却・安静などの対応を行います。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_injuryprevention_g3_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "AEDを用いる場面で、音声案内に従うことが重要な理由は？",
+      "choices": [
+        "安全で適切な手順を確認しながら処置できるから",
+        "必ず一人で操作するため",
+        "胸骨圧迫をしなくてよくなるから",
+        "救急車を呼ばなくてよくなるから"
+      ],
+      "answer": 0,
+      "explanation": "AEDは音声案内に従い、安全を確認しながら使用します。救急要請や胸骨圧迫も重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_injuryprevention_g3_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "AEDを用いる場面で、音声案内に従うことが重要な理由は？",
+      "choices": [
+        "安全で適切な手順を確認しながら処置できるから",
+        "必ず一人で操作するため",
+        "胸骨圧迫をしなくてよくなるから",
+        "救急車を呼ばなくてよくなるから"
+      ],
+      "answer": 0,
+      "explanation": "AEDは音声案内に従い、安全を確認しながら使用します。救急要請や胸骨圧迫も重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_injuryprevention_g3_4",
+      "subject": "pe",
+      "unit": "injury-prevention",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "AEDを用いる場面で、音声案内に従うことが重要な理由は？",
+      "choices": [
+        "安全で適切な手順を確認しながら処置できるから",
+        "必ず一人で操作するため",
+        "胸骨圧迫をしなくてよくなるから",
+        "救急車を呼ばなくてよくなるから"
+      ],
+      "answer": 0,
+      "explanation": "AEDは音声案内に従い、安全を確認しながら使用します。救急要請や胸骨圧迫も重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_diseaseprevention_g1_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "感染症の予防で手洗いが有効な理由は？",
+      "choices": [
+        "手についた病原体が体内に入る機会を減らすから",
+        "すべての病気を完全に防げるから",
+        "睡眠が不要になるから",
+        "運動能力が必ず上がるから"
+      ],
+      "answer": 0,
+      "explanation": "手洗いは接触による病原体の侵入機会を減らす基本的な予防行動です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_diseaseprevention_g1_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "感染症の予防で手洗いが有効な理由は？",
+      "choices": [
+        "手についた病原体が体内に入る機会を減らすから",
+        "すべての病気を完全に防げるから",
+        "睡眠が不要になるから",
+        "運動能力が必ず上がるから"
+      ],
+      "answer": 0,
+      "explanation": "手洗いは接触による病原体の侵入機会を減らす基本的な予防行動です。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_diseaseprevention_g1_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "感染症の予防で手洗いが有効な理由は？",
+      "choices": [
+        "手についた病原体が体内に入る機会を減らすから",
+        "すべての病気を完全に防げるから",
+        "睡眠が不要になるから",
+        "運動能力が必ず上がるから"
+      ],
+      "answer": 0,
+      "explanation": "手洗いは接触による病原体の侵入機会を減らす基本的な予防行動です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_diseaseprevention_g2_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "生活習慣病の予防に関係する行動として適切なのは？",
+      "choices": [
+        "食事・運動・休養などを継続的に見直す",
+        "一度だけ運動すればよい",
+        "毎日睡眠を削る",
+        "健康診断を無視する"
+      ],
+      "answer": 0,
+      "explanation": "生活習慣病の予防には、日々の食事・運動・休養などを継続的に整えることが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_diseaseprevention_g2_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "生活習慣病の予防に関係する行動として適切なのは？",
+      "choices": [
+        "食事・運動・休養などを継続的に見直す",
+        "一度だけ運動すればよい",
+        "毎日睡眠を削る",
+        "健康診断を無視する"
+      ],
+      "answer": 0,
+      "explanation": "生活習慣病の予防には、日々の食事・運動・休養などを継続的に整えることが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_diseaseprevention_g2_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "生活習慣病の予防に関係する行動として適切なのは？",
+      "choices": [
+        "食事・運動・休養などを継続的に見直す",
+        "一度だけ運動すればよい",
+        "毎日睡眠を削る",
+        "健康診断を無視する"
+      ],
+      "answer": 0,
+      "explanation": "生活習慣病の予防には、日々の食事・運動・休養などを継続的に整えることが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_diseaseprevention_g3_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "疾病の予防を個人だけでなく社会全体で行う例として適切なのは？",
+      "choices": [
+        "健診や予防接種などの保健活動",
+        "体調不良を隠すこと",
+        "正しい情報を共有しないこと",
+        "医療機関をなくすこと"
+      ],
+      "answer": 0,
+      "explanation": "健診・予防接種・情報提供など、社会的な保健活動も疾病予防を支えます。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_diseaseprevention_g3_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "疾病の予防を個人だけでなく社会全体で行う例として適切なのは？",
+      "choices": [
+        "健診や予防接種などの保健活動",
+        "体調不良を隠すこと",
+        "正しい情報を共有しないこと",
+        "医療機関をなくすこと"
+      ],
+      "answer": 0,
+      "explanation": "健診・予防接種・情報提供など、社会的な保健活動も疾病予防を支えます。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_diseaseprevention_g3_4",
+      "subject": "pe",
+      "unit": "disease-prevention",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "疾病の予防を個人だけでなく社会全体で行う例として適切なのは？",
+      "choices": [
+        "健診や予防接種などの保健活動",
+        "体調不良を隠すこと",
+        "正しい情報を共有しないこと",
+        "医療機関をなくすこと"
+      ],
+      "answer": 0,
+      "explanation": "健診・予防接種・情報提供など、社会的な保健活動も疾病予防を支えます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_environmenthealth_g1_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "室内の換気を行う主な目的の一つは？",
+      "choices": [
+        "空気を入れ替え、汚染物質などの濃度を下げるため",
+        "室温を必ず0℃にするため",
+        "湿度を必ず100%にするため",
+        "酸素をなくすため"
+      ],
+      "answer": 0,
+      "explanation": "換気は室内の二酸化炭素や汚染物質などを外へ出し、空気環境を整えるために行います。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_environmenthealth_g1_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "室内の換気を行う主な目的の一つは？",
+      "choices": [
+        "空気を入れ替え、汚染物質などの濃度を下げるため",
+        "室温を必ず0℃にするため",
+        "湿度を必ず100%にするため",
+        "酸素をなくすため"
+      ],
+      "answer": 0,
+      "explanation": "換気は室内の二酸化炭素や汚染物質などを外へ出し、空気環境を整えるために行います。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_environmenthealth_g1_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "室内の換気を行う主な目的の一つは？",
+      "choices": [
+        "空気を入れ替え、汚染物質などの濃度を下げるため",
+        "室温を必ず0℃にするため",
+        "湿度を必ず100%にするため",
+        "酸素をなくすため"
+      ],
+      "answer": 0,
+      "explanation": "換気は室内の二酸化炭素や汚染物質などを外へ出し、空気環境を整えるために行います。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_environmenthealth_g2_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "水道水の安全を守るために行われていることとして適切なのは？",
+      "choices": [
+        "浄水や水質管理",
+        "色だけを確認する",
+        "温度だけを測る",
+        "何も処理しない"
+      ],
+      "answer": 0,
+      "explanation": "飲料水の安全には浄水処理や水質検査などの管理が必要です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_environmenthealth_g2_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "水道水の安全を守るために行われていることとして適切なのは？",
+      "choices": [
+        "浄水や水質管理",
+        "色だけを確認する",
+        "温度だけを測る",
+        "何も処理しない"
+      ],
+      "answer": 0,
+      "explanation": "飲料水の安全には浄水処理や水質検査などの管理が必要です。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_environmenthealth_g2_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "水道水の安全を守るために行われていることとして適切なのは？",
+      "choices": [
+        "浄水や水質管理",
+        "色だけを確認する",
+        "温度だけを測る",
+        "何も処理しない"
+      ],
+      "answer": 0,
+      "explanation": "飲料水の安全には浄水処理や水質検査などの管理が必要です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_environmenthealth_g3_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "環境問題と健康の関係を考えるときに重要なのは？",
+      "choices": [
+        "原因・影響・対策を関連付けて考える",
+        "一つの原因だけで決めつける",
+        "健康への影響を無視する",
+        "個人と社会の対策を分けて考えない"
+      ],
+      "answer": 0,
+      "explanation": "環境と健康は複数の要因が関係するため、原因・影響・対策を関連付けて考えます。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_environmenthealth_g3_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "環境問題と健康の関係を考えるときに重要なのは？",
+      "choices": [
+        "原因・影響・対策を関連付けて考える",
+        "一つの原因だけで決めつける",
+        "健康への影響を無視する",
+        "個人と社会の対策を分けて考えない"
+      ],
+      "answer": 0,
+      "explanation": "環境と健康は複数の要因が関係するため、原因・影響・対策を関連付けて考えます。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_environmenthealth_g3_4",
+      "subject": "pe",
+      "unit": "environment-health",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "環境問題と健康の関係を考えるときに重要なのは？",
+      "choices": [
+        "原因・影響・対策を関連付けて考える",
+        "一つの原因だけで決めつける",
+        "健康への影響を無視する",
+        "個人と社会の対策を分けて考えない"
+      ],
+      "answer": 0,
+      "explanation": "環境と健康は複数の要因が関係するため、原因・影響・対策を関連付けて考えます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_sportsignificance_g1_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "スポーツを『する・見る・支える』という視点で捉える理由は？",
+      "choices": [
+        "多様な関わり方があることを理解するため",
+        "競技者だけがスポーツに関われるから",
+        "観戦はスポーツと無関係だから",
+        "運営や審判は必要ないから"
+      ],
+      "answer": 0,
+      "explanation": "スポーツには競技だけでなく、観戦、指導、運営、審判など多様な関わり方があります。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_sportsignificance_g1_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "スポーツを『する・見る・支える』という視点で捉える理由は？",
+      "choices": [
+        "多様な関わり方があることを理解するため",
+        "競技者だけがスポーツに関われるから",
+        "観戦はスポーツと無関係だから",
+        "運営や審判は必要ないから"
+      ],
+      "answer": 0,
+      "explanation": "スポーツには競技だけでなく、観戦、指導、運営、審判など多様な関わり方があります。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_sportsignificance_g1_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "スポーツを『する・見る・支える』という視点で捉える理由は？",
+      "choices": [
+        "多様な関わり方があることを理解するため",
+        "競技者だけがスポーツに関われるから",
+        "観戦はスポーツと無関係だから",
+        "運営や審判は必要ないから"
+      ],
+      "answer": 0,
+      "explanation": "スポーツには競技だけでなく、観戦、指導、運営、審判など多様な関わり方があります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_sportsignificance_g2_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "フェアプレイの考え方として最も適切なのは？",
+      "choices": [
+        "ルールを守り相手を尊重して競う",
+        "勝つためなら反則してよい",
+        "審判の判定を必ず無視する",
+        "相手を傷つけてもよい"
+      ],
+      "answer": 0,
+      "explanation": "フェアプレイはルールを守り、相手や審判を尊重する姿勢を含みます。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_sportsignificance_g2_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "フェアプレイの考え方として最も適切なのは？",
+      "choices": [
+        "ルールを守り相手を尊重して競う",
+        "勝つためなら反則してよい",
+        "審判の判定を必ず無視する",
+        "相手を傷つけてもよい"
+      ],
+      "answer": 0,
+      "explanation": "フェアプレイはルールを守り、相手や審判を尊重する姿勢を含みます。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_sportsignificance_g2_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "フェアプレイの考え方として最も適切なのは？",
+      "choices": [
+        "ルールを守り相手を尊重して競う",
+        "勝つためなら反則してよい",
+        "審判の判定を必ず無視する",
+        "相手を傷つけてもよい"
+      ],
+      "answer": 0,
+      "explanation": "フェアプレイはルールを守り、相手や審判を尊重する姿勢を含みます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_gakken_sportsignificance_g3_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "スポーツが社会や文化に与える影響を考えるとき、適切な視点は？",
+      "choices": [
+        "交流・健康・地域・経済など多面的に考える",
+        "勝敗だけで判断する",
+        "競技人数だけを見る",
+        "歴史や文化との関係を無視する"
+      ],
+      "answer": 0,
+      "explanation": "スポーツは健康、交流、地域、経済、文化など多方面と関係しています。",
+      "difficulty": 2,
+      "textbookPublisher": "gakken",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_taishukan_sportsignificance_g3_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "スポーツが社会や文化に与える影響を考えるとき、適切な視点は？",
+      "choices": [
+        "交流・健康・地域・経済など多面的に考える",
+        "勝敗だけで判断する",
+        "競技人数だけを見る",
+        "歴史や文化との関係を無視する"
+      ],
+      "answer": 0,
+      "explanation": "スポーツは健康、交流、地域、経済、文化など多方面と関係しています。",
+      "difficulty": 2,
+      "textbookPublisher": "taishukan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_pe_tokyoshoseki_sportsignificance_g3_4",
+      "subject": "pe",
+      "unit": "sport-significance",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "スポーツが社会や文化に与える影響を考えるとき、適切な視点は？",
+      "choices": [
+        "交流・健康・地域・経済など多面的に考える",
+        "勝敗だけで判断する",
+        "競技人数だけを見る",
+        "歴史や文化との関係を無視する"
+      ],
+      "answer": 0,
+      "explanation": "スポーツは健康、交流、地域、経済、文化など多方面と関係しています。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_materialsprocessing_g1_4",
+      "subject": "tech-home",
+      "unit": "materials-processing",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "木材の繊維方向を考えて加工する理由として適切なのは？",
+      "choices": [
+        "加工のしやすさや強度に関係するから",
+        "色だけが変わるから",
+        "長さが自動で決まるから",
+        "工具が不要になるから"
+      ],
+      "answer": 0,
+      "explanation": "材料の性質を理解して加工方法を選ぶことが、安全で適切な製作につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_materialsprocessing_g1_4",
+      "subject": "tech-home",
+      "unit": "materials-processing",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "木材の繊維方向を考えて加工する理由として適切なのは？",
+      "choices": [
+        "加工のしやすさや強度に関係するから",
+        "色だけが変わるから",
+        "長さが自動で決まるから",
+        "工具が不要になるから"
+      ],
+      "answer": 0,
+      "explanation": "材料の性質を理解して加工方法を選ぶことが、安全で適切な製作につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_materialsprocessing_g2_4",
+      "subject": "tech-home",
+      "unit": "materials-processing",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "製作品の寸法を正確にするため、加工前に行う作業として適切なのは？",
+      "choices": [
+        "けがきや測定",
+        "完成後だけ測る",
+        "材料を無作為に切る",
+        "図面を見ない"
+      ],
+      "answer": 0,
+      "explanation": "加工前に正確に測定・けがきを行うと、寸法どおりに加工しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_materialsprocessing_g2_4",
+      "subject": "tech-home",
+      "unit": "materials-processing",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "製作品の寸法を正確にするため、加工前に行う作業として適切なのは？",
+      "choices": [
+        "けがきや測定",
+        "完成後だけ測る",
+        "材料を無作為に切る",
+        "図面を見ない"
+      ],
+      "answer": 0,
+      "explanation": "加工前に正確に測定・けがきを行うと、寸法どおりに加工しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_materialsprocessing_g3_4",
+      "subject": "tech-home",
+      "unit": "materials-processing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "材料と加工の技術を評価するとき、環境面で考える例は？",
+      "choices": [
+        "材料を無駄なく使い再利用可能性も考える",
+        "廃材をすべて増やす",
+        "耐久性を考えない",
+        "材料の入手方法を無視する"
+      ],
+      "answer": 0,
+      "explanation": "材料の有効利用や再利用、廃棄まで考えることは持続可能性の観点で重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_materialsprocessing_g3_4",
+      "subject": "tech-home",
+      "unit": "materials-processing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "材料と加工の技術を評価するとき、環境面で考える例は？",
+      "choices": [
+        "材料を無駄なく使い再利用可能性も考える",
+        "廃材をすべて増やす",
+        "耐久性を考えない",
+        "材料の入手方法を無視する"
+      ],
+      "answer": 0,
+      "explanation": "材料の有効利用や再利用、廃棄まで考えることは持続可能性の観点で重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_biologicalgrowth_g1_4",
+      "subject": "tech-home",
+      "unit": "biological-growth",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "植物を育てるとき、日当たりや水分を管理する理由は？",
+      "choices": [
+        "生育条件を整えるため",
+        "成長を必ず止めるため",
+        "土を不要にするため",
+        "収穫時期を無視するため"
+      ],
+      "answer": 0,
+      "explanation": "生物育成では光、水、温度、養分などの条件を適切に管理します。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_biologicalgrowth_g1_4",
+      "subject": "tech-home",
+      "unit": "biological-growth",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "植物を育てるとき、日当たりや水分を管理する理由は？",
+      "choices": [
+        "生育条件を整えるため",
+        "成長を必ず止めるため",
+        "土を不要にするため",
+        "収穫時期を無視するため"
+      ],
+      "answer": 0,
+      "explanation": "生物育成では光、水、温度、養分などの条件を適切に管理します。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_biologicalgrowth_g2_4",
+      "subject": "tech-home",
+      "unit": "biological-growth",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "栽培計画を立てる際に、収穫時期から逆算する利点は？",
+      "choices": [
+        "作業時期を計画的に決めやすい",
+        "毎日同じ作業だけすればよい",
+        "天候を考えなくてよい",
+        "生育期間を無視できる"
+      ],
+      "answer": 0,
+      "explanation": "収穫目標から逆算すると、播種・定植・管理などの時期を計画しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_biologicalgrowth_g2_4",
+      "subject": "tech-home",
+      "unit": "biological-growth",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "栽培計画を立てる際に、収穫時期から逆算する利点は？",
+      "choices": [
+        "作業時期を計画的に決めやすい",
+        "毎日同じ作業だけすればよい",
+        "天候を考えなくてよい",
+        "生育期間を無視できる"
+      ],
+      "answer": 0,
+      "explanation": "収穫目標から逆算すると、播種・定植・管理などの時期を計画しやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_biologicalgrowth_g3_4",
+      "subject": "tech-home",
+      "unit": "biological-growth",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "生物育成の技術を持続可能性の面から評価する観点は？",
+      "choices": [
+        "資源・環境への影響と生産性を合わせて考える",
+        "収量だけで決める",
+        "水や肥料を無制限に使う",
+        "地域条件を無視する"
+      ],
+      "answer": 0,
+      "explanation": "生産性だけでなく、資源利用や環境への影響も含めて評価することが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_biologicalgrowth_g3_4",
+      "subject": "tech-home",
+      "unit": "biological-growth",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "生物育成の技術を持続可能性の面から評価する観点は？",
+      "choices": [
+        "資源・環境への影響と生産性を合わせて考える",
+        "収量だけで決める",
+        "水や肥料を無制限に使う",
+        "地域条件を無視する"
+      ],
+      "answer": 0,
+      "explanation": "生産性だけでなく、資源利用や環境への影響も含めて評価することが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_energyconversion_g1_4",
+      "subject": "tech-home",
+      "unit": "energy-conversion",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "モーターで電気エネルギーが変換される主なエネルギーは？",
+      "choices": [
+        "運動エネルギー",
+        "核エネルギーだけ",
+        "位置エネルギーだけ",
+        "化学エネルギーだけ"
+      ],
+      "answer": 0,
+      "explanation": "モーターは電気エネルギーを主に運動エネルギーへ変換します。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_energyconversion_g1_4",
+      "subject": "tech-home",
+      "unit": "energy-conversion",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "モーターで電気エネルギーが変換される主なエネルギーは？",
+      "choices": [
+        "運動エネルギー",
+        "核エネルギーだけ",
+        "位置エネルギーだけ",
+        "化学エネルギーだけ"
+      ],
+      "answer": 0,
+      "explanation": "モーターは電気エネルギーを主に運動エネルギーへ変換します。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_energyconversion_g2_4",
+      "subject": "tech-home",
+      "unit": "energy-conversion",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "機器の保守点検を行う主な理由は？",
+      "choices": [
+        "安全性や性能を保つため",
+        "故障を増やすため",
+        "消費電力を必ず増やすため",
+        "部品をすべて外すため"
+      ],
+      "answer": 0,
+      "explanation": "点検や保守は事故を防ぎ、機器を適切な状態で使うために重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_energyconversion_g2_4",
+      "subject": "tech-home",
+      "unit": "energy-conversion",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "機器の保守点検を行う主な理由は？",
+      "choices": [
+        "安全性や性能を保つため",
+        "故障を増やすため",
+        "消費電力を必ず増やすため",
+        "部品をすべて外すため"
+      ],
+      "answer": 0,
+      "explanation": "点検や保守は事故を防ぎ、機器を適切な状態で使うために重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_energyconversion_g3_4",
+      "subject": "tech-home",
+      "unit": "energy-conversion",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "エネルギー変換効率を高めることの利点は？",
+      "choices": [
+        "同じ目的に必要な損失を減らしやすい",
+        "エネルギー保存則をなくせる",
+        "必ず装置が小さくなる",
+        "電力が無限に得られる"
+      ],
+      "answer": 0,
+      "explanation": "効率を高めると、目的に使われず失われるエネルギーを減らすことにつながります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_energyconversion_g3_4",
+      "subject": "tech-home",
+      "unit": "energy-conversion",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "エネルギー変換効率を高めることの利点は？",
+      "choices": [
+        "同じ目的に必要な損失を減らしやすい",
+        "エネルギー保存則をなくせる",
+        "必ず装置が小さくなる",
+        "電力が無限に得られる"
+      ],
+      "answer": 0,
+      "explanation": "効率を高めると、目的に使われず失われるエネルギーを減らすことにつながります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_informationtech_g1_4",
+      "subject": "tech-home",
+      "unit": "information-tech",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "コンピュータで情報を処理するとき、手順を順序立てて表したものを何という？",
+      "choices": [
+        "アルゴリズム",
+        "エネルギー変換",
+        "栽培計画",
+        "木取り"
+      ],
+      "answer": 0,
+      "explanation": "問題を解くための処理手順をアルゴリズムといいます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_informationtech_g1_4",
+      "subject": "tech-home",
+      "unit": "information-tech",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "コンピュータで情報を処理するとき、手順を順序立てて表したものを何という？",
+      "choices": [
+        "アルゴリズム",
+        "エネルギー変換",
+        "栽培計画",
+        "木取り"
+      ],
+      "answer": 0,
+      "explanation": "問題を解くための処理手順をアルゴリズムといいます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_informationtech_g2_4",
+      "subject": "tech-home",
+      "unit": "information-tech",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "個人情報を扱うシステムでアクセス権を設定する理由は？",
+      "choices": [
+        "必要な人だけが情報を利用できるようにするため",
+        "全員に公開するため",
+        "パスワードを不要にするため",
+        "データを必ず削除するため"
+      ],
+      "answer": 0,
+      "explanation": "アクセス制御は、情報を利用できる人や操作を必要な範囲に制限する仕組みです。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_informationtech_g2_4",
+      "subject": "tech-home",
+      "unit": "information-tech",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "個人情報を扱うシステムでアクセス権を設定する理由は？",
+      "choices": [
+        "必要な人だけが情報を利用できるようにするため",
+        "全員に公開するため",
+        "パスワードを不要にするため",
+        "データを必ず削除するため"
+      ],
+      "answer": 0,
+      "explanation": "アクセス制御は、情報を利用できる人や操作を必要な範囲に制限する仕組みです。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_informationtech_g3_4",
+      "subject": "tech-home",
+      "unit": "information-tech",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "情報システムを改善するとき、利用者の要求と安全性を両方考える理由は？",
+      "choices": [
+        "便利さだけでなく適切で安全な利用を実現するため",
+        "機能を必ず減らすため",
+        "通信を使わないため",
+        "データを保存しないため"
+      ],
+      "answer": 0,
+      "explanation": "情報技術では目的達成だけでなく、安全性・信頼性・使いやすさなども評価します。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_informationtech_g3_4",
+      "subject": "tech-home",
+      "unit": "information-tech",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "情報システムを改善するとき、利用者の要求と安全性を両方考える理由は？",
+      "choices": [
+        "便利さだけでなく適切で安全な利用を実現するため",
+        "機能を必ず減らすため",
+        "通信を使わないため",
+        "データを保存しないため"
+      ],
+      "answer": 0,
+      "explanation": "情報技術では目的達成だけでなく、安全性・信頼性・使いやすさなども評価します。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_familylife_g1_4",
+      "subject": "tech-home",
+      "unit": "family-life",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "家庭生活で役割分担を考えるときに大切なのは？",
+      "choices": [
+        "家族の状況や互いの負担を話し合う",
+        "一人にすべて任せる",
+        "年齢だけで固定する",
+        "家事をしない"
+      ],
+      "answer": 0,
+      "explanation": "家庭の状況に応じ、互いに協力できる分担を話し合うことが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_familylife_g1_4",
+      "subject": "tech-home",
+      "unit": "family-life",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "家庭生活で役割分担を考えるときに大切なのは？",
+      "choices": [
+        "家族の状況や互いの負担を話し合う",
+        "一人にすべて任せる",
+        "年齢だけで固定する",
+        "家事をしない"
+      ],
+      "answer": 0,
+      "explanation": "家庭の状況に応じ、互いに協力できる分担を話し合うことが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_familylife_g2_4",
+      "subject": "tech-home",
+      "unit": "family-life",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "幼児と関わるとき、安全面で適切な配慮は？",
+      "choices": [
+        "発達段階に応じて危険な物や場所を確認する",
+        "大人と同じ判断力があると考える",
+        "小さな物を自由に与える",
+        "目を離し続ける"
+      ],
+      "answer": 0,
+      "explanation": "幼児の発達や行動の特徴を理解して、事故を防ぐ環境づくりをします。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_familylife_g2_4",
+      "subject": "tech-home",
+      "unit": "family-life",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "幼児と関わるとき、安全面で適切な配慮は？",
+      "choices": [
+        "発達段階に応じて危険な物や場所を確認する",
+        "大人と同じ判断力があると考える",
+        "小さな物を自由に与える",
+        "目を離し続ける"
+      ],
+      "answer": 0,
+      "explanation": "幼児の発達や行動の特徴を理解して、事故を防ぐ環境づくりをします。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_familylife_g3_4",
+      "subject": "tech-home",
+      "unit": "family-life",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "地域の人々との協力を家庭生活の課題解決に生かす例は？",
+      "choices": [
+        "子育て・防災・福祉などで地域の支援を活用する",
+        "家庭だけですべて解決する",
+        "情報を共有しない",
+        "地域活動をすべて避ける"
+      ],
+      "answer": 0,
+      "explanation": "家庭生活は地域社会と関わっており、必要に応じて支援や協力を活用できます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_familylife_g3_4",
+      "subject": "tech-home",
+      "unit": "family-life",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "地域の人々との協力を家庭生活の課題解決に生かす例は？",
+      "choices": [
+        "子育て・防災・福祉などで地域の支援を活用する",
+        "家庭だけですべて解決する",
+        "情報を共有しない",
+        "地域活動をすべて避ける"
+      ],
+      "answer": 0,
+      "explanation": "家庭生活は地域社会と関わっており、必要に応じて支援や協力を活用できます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_food_g1_4",
+      "subject": "tech-home",
+      "unit": "food",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "主食・主菜・副菜を組み合わせる利点は？",
+      "choices": [
+        "さまざまな栄養素を取りやすい",
+        "必ず同じ食品だけになる",
+        "調理ができなくなる",
+        "水分が不要になる"
+      ],
+      "answer": 0,
+      "explanation": "食品を組み合わせると、炭水化物・たんぱく質・ビタミンなど多様な栄養素を取りやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_food_g1_4",
+      "subject": "tech-home",
+      "unit": "food",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "主食・主菜・副菜を組み合わせる利点は？",
+      "choices": [
+        "さまざまな栄養素を取りやすい",
+        "必ず同じ食品だけになる",
+        "調理ができなくなる",
+        "水分が不要になる"
+      ],
+      "answer": 0,
+      "explanation": "食品を組み合わせると、炭水化物・たんぱく質・ビタミンなど多様な栄養素を取りやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_food_g2_4",
+      "subject": "tech-home",
+      "unit": "food",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "生肉を切ったまな板をそのまま生野菜に使わない方がよい理由は？",
+      "choices": [
+        "食中毒の原因となる微生物が移る可能性がある",
+        "野菜の色が必ず変わる",
+        "包丁が必ず壊れる",
+        "栄養がすべてなくなる"
+      ],
+      "answer": 0,
+      "explanation": "生肉などから他の食品へ微生物が移る二次汚染を防ぐ必要があります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_food_g2_4",
+      "subject": "tech-home",
+      "unit": "food",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "生肉を切ったまな板をそのまま生野菜に使わない方がよい理由は？",
+      "choices": [
+        "食中毒の原因となる微生物が移る可能性がある",
+        "野菜の色が必ず変わる",
+        "包丁が必ず壊れる",
+        "栄養がすべてなくなる"
+      ],
+      "answer": 0,
+      "explanation": "生肉などから他の食品へ微生物が移る二次汚染を防ぐ必要があります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_food_g3_4",
+      "subject": "tech-home",
+      "unit": "food",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "食品を選ぶとき、環境への配慮として考えられる行動は？",
+      "choices": [
+        "必要量を考えて購入し食品ロスを減らす",
+        "食べきれない量を必ず買う",
+        "表示を見ない",
+        "保存方法を考えない"
+      ],
+      "answer": 0,
+      "explanation": "必要量の購入や適切な保存は、食品ロス削減につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_food_g3_4",
+      "subject": "tech-home",
+      "unit": "food",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "食品を選ぶとき、環境への配慮として考えられる行動は？",
+      "choices": [
+        "必要量を考えて購入し食品ロスを減らす",
+        "食べきれない量を必ず買う",
+        "表示を見ない",
+        "保存方法を考えない"
+      ],
+      "answer": 0,
+      "explanation": "必要量の購入や適切な保存は、食品ロス削減につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_clothinghousing_g1_4",
+      "subject": "tech-home",
+      "unit": "clothing-housing",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "衣服を選ぶとき、素材の性質を確認する理由は？",
+      "choices": [
+        "用途や季節に合う着心地・手入れ方法を考えるため",
+        "値段だけで決めるため",
+        "サイズを考えなくてよくするため",
+        "洗濯表示を無視するため"
+      ],
+      "answer": 0,
+      "explanation": "素材によって吸湿性、保温性、手入れ方法などが異なるため、用途に合わせて選びます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_clothinghousing_g1_4",
+      "subject": "tech-home",
+      "unit": "clothing-housing",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "衣服を選ぶとき、素材の性質を確認する理由は？",
+      "choices": [
+        "用途や季節に合う着心地・手入れ方法を考えるため",
+        "値段だけで決めるため",
+        "サイズを考えなくてよくするため",
+        "洗濯表示を無視するため"
+      ],
+      "answer": 0,
+      "explanation": "素材によって吸湿性、保温性、手入れ方法などが異なるため、用途に合わせて選びます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_clothinghousing_g2_4",
+      "subject": "tech-home",
+      "unit": "clothing-housing",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "住まいの換気を行うことが大切な理由は？",
+      "choices": [
+        "湿気や汚れた空気を外へ出すため",
+        "室内を完全密閉するため",
+        "採光をなくすため",
+        "室温を必ず上げるため"
+      ],
+      "answer": 0,
+      "explanation": "換気は湿気や汚染物質を排出し、健康で快適な室内環境を保つのに役立ちます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_clothinghousing_g2_4",
+      "subject": "tech-home",
+      "unit": "clothing-housing",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "住まいの換気を行うことが大切な理由は？",
+      "choices": [
+        "湿気や汚れた空気を外へ出すため",
+        "室内を完全密閉するため",
+        "採光をなくすため",
+        "室温を必ず上げるため"
+      ],
+      "answer": 0,
+      "explanation": "換気は湿気や汚染物質を排出し、健康で快適な室内環境を保つのに役立ちます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_clothinghousing_g3_4",
+      "subject": "tech-home",
+      "unit": "clothing-housing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "災害に備えた住生活の工夫として適切なのは？",
+      "choices": [
+        "家具の固定や避難経路の確認をする",
+        "出入口を物でふさぐ",
+        "非常用品を用意しない",
+        "危険箇所を確認しない"
+      ],
+      "answer": 0,
+      "explanation": "家具固定や避難経路・備蓄の確認は、災害時の安全確保につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_clothinghousing_g3_4",
+      "subject": "tech-home",
+      "unit": "clothing-housing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "災害に備えた住生活の工夫として適切なのは？",
+      "choices": [
+        "家具の固定や避難経路の確認をする",
+        "出入口を物でふさぐ",
+        "非常用品を用意しない",
+        "危険箇所を確認しない"
+      ],
+      "answer": 0,
+      "explanation": "家具固定や避難経路・備蓄の確認は、災害時の安全確保につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_consumerenvironment_g1_4",
+      "subject": "tech-home",
+      "unit": "consumer-environment",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "商品を購入する前に表示や契約条件を確認する理由は？",
+      "choices": [
+        "自分に必要な商品か、条件が適切か判断するため",
+        "必ず高い商品を選ぶため",
+        "返品条件を無視するため",
+        "広告だけで決めるため"
+      ],
+      "answer": 0,
+      "explanation": "消費者は表示や契約条件を確認し、情報を基に主体的に判断することが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_consumerenvironment_g1_4",
+      "subject": "tech-home",
+      "unit": "consumer-environment",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "商品を購入する前に表示や契約条件を確認する理由は？",
+      "choices": [
+        "自分に必要な商品か、条件が適切か判断するため",
+        "必ず高い商品を選ぶため",
+        "返品条件を無視するため",
+        "広告だけで決めるため"
+      ],
+      "answer": 0,
+      "explanation": "消費者は表示や契約条件を確認し、情報を基に主体的に判断することが大切です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_consumerenvironment_g2_4",
+      "subject": "tech-home",
+      "unit": "consumer-environment",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "通信販売で困った契約トラブルが起きたときの対応として適切なのは？",
+      "choices": [
+        "記録を残し、必要に応じて消費生活センターなどへ相談する",
+        "すぐ証拠を捨てる",
+        "誰にも相談しない",
+        "同じ契約を増やす"
+      ],
+      "answer": 0,
+      "explanation": "契約内容ややり取りを保存し、公的な相談窓口を利用することが問題解決に役立ちます。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_consumerenvironment_g2_4",
+      "subject": "tech-home",
+      "unit": "consumer-environment",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "通信販売で困った契約トラブルが起きたときの対応として適切なのは？",
+      "choices": [
+        "記録を残し、必要に応じて消費生活センターなどへ相談する",
+        "すぐ証拠を捨てる",
+        "誰にも相談しない",
+        "同じ契約を増やす"
+      ],
+      "answer": 0,
+      "explanation": "契約内容ややり取りを保存し、公的な相談窓口を利用することが問題解決に役立ちます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_kairyudo_consumerenvironment_g3_4",
+      "subject": "tech-home",
+      "unit": "consumer-environment",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "持続可能な消費生活につながる行動は？",
+      "choices": [
+        "長く使える物を選び、必要に応じて修理・再利用する",
+        "使える物もすぐ捨てる",
+        "資源の使用を考えない",
+        "必要以上に購入する"
+      ],
+      "answer": 0,
+      "explanation": "長期使用、修理、再利用などは資源消費や廃棄物の削減につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_techhome_tokyoshoseki_consumerenvironment_g3_4",
+      "subject": "tech-home",
+      "unit": "consumer-environment",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "持続可能な消費生活につながる行動は？",
+      "choices": [
+        "長く使える物を選び、必要に応じて修理・再利用する",
+        "使える物もすぐ捨てる",
+        "資源の使用を考えない",
+        "必要以上に購入する"
+      ],
+      "answer": 0,
+      "explanation": "長期使用、修理、再利用などは資源消費や廃棄物の削減につながります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_lightsoundforce_g1_4",
+      "subject": "science",
+      "unit": "light-sound-force",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "ばねを2倍の力で引いたところ、弾性限界内で伸びが2倍になった。この関係を表す法則は？",
+      "choices": [
+        "フックの法則",
+        "オームの法則",
+        "質量保存の法則",
+        "慣性の法則"
+      ],
+      "answer": 0,
+      "explanation": "弾性限界内では、ばねの伸びは加えた力に比例します。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_lightsoundforce_g1_4",
+      "subject": "science",
+      "unit": "light-sound-force",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "ばねを2倍の力で引いたところ、弾性限界内で伸びが2倍になった。この関係を表す法則は？",
+      "choices": [
+        "フックの法則",
+        "オームの法則",
+        "質量保存の法則",
+        "慣性の法則"
+      ],
+      "answer": 0,
+      "explanation": "弾性限界内では、ばねの伸びは加えた力に比例します。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_electricity_g2_4",
+      "subject": "science",
+      "unit": "electricity",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "直列回路で、回路の各部分を流れる電流について正しいのは？",
+      "choices": [
+        "どこでも同じ大きさ",
+        "抵抗ごとに必ず0になる",
+        "電源から遠いほど大きくなる",
+        "時間とともに必ず倍になる"
+      ],
+      "answer": 0,
+      "explanation": "直列回路では枝分かれがないため、各部分を流れる電流は同じです。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_electricity_g2_4",
+      "subject": "science",
+      "unit": "electricity",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "直列回路で、回路の各部分を流れる電流について正しいのは？",
+      "choices": [
+        "どこでも同じ大きさ",
+        "抵抗ごとに必ず0になる",
+        "電源から遠いほど大きくなる",
+        "時間とともに必ず倍になる"
+      ],
+      "answer": 0,
+      "explanation": "直列回路では枝分かれがないため、各部分を流れる電流は同じです。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_motionenergy_g3_4",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "速さが同じ物体で、質量が大きいほど大きくなる運動のエネルギーは？",
+      "choices": [
+        "運動エネルギー",
+        "位置エネルギーだけ",
+        "化学エネルギーだけ",
+        "電気エネルギーだけ"
+      ],
+      "answer": 0,
+      "explanation": "運動エネルギーは物体の質量と速さに関係し、同じ速さなら質量が大きいほど大きくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_motionenergy_g3_4",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "速さが同じ物体で、質量が大きいほど大きくなる運動のエネルギーは？",
+      "choices": [
+        "運動エネルギー",
+        "位置エネルギーだけ",
+        "化学エネルギーだけ",
+        "電気エネルギーだけ"
+      ],
+      "answer": 0,
+      "explanation": "運動エネルギーは物体の質量と速さに関係し、同じ速さなら質量が大きいほど大きくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_substances_g1_4",
+      "subject": "science",
+      "unit": "substances",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "密度を求める式として正しいものは？",
+      "choices": [
+        "質量÷体積",
+        "体積÷質量",
+        "質量×体積",
+        "質量＋体積"
+      ],
+      "answer": 0,
+      "explanation": "密度は物質の単位体積あたりの質量で、質量÷体積で求めます。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_substances_g1_4",
+      "subject": "science",
+      "unit": "substances",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "密度を求める式として正しいものは？",
+      "choices": [
+        "質量÷体積",
+        "体積÷質量",
+        "質量×体積",
+        "質量＋体積"
+      ],
+      "answer": 0,
+      "explanation": "密度は物質の単位体積あたりの質量で、質量÷体積で求めます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_chemicalchange_g2_4",
+      "subject": "science",
+      "unit": "chemical-change",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "化学反応の前後で、密閉した容器全体の質量が変わらないことを何という？",
+      "choices": [
+        "質量保存の法則",
+        "オームの法則",
+        "フックの法則",
+        "慣性の法則"
+      ],
+      "answer": 0,
+      "explanation": "化学変化の前後で物質全体の質量は保存されます。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_chemicalchange_g2_4",
+      "subject": "science",
+      "unit": "chemical-change",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "化学反応の前後で、密閉した容器全体の質量が変わらないことを何という？",
+      "choices": [
+        "質量保存の法則",
+        "オームの法則",
+        "フックの法則",
+        "慣性の法則"
+      ],
+      "answer": 0,
+      "explanation": "化学変化の前後で物質全体の質量は保存されます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_ions_g3_4",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "塩酸に含まれる水素イオンの化学式は？",
+      "choices": [
+        "H+",
+        "OH-",
+        "Na+",
+        "Cl2"
+      ],
+      "answer": 0,
+      "explanation": "酸性の水溶液には水素イオン H+ が含まれます。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_ions_g3_4",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "塩酸に含まれる水素イオンの化学式は？",
+      "choices": [
+        "H+",
+        "OH-",
+        "Na+",
+        "Cl2"
+      ],
+      "answer": 0,
+      "explanation": "酸性の水溶液には水素イオン H+ が含まれます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_plantsanimals_g1_4",
+      "subject": "science",
+      "unit": "plants-animals",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "顕微鏡で観察するとき、最初に低倍率で観察する主な理由は？",
+      "choices": [
+        "視野が広く、観察対象を見つけやすいから",
+        "必ず細胞が大きくなるから",
+        "ピント合わせが不要になるから",
+        "光が不要になるから"
+      ],
+      "answer": 0,
+      "explanation": "低倍率は視野が広いため、まず観察対象を探して中央に置くのに適しています。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_plantsanimals_g1_4",
+      "subject": "science",
+      "unit": "plants-animals",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "顕微鏡で観察するとき、最初に低倍率で観察する主な理由は？",
+      "choices": [
+        "視野が広く、観察対象を見つけやすいから",
+        "必ず細胞が大きくなるから",
+        "ピント合わせが不要になるから",
+        "光が不要になるから"
+      ],
+      "answer": 0,
+      "explanation": "低倍率は視野が広いため、まず観察対象を探して中央に置くのに適しています。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_cellsbody_g2_4",
+      "subject": "science",
+      "unit": "cells-body",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "小腸の内側に柔毛が多数ある主な利点は？",
+      "choices": [
+        "表面積を大きくして栄養分を吸収しやすくする",
+        "食物を肺へ送る",
+        "血液をつくらないようにする",
+        "水分を一切吸収しない"
+      ],
+      "answer": 0,
+      "explanation": "柔毛によって表面積が大きくなり、消化された栄養分を効率よく吸収できます。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_cellsbody_g2_4",
+      "subject": "science",
+      "unit": "cells-body",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "小腸の内側に柔毛が多数ある主な利点は？",
+      "choices": [
+        "表面積を大きくして栄養分を吸収しやすくする",
+        "食物を肺へ送る",
+        "血液をつくらないようにする",
+        "水分を一切吸収しない"
+      ],
+      "answer": 0,
+      "explanation": "柔毛によって表面積が大きくなり、消化された栄養分を効率よく吸収できます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_reproductiongenetics_g3_4",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "同じ遺伝子について異なる対立形質をもつ個体を交配し、優性形質だけが現れた世代を何という？",
+      "choices": [
+        "子の第一世代（F1）",
+        "親世代だけ",
+        "体細胞分裂",
+        "無性生殖"
+      ],
+      "answer": 0,
+      "explanation": "メンデルの交配では親から得た最初の子の世代をF1と表します。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_reproductiongenetics_g3_4",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "同じ遺伝子について異なる対立形質をもつ個体を交配し、優性形質だけが現れた世代を何という？",
+      "choices": [
+        "子の第一世代（F1）",
+        "親世代だけ",
+        "体細胞分裂",
+        "無性生殖"
+      ],
+      "answer": 0,
+      "explanation": "メンデルの交配では親から得た最初の子の世代をF1と表します。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_earthchange_g1_4",
+      "subject": "science",
+      "unit": "earth-change",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "地震の初期微動を伝える波はどれ？",
+      "choices": [
+        "P波",
+        "S波",
+        "表面波だけ",
+        "電磁波"
+      ],
+      "answer": 0,
+      "explanation": "P波はS波より速く伝わり、先に到着して初期微動を起こします。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_earthchange_g1_4",
+      "subject": "science",
+      "unit": "earth-change",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "地震の初期微動を伝える波はどれ？",
+      "choices": [
+        "P波",
+        "S波",
+        "表面波だけ",
+        "電磁波"
+      ],
+      "answer": 0,
+      "explanation": "P波はS波より速く伝わり、先に到着して初期微動を起こします。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_weather_g2_4",
+      "subject": "science",
+      "unit": "weather",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "空気中の水蒸気が冷やされ、水滴になり始める温度を何という？",
+      "choices": [
+        "露点",
+        "沸点",
+        "融点",
+        "発火点"
+      ],
+      "answer": 0,
+      "explanation": "空気を冷やしたとき水蒸気が凝結し始める温度を露点といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_weather_g2_4",
+      "subject": "science",
+      "unit": "weather",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "空気中の水蒸気が冷やされ、水滴になり始める温度を何という？",
+      "choices": [
+        "露点",
+        "沸点",
+        "融点",
+        "発火点"
+      ],
+      "answer": 0,
+      "explanation": "空気を冷やしたとき水蒸気が凝結し始める温度を露点といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_earthspace_g3_4",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "地球が自転していることによって起こる見かけの現象は？",
+      "choices": [
+        "天体が東から西へ日周運動する",
+        "季節が変化する主因になる",
+        "月が発光する",
+        "恒星までの距離が毎日変わる"
+      ],
+      "answer": 0,
+      "explanation": "地球が西から東へ自転するため、天体は東から西へ動くように見えます。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_earthspace_g3_4",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "地球が自転していることによって起こる見かけの現象は？",
+      "choices": [
+        "天体が東から西へ日周運動する",
+        "季節が変化する主因になる",
+        "月が発光する",
+        "恒星までの距離が毎日変わる"
+      ],
+      "answer": 0,
+      "explanation": "地球が西から東へ自転するため、天体は東から西へ動くように見えます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_keirinkan_naturehuman_g3_4",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "自然災害への備えを考えるとき、ハザードマップを利用する主な目的は？",
+      "choices": [
+        "地域の災害リスクや避難場所を確認する",
+        "天気を必ず晴れにする",
+        "地震を止める",
+        "河川をなくす"
+      ],
+      "answer": 0,
+      "explanation": "ハザードマップは災害の想定区域や避難場所などを確認し、備えに役立てる資料です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_science_tokyoshoseki_naturehuman_g3_4",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "自然災害への備えを考えるとき、ハザードマップを利用する主な目的は？",
+      "choices": [
+        "地域の災害リスクや避難場所を確認する",
+        "天気を必ず晴れにする",
+        "地震を止める",
+        "河川をなくす"
+      ],
+      "answer": 0,
+      "explanation": "ハザードマップは災害の想定区域や避難場所などを確認し、備えに役立てる資料です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_positivenegative_g1_4",
+      "subject": "math",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "-3より5大きい数は？",
+      "choices": [
+        "2",
+        "-2",
+        "8",
+        "-8"
+      ],
+      "answer": 0,
+      "explanation": "-3+5=2です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_positivenegative_g1_4",
+      "subject": "math",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "-3より5大きい数は？",
+      "choices": [
+        "2",
+        "-2",
+        "8",
+        "-8"
+      ],
+      "answer": 0,
+      "explanation": "-3+5=2です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_positivenegative_g1_4",
+      "subject": "math",
+      "unit": "positive-negative",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "-3より5大きい数は？",
+      "choices": [
+        "2",
+        "-2",
+        "8",
+        "-8"
+      ],
+      "answer": 0,
+      "explanation": "-3+5=2です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_algebraicexpressions_g1_4",
+      "subject": "math",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "1個a円の品物を3個と、1個b円の品物を2個買った代金を表す式は？",
+      "choices": [
+        "3a+2b",
+        "5ab",
+        "2a+3b",
+        "3a-2b"
+      ],
+      "answer": 0,
+      "explanation": "個数×単価をそれぞれ求めて足すので3a+2bです。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_algebraicexpressions_g1_4",
+      "subject": "math",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "1個a円の品物を3個と、1個b円の品物を2個買った代金を表す式は？",
+      "choices": [
+        "3a+2b",
+        "5ab",
+        "2a+3b",
+        "3a-2b"
+      ],
+      "answer": 0,
+      "explanation": "個数×単価をそれぞれ求めて足すので3a+2bです。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_algebraicexpressions_g1_4",
+      "subject": "math",
+      "unit": "algebraic-expressions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "1個a円の品物を3個と、1個b円の品物を2個買った代金を表す式は？",
+      "choices": [
+        "3a+2b",
+        "5ab",
+        "2a+3b",
+        "3a-2b"
+      ],
+      "answer": 0,
+      "explanation": "個数×単価をそれぞれ求めて足すので3a+2bです。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_polynomials_g2_4",
+      "subject": "math",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "3x+2y-(x-4y)を簡単にすると？",
+      "choices": [
+        "2x+6y",
+        "4x-2y",
+        "2x-2y",
+        "4x+6y"
+      ],
+      "answer": 0,
+      "explanation": "かっこを外すと3x+2y-x+4y=2x+6yです。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_polynomials_g2_4",
+      "subject": "math",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "3x+2y-(x-4y)を簡単にすると？",
+      "choices": [
+        "2x+6y",
+        "4x-2y",
+        "2x-2y",
+        "4x+6y"
+      ],
+      "answer": 0,
+      "explanation": "かっこを外すと3x+2y-x+4y=2x+6yです。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_polynomials_g2_4",
+      "subject": "math",
+      "unit": "polynomials",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "3x+2y-(x-4y)を簡単にすると？",
+      "choices": [
+        "2x+6y",
+        "4x-2y",
+        "2x-2y",
+        "4x+6y"
+      ],
+      "answer": 0,
+      "explanation": "かっこを外すと3x+2y-x+4y=2x+6yです。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_expansionfactorization_g3_4",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "x²+7x+12を因数分解すると？",
+      "choices": [
+        "(x+3)(x+4)",
+        "(x+2)(x+6)",
+        "(x-3)(x-4)",
+        "(x+1)(x+12)"
+      ],
+      "answer": 0,
+      "explanation": "積が12、和が7になる3と4を用いて(x+3)(x+4)です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_expansionfactorization_g3_4",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "x²+7x+12を因数分解すると？",
+      "choices": [
+        "(x+3)(x+4)",
+        "(x+2)(x+6)",
+        "(x-3)(x-4)",
+        "(x+1)(x+12)"
+      ],
+      "answer": 0,
+      "explanation": "積が12、和が7になる3と4を用いて(x+3)(x+4)です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_expansionfactorization_g3_4",
+      "subject": "math",
+      "unit": "expansion-factorization",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "x²+7x+12を因数分解すると？",
+      "choices": [
+        "(x+3)(x+4)",
+        "(x+2)(x+6)",
+        "(x-3)(x-4)",
+        "(x+1)(x+12)"
+      ],
+      "answer": 0,
+      "explanation": "積が12、和が7になる3と4を用いて(x+3)(x+4)です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_squareroots_g3_4",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "√50を簡単にすると？",
+      "choices": [
+        "5√2",
+        "25√2",
+        "10√5",
+        "2√25"
+      ],
+      "answer": 0,
+      "explanation": "50=25×2なので√50=5√2です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_squareroots_g3_4",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "√50を簡単にすると？",
+      "choices": [
+        "5√2",
+        "25√2",
+        "10√5",
+        "2√25"
+      ],
+      "answer": 0,
+      "explanation": "50=25×2なので√50=5√2です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_squareroots_g3_4",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "√50を簡単にすると？",
+      "choices": [
+        "5√2",
+        "25√2",
+        "10√5",
+        "2√25"
+      ],
+      "answer": 0,
+      "explanation": "50=25×2なので√50=5√2です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_linearequation_g1_4",
+      "subject": "math",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "3x-7=11の解は？",
+      "choices": [
+        "6",
+        "4",
+        "-6",
+        "18"
+      ],
+      "answer": 0,
+      "explanation": "3x=18よりx=6です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_linearequation_g1_4",
+      "subject": "math",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "3x-7=11の解は？",
+      "choices": [
+        "6",
+        "4",
+        "-6",
+        "18"
+      ],
+      "answer": 0,
+      "explanation": "3x=18よりx=6です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_linearequation_g1_4",
+      "subject": "math",
+      "unit": "linear-equation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "3x-7=11の解は？",
+      "choices": [
+        "6",
+        "4",
+        "-6",
+        "18"
+      ],
+      "answer": 0,
+      "explanation": "3x=18よりx=6です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_simultaneous_g2_4",
+      "subject": "math",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "x+y=7、x-y=1を同時に満たすxは？",
+      "choices": [
+        "4",
+        "3",
+        "6",
+        "8"
+      ],
+      "answer": 0,
+      "explanation": "2式を加えると2x=8なのでx=4です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_simultaneous_g2_4",
+      "subject": "math",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "x+y=7、x-y=1を同時に満たすxは？",
+      "choices": [
+        "4",
+        "3",
+        "6",
+        "8"
+      ],
+      "answer": 0,
+      "explanation": "2式を加えると2x=8なのでx=4です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_simultaneous_g2_4",
+      "subject": "math",
+      "unit": "simultaneous",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "x+y=7、x-y=1を同時に満たすxは？",
+      "choices": [
+        "4",
+        "3",
+        "6",
+        "8"
+      ],
+      "answer": 0,
+      "explanation": "2式を加えると2x=8なのでx=4です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_quadratic_g3_4",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "x²-5x+6=0の解の組は？",
+      "choices": [
+        "2と3",
+        "-2と-3",
+        "1と6",
+        "-1と-6"
+      ],
+      "answer": 0,
+      "explanation": "(x-2)(x-3)=0よりx=2,3です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_quadratic_g3_4",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "x²-5x+6=0の解の組は？",
+      "choices": [
+        "2と3",
+        "-2と-3",
+        "1と6",
+        "-1と-6"
+      ],
+      "answer": 0,
+      "explanation": "(x-2)(x-3)=0よりx=2,3です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_quadratic_g3_4",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "x²-5x+6=0の解の組は？",
+      "choices": [
+        "2と3",
+        "-2と-3",
+        "1と6",
+        "-1と-6"
+      ],
+      "answer": 0,
+      "explanation": "(x-2)(x-3)=0よりx=2,3です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_proportion_g1_4",
+      "subject": "math",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "yがxに比例し、x=3のときy=12である。比例定数は？",
+      "choices": [
+        "4",
+        "3",
+        "9",
+        "36"
+      ],
+      "answer": 0,
+      "explanation": "y=axに3と12を代入し12=3aよりa=4です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_proportion_g1_4",
+      "subject": "math",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "yがxに比例し、x=3のときy=12である。比例定数は？",
+      "choices": [
+        "4",
+        "3",
+        "9",
+        "36"
+      ],
+      "answer": 0,
+      "explanation": "y=axに3と12を代入し12=3aよりa=4です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_proportion_g1_4",
+      "subject": "math",
+      "unit": "proportion",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "yがxに比例し、x=3のときy=12である。比例定数は？",
+      "choices": [
+        "4",
+        "3",
+        "9",
+        "36"
+      ],
+      "answer": 0,
+      "explanation": "y=axに3と12を代入し12=3aよりa=4です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_linearfunction_g2_4",
+      "subject": "math",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "一次関数y=2x-3で、xが1増えるとyはいくつ増える？",
+      "choices": [
+        "2",
+        "1",
+        "-3",
+        "3"
+      ],
+      "answer": 0,
+      "explanation": "一次関数の変化の割合はxの係数2です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_linearfunction_g2_4",
+      "subject": "math",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "一次関数y=2x-3で、xが1増えるとyはいくつ増える？",
+      "choices": [
+        "2",
+        "1",
+        "-3",
+        "3"
+      ],
+      "answer": 0,
+      "explanation": "一次関数の変化の割合はxの係数2です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_linearfunction_g2_4",
+      "subject": "math",
+      "unit": "linear-function",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "一次関数y=2x-3で、xが1増えるとyはいくつ増える？",
+      "choices": [
+        "2",
+        "1",
+        "-3",
+        "3"
+      ],
+      "answer": 0,
+      "explanation": "一次関数の変化の割合はxの係数2です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_quadraticfunction_g3_4",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "関数y=3x²でx=2のときのyは？",
+      "choices": [
+        "12",
+        "6",
+        "9",
+        "18"
+      ],
+      "answer": 0,
+      "explanation": "y=3×2²=12です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_quadraticfunction_g3_4",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "関数y=3x²でx=2のときのyは？",
+      "choices": [
+        "12",
+        "6",
+        "9",
+        "18"
+      ],
+      "answer": 0,
+      "explanation": "y=3×2²=12です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_quadraticfunction_g3_4",
+      "subject": "math",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "関数y=3x²でx=2のときのyは？",
+      "choices": [
+        "12",
+        "6",
+        "9",
+        "18"
+      ],
+      "answer": 0,
+      "explanation": "y=3×2²=12です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_planespace_g1_4",
+      "subject": "math",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "三角形の内角の和は何度？",
+      "choices": [
+        "180度",
+        "90度",
+        "270度",
+        "360度"
+      ],
+      "answer": 0,
+      "explanation": "三角形の内角の和は180度です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_planespace_g1_4",
+      "subject": "math",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "三角形の内角の和は何度？",
+      "choices": [
+        "180度",
+        "90度",
+        "270度",
+        "360度"
+      ],
+      "answer": 0,
+      "explanation": "三角形の内角の和は180度です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_planespace_g1_4",
+      "subject": "math",
+      "unit": "plane-space",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "三角形の内角の和は何度？",
+      "choices": [
+        "180度",
+        "90度",
+        "270度",
+        "360度"
+      ],
+      "answer": 0,
+      "explanation": "三角形の内角の和は180度です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_congruence_g2_4",
+      "subject": "math",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "三角形の合同条件として正しいものは？",
+      "choices": [
+        "3組の辺がそれぞれ等しい",
+        "1組の辺だけが等しい",
+        "面積だけが等しい",
+        "周の長さだけが等しい"
+      ],
+      "answer": 0,
+      "explanation": "3組の辺がそれぞれ等しいことは三角形の合同条件の一つです。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_congruence_g2_4",
+      "subject": "math",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "三角形の合同条件として正しいものは？",
+      "choices": [
+        "3組の辺がそれぞれ等しい",
+        "1組の辺だけが等しい",
+        "面積だけが等しい",
+        "周の長さだけが等しい"
+      ],
+      "answer": 0,
+      "explanation": "3組の辺がそれぞれ等しいことは三角形の合同条件の一つです。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_congruence_g2_4",
+      "subject": "math",
+      "unit": "congruence",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "三角形の合同条件として正しいものは？",
+      "choices": [
+        "3組の辺がそれぞれ等しい",
+        "1組の辺だけが等しい",
+        "面積だけが等しい",
+        "周の長さだけが等しい"
+      ],
+      "answer": 0,
+      "explanation": "3組の辺がそれぞれ等しいことは三角形の合同条件の一つです。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_similaritycircle_g3_4",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "相似な図形で対応する辺の長さの比が2:3のとき、面積比は？",
+      "choices": [
+        "4:9",
+        "2:3",
+        "8:27",
+        "1:1"
+      ],
+      "answer": 0,
+      "explanation": "面積比は相似比の2乗なので4:9です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_similaritycircle_g3_4",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "相似な図形で対応する辺の長さの比が2:3のとき、面積比は？",
+      "choices": [
+        "4:9",
+        "2:3",
+        "8:27",
+        "1:1"
+      ],
+      "answer": 0,
+      "explanation": "面積比は相似比の2乗なので4:9です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_similaritycircle_g3_4",
+      "subject": "math",
+      "unit": "similarity-circle",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "相似な図形で対応する辺の長さの比が2:3のとき、面積比は？",
+      "choices": [
+        "4:9",
+        "2:3",
+        "8:27",
+        "1:1"
+      ],
+      "answer": 0,
+      "explanation": "面積比は相似比の2乗なので4:9です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_pythagorean_g3_4",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "直角をはさむ2辺が6cmと8cmの直角三角形の斜辺は？",
+      "choices": [
+        "10cm",
+        "12cm",
+        "14cm",
+        "7cm"
+      ],
+      "answer": 0,
+      "explanation": "6²+8²=36+64=100より斜辺は10cmです。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_pythagorean_g3_4",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "直角をはさむ2辺が6cmと8cmの直角三角形の斜辺は？",
+      "choices": [
+        "10cm",
+        "12cm",
+        "14cm",
+        "7cm"
+      ],
+      "answer": 0,
+      "explanation": "6²+8²=36+64=100より斜辺は10cmです。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_pythagorean_g3_4",
+      "subject": "math",
+      "unit": "pythagorean",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "直角をはさむ2辺が6cmと8cmの直角三角形の斜辺は？",
+      "choices": [
+        "10cm",
+        "12cm",
+        "14cm",
+        "7cm"
+      ],
+      "answer": 0,
+      "explanation": "6²+8²=36+64=100より斜辺は10cmです。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_datadistribution_g1_4",
+      "subject": "math",
+      "unit": "data-distribution",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "5人の得点が10,20,20,30,40点のとき、中央値は？",
+      "choices": [
+        "20",
+        "24",
+        "30",
+        "10"
+      ],
+      "answer": 0,
+      "explanation": "小さい順に並べた中央の値は20です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_datadistribution_g1_4",
+      "subject": "math",
+      "unit": "data-distribution",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "5人の得点が10,20,20,30,40点のとき、中央値は？",
+      "choices": [
+        "20",
+        "24",
+        "30",
+        "10"
+      ],
+      "answer": 0,
+      "explanation": "小さい順に並べた中央の値は20です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_datadistribution_g1_4",
+      "subject": "math",
+      "unit": "data-distribution",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "5人の得点が10,20,20,30,40点のとき、中央値は？",
+      "choices": [
+        "20",
+        "24",
+        "30",
+        "10"
+      ],
+      "answer": 0,
+      "explanation": "小さい順に並べた中央の値は20です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_datadistribution_g2_4",
+      "subject": "math",
+      "unit": "data-distribution",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "データの散らばりを、最大値と最小値の差で表したものは？",
+      "choices": [
+        "範囲",
+        "中央値",
+        "最頻値",
+        "平均値"
+      ],
+      "answer": 0,
+      "explanation": "最大値-最小値で求める値を範囲といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_datadistribution_g2_4",
+      "subject": "math",
+      "unit": "data-distribution",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "データの散らばりを、最大値と最小値の差で表したものは？",
+      "choices": [
+        "範囲",
+        "中央値",
+        "最頻値",
+        "平均値"
+      ],
+      "answer": 0,
+      "explanation": "最大値-最小値で求める値を範囲といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_datadistribution_g2_4",
+      "subject": "math",
+      "unit": "data-distribution",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "データの散らばりを、最大値と最小値の差で表したものは？",
+      "choices": [
+        "範囲",
+        "中央値",
+        "最頻値",
+        "平均値"
+      ],
+      "answer": 0,
+      "explanation": "最大値-最小値で求める値を範囲といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_probability_g2_4",
+      "subject": "math",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "公平な6面体のさいころを1回投げるとき、偶数が出る確率は？",
+      "choices": [
+        "1/2",
+        "1/3",
+        "2/3",
+        "1/6"
+      ],
+      "answer": 0,
+      "explanation": "偶数は2,4,6の3通りで全6通りなので3/6=1/2です。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_probability_g2_4",
+      "subject": "math",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "公平な6面体のさいころを1回投げるとき、偶数が出る確率は？",
+      "choices": [
+        "1/2",
+        "1/3",
+        "2/3",
+        "1/6"
+      ],
+      "answer": 0,
+      "explanation": "偶数は2,4,6の3通りで全6通りなので3/6=1/2です。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_probability_g2_4",
+      "subject": "math",
+      "unit": "probability",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "公平な6面体のさいころを1回投げるとき、偶数が出る確率は？",
+      "choices": [
+        "1/2",
+        "1/3",
+        "2/3",
+        "1/6"
+      ],
+      "answer": 0,
+      "explanation": "偶数は2,4,6の3通りで全6通りなので3/6=1/2です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_gakkotosho_sampling_g3_4",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "学校全体の傾向を調べるために一部の生徒を無作為に選ぶ方法を何という？",
+      "choices": [
+        "標本調査",
+        "全数調査",
+        "確定調査",
+        "実験だけ"
+      ],
+      "answer": 0,
+      "explanation": "母集団から一部を標本として選び調べる方法を標本調査といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "gakko-tosho",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_keirinkan_sampling_g3_4",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "学校全体の傾向を調べるために一部の生徒を無作為に選ぶ方法を何という？",
+      "choices": [
+        "標本調査",
+        "全数調査",
+        "確定調査",
+        "実験だけ"
+      ],
+      "answer": 0,
+      "explanation": "母集団から一部を標本として選び調べる方法を標本調査といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "keirinkan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_math_kyoikushuppan_sampling_g3_4",
+      "subject": "math",
+      "unit": "sampling",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "学校全体の傾向を調べるために一部の生徒を無作為に選ぶ方法を何という？",
+      "choices": [
+        "標本調査",
+        "全数調査",
+        "確定調査",
+        "実験だけ"
+      ],
+      "answer": 0,
+      "explanation": "母集団から一部を標本として選び調べる方法を標本調査といいます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_worldoverview_g1_4",
+      "subject": "social",
+      "unit": "world-overview",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "緯度0度の線を何という？",
+      "choices": [
+        "赤道",
+        "本初子午線",
+        "日付変更線",
+        "北回帰線"
+      ],
+      "answer": 0,
+      "explanation": "緯度0度の線は赤道です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_worldoverview_g1_4",
+      "subject": "social",
+      "unit": "world-overview",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "緯度0度の線を何という？",
+      "choices": [
+        "赤道",
+        "本初子午線",
+        "日付変更線",
+        "北回帰線"
+      ],
+      "answer": 0,
+      "explanation": "緯度0度の線は赤道です。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_worldoverview_g1_4",
+      "subject": "social",
+      "unit": "world-overview",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "緯度0度の線を何という？",
+      "choices": [
+        "赤道",
+        "本初子午線",
+        "日付変更線",
+        "北回帰線"
+      ],
+      "answer": 0,
+      "explanation": "緯度0度の線は赤道です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_worldoverview_g2_4",
+      "subject": "social",
+      "unit": "world-overview",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "世界地図で経度を基準に時差を考えるとき、経度15度はおよそ何時間分？",
+      "choices": [
+        "1時間",
+        "2時間",
+        "6時間",
+        "12時間"
+      ],
+      "answer": 0,
+      "explanation": "地球は24時間で360度回転するため、15度で約1時間です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_worldoverview_g2_4",
+      "subject": "social",
+      "unit": "world-overview",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "世界地図で経度を基準に時差を考えるとき、経度15度はおよそ何時間分？",
+      "choices": [
+        "1時間",
+        "2時間",
+        "6時間",
+        "12時間"
+      ],
+      "answer": 0,
+      "explanation": "地球は24時間で360度回転するため、15度で約1時間です。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_worldoverview_g2_4",
+      "subject": "social",
+      "unit": "world-overview",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "世界地図で経度を基準に時差を考えるとき、経度15度はおよそ何時間分？",
+      "choices": [
+        "1時間",
+        "2時間",
+        "6時間",
+        "12時間"
+      ],
+      "answer": 0,
+      "explanation": "地球は24時間で360度回転するため、15度で約1時間です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_worldregions_g1_4",
+      "subject": "social",
+      "unit": "world-regions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "季節風の影響を強く受け、稲作が広く行われる地域が多いのは？",
+      "choices": [
+        "アジアのモンスーン地域",
+        "サハラ砂漠中央部",
+        "南極大陸",
+        "グリーンランド内陸部"
+      ],
+      "answer": 0,
+      "explanation": "東・東南・南アジアの多くは季節風の影響を受け、稲作が盛んです。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_worldregions_g1_4",
+      "subject": "social",
+      "unit": "world-regions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "季節風の影響を強く受け、稲作が広く行われる地域が多いのは？",
+      "choices": [
+        "アジアのモンスーン地域",
+        "サハラ砂漠中央部",
+        "南極大陸",
+        "グリーンランド内陸部"
+      ],
+      "answer": 0,
+      "explanation": "東・東南・南アジアの多くは季節風の影響を受け、稲作が盛んです。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_worldregions_g1_4",
+      "subject": "social",
+      "unit": "world-regions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "季節風の影響を強く受け、稲作が広く行われる地域が多いのは？",
+      "choices": [
+        "アジアのモンスーン地域",
+        "サハラ砂漠中央部",
+        "南極大陸",
+        "グリーンランド内陸部"
+      ],
+      "answer": 0,
+      "explanation": "東・東南・南アジアの多くは季節風の影響を受け、稲作が盛んです。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_worldregions_g2_4",
+      "subject": "social",
+      "unit": "world-regions",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "EUのように複数国が協力して地域統合を進める利点の一つは？",
+      "choices": [
+        "人や物の移動・経済活動を活発にしやすい",
+        "国境を必ず閉鎖できる",
+        "貿易を完全になくせる",
+        "言語を一つに強制できる"
+      ],
+      "answer": 0,
+      "explanation": "地域統合は域内の移動や経済活動を活発にする効果があります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_worldregions_g2_4",
+      "subject": "social",
+      "unit": "world-regions",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "EUのように複数国が協力して地域統合を進める利点の一つは？",
+      "choices": [
+        "人や物の移動・経済活動を活発にしやすい",
+        "国境を必ず閉鎖できる",
+        "貿易を完全になくせる",
+        "言語を一つに強制できる"
+      ],
+      "answer": 0,
+      "explanation": "地域統合は域内の移動や経済活動を活発にする効果があります。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_worldregions_g2_4",
+      "subject": "social",
+      "unit": "world-regions",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "EUのように複数国が協力して地域統合を進める利点の一つは？",
+      "choices": [
+        "人や物の移動・経済活動を活発にしやすい",
+        "国境を必ず閉鎖できる",
+        "貿易を完全になくせる",
+        "言語を一つに強制できる"
+      ],
+      "answer": 0,
+      "explanation": "地域統合は域内の移動や経済活動を活発にする効果があります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_japanoverview_g1_4",
+      "subject": "social",
+      "unit": "japan-overview",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "日本の標準時の基準となる東経135度の経線が通る都市として知られるのは？",
+      "choices": [
+        "明石市",
+        "札幌市",
+        "那覇市",
+        "仙台市"
+      ],
+      "answer": 0,
+      "explanation": "日本標準時は東経135度を基準とし、兵庫県明石市付近を通ります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_japanoverview_g1_4",
+      "subject": "social",
+      "unit": "japan-overview",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "日本の標準時の基準となる東経135度の経線が通る都市として知られるのは？",
+      "choices": [
+        "明石市",
+        "札幌市",
+        "那覇市",
+        "仙台市"
+      ],
+      "answer": 0,
+      "explanation": "日本標準時は東経135度を基準とし、兵庫県明石市付近を通ります。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_japanoverview_g1_4",
+      "subject": "social",
+      "unit": "japan-overview",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "日本の標準時の基準となる東経135度の経線が通る都市として知られるのは？",
+      "choices": [
+        "明石市",
+        "札幌市",
+        "那覇市",
+        "仙台市"
+      ],
+      "answer": 0,
+      "explanation": "日本標準時は東経135度を基準とし、兵庫県明石市付近を通ります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_japanoverview_g2_4",
+      "subject": "social",
+      "unit": "japan-overview",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "日本の国土が南北に長いことによる特徴として適切なのは？",
+      "choices": [
+        "地域によって気候に大きな差がある",
+        "全国で一年中同じ気温になる",
+        "すべて同じ植生になる",
+        "時差が10時間以上ある"
+      ],
+      "answer": 0,
+      "explanation": "南北に長いため、緯度や季節風などの影響で地域ごとの気候差が大きくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_japanoverview_g2_4",
+      "subject": "social",
+      "unit": "japan-overview",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "日本の国土が南北に長いことによる特徴として適切なのは？",
+      "choices": [
+        "地域によって気候に大きな差がある",
+        "全国で一年中同じ気温になる",
+        "すべて同じ植生になる",
+        "時差が10時間以上ある"
+      ],
+      "answer": 0,
+      "explanation": "南北に長いため、緯度や季節風などの影響で地域ごとの気候差が大きくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_japanoverview_g2_4",
+      "subject": "social",
+      "unit": "japan-overview",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "日本の国土が南北に長いことによる特徴として適切なのは？",
+      "choices": [
+        "地域によって気候に大きな差がある",
+        "全国で一年中同じ気温になる",
+        "すべて同じ植生になる",
+        "時差が10時間以上ある"
+      ],
+      "answer": 0,
+      "explanation": "南北に長いため、緯度や季節風などの影響で地域ごとの気候差が大きくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_japanregions_g1_4",
+      "subject": "social",
+      "unit": "japan-regions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "日本海側で冬に雪が多くなる主な理由は？",
+      "choices": [
+        "北西の季節風が日本海から水蒸気を含むため",
+        "南東の季節風が砂漠から吹くため",
+        "一年中台風が来るため",
+        "赤道直下にあるため"
+      ],
+      "answer": 0,
+      "explanation": "冬の北西季節風が日本海で水蒸気を含み、山地で上昇して雪を降らせます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_japanregions_g1_4",
+      "subject": "social",
+      "unit": "japan-regions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "日本海側で冬に雪が多くなる主な理由は？",
+      "choices": [
+        "北西の季節風が日本海から水蒸気を含むため",
+        "南東の季節風が砂漠から吹くため",
+        "一年中台風が来るため",
+        "赤道直下にあるため"
+      ],
+      "answer": 0,
+      "explanation": "冬の北西季節風が日本海で水蒸気を含み、山地で上昇して雪を降らせます。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_japanregions_g1_4",
+      "subject": "social",
+      "unit": "japan-regions",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "日本海側で冬に雪が多くなる主な理由は？",
+      "choices": [
+        "北西の季節風が日本海から水蒸気を含むため",
+        "南東の季節風が砂漠から吹くため",
+        "一年中台風が来るため",
+        "赤道直下にあるため"
+      ],
+      "answer": 0,
+      "explanation": "冬の北西季節風が日本海で水蒸気を含み、山地で上昇して雪を降らせます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_japanregions_g2_4",
+      "subject": "social",
+      "unit": "japan-regions",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域の産業を調べるとき、自然条件と交通条件を関連付けて考える理由は？",
+      "choices": [
+        "産業の立地や発展に両方が影響するから",
+        "人口だけで産業が決まるから",
+        "自然条件は産業と無関係だから",
+        "交通は人の移動にしか関係しないから"
+      ],
+      "answer": 0,
+      "explanation": "産業は資源・気候などの自然条件と、道路・港湾などの交通条件の両方に影響されます。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_japanregions_g2_4",
+      "subject": "social",
+      "unit": "japan-regions",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域の産業を調べるとき、自然条件と交通条件を関連付けて考える理由は？",
+      "choices": [
+        "産業の立地や発展に両方が影響するから",
+        "人口だけで産業が決まるから",
+        "自然条件は産業と無関係だから",
+        "交通は人の移動にしか関係しないから"
+      ],
+      "answer": 0,
+      "explanation": "産業は資源・気候などの自然条件と、道路・港湾などの交通条件の両方に影響されます。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_japanregions_g2_4",
+      "subject": "social",
+      "unit": "japan-regions",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域の産業を調べるとき、自然条件と交通条件を関連付けて考える理由は？",
+      "choices": [
+        "産業の立地や発展に両方が影響するから",
+        "人口だけで産業が決まるから",
+        "自然条件は産業と無関係だから",
+        "交通は人の移動にしか関係しないから"
+      ],
+      "answer": 0,
+      "explanation": "産業は資源・気候などの自然条件と、道路・港湾などの交通条件の両方に影響されます。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_regionalstudy_g1_4",
+      "subject": "social",
+      "unit": "regional-study",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "地域調査で複数の地図を重ねて見る利点は？",
+      "choices": [
+        "土地利用・地形・人口などの関係を考えやすい",
+        "一つの情報しか見えなくなる",
+        "方位が不要になる",
+        "縮尺を考えなくてよくなる"
+      ],
+      "answer": 0,
+      "explanation": "複数の地理情報を比較・重ね合わせると、地域の特徴や関係性を捉えやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_regionalstudy_g1_4",
+      "subject": "social",
+      "unit": "regional-study",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "地域調査で複数の地図を重ねて見る利点は？",
+      "choices": [
+        "土地利用・地形・人口などの関係を考えやすい",
+        "一つの情報しか見えなくなる",
+        "方位が不要になる",
+        "縮尺を考えなくてよくなる"
+      ],
+      "answer": 0,
+      "explanation": "複数の地理情報を比較・重ね合わせると、地域の特徴や関係性を捉えやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_regionalstudy_g1_4",
+      "subject": "social",
+      "unit": "regional-study",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "地域調査で複数の地図を重ねて見る利点は？",
+      "choices": [
+        "土地利用・地形・人口などの関係を考えやすい",
+        "一つの情報しか見えなくなる",
+        "方位が不要になる",
+        "縮尺を考えなくてよくなる"
+      ],
+      "answer": 0,
+      "explanation": "複数の地理情報を比較・重ね合わせると、地域の特徴や関係性を捉えやすくなります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_regionalstudy_g2_4",
+      "subject": "social",
+      "unit": "regional-study",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域調査で統計資料を使うとき、年代を確認する理由は？",
+      "choices": [
+        "異なる時期の資料を誤って比較しないため",
+        "数字を必ず大きくするため",
+        "地図を使わなくてよくするため",
+        "出典を省略するため"
+      ],
+      "answer": 0,
+      "explanation": "統計は時点によって値が変わるため、年代や調査時期を確認することが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_regionalstudy_g2_4",
+      "subject": "social",
+      "unit": "regional-study",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域調査で統計資料を使うとき、年代を確認する理由は？",
+      "choices": [
+        "異なる時期の資料を誤って比較しないため",
+        "数字を必ず大きくするため",
+        "地図を使わなくてよくするため",
+        "出典を省略するため"
+      ],
+      "answer": 0,
+      "explanation": "統計は時点によって値が変わるため、年代や調査時期を確認することが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_regionalstudy_g2_4",
+      "subject": "social",
+      "unit": "regional-study",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "地域調査で統計資料を使うとき、年代を確認する理由は？",
+      "choices": [
+        "異なる時期の資料を誤って比較しないため",
+        "数字を必ず大きくするため",
+        "地図を使わなくてよくするため",
+        "出典を省略するため"
+      ],
+      "answer": 0,
+      "explanation": "統計は時点によって値が変わるため、年代や調査時期を確認することが重要です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_ancient_g1_4",
+      "subject": "social",
+      "unit": "ancient",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "大化の改新が目指した方向として最も適切なのは？",
+      "choices": [
+        "天皇を中心とする中央集権的な国家づくり",
+        "武士による幕府政治",
+        "鎖国の実施",
+        "廃藩置県"
+      ],
+      "answer": 0,
+      "explanation": "大化の改新では公地公民など、中央集権的な国家体制を目指しました。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_ancient_g1_4",
+      "subject": "social",
+      "unit": "ancient",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "大化の改新が目指した方向として最も適切なのは？",
+      "choices": [
+        "天皇を中心とする中央集権的な国家づくり",
+        "武士による幕府政治",
+        "鎖国の実施",
+        "廃藩置県"
+      ],
+      "answer": 0,
+      "explanation": "大化の改新では公地公民など、中央集権的な国家体制を目指しました。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_ancient_g1_4",
+      "subject": "social",
+      "unit": "ancient",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "大化の改新が目指した方向として最も適切なのは？",
+      "choices": [
+        "天皇を中心とする中央集権的な国家づくり",
+        "武士による幕府政治",
+        "鎖国の実施",
+        "廃藩置県"
+      ],
+      "answer": 0,
+      "explanation": "大化の改新では公地公民など、中央集権的な国家体制を目指しました。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_ancient_g2_4",
+      "subject": "social",
+      "unit": "ancient",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "律令国家で土地と人民を国家が把握するために行われたものは？",
+      "choices": [
+        "戸籍の作成",
+        "参勤交代",
+        "地租改正",
+        "普通選挙"
+      ],
+      "answer": 0,
+      "explanation": "律令国家では戸籍などを整備し、人民や土地を把握しました。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_ancient_g2_4",
+      "subject": "social",
+      "unit": "ancient",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "律令国家で土地と人民を国家が把握するために行われたものは？",
+      "choices": [
+        "戸籍の作成",
+        "参勤交代",
+        "地租改正",
+        "普通選挙"
+      ],
+      "answer": 0,
+      "explanation": "律令国家では戸籍などを整備し、人民や土地を把握しました。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_ancient_g2_4",
+      "subject": "social",
+      "unit": "ancient",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "律令国家で土地と人民を国家が把握するために行われたものは？",
+      "choices": [
+        "戸籍の作成",
+        "参勤交代",
+        "地租改正",
+        "普通選挙"
+      ],
+      "answer": 0,
+      "explanation": "律令国家では戸籍などを整備し、人民や土地を把握しました。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_medieval_g1_4",
+      "subject": "social",
+      "unit": "medieval",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "鎌倉幕府で将軍と御家人の主従関係を表す語の組合せは？",
+      "choices": [
+        "御恩と奉公",
+        "公地と公民",
+        "租と庸",
+        "地租と徴兵"
+      ],
+      "answer": 0,
+      "explanation": "将軍が御恩を与え、御家人が奉公で応える関係が幕府を支えました。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_medieval_g1_4",
+      "subject": "social",
+      "unit": "medieval",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "鎌倉幕府で将軍と御家人の主従関係を表す語の組合せは？",
+      "choices": [
+        "御恩と奉公",
+        "公地と公民",
+        "租と庸",
+        "地租と徴兵"
+      ],
+      "answer": 0,
+      "explanation": "将軍が御恩を与え、御家人が奉公で応える関係が幕府を支えました。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_medieval_g1_4",
+      "subject": "social",
+      "unit": "medieval",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "鎌倉幕府で将軍と御家人の主従関係を表す語の組合せは？",
+      "choices": [
+        "御恩と奉公",
+        "公地と公民",
+        "租と庸",
+        "地租と徴兵"
+      ],
+      "answer": 0,
+      "explanation": "将軍が御恩を与え、御家人が奉公で応える関係が幕府を支えました。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_medieval_g2_4",
+      "subject": "social",
+      "unit": "medieval",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "室町時代に勘合を用いて行われた貿易は？",
+      "choices": [
+        "日明貿易",
+        "南蛮貿易",
+        "日米修好通商",
+        "遣唐使"
+      ],
+      "answer": 0,
+      "explanation": "倭寇と区別するため勘合を用いた日明貿易が行われました。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_medieval_g2_4",
+      "subject": "social",
+      "unit": "medieval",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "室町時代に勘合を用いて行われた貿易は？",
+      "choices": [
+        "日明貿易",
+        "南蛮貿易",
+        "日米修好通商",
+        "遣唐使"
+      ],
+      "answer": 0,
+      "explanation": "倭寇と区別するため勘合を用いた日明貿易が行われました。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_medieval_g2_4",
+      "subject": "social",
+      "unit": "medieval",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "室町時代に勘合を用いて行われた貿易は？",
+      "choices": [
+        "日明貿易",
+        "南蛮貿易",
+        "日米修好通商",
+        "遣唐使"
+      ],
+      "answer": 0,
+      "explanation": "倭寇と区別するため勘合を用いた日明貿易が行われました。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_earlymodern_g1_4",
+      "subject": "social",
+      "unit": "early-modern",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "江戸幕府が大名を統制するために行った制度は？",
+      "choices": [
+        "参勤交代",
+        "班田収授",
+        "廃藩置県",
+        "徴兵令"
+      ],
+      "answer": 0,
+      "explanation": "参勤交代は大名統制の重要な制度でした。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_earlymodern_g1_4",
+      "subject": "social",
+      "unit": "early-modern",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "江戸幕府が大名を統制するために行った制度は？",
+      "choices": [
+        "参勤交代",
+        "班田収授",
+        "廃藩置県",
+        "徴兵令"
+      ],
+      "answer": 0,
+      "explanation": "参勤交代は大名統制の重要な制度でした。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_earlymodern_g1_4",
+      "subject": "social",
+      "unit": "early-modern",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "江戸幕府が大名を統制するために行った制度は？",
+      "choices": [
+        "参勤交代",
+        "班田収授",
+        "廃藩置県",
+        "徴兵令"
+      ],
+      "answer": 0,
+      "explanation": "参勤交代は大名統制の重要な制度でした。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_earlymodern_g2_4",
+      "subject": "social",
+      "unit": "early-modern",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "江戸時代の三都に含まれない都市は？",
+      "choices": [
+        "札幌",
+        "江戸",
+        "大坂",
+        "京都"
+      ],
+      "answer": 0,
+      "explanation": "江戸・大坂・京都が三都と呼ばれました。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_earlymodern_g2_4",
+      "subject": "social",
+      "unit": "early-modern",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "江戸時代の三都に含まれない都市は？",
+      "choices": [
+        "札幌",
+        "江戸",
+        "大坂",
+        "京都"
+      ],
+      "answer": 0,
+      "explanation": "江戸・大坂・京都が三都と呼ばれました。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_earlymodern_g2_4",
+      "subject": "social",
+      "unit": "early-modern",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "江戸時代の三都に含まれない都市は？",
+      "choices": [
+        "札幌",
+        "江戸",
+        "大坂",
+        "京都"
+      ],
+      "answer": 0,
+      "explanation": "江戸・大坂・京都が三都と呼ばれました。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_modern_g2_4",
+      "subject": "social",
+      "unit": "modern",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "明治政府が藩を廃止して府県を置いた改革は？",
+      "choices": [
+        "廃藩置県",
+        "大政奉還",
+        "地租改正",
+        "自由民権運動"
+      ],
+      "answer": 0,
+      "explanation": "1871年の廃藩置県で藩を廃止し府県を置きました。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_modern_g2_4",
+      "subject": "social",
+      "unit": "modern",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "明治政府が藩を廃止して府県を置いた改革は？",
+      "choices": [
+        "廃藩置県",
+        "大政奉還",
+        "地租改正",
+        "自由民権運動"
+      ],
+      "answer": 0,
+      "explanation": "1871年の廃藩置県で藩を廃止し府県を置きました。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_modern_g2_4",
+      "subject": "social",
+      "unit": "modern",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "明治政府が藩を廃止して府県を置いた改革は？",
+      "choices": [
+        "廃藩置県",
+        "大政奉還",
+        "地租改正",
+        "自由民権運動"
+      ],
+      "answer": 0,
+      "explanation": "1871年の廃藩置県で藩を廃止し府県を置きました。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_modern_g3_4",
+      "subject": "social",
+      "unit": "modern",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "第一次世界大戦後に国際平和を目的として設立された国際機関は？",
+      "choices": [
+        "国際連盟",
+        "国際連合",
+        "ASEAN",
+        "EU"
+      ],
+      "answer": 0,
+      "explanation": "第一次世界大戦後、国際協調を目指して国際連盟が設立されました。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_modern_g3_4",
+      "subject": "social",
+      "unit": "modern",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "第一次世界大戦後に国際平和を目的として設立された国際機関は？",
+      "choices": [
+        "国際連盟",
+        "国際連合",
+        "ASEAN",
+        "EU"
+      ],
+      "answer": 0,
+      "explanation": "第一次世界大戦後、国際協調を目指して国際連盟が設立されました。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_modern_g3_4",
+      "subject": "social",
+      "unit": "modern",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "第一次世界大戦後に国際平和を目的として設立された国際機関は？",
+      "choices": [
+        "国際連盟",
+        "国際連合",
+        "ASEAN",
+        "EU"
+      ],
+      "answer": 0,
+      "explanation": "第一次世界大戦後、国際協調を目指して国際連盟が設立されました。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_contemporary_g2_4",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "日本国憲法が施行された年は？",
+      "choices": [
+        "1947年",
+        "1945年",
+        "1951年",
+        "1964年"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法は1947年5月3日に施行されました。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_contemporary_g2_4",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "日本国憲法が施行された年は？",
+      "choices": [
+        "1947年",
+        "1945年",
+        "1951年",
+        "1964年"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法は1947年5月3日に施行されました。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_contemporary_g2_4",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "日本国憲法が施行された年は？",
+      "choices": [
+        "1947年",
+        "1945年",
+        "1951年",
+        "1964年"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法は1947年5月3日に施行されました。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_contemporary_g3_4",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "冷戦終結の象徴の一つとされる1989年の出来事は？",
+      "choices": [
+        "ベルリンの壁崩壊",
+        "サンフランシスコ平和条約",
+        "日清戦争",
+        "満州事変"
+      ],
+      "answer": 0,
+      "explanation": "1989年のベルリンの壁崩壊は冷戦終結を象徴する出来事の一つです。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_contemporary_g3_4",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "冷戦終結の象徴の一つとされる1989年の出来事は？",
+      "choices": [
+        "ベルリンの壁崩壊",
+        "サンフランシスコ平和条約",
+        "日清戦争",
+        "満州事変"
+      ],
+      "answer": 0,
+      "explanation": "1989年のベルリンの壁崩壊は冷戦終結を象徴する出来事の一つです。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_contemporary_g3_4",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "冷戦終結の象徴の一つとされる1989年の出来事は？",
+      "choices": [
+        "ベルリンの壁崩壊",
+        "サンフランシスコ平和条約",
+        "日清戦争",
+        "満州事変"
+      ],
+      "answer": 0,
+      "explanation": "1989年のベルリンの壁崩壊は冷戦終結を象徴する出来事の一つです。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_modernsociety_g3_4",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "少子高齢化が進む社会で課題となることとして適切なのは？",
+      "choices": [
+        "社会保障を支える人口構成の変化",
+        "選挙制度が必ずなくなる",
+        "貿易が完全になくなる",
+        "地方自治が停止する"
+      ],
+      "answer": 0,
+      "explanation": "少子高齢化は労働力や社会保障の支え手などに影響します。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_nihonbunkyo_modernsociety_g3_4",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "少子高齢化が進む社会で課題となることとして適切なのは？",
+      "choices": [
+        "社会保障を支える人口構成の変化",
+        "選挙制度が必ずなくなる",
+        "貿易が完全になくなる",
+        "地方自治が停止する"
+      ],
+      "answer": 0,
+      "explanation": "少子高齢化は労働力や社会保障の支え手などに影響します。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_modernsociety_g3_4",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "少子高齢化が進む社会で課題となることとして適切なのは？",
+      "choices": [
+        "社会保障を支える人口構成の変化",
+        "選挙制度が必ずなくなる",
+        "貿易が完全になくなる",
+        "地方自治が停止する"
+      ],
+      "answer": 0,
+      "explanation": "少子高齢化は労働力や社会保障の支え手などに影響します。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_modernsociety_g3_4",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "少子高齢化が進む社会で課題となることとして適切なのは？",
+      "choices": [
+        "社会保障を支える人口構成の変化",
+        "選挙制度が必ずなくなる",
+        "貿易が完全になくなる",
+        "地方自治が停止する"
+      ],
+      "answer": 0,
+      "explanation": "少子高齢化は労働力や社会保障の支え手などに影響します。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_constitution_g3_4",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "日本国憲法の基本原理に含まれるものは？",
+      "choices": [
+        "国民主権",
+        "身分制",
+        "鎖国",
+        "武家諸法度"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法の基本原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_nihonbunkyo_constitution_g3_4",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "日本国憲法の基本原理に含まれるものは？",
+      "choices": [
+        "国民主権",
+        "身分制",
+        "鎖国",
+        "武家諸法度"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法の基本原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_constitution_g3_4",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "日本国憲法の基本原理に含まれるものは？",
+      "choices": [
+        "国民主権",
+        "身分制",
+        "鎖国",
+        "武家諸法度"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法の基本原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_constitution_g3_4",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "日本国憲法の基本原理に含まれるものは？",
+      "choices": [
+        "国民主権",
+        "身分制",
+        "鎖国",
+        "武家諸法度"
+      ],
+      "answer": 0,
+      "explanation": "日本国憲法の基本原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_politics_g3_4",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "国会が内閣総理大臣を指名する仕組みと関係が深い政治制度は？",
+      "choices": [
+        "議院内閣制",
+        "大統領制のみ",
+        "直接民主制のみ",
+        "封建制"
+      ],
+      "answer": 0,
+      "explanation": "日本では国会の信任を基礎に内閣が成立する議院内閣制を採っています。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_nihonbunkyo_politics_g3_4",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "国会が内閣総理大臣を指名する仕組みと関係が深い政治制度は？",
+      "choices": [
+        "議院内閣制",
+        "大統領制のみ",
+        "直接民主制のみ",
+        "封建制"
+      ],
+      "answer": 0,
+      "explanation": "日本では国会の信任を基礎に内閣が成立する議院内閣制を採っています。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_politics_g3_4",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "国会が内閣総理大臣を指名する仕組みと関係が深い政治制度は？",
+      "choices": [
+        "議院内閣制",
+        "大統領制のみ",
+        "直接民主制のみ",
+        "封建制"
+      ],
+      "answer": 0,
+      "explanation": "日本では国会の信任を基礎に内閣が成立する議院内閣制を採っています。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_politics_g3_4",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "国会が内閣総理大臣を指名する仕組みと関係が深い政治制度は？",
+      "choices": [
+        "議院内閣制",
+        "大統領制のみ",
+        "直接民主制のみ",
+        "封建制"
+      ],
+      "answer": 0,
+      "explanation": "日本では国会の信任を基礎に内閣が成立する議院内閣制を採っています。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_economy_g3_4",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "価格が市場で需要と供給の関係によって変化する仕組みを何という？",
+      "choices": [
+        "市場経済",
+        "計画経済だけ",
+        "物々交換だけ",
+        "封建制度"
+      ],
+      "answer": 0,
+      "explanation": "市場経済では需要と供給の関係が価格形成に大きく関わります。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_nihonbunkyo_economy_g3_4",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "価格が市場で需要と供給の関係によって変化する仕組みを何という？",
+      "choices": [
+        "市場経済",
+        "計画経済だけ",
+        "物々交換だけ",
+        "封建制度"
+      ],
+      "answer": 0,
+      "explanation": "市場経済では需要と供給の関係が価格形成に大きく関わります。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_economy_g3_4",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "価格が市場で需要と供給の関係によって変化する仕組みを何という？",
+      "choices": [
+        "市場経済",
+        "計画経済だけ",
+        "物々交換だけ",
+        "封建制度"
+      ],
+      "answer": 0,
+      "explanation": "市場経済では需要と供給の関係が価格形成に大きく関わります。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_economy_g3_4",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "価格が市場で需要と供給の関係によって変化する仕組みを何という？",
+      "choices": [
+        "市場経済",
+        "計画経済だけ",
+        "物々交換だけ",
+        "封建制度"
+      ],
+      "answer": 0,
+      "explanation": "市場経済では需要と供給の関係が価格形成に大きく関わります。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_kyoikushuppan_international_g3_4",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "国際連合の安全保障理事会の主な役割は？",
+      "choices": [
+        "国際平和と安全の維持に関する対応",
+        "世界の通貨を一つに統一する",
+        "すべての国の法律を作る",
+        "各国の選挙を直接実施する"
+      ],
+      "answer": 0,
+      "explanation": "安全保障理事会は国際平和と安全の維持について主要な責任を担います。",
+      "difficulty": 2,
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_nihonbunkyo_international_g3_4",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "国際連合の安全保障理事会の主な役割は？",
+      "choices": [
+        "国際平和と安全の維持に関する対応",
+        "世界の通貨を一つに統一する",
+        "すべての国の法律を作る",
+        "各国の選挙を直接実施する"
+      ],
+      "answer": 0,
+      "explanation": "安全保障理事会は国際平和と安全の維持について主要な責任を担います。",
+      "difficulty": 2,
+      "textbookPublisher": "nihon-bunkyo",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_teikoku_international_g3_4",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "国際連合の安全保障理事会の主な役割は？",
+      "choices": [
+        "国際平和と安全の維持に関する対応",
+        "世界の通貨を一つに統一する",
+        "すべての国の法律を作る",
+        "各国の選挙を直接実施する"
+      ],
+      "answer": 0,
+      "explanation": "安全保障理事会は国際平和と安全の維持について主要な責任を担います。",
+      "difficulty": 2,
+      "textbookPublisher": "teikoku",
+      "source": "publisher-aligned-original-v039"
+    },
+    {
+      "id": "v039_social_tokyoshoseki_international_g3_4",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "国際連合の安全保障理事会の主な役割は？",
+      "choices": [
+        "国際平和と安全の維持に関する対応",
+        "世界の通貨を一つに統一する",
+        "すべての国の法律を作る",
+        "各国の選挙を直接実施する"
+      ],
+      "answer": 0,
+      "explanation": "安全保障理事会は国際平和と安全の維持について主要な責任を担います。",
+      "difficulty": 2,
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-aligned-original-v039"
     }
   ],
-  "notes": "Ver.0.38: 出版社×学年×教材/単元を再監査。専用問題が0だった音楽・美術・保健体育・技術家庭の159組へ各3問（477問）を追加し、さらに再集計で見つかった光村図書中2英語Unit 1・Unit 3の不足3問を補完。監査対象の出版社×学年×教材/単元の最低専用問題数を3問へ統一。"
+  "notes": "Ver.0.39: 共通問題は増やさず、出版社専用問題の薄い教科を優先。音楽・美術・保健体育・技術家庭・理科・数学・社会について、採択対象の出版社×学年×単元を再集計し、専用問題が3問だった組み合わせへ各1問を追加。対象7教科の組み合わせを最低4問へ補強。追加問題は教科書本文を転載しないオリジナル問題。"
 };

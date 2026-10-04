@@ -1,4 +1,4 @@
-const APP_VERSION='0.30.1';
+const APP_VERSION='0.31.0';
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
@@ -860,18 +860,36 @@ function mockExamAutoPool(plan){return examQuestionPool(plan).filter(q=>['choice
 function balancedMockQuestions(plan,count){
  const pool=mockExamAutoPool(plan);if(!pool.length)return[];
  const n=Math.min(count==='all'?pool.length:Number(count)||20,pool.length);
- const materials=new Set(plan.materials||[]);
- const preferred=materialPriorityOrder(pool,materials);
- const target={1:Math.round(n*.3),2:Math.round(n*.5),3:0};target[3]=Math.max(0,n-target[1]-target[2]);
- const selected=[];const used=new Set();
- const takeRoundRobin=(candidates,need)=>{
-  const by={};candidates.forEach(q=>{(by[q.subject]??=[]).push(q)});Object.values(by).forEach(a=>a.sort(()=>Math.random()-.5));
-  const subjects=Object.keys(by).sort(()=>Math.random()-.5);let progressed=true;
-  while(selected.length<n&&need>0&&progressed){progressed=false;for(const sid of subjects){const arr=by[sid];while(arr?.length&&used.has(arr[0].id))arr.shift();if(arr?.length){const q=arr.shift();selected.push(q);used.add(q.id);need--;progressed=true;if(need<=0||selected.length>=n)break;}}}
+ const materials=new Set(plan.materials||[]),preferred=materialPriorityOrder(pool,materials);
+ const typeOrder=['choice','fill','reorder','multi','word'];
+ const typeRatio={choice:.35,fill:.20,reorder:.15,multi:.15,word:.15};
+ const typeTarget={};let assigned=0;
+ typeOrder.forEach(t=>{typeTarget[t]=Math.floor(n*typeRatio[t]);assigned+=typeTarget[t];});
+ const fractions=typeOrder.map((t,i)=>({t,f:n*typeRatio[t]-Math.floor(n*typeRatio[t]),i})).sort((a,b)=>b.f-a.f||a.i-b.i);
+ for(let i=0;i<n-assigned;i++)typeTarget[fractions[i%fractions.length].t]++;
+ const diffTarget={1:Math.round(n*.3),2:Math.round(n*.5),3:0};diffTarget[3]=Math.max(0,n-diffTarget[1]-diffTarget[2]);
+ const selected=[],used=new Set(),subjectCount={},diffCount={1:0,2:0,3:0};
+ const preferredIndex=new Map(preferred.map((q,i)=>[q.id,i]));
+ const pickOne=(candidates)=>{
+  const available=candidates.filter(q=>!used.has(q.id));if(!available.length)return null;
+  const minSub=Math.min(...available.map(q=>subjectCount[q.subject]||0));
+  const needDiff=available.filter(q=>(diffCount[questionDifficulty(q)]||0)<(diffTarget[questionDifficulty(q)]||0));
+  const base=needDiff.length?needDiff:available;
+  const minBaseSub=Math.min(...base.map(q=>subjectCount[q.subject]||0));
+  const balanced=base.filter(q=>(subjectCount[q.subject]||0)===minBaseSub);
+  balanced.sort((a,b)=>(preferredIndex.get(a.id)??99999)-(preferredIndex.get(b.id)??99999));
+  return balanced[0]||base.find(q=>(subjectCount[q.subject]||0)===minSub)||base[0];
  };
- [1,2,3].forEach(d=>takeRoundRobin(preferred.filter(q=>questionDifficulty(q)===d),target[d]));
- takeRoundRobin(preferred.filter(q=>!used.has(q.id)),n-selected.length);
- return selected.slice(0,n);
+ const add=(q)=>{if(!q||used.has(q.id)||selected.length>=n)return false;selected.push(q);used.add(q.id);subjectCount[q.subject]=(subjectCount[q.subject]||0)+1;const d=questionDifficulty(q);diffCount[d]=(diffCount[d]||0)+1;return true;};
+ for(const t of typeOrder){for(let i=0;i<typeTarget[t]&&selected.length<n;i++){const q=pickOne(preferred.filter(x=>x.type===t));if(!add(q))break;}}
+ while(selected.length<n){const q=pickOne(preferred);if(!add(q))break;}
+ return selected.slice(0,n).sort(()=>Math.random()-.5);
+}
+function mockTypeMixText(n){
+ const ratios=[['単一選択',.35],['穴埋め',.20],['並べ替え',.15],['複数選択',.15],['短答',.15]];
+ const vals=ratios.map(([name,r])=>({name,r,count:Math.floor(n*r),frac:n*r-Math.floor(n*r)}));let assigned=vals.reduce((s,x)=>s+x.count,0);
+ vals.slice().sort((a,b)=>b.frac-a.frac).forEach(x=>{if(assigned<n){x.count++;assigned++;}});
+ return vals.filter(x=>x.count).map(x=>`${x.name}${x.count}問`).join('・');
 }
 function openMockExamSetup(id){
  const plan=loadExamPlans().find(x=>x.id===id);if(!plan)return;
@@ -887,7 +905,7 @@ function renderMockSetupChoices(){
 }
 function updateMockSetupSummary(){
  const plan=loadExamPlans().find(x=>x.id===state.mockExam.planId);if(!plan)return;const pool=mockExamAutoPool(plan);const wanted=state.mockExam.count==='all'?pool.length:Math.min(Number(state.mockExam.count)||20,pool.length);
- const el=document.getElementById('mockExamSetupSummary');el.textContent=`${wanted}問・${state.mockExam.minutes}分・100点満点 / 基礎30%・標準50%・応用20%を目安に、教科が偏りすぎないよう出題します。`;
+ const el=document.getElementById('mockExamSetupSummary');el.textContent=`${wanted}問・${state.mockExam.minutes}分・100点満点 / 基礎30%・標準50%・応用20%を目安に調整。形式目安：${mockTypeMixText(wanted)}。不足する形式は他形式で補います。`;
 }
 function startMockExam(){
  const plan=loadExamPlans().find(x=>x.id===state.mockExam.planId);if(!plan)return;const session=balancedMockQuestions(plan,state.mockExam.count);

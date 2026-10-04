@@ -1,5 +1,5 @@
 {
-  "version": "0.30.1",
+  "version": "0.31.0",
   "questions": [
     {
       "id": "ja001",
@@ -10221,7 +10221,1403 @@
       ],
       "explanation": "√12=√(4×3)=2√3 です。√4×√3 も同じ値になります。",
       "difficulty": 2
+    },
+    {
+      "id": "v031_hw3_u1_fill_01",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "topic": "受け身",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 These pictures （1） taken in Kenya.",
+      "blanks": [
+        [
+          "were"
+        ]
+      ],
+      "explanation": "主語が複数で過去の受け身なので were + taken を使います.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u1_fill_02",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "topic": "let / help + 人 + 動詞の原形",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 My teacher helped me （1） the map.",
+      "blanks": [
+        [
+          "read"
+        ]
+      ],
+      "explanation": "help + 人 + 動詞の原形で「人が〜するのを手伝う」を表せます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u1_reorder_01",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "topic": "受け身",
+      "type": "reorder",
+      "question": "「この写真は私の姉によって撮られました。」になるように並べ替えなさい。",
+      "items": [
+        "This",
+        "photo",
+        "was",
+        "taken",
+        "by",
+        "my",
+        "sister",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "受け身は be動詞 + 過去分詞、その後に by + 行為者を置けます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u1_reorder_02",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "topic": "let + 人 + 動詞の原形",
+      "type": "reorder",
+      "question": "「私にあなたを手伝わせてください。」になるように並べ替えなさい。",
+      "items": [
+        "Let",
+        "me",
+        "help",
+        "you",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Let + 人 + 動詞の原形で「人に〜させる」を表します.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u1_multi_01",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "topic": "受け身",
+      "type": "multi",
+      "question": "受け身の文をすべて選びなさい。",
+      "choices": [
+        "The room is cleaned every day.",
+        "We clean the room every day.",
+        "This bridge was built in 1990.",
+        "My brother builds models."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "be動詞 + 過去分詞になっている文が受け身です.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u1_multi_02",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "topic": "let / help",
+      "type": "multi",
+      "question": "文法的に正しい文をすべて選びなさい。",
+      "choices": [
+        "Let me show you the way.",
+        "Let me to show you the way.",
+        "She helped me carry the box.",
+        "She helped me carried the box."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "let と help の後では、人の後ろに動詞の原形を置く形を学びます.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u2_fill_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・完了",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I have （1） finished my homework.",
+      "blanks": [
+        [
+          "just"
+        ]
+      ],
+      "explanation": "just は現在完了の完了用法で「ちょうど〜したところ」を表します.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u2_fill_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・経験",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Have you （1） visited Nara?",
+      "blanks": [
+        [
+          "ever"
+        ]
+      ],
+      "explanation": "ever は経験をたずねる現在完了の疑問文でよく使います.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u2_reorder_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・完了",
+      "type": "reorder",
+      "question": "「私はまだそのメールを読んでいません。」になるように並べ替えなさい。",
+      "items": [
+        "I",
+        "have",
+        "not",
+        "read",
+        "the",
+        "email",
+        "yet",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "否定の現在完了では have not + 過去分詞を使い、yet は文末に置けます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u2_reorder_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・経験",
+      "type": "reorder",
+      "question": "「あなたは今までに北海道へ行ったことがありますか。」になるように並べ替えなさい。",
+      "items": [
+        "Have",
+        "you",
+        "ever",
+        "been",
+        "to",
+        "Hokkaido",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "経験をたずねるときは Have you ever been to ...? が基本です.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u2_multi_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了",
+      "type": "multi",
+      "question": "現在完了の文をすべて選びなさい。",
+      "choices": [
+        "She has already eaten lunch.",
+        "She ate lunch at noon.",
+        "I have never seen that movie.",
+        "I am watching that movie now."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "has eaten と have seen が have/has + 過去分詞の現在完了です.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u2_multi_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了の副詞",
+      "type": "multi",
+      "question": "現在完了と組み合わせやすい語をすべて選びなさい。",
+      "choices": [
+        "already",
+        "ever",
+        "yet",
+        "yesterday"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "already・ever・yet は現在完了でよく使います。yesterday のような明確な過去時点は通常、過去形と使います.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u3_fill_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・継続",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 We have lived here （1） 2022.",
+      "blanks": [
+        [
+          "since"
+        ]
+      ],
+      "explanation": "起点を表すときは since を使います.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u3_fill_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了進行形",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 She has been （1） English for two hours.",
+      "blanks": [
+        [
+          "studying"
+        ]
+      ],
+      "explanation": "has been + 動詞ing で現在完了進行形になります.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u3_reorder_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・継続",
+      "type": "reorder",
+      "question": "「彼は5年間この町に住んでいます。」になるように並べ替えなさい。",
+      "items": [
+        "He",
+        "has",
+        "lived",
+        "in",
+        "this",
+        "town",
+        "for",
+        "five",
+        "years",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "explanation": "期間は for、現在完了は has + 過去分詞を使います.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u3_reorder_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了進行形",
+      "type": "reorder",
+      "question": "「私は朝からずっと本を読んでいます。」になるように並べ替えなさい。",
+      "items": [
+        "I",
+        "have",
+        "been",
+        "reading",
+        "a",
+        "book",
+        "since",
+        "this",
+        "morning",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "explanation": "継続中の動作は have been + 動詞ing で表せます.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u3_multi_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "for / since",
+      "type": "multi",
+      "question": "使い方が正しい文をすべて選びなさい。",
+      "choices": [
+        "I have lived here for three years.",
+        "I have lived here since 2023.",
+        "I have lived here since three years.",
+        "I have lived here for Monday."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "for は期間、since は起点を表します.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u3_multi_02",
+      "subject": "english",
+      "unit": "reading",
+      "grades": [
+        3
+      ],
+      "topic": "how to",
+      "type": "multi",
+      "question": "how to + 動詞の原形を正しく使っている表現をすべて選びなさい。",
+      "choices": [
+        "how to use this app",
+        "how using this app",
+        "how to make curry",
+        "how to made curry"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "how to + 動詞の原形で「〜の仕方」を表します.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u4_fill_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞・主格",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I know a girl （1） speaks French.",
+      "blanks": [
+        [
+          "who",
+          "that"
+        ]
+      ],
+      "explanation": "先行詞が人で主格なので who または that が使えます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u4_fill_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞・主格",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） can carry boxes.",
+      "blanks": [
+        [
+          "which",
+          "that"
+        ]
+      ],
+      "explanation": "先行詞が物で主格なので which または that が使えます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u4_reorder_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞・主格",
+      "type": "reorder",
+      "question": "「私は大阪に住んでいる友達がいます。」になるように並べ替えなさい。",
+      "items": [
+        "I",
+        "have",
+        "a",
+        "friend",
+        "who",
+        "lives",
+        "in",
+        "Osaka",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "人を説明する主格の関係代名詞 who を使います.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u4_reorder_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞・主格",
+      "type": "reorder",
+      "question": "「これは速く走ることができる車です。」になるように並べ替えなさい。",
+      "items": [
+        "This",
+        "is",
+        "a",
+        "car",
+        "that",
+        "can",
+        "run",
+        "fast",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "先行詞 a car を that can run fast が説明します.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u4_multi_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞",
+      "type": "multi",
+      "question": "文法的に正しい文をすべて選びなさい。",
+      "choices": [
+        "I know a boy who plays the guitar.",
+        "I know a boy which plays the guitar.",
+        "This is a machine that saves energy.",
+        "This is a machine who saves energy."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "人には who、物には which/that を使うのが基本です.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u4_multi_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "先行詞",
+      "type": "multi",
+      "question": "関係代名詞が直前の名詞を説明している文をすべて選びなさい。",
+      "choices": [
+        "I met a teacher who teaches science.",
+        "This is a book that explains robots.",
+        "Who is your teacher?",
+        "That is my bag."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "0と1では who/that が関係代名詞として先行詞を説明しています.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u5_fill_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞・目的格",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This is the song （1） I like best.",
+      "blanks": [
+        [
+          "that",
+          "which"
+        ]
+      ],
+      "explanation": "先行詞が物で目的格なので that/which が使えます。目的格は省略も可能です.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u5_fill_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞・目的格",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "blanks": [
+        [
+          "who",
+          "that",
+          "whom"
+        ]
+      ],
+      "explanation": "人を表す目的格では who/that/whom が使えます。中学校では who/that を中心に扱います.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u5_reorder_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞・目的格",
+      "type": "reorder",
+      "question": "「これは私が先週読んだ本です。」になるように並べ替えなさい。",
+      "items": [
+        "This",
+        "is",
+        "the",
+        "book",
+        "that",
+        "I",
+        "read",
+        "last",
+        "week",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "explanation": "the book を that I read last week が後ろから説明しています.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u5_reorder_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞省略",
+      "type": "reorder",
+      "question": "「あなたが作ったケーキはおいしかったです。」になるように並べ替えなさい。",
+      "items": [
+        "The",
+        "cake",
+        "you",
+        "made",
+        "was",
+        "delicious",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "目的格の関係代名詞は省略できるため the cake you made とできます.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u5_multi_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞省略",
+      "type": "multi",
+      "question": "目的格の関係代名詞を省略できる文をすべて選びなさい。",
+      "choices": [
+        "This is the bike that I use every day.",
+        "I know a girl who sings well.",
+        "The movie which we watched was exciting.",
+        "This is a dog that runs fast."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "0と2では関係代名詞が目的語の役割なので省略できます。1と3は主語の役割なので省略できません.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u5_multi_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "目的格",
+      "type": "multi",
+      "question": "文法的に正しい文をすべて選びなさい。",
+      "choices": [
+        "The book I bought is interesting.",
+        "The book that I bought is interesting.",
+        "The book I bought it is interesting.",
+        "The book that bought I is interesting."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "目的格の関係代名詞は省略可能ですが、関係節内に余分な目的語 it は置きません.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u6_fill_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "現在分詞の後置修飾",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Look at the boy （1） near the door.",
+      "blanks": [
+        [
+          "standing"
+        ]
+      ],
+      "explanation": "名詞の後ろに現在分詞 standing を置き、「ドアの近くに立っている少年」と説明できます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u6_fill_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "過去分詞の後置修飾",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I like the song （1） by this singer.",
+      "blanks": [
+        [
+          "written"
+        ]
+      ],
+      "explanation": "song を過去分詞 written が後ろから説明しています.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u6_reorder_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "現在分詞の後置修飾",
+      "type": "reorder",
+      "question": "「公園で走っている犬を見てください。」になるように並べ替えなさい。",
+      "items": [
+        "Look",
+        "at",
+        "the",
+        "dog",
+        "running",
+        "in",
+        "the",
+        "park",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "the dog の後ろに running ... を置いて説明します.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u6_reorder_02",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "topic": "間接疑問",
+      "type": "reorder",
+      "question": "「彼がいつ到着するか知っていますか。」になるように並べ替えなさい。",
+      "items": [
+        "Do",
+        "you",
+        "know",
+        "when",
+        "he",
+        "will",
+        "arrive",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "間接疑問では疑問詞の後ろを通常の文の語順にします.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u6_multi_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "後置修飾",
+      "type": "multi",
+      "question": "名詞を後ろから説明している部分を含む文をすべて選びなさい。",
+      "choices": [
+        "I saw a girl playing tennis.",
+        "This is a cake made by my father.",
+        "She plays tennis every day.",
+        "My father made a cake."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "playing tennis と made by my father が直前の名詞を後ろから説明しています.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u6_multi_02",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "topic": "間接疑問",
+      "type": "multi",
+      "question": "間接疑問として語順が正しい文をすべて選びなさい。",
+      "choices": [
+        "Do you know where she lives?",
+        "Do you know where does she live?",
+        "Can you tell me what he wants?",
+        "Can you tell me what does he want?"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "間接疑問では疑問詞の後ろを主語 + 動詞の語順にします.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u7_fill_01",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "仮定法",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read this book.",
+      "blanks": [
+        [
+          "had"
+        ]
+      ],
+      "explanation": "現在の事実と異なる仮定では if節に過去形を使います.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u7_fill_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "I wish + 仮定法",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） play the piano well.",
+      "blanks": [
+        [
+          "could"
+        ]
+      ],
+      "explanation": "実際にはできないことへの願いは I wish I could ... と表せます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u7_reorder_01",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "仮定法",
+      "type": "reorder",
+      "question": "「もし私にもっと時間があれば、あなたを手伝うのに。」になるように並べ替えなさい。",
+      "items": [
+        "If",
+        "I",
+        "had",
+        "more",
+        "time",
+        ",",
+        "I",
+        "would",
+        "help",
+        "you",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "explanation": "If + 過去形, would + 動詞の原形が基本です.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u7_reorder_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "I wish + 仮定法",
+      "type": "reorder",
+      "question": "「もっと速く走れたらいいのに。」になるように並べ替えなさい。",
+      "items": [
+        "I",
+        "wish",
+        "I",
+        "could",
+        "run",
+        "faster",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "I wish + 主語 + could ... で実現していない願いを表します.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u7_multi_01",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "仮定法",
+      "type": "multi",
+      "question": "仮定法の文をすべて選びなさい。",
+      "choices": [
+        "If I were you, I would apologize.",
+        "If it rains tomorrow, I will stay home.",
+        "I wish I could fly.",
+        "I play soccer if I have time."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "0と2は現在の事実と異なる仮定・願いを表す仮定法です.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u7_multi_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "仮定法",
+      "type": "multi",
+      "question": "文法的に正しい仮定法の文をすべて選びなさい。",
+      "choices": [
+        "If I had a car, I would drive there.",
+        "If I have a car, I would drive there.",
+        "I wish I were taller.",
+        "I wish I am taller."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "仮定法では if節や wish の後ろに過去形を用いて現在の事実と異なる内容を表します.",
+      "difficulty": 3,
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u8_fill_01",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "topic": "手紙の表現",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Thank you （1） helping me this year.",
+      "blanks": [
+        [
+          "for"
+        ]
+      ],
+      "explanation": "Thank you for + 動名詞で「〜してくれてありがとう」と表せます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u8_fill_02",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "topic": "手紙の結び",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I hope we can see each other （1）.",
+      "blanks": [
+        [
+          "again"
+        ]
+      ],
+      "explanation": "別れの手紙では see each other again のように再会への希望を表せます.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u8_reorder_01",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "topic": "感謝を伝える表現",
+      "type": "reorder",
+      "question": "「いつも私を助けてくれてありがとう。」になるように並べ替えなさい。",
+      "items": [
+        "Thank",
+        "you",
+        "for",
+        "always",
+        "helping",
+        "me",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "Thank you for + 動名詞で感謝の理由を続けます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u8_reorder_02",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "topic": "願いを伝える表現",
+      "type": "reorder",
+      "question": "「あなたの新しい学校が気に入るといいですね。」になるように並べ替えなさい。",
+      "items": [
+        "I",
+        "hope",
+        "you",
+        "will",
+        "like",
+        "your",
+        "new",
+        "school",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "I hope + 文で相手への願い・希望を表せます.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u8_multi_01",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "topic": "手紙の構成",
+      "type": "multi",
+      "question": "友達への別れの手紙に適した内容をすべて選びなさい。",
+      "choices": [
+        "一緒に過ごした具体的な思い出",
+        "相手への感謝",
+        "これからへの願い",
+        "関係のない単語だけを並べる"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "思い出・感謝・今後への願いを具体的に書くと気持ちが伝わりやすくなります.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "original-unit-practice"
+    },
+    {
+      "id": "v031_hw3_u8_multi_02",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "topic": "英文の推敲",
+      "type": "multi",
+      "question": "英文の手紙を書いた後に確認するとよいことをすべて選びなさい。",
+      "choices": [
+        "時制や動詞の形",
+        "主語と動詞のつながり",
+        "相手に伝えたい内容が入っているか",
+        "文字数だけ見て内容は確認しない"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "文法だけでなく、伝えたい内容が明確かも確認することが大切です.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "original-unit-practice"
     }
   ],
-  "notes": "Ver.0.16: 主要5教科の全単元に短答式の追加問題を収録。既存問題に難易度1〜3を付与し、出題履歴を使うスマート出題に対応。追加157問。 教材/Unit専用問題タグ(materialIds)と専用問題サンプルを追加。 Ver.0.24: 中3教材専用問題を104問追加（三省堂国語・光村英語を重点化）。"
+  "notes": "Ver.0.31: 中3英語 Here We Go! Unit 1〜8に新形式48問を追加。模擬テストの形式バランス調整に対応。"
 }

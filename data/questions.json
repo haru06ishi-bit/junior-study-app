@@ -1,5 +1,5 @@
 {
-  "version": "0.33.0",
+  "version": "0.34.0",
   "questions": [
     {
       "id": "ja001",
@@ -14184,7 +14184,4824 @@
       ],
       "explanation": "標本の選び方に偏りがあると、標本数が多くても適切な推定にならないことがあります。",
       "difficulty": 2
+    },
+    {
+      "id": "v034_san_e3_l1_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I have （1） this movie twice.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-3-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "seen"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l1_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 She has （1） finished her homework.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "just"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l1_03",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「私は一度京都を訪れたことがあります。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "have",
+        "visited",
+        "Kyoto",
+        "once",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l1_04",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「あなたはもう昼食を食べましたか。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Have",
+        "you",
+        "eaten",
+        "lunch",
+        "yet",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l1_05",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "現在完了として正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have visited Nara twice.",
+        "She has just finished her work.",
+        "He have seen this movie.",
+        "I visited Kyoto yesterday."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l1_06",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "現在完了でよく使う語をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "ever",
+        "just",
+        "already",
+        "yesterday"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l2_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-3-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "studying"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l2_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "waiting"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l2_03",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「彼女は朝からピアノを練習し続けています。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "She",
+        "has",
+        "been",
+        "practicing",
+        "the",
+        "piano",
+        "since",
+        "morning",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l2_04",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「どのくらいサッカーをし続けていますか。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "How",
+        "long",
+        "have",
+        "you",
+        "been",
+        "playing",
+        "soccer",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l2_05",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "現在完了進行形として正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have been reading for an hour.",
+        "She has been studying since noon.",
+        "He has being running.",
+        "They have been play tennis."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l2_06",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "過去から今まで続いている動作を表せる文をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have been waiting for thirty minutes.",
+        "She has lived here for five years.",
+        "I went there yesterday.",
+        "He ate lunch at noon."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l3_01",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This bridge was （1） in 2010.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-3-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "built"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l3_02",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 English is （1） in many countries.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "spoken"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l3_03",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「この歌は多くの人に愛されています。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "This",
+        "song",
+        "is",
+        "loved",
+        "by",
+        "many",
+        "people",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l3_04",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「その写真は昨日撮られました。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "The",
+        "picture",
+        "was",
+        "taken",
+        "yesterday",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l3_05",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "受け身の文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "The room is cleaned every day.",
+        "The book was written in English.",
+        "They clean the room every day.",
+        "She wrote the book."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l3_06",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "受け身の基本形として必要なものをすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "be動詞",
+        "過去分詞",
+        "必ず未来形",
+        "必ず進行形"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l4_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Look at the girl （1） by the window.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-3-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "standing"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l4_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This is a picture （1） by my sister.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "painted"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l4_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「公園で走っている少年を知っています。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "know",
+        "the",
+        "boy",
+        "running",
+        "in",
+        "the",
+        "park",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l4_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「これは日本で作られた車です。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "This",
+        "is",
+        "a",
+        "car",
+        "made",
+        "in",
+        "Japan",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l4_05",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "名詞を後ろから説明している文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I saw a dog running fast.",
+        "This is a cake made by Ken.",
+        "She runs every day.",
+        "Ken made a cake."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l4_06",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "正しい組み合わせをすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "a boy playing soccer",
+        "a book written in English",
+        "a girl play tennis",
+        "a car make in Japan"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l5_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-3-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "who",
+          "that"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l5_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "that",
+          "which"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l5_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「これは毎日ここに来る犬です。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "This",
+        "is",
+        "the",
+        "dog",
+        "that",
+        "comes",
+        "here",
+        "every",
+        "day",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l5_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「英語を教える女性を知っています。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "know",
+        "a",
+        "woman",
+        "who",
+        "teaches",
+        "English",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l5_05",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "主格の関係代名詞を使った正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I know a girl who plays tennis.",
+        "This is a book that is useful.",
+        "I know a girl who I met yesterday.",
+        "This is the book I bought."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l5_06",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "先行詞が人のとき主格で使えるものをすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "who",
+        "that",
+        "which",
+        "where"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l6_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-3-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "that",
+          "which"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l6_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "who",
+          "that",
+          "whom"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l6_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「これは私が昨日見た映画です。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "This",
+        "is",
+        "the",
+        "movie",
+        "that",
+        "I",
+        "saw",
+        "yesterday",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l6_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「あなたが作った料理はおいしかったです。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "The",
+        "food",
+        "you",
+        "made",
+        "was",
+        "delicious",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l6_05",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "目的格の関係代名詞を省略できる文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "This is the book that I read.",
+        "The movie which we watched was fun.",
+        "I know a boy who runs fast.",
+        "This is a dog that barks loudly."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l6_06",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "文法的に正しい文をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "The book I bought is useful.",
+        "The book that I bought is useful.",
+        "The book I bought it is useful.",
+        "The book that bought I is useful."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l7_01",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-3-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "had"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l7_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "could"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l7_03",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「もし私があなたなら、その案に賛成します。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "If",
+        "I",
+        "were",
+        "you",
+        ",",
+        "I",
+        "would",
+        "agree",
+        "with",
+        "the",
+        "idea",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l7_04",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「もっと背が高ければいいのに。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "wish",
+        "I",
+        "were",
+        "taller",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l7_05",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "仮定法の文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "If I had wings, I would fly.",
+        "I wish I could speak French.",
+        "If it rains tomorrow, I will stay home.",
+        "I play tennis if I have time."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l7_06",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "文法的に正しい仮定法をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "If I were you, I would apologize.",
+        "If I was you, I will apologize.",
+        "I wish I had more time.",
+        "I wish I have more time."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l8_01",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-3-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "lives"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l8_02",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "wants"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l8_03",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「彼がいつ来るか知っていますか。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Do",
+        "you",
+        "know",
+        "when",
+        "he",
+        "will",
+        "come",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l8_04",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「駅がどこにあるか教えてください。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Please",
+        "tell",
+        "me",
+        "where",
+        "the",
+        "station",
+        "is",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l8_05",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "間接疑問として正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-3-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "Do you know where she lives?",
+        "Can you tell me what he wants?",
+        "Do you know where does she live?",
+        "Tell me what does he want."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_san_e3_l8_06",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "間接疑問文で正しい語順の特徴をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-sanseido-3-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "疑問詞の後ろは主語＋動詞",
+        "疑問詞を使える",
+        "必ずdoを置く",
+        "必ず倒置する"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u0_01",
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 She （1） soccer every Sunday.",
+      "blanks": [
+        [
+          "plays"
+        ]
+      ],
+      "unit": "reading",
+      "subject": "english",
+      "grades": [
+        3
+      ],
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-0"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "explanation": "1・2年の既習事項を確認するオリジナル復習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u0_02",
+      "type": "reorder",
+      "question": "「私は昨日図書館へ行きました。」になるように並べ替えなさい。",
+      "items": [
+        "I",
+        "went",
+        "to",
+        "the",
+        "library",
+        "yesterday",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "unit": "reading",
+      "subject": "english",
+      "grades": [
+        3
+      ],
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-0"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "explanation": "1・2年の既習事項を確認するオリジナル復習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u0_03",
+      "type": "multi",
+      "question": "1・2年で学ぶ基本文として正しいものをすべて選びなさい。",
+      "choices": [
+        "I can swim.",
+        "She is studying now.",
+        "He go to school every day.",
+        "I am went there yesterday."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "unit": "reading",
+      "subject": "english",
+      "grades": [
+        3
+      ],
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-0"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "explanation": "1・2年の既習事項を確認するオリジナル復習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u1_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "eaten"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u1_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "been"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u1_03",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「私はその祭りに二度行ったことがあります。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "have",
+        "been",
+        "to",
+        "the",
+        "festival",
+        "twice",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u1_04",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「あなたは今までにこの料理を作ったことがありますか。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Have",
+        "you",
+        "ever",
+        "made",
+        "this",
+        "dish",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u1_05",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "経験を表す現在完了の文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have visited Osaka three times.",
+        "She has never seen snow.",
+        "I finished my homework yesterday.",
+        "He is studying now."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u1_06",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "経験用法とよく使う表現をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "ever",
+        "never",
+        "once",
+        "last night"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u2_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "studying"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u2_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "waiting"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u2_03",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「彼女は朝からピアノを練習し続けています。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "She",
+        "has",
+        "been",
+        "practicing",
+        "the",
+        "piano",
+        "since",
+        "morning",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u2_04",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「どのくらいサッカーをし続けていますか。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "How",
+        "long",
+        "have",
+        "you",
+        "been",
+        "playing",
+        "soccer",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u2_05",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "現在完了進行形として正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have been reading for an hour.",
+        "She has been studying since noon.",
+        "He has being running.",
+        "They have been play tennis."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u2_06",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "過去から今まで続いている動作を表せる文をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have been waiting for thirty minutes.",
+        "She has lived here for five years.",
+        "I went there yesterday.",
+        "He ate lunch at noon."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u3_01",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 It is important for us （1） help animals.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "to"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u3_02",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I want you （1） read this book.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "to"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u3_03",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「先生は私たちに窓を開けさせました。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "The",
+        "teacher",
+        "let",
+        "us",
+        "open",
+        "the",
+        "window",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u3_04",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「彼は私が荷物を運ぶのを手伝ってくれました。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "He",
+        "helped",
+        "me",
+        "carry",
+        "the",
+        "box",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u3_05",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "文法的に正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I want you to come early.",
+        "It is easy for me to use this app.",
+        "She let me to go home.",
+        "He helped me carried the bag."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u3_06",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "後ろに動詞の原形をとる形をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "let + 人 + 動詞の原形",
+        "help + 人 + 動詞の原形",
+        "want + 人 + 動詞の原形",
+        "ask + 人 + 動詞の原形"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u4_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "lives"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u4_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "wants"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u4_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「彼がいつ来るか知っていますか。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Do",
+        "you",
+        "know",
+        "when",
+        "he",
+        "will",
+        "come",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u4_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「駅がどこにあるか教えてください。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Please",
+        "tell",
+        "me",
+        "where",
+        "the",
+        "station",
+        "is",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u4_05",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "間接疑問として正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "Do you know where she lives?",
+        "Can you tell me what he wants?",
+        "Do you know where does she live?",
+        "Tell me what does he want."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u4_06",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "間接疑問文で正しい語順の特徴をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "疑問詞の後ろは主語＋動詞",
+        "疑問詞を使える",
+        "必ずdoを置く",
+        "必ず倒置する"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u5_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "that",
+          "which"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u5_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "who",
+          "that",
+          "whom"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u5_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「これは私が昨日見た映画です。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "This",
+        "is",
+        "the",
+        "movie",
+        "that",
+        "I",
+        "saw",
+        "yesterday",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u5_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「あなたが作った料理はおいしかったです。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "The",
+        "food",
+        "you",
+        "made",
+        "was",
+        "delicious",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u5_05",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "目的格の関係代名詞を省略できる文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "This is the book that I read.",
+        "The movie which we watched was fun.",
+        "I know a boy who runs fast.",
+        "This is a dog that barks loudly."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u5_06",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "文法的に正しい文をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "The book I bought is useful.",
+        "The book that I bought is useful.",
+        "The book I bought it is useful.",
+        "The book that bought I is useful."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u6_01",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-3-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "had"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u6_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "could"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u6_03",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「もし私があなたなら、その案に賛成します。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "If",
+        "I",
+        "were",
+        "you",
+        ",",
+        "I",
+        "would",
+        "agree",
+        "with",
+        "the",
+        "idea",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u6_04",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「もっと背が高ければいいのに。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "wish",
+        "I",
+        "were",
+        "taller",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u6_05",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "仮定法の文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-3-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "If I had wings, I would fly.",
+        "I wish I could speak French.",
+        "If it rains tomorrow, I will stay home.",
+        "I play tennis if I have time."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_tok_e3_u6_06",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "文法的に正しい仮定法をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-tokyo-shoseki-3-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "If I were you, I would apologize.",
+        "If I was you, I will apologize.",
+        "I wish I had more time.",
+        "I wish I have more time."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p1_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-3-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "eaten"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p1_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "been"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p1_03",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「私はその祭りに二度行ったことがあります。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "have",
+        "been",
+        "to",
+        "the",
+        "festival",
+        "twice",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p1_04",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「あなたは今までにこの料理を作ったことがありますか。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Have",
+        "you",
+        "ever",
+        "made",
+        "this",
+        "dish",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p1_05",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "経験を表す現在完了の文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have visited Osaka three times.",
+        "She has never seen snow.",
+        "I finished my homework yesterday.",
+        "He is studying now."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p1_06",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "経験用法とよく使う表現をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "ever",
+        "never",
+        "once",
+        "last night"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p2_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-3-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "studying"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p2_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "waiting"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p2_03",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「彼女は朝からピアノを練習し続けています。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "She",
+        "has",
+        "been",
+        "practicing",
+        "the",
+        "piano",
+        "since",
+        "morning",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p2_04",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「どのくらいサッカーをし続けていますか。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "How",
+        "long",
+        "have",
+        "you",
+        "been",
+        "playing",
+        "soccer",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p2_05",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "現在完了進行形として正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have been reading for an hour.",
+        "She has been studying since noon.",
+        "He has being running.",
+        "They have been play tennis."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p2_06",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "過去から今まで続いている動作を表せる文をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I have been waiting for thirty minutes.",
+        "She has lived here for five years.",
+        "I went there yesterday.",
+        "He ate lunch at noon."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p3_01",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 My mother told me （1） she was busy.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-3-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "that"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p3_02",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 The news made me （1） happy.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "feel"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p3_03",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「私たちは彼をケンと呼びます。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "We",
+        "call",
+        "him",
+        "Ken",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p3_04",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「その話は私を笑わせました。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "The",
+        "story",
+        "made",
+        "me",
+        "laugh",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p3_05",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "文法的に正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "She told me that she was tired.",
+        "We call the dog Pochi.",
+        "The movie made me cried.",
+        "He told that me he was busy."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p3_06",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "「人＋補語」や「人＋動詞原形」をとれる表現をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "call + 人 + 名詞",
+        "make + 人 + 動詞の原形",
+        "tell + 人 + that節",
+        "make + 人 + to + 動詞"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p4_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-3-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "lives"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p4_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "wants"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p4_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「彼がいつ来るか知っていますか。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Do",
+        "you",
+        "know",
+        "when",
+        "he",
+        "will",
+        "come",
+        "?"
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p4_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「駅がどこにあるか教えてください。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "Please",
+        "tell",
+        "me",
+        "where",
+        "the",
+        "station",
+        "is",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p4_05",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "間接疑問として正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "Do you know where she lives?",
+        "Can you tell me what he wants?",
+        "Do you know where does she live?",
+        "Tell me what does he want."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p4_06",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "間接疑問文で正しい語順の特徴をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "疑問詞の後ろは主語＋動詞",
+        "疑問詞を使える",
+        "必ずdoを置く",
+        "必ず倒置する"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p5_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-3-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "who",
+          "that"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p5_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "that",
+          "which"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p5_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「これは毎日ここに来る犬です。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "This",
+        "is",
+        "the",
+        "dog",
+        "that",
+        "comes",
+        "here",
+        "every",
+        "day",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p5_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「英語を教える女性を知っています。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "know",
+        "a",
+        "woman",
+        "who",
+        "teaches",
+        "English",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p5_05",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "主格の関係代名詞を使った正しい文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "I know a girl who plays tennis.",
+        "This is a book that is useful.",
+        "I know a girl who I met yesterday.",
+        "This is the book I bought."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p5_06",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "先行詞が人のとき主格で使えるものをすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "who",
+        "that",
+        "which",
+        "where"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p6_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-3-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "that",
+          "which"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p6_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "who",
+          "that",
+          "whom"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p6_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「これは私が昨日見た映画です。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "This",
+        "is",
+        "the",
+        "movie",
+        "that",
+        "I",
+        "saw",
+        "yesterday",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p6_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「あなたが作った料理はおいしかったです。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "The",
+        "food",
+        "you",
+        "made",
+        "was",
+        "delicious",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p6_05",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "目的格の関係代名詞を省略できる文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "This is the book that I read.",
+        "The movie which we watched was fun.",
+        "I know a boy who runs fast.",
+        "This is a dog that barks loudly."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p6_06",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "文法的に正しい文をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "The book I bought is useful.",
+        "The book that I bought is useful.",
+        "The book I bought it is useful.",
+        "The book that bought I is useful."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p7_01",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-3-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "had"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p7_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "fill",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "blanks": [
+        [
+          "could"
+        ]
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p7_03",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「もし私があなたなら、その案に賛成します。」になるように並べ替えなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "If",
+        "I",
+        "were",
+        "you",
+        ",",
+        "I",
+        "would",
+        "agree",
+        "with",
+        "the",
+        "idea",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p7_04",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "reorder",
+      "question": "「もっと背が高ければいいのに。」になるように並べ替えなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "items": [
+        "I",
+        "wish",
+        "I",
+        "were",
+        "taller",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p7_05",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "仮定法の文をすべて選びなさい。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-3-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "If I had wings, I would fly.",
+        "I wish I could speak French.",
+        "If it rains tomorrow, I will stay home.",
+        "I play tennis if I have time."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_kai_e3_p7_06",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "multi",
+      "question": "文法的に正しい仮定法をすべて選びなさい。",
+      "difficulty": 3,
+      "materialIds": [
+        "e-kairyudo-3-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "official-plan-aligned-original",
+      "choices": [
+        "If I were you, I would apologize.",
+        "If I was you, I will apologize.",
+        "I wish I had more time.",
+        "I wish I have more time."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_00_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『世界はうつくしいと』を鑑賞するときに注目したいものは？",
+      "choices": [
+        "言葉の響き・リズム・表現技法",
+        "ページ番号だけ",
+        "紙の厚さ",
+        "文字数だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩などの表現技法に注目します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_00_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『世界はうつくしいと』の解釈を説明するとき、根拠として最も適切なのは？",
+      "choices": [
+        "作品中の具体的な言葉や表現",
+        "自分の感想だけ",
+        "教科書の価格",
+        "ページの色"
+      ],
+      "answer": 0,
+      "explanation": "作品中の言葉や表現を根拠にして解釈を説明します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_01_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『握手』で人物像や心情を捉えるとき、最も重要な手がかりはどれ？",
+      "choices": [
+        "人物の行動・会話・描写",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "挿絵の色だけ"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や描写を根拠に人物像・心情を捉えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_01_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『握手』の主題を考える方法として適切なのは？",
+      "choices": [
+        "出来事や人物の変化を作品全体から考える",
+        "題名だけで決める",
+        "最初の一文だけで決める",
+        "作者名だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "作品全体の展開や人物の変化、表現を根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_02_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『作られた「物語」を超えて』の要旨をつかむとき、まず整理するとよいものは？",
+      "choices": [
+        "筆者の主張とその根拠",
+        "文字の大きさ",
+        "ページの余白",
+        "漢字の画数"
+      ],
+      "answer": 0,
+      "explanation": "説明・論説文では主張と根拠の関係を捉えることが重要です。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-2"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_02_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『作られた「物語」を超えて』を批判的に読むときに適切なのは？",
+      "choices": [
+        "根拠の妥当性や別の見方を検討する",
+        "書かれたことを必ず正しいと決める",
+        "具体例をすべて無視する",
+        "題名だけで判断する"
+      ],
+      "answer": 0,
+      "explanation": "根拠の確かさや別の立場・見方を検討します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-2"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_03_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『俳句の可能性』を鑑賞するときに注目したいものは？",
+      "choices": [
+        "言葉の響き・リズム・表現技法",
+        "ページ番号だけ",
+        "紙の厚さ",
+        "文字数だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩などの表現技法に注目します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_03_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『俳句の可能性』の解釈を説明するとき、根拠として最も適切なのは？",
+      "choices": [
+        "作品中の具体的な言葉や表現",
+        "自分の感想だけ",
+        "教科書の価格",
+        "ページの色"
+      ],
+      "answer": 0,
+      "explanation": "作品中の言葉や表現を根拠にして解釈を説明します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_04_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『故郷』で人物像や心情を捉えるとき、最も重要な手がかりはどれ？",
+      "choices": [
+        "人物の行動・会話・描写",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "挿絵の色だけ"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や描写を根拠に人物像・心情を捉えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_04_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『故郷』の主題を考える方法として適切なのは？",
+      "choices": [
+        "出来事や人物の変化を作品全体から考える",
+        "題名だけで決める",
+        "最初の一文だけで決める",
+        "作者名だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "作品全体の展開や人物の変化、表現を根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_05_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『人工知能との未来』の要旨をつかむとき、まず整理するとよいものは？",
+      "choices": [
+        "筆者の主張とその根拠",
+        "文字の大きさ",
+        "ページの余白",
+        "漢字の画数"
+      ],
+      "answer": 0,
+      "explanation": "説明・論説文では主張と根拠の関係を捉えることが重要です。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_05_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『人工知能との未来』を批判的に読むときに適切なのは？",
+      "choices": [
+        "根拠の妥当性や別の見方を検討する",
+        "書かれたことを必ず正しいと決める",
+        "具体例をすべて無視する",
+        "題名だけで判断する"
+      ],
+      "answer": 0,
+      "explanation": "根拠の確かさや別の立場・見方を検討します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_06_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『おくのほそ道』のような古典を読むときに有効な方法は？",
+      "choices": [
+        "原文と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "題名だけ覚える",
+        "ページ番号だけ見る"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句や表現と現代語訳を対応させると内容を捉えやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_06_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『おくのほそ道』を味わうとき、現代の文章との違いを考える手がかりとして適切なのは？",
+      "choices": [
+        "語句・表現・リズム・当時の背景",
+        "紙の大きさだけ",
+        "ページ番号だけ",
+        "挿絵の数だけ"
+      ],
+      "answer": 0,
+      "explanation": "古典では語句や表現、リズム、当時の文化的背景に注目します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_07_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『学びて時にこれを習ふ―「論語」から』のような古典を読むときに有効な方法は？",
+      "choices": [
+        "原文と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "題名だけ覚える",
+        "ページ番号だけ見る"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句や表現と現代語訳を対応させると内容を捉えやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_07_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『学びて時にこれを習ふ―「論語」から』を味わうとき、現代の文章との違いを考える手がかりとして適切なのは？",
+      "choices": [
+        "語句・表現・リズム・当時の背景",
+        "紙の大きさだけ",
+        "ページ番号だけ",
+        "挿絵の数だけ"
+      ],
+      "answer": 0,
+      "explanation": "古典では語句や表現、リズム、当時の文化的背景に注目します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_08_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『誰かの代わりに』の要旨をつかむとき、まず整理するとよいものは？",
+      "choices": [
+        "筆者の主張とその根拠",
+        "文字の大きさ",
+        "ページの余白",
+        "漢字の画数"
+      ],
+      "answer": 0,
+      "explanation": "説明・論説文では主張と根拠の関係を捉えることが重要です。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-8"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_08_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『誰かの代わりに』を批判的に読むときに適切なのは？",
+      "choices": [
+        "根拠の妥当性や別の見方を検討する",
+        "書かれたことを必ず正しいと決める",
+        "具体例をすべて無視する",
+        "題名だけで判断する"
+      ],
+      "answer": 0,
+      "explanation": "根拠の確かさや別の立場・見方を検討します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-8"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_09_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『温かいスープ』で人物像や心情を捉えるとき、最も重要な手がかりはどれ？",
+      "choices": [
+        "人物の行動・会話・描写",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "挿絵の色だけ"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や描写を根拠に人物像・心情を捉えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-9"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_09_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『温かいスープ』の主題を考える方法として適切なのは？",
+      "choices": [
+        "出来事や人物の変化を作品全体から考える",
+        "題名だけで決める",
+        "最初の一文だけで決める",
+        "作者名だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "作品全体の展開や人物の変化、表現を根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-9"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_10_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『わたしを束ねないで』を鑑賞するときに注目したいものは？",
+      "choices": [
+        "言葉の響き・リズム・表現技法",
+        "ページ番号だけ",
+        "紙の厚さ",
+        "文字数だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩などの表現技法に注目します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-3-10"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_mitsumura_g3_10_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『わたしを束ねないで』の解釈を説明するとき、根拠として最も適切なのは？",
+      "choices": [
+        "作品中の具体的な言葉や表現",
+        "自分の感想だけ",
+        "教科書の価格",
+        "ページの色"
+      ],
+      "answer": 0,
+      "explanation": "作品中の言葉や表現を根拠にして解釈を説明します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-3-10"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_00_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『春に』を鑑賞するときに注目したいものは？",
+      "choices": [
+        "言葉の響き・リズム・表現技法",
+        "ページ番号だけ",
+        "紙の厚さ",
+        "文字数だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩などの表現技法に注目します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-0"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_00_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『春に』の解釈を説明するとき、根拠として最も適切なのは？",
+      "choices": [
+        "作品中の具体的な言葉や表現",
+        "自分の感想だけ",
+        "教科書の価格",
+        "ページの色"
+      ],
+      "answer": 0,
+      "explanation": "作品中の言葉や表現を根拠にして解釈を説明します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-0"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_01_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『立ってくる春』で人物像や心情を捉えるとき、最も重要な手がかりはどれ？",
+      "choices": [
+        "人物の行動・会話・描写",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "挿絵の色だけ"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や描写を根拠に人物像・心情を捉えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-1"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_01_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『立ってくる春』の主題を考える方法として適切なのは？",
+      "choices": [
+        "出来事や人物の変化を作品全体から考える",
+        "題名だけで決める",
+        "最初の一文だけで決める",
+        "作者名だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "作品全体の展開や人物の変化、表現を根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-1"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_02_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『なぜ物語が必要なのか』の要旨をつかむとき、まず整理するとよいものは？",
+      "choices": [
+        "筆者の主張とその根拠",
+        "文字の大きさ",
+        "ページの余白",
+        "漢字の画数"
+      ],
+      "answer": 0,
+      "explanation": "説明・論説文では主張と根拠の関係を捉えることが重要です。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-2"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_02_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『なぜ物語が必要なのか』を批判的に読むときに適切なのは？",
+      "choices": [
+        "根拠の妥当性や別の見方を検討する",
+        "書かれたことを必ず正しいと決める",
+        "具体例をすべて無視する",
+        "題名だけで判断する"
+      ],
+      "answer": 0,
+      "explanation": "根拠の確かさや別の立場・見方を検討します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-2"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_03_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『ＡＩは哲学できるか』の要旨をつかむとき、まず整理するとよいものは？",
+      "choices": [
+        "筆者の主張とその根拠",
+        "文字の大きさ",
+        "ページの余白",
+        "漢字の画数"
+      ],
+      "answer": 0,
+      "explanation": "説明・論説文では主張と根拠の関係を捉えることが重要です。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-3"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_03_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『ＡＩは哲学できるか』を批判的に読むときに適切なのは？",
+      "choices": [
+        "根拠の妥当性や別の見方を検討する",
+        "書かれたことを必ず正しいと決める",
+        "具体例をすべて無視する",
+        "題名だけで判断する"
+      ],
+      "answer": 0,
+      "explanation": "根拠の確かさや別の立場・見方を検討します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-3"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_04_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『問いかける言葉』の要旨をつかむとき、まず整理するとよいものは？",
+      "choices": [
+        "筆者の主張とその根拠",
+        "文字の大きさ",
+        "ページの余白",
+        "漢字の画数"
+      ],
+      "answer": 0,
+      "explanation": "説明・論説文では主張と根拠の関係を捉えることが重要です。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-4"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_04_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『問いかける言葉』を批判的に読むときに適切なのは？",
+      "choices": [
+        "根拠の妥当性や別の見方を検討する",
+        "書かれたことを必ず正しいと決める",
+        "具体例をすべて無視する",
+        "題名だけで判断する"
+      ],
+      "answer": 0,
+      "explanation": "根拠の確かさや別の立場・見方を検討します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-4"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_05_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『旅への思い―芭蕉と「おくのほそ道」―』のような古典を読むときに有効な方法は？",
+      "choices": [
+        "原文と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "題名だけ覚える",
+        "ページ番号だけ見る"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句や表現と現代語訳を対応させると内容を捉えやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-5"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_05_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『旅への思い―芭蕉と「おくのほそ道」―』を味わうとき、現代の文章との違いを考える手がかりとして適切なのは？",
+      "choices": [
+        "語句・表現・リズム・当時の背景",
+        "紙の大きさだけ",
+        "ページ番号だけ",
+        "挿絵の数だけ"
+      ],
+      "answer": 0,
+      "explanation": "古典では語句や表現、リズム、当時の文化的背景に注目します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-5"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_06_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『和歌の調べ―万葉集・古今和歌集・新古今和歌集―』のような古典を読むときに有効な方法は？",
+      "choices": [
+        "原文と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "題名だけ覚える",
+        "ページ番号だけ見る"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句や表現と現代語訳を対応させると内容を捉えやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-6"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_06_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『和歌の調べ―万葉集・古今和歌集・新古今和歌集―』を味わうとき、現代の文章との違いを考える手がかりとして適切なのは？",
+      "choices": [
+        "語句・表現・リズム・当時の背景",
+        "紙の大きさだけ",
+        "ページ番号だけ",
+        "挿絵の数だけ"
+      ],
+      "answer": 0,
+      "explanation": "古典では語句や表現、リズム、当時の文化的背景に注目します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-6"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_07_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『風景と心情―漢詩を味わう―』のような古典を読むときに有効な方法は？",
+      "choices": [
+        "原文と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "題名だけ覚える",
+        "ページ番号だけ見る"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句や表現と現代語訳を対応させると内容を捉えやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-7"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_07_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『風景と心情―漢詩を味わう―』を味わうとき、現代の文章との違いを考える手がかりとして適切なのは？",
+      "choices": [
+        "語句・表現・リズム・当時の背景",
+        "紙の大きさだけ",
+        "ページ番号だけ",
+        "挿絵の数だけ"
+      ],
+      "answer": 0,
+      "explanation": "古典では語句や表現、リズム、当時の文化的背景に注目します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-7"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_08_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『俳句の味わい』を鑑賞するときに注目したいものは？",
+      "choices": [
+        "言葉の響き・リズム・表現技法",
+        "ページ番号だけ",
+        "紙の厚さ",
+        "文字数だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩などの表現技法に注目します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-8"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_08_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『俳句の味わい』の解釈を説明するとき、根拠として最も適切なのは？",
+      "choices": [
+        "作品中の具体的な言葉や表現",
+        "自分の感想だけ",
+        "教科書の価格",
+        "ページの色"
+      ],
+      "answer": 0,
+      "explanation": "作品中の言葉や表現を根拠にして解釈を説明します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-8"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_09_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『初恋』を鑑賞するときに注目したいものは？",
+      "choices": [
+        "言葉の響き・リズム・表現技法",
+        "ページ番号だけ",
+        "紙の厚さ",
+        "文字数だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩などの表現技法に注目します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-9"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_09_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『初恋』の解釈を説明するとき、根拠として最も適切なのは？",
+      "choices": [
+        "作品中の具体的な言葉や表現",
+        "自分の感想だけ",
+        "教科書の価格",
+        "ページの色"
+      ],
+      "answer": 0,
+      "explanation": "作品中の言葉や表現を根拠にして解釈を説明します。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-9"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_10_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『故郷』で人物像や心情を捉えるとき、最も重要な手がかりはどれ？",
+      "choices": [
+        "人物の行動・会話・描写",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "挿絵の色だけ"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や描写を根拠に人物像・心情を捉えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-10"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_10_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『故郷』の主題を考える方法として適切なのは？",
+      "choices": [
+        "出来事や人物の変化を作品全体から考える",
+        "題名だけで決める",
+        "最初の一文だけで決める",
+        "作者名だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "作品全体の展開や人物の変化、表現を根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-10"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_11_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『バースデイ・ガール』で人物像や心情を捉えるとき、最も重要な手がかりはどれ？",
+      "choices": [
+        "人物の行動・会話・描写",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "挿絵の色だけ"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や描写を根拠に人物像・心情を捉えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-11"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v034_jp_kyoikushuppan_g3_11_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "question": "『バースデイ・ガール』の主題を考える方法として適切なのは？",
+      "choices": [
+        "出来事や人物の変化を作品全体から考える",
+        "題名だけで決める",
+        "最初の一文だけで決める",
+        "作者名だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "作品全体の展開や人物の変化、表現を根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-3-11"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-outline-original"
     }
   ],
-  "notes": "Ver.0.33: 中3数学7単元に、穴埋め・途中式・複数ステップ中心の実戦問題42問を追加。"
+  "notes": "Ver.0.34: 出版社別の専用問題数を監査し、不足していた中3英語（三省堂・東京書籍・開隆堂）129問と中3国語（光村図書・教育出版）46問、計175問を追加。"
 }

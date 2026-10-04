@@ -1,4 +1,4 @@
-const APP_VERSION='0.33.0';
+const APP_VERSION='0.34.0';
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
@@ -47,17 +47,17 @@ const TEXTBOOK_CANDIDATES={
   'sanseido':{
    1:['Lesson 1 About Me','Lesson 2 My Hero','Lesson 3 My Treasure','Lesson 4 My Summer Plans',"Lesson 5 Ms. Brown's Family",'Lesson 6 School Life in the U.S.A.','Lesson 7 Athletes with Spirit','Lesson 8 Discover Japan','Lesson 9 Emergency Food'],
    2:['Lesson 1 Meet New Friends','Lesson 2 Fun with Books','Lesson 3 My Dream','Lesson 4','Lesson 5','Lesson 6','Lesson 7','Lesson 8'],
-   3:['Lesson 1','Lesson 2','Lesson 3','Lesson 4','Lesson 5','Lesson 6','Lesson 7','Lesson 8']
+   3:['Lesson 1 Join Us','Lesson 2 The Power of Music','Lesson 3 Cranes for Peace','Lesson 4 Bollywood Movies','Lesson 5 Translating Culture','Lesson 6 Being Fair','Lesson 7 Design for Change','Lesson 8 For Our Future']
   },
   'tokyo-shoseki':{
    1:['Unit 0','Unit 1','Unit 2','Unit 3','Unit 4','Unit 5','Unit 6','Unit 7','Unit 8'],
    2:['Unit 0','Unit 1','Unit 2','Unit 3','Unit 4','Unit 5','Unit 6','Unit 7'],
-   3:['Unit 0','Unit 1','Unit 2','Unit 3','Unit 4','Unit 5','Unit 6']
+   3:['Unit 0 Discover a New Side of Classmates','Unit 1 What is special about Japanese pop culture?','Unit 2 How do you choose your clothes?','Unit 3 How can we save animals?','Unit 4 How can we help each other in a disaster?','Unit 5 What makes a good leader?','Unit 6 What does it mean to be a global citizen?']
   },
   'kairyudo':{
    1:['Get Ready 1-6','PROGRAM 1','PROGRAM 2','PROGRAM 3','PROGRAM 4','PROGRAM 5','PROGRAM 6','PROGRAM 7','PROGRAM 8'],
    2:['PROGRAM 1 New Start','PROGRAM 2','PROGRAM 3','PROGRAM 4','PROGRAM 5','PROGRAM 6','PROGRAM 7','PROGRAM 8'],
-   3:['PROGRAM 1 Japanese Bentos Are Interesting!','PROGRAM 2','PROGRAM 3','PROGRAM 4','PROGRAM 5','PROGRAM 6','PROGRAM 7','PROGRAM 8']
+   3:['PROGRAM 1 Japanese Bentos Are Interesting!','PROGRAM 2 Good Night. Sleep Tight.','PROGRAM 3 Hot Sport Today','PROGRAM 4 Sign Languages, Not Just Gestures!','PROGRAM 5 The Story of Chocolate','PROGRAM 6 The Great Pacific Garbage Patch','PROGRAM 7 Robots Can Improve Quality of Life']
   }
  }
 };

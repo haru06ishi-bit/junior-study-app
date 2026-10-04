@@ -64,6 +64,33 @@ const TEXTBOOK_CANDIDATES={
 const TEXTBOOK_PAGE_RANGES={
  japanese:{
   sanseido:{
+   1:{
+    '朝のリレー':'pp.22〜25',
+    '竜':'pp.26〜35',
+    'ペンギンの防寒着':'pp.44〜47',
+    'クジラの飲み水':'pp.48〜55',
+    '空中ブランコ乗りのキキ':'pp.66〜77',
+    '字のない葉書':'pp.80〜85',
+    '一〇〇〇円の価値を考える':'pp.98〜105',
+    '竹取物語':'pp.118〜131',
+    '矛盾―故事成語':'pp.134〜137',
+    'トロッコ':'pp.172〜183',
+    '少年の日の思い出':'pp.206〜219'
+   },
+   2:{
+    '名づけられた葉':'pp.22〜25',
+    'セミロングホームルーム':'pp.26〜35',
+    '宇宙に行くための素材':'pp.44〜47',
+    '人間は他の星に住むことができるのか':'pp.48〜55',
+    '短歌十首':'pp.68〜72',
+    '壁に残された伝言':'pp.80〜87',
+    '味は味覚だけでは決まらない':'pp.92〜99',
+    '枕草子・徒然草':'pp.112〜119',
+    '平家物語':'pp.120〜133',
+    '漢詩の世界':'pp.136〜139',
+    '小さな手袋':'pp.170〜181',
+    '走れメロス':'pp.208〜225'
+   },
    3:{
     '言の森':'pp.22〜25',
     '握手':'pp.28〜41',
@@ -97,6 +124,68 @@ const TEXTBOOK_PAGE_RANGES={
  }
 };
 function textbookPageRange(subjectId,publisher,grade,title){return TEXTBOOK_PAGE_RANGES?.[subjectId]?.[publisher]?.[Number(grade)]?.[title]||'';}
+
+// 令和7年度以降の教科書で、公開資料から確認できた大単元の参照ページ。
+// 社会・理科は学校設定中の出版社に一致する場合だけ表示する。
+const TEXTBOOK_UNIT_PAGE_RANGES={
+ social:{
+  teikoku:{
+   'social/geography/world-overview':'pp.2〜13',
+   'social/geography/world-regions':'pp.45〜127',
+   'social/geography/japan-overview':'pp.14〜25',
+   'social/geography/japan-regions':'pp.166〜282',
+   'social/geography/regional-study':'pp.128〜139 / pp.283〜293',
+   'social/history/ancient':'pp.15〜62',
+   'social/history/medieval':'pp.63〜104',
+   'social/history/early-modern':'pp.105〜160',
+   'social/history/modern':'pp.161〜271',
+   'social/history/contemporary':'pp.275〜306'
+  },
+  'tokyo-shoseki':{
+   'social/history/ancient':'pp.22〜63',
+   'social/history/medieval':'pp.64〜97',
+   'social/history/early-modern':'pp.98〜143',
+   'social/history/modern':'pp.144〜243',
+   'social/civics/modern-society':'pp.8〜29'
+  }
+ },
+ science:{
+  keirinkan:{
+   'science/biology/plants-animals':'pp.18〜61',
+   'science/earth/earth-change':'pp.62〜125',
+   'science/chemistry/substances':'pp.134〜197',
+   'science/physics/light-sound-force':'pp.198〜255',
+   'science/biology/cells-body':'pp.2〜67',
+   'science/earth/weather':'pp.68〜131',
+   'science/chemistry/chemical-change':'pp.138〜207',
+   'science/physics/electricity':'pp.208〜281',
+   'science/biology/reproduction-genetics':'pp.2〜45',
+   'science/earth/earth-space':'pp.46〜99',
+   'science/chemistry/ions':'pp.104〜169',
+   'science/physics/motion-energy':'pp.170〜243',
+   'science/environment/nature-human':'pp.244〜307'
+  },
+  'tokyo-shoseki':{
+   'science/biology/plants-animals':'pp.10〜69',
+   'science/chemistry/substances':'pp.70〜137',
+   'science/physics/light-sound-force':'pp.138〜187',
+   'science/earth/earth-change':'pp.188〜241',
+   'science/chemistry/chemical-change':'pp.12〜85',
+   'science/biology/cells-body':'pp.86〜165',
+   'science/earth/weather':'pp.166〜227',
+   'science/physics/electricity':'pp.228〜289',
+   'science/chemistry/ions':'pp.8〜71',
+   'science/biology/reproduction-genetics':'pp.72〜125',
+   'science/physics/motion-energy':'pp.126〜187',
+   'science/earth/earth-space':'pp.188〜245',
+   'science/environment/nature-human':'pp.246〜307'
+  }
+ }
+};
+function textbookUnitPageRange(subjectId,publisher,fieldId,unitId){
+ const key=unitKey(subjectId,fieldId,unitId);
+ return TEXTBOOK_UNIT_PAGE_RANGES?.[subjectId]?.[publisher]?.[key]||'';
+}
 
 function japaneseMaterialUnitKey(kind){return `japanese/reading/${kind||'literature'}`;}
 function englishCandidateUnitKeys(title,grade){
@@ -455,13 +544,24 @@ function materialRowById(id){
  for(const sid of ['japanese','english'])for(const [pub] of Object.entries(TEXTBOOK_CANDIDATES[sid]||{}))for(const g of [1,2,3]){const row=textbookCandidateRows(sid,pub,g,2026).find(x=>x.id===id);if(row)return row;}
  return null;
 }
+function unitReferenceForQuestion(q){
+ if(!['social','science'].includes(q?.subject))return null;
+ const field=q.field||fieldIdForUnit(q.subject,q.unit);if(!field)return null;
+ const adoption=subjectAdoption(q.subject);const part=subjectTextbookPart({...q,field});const publisher=adoption?.[part]||'';if(!publisher)return null;
+ const pages=textbookUnitPageRange(q.subject,publisher,field,q.unit);if(!pages)return null;
+ const sub=state.curriculum?.subjects?.find(s=>s.id===q.subject);const unit=sub?.fields?.find(f=>f.id===field)?.units?.find(u=>u.id===q.unit);
+ return{id:`unit-ref-${q.subject}-${field}-${q.unit}`,subject:q.subject,publisher,grade:Number(state.grade||q.grades?.[0]||0),title:unit?.name||q.unit,pages,unitKeys:[unitKey(q.subject,field,q.unit)]};
+}
 function referenceMaterialsForQuestion(q){
  const direct=questionMaterialIds(q).map(materialRowById).filter(Boolean);
  if(direct.length)return direct;
  const selected=(state.sessionContext?.materials||[]).map(materialRowById).filter(Boolean);
- if(!selected.length)return[];
- const field=q.field||fieldIdForUnit(q.subject,q.unit);const key=unitKey(q.subject,field,q.unit);
- return selected.filter(r=>r.subject===q.subject&&Number(r.grade)===Number(q.grades?.[0]||state.grade)&&((r.unitKeys||[]).includes(key)));
+ if(selected.length){
+  const field=q.field||fieldIdForUnit(q.subject,q.unit);const key=unitKey(q.subject,field,q.unit);
+  const matched=selected.filter(r=>r.subject===q.subject&&Number(r.grade)===Number(q.grades?.[0]||state.grade)&&((r.unitKeys||[]).includes(key)));
+  if(matched.length)return matched;
+ }
+ const unitRef=unitReferenceForQuestion(q);return unitRef?[unitRef]:[];
 }
 function renderReferencePages(q){
  const box=document.getElementById('referencePageBox');if(!box)return;

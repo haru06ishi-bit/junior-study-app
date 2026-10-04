@@ -1,5 +1,5 @@
 {
-  "version": "0.31.0",
+  "version": "0.32.0",
   "questions": [
     {
       "id": "ja001",
@@ -11617,7 +11617,1615 @@
         "e-mitsumura-3-7"
       ],
       "source": "original-unit-practice"
+    },
+    {
+      "id": "v032_so_const_fill_01",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "topic": "日本国憲法",
+      "type": "fill",
+      "question": "日本国憲法の三大原則は、国民主権、基本的人権の尊重、（1）である。",
+      "blanks": [
+        [
+          "平和主義"
+        ]
+      ],
+      "explanation": "日本国憲法の三大原則の一つは平和主義です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_const_fill_02",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "topic": "基本的人権",
+      "type": "fill",
+      "question": "すべての人が生まれながらに持ち、憲法で保障される権利を（1）という。",
+      "blanks": [
+        [
+          "基本的人権"
+        ]
+      ],
+      "explanation": "基本的人権は、人が生まれながらに持つ権利として保障されています。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_const_fill_03",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "topic": "憲法改正",
+      "type": "fill",
+      "question": "憲法改正の発議には、各議院の総議員の（1）以上の賛成が必要である。",
+      "blanks": [
+        [
+          "3分の2",
+          "三分の二",
+          "2/3"
+        ]
+      ],
+      "explanation": "日本国憲法96条では、各議院の総議員の3分の2以上の賛成で国会が発議します。",
+      "difficulty": 3
+    },
+    {
+      "id": "v032_so_const_multi_01",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "topic": "基本的人権",
+      "type": "multi",
+      "question": "基本的人権に含まれるものをすべて選びなさい。",
+      "choices": [
+        "自由権",
+        "社会権",
+        "参政権",
+        "大名の参勤交代権"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "自由権・社会権・参政権などは基本的人権として保障されています。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_const_multi_02",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "topic": "国民の義務",
+      "type": "multi",
+      "question": "日本国憲法で国民の義務とされているものをすべて選びなさい。",
+      "choices": [
+        "子どもに普通教育を受けさせる義務",
+        "勤労の義務",
+        "納税の義務",
+        "投票の義務"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "教育・勤労・納税が憲法上の三つの義務です。投票は権利です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_const_multi_03",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "topic": "平和主義",
+      "type": "multi",
+      "question": "日本国憲法の平和主義に関係する内容をすべて選びなさい。",
+      "choices": [
+        "戦争の放棄",
+        "戦力を保持しないこと",
+        "国の交戦権を認めないこと",
+        "参勤交代の実施"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "憲法9条は戦争放棄、戦力不保持、交戦権の否認を定めています。",
+      "difficulty": 3
+    },
+    {
+      "id": "v032_so_pol_fill_01",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "topic": "三権分立",
+      "type": "fill",
+      "question": "法律をつくる立法を担当する国の機関は（1）である。",
+      "blanks": [
+        [
+          "国会"
+        ]
+      ],
+      "explanation": "国会は唯一の立法機関です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_pol_fill_02",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "topic": "内閣",
+      "type": "fill",
+      "question": "内閣の長を（1）という。",
+      "blanks": [
+        [
+          "内閣総理大臣"
+        ]
+      ],
+      "explanation": "内閣総理大臣は内閣の首長です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_pol_fill_03",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "topic": "裁判所",
+      "type": "fill",
+      "question": "法律や命令が憲法に違反していないかを裁判所が判断する権限を（1）という。",
+      "blanks": [
+        [
+          "違憲審査権",
+          "違憲立法審査権"
+        ]
+      ],
+      "explanation": "裁判所には法令などが憲法に適合するか審査する違憲審査権があります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_pol_multi_01",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "topic": "国会",
+      "type": "multi",
+      "question": "国会の仕事として正しいものをすべて選びなさい。",
+      "choices": [
+        "法律の制定",
+        "予算の議決",
+        "内閣総理大臣の指名",
+        "裁判の判決"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "国会は法律制定、予算議決、首相指名などを行います。判決は裁判所です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_pol_multi_02",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "topic": "地方自治",
+      "type": "multi",
+      "question": "地方自治に関するものをすべて選びなさい。",
+      "choices": [
+        "地方議会",
+        "条例",
+        "住民投票",
+        "衆議院の解散"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "地方議会、条例、住民投票は地方自治に関係します。衆議院解散は国政です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_pol_multi_03",
+      "subject": "social",
+      "unit": "politics",
+      "grades": [
+        3
+      ],
+      "topic": "選挙",
+      "type": "multi",
+      "question": "民主的な選挙の原則に当てはまるものをすべて選びなさい。",
+      "choices": [
+        "普通選挙",
+        "平等選挙",
+        "秘密選挙",
+        "世襲選挙"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "普通・平等・直接・秘密選挙などが民主的選挙の基本原則です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_eco_fill_01",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "topic": "市場経済",
+      "type": "fill",
+      "question": "商品の需要が供給より多くなると、一般に価格は（1）しやすい。",
+      "blanks": [
+        [
+          "上昇",
+          "上がる",
+          "高くなる"
+        ]
+      ],
+      "explanation": "需要が供給を上回ると、価格には上昇圧力がかかります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_eco_fill_02",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "topic": "日本銀行",
+      "type": "fill",
+      "question": "日本の中央銀行は（1）である。",
+      "blanks": [
+        [
+          "日本銀行"
+        ]
+      ],
+      "explanation": "日本銀行は日本の中央銀行です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_eco_fill_03",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "topic": "税",
+      "type": "fill",
+      "question": "所得が多いほど高い税率を適用する仕組みを（1）という。",
+      "blanks": [
+        [
+          "累進課税"
+        ]
+      ],
+      "explanation": "所得税などでは累進課税が採用されています。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_eco_multi_01",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "topic": "企業",
+      "type": "multi",
+      "question": "企業の役割として適切なものをすべて選びなさい。",
+      "choices": [
+        "財やサービスを生産する",
+        "雇用を生み出す",
+        "すべての法律を制定する",
+        "利益を得て事業を続ける"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "企業は生産・雇用・利益確保などを担います。法律制定は国会の仕事です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_eco_multi_02",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "topic": "金融",
+      "type": "multi",
+      "question": "銀行などの金融機関の働きとして正しいものをすべて選びなさい。",
+      "choices": [
+        "預金を受け入れる",
+        "資金を貸し出す",
+        "資金を必要なところへ仲介する",
+        "国会議員を選ぶ"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "金融機関は預金を集め、貸出などを通じて資金を仲介します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_eco_multi_03",
+      "subject": "social",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "topic": "消費者",
+      "type": "multi",
+      "question": "消費者を守る制度・考え方として関係が深いものをすべて選びなさい。",
+      "choices": [
+        "消費者基本法",
+        "製造物責任法（PL法）",
+        "クーリング・オフ",
+        "廃藩置県"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "消費者基本法、PL法、クーリング・オフは消費者保護に関係します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_int_fill_01",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "topic": "国際連合",
+      "type": "fill",
+      "question": "国際連合の本部が置かれている都市は（1）である。",
+      "blanks": [
+        [
+          "ニューヨーク"
+        ]
+      ],
+      "explanation": "国連本部はアメリカのニューヨークにあります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_int_fill_02",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "topic": "安全保障理事会",
+      "type": "fill",
+      "question": "国連安全保障理事会で、常任理事国が持つ特別な権限を（1）という。",
+      "blanks": [
+        [
+          "拒否権",
+          "拒否権（きょひけん）"
+        ]
+      ],
+      "explanation": "常任理事国は実質事項について拒否権を持ちます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_int_fill_03",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "topic": "持続可能な開発",
+      "type": "fill",
+      "question": "2030年までの国際目標として定められた持続可能な開発目標を略して（1）という。",
+      "blanks": [
+        [
+          "SDGs",
+          "sdgs"
+        ]
+      ],
+      "explanation": "SDGsはSustainable Development Goalsの略称です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_int_multi_01",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "topic": "国際連合",
+      "type": "multi",
+      "question": "国際連合の主要機関に含まれるものをすべて選びなさい。",
+      "choices": [
+        "総会",
+        "安全保障理事会",
+        "国際司法裁判所",
+        "日本の国会"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "総会、安全保障理事会、国際司法裁判所はいずれも国連の主要機関です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_int_multi_02",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "topic": "地球的課題",
+      "type": "multi",
+      "question": "地球規模で協力が必要な課題をすべて選びなさい。",
+      "choices": [
+        "気候変動",
+        "難民問題",
+        "感染症対策",
+        "一つの学校の席替え"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "気候変動・難民・感染症などは国境を越えた協力が必要な課題です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_int_multi_03",
+      "subject": "social",
+      "unit": "international",
+      "grades": [
+        3
+      ],
+      "topic": "国際協力",
+      "type": "multi",
+      "question": "国際協力の例として適切なものをすべて選びなさい。",
+      "choices": [
+        "政府開発援助（ODA）",
+        "国際機関による支援",
+        "NGOによる支援活動",
+        "鎖国"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "ODA、国際機関、NGOなどによる活動は国際協力に含まれます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_ms_fill_01",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "topic": "少子高齢化",
+      "type": "fill",
+      "question": "子どもの割合が減り、高齢者の割合が増える社会の変化を（1）という。",
+      "blanks": [
+        [
+          "少子高齢化"
+        ]
+      ],
+      "explanation": "少子化と高齢化が同時に進むことを少子高齢化といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_ms_fill_02",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "topic": "情報社会",
+      "type": "fill",
+      "question": "インターネットなどを通じて大量の情報が流通する現代社会を（1）社会という。",
+      "blanks": [
+        [
+          "情報"
+        ]
+      ],
+      "explanation": "現代は情報通信技術が社会の基盤となる情報社会です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_ms_fill_03",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "topic": "多文化共生",
+      "type": "fill",
+      "question": "異なる文化や価値観を持つ人々が互いを尊重して共に暮らす考え方を（1）という。",
+      "blanks": [
+        [
+          "多文化共生"
+        ]
+      ],
+      "explanation": "多文化共生は異なる背景を持つ人々が共に社会をつくる考え方です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_ms_multi_01",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "topic": "少子高齢化",
+      "type": "multi",
+      "question": "少子高齢化に関連する社会的な課題をすべて選びなさい。",
+      "choices": [
+        "社会保障費の増加",
+        "労働力人口の減少",
+        "地域の担い手不足",
+        "人口が必ず急増する"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "少子高齢化は社会保障、労働力、地域社会などに影響します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_ms_multi_02",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "topic": "情報リテラシー",
+      "type": "multi",
+      "question": "情報社会で大切な行動をすべて選びなさい。",
+      "choices": [
+        "情報源を確認する",
+        "複数の情報を比較する",
+        "個人情報の扱いに注意する",
+        "見出しだけで必ず真実と判断する"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "情報の信頼性確認、比較、個人情報への配慮などが重要です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_ms_multi_03",
+      "subject": "social",
+      "unit": "modern-society",
+      "grades": [
+        3
+      ],
+      "topic": "社会参画",
+      "type": "multi",
+      "question": "社会参画の例として適切なものをすべて選びなさい。",
+      "choices": [
+        "選挙で投票する",
+        "地域活動に参加する",
+        "意見を行政に届ける",
+        "法律を無視する"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "投票、地域活動、意見表明などは社会参画の例です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_con_fill_01",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "topic": "戦後日本",
+      "type": "fill",
+      "question": "日本国憲法が施行されたのは西暦（1）年である。",
+      "blanks": [
+        [
+          "1947"
+        ]
+      ],
+      "explanation": "日本国憲法は1947年5月3日に施行されました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_con_fill_02",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "topic": "国際社会への復帰",
+      "type": "fill",
+      "question": "日本が主権を回復したきっかけとなった条約は（1）条約である。",
+      "blanks": [
+        [
+          "サンフランシスコ平和",
+          "サンフランシスコ講和",
+          "サンフランシスコ平和条約"
+        ]
+      ],
+      "explanation": "サンフランシスコ平和条約の発効によって日本は主権を回復しました。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_con_fill_03",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "topic": "高度経済成長",
+      "type": "fill",
+      "question": "1950年代後半から1970年代初めにかけて日本経済が急成長した時期を（1）という。",
+      "blanks": [
+        [
+          "高度経済成長"
+        ]
+      ],
+      "explanation": "この時期、日本では工業化や都市化が急速に進みました。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_so_con_multi_01",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "topic": "戦後改革",
+      "type": "multi",
+      "question": "第二次世界大戦後の日本で行われた改革をすべて選びなさい。",
+      "choices": [
+        "農地改革",
+        "財閥解体",
+        "女性参政権の実現",
+        "参勤交代"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "農地改革、財閥解体、女性参政権などが戦後改革として進められました。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_con_multi_02",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "topic": "高度経済成長",
+      "type": "multi",
+      "question": "高度経済成長期に見られた変化をすべて選びなさい。",
+      "choices": [
+        "都市への人口集中",
+        "家電製品の普及",
+        "公害問題の深刻化",
+        "鎖国の開始"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "都市化、家電普及、公害問題などが高度経済成長期の特徴です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_so_con_multi_03",
+      "subject": "social",
+      "unit": "contemporary",
+      "grades": [
+        3
+      ],
+      "topic": "冷戦",
+      "type": "multi",
+      "question": "冷戦に関する説明として正しいものをすべて選びなさい。",
+      "choices": [
+        "アメリカとソ連を中心とする対立だった",
+        "直接の全面戦争を避けつつ対立が続いた",
+        "軍拡競争が進んだ",
+        "江戸幕府と明治政府の対立だった"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "冷戦は米ソを中心とした政治・軍事・経済上の対立でした。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_rg_fill_01",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "topic": "細胞分裂",
+      "type": "fill",
+      "question": "一つの細胞が二つの細胞に分かれることを（1）という。",
+      "blanks": [
+        [
+          "細胞分裂"
+        ]
+      ],
+      "explanation": "細胞が増える基本的なしくみが細胞分裂です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_rg_fill_02",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "topic": "遺伝",
+      "type": "fill",
+      "question": "親の形質が子へ伝わる現象を（1）という。",
+      "blanks": [
+        [
+          "遺伝"
+        ]
+      ],
+      "explanation": "親から子へ形質が伝わることを遺伝といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_rg_fill_03",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "topic": "遺伝子",
+      "type": "fill",
+      "question": "形質を決めるもとになる情報を担うものを（1）という。",
+      "blanks": [
+        [
+          "遺伝子"
+        ]
+      ],
+      "explanation": "遺伝子は形質に関わる遺伝情報を担います。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_rg_fill_04",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "topic": "有性生殖",
+      "type": "fill",
+      "question": "雄と雌の生殖細胞が結びつくことを（1）という。",
+      "blanks": [
+        [
+          "受精"
+        ]
+      ],
+      "explanation": "精子と卵などの生殖細胞が結びつくことを受精といいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_rg_multi_01",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "topic": "有性生殖",
+      "type": "multi",
+      "question": "有性生殖に当てはまる特徴をすべて選びなさい。",
+      "choices": [
+        "生殖細胞が関わる",
+        "受精が起こる",
+        "親と全く同じ遺伝情報だけになるとは限らない",
+        "必ず一個体だけで行う"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "有性生殖では生殖細胞と受精が関わり、子には遺伝的な組み合わせの違いが生じます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_rg_multi_02",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "topic": "無性生殖",
+      "type": "multi",
+      "question": "無性生殖の例をすべて選びなさい。",
+      "choices": [
+        "分裂",
+        "出芽",
+        "栄養生殖",
+        "ヒトの受精"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "分裂・出芽・栄養生殖は無性生殖の例です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_rg_multi_03",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "topic": "染色体",
+      "type": "multi",
+      "question": "染色体について正しいものをすべて選びなさい。",
+      "choices": [
+        "細胞分裂のとき観察しやすくなる",
+        "遺伝子を含む",
+        "核の中にある",
+        "光合成だけを行う器官である"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "染色体は核内にあり、遺伝子を含み、細胞分裂時に観察しやすくなります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_rg_multi_04",
+      "subject": "science",
+      "unit": "reproduction-genetics",
+      "grades": [
+        3
+      ],
+      "topic": "遺伝",
+      "type": "multi",
+      "question": "遺伝に関する説明として正しいものをすべて選びなさい。",
+      "choices": [
+        "形質には遺伝子が関係する",
+        "環境が形質に影響する場合もある",
+        "子は必ず親と完全に同じ形質になる",
+        "遺伝情報は世代を超えて伝わる"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "形質には遺伝と環境が関係し、子が親と完全に同じになるとは限りません。",
+      "difficulty": 3
+    },
+    {
+      "id": "v032_sc_me_fill_01",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "速さ",
+      "type": "fill",
+      "question": "速さは、移動した距離を（1）で割って求める。",
+      "blanks": [
+        [
+          "時間"
+        ]
+      ],
+      "explanation": "速さ＝距離÷時間です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_me_fill_02",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "仕事",
+      "type": "fill",
+      "question": "力の向きに物体を動かしたとき、力と移動距離の積で表される量を（1）という。",
+      "blanks": [
+        [
+          "仕事"
+        ]
+      ],
+      "explanation": "仕事は力[N]×力の向きに動いた距離[m]で求めます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_me_fill_03",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "仕事率",
+      "type": "fill",
+      "question": "一定時間あたりにする仕事の大きさを（1）という。",
+      "blanks": [
+        [
+          "仕事率"
+        ]
+      ],
+      "explanation": "仕事率は仕事÷時間で求め、単位はWです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_me_fill_04",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "力学的エネルギー",
+      "type": "fill",
+      "question": "位置エネルギーと運動エネルギーの和を（1）エネルギーという。",
+      "blanks": [
+        [
+          "力学的"
+        ]
+      ],
+      "explanation": "位置エネルギーと運動エネルギーの和が力学的エネルギーです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_me_multi_01",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "エネルギー変換",
+      "type": "multi",
+      "question": "エネルギーの変換例として正しいものをすべて選びなさい。",
+      "choices": [
+        "電球：電気エネルギー→光エネルギー",
+        "発電機：運動エネルギー→電気エネルギー",
+        "スピーカー：電気エネルギー→音のエネルギー",
+        "電池：音のエネルギー→重力だけ"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "身の回りではさまざまな形のエネルギーが別の形へ変換されています。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_me_multi_02",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "力学的エネルギー",
+      "type": "multi",
+      "question": "摩擦や空気抵抗を無視した場合の力学的エネルギーについて正しいものをすべて選びなさい。",
+      "choices": [
+        "位置エネルギーと運動エネルギーの和は一定になる",
+        "落下中は位置エネルギーが減る",
+        "落下中は運動エネルギーが増える",
+        "落下中は両方とも必ず0になる"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "摩擦などを無視すると力学的エネルギーは保存されます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_me_multi_03",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "運動",
+      "type": "multi",
+      "question": "等速直線運動について正しいものをすべて選びなさい。",
+      "choices": [
+        "速さが一定である",
+        "一直線上を進む",
+        "同じ時間ごとの移動距離が等しい",
+        "必ず加速度が大きくなる"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "等速直線運動では直線上を一定の速さで進みます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_me_multi_04",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "作用反作用",
+      "type": "multi",
+      "question": "作用・反作用の関係にある力の特徴をすべて選びなさい。",
+      "choices": [
+        "大きさが等しい",
+        "向きが反対",
+        "異なる物体にはたらく",
+        "同じ物体にはたらくので必ず打ち消し合う"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "作用と反作用は大きさが等しく向きが反対で、別々の物体にはたらきます。",
+      "difficulty": 3
+    },
+    {
+      "id": "v032_sc_ion_fill_01",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "イオン",
+      "type": "fill",
+      "question": "原子が電子を失ったり受け取ったりして電気を帯びた粒子を（1）という。",
+      "blanks": [
+        [
+          "イオン"
+        ]
+      ],
+      "explanation": "電気を帯びた原子や原子の集まりをイオンといいます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_ion_fill_02",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "陽イオン",
+      "type": "fill",
+      "question": "原子が電子を失うと、正の電気を帯びた（1）イオンになる。",
+      "blanks": [
+        [
+          "陽"
+        ]
+      ],
+      "explanation": "電子を失うと正電荷が相対的に多くなり、陽イオンになります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_ion_fill_03",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "酸とアルカリ",
+      "type": "fill",
+      "question": "酸性の水溶液に共通して含まれるイオンは（1）イオンである。",
+      "blanks": [
+        [
+          "水素",
+          "H+",
+          "H⁺"
+        ]
+      ],
+      "explanation": "酸性を示すもとになるのは水素イオンです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_ion_fill_04",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "中和",
+      "type": "fill",
+      "question": "酸とアルカリが互いの性質を打ち消し合う反応を（1）という。",
+      "blanks": [
+        [
+          "中和"
+        ]
+      ],
+      "explanation": "酸とアルカリが反応して互いの性質を弱める反応が中和です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_ion_multi_01",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "電解質",
+      "type": "multi",
+      "question": "水に溶かしたとき電流が流れる物質をすべて選びなさい。",
+      "choices": [
+        "塩化ナトリウム",
+        "塩化水素",
+        "水酸化ナトリウム",
+        "砂糖"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "塩化ナトリウム、塩化水素、水酸化ナトリウムは水溶液中でイオンに分かれます。砂糖は電解質ではありません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_ion_multi_02",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "電池",
+      "type": "multi",
+      "question": "化学電池について正しいものをすべて選びなさい。",
+      "choices": [
+        "化学エネルギーを電気エネルギーに変える",
+        "異なる種類の金属を使う場合がある",
+        "電解質の水溶液を利用するものがある",
+        "電気エネルギーを必ず位置エネルギーだけに変える"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "化学電池は化学変化を利用して電気エネルギーを取り出します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_ion_multi_03",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "酸とアルカリ",
+      "type": "multi",
+      "question": "酸性の水溶液について正しいものをすべて選びなさい。",
+      "choices": [
+        "青色リトマス紙を赤色にする",
+        "水素イオンを含む",
+        "pHが7より小さい",
+        "必ず電流を流さない"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "一般に酸性水溶液はH+を含み、pHは7未満です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_ion_multi_04",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "中和",
+      "type": "multi",
+      "question": "塩酸と水酸化ナトリウム水溶液の中和に関係するものをすべて選びなさい。",
+      "choices": [
+        "水素イオン",
+        "水酸化物イオン",
+        "水が生じる",
+        "二酸化炭素が必ず生じる"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "H+とOH-が結びついて水が生じるのが中和の中心的な変化です。",
+      "difficulty": 3
+    },
+    {
+      "id": "v032_sc_es_fill_01",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "topic": "地球の自転",
+      "type": "fill",
+      "question": "地球が地軸を中心に約1日で1回転する運動を（1）という。",
+      "blanks": [
+        [
+          "自転"
+        ]
+      ],
+      "explanation": "地球の自転によって天体の日周運動が見られます。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_es_fill_02",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "topic": "地球の公転",
+      "type": "fill",
+      "question": "地球が太陽のまわりを約1年で回る運動を（1）という。",
+      "blanks": [
+        [
+          "公転"
+        ]
+      ],
+      "explanation": "地球は太陽のまわりを公転しています。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_es_fill_03",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "topic": "月",
+      "type": "fill",
+      "question": "月が地球のまわりを回る運動を（1）という。",
+      "blanks": [
+        [
+          "公転"
+        ]
+      ],
+      "explanation": "月は地球のまわりを公転しています。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_es_fill_04",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "topic": "太陽系",
+      "type": "fill",
+      "question": "太陽と、その周囲を公転する天体などからなる集まりを（1）という。",
+      "blanks": [
+        [
+          "太陽系"
+        ]
+      ],
+      "explanation": "太陽を中心とする天体の集まりが太陽系です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_es_multi_01",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "topic": "太陽系",
+      "type": "multi",
+      "question": "太陽系の惑星をすべて選びなさい。",
+      "choices": [
+        "地球",
+        "火星",
+        "木星",
+        "北極星"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "地球・火星・木星は太陽系の惑星です。北極星は恒星です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_es_multi_02",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "topic": "季節",
+      "type": "multi",
+      "question": "日本で季節が生じることに関係するものをすべて選びなさい。",
+      "choices": [
+        "地球の公転",
+        "地軸の傾き",
+        "太陽高度の変化",
+        "地球と太陽の距離だけ"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "季節変化は地軸が傾いた地球が公転することで、太陽高度や昼の長さが変わるために生じます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_es_multi_03",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "topic": "月の満ち欠け",
+      "type": "multi",
+      "question": "月の満ち欠けについて正しいものをすべて選びなさい。",
+      "choices": [
+        "月は太陽の光を反射して光って見える",
+        "月と地球と太陽の位置関係で見え方が変わる",
+        "約1か月周期で変化する",
+        "月自身が毎日違う量の光を作るため起こる"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "月の満ち欠けは太陽光を反射する月の見える部分が位置関係によって変わるためです。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_es_multi_04",
+      "subject": "science",
+      "unit": "earth-space",
+      "grades": [
+        3
+      ],
+      "topic": "恒星と惑星",
+      "type": "multi",
+      "question": "恒星と惑星について正しいものをすべて選びなさい。",
+      "choices": [
+        "太陽は恒星である",
+        "地球は惑星である",
+        "恒星は自ら光を出す",
+        "惑星はすべて自ら強く光る"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "恒星は自ら光を出し、惑星は恒星の周囲を公転します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_nh_fill_01",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "topic": "生態系",
+      "type": "fill",
+      "question": "生物とそれを取り巻く環境を一つのまとまりとしてとらえたものを（1）という。",
+      "blanks": [
+        [
+          "生態系"
+        ]
+      ],
+      "explanation": "生物と非生物的環境を含めたまとまりが生態系です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_nh_fill_02",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "topic": "食物連鎖",
+      "type": "fill",
+      "question": "生物どうしの食べる・食べられる関係のつながりを（1）という。",
+      "blanks": [
+        [
+          "食物連鎖"
+        ]
+      ],
+      "explanation": "食べる・食べられる関係の連なりが食物連鎖です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_nh_fill_03",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "topic": "分解者",
+      "type": "fill",
+      "question": "生物の死がいや排出物などを分解する生物を（1）という。",
+      "blanks": [
+        [
+          "分解者"
+        ]
+      ],
+      "explanation": "菌類や細菌類などは分解者として物質循環に関わります。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_nh_fill_04",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "topic": "持続可能性",
+      "type": "fill",
+      "question": "将来世代の必要を損なわずに現在の必要を満たす社会を目指す考え方を（1）な社会という。",
+      "blanks": [
+        [
+          "持続可能"
+        ]
+      ],
+      "explanation": "資源や環境を守りながら社会を維持する持続可能性が重視されています。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_nh_multi_01",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "topic": "生態系",
+      "type": "multi",
+      "question": "生態系を構成する要素をすべて選びなさい。",
+      "choices": [
+        "生産者",
+        "消費者",
+        "分解者",
+        "生物を取り巻く水や光などの環境"
+      ],
+      "answers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "生態系には生物だけでなく水・光・土などの環境も含まれます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_nh_multi_02",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "topic": "物質循環",
+      "type": "multi",
+      "question": "自然界の物質循環に関わるものをすべて選びなさい。",
+      "choices": [
+        "生産者の光合成",
+        "消費者の呼吸",
+        "分解者による分解",
+        "物質が一度使われると必ず消滅すること"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "物質は生物と環境の間を循環しており、消滅するわけではありません。",
+      "difficulty": 2
+    },
+    {
+      "id": "v032_sc_nh_multi_03",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "topic": "環境保全",
+      "type": "multi",
+      "question": "環境への負荷を減らす行動をすべて選びなさい。",
+      "choices": [
+        "省エネルギー",
+        "資源の再利用",
+        "生物多様性の保全",
+        "必要以上の大量廃棄"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "省エネ、再利用、生物多様性保全は環境負荷の低減につながります。",
+      "difficulty": 1
+    },
+    {
+      "id": "v032_sc_nh_multi_04",
+      "subject": "science",
+      "unit": "nature-human",
+      "grades": [
+        3
+      ],
+      "topic": "自然災害と防災",
+      "type": "multi",
+      "question": "自然災害への備えとして適切なものをすべて選びなさい。",
+      "choices": [
+        "ハザードマップを確認する",
+        "避難場所を確認する",
+        "非常用品を準備する",
+        "警報を必ず無視する"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "災害リスクの確認、避難場所確認、備蓄などは基本的な防災行動です。",
+      "difficulty": 1
     }
   ],
-  "notes": "Ver.0.31: 中3英語 Here We Go! Unit 1〜8に新形式48問を追加。模擬テストの形式バランス調整に対応。"
+  "notes": "Ver.0.32: 中3社会36問・中3理科40問、合計76問の穴埋め・複数選択中心の実戦問題を追加。"
 }

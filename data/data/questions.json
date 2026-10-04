@@ -1,5 +1,5 @@
 {
-  "version": "0.16.0",
+  "version": "0.30.0",
   "questions": [
     {
       "id": "ja001",
@@ -7377,7 +7377,2851 @@
       "explanation": "文章の構成や言葉遣いを見直して修正することを推敲といいます。",
       "variantOf": "v04_ja_writing_2",
       "source": "built-in-recall"
+    },
+    {
+      "id": "mat_runmelos_01",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『走れメロス』の作者は誰？",
+      "choices": [
+        "太宰治",
+        "夏目漱石",
+        "芥川龍之介",
+        "宮沢賢治"
+      ],
+      "answer": 0,
+      "explanation": "『走れメロス』は太宰治の作品です。",
+      "materialIds": [
+        "j-sanseido-2-11",
+        "j-mitsumura-2-10",
+        "j-kyoiku-shuppan-2-11"
+      ]
+    },
+    {
+      "id": "mat_runmelos_02",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "word",
+      "difficulty": 1,
+      "question": "『走れメロス』の主人公の名前を答えなさい。",
+      "answers": [
+        "メロス"
+      ],
+      "explanation": "物語の主人公はメロスです。",
+      "materialIds": [
+        "j-sanseido-2-11",
+        "j-mitsumura-2-10",
+        "j-kyoiku-shuppan-2-11"
+      ]
+    },
+    {
+      "id": "mat_runmelos_03",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『走れメロス』を読むとき、人物の心情の変化を捉えるために特に注目したいものは？",
+      "choices": [
+        "行動や会話の変化",
+        "漢字の画数だけ",
+        "ページ番号だけ",
+        "段落数だけ"
+      ],
+      "answer": 0,
+      "explanation": "文学的文章では、人物の行動・会話・情景などの変化を手がかりに心情を捉えます。",
+      "materialIds": [
+        "j-sanseido-2-11",
+        "j-mitsumura-2-10",
+        "j-kyoiku-shuppan-2-11"
+      ]
+    },
+    {
+      "id": "mat_hw2_u1_01",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "Hajin's Diary の学習に関連して、yesterday を使う文で基本となる時制はどれ？",
+      "choices": [
+        "過去形",
+        "未来形",
+        "現在完了進行形",
+        "仮定法"
+      ],
+      "answer": 0,
+      "explanation": "yesterday は過去の出来事を表すため、基本的に過去形と組み合わせます。",
+      "materialIds": [
+        "e-mitsumura-2-0"
+      ]
+    },
+    {
+      "id": "mat_hw2_u3_01",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "Plans for the Summer のように予定を表すとき使える表現はどれ？",
+      "choices": [
+        "be going to",
+        "was born",
+        "have been",
+        "as ... as"
+      ],
+      "answer": 0,
+      "explanation": "be going to は予定や意図を表す基本表現です。",
+      "materialIds": [
+        "e-mitsumura-2-2"
+      ]
+    },
+    {
+      "id": "mat_hw2_u3_02",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "夏休みにしたいことを表す I want (   ) Kyoto. の空欄に最も適切なのは？",
+      "choices": [
+        "to visit",
+        "visit",
+        "visited",
+        "visiting to"
+      ],
+      "answer": 0,
+      "explanation": "want の後ろでは want to + 動詞の原形を使います。",
+      "materialIds": [
+        "e-mitsumura-2-2"
+      ]
+    },
+    {
+      "id": "mat_san3_00_01",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『言の森』のような詩・俳句を読むとき、まず注目したいものはどれ？",
+      "explanation": "詩歌では、言葉の響き・リズム・表現技法・情景を手がかりに読みを深めます。",
+      "materialIds": [
+        "j-sanseido-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "言葉の響きやリズム",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "文字数だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_00_02",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『言の森』を鑑賞するとき、表現の効果を考える手がかりとして適切なのは？",
+      "explanation": "比喩、反復、対句、体言止めなどの表現技法が、印象やリズムにどんな効果を与えるか考えます。",
+      "materialIds": [
+        "j-sanseido-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "比喩や反復などの表現技法",
+        "紙の厚さ",
+        "ページの余白",
+        "教科書の重さ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_00_03",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『言の森』の学習で、作品から感じ取った情景や気持ちを根拠とともに説明するとき、根拠にするのは作品中の何？",
+      "explanation": "解釈は、作品中の具体的な言葉や表現を根拠にして説明します。",
+      "materialIds": [
+        "j-sanseido-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "言葉",
+        "表現",
+        "作品中の言葉",
+        "本文の言葉"
+      ]
+    },
+    {
+      "id": "mat_san3_00_04",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "『言の森』を自分なりに解釈した後、読みを深める方法として最も適切なのは？",
+      "explanation": "他者の解釈と比較すると、自分が注目していなかった表現や別の読み方に気づけます。",
+      "materialIds": [
+        "j-sanseido-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "他の人の解釈と根拠を比べる",
+        "題名だけ暗記する",
+        "一度読んで終わる",
+        "作者名だけ覚える"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_01_01",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『握手』の人物像を捉えるとき、特に手がかりになるものは？",
+      "explanation": "文学的文章では、人物の行動・会話・心情を表す表現を関連づけて人物像を捉えます。",
+      "materialIds": [
+        "j-sanseido-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "行動や会話、心情を表す表現",
+        "ページ番号",
+        "漢字の総数",
+        "挿絵の大きさだけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_01_02",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『握手』で人物の心情の変化を読むとき、最も有効な方法は？",
+      "explanation": "出来事の前後で人物の言動や情景描写がどう変化したかを比較すると、心情の変化を捉えやすくなります。",
+      "materialIds": [
+        "j-sanseido-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "出来事の前後の言動を比べる",
+        "最初の一文だけ読む",
+        "題名だけを見る",
+        "段落数だけ数える"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_01_03",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『握手』の読解で、人物や出来事を描く「語り手」の位置や見方に注目することを何という観点で読むとよい？",
+      "explanation": "誰の視点から語られているかを意識すると、情報の示され方や人物像の捉え方が明確になります。",
+      "materialIds": [
+        "j-sanseido-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "視点",
+        "語り手の視点",
+        "語りの視点"
+      ]
+    },
+    {
+      "id": "mat_san3_01_04",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "『握手』の主題を考えるとき、最も適切なのは？",
+      "explanation": "作品全体の出来事、人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "materialIds": [
+        "j-sanseido-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "作品全体の展開と表現を根拠に考える",
+        "題名だけで決める",
+        "最初の段落だけで決める",
+        "作者の生年だけで決める"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_02_01",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『「批判的に読む」とは』のような説明・論説文で、筆者の主張を捉えるために重要なのは？",
+      "explanation": "結論だけでなく、主張を支える理由・具体例・データの関係を捉えることが重要です。",
+      "materialIds": [
+        "j-sanseido-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "主張と根拠の関係",
+        "文字の大きさ",
+        "ページ数",
+        "段落番号だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_02_02",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『「批判的に読む」とは』を批判的に読むときの姿勢として適切なのは？",
+      "explanation": "書かれていることをそのまま受け入れず、根拠の妥当性や別の見方がないかを検討します。",
+      "materialIds": [
+        "j-sanseido-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "根拠が十分か確かめる",
+        "全部正しいと決めつける",
+        "題名だけで判断する",
+        "難しい語を飛ばす"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_02_03",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『「批判的に読む」とは』で、筆者の意見を支える事実・具体例・データなどをまとめて何という？",
+      "explanation": "主張を支える材料を「根拠」といいます。",
+      "materialIds": [
+        "j-sanseido-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "根拠"
+      ]
+    },
+    {
+      "id": "mat_san3_02_04",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "『「批判的に読む」とは』の要旨をまとめるとき、最も適切なのは？",
+      "explanation": "中心となる主張と、それを支える主要な根拠を短く整理します。",
+      "materialIds": [
+        "j-sanseido-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "中心的な主張と主要な根拠をまとめる",
+        "全ての文を書き写す",
+        "具体例だけを並べる",
+        "見出しだけ写す"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_03_01",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『間の文化』のような説明・論説文で、筆者の主張を捉えるために重要なのは？",
+      "explanation": "結論だけでなく、主張を支える理由・具体例・データの関係を捉えることが重要です。",
+      "materialIds": [
+        "j-sanseido-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "主張と根拠の関係",
+        "文字の大きさ",
+        "ページ数",
+        "段落番号だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_03_02",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『間の文化』を批判的に読むときの姿勢として適切なのは？",
+      "explanation": "書かれていることをそのまま受け入れず、根拠の妥当性や別の見方がないかを検討します。",
+      "materialIds": [
+        "j-sanseido-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "根拠が十分か確かめる",
+        "全部正しいと決めつける",
+        "題名だけで判断する",
+        "難しい語を飛ばす"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_03_03",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『間の文化』で、筆者の意見を支える事実・具体例・データなどをまとめて何という？",
+      "explanation": "主張を支える材料を「根拠」といいます。",
+      "materialIds": [
+        "j-sanseido-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "根拠"
+      ]
+    },
+    {
+      "id": "mat_san3_03_04",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "『間の文化』の要旨をまとめるとき、最も適切なのは？",
+      "explanation": "中心となる主張と、それを支える主要な根拠を短く整理します。",
+      "materialIds": [
+        "j-sanseido-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "中心的な主張と主要な根拠をまとめる",
+        "全ての文を書き写す",
+        "具体例だけを並べる",
+        "見出しだけ写す"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_04_01",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『俳句十句』のような詩・俳句を読むとき、まず注目したいものはどれ？",
+      "explanation": "詩歌では、言葉の響き・リズム・表現技法・情景を手がかりに読みを深めます。",
+      "materialIds": [
+        "j-sanseido-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "言葉の響きやリズム",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "文字数だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_04_02",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『俳句十句』を鑑賞するとき、表現の効果を考える手がかりとして適切なのは？",
+      "explanation": "比喩、反復、対句、体言止めなどの表現技法が、印象やリズムにどんな効果を与えるか考えます。",
+      "materialIds": [
+        "j-sanseido-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "比喩や反復などの表現技法",
+        "紙の厚さ",
+        "ページの余白",
+        "教科書の重さ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_04_03",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『俳句十句』の学習で、作品から感じ取った情景や気持ちを根拠とともに説明するとき、根拠にするのは作品中の何？",
+      "explanation": "解釈は、作品中の具体的な言葉や表現を根拠にして説明します。",
+      "materialIds": [
+        "j-sanseido-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "言葉",
+        "表現",
+        "作品中の言葉",
+        "本文の言葉"
+      ]
+    },
+    {
+      "id": "mat_san3_04_04",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "『俳句十句』を自分なりに解釈した後、読みを深める方法として最も適切なのは？",
+      "explanation": "他者の解釈と比較すると、自分が注目していなかった表現や別の読み方に気づけます。",
+      "materialIds": [
+        "j-sanseido-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "他の人の解釈と根拠を比べる",
+        "題名だけ暗記する",
+        "一度読んで終わる",
+        "作者名だけ覚える"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_05_01",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『海を越えた故郷の味』の人物像を捉えるとき、特に手がかりになるものは？",
+      "explanation": "文学的文章では、人物の行動・会話・心情を表す表現を関連づけて人物像を捉えます。",
+      "materialIds": [
+        "j-sanseido-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "行動や会話、心情を表す表現",
+        "ページ番号",
+        "漢字の総数",
+        "挿絵の大きさだけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_05_02",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『海を越えた故郷の味』で人物の心情の変化を読むとき、最も有効な方法は？",
+      "explanation": "出来事の前後で人物の言動や情景描写がどう変化したかを比較すると、心情の変化を捉えやすくなります。",
+      "materialIds": [
+        "j-sanseido-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "出来事の前後の言動を比べる",
+        "最初の一文だけ読む",
+        "題名だけを見る",
+        "段落数だけ数える"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_05_03",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『海を越えた故郷の味』の読解で、人物や出来事を描く「語り手」の位置や見方に注目することを何という観点で読むとよい？",
+      "explanation": "誰の視点から語られているかを意識すると、情報の示され方や人物像の捉え方が明確になります。",
+      "materialIds": [
+        "j-sanseido-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "視点",
+        "語り手の視点",
+        "語りの視点"
+      ]
+    },
+    {
+      "id": "mat_san3_05_04",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "『海を越えた故郷の味』の主題を考えるとき、最も適切なのは？",
+      "explanation": "作品全体の出来事、人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "materialIds": [
+        "j-sanseido-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "作品全体の展開と表現を根拠に考える",
+        "題名だけで決める",
+        "最初の段落だけで決める",
+        "作者の生年だけで決める"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_06_01",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『フロン規制の物語』のような説明・論説文で、筆者の主張を捉えるために重要なのは？",
+      "explanation": "結論だけでなく、主張を支える理由・具体例・データの関係を捉えることが重要です。",
+      "materialIds": [
+        "j-sanseido-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "主張と根拠の関係",
+        "文字の大きさ",
+        "ページ数",
+        "段落番号だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_06_02",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『フロン規制の物語』を批判的に読むときの姿勢として適切なのは？",
+      "explanation": "書かれていることをそのまま受け入れず、根拠の妥当性や別の見方がないかを検討します。",
+      "materialIds": [
+        "j-sanseido-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "根拠が十分か確かめる",
+        "全部正しいと決めつける",
+        "題名だけで判断する",
+        "難しい語を飛ばす"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_06_03",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『フロン規制の物語』で、筆者の意見を支える事実・具体例・データなどをまとめて何という？",
+      "explanation": "主張を支える材料を「根拠」といいます。",
+      "materialIds": [
+        "j-sanseido-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "根拠"
+      ]
+    },
+    {
+      "id": "mat_san3_06_04",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "『フロン規制の物語』の要旨をまとめるとき、最も適切なのは？",
+      "explanation": "中心となる主張と、それを支える主要な根拠を短く整理します。",
+      "materialIds": [
+        "j-sanseido-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "中心的な主張と主要な根拠をまとめる",
+        "全ての文を書き写す",
+        "具体例だけを並べる",
+        "見出しだけ写す"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_07_01",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『万葉集・古今和歌集・新古今和歌集』のような古典を読むとき、現代語と違う表現を理解する手がかりとして重要なのは？",
+      "explanation": "古語や歴史的仮名遣い、当時の文化背景を確認すると内容を捉えやすくなります。",
+      "materialIds": [
+        "j-sanseido-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "古語や歴史的仮名遣い",
+        "ページの色",
+        "文字サイズ",
+        "紙の種類"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_07_02",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『万葉集・古今和歌集・新古今和歌集』の学習で、昔の仮名の書き方を現代の発音に直して読むときに確認するものは？",
+      "explanation": "古文では歴史的仮名遣いを現代仮名遣いと対応させて読む力が必要です。",
+      "materialIds": [
+        "j-sanseido-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "歴史的仮名遣い"
+      ]
+    },
+    {
+      "id": "mat_san3_07_03",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『万葉集・古今和歌集・新古今和歌集』を味わうとき、本文だけでなく確認すると理解が深まるものは？",
+      "explanation": "成立した時代や作者、当時の文化・価値観を確認すると表現の背景が分かります。",
+      "materialIds": [
+        "j-sanseido-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "成立した時代や文化背景",
+        "教科書の値段",
+        "ページの厚さ",
+        "印刷所だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_08_01",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『おくのほそ道』のような古典を読むとき、現代語と違う表現を理解する手がかりとして重要なのは？",
+      "explanation": "古語や歴史的仮名遣い、当時の文化背景を確認すると内容を捉えやすくなります。",
+      "materialIds": [
+        "j-sanseido-3-8"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "古語や歴史的仮名遣い",
+        "ページの色",
+        "文字サイズ",
+        "紙の種類"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_08_02",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『おくのほそ道』の学習で、昔の仮名の書き方を現代の発音に直して読むときに確認するものは？",
+      "explanation": "古文では歴史的仮名遣いを現代仮名遣いと対応させて読む力が必要です。",
+      "materialIds": [
+        "j-sanseido-3-8"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "歴史的仮名遣い"
+      ]
+    },
+    {
+      "id": "mat_san3_08_03",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『おくのほそ道』を味わうとき、本文だけでなく確認すると理解が深まるものは？",
+      "explanation": "成立した時代や作者、当時の文化・価値観を確認すると表現の背景が分かります。",
+      "materialIds": [
+        "j-sanseido-3-8"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "成立した時代や文化背景",
+        "教科書の値段",
+        "ページの厚さ",
+        "印刷所だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_09_01",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『論語』のような古典を読むとき、現代語と違う表現を理解する手がかりとして重要なのは？",
+      "explanation": "古語や歴史的仮名遣い、当時の文化背景を確認すると内容を捉えやすくなります。",
+      "materialIds": [
+        "j-sanseido-3-9"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "古語や歴史的仮名遣い",
+        "ページの色",
+        "文字サイズ",
+        "紙の種類"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_09_02",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『論語』の学習で、昔の仮名の書き方を現代の発音に直して読むときに確認するものは？",
+      "explanation": "古文では歴史的仮名遣いを現代仮名遣いと対応させて読む力が必要です。",
+      "materialIds": [
+        "j-sanseido-3-9"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "歴史的仮名遣い"
+      ]
+    },
+    {
+      "id": "mat_san3_09_03",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『論語』を味わうとき、本文だけでなく確認すると理解が深まるものは？",
+      "explanation": "成立した時代や作者、当時の文化・価値観を確認すると表現の背景が分かります。",
+      "materialIds": [
+        "j-sanseido-3-9"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "成立した時代や文化背景",
+        "教科書の値段",
+        "ページの厚さ",
+        "印刷所だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_10_01",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『初恋』のような詩・俳句を読むとき、まず注目したいものはどれ？",
+      "explanation": "詩歌では、言葉の響き・リズム・表現技法・情景を手がかりに読みを深めます。",
+      "materialIds": [
+        "j-sanseido-3-10"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "言葉の響きやリズム",
+        "ページ番号だけ",
+        "漢字の画数だけ",
+        "文字数だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_10_02",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『初恋』を鑑賞するとき、表現の効果を考える手がかりとして適切なのは？",
+      "explanation": "比喩、反復、対句、体言止めなどの表現技法が、印象やリズムにどんな効果を与えるか考えます。",
+      "materialIds": [
+        "j-sanseido-3-10"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "比喩や反復などの表現技法",
+        "紙の厚さ",
+        "ページの余白",
+        "教科書の重さ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_10_03",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『初恋』の学習で、作品から感じ取った情景や気持ちを根拠とともに説明するとき、根拠にするのは作品中の何？",
+      "explanation": "解釈は、作品中の具体的な言葉や表現を根拠にして説明します。",
+      "materialIds": [
+        "j-sanseido-3-10"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "言葉",
+        "表現",
+        "作品中の言葉",
+        "本文の言葉"
+      ]
+    },
+    {
+      "id": "mat_san3_11_01",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『故郷』の人物像を捉えるとき、特に手がかりになるものは？",
+      "explanation": "文学的文章では、人物の行動・会話・心情を表す表現を関連づけて人物像を捉えます。",
+      "materialIds": [
+        "j-sanseido-3-11"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "行動や会話、心情を表す表現",
+        "ページ番号",
+        "漢字の総数",
+        "挿絵の大きさだけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_11_02",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『故郷』で人物の心情の変化を読むとき、最も有効な方法は？",
+      "explanation": "出来事の前後で人物の言動や情景描写がどう変化したかを比較すると、心情の変化を捉えやすくなります。",
+      "materialIds": [
+        "j-sanseido-3-11"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "出来事の前後の言動を比べる",
+        "最初の一文だけ読む",
+        "題名だけを見る",
+        "段落数だけ数える"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_11_03",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『故郷』の読解で、人物や出来事を描く「語り手」の位置や見方に注目することを何という観点で読むとよい？",
+      "explanation": "誰の視点から語られているかを意識すると、情報の示され方や人物像の捉え方が明確になります。",
+      "materialIds": [
+        "j-sanseido-3-11"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "視点",
+        "語り手の視点",
+        "語りの視点"
+      ]
+    },
+    {
+      "id": "mat_san3_12_01",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『私とは何か』のような説明・論説文で、筆者の主張を捉えるために重要なのは？",
+      "explanation": "結論だけでなく、主張を支える理由・具体例・データの関係を捉えることが重要です。",
+      "materialIds": [
+        "j-sanseido-3-12"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "主張と根拠の関係",
+        "文字の大きさ",
+        "ページ数",
+        "段落番号だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_12_02",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『私とは何か』を批判的に読むときの姿勢として適切なのは？",
+      "explanation": "書かれていることをそのまま受け入れず、根拠の妥当性や別の見方がないかを検討します。",
+      "materialIds": [
+        "j-sanseido-3-12"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "根拠が十分か確かめる",
+        "全部正しいと決めつける",
+        "題名だけで判断する",
+        "難しい語を飛ばす"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_12_03",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『私とは何か』で、筆者の意見を支える事実・具体例・データなどをまとめて何という？",
+      "explanation": "主張を支える材料を「根拠」といいます。",
+      "materialIds": [
+        "j-sanseido-3-12"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "根拠"
+      ]
+    },
+    {
+      "id": "mat_san3_12_04",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "『私とは何か』の要旨をまとめるとき、最も適切なのは？",
+      "explanation": "中心となる主張と、それを支える主要な根拠を短く整理します。",
+      "materialIds": [
+        "j-sanseido-3-12"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "中心的な主張と主要な根拠をまとめる",
+        "全ての文を書き写す",
+        "具体例だけを並べる",
+        "見出しだけ写す"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_13_01",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『坊っちゃん』の人物像を捉えるとき、特に手がかりになるものは？",
+      "explanation": "文学的文章では、人物の行動・会話・心情を表す表現を関連づけて人物像を捉えます。",
+      "materialIds": [
+        "j-sanseido-3-13"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "行動や会話、心情を表す表現",
+        "ページ番号",
+        "漢字の総数",
+        "挿絵の大きさだけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_13_02",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『坊っちゃん』で人物の心情の変化を読むとき、最も有効な方法は？",
+      "explanation": "出来事の前後で人物の言動や情景描写がどう変化したかを比較すると、心情の変化を捉えやすくなります。",
+      "materialIds": [
+        "j-sanseido-3-13"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "出来事の前後の言動を比べる",
+        "最初の一文だけ読む",
+        "題名だけを見る",
+        "段落数だけ数える"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_13_03",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "『坊っちゃん』の読解で、人物や出来事を描く「語り手」の位置や見方に注目することを何という観点で読むとよい？",
+      "explanation": "誰の視点から語られているかを意識すると、情報の示され方や人物像の捉え方が明確になります。",
+      "materialIds": [
+        "j-sanseido-3-13"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "視点",
+        "語り手の視点",
+        "語りの視点"
+      ]
+    },
+    {
+      "id": "mat_hw3_u1_01",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "「English is spoken ...」のような受け身の基本形はどれ？",
+      "explanation": "受け身は「be動詞 + 過去分詞」で表します。",
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "be動詞 + 過去分詞",
+        "have + 動詞の原形",
+        "to + 動詞の原形",
+        "動詞 + ing"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u1_02",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 2,
+      "question": "「この地域では英語が話されています。」の「話されています」に当たる形を英語2語で答えなさい。",
+      "explanation": "受け身は「be動詞 + 過去分詞」で表し、is spoken は「話されています」という意味です。",
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "answers": [
+        "is spoken"
+      ]
+    },
+    {
+      "id": "mat_hw3_u1_03",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "Let me show you something interesting. の let の後ろで使われる動詞の形は？",
+      "explanation": "let + 人 + 動詞の原形の形を使います。",
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "動詞の原形",
+        "過去形",
+        "過去分詞",
+        "動名詞"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u1_04",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "This footprint will help us find the elephant. の help us find と同じ形はどれ？",
+      "explanation": "help + 人 + 動詞の原形を使えます。",
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "help me carry",
+        "help me carried",
+        "help me carrying to",
+        "help I carry"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u1_05",
+      "subject": "english",
+      "unit": "reading",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "Ms. Thusi told us that ... の形で、tell の直後に置くものは？",
+      "explanation": "tell + 人 + that節で「人に〜と伝える」を表します。",
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "伝える相手",
+        "必ず場所",
+        "必ず時刻",
+        "必ず形容詞"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u1_06",
+      "subject": "english",
+      "unit": "reading",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "Unit 1のような記事から必要な情報を探すとき、最初にするとよいことは？",
+      "explanation": "目的を先に確認すると、必要な情報を効率よく探せます。",
+      "materialIds": [
+        "e-mitsumura-3-0"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "質問で求められている情報を確認する",
+        "全文を暗記する",
+        "知らない語を全て辞書で調べてから読む",
+        "最初の一文だけ読む"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u2_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "We have finally reached ... の have reached はどの時制？",
+      "explanation": "have + 過去分詞は現在完了です。",
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "現在完了",
+        "過去進行",
+        "未来",
+        "仮定法"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u2_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "「私はちょうど宿題を終えました。」に最も近い英文は？",
+      "explanation": "現在完了の完了用法では have + 過去分詞を使います。",
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "I have just finished my homework.",
+        "I just finish my homework tomorrow.",
+        "I am finish my homework.",
+        "I have finishing my homework."
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u2_03",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "Have you checked your photos yet? に「まだです」と答えるなら？",
+      "explanation": "現在完了の疑問文には have / has で答えます。",
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "No, I haven't.",
+        "No, I don't.",
+        "No, I wasn't.",
+        "No, I won't."
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u2_04",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "「そのバスはまだ出発していません。」で yet を使う位置として自然なのは？",
+      "explanation": "否定文の yet は通常、文末に置きます。",
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "文末",
+        "主語の前だけ",
+        "haveと過去分詞の間だけ",
+        "必ず文頭"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u2_05",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "Have you ever seen ...? がたずねているのは主に何？",
+      "explanation": "ever を伴う現在完了は経験をたずねるときによく使います。",
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "経験",
+        "予定",
+        "命令",
+        "比較"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u2_06",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "修学旅行の話し合いで相手の意見の要点を捉えるために有効なのは？",
+      "explanation": "話し手の結論や理由を示す表現に注目すると要点を捉えやすくなります。",
+      "materialIds": [
+        "e-mitsumura-3-1"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "理由や結論を示す語に注目する",
+        "単語を一語ずつ日本語にするだけ",
+        "聞き取れない部分で止まり続ける",
+        "時刻だけ聞く"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u3_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "The dome has been like this for about 80 years. の for は何を表す？",
+      "explanation": "for + 期間で「〜の間」を表します。",
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "期間",
+        "開始時点",
+        "未来",
+        "比較"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u3_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "I've been a volunteer since 2000. の since は何を表す？",
+      "explanation": "since + 開始時点で「〜以来」を表します。",
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "開始時点",
+        "期間の長さ",
+        "回数",
+        "予定"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u3_03",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "How long have you been a volunteer? がたずねているのは？",
+      "explanation": "How long + 現在完了で継続期間をたずねます。",
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "どのくらいの期間か",
+        "何回行ったか",
+        "誰と行ったか",
+        "どこへ行くか"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u3_04",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "I've been thinking about our trip. は何を表す形？",
+      "explanation": "have been + 動詞ing は現在完了進行形です。",
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "現在完了進行形",
+        "受け身",
+        "仮定法",
+        "比較級"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u3_05",
+      "subject": "english",
+      "unit": "reading",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "learn how to work の how to work はどのような意味？",
+      "explanation": "how to + 動詞で「どのように〜するか」を表せます。",
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "どのように取り組むか",
+        "いつ働いたか",
+        "働かなかった理由",
+        "誰が働くかだけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u3_06",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "平和について読んだ内容への感想を書くとき、構成として適切なのは？",
+      "explanation": "根拠となる内容と自分の考えを分けて書くと伝わりやすくなります。",
+      "materialIds": [
+        "e-mitsumura-3-2"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "読んだ事実→自分が考えたこと",
+        "自分の名前だけ",
+        "単語一覧だけ",
+        "本文の丸写しだけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u4_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "Smartphones which respond to voice commands ... の which が説明している名詞は？",
+      "explanation": "関係代名詞whichは直前の物・事を表す名詞を説明します。",
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "Smartphones",
+        "commands",
+        "these days",
+        "language"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u4_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "I have an uncle who runs a restaurant. の who が説明するのは？",
+      "explanation": "人を先行詞とする主格の関係代名詞には who を使えます。",
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "an uncle",
+        "a restaurant",
+        "I",
+        "have"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u4_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "「私には東京に住んでいる友達がいます。」に近い英文は？",
+      "explanation": "人を説明する主格の関係代名詞whoを使います。",
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "I have a friend who lives in Tokyo.",
+        "I have a friend which live in Tokyo.",
+        "I have who a friend lives Tokyo.",
+        "I have a friend living Tokyo is."
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u4_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "language is a valuable experience that will help us ... の that の役割は？",
+      "explanation": "関係代名詞thatは先行詞experienceを後ろから説明します。",
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "experience を説明する",
+        "language を過去形にする",
+        "will を否定する",
+        "help を名詞にする"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u4_05",
+      "subject": "english",
+      "unit": "reading",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "AIについて複数の投稿文を読むとき、意見の違いをつかむのに有効なのは？",
+      "explanation": "各意見の主張と根拠を対比すると違いが明確になります。",
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "各人の主張と理由を整理する",
+        "最長の文だけ読む",
+        "同じ単語の数だけ数える",
+        "最後の行だけ読む"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u4_06",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "AIと言語学習について自分の意見を書くとき、説得力を高める方法は？",
+      "explanation": "意見には理由や具体例を添えると伝わりやすくなります。",
+      "materialIds": [
+        "e-mitsumura-3-3"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "理由や具体例を添える",
+        "結論を何度も繰り返すだけ",
+        "主語を全部省く",
+        "関係ない話題を増やす"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u5_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "Look at this picture (which) I found ... で which が省略できる理由として適切なのは？",
+      "explanation": "目的格の関係代名詞which/thatは省略できることがあります。",
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "目的格の関係代名詞だから",
+        "主語だから",
+        "be動詞だから",
+        "疑問文だから"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u5_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "The presentation (that) you gave was great. で that が説明している名詞は？",
+      "explanation": "that以下がpresentationを後ろから説明しています。",
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "The presentation",
+        "you",
+        "great",
+        "gave"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u5_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "「私が昨日買った本」に近い英語はどれ？",
+      "explanation": "目的格の関係代名詞を省略した接触節で名詞を説明できます。",
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "the book I bought yesterday",
+        "the book I buy tomorrow",
+        "the book who bought me",
+        "the book was bought I"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u5_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "Being a puppy walker was another great experience I had. の I had は何を説明している？",
+      "explanation": "I had がexperienceを後ろから説明する接触節になっています。",
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "experience",
+        "puppy",
+        "walker",
+        "another"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u5_05",
+      "subject": "english",
+      "unit": "reading",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "将来の夢についてのプレゼン原稿の概要をつかむとき、注目するとよいのは？",
+      "explanation": "中心となる夢と、その理由・経験の関係を捉えると概要が分かります。",
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "夢・理由・具体例の流れ",
+        "冠詞の数だけ",
+        "文字数だけ",
+        "ページ番号だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u5_06",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "将来の夢を発表するとき、聞き手に伝わりやすくする方法は？",
+      "explanation": "順序立てて、理由や経験を添えて話すと伝わりやすくなります。",
+      "materialIds": [
+        "e-mitsumura-3-4"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "結論→理由→具体例の順に整理する",
+        "すべて同じ速さで小声で読む",
+        "理由を言わない",
+        "単語だけ並べる"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u6_01",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "There are two people playing one piano. の playing one piano は何を説明する？",
+      "explanation": "現在分詞の句がpeopleを後ろから説明しています。",
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "two people",
+        "one piano",
+        "there",
+        "are"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u6_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "They're wearing T-shirts designed by Tina. の designed by Tina は何を説明する？",
+      "explanation": "過去分詞の句がT-shirtsを後ろから説明しています。",
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "T-shirts",
+        "They",
+        "wearing",
+        "Tina"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u6_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "「窓のそばに立っている少年」に近い英語は？",
+      "explanation": "現在分詞を名詞の後ろに置いて説明できます。",
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "the boy standing by the window",
+        "the boy stood by the window is",
+        "the boy who window",
+        "the standing window boy by"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u6_04",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "「彼女によって書かれた歌」に近い英語は？",
+      "explanation": "過去分詞を用いた後置修飾で受け身の意味を表せます。",
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "the song written by her",
+        "the song writing by her",
+        "the written her song by",
+        "the song wrote by she"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u6_05",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "Do you know when you're leaving? の when you're leaving の語順は？",
+      "explanation": "間接疑問では疑問詞の後ろを平叙文の語順にします。",
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "主語 + 動詞",
+        "疑問文と同じ倒置",
+        "動詞 + 主語",
+        "助動詞 + 主語だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u6_06",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "おすすめの作品について詳しい情報を伝え合うときに有効なのは？",
+      "explanation": "詳しい情報を伝えるには、理由・特徴・具体例を加えることが大切です。",
+      "materialIds": [
+        "e-mitsumura-3-5"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "相手の質問に理由や具体例を添えて答える",
+        "作品名だけ繰り返す",
+        "相手の話を聞かない",
+        "Yes/Noだけで終える"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u7_01",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "If you were in my place, you would feel the same. は何を表す？",
+      "explanation": "If + 過去形, would ... は現実とは異なる仮定を表せます。",
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "現実とは異なる仮定",
+        "確実な過去の事実",
+        "命令",
+        "比較"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u7_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "If I could speak to her, I (   ) say, \"Don't worry.\"",
+      "explanation": "仮定法では主節にwould/couldなどを使います。",
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "would",
+        "will",
+        "am",
+        "have"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u7_03",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "仮定法で be 動詞を使うとき、中学校で基本として学ぶ形は？",
+      "explanation": "仮定法では主語に関係なくwereを使う形を基本として学びます。",
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "主語に関係なく were",
+        "必ず am",
+        "必ず is",
+        "必ず be"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u7_04",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "I wish I could stay here. が表す気持ちに最も近いのは？",
+      "explanation": "I wish + 過去形/could は、現実とは異なる願いを表します。",
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "実際には難しいが、そうできたらよいのに",
+        "必ずここにいる予定だ",
+        "ここにいた過去の事実",
+        "ここにいるよう命令する"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u7_05",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "思い出のスピーチで内容の要点を捉えるとき、注目するとよいものは？",
+      "explanation": "出来事とそれに対する気持ち・考えを結び付けて聞くと要点を捉えやすくなります。",
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "中心となる出来事と話し手の気持ち",
+        "発音された文字数だけ",
+        "時刻だけ",
+        "接続詞を全て無視する"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u7_06",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "思いが伝わるスピーチにするために効果的なのは？",
+      "explanation": "具体的な経験とそこから生まれた気持ちをつなげると、思いが伝わりやすくなります。",
+      "materialIds": [
+        "e-mitsumura-3-6"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "具体的な経験と気持ちを関連づける",
+        "結論を言わない",
+        "ずっと下を向く",
+        "同じ単語だけ繰り返す"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u8_01",
+      "subject": "english",
+      "unit": "reading",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "Unit 8のような手紙を読むとき、まず捉えたいものは？",
+      "explanation": "手紙では、相手との関係や出来事を手がかりに、書き手の中心的な気持ちを捉えます。",
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "書き手が最も伝えたい気持ち",
+        "単語数だけ",
+        "日付だけ",
+        "文の長さだけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u8_02",
+      "subject": "english",
+      "unit": "reading",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "手紙の書き手の気持ちを読み取る手がかりとして特に有効なのは？",
+      "explanation": "感情や願いを表す表現と、その理由になる出来事を結び付けます。",
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "感謝・願い・思い出を表す表現",
+        "冠詞の数だけ",
+        "大文字の数だけ",
+        "句読点だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u8_03",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "英語で別れの手紙を書くとき、内容の組み立てとして自然なのは？",
+      "explanation": "手紙は相手を意識した呼びかけ、本文、結びを整えると読みやすくなります。",
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "相手への呼びかけ→伝えたい内容→結び",
+        "結び→無関係な話→呼びかけ",
+        "単語一覧だけ",
+        "数字だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u8_04",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "自分の気持ちを伝える手紙で具体性を高めるには？",
+      "explanation": "具体的な思い出や理由を添えると、気持ちがより伝わります。",
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "共有した思い出や理由を書く",
+        "goodだけ何度も書く",
+        "主語を全部省く",
+        "出来事を一切書かない"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u8_05",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "「あなたと過ごせてうれしかった」といった気持ちを伝えるとき大切なのは？",
+      "explanation": "難しさよりも、目的と相手に合った分かりやすい表現を選ぶことが大切です。",
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "相手に伝えたい気持ちに合う表現を選ぶ",
+        "難しい単語を必ず使う",
+        "文をできるだけ長くする",
+        "日本語の語順のまま並べる"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_hw3_u8_06",
+      "subject": "english",
+      "unit": "writing",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 3,
+      "question": "手紙を書き終えた後の推敲として確認するとよいものは？",
+      "explanation": "内容面と英文の正確さの両方を見直すことで、伝わりやすい手紙になります。",
+      "materialIds": [
+        "e-mitsumura-3-7"
+      ],
+      "source": "publisher-outline-original",
+      "choices": [
+        "内容の順序・文法・相手に伝わる表現",
+        "文字数だけ",
+        "ページ番号だけ",
+        "単語の最初の文字だけ"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mat_san3_07_04",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 2,
+      "question": "『万葉集・古今和歌集・新古今和歌集』を成立した順に並べたものはどれ？",
+      "choices": [
+        "万葉集→古今和歌集→新古今和歌集",
+        "古今和歌集→万葉集→新古今和歌集",
+        "新古今和歌集→万葉集→古今和歌集",
+        "万葉集→新古今和歌集→古今和歌集"
+      ],
+      "answer": 0,
+      "explanation": "万葉集が最も古く、次に古今和歌集、その後に新古今和歌集が成立しました。",
+      "materialIds": [
+        "j-sanseido-3-7"
+      ],
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "mat_san3_08_04",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 1,
+      "question": "『おくのほそ道』の作者を答えなさい。",
+      "answers": [
+        "松尾芭蕉",
+        "芭蕉"
+      ],
+      "explanation": "『おくのほそ道』は松尾芭蕉の紀行文です。",
+      "materialIds": [
+        "j-sanseido-3-8"
+      ],
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "mat_san3_09_04",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        3
+      ],
+      "type": "choice",
+      "difficulty": 1,
+      "question": "『論語』に記録されている中心人物の言行は誰のもの？",
+      "choices": [
+        "孔子",
+        "松尾芭蕉",
+        "清少納言",
+        "紫式部"
+      ],
+      "answer": 0,
+      "explanation": "『論語』は孔子と弟子たちの言行を伝える書物です。",
+      "materialIds": [
+        "j-sanseido-3-9"
+      ],
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "mat_san3_10_04",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 1,
+      "question": "『初恋』の作者を答えなさい。",
+      "answers": [
+        "島崎藤村",
+        "藤村"
+      ],
+      "explanation": "詩「初恋」の作者は島崎藤村です。",
+      "materialIds": [
+        "j-sanseido-3-10"
+      ],
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "mat_san3_11_04",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 1,
+      "question": "『故郷』の作者を答えなさい。",
+      "answers": [
+        "魯迅",
+        "ろじん"
+      ],
+      "explanation": "『故郷』は中国の作家・魯迅の作品です。",
+      "materialIds": [
+        "j-sanseido-3-11"
+      ],
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "mat_san3_13_04",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        3
+      ],
+      "type": "word",
+      "difficulty": 1,
+      "question": "『坊っちゃん』の作者を答えなさい。",
+      "answers": [
+        "夏目漱石",
+        "漱石"
+      ],
+      "explanation": "『坊っちゃん』の作者は夏目漱石です。",
+      "materialIds": [
+        "j-sanseido-3-13"
+      ],
+      "source": "publisher-outline-original"
+    },
+    {
+      "id": "v030_en_reorder_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・継続",
+      "type": "reorder",
+      "question": "「私は3年間ここに住んでいます。」になるように語句を並べ替えなさい。",
+      "items": [
+        "I",
+        "have",
+        "lived",
+        "here",
+        "for",
+        "three",
+        "years",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "現在完了の継続は have + 過去分詞 を使い、期間には for を使います。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_reorder_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞",
+      "type": "reorder",
+      "question": "「これは私が昨日買った本です。」になるように語句を並べ替えなさい。",
+      "items": [
+        "This",
+        "is",
+        "the",
+        "book",
+        "that",
+        "I",
+        "bought",
+        "yesterday",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "先行詞 the book の後ろに that I bought yesterday を置きます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_reorder_03",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "仮定法",
+      "type": "reorder",
+      "question": "「もし私があなたなら、彼に話します。」になるように語句を並べ替えなさい。",
+      "items": [
+        "If",
+        "I",
+        "were",
+        "you",
+        ",",
+        "I",
+        "would",
+        "talk",
+        "to",
+        "him",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "explanation": "現在の事実と異なる仮定では If I were ..., I would ... の形を使います。",
+      "difficulty": 3
+    },
+    {
+      "id": "v030_en_fill_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・完了",
+      "type": "fill",
+      "question": "次の英文の（1）（2）に入る語を書きなさい。 She （1） already （2） her homework.",
+      "blanks": [
+        [
+          "has"
+        ],
+        [
+          "finished"
+        ]
+      ],
+      "explanation": "主語が She なので has、finish の過去分詞 finished を使います。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_fill_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "仮定法",
+      "type": "fill",
+      "question": "次の英文の（1）（2）に入る語を書きなさい。 If I （1） you, I （2） study harder.",
+      "blanks": [
+        [
+          "were"
+        ],
+        [
+          "would"
+        ]
+      ],
+      "explanation": "仮定法では If I were you, I would ... が基本形です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_fill_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞",
+      "type": "fill",
+      "question": "空欄に入る関係代名詞を書きなさい。 This is the dog （1） helped me.",
+      "blanks": [
+        [
+          "that",
+          "which"
+        ]
+      ],
+      "explanation": "先行詞が物・動物で主格なので that または which が使えます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_multi_01",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "topic": "受け身",
+      "type": "multi",
+      "question": "受け身の文をすべて選びなさい。",
+      "choices": [
+        "This book was written by Soseki.",
+        "I wrote a letter yesterday.",
+        "English is spoken in many countries.",
+        "She plays tennis every Sunday."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "受け身は be動詞 + 過去分詞の形です。was written と is spoken が該当します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_multi_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了",
+      "type": "multi",
+      "question": "現在完了が使われている文をすべて選びなさい。",
+      "choices": [
+        "I have visited Kyoto twice.",
+        "She has just finished lunch.",
+        "We played soccer yesterday.",
+        "He is studying now."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "have/has + 過去分詞になっている1と2が現在完了です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_ja_multi_01",
+      "subject": "japanese",
+      "unit": "grammar-advanced",
+      "grades": [
+        2,
+        3
+      ],
+      "topic": "敬語",
+      "type": "multi",
+      "question": "尊敬語に当たるものをすべて選びなさい。",
+      "choices": [
+        "おっしゃる",
+        "召し上がる",
+        "申し上げる",
+        "いただく"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "「おっしゃる」「召し上がる」は相手側の動作を高める尊敬語です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_ja_multi_02",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2,
+        3
+      ],
+      "topic": "古典",
+      "type": "multi",
+      "question": "古文を読むときの基本的な確認事項として適切なものをすべて選びなさい。",
+      "choices": [
+        "歴史的仮名遣いを現代仮名遣いに直す",
+        "主語が省略されていないか確認する",
+        "すべての語を英語に訳す",
+        "古語の意味を文脈から確認する"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "歴史的仮名遣い、主語の省略、古語の意味を確認することが読解の基本です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_sc_fill_01",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "イオン",
+      "type": "fill",
+      "question": "塩化ナトリウムが水に溶けると、ナトリウムイオン Na+ と（1）イオン Cl- に分かれる。（1）を書きなさい。",
+      "blanks": [
+        [
+          "塩化物",
+          "塩化物イオン"
+        ]
+      ],
+      "explanation": "Cl- は塩化物イオンです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v030_sc_multi_01",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "力学的エネルギー",
+      "type": "multi",
+      "question": "力学的エネルギーに含まれるものをすべて選びなさい。",
+      "choices": [
+        "運動エネルギー",
+        "位置エネルギー",
+        "電気エネルギー",
+        "化学エネルギー"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "力学的エネルギーは運動エネルギーと位置エネルギーの和です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v030_so_multi_01",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "topic": "日本国憲法",
+      "type": "multi",
+      "question": "日本国憲法の基本原理として正しいものをすべて選びなさい。",
+      "choices": [
+        "国民主権",
+        "基本的人権の尊重",
+        "平和主義",
+        "鎖国主義"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "日本国憲法の三大基本原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v030_ma_fill_01",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "topic": "二次方程式",
+      "type": "fill",
+      "question": "x² - 5x + 6 = 0 を因数分解して解くと、x = （1）, （2）となる。小さい方から入力しなさい。",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "explanation": "(x-2)(x-3)=0 なので x=2,3 です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v030_ma_multi_01",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "topic": "平方根",
+      "type": "multi",
+      "question": "√12 と等しい表し方をすべて選びなさい。",
+      "choices": [
+        "2√3",
+        "√4×√3",
+        "3√2",
+        "√6+√6"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "√12=√(4×3)=2√3 です。√4×√3 も同じ値になります。",
+      "difficulty": 2
     }
   ],
-  "notes": "Ver.0.16: 主要5教科の全単元に短答式の追加問題を収録。既存問題に難易度1〜3を付与し、出題履歴を使うスマート出題に対応。追加157問。"
+  "notes": "Ver.0.16: 主要5教科の全単元に短答式の追加問題を収録。既存問題に難易度1〜3を付与し、出題履歴を使うスマート出題に対応。追加157問。 教材/Unit専用問題タグ(materialIds)と専用問題サンプルを追加。 Ver.0.24: 中3教材専用問題を104問追加（三省堂国語・光村英語を重点化）。"
 }

@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.20.1" />
+  <link rel="stylesheet" href="style.css?v=0.30.0" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -82,25 +82,9 @@
         <p class="help">静岡県教育委員会の市町立中学校の採択結果を使用しています。</p>
       </div>
       <div class="textbook-setting-toolbar"><p id="textbookSettingStatus" class="summary">地区を選ぶと9教科をまとめて設定します。</p><button id="resetTextbookOverrides" class="secondary" type="button" hidden>手動変更をすべて解除</button></div>
-      <div id="allTextbookGrid" class="all-textbook-grid"></div>
+      <div id="japaneseTextbookHost" class="textbook-single-host"></div>
 
-      <div id="textbookRangeManager" class="step-card textbook-range-manager">
-        <div class="textbook-head">
-          <div><h3>教材・作品を登録</h3><p class="help">国語の教材・作品名や英語のUnit名を登録し、小テストの範囲をワンタップで選べるようにします。</p></div>
-          <span class="textbook-badge">端末内保存</span>
-        </div>
-        <div class="textbook-range-form">
-          <label><strong>教科</strong><select id="rangeSubject"><option value="japanese">📕 国語</option><option value="english">🔤 英語</option></select></label>
-          <label><strong>学年</strong><select id="rangeGrade"><option value="1">中1</option><option value="2" selected>中2</option><option value="3">中3</option></select></label>
-          <label><strong>教材名 / Unit名</strong><input id="rangeTitle" type="text" placeholder="例：Unit 3 / 作品名"></label>
-          <label><strong>ページ（任意）</strong><input id="rangePages" type="text" placeholder="例：p.42〜57"></label>
-        </div>
-        <p id="rangePublisher" class="help"></p>
-        <div><strong>関連する単元</strong><p class="help">この教材を選んだときに一括でチェックする単元を選びます。</p><div id="rangeUnitChoices" class="range-unit-choices"></div></div>
-        <button id="saveTextbookRange" class="primary" type="button">教材 / Unitを登録</button>
-        <p id="rangeStatus" class="summary"></p>
-        <div id="textbookRangeList" class="textbook-range-list"></div>
-      </div>
+      <div id="allTextbookGrid" class="all-textbook-grid"></div>
     </section>
 
     <section id="quizView" class="view">
@@ -127,10 +111,27 @@
         </div>
         <div id="subjectTextbookList" class="textbook-inline-list"></div>
       </div>
-      <div id="textbookRangeQuickCard" class="step-card textbook-card" hidden>
-        <h3>教科書の教材 / Unitから選ぶ</h3>
-        <p class="help">登録済みの教材を押すと、関連する単元をまとめて選択します。</p>
-        <div id="textbookRangeQuickList" class="textbook-range-quick-list"></div>
+      <div id="quizTextbookCandidateCard" class="step-card exam-textbook-picker" hidden>
+        <div class="exam-range-head">
+          <div>
+            <h3>教科書の教材 / Unit候補</h3>
+            <p class="help">年度・現在設定中の出版社・学年から候補を表示します。候補を押すと関連する単元をまとめて選択します。</p>
+          </div>
+          <label class="exam-year-select"><span>教科書年度</span>
+            <select id="quizTextbookYear">
+              <option value="2025">令和7年度（2025）</option>
+              <option value="2026" selected>令和8年度（2026）</option>
+              <option value="2027">令和9年度（2027）</option>
+              <option value="2028">令和10年度（2028）</option>
+            </select>
+          </label>
+        </div>
+        <div id="quizTextbookCandidates" class="exam-textbook-candidates"></div>
+      </div>
+      <div id="quizSelectedMaterialsCard" class="step-card textbook-card" hidden>
+        <h3>選択中の教材 / Unit</h3>
+        <p class="help">教材候補から選んだ範囲を確認できます。テスト開始後も学習履歴に保存します。</p>
+        <div id="quizSelectedMaterials" class="selected-material-list"></div>
       </div>
       <div class="step-card">
         <h3>3. 分野・単元</h3>
@@ -174,6 +175,23 @@
         <h3>学年</h3>
         <div id="examGradeChoices" class="chip-row"></div>
       </div>
+      <div class="step-card exam-textbook-picker">
+        <div class="exam-range-head">
+          <div>
+            <h3>教科書の教材 / Unit候補</h3>
+            <p class="help">年度・現在設定中の出版社・学年から候補を表示します。候補を押すと関連する単元を出題範囲へ追加します。</p>
+          </div>
+          <label class="exam-year-select"><span>教科書年度</span>
+            <select id="examTextbookYear">
+              <option value="2025">令和7年度（2025）</option>
+              <option value="2026">令和8年度（2026）</option>
+              <option value="2027">令和9年度（2027）</option>
+              <option value="2028">令和10年度（2028）</option>
+            </select>
+          </label>
+        </div>
+        <div id="examTextbookCandidates" class="exam-textbook-candidates"></div>
+      </div>
       <div class="step-card">
         <div class="exam-range-head"><h3>出題範囲</h3><button id="clearExamUnits" class="secondary" type="button">選択を解除</button></div>
         <p class="help">複数教科・複数単元をまとめて選択できます。</p>
@@ -182,6 +200,43 @@
       <p id="examEditSummary" class="summary"></p>
       <button id="saveExamPlan" class="primary" type="button">テスト予定を保存</button>
       <button id="cancelExamEdit" class="secondary wide" type="button">キャンセル</button>
+    </section>
+
+
+    <section id="mockExamSetupView" class="view">
+      <div class="section-head">
+        <button id="cancelMockExam" class="back" type="button" aria-label="定期テスト一覧へ戻る">←</button>
+        <div><p class="eyebrow">定期テスト対策</p><h2>模擬テストを作る</h2></div>
+      </div>
+      <div class="step-card mock-setup-hero">
+        <p class="eyebrow">対象テスト</p>
+        <h3 id="mockExamName">定期テスト</h3>
+        <p id="mockExamMeta" class="help"></p>
+      </div>
+      <div class="step-card">
+        <h3>1. 問題数</h3>
+        <div id="mockCountChoices" class="chip-row">
+          <button class="chip" data-mock-count="10" type="button">10問</button>
+          <button class="chip selected" data-mock-count="20" type="button">20問</button>
+          <button class="chip" data-mock-count="30" type="button">30問</button>
+          <button class="chip" data-mock-count="all" type="button">全部</button>
+        </div>
+      </div>
+      <div class="step-card">
+        <h3>2. 制限時間</h3>
+        <div id="mockMinuteChoices" class="chip-row">
+          <button class="chip" data-mock-minutes="15" type="button">15分</button>
+          <button class="chip selected" data-mock-minutes="30" type="button">30分</button>
+          <button class="chip" data-mock-minutes="45" type="button">45分</button>
+          <button class="chip" data-mock-minutes="60" type="button">60分</button>
+        </div>
+      </div>
+      <div class="step-card">
+        <h3>出題ルール</h3>
+        <p class="help">登録した定期テスト範囲から、選択式・短答式の自動採点できる問題を出題します。教材 / Unit専用問題を優先し、基礎・標準・応用と教科の偏りを調整します。正解・解説は終了後にまとめて表示します。</p>
+      </div>
+      <p id="mockExamSetupSummary" class="summary"></p>
+      <button id="startMockExam" class="primary" type="button">模擬テストを開始</button>
     </section>
 
     <section id="reviewView" class="view">
@@ -217,10 +272,11 @@
     <section id="playView" class="view">
       <div class="quiz-topbar">
         <button id="quitQuiz" class="back" aria-label="小テストを終了">✕</button>
-        <div><p id="quizSubject" class="eyebrow"></p><strong id="quizProgress"></strong></div>
+        <div><p id="quizSubject" class="eyebrow"></p><strong id="quizProgress"></strong></div><div id="mockTimerBox" class="mock-timer" hidden><span>⏱️</span><strong id="mockTimer">残り 30:00</strong></div>
       </div>
       <div class="question-card">
         <p class="question-label">問題</p>
+        <div id="referencePageBox" class="reference-page-box" hidden></div>
         <h2 id="questionText"></h2>
         <div id="answerArea" class="answer-list"></div>
         <button id="dontKnow" class="dont-know" type="button">わからない</button>
@@ -232,10 +288,10 @@
     <section id="resultView" class="view">
       <div class="result-card">
         <div class="result-icon">🎉</div>
-        <p class="eyebrow">小テスト完了</p>
+        <p id="resultEyebrow" class="eyebrow">小テスト完了</p>
         <h2 id="resultScore">0 / 0</h2>
         <p id="resultRate" class="result-rate">正答率 0%</p>
-        <p class="help">間違えた問題は「苦手を復習」からもう一度解けます。</p>
+        <p class="help">間違えた問題は「苦手を復習」からもう一度解けます。</p><div id="mockResultDetails" class="mock-result-details" hidden></div>
         <button id="retryQuiz" class="primary" type="button">もう一度挑戦</button>
         <button id="backHomeResult" class="secondary wide" type="button">ホームへ戻る</button>
       </div>
@@ -263,6 +319,21 @@
         <h3>苦手単元</h3>
         <p class="help">現在「苦手を復習」に残っている問題を単元ごとに集計します。</p>
         <div id="weakUnitStats" class="weak-unit-list"></div>
+      </div>
+
+      <div class="step-card">
+        <div class="stats-section-head"><h3>模擬テスト履歴</h3><span class="stats-muted">最新12件</span></div>
+        <p class="help">結果を開くと、間違いだけの復習・類題・同じ問題への再挑戦ができます。</p>
+        <div id="mockExamHistory" class="mock-exam-history"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>模擬テストの点数推移</h3>
+        <p class="help">各模擬テストでその教科・単元に出題された問題の得点率を並べます。</p>
+        <h4 class="trend-heading">教科別</h4>
+        <div id="mockSubjectTrends" class="trend-list"></div>
+        <h4 class="trend-heading">単元別</h4>
+        <div id="mockUnitTrends" class="trend-list"></div>
       </div>
 
       <div class="step-card">
@@ -328,6 +399,7 @@
         <select id="importField"><option value="">分野を選択</option></select>
         <select id="importUnit"><option value="">単元を選択</option></select>
         <label><strong>教科書との関係</strong><select id="importTextbookScope"><option value="common">共通問題として登録</option><option value="current">現在設定中の教科書に限定</option></select></label>
+        <label id="importMaterialWrap" hidden><strong>教材 / Unit（任意）</strong><select id="importMaterial"><option value="">教材 / Unitを指定しない</option></select></label>
         <p id="importTextbookHint" class="help">教科書設定に応じて登録先を選べます。</p>
       </div>
       <button class="primary" id="saveQuestions">確認した問題を端末に登録</button>
@@ -433,7 +505,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="data/textbooks.js"></script>
-  <script src="app.js?v=0.20.1"></script>
+  <script src="app.js?v=0.30.0"></script>
 </body>
 </html>

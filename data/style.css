@@ -77,3 +77,62 @@ progress{width:100%;height:12px;margin:10px 0}.import-question-editor{display:gr
 /* v0.20.1: 国語カード直下の教材・作品登録 */
 .textbook-range-inline{grid-column:1 / -1;margin-top:0}
 .textbook-range-mount{grid-column:1 / -1}
+
+.textbook-single-host{margin-top:12px}.textbook-single-host .textbook-subject-card{max-width:100%}.textbook-range-manager{margin-top:12px;margin-bottom:12px}
+
+/* v0.21 定期テスト: 教科書年度・出版社・学年から教材候補 */
+.exam-textbook-picker .exam-range-head{align-items:flex-start}
+.exam-textbook-picker .exam-range-head h3{margin-bottom:3px}
+.exam-textbook-picker .exam-range-head .help{margin:0;max-width:570px}
+.exam-year-select{min-width:190px;flex:0 0 auto}
+.exam-year-select span{display:block;font-size:.75rem;color:#667085;font-weight:800;margin-bottom:3px}
+.exam-year-select select{margin:0;min-height:42px;padding:8px 10px}
+.exam-textbook-candidates{display:grid;gap:12px;margin-top:14px}
+.exam-textbook-candidate-card{border:1px solid #e4e7ec;border-radius:16px;background:#fbfcfe;padding:14px}
+.exam-textbook-candidate-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}
+.exam-textbook-candidate-head strong{display:block;font-size:1rem}
+.exam-textbook-candidate-head small{display:block;color:#667085;margin-top:2px}
+.exam-textbook-candidate-list{display:flex;flex-wrap:wrap;gap:8px}
+.exam-material-btn{border:1px solid #d0d5dd;background:#fff;border-radius:13px;padding:10px 12px;text-align:left;cursor:pointer;font:inherit;min-width:150px;max-width:100%}
+.exam-material-btn strong{display:block;font-size:.86rem;overflow-wrap:anywhere}
+.exam-material-btn small{display:block;color:#667085;font-size:.72rem;margin-top:3px}
+.exam-material-btn:hover{background:#f8fafc}
+.exam-material-btn.selected{border-color:#98a2b3;background:#eef2ff}
+@media(max-width:620px){.exam-textbook-picker .exam-range-head{display:grid;gap:10px}.exam-year-select{min-width:0;width:100%}.exam-textbook-candidate-list{display:grid;grid-template-columns:1fr}.exam-material-btn{width:100%}}
+
+/* v0.22 selected textbook materials */
+.selected-material-list{display:grid;gap:10px;margin-top:10px}.selected-material-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #d9e0ea;border-radius:14px;background:#fff}.selected-material-item span{display:grid;gap:3px}.selected-material-item small{color:#667085}.selected-material-item .secondary{width:auto;min-width:72px;padding:9px 12px}@media(max-width:640px){.selected-material-item{align-items:flex-start}.selected-material-item .secondary{min-width:64px}}
+
+
+/* v0.25 textbook reference pages */
+.reference-page-box{margin:0 0 14px;padding:12px 14px;border:1px solid #d9e2ec;border-radius:14px;background:#f8fafc;display:grid;gap:8px}
+.reference-page-box[hidden]{display:none}
+.reference-page-box>p{margin:0;font-size:.78rem;font-weight:800;color:#475467}
+.reference-page-box>div{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.reference-page-box strong{font-size:.92rem}
+.reference-page-box span{font-size:.8rem;color:#667085}
+@media(max-width:640px){.reference-page-box>div{display:grid;gap:2px}}
+
+/* v0.28 定期テスト向け模擬テスト */
+.mock-setup-hero h3{margin:4px 0 6px;font-size:1.25rem}.mock-timer{margin-left:auto;display:flex;align-items:center;gap:6px;border:1px solid #d0d5dd;background:#fff;border-radius:999px;padding:8px 11px;white-space:nowrap}.mock-timer[hidden]{display:none}.mock-timer strong{font-variant-numeric:tabular-nums}.mock-result-details{display:grid;gap:14px;margin:18px 0;text-align:left}.mock-result-details[hidden]{display:none}.mock-result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.mock-result-stat{border:1px solid #e4e7ec;border-radius:14px;background:#fff;padding:11px;display:grid;gap:3px}.mock-result-stat strong{font-size:.9rem}.mock-result-stat span{font-size:1.1rem;font-weight:800}.mock-result-stat small{color:#667085}.mock-analysis{border-radius:14px;background:#f8fafc;border:1px solid #e4e7ec;padding:13px}.mock-analysis h3{margin:0 0 7px;font-size:1rem}.mock-analysis p{margin:5px 0;font-size:.88rem}.mock-review{border:1px solid #e4e7ec;border-radius:14px;background:#fff;padding:11px}.mock-review summary{cursor:pointer;font-weight:800}.mock-review-item{margin-top:10px;padding:11px;border-radius:12px;border-left:4px solid #d0d5dd;background:#f8fafc}.mock-review-item.ok{border-left-color:#12b76a}.mock-review-item.ng{border-left-color:#f04438}.mock-review-item p{margin:6px 0;font-size:.86rem}.mock-review-item small{display:block;color:#667085;line-height:1.55}.exam-card-actions{flex-wrap:wrap}.exam-card-actions .exam-mock{font-weight:800}
+@media(max-width:620px){.quiz-topbar{align-items:flex-start;flex-wrap:wrap}.mock-timer{order:3;margin-left:0;width:100%;justify-content:center}.mock-result-grid{grid-template-columns:1fr}.exam-card-actions .exam-study,.exam-card-actions .exam-mock{flex:1 1 46%}}
+
+/* v0.29 模擬テスト復習・再挑戦・成績推移 */
+.mock-growth{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:13px 14px;border:1px solid #d0d5dd;border-radius:14px;background:#f8fafc}.mock-growth strong{font-size:1rem}.mock-growth span{font-size:.82rem;font-weight:800}.mock-result-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mock-result-actions button{width:100%}.mock-attempt-chain{display:grid;gap:5px;padding:11px 13px;border:1px solid #e4e7ec;border-radius:13px;background:#fff}.mock-attempt-chain span{color:#667085;font-size:.86rem;line-height:1.5}.mock-exam-history,.trend-list{display:grid;gap:9px;margin-top:10px}.mock-history-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:10px;padding:11px 12px;border:1px solid #eaecf0;border-radius:12px;background:#fcfcfd}.mock-history-row>div{min-width:0;display:grid;gap:3px}.mock-history-row small{color:#667085;white-space:normal}.mock-history-row>span{font-weight:900;white-space:nowrap}.mock-history-row button{padding:7px 10px}.trend-heading{margin:16px 0 7px}.trend-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #eaecf0}.trend-row:last-child{border-bottom:0}.trend-row>div{min-width:0;display:grid;gap:3px}.trend-row small{color:#667085;line-height:1.45;overflow-wrap:anywhere}.trend-row>span{font-weight:900;white-space:nowrap}.trend-row>span.up::before{content:'↗ '}.trend-row>span.down::before{content:'↘ '}
+@media(max-width:620px){.mock-result-actions{grid-template-columns:1fr}.mock-history-row{grid-template-columns:minmax(0,1fr) auto}.mock-history-row button{grid-column:1/-1;width:100%}.trend-row{align-items:start}.trend-row small{font-size:.78rem}}
+
+/* Ver.0.30: test-like answer formats */
+.answer-instruction{margin:0 0 10px;color:#667085;font-size:.9rem;font-weight:700}
+.multi-choice-list{display:grid;gap:10px}
+.multi-choice-item{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;border:1px solid #d0d5dd;border-radius:14px;padding:13px 14px;background:#fff;cursor:pointer;font-weight:700}
+.multi-choice-item input{width:20px;height:20px;margin:0}
+.reorder-built,.reorder-pool{display:flex;flex-wrap:wrap;gap:8px;min-height:56px;border-radius:14px;padding:10px;margin-bottom:10px}
+.reorder-built{border:2px dashed #b9c2d0;background:#f8fafc}
+.reorder-pool{border:1px solid #e4e7ec;background:#fff}
+.reorder-token{border:1px solid #b9c2d0;border-radius:12px;background:#fff;padding:10px 12px;font:inherit;font-weight:800;cursor:pointer}
+.reorder-token.selected{background:#f2f4f7}
+.reorder-placeholder{align-self:center;color:#98a2b3;font-size:.9rem}
+.reorder-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fill-label{display:grid;grid-template-columns:48px 1fr;align-items:center;gap:8px;margin-bottom:8px;font-weight:800}
+.fill-label .answer-input{margin:0}
+@media(max-width:620px){.reorder-token{padding:11px 10px}.fill-label{grid-template-columns:42px 1fr}}

@@ -46,8 +46,18 @@ AI bindingを設定しなくても、AI解説以外の機能は利用できま�
 ## PWA確認
 デプロイ後、`https://study.mytools-lab.com/manifest.webmanifest` と `https://study.mytools-lab.com/sw.js` が開けることを確認してください。PWAはHTTPS上でのみService Workerを登録します。
 
-## v0.20.1 更新
+## v0.20.2 更新
 
 - 教科書設定は採択地区の自動設定後に、各教科・分冊ごと手動変更できます。
 - 手動変更はブラウザ内の設定に保存され、出題条件にも反映されます。
 - 紙から登録する問題は「共通問題」または「現在設定中の教科書に限定」を選べます。
+
+
+## v0.21 更新
+
+静的ファイルを差し替えて GitHub へ push すると Cloudflare Pages が自動再デプロイします。PWA の Service Worker キャッシュ名も v0.21 に更新しています。
+
+
+## v0.21.1 更新
+
+小テスト対策にも年度・出版社・学年から教材 / Unit候補を自動表示する機能を追加しました。PWAキャッシュは v0.21.1 に更新しています。

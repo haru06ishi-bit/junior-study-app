@@ -11,7 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.28.0" />
+  <link rel="stylesheet" href="style.css?v=0.29.0" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -322,6 +322,21 @@
       </div>
 
       <div class="step-card">
+        <div class="stats-section-head"><h3>模擬テスト履歴</h3><span class="stats-muted">最新12件</span></div>
+        <p class="help">結果を開くと、間違いだけの復習・類題・同じ問題への再挑戦ができます。</p>
+        <div id="mockExamHistory" class="mock-exam-history"></div>
+      </div>
+
+      <div class="step-card">
+        <h3>模擬テストの点数推移</h3>
+        <p class="help">各模擬テストでその教科・単元に出題された問題の得点率を並べます。</p>
+        <h4 class="trend-heading">教科別</h4>
+        <div id="mockSubjectTrends" class="trend-list"></div>
+        <h4 class="trend-heading">単元別</h4>
+        <div id="mockUnitTrends" class="trend-list"></div>
+      </div>
+
+      <div class="step-card">
         <h3>最近の学習</h3>
         <div id="recentStudyHistory" class="recent-history-list"></div>
       </div>
@@ -490,6 +505,6 @@
   <canvas id="captureCanvas" hidden></canvas>
   <script src="data/curriculum.js"></script>
   <script src="data/questions.js"></script>
-  <script src="app.js?v=0.28.0"></script>
+  <script src="app.js?v=0.29.0"></script>
 </body>
 </html>

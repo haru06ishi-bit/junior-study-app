@@ -1,5 +1,5 @@
 window.QUESTION_DATA = {
-  "version": "0.34.0",
+  "version": "0.35.0",
   "questions": [
     {
       "id": "ja001",
@@ -19001,7 +19001,6091 @@ window.QUESTION_DATA = {
       ],
       "textbookPublisher": "kyoiku-shuppan",
       "source": "publisher-outline-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_00_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『朝のリレー』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_00_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『朝のリレー』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_01_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『竜』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_01_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『竜』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_02_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『ペンギンの防寒着』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_02_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『ペンギンの防寒着』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_03_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『クジラの飲み水』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_03_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『クジラの飲み水』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_04_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『空中ブランコ乗りのキキ』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_04_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『空中ブランコ乗りのキキ』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_05_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『字のない葉書』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_05_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『字のない葉書』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_06_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『一〇〇〇円の価値を考える』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_06_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『一〇〇〇円の価値を考える』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_07_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『竹取物語』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_07_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『竹取物語』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_08_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『矛盾―故事成語』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-8"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_08_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『矛盾―故事成語』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-8"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_09_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『トロッコ』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-9"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_09_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『トロッコ』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-9"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_10_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『少年の日の思い出』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-1-10"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g1_10_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『少年の日の思い出』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-1-10"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_00_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『名づけられた葉』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_00_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『名づけられた葉』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_01_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『セミロングホームルーム』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_01_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『セミロングホームルーム』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_02_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『宇宙に行くための素材』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_02_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『宇宙に行くための素材』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_03_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『人間は他の星に住むことができるのか』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_03_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『人間は他の星に住むことができるのか』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_04_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『短歌十首』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_04_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『短歌十首』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_05_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『壁に残された伝言』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_05_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『壁に残された伝言』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_06_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『味は味覚だけでは決まらない』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_06_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『味は味覚だけでは決まらない』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_07_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『枕草子・徒然草』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_07_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『枕草子・徒然草』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_08_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『平家物語』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-8"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_08_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『平家物語』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-8"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_09_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『漢詩の世界』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-9"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_09_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『漢詩の世界』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-9"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_10_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『小さな手袋』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-sanseido-2-10"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_sanseido_g2_10_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『小さな手袋』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-sanseido-2-10"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_00_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『朝のリレー』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_00_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『朝のリレー』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_01_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『はじまりの風』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_01_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『はじまりの風』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_02_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『ダイコンは大きな根？』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-2"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_02_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『ダイコンは大きな根？』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-2"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_03_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『ちょっと立ち止まって』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_03_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『ちょっと立ち止まって』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_04_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『空の詩 三編』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_04_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『空の詩 三編』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_05_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『大人になれなかった弟たちに……』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_05_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『大人になれなかった弟たちに……』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_06_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『星の花が降るころに』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_06_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『星の花が降るころに』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_07_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『「言葉」をもつ鳥、シジュウカラ』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_07_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『「言葉」をもつ鳥、シジュウカラ』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_08_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『蓬莱の玉の枝―「竹取物語」から』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-8"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_08_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『蓬莱の玉の枝―「竹取物語」から』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-8"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_09_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『少年の日の思い出』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-1-9"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g1_09_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『少年の日の思い出』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-1-9"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_00_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『見えないだけ』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_00_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『見えないだけ』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_01_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『アイスプラネット』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_01_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『アイスプラネット』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_02_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『枕草子』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-2"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_02_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『枕草子』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-2"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_03_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『クマゼミ増加の原因を探る』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_03_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『クマゼミ増加の原因を探る』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_04_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『字のない葉書』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_04_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『字のない葉書』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_05_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『モアイは語る―地球の未来』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_05_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『モアイは語る―地球の未来』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_06_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『平家物語』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_06_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『平家物語』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_07_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『仁和寺にある法師』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_07_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『仁和寺にある法師』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_08_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『漢詩の風景』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-8"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_08_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『漢詩の風景』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-8"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_09_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『君は「最後の晩餐」を知っているか』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-mitsumura-2-9"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_mitsumura_g2_09_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『君は「最後の晩餐」を知っているか』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-mitsumura-2-9"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_00_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『聞くということ』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-0"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_00_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『聞くということ』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-0"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_01_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『桜蝶』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-1"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_01_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『桜蝶』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-1"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_02_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『自分の脳を知っていますか』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-2"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_02_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『自分の脳を知っていますか』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-2"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_03_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『ベンチ』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-3"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_03_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『ベンチ』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-3"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_04_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『森には魔法つかいがいる』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-4"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_04_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『森には魔法つかいがいる』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-4"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_05_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『昔話と古典―箱に入った桃太郎―』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-5"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_05_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『昔話と古典―箱に入った桃太郎―』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-5"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_06_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『物語の始まり―竹取物語―』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-6"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_06_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『物語の始まり―竹取物語―』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-6"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_07_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『故事成語―中国の名言―』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-7"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_07_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『故事成語―中国の名言―』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-7"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_08_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『河童と蛙』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-8"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_08_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『河童と蛙』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-8"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_09_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『オツベルと象』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-9"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_09_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『オツベルと象』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-9"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_10_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『少年の日の思い出』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-10"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g1_10_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "『少年の日の思い出』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-1-10"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_00_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『虹の足』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-0"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_00_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『虹の足』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-0"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_01_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『タオル』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-1"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_01_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『タオル』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-1"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_02_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『日本の花火の楽しみ』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-2"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_02_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『日本の花火の楽しみ』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-2"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_03_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『水の山 富士山』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-3"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_03_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『水の山 富士山』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-3"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_04_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『夢を跳ぶ』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-4"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_04_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『夢を跳ぶ』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-4"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_05_1",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『紙の建築』のような説明的文章で、筆者の主張を正確に捉えるために重要なのはどれ？",
+      "choices": [
+        "事実・具体例と筆者の意見を区別して読む",
+        "数字だけを暗記する",
+        "段落数だけを数える",
+        "題名だけで結論を決める"
+      ],
+      "answer": 0,
+      "explanation": "事実や具体例が、筆者の意見・主張をどのように支えているかを確認します。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-5"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_05_2",
+      "subject": "japanese",
+      "unit": "expository",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『紙の建築』の論の展開を整理するとき、最も役立つ方法はどれ？",
+      "choices": [
+        "各段落の役割と段落どうしのつながりを確認する",
+        "難しい漢字だけを抜き出す",
+        "最長の段落だけ読む",
+        "結論を予想して本文を読まない"
+      ],
+      "answer": 0,
+      "explanation": "各段落が問題提起・具体例・理由・結論などのどの役割を持つか整理すると論理が見えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-5"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_06_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『敦盛の最期―平家物語―』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-6"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_06_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『敦盛の最期―平家物語―』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-6"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_07_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『随筆の味わい―枕草子・徒然草―』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-7"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_07_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『随筆の味わい―枕草子・徒然草―』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-7"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_08_1",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『二千五百年前からのメッセージ―孔子の言葉―』のような古典を読むとき、内容を理解するために有効なのはどれ？",
+      "choices": [
+        "原文の語句と現代語訳を対応させて読む",
+        "漢字の画数だけ数える",
+        "現代語訳だけ暗記して原文を見ない",
+        "ページ番号だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "原文の語句・表現と現代語訳を対応させることで、古典特有の表現も理解しやすくなります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-8"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_08_2",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『二千五百年前からのメッセージ―孔子の言葉―』を味わうとき、現代との違いや作品の背景を考える手がかりとして適切なのはどれ？",
+      "choices": [
+        "当時の言葉・文化・ものの見方を調べる",
+        "挿絵の数だけ数える",
+        "紙の色だけを見る",
+        "作者名だけ覚える"
+      ],
+      "answer": 0,
+      "explanation": "当時の文化や価値観、言葉の使い方を知ると、古典の表現や内容をより深く理解できます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-8"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_09_1",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『短歌の味わい』を鑑賞するとき、表現の効果を捉えるために注目したいものはどれ？",
+      "choices": [
+        "言葉の響き・リズム・比喩などの表現",
+        "ページ番号だけ",
+        "文字の大きさだけ",
+        "作者名だけ"
+      ],
+      "answer": 0,
+      "explanation": "詩歌では言葉の響きやリズム、比喩、語句の配置などが印象や情景を作ります。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-9"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_09_2",
+      "subject": "japanese",
+      "unit": "poetry",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『短歌の味わい』について自分の解釈を説明するとき、根拠として最も適切なのはどれ？",
+      "choices": [
+        "作品中の具体的な語句や表現",
+        "自分の感想だけ",
+        "教科書の値段",
+        "作品のページ数"
+      ],
+      "answer": 0,
+      "explanation": "鑑賞では、感じたことを作品中の言葉や表現と結び付けて説明することが大切です。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-9"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_10_1",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『夏の葬列』の物語を読むとき、人物の心情の変化を捉えるために最も有効なのはどれ？",
+      "choices": [
+        "人物の行動・会話・情景描写を結び付けて読む",
+        "題名だけで心情を決める",
+        "漢字の画数だけを調べる",
+        "ページ番号だけを覚える"
+      ],
+      "answer": 0,
+      "explanation": "人物の言動や情景描写を根拠にすると、心情の変化を具体的に捉えられます。",
+      "difficulty": 2,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-10"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_jp_kyoikushuppan_g2_10_2",
+      "subject": "japanese",
+      "unit": "literature",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "『夏の葬列』の主題や作品の意味を考えるときの読み方として適切なのはどれ？",
+      "choices": [
+        "出来事の展開と人物の変化を作品全体から考える",
+        "最初の一文だけで決める",
+        "作者名だけから決める",
+        "挿絵の色だけで決める"
+      ],
+      "answer": 0,
+      "explanation": "物語全体の展開や人物の変化、繰り返される表現などを根拠に主題を考えます。",
+      "difficulty": 3,
+      "materialIds": [
+        "j-kyoiku-shuppan-2-10"
+      ],
+      "textbookPublisher": "kyoiku-shuppan",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_00_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 1 Here We Go!」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-1-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_00_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 1 Here We Go!」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-1-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_01_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 2 School Activities」に関連する英語練習。学校生活について「私は放課後にサッカーをします」と言う英文はどれ？",
+      "choices": [
+        "I play soccer after school.",
+        "I plays soccer after school.",
+        "I soccer play after school is.",
+        "I am play soccer after school."
+      ],
+      "answer": 0,
+      "explanation": "主語が I の現在形では動詞は原形 play を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-1-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_01_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 2 School Activities」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） soccer after school.",
+      "blanks": [
+        [
+          "play"
+        ]
+      ],
+      "explanation": "主語が I の現在形では動詞は原形 play を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-1-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_02_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 3 Enjoy the Summer」に関連する英語練習。これからしたいことを表す英文として自然なのはどれ？",
+      "choices": [
+        "I want to visit Kyoto.",
+        "I want visit to Kyoto.",
+        "I to want Kyoto visit.",
+        "I visited want Kyoto."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で「〜したい」を表せます。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-1-2"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_02_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 3 Enjoy the Summer」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.",
+      "blanks": [
+        [
+          "visit"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で「〜したい」を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-1-2"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_03_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 4 Our New Friend」に関連する英語練習。初対面で自分を紹介する表現として最も自然なのはどれ？",
+      "choices": [
+        "I am Yuki. Nice to meet you.",
+        "Open the window yesterday.",
+        "Three books is blue.",
+        "Can table Japan?"
+      ],
+      "answer": 0,
+      "explanation": "自己紹介では I am ... / My name is ... などを使えます。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-1-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_03_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 4 Our New Friend」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "blanks": [
+        [
+          "am"
+        ]
+      ],
+      "explanation": "自己紹介では I am ... / My name is ... などを使えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-1-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_04_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 5 Hi, David!」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-1-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_04_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 5 Hi, David!」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-1-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_05_1",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 6 Cheer Up, Tina」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-1-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_05_2",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 6 Cheer Up, Tina」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-1-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_06_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 7 The New Year in Japan」に関連する英語練習。日本について「私は日本の祭りが好きです」と言う英文はどれ？",
+      "choices": [
+        "I like Japanese festivals.",
+        "I am like Japanese festivals.",
+        "I likes Japan festival.",
+        "Japanese festivals like I."
+      ],
+      "answer": 0,
+      "explanation": "I like ... で「私は〜が好きです」と表せます。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-1-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_06_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 7 The New Year in Japan」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Japanese festivals.",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "I like ... で「私は〜が好きです」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-1-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_07_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 8 Getting Ready for the Party」に関連する英語練習。友達を誘って「いっしょに練習しましょう」と言う英文はどれ？",
+      "choices": [
+        "Let's practice together.",
+        "Let's practicing together.",
+        "We together practice is.",
+        "Let practice us together."
+      ],
+      "answer": 0,
+      "explanation": "Let's + 動詞の原形で「〜しましょう」と表せます。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-mitsumura-1-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g1_07_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 8 Getting Ready for the Party」に関連する英語練習。次の（1）に入る語を書きなさい。 Let's （1） together.",
+      "blanks": [
+        [
+          "practice"
+        ]
+      ],
+      "explanation": "Let's + 動詞の原形で「〜しましょう」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-1-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_00_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 1 Hajin's Diary」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） to the library yesterday.",
+      "blanks": [
+        [
+          "went"
+        ]
+      ],
+      "explanation": "yesterday があるので go の過去形 went を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-0"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_01_1",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 2 Basketball Tournament」に関連する英語練習。スポーツが得意な人について「彼は速く走ることができます」と言う英文はどれ？",
+      "choices": [
+        "He can run fast.",
+        "He can runs fast.",
+        "He running fast can.",
+        "He fast is run."
+      ],
+      "answer": 0,
+      "explanation": "助動詞 can の後ろは動詞の原形です。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_01_2",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 2 Basketball Tournament」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.",
+      "blanks": [
+        [
+          "run"
+        ]
+      ],
+      "explanation": "助動詞 can の後ろは動詞の原形です。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-1"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_03_1",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 4 Tour in Singapore」に関連する英語練習。旅行について「私はシンガポールを訪れたいです」と言う英文はどれ？",
+      "choices": [
+        "I want to visit Singapore.",
+        "I want visiting Singapore to.",
+        "I visit want Singapore.",
+        "I am want visit Singapore."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_03_2",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 4 Tour in Singapore」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Singapore.",
+      "blanks": [
+        [
+          "visit"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-3"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_04_1",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 5 How Do We Stay Safe?」に関連する英語練習。安全について助言して「あなたは注意するべきです」と言う英文はどれ？",
+      "choices": [
+        "You should be careful.",
+        "You should careful are.",
+        "You are should careful.",
+        "You should to careful."
+      ],
+      "answer": 0,
+      "explanation": "should の後ろには動詞の原形を置き、be careful で「注意する」です。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_04_2",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 5 How Do We Stay Safe?」に関連する英語練習。次の（1）に入る語を書きなさい。 You should （1） careful.",
+      "blanks": [
+        [
+          "be"
+        ]
+      ],
+      "explanation": "should の後ろには動詞の原形を置き、be careful で「注意する」です。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-4"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_05_1",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 6 Guide Dogs」に関連する英語練習。盲導犬について「彼らは人々を助けます」と言う英文はどれ？",
+      "choices": [
+        "They help people.",
+        "They helps people.",
+        "They are help people.",
+        "They people helping."
+      ],
+      "answer": 0,
+      "explanation": "主語が They の現在形では help を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_05_2",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 6 Guide Dogs」に関連する英語練習。次の（1）に入る語を書きなさい。 They （1） people.",
+      "blanks": [
+        [
+          "help"
+        ]
+      ],
+      "explanation": "主語が They の現在形では help を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-5"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_06_1",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 7 Working Together」に関連する英語練習。友達を誘って「いっしょに練習しましょう」と言う英文はどれ？",
+      "choices": [
+        "Let's practice together.",
+        "Let's practicing together.",
+        "We together practice is.",
+        "Let practice us together."
+      ],
+      "answer": 0,
+      "explanation": "Let's + 動詞の原形で「〜しましょう」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_06_2",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 7 Working Together」に関連する英語練習。次の（1）に入る語を書きなさい。 Let's （1） together.",
+      "blanks": [
+        [
+          "practice"
+        ]
+      ],
+      "explanation": "Let's + 動詞の原形で「〜しましょう」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-6"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_07_1",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 8 Performing a Play」に関連する英語練習。友達を誘って「いっしょに練習しましょう」と言う英文はどれ？",
+      "choices": [
+        "Let's practice together.",
+        "Let's practicing together.",
+        "We together practice is.",
+        "Let practice us together."
+      ],
+      "answer": 0,
+      "explanation": "Let's + 動詞の原形で「〜しましょう」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_mitsumura_g2_07_2",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 8 Performing a Play」に関連する英語練習。次の（1）に入る語を書きなさい。 Let's （1） together.",
+      "blanks": [
+        [
+          "practice"
+        ]
+      ],
+      "explanation": "Let's + 動詞の原形で「〜しましょう」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-mitsumura-2-7"
+      ],
+      "textbookPublisher": "mitsumura",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_00_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 1 About Me」に関連する英語練習。初対面で自分を紹介する表現として最も自然なのはどれ？",
+      "choices": [
+        "I am Yuki. Nice to meet you.",
+        "Open the window yesterday.",
+        "Three books is blue.",
+        "Can table Japan?"
+      ],
+      "answer": 0,
+      "explanation": "自己紹介では I am ... / My name is ... などを使えます。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_00_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 1 About Me」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "blanks": [
+        [
+          "am"
+        ]
+      ],
+      "explanation": "自己紹介では I am ... / My name is ... などを使えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_01_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 2 My Hero」に関連する英語練習。スポーツが得意な人について「彼は速く走ることができます」と言う英文はどれ？",
+      "choices": [
+        "He can run fast.",
+        "He can runs fast.",
+        "He running fast can.",
+        "He fast is run."
+      ],
+      "answer": 0,
+      "explanation": "助動詞 can の後ろは動詞の原形です。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_01_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 2 My Hero」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.",
+      "blanks": [
+        [
+          "run"
+        ]
+      ],
+      "explanation": "助動詞 can の後ろは動詞の原形です。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_02_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 3 My Treasure」に関連する英語練習。大切な物を紹介して「これは私の宝物です」と言う英文はどれ？",
+      "choices": [
+        "This is my treasure.",
+        "This my treasure are.",
+        "These is treasure me.",
+        "I treasure is this."
+      ],
+      "answer": 0,
+      "explanation": "名詞 treasure の前に所有格 my を置きます。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_02_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 3 My Treasure」に関連する英語練習。次の（1）に入る語を書きなさい。 This is （1） treasure.",
+      "blanks": [
+        [
+          "my"
+        ]
+      ],
+      "explanation": "名詞 treasure の前に所有格 my を置きます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_03_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 4 My Summer Plans」に関連する英語練習。これからしたいことを表す英文として自然なのはどれ？",
+      "choices": [
+        "I want to visit Kyoto.",
+        "I want visit to Kyoto.",
+        "I to want Kyoto visit.",
+        "I visited want Kyoto."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で「〜したい」を表せます。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_03_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 4 My Summer Plans」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.",
+      "blanks": [
+        [
+          "visit"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で「〜したい」を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_04_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 5 Ms. Brown's Family」に関連する英語練習。家族を紹介して「彼女は私の姉です」と言う英文はどれ？",
+      "choices": [
+        "She is my sister.",
+        "She my sister are.",
+        "Her is I sister.",
+        "She sister my does."
+      ],
+      "answer": 0,
+      "explanation": "家族を表す名詞の前に my を置くと「私の〜」になります。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_04_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 5 Ms. Brown's Family」に関連する英語練習。次の（1）に入る語を書きなさい。 She is （1） sister.",
+      "blanks": [
+        [
+          "my"
+        ]
+      ],
+      "explanation": "家族を表す名詞の前に my を置くと「私の〜」になります。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_05_1",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 6 School Life in the U.S.A.」に関連する英語練習。学校生活について「私は放課後にサッカーをします」と言う英文はどれ？",
+      "choices": [
+        "I play soccer after school.",
+        "I plays soccer after school.",
+        "I soccer play after school is.",
+        "I am play soccer after school."
+      ],
+      "answer": 0,
+      "explanation": "主語が I の現在形では動詞は原形 play を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_05_2",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 6 School Life in the U.S.A.」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） soccer after school.",
+      "blanks": [
+        [
+          "play"
+        ]
+      ],
+      "explanation": "主語が I の現在形では動詞は原形 play を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_06_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 7 Athletes with Spirit」に関連する英語練習。スポーツが得意な人について「彼は速く走ることができます」と言う英文はどれ？",
+      "choices": [
+        "He can run fast.",
+        "He can runs fast.",
+        "He running fast can.",
+        "He fast is run."
+      ],
+      "answer": 0,
+      "explanation": "助動詞 can の後ろは動詞の原形です。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_06_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 7 Athletes with Spirit」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.",
+      "blanks": [
+        [
+          "run"
+        ]
+      ],
+      "explanation": "助動詞 can の後ろは動詞の原形です。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_07_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 8 Discover Japan」に関連する英語練習。日本について「私は日本の祭りが好きです」と言う英文はどれ？",
+      "choices": [
+        "I like Japanese festivals.",
+        "I am like Japanese festivals.",
+        "I likes Japan festival.",
+        "Japanese festivals like I."
+      ],
+      "answer": 0,
+      "explanation": "I like ... で「私は〜が好きです」と表せます。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_07_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 8 Discover Japan」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Japanese festivals.",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "I like ... で「私は〜が好きです」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_08_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Lesson 9 Emergency Food」に関連する英語練習。安全について助言して「あなたは注意するべきです」と言う英文はどれ？",
+      "choices": [
+        "You should be careful.",
+        "You should careful are.",
+        "You are should careful.",
+        "You should to careful."
+      ],
+      "answer": 0,
+      "explanation": "should の後ろには動詞の原形を置き、be careful で「注意する」です。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-sanseido-1-8"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g1_08_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Lesson 9 Emergency Food」に関連する英語練習。次の（1）に入る語を書きなさい。 You should （1） careful.",
+      "blanks": [
+        [
+          "be"
+        ]
+      ],
+      "explanation": "should の後ろには動詞の原形を置き、be careful で「注意する」です。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-1-8"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_00_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Lesson 1 Meet New Friends」に関連する英語練習。初対面で自分を紹介する表現として最も自然なのはどれ？",
+      "choices": [
+        "I am Yuki. Nice to meet you.",
+        "Open the window yesterday.",
+        "Three books is blue.",
+        "Can table Japan?"
+      ],
+      "answer": 0,
+      "explanation": "自己紹介では I am ... / My name is ... などを使えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_00_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Lesson 1 Meet New Friends」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "blanks": [
+        [
+          "am"
+        ]
+      ],
+      "explanation": "自己紹介では I am ... / My name is ... などを使えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-0"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_01_1",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Lesson 2 Fun with Books」に関連する英語練習。本の好みについて「私は本を読むことが好きです」と言う英文はどれ？",
+      "choices": [
+        "I like reading books.",
+        "I like read books yesterday.",
+        "I reading like books am.",
+        "I books to like reading."
+      ],
+      "answer": 0,
+      "explanation": "like + 動名詞で「〜することが好き」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_01_2",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Lesson 2 Fun with Books」に関連する英語練習。次の（1）に入る語を書きなさい。 I like （1） books.",
+      "blanks": [
+        [
+          "reading"
+        ]
+      ],
+      "explanation": "like + 動名詞で「〜することが好き」と表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-1"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_02_1",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Lesson 3 My Dream」に関連する英語練習。これからしたいことを表す英文として自然なのはどれ？",
+      "choices": [
+        "I want to visit Kyoto.",
+        "I want visit to Kyoto.",
+        "I to want Kyoto visit.",
+        "I visited want Kyoto."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で「〜したい」を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_02_2",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Lesson 3 My Dream」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.",
+      "blanks": [
+        [
+          "visit"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で「〜したい」を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-2"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_03_1",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Lesson 4」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_03_2",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Lesson 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-3"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_04_1",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Lesson 5」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_04_2",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Lesson 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-4"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_05_1",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Lesson 6」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_05_2",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Lesson 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-5"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_06_1",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Lesson 7」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_06_2",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Lesson 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-6"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_07_1",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Lesson 8」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_sanseido_g2_07_2",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Lesson 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-sanseido-2-7"
+      ],
+      "textbookPublisher": "sanseido",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_00_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 0」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-0"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_00_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-0"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_01_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 1」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_01_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_02_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 2」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_02_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_03_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 3」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_03_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_04_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 4」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_04_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_05_1",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 5」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_05_2",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_06_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 6」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_06_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_07_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 7」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-7"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_07_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-7"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_08_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Unit 8」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-tokyo-shoseki-1-8"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g1_08_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Unit 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-1-8"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_00_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 0」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-0"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_00_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-0"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_01_1",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 1」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_01_2",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-1"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_02_1",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 2」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_02_2",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-2"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_03_1",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 3」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_03_2",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-3"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_04_1",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 4」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_04_2",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-4"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_05_1",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 5」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_05_2",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-5"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_06_1",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 6」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_06_2",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-6"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_07_1",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「Unit 7」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-7"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_tokyoshoseki_g2_07_2",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-tokyo-shoseki-2-7"
+      ],
+      "textbookPublisher": "tokyo-shoseki",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_00_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「Get Ready 1-6」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_00_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「Get Ready 1-6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_01_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 1」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_01_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_02_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 2」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_02_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_03_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 3」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_03_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_04_1",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 4」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_04_2",
+      "subject": "english",
+      "unit": "basic-sentences",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_05_1",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 5」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_05_2",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_06_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 6」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_06_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_07_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 7」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-7"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_07_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-7"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_08_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 8」に関連する英語練習。日常会話で相手に「あなたは音楽が好きですか」と尋ねる英文はどれ？",
+      "choices": [
+        "Do you like music?",
+        "Are you like music?",
+        "Do you likes music?",
+        "You like do music?"
+      ],
+      "answer": 0,
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 1,
+      "materialIds": [
+        "e-kairyudo-1-8"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g1_08_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        1
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "blanks": [
+        [
+          "like"
+        ]
+      ],
+      "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-1-8"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_00_1",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 1 New Start」に関連する英語練習。初対面で自分を紹介する表現として最も自然なのはどれ？",
+      "choices": [
+        "I am Yuki. Nice to meet you.",
+        "Open the window yesterday.",
+        "Three books is blue.",
+        "Can table Japan?"
+      ],
+      "answer": 0,
+      "explanation": "自己紹介では I am ... / My name is ... などを使えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_00_2",
+      "subject": "english",
+      "unit": "past-progressive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 1 New Start」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "blanks": [
+        [
+          "am"
+        ]
+      ],
+      "explanation": "自己紹介では I am ... / My name is ... などを使えます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-0"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_01_1",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 2」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_01_2",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-1"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_02_1",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 3」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_02_2",
+      "subject": "english",
+      "unit": "infinitive-gerund",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-2"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_03_1",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 4」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_03_2",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-3"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_04_1",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 5」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_04_2",
+      "subject": "english",
+      "unit": "future-modal",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-4"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_05_1",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 6」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_05_2",
+      "subject": "english",
+      "unit": "conversation",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-5"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_06_1",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 7」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_06_2",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-6"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_07_1",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "choice",
+      "question": "「PROGRAM 8」に関連する英語練習。自分の希望を伝えて「私は英語をもっと勉強したいです」と言う英文はどれ？",
+      "choices": [
+        "I want to study English more.",
+        "I want studying English more.",
+        "I study want English more.",
+        "I want English more study to."
+      ],
+      "answer": 0,
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-7"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
+    },
+    {
+      "id": "v035_en_kairyudo_g2_07_2",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        2
+      ],
+      "type": "fill",
+      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "blanks": [
+        [
+          "study"
+        ]
+      ],
+      "explanation": "want to + 動詞の原形で希望を表せます。",
+      "difficulty": 2,
+      "materialIds": [
+        "e-kairyudo-2-7"
+      ],
+      "textbookPublisher": "kairyudo",
+      "source": "publisher-balance-original"
     }
   ],
-  "notes": "Ver.0.34: 出版社別の専用問題数を監査し、不足していた中3英語（三省堂・東京書籍・開隆堂）129問と中3国語（光村図書・教育出版）46問、計175問を追加。"
+  "notes": "Ver.0.35: 出版社×学年×教材の専用問題数を再監査し、専用問題が2問未満だった中1・中2の国語・英語教材を優先して259問追加。全対象教材で最低2問を確保。"
 };

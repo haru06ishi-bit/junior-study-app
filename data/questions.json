@@ -1,5 +1,5 @@
 {
-  "version": "0.24.0",
+  "version": "0.30.1",
   "questions": [
     {
       "id": "ja001",
@@ -9848,6 +9848,379 @@
         "j-sanseido-3-13"
       ],
       "source": "publisher-outline-original"
+    },
+    {
+      "id": "v030_en_reorder_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・継続",
+      "type": "reorder",
+      "question": "「私は3年間ここに住んでいます。」になるように語句を並べ替えなさい。",
+      "items": [
+        "I",
+        "have",
+        "lived",
+        "here",
+        "for",
+        "three",
+        "years",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "explanation": "現在完了の継続は have + 過去分詞 を使い、期間には for を使います。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_reorder_02",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞",
+      "type": "reorder",
+      "question": "「これは私が昨日買った本です。」になるように語句を並べ替えなさい。",
+      "items": [
+        "This",
+        "is",
+        "the",
+        "book",
+        "that",
+        "I",
+        "bought",
+        "yesterday",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "explanation": "先行詞 the book の後ろに that I bought yesterday を置きます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_reorder_03",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "仮定法",
+      "type": "reorder",
+      "question": "「もし私があなたなら、彼に話します。」になるように語句を並べ替えなさい。",
+      "items": [
+        "If",
+        "I",
+        "were",
+        "you",
+        ",",
+        "I",
+        "would",
+        "talk",
+        "to",
+        "him",
+        "."
+      ],
+      "answerOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "explanation": "現在の事実と異なる仮定では If I were ..., I would ... の形を使います。",
+      "difficulty": 3
+    },
+    {
+      "id": "v030_en_fill_01",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了・完了",
+      "type": "fill",
+      "question": "次の英文の（1）（2）に入る語を書きなさい。 She （1） already （2） her homework.",
+      "blanks": [
+        [
+          "has"
+        ],
+        [
+          "finished"
+        ]
+      ],
+      "explanation": "主語が She なので has、finish の過去分詞 finished を使います。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_fill_02",
+      "subject": "english",
+      "unit": "conditional",
+      "grades": [
+        3
+      ],
+      "topic": "仮定法",
+      "type": "fill",
+      "question": "次の英文の（1）（2）に入る語を書きなさい。 If I （1） you, I （2） study harder.",
+      "blanks": [
+        [
+          "were"
+        ],
+        [
+          "would"
+        ]
+      ],
+      "explanation": "仮定法では If I were you, I would ... が基本形です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_fill_03",
+      "subject": "english",
+      "unit": "relative-clauses",
+      "grades": [
+        3
+      ],
+      "topic": "関係代名詞",
+      "type": "fill",
+      "question": "空欄に入る関係代名詞を書きなさい。 This is the dog （1） helped me.",
+      "blanks": [
+        [
+          "that",
+          "which"
+        ]
+      ],
+      "explanation": "先行詞が物・動物で主格なので that または which が使えます。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_multi_01",
+      "subject": "english",
+      "unit": "comparison-passive",
+      "grades": [
+        3
+      ],
+      "topic": "受け身",
+      "type": "multi",
+      "question": "受け身の文をすべて選びなさい。",
+      "choices": [
+        "This book was written by Soseki.",
+        "I wrote a letter yesterday.",
+        "English is spoken in many countries.",
+        "She plays tennis every Sunday."
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "受け身は be動詞 + 過去分詞の形です。was written と is spoken が該当します。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_en_multi_02",
+      "subject": "english",
+      "unit": "present-perfect",
+      "grades": [
+        3
+      ],
+      "topic": "現在完了",
+      "type": "multi",
+      "question": "現在完了が使われている文をすべて選びなさい。",
+      "choices": [
+        "I have visited Kyoto twice.",
+        "She has just finished lunch.",
+        "We played soccer yesterday.",
+        "He is studying now."
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "have/has + 過去分詞になっている1と2が現在完了です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_ja_multi_01",
+      "subject": "japanese",
+      "unit": "grammar-advanced",
+      "grades": [
+        2,
+        3
+      ],
+      "topic": "敬語",
+      "type": "multi",
+      "question": "尊敬語に当たるものをすべて選びなさい。",
+      "choices": [
+        "おっしゃる",
+        "召し上がる",
+        "申し上げる",
+        "いただく"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "「おっしゃる」「召し上がる」は相手側の動作を高める尊敬語です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_ja_multi_02",
+      "subject": "japanese",
+      "unit": "classics",
+      "grades": [
+        2,
+        3
+      ],
+      "topic": "古典",
+      "type": "multi",
+      "question": "古文を読むときの基本的な確認事項として適切なものをすべて選びなさい。",
+      "choices": [
+        "歴史的仮名遣いを現代仮名遣いに直す",
+        "主語が省略されていないか確認する",
+        "すべての語を英語に訳す",
+        "古語の意味を文脈から確認する"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "歴史的仮名遣い、主語の省略、古語の意味を確認することが読解の基本です。",
+      "difficulty": 2
+    },
+    {
+      "id": "v030_sc_fill_01",
+      "subject": "science",
+      "unit": "ions",
+      "grades": [
+        3
+      ],
+      "topic": "イオン",
+      "type": "fill",
+      "question": "塩化ナトリウムが水に溶けると、ナトリウムイオン Na+ と（1）イオン Cl- に分かれる。（1）を書きなさい。",
+      "blanks": [
+        [
+          "塩化物",
+          "塩化物イオン"
+        ]
+      ],
+      "explanation": "Cl- は塩化物イオンです。",
+      "difficulty": 1
+    },
+    {
+      "id": "v030_sc_multi_01",
+      "subject": "science",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "topic": "力学的エネルギー",
+      "type": "multi",
+      "question": "力学的エネルギーに含まれるものをすべて選びなさい。",
+      "choices": [
+        "運動エネルギー",
+        "位置エネルギー",
+        "電気エネルギー",
+        "化学エネルギー"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "力学的エネルギーは運動エネルギーと位置エネルギーの和です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v030_so_multi_01",
+      "subject": "social",
+      "unit": "constitution",
+      "grades": [
+        3
+      ],
+      "topic": "日本国憲法",
+      "type": "multi",
+      "question": "日本国憲法の基本原理として正しいものをすべて選びなさい。",
+      "choices": [
+        "国民主権",
+        "基本的人権の尊重",
+        "平和主義",
+        "鎖国主義"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "日本国憲法の三大基本原理は国民主権・基本的人権の尊重・平和主義です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v030_ma_fill_01",
+      "subject": "math",
+      "unit": "quadratic",
+      "grades": [
+        3
+      ],
+      "topic": "二次方程式",
+      "type": "fill",
+      "question": "x² - 5x + 6 = 0 を因数分解して解くと、x = （1）, （2）となる。小さい方から入力しなさい。",
+      "blanks": [
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "explanation": "(x-2)(x-3)=0 なので x=2,3 です。",
+      "difficulty": 1
+    },
+    {
+      "id": "v030_ma_multi_01",
+      "subject": "math",
+      "unit": "square-roots",
+      "grades": [
+        3
+      ],
+      "topic": "平方根",
+      "type": "multi",
+      "question": "√12 と等しい表し方をすべて選びなさい。",
+      "choices": [
+        "2√3",
+        "√4×√3",
+        "3√2",
+        "√6+√6"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "√12=√(4×3)=2√3 です。√4×√3 も同じ値になります。",
+      "difficulty": 2
     }
   ],
   "notes": "Ver.0.16: 主要5教科の全単元に短答式の追加問題を収録。既存問題に難易度1〜3を付与し、出題履歴を使うスマート出題に対応。追加157問。 教材/Unit専用問題タグ(materialIds)と専用問題サンプルを追加。 Ver.0.24: 中3教材専用問題を104問追加（三省堂国語・光村英語を重点化）。"

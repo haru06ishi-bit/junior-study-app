@@ -27,6 +27,8 @@ def run():
     args = parser.parse_args()
     questions = json.loads((ROOT / "data/questions.json").read_text(encoding="utf-8"))["questions"]
     curriculum = json.loads((ROOT / "data/curriculum.json").read_text(encoding="utf-8"))
+    adoption = json.loads((ROOT / "data/textbooks.json").read_text(encoding="utf-8"))
+    district = next(d for d in adoption["districts"] if d["id"] == "shizuoka")
     counts = collections.Counter()
     exclusive = collections.Counter()
     materials = collections.Counter()
@@ -50,17 +52,21 @@ def run():
         for field in subject.get("fields", []):
             for unit in field.get("units", []):
                 for grade in unit.get("grades", []):
+                    field_id = field.get("id")
+                    part = field_id if sid == "social" else ("language" if sid == "japanese" else "main")
+                    selected = district["adoptions"][sid][part]
+                    eligible = exclusive[("common", sid, grade, unit.get("id"))] + exclusive[(selected, sid, grade, unit.get("id"))]
                     row = {
                         "subject": sid,
                         "grade": grade,
                         "field": field.get("id"),
                         "unit": unit.get("id"),
                         "unit_name": unit.get("name"),
-                        "all_publishers_count": counts[(sid, grade, unit.get("id"))],
+                        "all_publishers_count": eligible,
                         "common": exclusive[("common", sid, grade, unit.get("id"))],
                         "publishers": {
                             p: exclusive[(p, sid, grade, unit.get("id"))]
-                            for p in PUBLISHERS[sid]
+                            for p in (selected,)
                         },
                     }
                     row["below_minimum"] = row["all_publishers_count"] < args.minimum

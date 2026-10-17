@@ -242,7 +242,7 @@ async function init(){
    // index.html を直接開いた場合でも動くよう、同梱JSデータを優先する。
    if(window.CURRICULUM_DATA && window.QUESTION_DATA){
      state.curriculum=window.CURRICULUM_DATA;
-     state.builtInQuestions=[...(window.QUESTION_DATA.questions||[])];refreshQuestionBank();
+     state.builtInQuestions=[...(window.QUESTION_DATA.questions||[]),...(window.QUESTION_SUPPLEMENT?.questions||[])];refreshQuestionBank();
      renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
      document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}`;
    }else{
@@ -250,7 +250,7 @@ async function init(){
      if(!cr.ok||!qr.ok)throw new Error('data load failed');
      state.curriculum=await cr.json();
      const qdata=await qr.json();
-     state.builtInQuestions=[...(qdata.questions||[])];refreshQuestionBank();
+     state.builtInQuestions=[...(qdata.questions||[]),...(window.QUESTION_SUPPLEMENT?.questions||[])];refreshQuestionBank();
      renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
      document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${qdata.version}`;
    }

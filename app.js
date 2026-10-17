@@ -1,4 +1,4 @@
-const APP_VERSION='0.41.0';
+const APP_VERSION='0.44.5';
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
@@ -570,6 +570,29 @@ function renderReferencePages(q){
  const items=rows.slice(0,3).map(r=>`<div><strong>📖 ${escapeHtml(r.title)}</strong><span>${escapeHtml(publisherLabel(r.publisher))}・中${r.grade}${r.pages?`・${escapeHtml(r.pages)}`:'・ページ情報未登録'}</span></div>`).join('');
  box.innerHTML=`<p>教科書参照</p>${items}`;box.hidden=false;
 }
+
+function shuffledIndexedChoices(q){
+ const key=q.id||q.question||'';
+ if(!state.choiceOrders)state.choiceOrders={};
+ if(!state.choiceOrders[key]){
+  const arr=(q.choices||[]).map((text,index)=>({text,index}));
+  if(!q.preserveChoiceOrder){
+   for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}
+  }
+  state.choiceOrders[key]=arr;
+ }
+ return state.choiceOrders[key];
+}
+function renderQuestionStimulus(q){
+ const host=document.getElementById('questionStimulus');if(!host)return;host.innerHTML='';host.hidden=true;
+ const hasPassage=!!q.passage, hasTable=!!q.table, hasFigure=!!q.figure;if(!hasPassage&&!hasTable&&!hasFigure)return;
+ if(q.stimulusTitle){const h=document.createElement('h3');h.className='stimulus-title';h.textContent=q.stimulusTitle;host.append(h);}
+ if(hasPassage){const p=document.createElement('div');p.className='stimulus-passage';String(q.passage).split('\n').forEach(line=>{const para=document.createElement('p');para.textContent=line||'　';p.append(para)});host.append(p);}
+ if(hasTable){const wrap=document.createElement('div');wrap.className='stimulus-table-wrap';const t=document.createElement('table');t.className='stimulus-table';const head=document.createElement('thead');const hr=document.createElement('tr');(q.table.headers||[]).forEach(v=>{const th=document.createElement('th');th.textContent=v;hr.append(th)});head.append(hr);t.append(head);const body=document.createElement('tbody');(q.table.rows||[]).forEach(row=>{const tr=document.createElement('tr');row.forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});body.append(tr)});t.append(body);wrap.append(t);host.append(wrap);}
+ if(hasFigure&&q.figure.type==='bar'){const fig=document.createElement('div');fig.className='stimulus-bars';const max=Math.max(...(q.figure.values||[1]).map(Number),1);(q.figure.labels||[]).forEach((label,i)=>{const row=document.createElement('div');row.className='stimulus-bar-row';const l=document.createElement('span');l.textContent=label;const bar=document.createElement('span');bar.className='stimulus-bar';bar.style.width=`${Math.max(4,(Number(q.figure.values?.[i]||0)/max)*100)}%`;const v=document.createElement('strong');v.textContent=String(q.figure.values?.[i]??'');row.append(l,bar,v);fig.append(row)});host.append(fig);}
+ host.hidden=false;
+}
+
 function renderQuestion(){
  if(state.sessionContext?.mode==='mockExam'){renderMockExamQuestion();return;}
  const q=state.session[state.index];if(!q){finishQuiz();return}
@@ -577,11 +600,12 @@ function renderQuestion(){
  document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length}`;
  document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)}`;
  renderReferencePages(q);
+ renderQuestionStimulus(q);
  document.getElementById('questionText').textContent=q.question;
  document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
  const area=document.getElementById('answerArea');
  if(q.type==='choice'){
-   (q.choices||[]).forEach((c,i)=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=c;b.onclick=()=>gradeChoiceAnswer(i,b);area.append(b)});
+   shuffledIndexedChoices(q).forEach(({text,index})=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=text;b.dataset.originalIndex=String(index);b.onclick=()=>gradeChoiceAnswer(index,b);area.append(b)});
  }else if(q.type==='multi'){
    renderMultiAnswer(area,q,false);
  }else if(q.type==='reorder'){
@@ -660,7 +684,7 @@ function reorderCorrectText(q){const items=q.items||[];const order=Array.isArray
 function renderMultiAnswer(area,q,mock=false){
  const selected=new Set();const note=document.createElement('p');note.className='answer-instruction';note.textContent='正しいものをすべて選んでください。';area.append(note);
  const list=document.createElement('div');list.className='multi-choice-list';
- (q.choices||[]).forEach((c,i)=>{const label=document.createElement('label');label.className='multi-choice-item';const input=document.createElement('input');input.type='checkbox';input.value=String(i);const span=document.createElement('span');span.textContent=c;input.onchange=()=>{input.checked?selected.add(i):selected.delete(i)};label.append(input,span);list.append(label)});area.append(list);
+ shuffledIndexedChoices(q).forEach(({text,index})=>{const label=document.createElement('label');label.className='multi-choice-item';const input=document.createElement('input');input.type='checkbox';input.value=String(index);const span=document.createElement('span');span.textContent=text;input.onchange=()=>{input.checked?selected.add(index):selected.delete(index)};label.append(input,span);list.append(label)});area.append(list);
  const submit=document.createElement('button');submit.className='primary wide';submit.type='button';submit.textContent=mock?'解答して次へ':'答える';submit.onclick=()=>mock?submitMockAnswer({multi:[...selected],answerLabel:[...selected].map(i=>q.choices?.[i]).join(' / ')}):gradeMultiAnswer([...selected]);area.append(submit);
 }
 function renderReorderAnswer(area,q,mock=false){
@@ -674,9 +698,10 @@ function renderFillAnswer(area,q,mock=false){
  const submit=document.createElement('button');submit.className='primary wide';submit.type='button';submit.textContent=mock?'解答して次へ':'答える';submit.onclick=()=>{const values=inputs.map(x=>x.value);mock?submitMockAnswer({fills:values,answerLabel:values.join(' / ')}):gradeFillAnswer(values)};inputs.forEach(inp=>inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&inputs.length===1){e.preventDefault();submit.click()}}));area.append(submit);setTimeout(()=>inputs[0]?.focus(),0);
 }
 function gradeMultiAnswer(values,dontKnow=false){const q=state.session[state.index];const a=[...(q.answers||[])].map(Number).sort((x,y)=>x-y),b=[...values].map(Number).sort((x,y)=>x-y);const correct=!dontKnow&&a.length===b.length&&a.every((x,i)=>x===b[i]);document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
-function gradeReorderAnswer(values,dontKnow=false){const q=state.session[state.index];const a=Array.isArray(q.answerOrder)&&q.answerOrder.length?q.answerOrder:(q.items||[]).map((_,i)=>i);const correct=!dontKnow&&a.length===values.length&&a.every((x,i)=>Number(x)===Number(values[i]));document.querySelectorAll('#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
+const isCorrectReorder=(q,values)=>ReorderGrading.isCorrectReorder(q,values);
+function gradeReorderAnswer(values,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&isCorrectReorder(q,values);document.querySelectorAll('#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
 function gradeFillAnswer(values,dontKnow=false){const q=state.session[state.index];const blanks=q.blanks||[];const correct=!dontKnow&&blanks.length===values.length&&blanks.every((a,i)=>(Array.isArray(a)?a:[a]).filter(Boolean).some(v=>normalizeText(v)===normalizeText(values[i])));document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
-function gradeChoiceAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&answer===q.answer;document.querySelectorAll('.answer-btn').forEach((b,i)=>{b.disabled=true;if(i===q.answer)b.classList.add('correct');if(button===b&&!correct)b.classList.add('wrong')});finishAnswer(correct,dontKnow);}
+function gradeChoiceAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&answer===q.answer;document.querySelectorAll('.answer-btn').forEach(b=>{b.disabled=true;if(Number(b.dataset.originalIndex)===Number(q.answer))b.classList.add('correct');if(button===b&&!correct)b.classList.add('wrong')});finishAnswer(correct,dontKnow);}
 function gradeWordAnswer(value,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(value));document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
 function showTextSelfCheck(userText){const q=state.session[state.index];document.querySelectorAll('#answerArea textarea,#answerArea button').forEach(x=>x.disabled=true);document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えと比べて判定してください。</p><div class="self-check-row"><button id="selfOk" class="primary" type="button">できた</button><button id="selfNg" class="secondary" type="button">できなかった</button></div>`;appendAiExplanationControl(fb,q);document.getElementById('selfOk').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(true,false)};document.getElementById('selfNg').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(false,false)};}
 function gradeAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];if(q.type==='choice')gradeChoiceAnswer(answer,button,dontKnow);else if(q.type==='multi')gradeMultiAnswer([],dontKnow);else if(q.type==='reorder')gradeReorderAnswer([],dontKnow);else if(q.type==='fill')gradeFillAnswer([],dontKnow);else if(q.type==='word')gradeWordAnswer('',dontKnow);else finishAnswer(false,true);}
@@ -920,10 +945,10 @@ function renderMockExamQuestion(){
  const q=state.session[state.index];if(!q){finishMockExam(false);return;}const s=state.curriculum.subjects.find(x=>x.id===q.subject);const pts=state.sessionContext?.points?.[q.id]||0;
  document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length} ・ ${pts}点`;
  document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)} ・ 模擬テスト`;
- renderReferencePages(q);document.getElementById('questionText').textContent=q.question;document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
+ renderReferencePages(q);renderQuestionStimulus(q);document.getElementById('questionText').textContent=q.question;document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
  const area=document.getElementById('answerArea');
  if(q.type==='choice'){
-  (q.choices||[]).forEach((c,i)=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=c;b.onclick=()=>submitMockAnswer({choice:i,answerLabel:c});area.append(b)});
+  shuffledIndexedChoices(q).forEach(({text,index})=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=text;b.dataset.originalIndex=String(index);b.onclick=()=>submitMockAnswer({choice:index,answerLabel:text});area.append(b)});
  }else if(q.type==='multi')renderMultiAnswer(area,q,true);
  else if(q.type==='reorder')renderReorderAnswer(area,q,true);
  else if(q.type==='fill')renderFillAnswer(area,q,true);
@@ -936,7 +961,7 @@ function submitMockAnswer({choice=null,text='',multi=[],order=[],fills=[],answer
  if(!dontKnow){
   if(q.type==='choice')correct=choice===q.answer;
   else if(q.type==='multi'){const a=[...(q.answers||[])].map(Number).sort((x,y)=>x-y),b=[...multi].map(Number).sort((x,y)=>x-y);correct=a.length===b.length&&a.every((x,i)=>x===b[i]);}
-  else if(q.type==='reorder'){const a=Array.isArray(q.answerOrder)&&q.answerOrder.length?q.answerOrder:(q.items||[]).map((_,i)=>i);correct=a.length===order.length&&a.every((x,i)=>Number(x)===Number(order[i]));}
+  else if(q.type==='reorder'){correct=isCorrectReorder(q,order);}
   else if(q.type==='fill'){const blanks=q.blanks||[];correct=blanks.length===fills.length&&blanks.every((a,i)=>(Array.isArray(a)?a:[a]).filter(Boolean).some(v=>normalizeText(v)===normalizeText(fills[i])));}
   else correct=acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(text));
  }

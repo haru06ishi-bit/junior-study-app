@@ -11,14 +11,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MAIN = ("japanese", "math", "english", "science", "social")
-PUBLISHERS = {
-    "japanese": ("sanseido",),
-    "math": ("keirinkan",),
-    "english": ("mitsumura",),
-    "science": ("keirinkan",),
-    "social": ("teikoku", "tokyo-shoseki"),
-}
-
 
 def run():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -29,7 +21,6 @@ def run():
     curriculum = json.loads((ROOT / "data/curriculum.json").read_text(encoding="utf-8"))
     adoption = json.loads((ROOT / "data/textbooks.json").read_text(encoding="utf-8"))
     district = next(d for d in adoption["districts"] if d["id"] == "shizuoka")
-    counts = collections.Counter()
     exclusive = collections.Counter()
     materials = collections.Counter()
     selected_items = collections.defaultdict(list)
@@ -40,7 +31,6 @@ def run():
         publisher = q.get("textbookPublisher") or "common"
         for grade in q.get("grades") or []:
             key = (subject, grade, q.get("unit"))
-            counts[key] += 1
             exclusive[(publisher, *key)] += 1
             selected_items[key].append(q)
             for material in set(q.get("materialIds") or []):
@@ -64,7 +54,7 @@ def run():
                         "field": field.get("id"),
                         "unit": unit.get("id"),
                         "unit_name": unit.get("name"),
-                        "all_publishers_count": eligible,
+                        "shizuoka_eligible_count": eligible,
                         "common": exclusive[("common", sid, grade, unit.get("id"))],
                         "publishers": {
                             p: exclusive[(p, sid, grade, unit.get("id"))]
@@ -75,41 +65,54 @@ def run():
                     row["difficulty"] = dict(collections.Counter(str(q.get("difficulty", "unknown")) for q in matched))
                     row["question_types"] = dict(collections.Counter(q.get("type", "unknown") for q in matched))
                     row["with_stimulus"] = sum(bool(q.get("passage") or q.get("table") or q.get("figure")) for q in matched)
-                    row["shortfall"] = max(0, args.minimum-row["all_publishers_count"])
-                    row["below_minimum"] = row["all_publishers_count"] < args.minimum
+                    row["shortfall"] = max(0, args.minimum-row["shizuoka_eligible_count"])
+                    row["below_minimum"] = row["shizuoka_eligible_count"] < args.minimum
                     rows.append(row)
-    rows.sort(key=lambda r: (r["all_publishers_count"], r["subject"], r["grade"], r["unit"]))
-    material_rows = [
-        {"publisher": p, "subject": s, "grade": g, "material_id": m, "count": n}
-        for (p, s, g, m), n in sorted(materials.items())
-    ]
+    rows.sort(key=lambda r: (r["shizuoka_eligible_count"], r["subject"], r["grade"], r["unit"]))
+
     catalog = json.loads((ROOT / "candidates.json").read_text(encoding="utf-8"))
     material_catalog = []
     for subject in ("japanese", "english"):
-        p = district["adoptions"][subject]["language" if subject == "japanese" else "main"]
-        for grade, items in catalog.get(subject, {}).get(p, {}).items():
-            for item in items:
-                material_catalog.append({"subject": subject, "publisher": p, "grade": int(grade), "title": item[0] if isinstance(item, list) else item, "count": None, "status": "material ID mapping not verified"})
+        publisher = district["adoptions"][subject]["language" if subject == "japanese" else "main"]
+        prefix = "j" if subject == "japanese" else "e"
+        for grade_text, items in catalog.get(subject, {}).get(publisher, {}).items():
+            grade = int(grade_text)
+            for index, item in enumerate(items):
+                material_id = f"{prefix}-{publisher}-{grade}-{index}"
+                common_count = materials[("common", subject, grade, material_id)]
+                dedicated_count = materials[(publisher, subject, grade, material_id)]
+                count = common_count + dedicated_count
+                material_catalog.append({
+                    "subject": subject, "publisher": publisher, "grade": grade,
+                    "material_id": material_id,
+                    "title": item[0] if isinstance(item, list) else item,
+                    "count": count, "common": common_count,
+                    "publisher_specific": dedicated_count,
+                    "shortfall": max(0, args.minimum - count),
+                    "status": "zero" if count == 0 else ("under_minimum" if count < args.minimum else "sufficient"),
+                })
+    material_catalog.sort(key=lambda r: (r["count"], r["subject"], r["grade"], r["material_id"]))
     output = {
         "total_questions": len(questions),
         "minimum": args.minimum,
         "below_minimum_units": sum(r["below_minimum"] for r in rows),
         "shortfall": sum(r["shortfall"] for r in rows),
         "unit_rows": rows,
-        "material_counts_observed_only": material_rows,
         "material_catalog_including_unresolved": material_catalog,
-        "note": "Material catalog is complete for the selected district, but coverage for catalog entries is unknown until material ID mapping is verified. Never treat unknown as zero. Counts are not a quality score.",
+        "note": "Unit shortfall sums grade-specific gaps; multi-grade questions count once in each grade. It is not the number of distinct questions to author. Counts are not a quality score.",
     }
     if args.json:
         print(json.dumps(output, ensure_ascii=False, indent=2))
     else:
         print(f"Total questions: {len(questions)}")
-        print(f"Unit/grade rows below {args.minimum}: {output['below_minimum_units']}/{len(rows)}")
-        print("All-publisher counts include common questions; publisher counts exclude common questions.")
+        print(f"Shizuoka eligible unit/grade rows below {args.minimum}: {output['below_minimum_units']}/{len(rows)}")
+        print(f"Unit/grade shortfall: {output['shortfall']} (multi-grade questions may cover multiple rows; not unique questions required)")
         for r in rows:
             pub = ", ".join(f"{p}={n}" for p, n in r["publishers"].items())
-            print(f"{r['subject']:9s} G{r['grade']} {str(r['unit']):25s} all={r['all_publishers_count']:3d} common={r['common']:3d} {pub}")
-        print(f"Material assignments observed: {len(material_rows)}; zero-material coverage requires catalog comparison.")
+            print(f"{r['subject']:9s} G{r['grade']} {str(r['unit']):25s} eligible={r['shizuoka_eligible_count']:3d} shortfall={r['shortfall']:3d} common={r['common']:3d} {pub} difficulty={r['difficulty']} types={r['question_types']} stimulus={r['with_stimulus']}")
+        print(f"Shizuoka adopted textbook materials: {len(material_catalog)}")
+        for m in material_catalog:
+            print(f"{m['subject']:9s} G{m['grade']} {m['material_id']} {m['title']} count={m['count']} shortfall={m['shortfall']} status={m['status']} common={m['common']} dedicated={m['publisher_specific']}")
 
 
 if __name__ == "__main__":

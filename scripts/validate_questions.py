@@ -2,7 +2,8 @@
 import json,re,sys,collections
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-Q=json.load(open(ROOT/'data/questions.json',encoding='utf-8'))['questions']
+from question_bank_loader import load_questions
+Q=load_questions()
 errors=[];warnings=[]
 ids=set();seen_text=collections.defaultdict(list)
 for q in Q:

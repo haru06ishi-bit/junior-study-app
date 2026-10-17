@@ -123,6 +123,37 @@ for key,items in by_unit.items():
       if ratio>=0.82:
         warnings.append(f"possible semantic duplicate ({ratio:.2f}): {q1['id']} / {q2['id']}")
 
+
+# Answer leakage heuristic: avoid putting the exact correct term in the stem unless it is part of a quoted source.
+for q in A:
+  if q.get('type')!='choice': continue
+  ans=q.get('answer'); ch=q.get('choices') or []
+  if not isinstance(ans,int) or not (0<=ans<len(ch)): continue
+  answer_text=norm(ch[ans])
+  stem=norm(strip_quoted(q.get('question','')))
+  if len(answer_text)>=3 and not re.search(r'\d',answer_text) and answer_text in stem:
+    warnings.append(f"correct answer appears in stem: {q['id']} answer={ch[ans]!r}")
+
+# Grade-level English passage guardrails for constructions clearly beyond the registered grade.
+for q in A:
+  if q.get('subject')!='english' or not q.get('passage'): continue
+  grades=set(q.get('grades') or [])
+  passage=str(q.get('passage'))
+  if 1 in grades:
+    if re.search(r'\b(?:will|be\s+going\s+to|have\s+\w+ed|has\s+\w+ed)\b',passage,re.I):
+      errors.append(f"possible beyond-grade English in G1 passage: {q['id']}")
+  if 2 in grades and re.search(r'\b(?:was|were)\s+being\s+\w+(?:ed|en)\b',passage,re.I):
+    errors.append(f"passive progressive in G2 passage: {q['id']}")
+
+# Unit-volume diagnostics. This is a warning because content expansion is handled in the next phase.
+unit_counts=collections.Counter()
+for q in A:
+  for g in q.get('grades') or []:
+    unit_counts[(q.get('subject'),g,q.get('unit'))]+=1
+for key,n in sorted(unit_counts.items()):
+  if n<10:
+    warnings.append(f"thin unit (<10): {key} count={n}")
+
 print('regression errors=',len(errors))
 for e in errors: print('ERROR',e)
 print('quality warnings=',len(warnings))

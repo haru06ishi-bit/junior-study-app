@@ -32,6 +32,7 @@ def run():
     counts = collections.Counter()
     exclusive = collections.Counter()
     materials = collections.Counter()
+    selected_items = collections.defaultdict(list)
     for q in questions:
         subject = q.get("subject")
         if subject not in MAIN:
@@ -41,6 +42,7 @@ def run():
             key = (subject, grade, q.get("unit"))
             counts[key] += 1
             exclusive[(publisher, *key)] += 1
+            selected_items[key].append(q)
             for material in set(q.get("materialIds") or []):
                 materials[(publisher, subject, grade, material)] += 1
 
@@ -69,6 +71,11 @@ def run():
                             for p in (selected,)
                         },
                     }
+                    matched = [q for q in selected_items[(sid, grade, unit.get("id"))] if (q.get("textbookPublisher") or "common") in ("common", selected)]
+                    row["difficulty"] = dict(collections.Counter(str(q.get("difficulty", "unknown")) for q in matched))
+                    row["question_types"] = dict(collections.Counter(q.get("type", "unknown") for q in matched))
+                    row["with_stimulus"] = sum(bool(q.get("passage") or q.get("table") or q.get("figure")) for q in matched)
+                    row["shortfall"] = max(0, args.minimum-row["all_publishers_count"])
                     row["below_minimum"] = row["all_publishers_count"] < args.minimum
                     rows.append(row)
     rows.sort(key=lambda r: (r["all_publishers_count"], r["subject"], r["grade"], r["unit"]))
@@ -80,6 +87,7 @@ def run():
         "total_questions": len(questions),
         "minimum": args.minimum,
         "below_minimum_units": sum(r["below_minimum"] for r in rows),
+        "shortfall": sum(r["shortfall"] for r in rows),
         "unit_rows": rows,
         "material_counts_observed_only": material_rows,
         "note": "Material IDs with zero questions cannot be inferred from questions.json. Compare against the textbook material catalog separately. Counts are not a quality score.",

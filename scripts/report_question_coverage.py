@@ -83,6 +83,13 @@ def run():
         {"publisher": p, "subject": s, "grade": g, "material_id": m, "count": n}
         for (p, s, g, m), n in sorted(materials.items())
     ]
+    catalog = json.loads((ROOT / "candidates.json").read_text(encoding="utf-8"))
+    material_catalog = []
+    for subject in ("japanese", "english"):
+        p = district["adoptions"][subject]["language" if subject == "japanese" else "main"]
+        for grade, items in catalog.get(subject, {}).get(p, {}).items():
+            for item in items:
+                material_catalog.append({"subject": subject, "publisher": p, "grade": int(grade), "title": item[0] if isinstance(item, list) else item, "count": None, "status": "material ID mapping not verified"})
     output = {
         "total_questions": len(questions),
         "minimum": args.minimum,
@@ -90,7 +97,8 @@ def run():
         "shortfall": sum(r["shortfall"] for r in rows),
         "unit_rows": rows,
         "material_counts_observed_only": material_rows,
-        "note": "Material IDs with zero questions cannot be inferred from questions.json. Compare against the textbook material catalog separately. Counts are not a quality score.",
+        "material_catalog_including_unresolved": material_catalog,
+        "note": "Material catalog is complete for the selected district, but coverage for catalog entries is unknown until material ID mapping is verified. Never treat unknown as zero. Counts are not a quality score.",
     }
     if args.json:
         print(json.dumps(output, ensure_ascii=False, indent=2))

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'study-app-shell-v0.44.6';
+const CACHE_NAME = 'study-app-shell-v0.44.7';
 const APP_SHELL = [
   '/',
   '/index.html',

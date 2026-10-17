@@ -8,6 +8,7 @@ on:
       - 'app.js'
       - 'index.html'
       - 'reorder-grading.js'
+      - 'exam-scope.js'
       - '.github/workflows/question-quality.yml'
   pull_request:
     paths:
@@ -33,3 +34,4 @@ jobs:
       - run: python scripts/audit_shizuoka.py
       - run: python scripts/check_question_quality_regressions.py
       - run: node scripts/test_reorder_grading.js
+      - run: node scripts/test_exam_scope.js

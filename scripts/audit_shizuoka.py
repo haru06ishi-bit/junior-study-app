@@ -29,7 +29,7 @@ bad=['教科書の値段','ページ番号だけ','漢字の画数だけ','ペ�
 for q in A:
     if q.get('question','').startswith('選択肢を見ずに答えなさい'): errors.append(f"legacy recall prefix: {q['id']}")
     if any(x in str(q.get('choices',[])) for x in bad): errors.append(f"weak distractor: {q['id']}")
-    if q.get('type')=='multi' and len(q.get('answers',[]))>=len(q.get('choices',[]))-1: errors.append(f"weak multi ratio: {q['id']}")
+    if q.get('type')=='multi' and (len(q.get('answers',[]))==0 or len(q.get('answers',[]))==len(q.get('choices',[]))): errors.append(f"invalid multi ratio: {q['id']}")
     if q.get('type')=='fill':
         markers=set(re.findall(r'（(\d+)）',q.get('question','')))
         if markers and max(map(int,markers))!=len(q.get('blanks',[])): errors.append(f"blank mismatch: {q['id']}")
@@ -60,6 +60,9 @@ if not any(q.get('type')=='text' for q in A): errors.append('no written response
 if not any(q.get('passage') for q in A): errors.append('no passage items')
 if not any(q.get('table') for q in A): errors.append('no table items')
 if not any(q.get('figure') for q in A): errors.append('no figure items')
+# Multi-select answer counts should not reveal a fixed number of correct choices.
+multi_counts=collections.Counter(len(q.get('answers',[])) for q in A if q.get('type')=='multi')
+if sum(multi_counts.values())>=4 and len(multi_counts)<2: errors.append(f'fixed multi answer count: {dict(multi_counts)}')
 print('quality gate errors=',len(errors))
 for e in errors: print('ERROR',e)
 sys.exit(1 if errors else 0)

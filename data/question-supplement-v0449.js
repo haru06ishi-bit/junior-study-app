@@ -405,6 +405,24 @@ window.QUESTION_SUPPLEMENT = {
       "answer": 0,
       "explanation": "確定しているのは回収重量が増えたという報告だけ。散乱ごみ量や利用者数は示されていない。",
       "source": "original-v0.44.9"
+    },
+    {
+      "id": "v045_ja_g3_kanji_write_01",
+      "subject": "japanese",
+      "field": "language",
+      "unit": "kanji-vocab",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "word",
+      "difficulty": 2,
+      "question": "次の文のカタカナを漢字で書きなさい。「地域の課題を正確にハアクする。」",
+      "answers": [
+        "把握"
+      ],
+      "explanation": "「把握」は物事の内容・状況を正確に理解すること。把＝つかむ、握＝にぎる。",
+      "source": "original-v0.45.0"
     }
   ]
 };

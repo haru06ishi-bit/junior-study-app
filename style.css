@@ -136,3 +136,17 @@ progress{width:100%;height:12px;margin:10px 0}.import-question-editor{display:gr
 .fill-label{display:grid;grid-template-columns:48px 1fr;align-items:center;gap:8px;margin-bottom:8px;font-weight:800}
 .fill-label .answer-input{margin:0}
 @media(max-width:620px){.reorder-token{padding:11px 10px}.fill-label{grid-template-columns:42px 1fr}}
+
+/* Ver.0.44: reading/data stimulus blocks */
+.question-stimulus{margin:14px 0 20px;padding:16px;border:1px solid #d0d5dd;border-radius:16px;background:#f8fafc;color:#1d2939}
+.stimulus-title{margin:0 0 10px;font-size:1rem;color:#475467}
+.stimulus-passage{line-height:1.9;white-space:normal}
+.stimulus-passage p{margin:.35em 0}
+.stimulus-table-wrap{overflow-x:auto}
+.stimulus-table{width:100%;border-collapse:collapse;background:white;font-size:.95rem}
+.stimulus-table th,.stimulus-table td{border:1px solid #d0d5dd;padding:8px 10px;text-align:center}
+.stimulus-table th{background:#eef2f6;font-weight:700}
+.stimulus-bars{display:grid;gap:9px;margin-top:8px}
+.stimulus-bar-row{display:grid;grid-template-columns:minmax(70px,auto) 1fr auto;gap:8px;align-items:center}
+.stimulus-bar{display:block;min-height:16px;border-radius:999px;background:currentColor;opacity:.22}
+@media (max-width:540px){.question-stimulus{padding:13px}.stimulus-table{font-size:.88rem}}

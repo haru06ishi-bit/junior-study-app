@@ -1,4 +1,4 @@
-const APP_VERSION='0.44.7';
+const APP_VERSION='0.44.9';
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
@@ -242,17 +242,17 @@ async function init(){
    // index.html を直接開いた場合でも動くよう、同梱JSデータを優先する。
    if(window.CURRICULUM_DATA && window.QUESTION_DATA){
      state.curriculum=window.CURRICULUM_DATA;
-     state.builtInQuestions=[...(window.QUESTION_DATA.questions||[])];refreshQuestionBank();
+     state.builtInQuestions=[...(window.QUESTION_DATA.questions||[]),...(window.QUESTION_SUPPLEMENT?.questions||[])];refreshQuestionBank();
      renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
-     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}`;
+     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}+${window.QUESTION_SUPPLEMENT?.version||'なし'}`;
    }else{
      const [cr,qr]=await Promise.all([fetch('data/curriculum.json'),fetch('data/questions.json')]);
      if(!cr.ok||!qr.ok)throw new Error('data load failed');
      state.curriculum=await cr.json();
      const qdata=await qr.json();
-     state.builtInQuestions=[...(qdata.questions||[])];refreshQuestionBank();
+     state.builtInQuestions=[...(qdata.questions||[]),...(window.QUESTION_SUPPLEMENT?.questions||[])];refreshQuestionBank();
      renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
-     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${qdata.version}`;
+     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${qdata.version}+${window.QUESTION_SUPPLEMENT?.version||'なし'}`;
    }
  }catch(error){
    console.error(error);

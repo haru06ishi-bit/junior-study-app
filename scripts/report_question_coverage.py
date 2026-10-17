@@ -98,7 +98,7 @@ def run():
         "below_minimum_units": sum(r["below_minimum"] for r in rows),
         "shortfall": sum(r["shortfall"] for r in rows),
         "unit_rows": rows,
-        "material_catalog_including_unresolved": material_catalog,
+        "material_catalog": material_catalog,
         "note": "Unit shortfall sums grade-specific gaps; multi-grade questions count once in each grade. It is not the number of distinct questions to author. Counts are not a quality score.",
     }
     if args.json:

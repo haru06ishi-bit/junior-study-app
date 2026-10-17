@@ -1,4 +1,4 @@
-const APP_VERSION='0.44.5';
+const APP_VERSION='0.44.6';
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
@@ -881,13 +881,13 @@ function startMockExamRetry(resultId){
  state.sessionContext={mode:'mockExam',examId:result.examId,examName:result.examName,materials:result.materials||[],textbookYear:result.textbookYear||null,points,minutes,startedAt:new Date().toISOString(),deadline:Date.now()+minutes*60000,retryOf:result.id,rootAttemptId:result.rootAttemptId||result.id};document.getElementById('mockResultDetails').hidden=true;showView('playView');startMockTimer();renderQuestion();
 }
 function stopMockTimer(){if(mockTimerId){clearInterval(mockTimerId);mockTimerId=null;}const box=document.getElementById('mockTimerBox');if(box)box.hidden=true;}
-function mockExamAutoPool(plan){return examQuestionPool(plan).filter(q=>['choice','word','multi','reorder','fill'].includes(q.type));}
+function mockExamAutoPool(plan){return examQuestionPool(plan).filter(q=>['choice','word','multi','reorder','fill','text'].includes(q.type));}
 function balancedMockQuestions(plan,count){
  const pool=mockExamAutoPool(plan);if(!pool.length)return[];
  const n=Math.min(count==='all'?pool.length:Number(count)||20,pool.length);
  const materials=new Set(plan.materials||[]),preferred=materialPriorityOrder(pool,materials);
- const typeOrder=['choice','fill','reorder','multi','word'];
- const typeRatio={choice:.35,fill:.20,reorder:.15,multi:.15,word:.15};
+ const typeOrder=['choice','fill','reorder','multi','word','text'];
+ const typeRatio={choice:.30,fill:.18,reorder:.12,multi:.12,word:.13,text:.15};
  const typeTarget={};let assigned=0;
  typeOrder.forEach(t=>{typeTarget[t]=Math.floor(n*typeRatio[t]);assigned+=typeTarget[t];});
  const fractions=typeOrder.map((t,i)=>({t,f:n*typeRatio[t]-Math.floor(n*typeRatio[t]),i})).sort((a,b)=>b.f-a.f||a.i-b.i);
@@ -911,7 +911,7 @@ function balancedMockQuestions(plan,count){
  return selected.slice(0,n).sort(()=>Math.random()-.5);
 }
 function mockTypeMixText(n){
- const ratios=[['単一選択',.35],['穴埋め',.20],['並べ替え',.15],['複数選択',.15],['短答',.15]];
+ const ratios=[['単一選択',.30],['穴埋め',.18],['並べ替え',.12],['複数選択',.12],['短答',.13],['記述',.15]];
  const vals=ratios.map(([name,r])=>({name,r,count:Math.floor(n*r),frac:n*r-Math.floor(n*r)}));let assigned=vals.reduce((s,x)=>s+x.count,0);
  vals.slice().sort((a,b)=>b.frac-a.frac).forEach(x=>{if(assigned<n){x.count++;assigned++;}});
  return vals.filter(x=>x.count).map(x=>`${x.name}${x.count}問`).join('・');
@@ -921,7 +921,7 @@ function openMockExamSetup(id){
  state.mockExam.planId=id;state.mockExam.count=20;state.mockExam.minutes=30;showView('mockExamSetupView');
  const pool=mockExamAutoPool(plan);const total=examQuestionPool(plan).length;
  document.getElementById('mockExamName').textContent=plan.name||'定期テスト';
- document.getElementById('mockExamMeta').textContent=`中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元 / 自動採点可能 ${pool.length}問（範囲全体 ${total}問）`;
+ document.getElementById('mockExamMeta').textContent=`中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元 / 模擬テスト対象 ${pool.length}問（範囲全体 ${total}問）`;
  renderMockSetupChoices();updateMockSetupSummary();
 }
 function renderMockSetupChoices(){
@@ -934,7 +934,7 @@ function updateMockSetupSummary(){
 }
 function startMockExam(){
  const plan=loadExamPlans().find(x=>x.id===state.mockExam.planId);if(!plan)return;const session=balancedMockQuestions(plan,state.mockExam.count);
- if(!session.length){alert('この範囲には自動採点できる問題がありません。');return;}
+ if(!session.length){alert('この範囲には模擬テストに出題できる問題がありません。');return;}
  const base=Math.floor(100/session.length),rem=100-base*session.length;const points={};session.forEach((q,i)=>points[q.id]=base+(i<rem?1:0));
  state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;
  state.sessionContext={mode:'mockExam',examId:plan.id,examName:plan.name,materials:plan.materials||[],textbookYear:plan.textbookYear||null,points,minutes:state.mockExam.minutes,startedAt:new Date().toISOString(),deadline:Date.now()+state.mockExam.minutes*60000};
@@ -952,17 +952,23 @@ function renderMockExamQuestion(){
  }else if(q.type==='multi')renderMultiAnswer(area,q,true);
  else if(q.type==='reorder')renderReorderAnswer(area,q,true);
  else if(q.type==='fill')renderFillAnswer(area,q,true);
- else{
+ else if(q.type==='text'){
+  const ta=document.createElement('textarea');ta.rows=5;ta.className='answer-textarea';ta.placeholder='文章で答えを書いてください。';
+  const check=document.createElement('button');check.className='primary';check.type='button';check.textContent='模範解答を確認';
+  check.onclick=()=>{ta.disabled=true;check.disabled=true;document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えに必要な内容が含まれているか確認してください。</p><div class="self-check-row"><button id="mockSelfOk" class="primary" type="button">できた</button><button id="mockSelfNg" class="secondary" type="button">できなかった</button></div>`;document.getElementById('mockSelfOk').onclick=()=>submitMockAnswer({manualCorrect:true,answerLabel:ta.value});document.getElementById('mockSelfNg').onclick=()=>submitMockAnswer({manualCorrect:false,answerLabel:ta.value});};
+  area.append(ta,check);
+ }else{
   const input=document.createElement('input');input.type='text';input.className='answer-input';input.placeholder='答えを入力';input.autocomplete='off';const submit=document.createElement('button');submit.className='primary';submit.type='button';submit.textContent='解答して次へ';submit.onclick=()=>submitMockAnswer({text:input.value,answerLabel:input.value});input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submit.click()}});area.append(input,submit);setTimeout(()=>input.focus(),0);
  }
 }
-function submitMockAnswer({choice=null,text='',multi=[],order=[],fills=[],answerLabel='',dontKnow=false}={}){
+function submitMockAnswer({choice=null,text='',multi=[],order=[],fills=[],answerLabel='',dontKnow=false,manualCorrect=null}={}){
  const q=state.session[state.index];if(!q)return;let correct=false;
  if(!dontKnow){
   if(q.type==='choice')correct=choice===q.answer;
   else if(q.type==='multi'){const a=[...(q.answers||[])].map(Number).sort((x,y)=>x-y),b=[...multi].map(Number).sort((x,y)=>x-y);correct=a.length===b.length&&a.every((x,i)=>x===b[i]);}
   else if(q.type==='reorder'){correct=isCorrectReorder(q,order);}
   else if(q.type==='fill'){const blanks=q.blanks||[];correct=blanks.length===fills.length&&blanks.every((a,i)=>(Array.isArray(a)?a:[a]).filter(Boolean).some(v=>normalizeText(v)===normalizeText(fills[i])));}
+  else if(q.type==='text')correct=manualCorrect===true;
   else correct=acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(text));
  }
  const pts=state.sessionContext?.points?.[q.id]||0;if(correct)state.score+=pts;
@@ -992,591 +998,3 @@ function finishMockExam(timeUp=false){
  const logs=loadExamStudyLogs();logs.push({id:item.id,examId:item.examId,at:item.at,questionIds:state.answers.map(a=>a.questionId),score:correct,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));updateStreak();showView('resultView');
 }
 function openStoredMockResult(id){const result=findMockExamResult(id);if(!result)return;stopMockTimer();state.mockExam.lastResultId=result.id;state.sessionContext={mode:'mockExamHistory',examId:result.examId,resultId:result.id};document.getElementById('resultEyebrow').textContent='過去の模擬テスト';document.getElementById('resultScore').textContent=`${Number(result.score)||0} / 100点`;document.getElementById('resultRate').textContent=`${Number(result.correct)||0}/${Number(result.total)||0}問正解・正答率 ${Number(result.rate)||0}%`;renderMockResultDetails(result,{historical:true});showView('resultView');}
-
-function startExamStudy(id){const plan=loadExamPlans().find(x=>x.id===id);if(!plan)return;const session=buildExamSession(plan,20);if(!session.length){alert('このテスト範囲には出題できる問題がありません。');return}state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;state.sessionContext={mode:'exam',examId:plan.id};showView('playView');renderQuestion();}
-function studyHistory(){try{return JSON.parse(localStorage.getItem('studyHistory')||'[]')}catch{return[]}}
-function answeredQuestionIds(){const ids=new Set();studyHistory().forEach(h=>(h.questionIds||[]).forEach(id=>ids.add(id)));return ids;}
-function shuffleCopy(items){return [...items].sort(()=>Math.random()-.5)}
-function takeUnique(target,source,count,used,materials=null){const ordered=materials?materialPriorityOrder(source,materials):smartQuestionOrder(source);for(const q of ordered){if(target.length>=count)break;if(used.has(q.id))continue;used.add(q.id);target.push(q)}}
-function buildDailySession(count=20){
- const future=loadExamPlans().filter(p=>daysUntil(p.date)>=0).sort((a,b)=>String(a.date).localeCompare(String(b.date)));
- const plan=future[0]||null;const pool=plan?examQuestionPool(plan):state.questionBank;if(!pool.length)return{plan:null,session:[],stats:{missed:0,unseen:0,review:0}};
- const missedIds=new Set((JSON.parse(localStorage.getItem('missedQuestions')||'[]')||[]).map(x=>x.questionId));
- const seen=plan?new Set(loadExamStudyLogs().filter(x=>x.examId===plan.id).flatMap(x=>x.questionIds||[])):answeredQuestionIds();
- const missed=pool.filter(q=>missedIds.has(q.id));const unseen=pool.filter(q=>!missedIds.has(q.id)&&!seen.has(q.id));const review=pool.filter(q=>!missedIds.has(q.id)&&seen.has(q.id));
- const target=Math.min(count,pool.length),session=[],used=new Set(),materials=plan?new Set(plan.materials||[]):null;
- // 20問なら目安として、苦手8・未学習8・復習4。教材/Unit指定がある場合は各カテゴリ内でも専用問題を優先する。
- takeUnique(session,missed,Math.min(target,8),used,materials);takeUnique(session,unseen,Math.min(target,16),used,materials);takeUnique(session,review,target,used,materials);
- if(session.length<target)takeUnique(session,pool,target,used,materials);
- const stats={missed:session.filter(q=>missedIds.has(q.id)).length,unseen:session.filter(q=>!missedIds.has(q.id)&&!seen.has(q.id)).length,review:session.filter(q=>!missedIds.has(q.id)&&seen.has(q.id)).length};
- return{plan,session,stats};
-}
-function todayStudyCount(){const today=dateOnlyLocal();return studyHistory().filter(h=>dateOnlyLocal(new Date(h.at))===today).reduce((sum,h)=>sum+(Number(h.total)||0),0)}
-function renderDailyPlanPreview(){
- const card=document.getElementById('dailyPlanCard');if(!card||!state.curriculum||!state.questionBank.length)return;const built=buildDailySession(20);const {plan,session,stats}=built;
- const title=document.getElementById('dailyPlanTitle'),lead=document.getElementById('dailyPlanLead'),badge=document.getElementById('dailyPlanBadge'),hero=document.getElementById('dailyHeroSubtitle');
- if(plan){const d=daysUntil(plan.date);title.textContent=`${plan.name}まで${d===0?'今日':`あと${d}日`}`;lead.textContent='登録したテスト範囲から、苦手と未学習を優先して出題します。';hero.textContent=`${plan.name}を優先して20問`;}else{title.textContent='苦手と未学習をバランスよく';lead.textContent='定期テスト予定がないため、全教科から苦手と未学習を優先します。';hero.textContent='苦手・未学習を優先して20問';}
- badge.textContent=`${session.length}問`;document.getElementById('dailyPlanStats').innerHTML=`<div class="daily-stat"><strong>${stats.missed}</strong><small>苦手</small></div><div class="daily-stat"><strong>${stats.unseen}</strong><small>未学習</small></div><div class="daily-stat"><strong>${stats.review}</strong><small>復習</small></div>`;
- const counts={};session.forEach(q=>counts[q.subject]=(counts[q.subject]||0)+1);const mix=document.getElementById('dailySubjectMix');mix.innerHTML='';Object.entries(counts).sort((a,b)=>b[1]-a[1]).forEach(([sid,n])=>{const sub=state.curriculum.subjects.find(s=>s.id===sid);if(!sub)return;const span=document.createElement('span');span.className='daily-subject-pill';span.textContent=`${sub.icon} ${sub.name} ${n}問`;mix.append(span)});
- const done=todayStudyCount(),goal=20,pct=Math.min(100,Math.round(done/goal*100));document.getElementById('todayProgressBar').style.width=`${pct}%`;document.getElementById('todayProgressText').textContent=done>=goal?`今日 ${done}問クリア ✓`:`今日 ${done}/${goal}問`;
-}
-function startDailyStudy(){
- const built=buildDailySession(20);if(!built.session.length){alert('出題できる問題がありません。');return}state.session=built.session;state.index=0;state.score=0;state.answers=[];state.grade=built.plan?.grade||state.grade;state.subject=null;state.sessionContext={mode:'daily',examId:built.plan?.id||null};showView('playView');renderQuestion();
-}
-document.getElementById('createExamPlan').onclick=()=>openExamEditor();
-document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();state.exam.materials.clear();state.exam.openSubjects.clear();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();};
-document.getElementById('cancelMockExam')?.addEventListener('click',openExamPlans);document.getElementById('startMockExam')?.addEventListener('click',startMockExam);document.getElementById('mockCountChoices')?.addEventListener('click',e=>{const b=e.target.closest('[data-mock-count]');if(!b)return;state.mockExam.count=b.dataset.mockCount==='all'?'all':Number(b.dataset.mockCount);renderMockSetupChoices();updateMockSetupSummary();});document.getElementById('mockMinuteChoices')?.addEventListener('click',e=>{const b=e.target.closest('[data-mock-minutes]');if(!b)return;state.mockExam.minutes=Number(b.dataset.mockMinutes);renderMockSetupChoices();updateMockSetupSummary();});
-
-
-function openStats(){showView('statsView');renderStatsDashboard();}
-function statsQuestionMap(){return new Map(state.questionBank.map(q=>[q.id,q]));}
-function statsSubjectName(id){const s=state.curriculum?.subjects.find(x=>x.id===id);return s?`${s.icon} ${s.name}`:'不明';}
-function statsUnitInfo(q){
- const subject=state.curriculum?.subjects.find(s=>s.id===q?.subject);if(!subject)return null;
- for(const field of subject.fields||[]){const unit=(field.units||[]).find(u=>u.id===q.unit);if(unit)return{subject,field,unit};}
- return null;
-}
-function detailedAnswerRecords(){
- const map=statsQuestionMap(),out=[];
- for(const h of studyHistory())for(const a of h.answerResults||[]){const q=map.get(a.questionId);if(q)out.push({...a,at:a.answeredAt||h.at,question:q});}
- return out;
-}
-function aggregateSubjectStats(){
- const result=new Map();
- const add=(sid,total,correct)=>{if(!sid||!total)return;const x=result.get(sid)||{total:0,correct:0};x.total+=total;x.correct+=correct;result.set(sid,x)};
- const map=statsQuestionMap();
- for(const h of studyHistory()){
-  if(Array.isArray(h.answerResults)&&h.answerResults.length){for(const a of h.answerResults){const q=map.get(a.questionId);if(q)add(q.subject,1,a.correct?1:0)}}
-  else if(h.subject)add(h.subject,Number(h.total)||0,Number(h.score)||0);
- }
- return result;
-}
-function modeLabel(mode){return({quiz:'小テスト',review:'苦手復習',exam:'定期テスト',daily:'今日の30分',mockExam:'模擬テスト',mockReview:'模擬テスト復習'})[mode]||'学習';}
-function formatStudyDate(iso){const d=new Date(iso);if(Number.isNaN(d.getTime()))return'';return `${d.getMonth()+1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;}
-function renderStatsDashboard(){
- if(!state.curriculum)return;
- const history=studyHistory();
- const total=history.reduce((n,h)=>n+(Number(h.total)||0),0),correct=history.reduce((n,h)=>n+(Number(h.score)||0),0),rate=total?Math.round(correct/total*100):0;
- const streak=Number(localStorage.getItem('streakDays')||0);const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]').length;
- const summary=document.getElementById('statsSummary');
- summary.innerHTML=`<div class="stats-summary-card"><small>解いた問題</small><strong>${total}</strong><span>問</span></div><div class="stats-summary-card"><small>正答率</small><strong>${rate}</strong><span>%</span></div><div class="stats-summary-card"><small>連続学習</small><strong>${streak}</strong><span>日</span></div><div class="stats-summary-card"><small>苦手問題</small><strong>${missed}</strong><span>問</span></div>`;
- renderWeeklyStudy(history);renderSubjectStats();renderWeakUnitStats();renderMockExamHistory();renderMockTrendStats();renderRecentHistory(history);
-}
-function renderWeeklyStudy(history){
- const days=[];const now=new Date();now.setHours(0,0,0,0);
- for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(now.getDate()-i);days.push({date:dateOnlyLocal(d),label:['日','月','火','水','木','金','土'][d.getDay()],count:0});}
- history.forEach(h=>{const day=days.find(x=>x.date===dateOnlyLocal(new Date(h.at)));if(day)day.count+=Number(h.total)||0});
- const max=Math.max(1,...days.map(d=>d.count)),sum=days.reduce((n,d)=>n+d.count,0);document.getElementById('statsWeekTotal').textContent=`合計 ${sum}問`;
- const el=document.getElementById('weeklyStudyChart');el.innerHTML='';
- days.forEach(d=>{const item=document.createElement('div');item.className='week-bar-item';item.innerHTML=`<span class="week-count">${d.count||''}</span><div class="week-bar-track"><span style="height:${Math.max(d.count?8:2,Math.round(d.count/max*100))}%"></span></div><small>${d.label}</small>`;el.append(item)});
-}
-function renderSubjectStats(){
- const stats=aggregateSubjectStats(),el=document.getElementById('subjectStats');el.innerHTML='';
- const rows=[...stats.entries()].sort((a,b)=>b[1].total-a[1].total);
- if(!rows.length){el.innerHTML='<p class="help">まだ教科別の学習記録がありません。</p>';return;}
- rows.forEach(([sid,x])=>{const rate=x.total?Math.round(x.correct/x.total*100):0;const row=document.createElement('div');row.className='subject-stat-row';row.innerHTML=`<div class="subject-stat-head"><strong>${escapeHtml(statsSubjectName(sid))}</strong><span>${x.correct}/${x.total}問・${rate}%</span></div><div class="progress-track"><span style="width:${rate}%"></span></div>`;el.append(row)});
-}
-function renderWeakUnitStats(){
- const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]'),map=statsQuestionMap(),groups=new Map();
- for(const m of missed){const q=map.get(m.questionId),info=statsUnitInfo(q);if(!q||!info)continue;const key=`${q.subject}/${q.unit}`;const x=groups.get(key)||{count:0,subject:info.subject,field:info.field,unit:info.unit};x.count++;groups.set(key,x);}
- const el=document.getElementById('weakUnitStats');el.innerHTML='';const rows=[...groups.values()].sort((a,b)=>b.count-a.count).slice(0,8);
- if(!rows.length){el.innerHTML='<p class="help">現在、苦手として登録されている問題はありません。</p>';return;}
- rows.forEach(x=>{const row=document.createElement('div');row.className='weak-unit-row';row.innerHTML=`<div><strong>${x.subject.icon} ${escapeHtml(x.unit.name)}</strong><small>${escapeHtml(x.subject.name)} ＞ ${escapeHtml(x.field.name)}</small></div><span>${x.count}問</span>`;el.append(row)});
-}
-function mockResultMetricForQuestions(result,questionIds){const ids=new Set(questionIds),answerMap=new Map((result.answers||[]).map(a=>[a.questionId,a]));let earned=0,max=0,count=0,correct=0;for(const qid of result.questionIds||[]){if(!ids.has(qid))continue;const pts=mockQuestionPoints(result,qid),a=answerMap.get(qid);max+=pts;count++;if(a?.correct){earned+=Number(a.points)||pts;correct++;}}return{earned,max,count,correct,rate:max?Math.round(earned/max*100):0};}
-function renderMockExamHistory(){const el=document.getElementById('mockExamHistory');if(!el)return;const rows=loadMockExamResults().sort((a,b)=>new Date(b.at)-new Date(a.at)).slice(0,12);el.innerHTML='';if(!rows.length){el.innerHTML='<p class="help">まだ模擬テストの結果がありません。</p>';return;}rows.forEach(r=>{const growth=mockGrowthText(r),row=document.createElement('div');row.className='mock-history-row';row.innerHTML=`<div><strong>${escapeHtml(r.examName||'模擬テスト')}</strong><small>${escapeHtml(formatStudyDate(r.at))}${r.retryOf?'・再挑戦':''}${growth?`・${escapeHtml(growth)}`:''}</small></div><span>${Number(r.score)||0}点</span><button class="secondary" type="button" data-open-mock-result="${escapeHtml(r.id)}">結果</button>`;el.append(row)});el.querySelectorAll('[data-open-mock-result]').forEach(b=>b.addEventListener('click',()=>openStoredMockResult(b.dataset.openMockResult)));}
-function mockTrendValues(results,selector){const out=[];for(const r of results){const qids=(r.questionIds||[]).filter(id=>{const q=state.questionBank.find(x=>x.id===id);return q&&selector(q)});if(!qids.length)continue;const m=mockResultMetricForQuestions(r,qids);if(m.max)out.push({at:r.at,rate:m.rate});}return out.slice(-6);}
-function trendText(values){return values.map(x=>`${x.rate}%`).join(' → ');}
-function renderMockTrendStats(){const subjectEl=document.getElementById('mockSubjectTrends'),unitEl=document.getElementById('mockUnitTrends');if(!subjectEl||!unitEl)return;const results=loadMockExamResults().sort((a,b)=>new Date(a.at)-new Date(b.at));subjectEl.innerHTML='';unitEl.innerHTML='';if(!results.length){subjectEl.innerHTML='<p class="help">模擬テストを受けると教科別の推移が表示されます。</p>';unitEl.innerHTML='<p class="help">模擬テストを受けると単元別の推移が表示されます。</p>';return;}
- const subjectRows=[];for(const sub of state.curriculum.subjects){const vals=mockTrendValues(results,q=>q.subject===sub.id);if(vals.length)subjectRows.push({label:`${sub.icon} ${sub.name}`,vals});}subjectRows.sort((a,b)=>b.vals.length-a.vals.length);for(const x of subjectRows){const row=document.createElement('div');row.className='trend-row';const first=x.vals[0].rate,last=x.vals.at(-1).rate,diff=last-first;row.innerHTML=`<div><strong>${escapeHtml(x.label)}</strong><small>${escapeHtml(trendText(x.vals))}</small></div><span class="${diff>0?'up':diff<0?'down':''}">${diff>0?'+':''}${diff}pt</span>`;subjectEl.append(row)}if(!subjectRows.length)subjectEl.innerHTML='<p class="help">教科別に集計できる結果がありません。</p>';
- const unitKeys=new Map();for(const r of results)for(const id of r.questionIds||[]){const q=state.questionBank.find(x=>x.id===id),info=statsUnitInfo(q);if(!q||!info)continue;const key=`${q.subject}/${q.unit}`;if(!unitKeys.has(key))unitKeys.set(key,{subject:q.subject,unit:q.unit,label:`${info.subject.icon} ${info.unit.name}`});}
- const unitRows=[];for(const x of unitKeys.values()){const vals=mockTrendValues(results,q=>q.subject===x.subject&&q.unit===x.unit);if(vals.length>=1)unitRows.push({...x,vals});}unitRows.sort((a,b)=>b.vals.length-a.vals.length||a.vals.at(-1).rate-b.vals.at(-1).rate);for(const x of unitRows.slice(0,12)){const row=document.createElement('div');row.className='trend-row';const first=x.vals[0].rate,last=x.vals.at(-1).rate,diff=last-first;row.innerHTML=`<div><strong>${escapeHtml(x.label)}</strong><small>${escapeHtml(trendText(x.vals))}</small></div><span class="${diff>0?'up':diff<0?'down':''}">${diff>0?'+':''}${diff}pt</span>`;unitEl.append(row)}if(!unitRows.length)unitEl.innerHTML='<p class="help">単元別に集計できる結果がありません。</p>';}
-function renderRecentHistory(history){
- const el=document.getElementById('recentStudyHistory');el.innerHTML='';const rows=[...history].sort((a,b)=>new Date(b.at)-new Date(a.at)).slice(0,10);
- if(!rows.length){el.innerHTML='<p class="help">まだ学習履歴がありません。小テストを解くとここに記録されます。</p>';return;}
- rows.forEach(h=>{const row=document.createElement('div');row.className='history-row';const subj=h.subject?statsSubjectName(h.subject):'複数教科';row.innerHTML=`<div><strong>${escapeHtml(modeLabel(h.mode))}</strong><small>${escapeHtml(formatStudyDate(h.at))}・${escapeHtml(subj)}</small></div><span>${Number(h.score)||0}/${Number(h.total)||0}・${Number(h.rate)||0}%</span>`;el.append(row)});
-}
-
-function fillImportSubjects(){
- const sel=document.getElementById('importSubject');state.curriculum.subjects.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=`${s.icon} ${s.name}`;sel.append(o)});
- renderImportGrades();renderImportQuestions();
-}
-function renderImportGrades(){const el=document.getElementById('importGradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.importGrade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.importGrade=g;renderImportGrades();updateImportFields()};el.append(b)})}
-function updateImportFields(){
- const sid=document.getElementById('importSubject').value;const fs=document.getElementById('importField');const us=document.getElementById('importUnit');fs.innerHTML='<option value="">分野を選択</option>';us.innerHTML='<option value="">単元を選択</option>';if(!sid){updateImportTextbookHint();return}const sub=state.curriculum.subjects.find(s=>s.id===sid);sub.fields.forEach(f=>{if(!f.units.some(u=>u.grades.includes(state.importGrade)))return;const o=document.createElement('option');o.value=f.id;o.textContent=f.name;fs.append(o)});updateImportTextbookHint();
-}
-document.getElementById('importSubject').addEventListener('change',updateImportFields);
-document.getElementById('importField').addEventListener('change',()=>{const sid=document.getElementById('importSubject').value;const fid=document.getElementById('importField').value;const us=document.getElementById('importUnit');us.innerHTML='<option value="">単元を選択</option>';const f=state.curriculum.subjects.find(s=>s.id===sid)?.fields.find(x=>x.id===fid);(f?.units||[]).filter(u=>u.grades.includes(state.importGrade)).forEach(u=>{const o=document.createElement('option');o.value=u.id;o.textContent=u.name;us.append(o)});updateImportTextbookHint();});
-function newImportQuestion(text=''){return{id:crypto.randomUUID?.()||String(Date.now()+Math.random()),type:'choice',question:text,choices:['','','',''],answer:0,answers:[''],items:['','','',''],answerOrder:[0,1,2,3],blanks:[['']],modelAnswer:'',explanation:''}}
-
-// OCR結果から、タイトル・氏名欄・注意書きなどを除き、問題部分を抽出する。
-// AIや外部APIへ本文を送らず、端末内のルール処理だけで動作する。
-// OCRは「問 1.」「問　1」「Q 1」「1 .」のように番号の周囲へ空白を入れることがあるため、
-// 問題番号の検出前に文字幅・空白を正規化する。
-const QUESTION_START_RE=/^\s*(?:(?:問\s*|Q\s*|Ｑ\s*)[0-9０-９]{1,3}|[0-9０-９]{1,3})\s*[.．、:：)）\-]?\s*/i;
-const EMBEDDED_QUESTION_RE=/(?:^|\s)((?:問\s*|Q\s*|Ｑ\s*)[0-9０-９]{1,3}\s*[.．、:：)）\-]?)/gi;
-const CHOICE_RE=/^\s*(?:([A-DＡ-Ｄa-d]|[ア-エ])\s*[.．、:：)）]?|([①②③④])|([1-4１-４])\s*[)）])\s*(.+?)\s*$/;
-function normalizeOcrLine(line){return String(line||'').normalize('NFKC').replace(/[\u00a0\u3000]/g,' ').replace(/\s+/g,' ').trim();}
-function compactJapaneseSpacing(text){
- let t=String(text||'');
- // 日本語文字同士の間にOCRが挿入した不要な空白だけを除去する。
- const jp='\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff';
- const re=new RegExp(`([${jp}])\\s+([${jp}])`,'g');
- let prev='';
- while(prev!==t){prev=t;t=t.replace(re,'$1$2');}
- return t.replace(/\s+([、。！？・])/g,'$1').replace(/([（「『])\s+/g,'$1').replace(/\s+([）」』])/g,'$1').trim();
-}
-function isPageMarker(line){return /^-+\s*[0-9０-９]+\s*ページ目\s*-+$/i.test(line);}
-function isLikelyFooterOrNote(line){
- const t=normalizeOcrLine(line);
- return !t||/^[-－—―_=＿]{3,}$/.test(t)||/^\d+\s*\/\s*\d+$/.test(t)||/^ページ\s*\d+$/i.test(t)||/^※/.test(t)||/^(氏名|名前|学年|組|番号|日付|得点|点数)\s*[：:].*$/.test(t)||/^(答え|解答)(?:\s*[：:]\s*[_＿-]*)?\s*$/.test(t);
-}
-function stripQuestionNumber(text){return String(text||'').replace(QUESTION_START_RE,'').trim();}
-function splitPagesFromOcr(raw){
- const lines=String(raw||'').replace(/\r/g,'').split('\n');
- const pages=[];let current=[];
- for(const line of lines){
-  if(isPageMarker(normalizeOcrLine(line))){if(current.some(x=>x.trim()))pages.push(current);current=[];continue}
-  current.push(line);
- }
- if(current.some(x=>x.trim()))pages.push(current);
- return pages.length?pages:[lines];
-}
-function ensureQuestionStartsOnOwnLine(raw){
- // OCRによって「答え 問 2. ...」のように同一行へ連結された場合にも対応する。
- return String(raw||'').replace(/([^\n])\s+((?:問\s*|Q\s*|Ｑ\s*)[0-9０-９]{1,3}\s*[.．、:：)）\-]?\s*)/gi,'$1\n$2');
-}
-function extractQuestionBlocks(raw){
- const blocks=[];
- for(const rawPage of splitPagesFromOcr(ensureQuestionStartsOnOwnLine(raw))){
-  let lines=rawPage.map(normalizeOcrLine).filter(Boolean);
-  const firstQuestion=lines.findIndex(line=>QUESTION_START_RE.test(line));
-  // 問題番号が見つかったページは、それ以前をタイトル・氏名欄などとして除外。
-  if(firstQuestion>=0)lines=lines.slice(firstQuestion);
-  let current=[];
-  for(const line of lines){
-   if(QUESTION_START_RE.test(line)){
-    if(current.length)blocks.push(current.join('\n').trim());
-    current=[line];
-   }else if(current.length){
-    // 問題開始後の「答え」、脚注、ページ番号等は登録対象にしない。
-    if(!isLikelyFooterOrNote(line))current.push(line);
-   }
-  }
-  if(current.length)blocks.push(current.join('\n').trim());
- }
- // 問題番号をまったく認識できなかったときだけ、空行区切りをフォールバックにする。
- if(!blocks.length){
-  return String(raw||'').split(/\n\s*\n+/).map(x=>x.trim()).filter(x=>x&&!isLikelyFooterOrNote(x));
- }
- return blocks;
-}
-function inferImportedQuestion(block){
- const lines=String(block||'').split('\n').map(normalizeOcrLine).filter(Boolean).filter(x=>!isLikelyFooterOrNote(x));
- if(!lines.length)return newImportQuestion('');
- lines[0]=stripQuestionNumber(lines[0]);
- const choices=[];const body=[];
- for(const line of lines){
-  const m=line.match(CHOICE_RE);
-  if(m&&body.length){choices.push(compactJapaneseSpacing(m[4]));}
-  else body.push(compactJapaneseSpacing(line));
- }
- const questionText=compactJapaneseSpacing(body.join(' '));
- const q=newImportQuestion(questionText);
- if(choices.length>=2){
-  q.type='choice';q.choices=choices.slice(0,4);while(q.choices.length<4)q.choices.push('');q.answer=0;
- }else if(/(?:説明|理由|根拠|考え|述べ|文章で|詳しく|なぜ)/.test(questionText)){
-  q.type='text';q.modelAnswer='';
- }else{
-  q.type='word';q.answers=[''];
- }
- return q;
-}
-function splitRecognizedText(){
- const text=document.getElementById('ocrText').value.trim();
- if(!text){alert('先に読み取り結果または手入力の文章を用意してください。');return}
- const blocks=extractQuestionBlocks(text);
- state.importQuestions=blocks.map(inferImportedQuestion).filter(q=>q.question.trim());
- const status=document.getElementById('ocrStatus');
- if(status)status.textContent=state.importQuestions.length
-  ?`問題番号を基準に${state.importQuestions.length}問へ分割しました。タイトル・氏名欄・「答え」・ページ番号は除外しています。問題文・解答形式・正解を確認して修正してください。`
-  :'問題を自動抽出できませんでした。OCR結果を修正するか「＋ 問題を手動追加」を使ってください。';
- renderImportQuestions();
-}
-function renderImportQuestions(){const el=document.getElementById('importQuestionEditor');el.innerHTML='';state.importQuestions.forEach((q,idx)=>{const card=document.createElement('div');card.className='import-question-card';card.innerHTML=`<div class="import-question-head"><strong>問題 ${idx+1}</strong><button type="button" class="remove-question" aria-label="問題を削除">削除</button></div><label>解答形式<select data-iq="type"><option value="choice" ${q.type==='choice'?'selected':''}>単一選択</option><option value="multi" ${q.type==='multi'?'selected':''}>複数選択</option><option value="reorder" ${q.type==='reorder'?'selected':''}>並べ替え</option><option value="fill" ${q.type==='fill'?'selected':''}>穴埋め</option><option value="word" ${q.type==='word'?'selected':''}>単語・短答</option><option value="text" ${q.type==='text'?'selected':''}>文章・記述</option></select></label><textarea data-iq="question" rows="3" placeholder="問題文">${escapeHtml(q.question)}</textarea><div data-type-area></div><textarea data-iq="explanation" rows="2" placeholder="解説（任意）">${escapeHtml(q.explanation)}</textarea>`;
- const renderType=()=>{const a=card.querySelector('[data-type-area]');a.innerHTML='';a.className='';
-  if(q.type==='choice'){q.choices=q.choices?.length?q.choices:['','','',''];a.className='choice-editor';a.innerHTML=q.choices.map((c,i)=>`<label><input type="radio" name="ans-${q.id}" value="${i}" ${q.answer===i?'checked':''}><input type="text" data-choice="${i}" value="${escapeAttr(c)}" placeholder="選択肢 ${String.fromCharCode(65+i)}"></label>`).join('');a.querySelectorAll('[data-choice]').forEach(x=>x.oninput=e=>q.choices[Number(e.target.dataset.choice)]=e.target.value);a.querySelectorAll('input[type=radio]').forEach(x=>x.onchange=e=>q.answer=Number(e.target.value));}
-  else if(q.type==='multi'){q.choices=q.choices?.length?q.choices:['','','',''];const selected=new Set((q.answers||[]).filter(Number.isInteger));a.className='choice-editor';a.innerHTML=q.choices.map((c,i)=>`<label><input type="checkbox" data-multi-answer="${i}" ${selected.has(i)?'checked':''}><input type="text" data-choice="${i}" value="${escapeAttr(c)}" placeholder="選択肢 ${String.fromCharCode(65+i)}"></label>`).join('');a.querySelectorAll('[data-choice]').forEach(x=>x.oninput=e=>q.choices[Number(e.target.dataset.choice)]=e.target.value);a.querySelectorAll('[data-multi-answer]').forEach(x=>x.onchange=()=>q.answers=[...a.querySelectorAll('[data-multi-answer]:checked')].map(y=>Number(y.dataset.multiAnswer)));}
-  else if(q.type==='reorder'){a.innerHTML=`<label>正しい順番の語句（ | で区切る）<input type="text" data-reorder-items value="${escapeAttr((q.items||[]).filter(Boolean).join(' | '))}" placeholder="例：I | have | lived | here | ."></label><p class="help">登録した順番が正解になります。出題時は自動でシャッフルされます。</p>`;a.querySelector('[data-reorder-items]').oninput=e=>{q.items=e.target.value.split('|').map(x=>x.trim()).filter(Boolean);q.answerOrder=q.items.map((_,i)=>i);};}
-  else if(q.type==='fill'){a.innerHTML=`<label>空欄ごとの正解（空欄は ; 区切り、別解は | 区切り）<input type="text" data-fill-answers value="${escapeAttr((q.blanks||[]).map(v=>(Array.isArray(v)?v:[v]).join(' | ')).join(' ; '))}" placeholder="例：has ; finished　/　that | which"></label>`;a.querySelector('[data-fill-answers]').oninput=e=>q.blanks=e.target.value.split(';').map(part=>part.split('|').map(x=>x.trim()).filter(Boolean)).filter(a=>a.length);}
-  else if(q.type==='word'){a.innerHTML=`<label>正解（複数ある場合は | で区切る）<input type="text" data-answer-word value="${escapeAttr((q.answers||[]).filter(x=>typeof x==='string').join(' | '))}" placeholder="例：源頼朝 | みなもとのよりとも"></label>`;a.querySelector('[data-answer-word]').oninput=e=>q.answers=e.target.value.split('|').map(x=>x.trim()).filter(Boolean);}
-  else{a.innerHTML=`<label>模範解答<textarea data-model-answer rows="4" placeholder="文章・記述問題の模範解答">${escapeHtml(q.modelAnswer||'')}</textarea></label>`;a.querySelector('[data-model-answer]').oninput=e=>q.modelAnswer=e.target.value;}};
- card.querySelector('[data-iq="question"]').oninput=e=>q.question=e.target.value;card.querySelector('[data-iq="explanation"]').oninput=e=>q.explanation=e.target.value;card.querySelector('[data-iq="type"]').onchange=e=>{q.type=e.target.value;renderType()};card.querySelector('.remove-question').onclick=()=>{state.importQuestions.splice(idx,1);renderImportQuestions()};renderType();el.append(card)});}
-function escapeHtml(v){return String(v).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]))}
-function escapeAttr(v){return escapeHtml(v).replace(/"/g,'&quot;')}
-document.getElementById('splitQuestions').onclick=splitRecognizedText;document.getElementById('addImportQuestion').onclick=()=>{state.importQuestions.push(newImportQuestion());renderImportQuestions()};
-function releaseImportedObjectUrls(){importedObjectUrls.forEach(url=>URL.revokeObjectURL(url));importedObjectUrls=[];}
-function renderImportPreview(message='取り込んだページを確認してください。文字がぼやけている場合は撮り直してください。'){
- const area=document.getElementById('previewArea'),list=document.getElementById('pagePreviewList'),summary=document.getElementById('fileSummary');
- list.innerHTML='';
- state.importPages.forEach((page,i)=>{const card=document.createElement('div');card.className='page-preview-card';const img=document.createElement('img');img.src=page.src;img.alt=`取り込みページ ${i+1}`;const cap=document.createElement('small');cap.textContent=page.label||`${i+1}ページ目`;card.append(img,cap);list.append(card)});
- area.hidden=!state.importPages.length;
- summary.textContent=state.importPages.length?`${state.importPages.length}ページを取り込みました。`:'';
- document.getElementById('imageStatus').textContent=state.importPages.length?message:'';
-}
-function clearPreview(){releaseImportedObjectUrls();state.importPages=[];document.getElementById('previewArea').hidden=true;document.getElementById('pagePreviewList').innerHTML='';document.getElementById('fileSummary').textContent='';document.getElementById('paperImage').value='';document.getElementById('imageStatus').textContent='';}
-function addObjectUrl(file,label){const url=URL.createObjectURL(file);importedObjectUrls.push(url);state.importPages.push({src:url,label,type:'image'});}
-function loadScriptOnce(src,key){return new Promise(resolve=>{if(key&&window[key]){resolve(true);return}const existing=[...document.scripts].find(s=>s.src===src);if(existing){if(existing.dataset.loaded==='1')resolve(true);else{existing.addEventListener('load',()=>resolve(true),{once:true});existing.addEventListener('error',()=>resolve(false),{once:true})}return}const sc=document.createElement('script');sc.src=src;sc.crossOrigin='anonymous';sc.onload=()=>{sc.dataset.loaded='1';resolve(true)};sc.onerror=()=>resolve(false);document.head.append(sc)});}
-async function loadPdfLibrary(){
- if(window.pdfjsLib)return true;
- const status=document.getElementById('imageStatus');
- status.textContent='PDF読み込みライブラリを準備しています…';
- const sources=[
-  'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/',
-  'https://unpkg.com/pdfjs-dist@3.11.174/'
- ];
- for(const root of sources){
-  const ok=await loadScriptOnce(root+'build/pdf.min.js','pdfjsLib');
-  if(ok&&window.pdfjsLib){
-   state.pdfAssetBase=root;
-   state.pdfWorkerUrl=root+'build/pdf.worker.min.js';
-   if(window.pdfjsLib.GlobalWorkerOptions)window.pdfjsLib.GlobalWorkerOptions.workerSrc=state.pdfWorkerUrl;
-   return true;
-  }
- }
- return false;
-}
-
-function pdfCanvasLooksTextless(ctx,canvas){
- // ページ全体を軽くサンプリングし、黒〜濃灰色の画素が極端に少ない場合だけ
- // テキスト再描画を行う。罫線だけのページを文字なしと判定しやすくする。
- try{
-  const sample=document.createElement('canvas');
-  const sw=Math.min(220,canvas.width),sh=Math.max(1,Math.round(canvas.height*(sw/canvas.width)));
-  sample.width=sw;sample.height=sh;
-  const sctx=sample.getContext('2d',{willReadFrequently:true});
-  sctx.drawImage(canvas,0,0,sw,sh);
-  const data=sctx.getImageData(0,0,sw,sh).data;
-  let dark=0,total=0;
-  for(let i=0;i<data.length;i+=16){
-   const r=data[i],g=data[i+1],b=data[i+2];
-   if(r<175&&g<175&&b<175)dark++;
-   total++;
-  }
-  return total===0||dark/total<0.006;
- }catch(_){return true}
-}
-function overlayPdfText(ctx,viewport,textContent){
- const util=window.pdfjsLib?.Util;if(!util||!textContent?.items)return;
- ctx.save();
- ctx.fillStyle='#111';
- ctx.textBaseline='alphabetic';
- for(const item of textContent.items){
-  const str=(item.str||'');if(!str.trim())continue;
-  const tx=util.transform(viewport.transform,item.transform);
-  const fontSize=Math.max(7,Math.hypot(tx[2],tx[3])||Math.hypot(tx[0],tx[1])||12);
-  const x=tx[4],y=tx[5];
-  ctx.save();
-  ctx.translate(x,y);
-  // PDFのテキスト座標をcanvas向けに補正し、日本語を描ける一般フォントへ置換。
-  ctx.scale(1,-1);
-  ctx.font=`${fontSize}px "Yu Gothic","Meiryo","Noto Sans CJK JP",sans-serif`;
-  ctx.fillText(str,0,0);
-  ctx.restore();
- }
- ctx.restore();
-}
-
-async function renderPdfFile(file){
- const ok=await loadPdfLibrary();if(!ok)throw new Error('PDF.jsを読み込めませんでした。ネットワーク制限を確認してください。');
- const data=new Uint8Array(await file.arrayBuffer());
- const assetBase=state.pdfAssetBase||'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/';
- const docOptions={
-  data,
-  cMapUrl:assetBase+'cmaps/',
-  cMapPacked:true,
-  standardFontDataUrl:assetBase+'standard_fonts/',
-  useSystemFonts:true,
-  useWorkerFetch:false,
-  isEvalSupported:false
- };
- let pdf;
- try{
-  pdf=await window.pdfjsLib.getDocument(docOptions).promise;
- }catch(firstError){
-  console.warn('PDF.js primary source failed',firstError);
-  // 配信元固有のCMap/フォント取得失敗を想定して、予備CDNへ切り替えて1度だけ再試行する。
-  const fallbackRoot=(assetBase.includes('jsdelivr'))?'https://unpkg.com/pdfjs-dist@3.11.174/':'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/';
-  const retryOptions={...docOptions,cMapUrl:fallbackRoot+'cmaps/',standardFontDataUrl:fallbackRoot+'standard_fonts/'};
-  pdf=await window.pdfjsLib.getDocument(retryOptions).promise;
- }
- if(pdf.numPages>20)throw new Error('PDFは20ページ以下にしてください。');
- for(let n=1;n<=pdf.numPages;n++){
-  document.getElementById('imageStatus').textContent=`PDFをページ画像へ変換しています… ${n}/${pdf.numPages}`;
-  const page=await pdf.getPage(n);
-  const baseViewport=page.getViewport({scale:1});
-  const scale=Math.max(1.5,Math.min(2.5,2000/baseViewport.width));
-  const viewport=page.getViewport({scale});
-  const canvas=document.createElement('canvas');
-  canvas.width=Math.ceil(viewport.width);
-  canvas.height=Math.ceil(viewport.height);
-  const ctx=canvas.getContext('2d',{alpha:false,willReadFrequently:true});
-  if(!ctx)throw new Error(`${n}ページ目の描画領域を作成できませんでした。`);
-  ctx.save();
-  ctx.fillStyle='#ffffff';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.restore();
-  await page.render({canvasContext:ctx,viewport,intent:'display'}).promise;
-
-  // 一部の日本語PDFはフォントを埋め込まず、文字コードだけを保持している。
-  // その場合PDF.jsは罫線等を描けても本文のグリフを描けないことがあるため、
-  // 取得できるテキスト情報を使って汎用の日本語フォントで文字を再描画する。
-  try{
-   const textContent=await page.getTextContent({includeMarkedContent:false});
-   const chars=textContent.items?.reduce((n,item)=>n+(item.str||'').trim().length,0)||0;
-   if(chars>0&&pdfCanvasLooksTextless(ctx,canvas)){
-    overlayPdfText(ctx,viewport,textContent);
-    console.info(`PDF ${n}ページ目: フォント描画フォールバックを使用しました。`);
-   }
-  }catch(textError){
-   console.warn(`PDF ${n}ページ目のテキスト補完に失敗しました。`,textError);
-  }
-
-  const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
-  if(page.cleanup)page.cleanup(false);
-  if(!blob)throw new Error(`${n}ページ目の画像化に失敗しました。`);
-  const url=URL.createObjectURL(blob);
-  importedObjectUrls.push(url);
-  state.importPages.push({src:url,label:`${file.name} - ${n}/${pdf.numPages}ページ`,type:'pdf-page'});
- }
- if(typeof pdf.destroy==='function')await pdf.destroy();
-}
-async function handleImportFiles(fileList){
- const files=[...fileList];if(!files.length)return;
- clearPreview();const status=document.getElementById('imageStatus');document.getElementById('previewArea').hidden=false;status.textContent='ファイルを確認しています…';
- try{
-  for(const file of files){
-   const isPdf=file.type==='application/pdf'||file.name.toLowerCase().endsWith('.pdf');
-   if(isPdf){if(file.size>30*1024*1024)throw new Error('PDFは30MB以下にしてください。');await renderPdfFile(file);}
-   else if(file.type.startsWith('image/')){if(file.size>12*1024*1024)throw new Error('画像は1枚12MB以下にしてください。');addObjectUrl(file,file.name);}
-   else throw new Error('PDF / JPG / PNG / WEBPなどの画像ファイルを選んでください。');
-  }
-  renderImportPreview('取り込み完了です。ページの向きや文字の鮮明さを確認してからOCRを実行してください。');
- }catch(error){console.error(error);clearPreview();document.getElementById('previewArea').hidden=false;document.getElementById('imageStatus').textContent='読み込み失敗：'+(error?.message||String(error));}
-}
-const paperInput=document.getElementById('paperImage');
-paperInput.addEventListener('change',e=>handleImportFiles(e.target.files));
-const dropZone=document.getElementById('dropZone');
-['dragenter','dragover'].forEach(type=>dropZone.addEventListener(type,e=>{e.preventDefault();e.stopPropagation();dropZone.classList.add('dragover')}));
-['dragleave','drop'].forEach(type=>dropZone.addEventListener(type,e=>{e.preventDefault();e.stopPropagation();dropZone.classList.remove('dragover')}));
-dropZone.addEventListener('drop',e=>handleImportFiles(e.dataTransfer.files));
-dropZone.addEventListener('click',()=>paperInput.click());
-dropZone.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();paperInput.click();}});
-document.getElementById('openCamera').onclick=()=>openCamera();document.getElementById('closeCamera').onclick=()=>closeCamera();document.getElementById('retakePhoto').onclick=()=>openCamera();document.getElementById('clearPhoto').onclick=clearPreview;document.getElementById('switchCamera').onclick=async()=>{facingMode=facingMode==='environment'?'user':'environment';await startCamera();};document.getElementById('takePhoto').onclick=takePhoto;
-async function openCamera(){const modal=document.getElementById('cameraModal');modal.hidden=false;document.body.style.overflow='hidden';await startCamera();}
-async function startCamera(){const status=document.getElementById('cameraStatus');if(!navigator.mediaDevices?.getUserMedia){status.textContent='このブラウザではカメラ撮影を利用できません。「画像・PDFを選ぶ」を使ってください。';return}stopCamera();status.textContent='カメラを起動しています…';try{cameraStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:facingMode},width:{ideal:1920},height:{ideal:1080}},audio:false});const video=document.getElementById('cameraVideo');video.srcObject=cameraStream;await video.play();status.textContent='紙全体を枠の中に入れ、影や反射が少ない状態で撮影してください。';}catch(error){console.error(error);status.textContent=error?.name==='NotAllowedError'?'カメラの使用が許可されていません。ブラウザのカメラ権限を確認するか、「画像・PDFを選ぶ」を使ってください。':'カメラを起動できませんでした。「画像・PDFを選ぶ」を使ってください。';}}
-function stopCamera(){if(cameraStream){cameraStream.getTracks().forEach(track=>track.stop());cameraStream=null;}const video=document.getElementById('cameraVideo');if(video)video.srcObject=null;}
-function closeCamera(){stopCamera();document.getElementById('cameraModal').hidden=true;document.body.style.overflow='';}
-function takePhoto(){const video=document.getElementById('cameraVideo');if(!cameraStream||!video.videoWidth){document.getElementById('cameraStatus').textContent='カメラ映像を取得できていません。';return}const canvas=document.getElementById('captureCanvas');const maxWidth=1800;const scale=Math.min(1,maxWidth/video.videoWidth);canvas.width=Math.round(video.videoWidth*scale);canvas.height=Math.round(video.videoHeight*scale);const ctx=canvas.getContext('2d');ctx.drawImage(video,0,0,canvas.width,canvas.height);canvas.toBlob(blob=>{if(!blob){document.getElementById('cameraStatus').textContent='撮影画像を作成できませんでした。';return}clearPreview();const url=URL.createObjectURL(blob);importedObjectUrls.push(url);state.importPages=[{src:url,label:'カメラ撮影',type:'camera'}];renderImportPreview('撮影した画像です。問題文が読めるか確認し、必要なら「カメラで撮り直す」を押してください。');closeCamera();},'image/jpeg',0.9);}
-document.addEventListener('visibilitychange',()=>{if(document.hidden)stopCamera();});window.addEventListener('beforeunload',()=>{stopCamera();releaseImportedObjectUrls()});
-async function loadOcrLibrary(){
- if(window.Tesseract)return true;
- const status=document.getElementById('ocrStatus');
- status.textContent='OCRライブラリを読み込んでいます…';
- const sources=[
-  'https://cdn.jsdelivr.net/npm/tesseract.js@7.0.0/dist/tesseract.min.js',
-  'https://unpkg.com/tesseract.js@7.0.0/dist/tesseract.min.js'
- ];
- for(const src of sources){
-  const ok=await loadScriptOnce(src,'Tesseract');
-  if(ok&&window.Tesseract){state.ocrScriptUrl=src;return true;}
- }
- return false;
-}
-document.getElementById('runOcr').onclick=async()=>{
- if(!state.importPages.length){alert('先に紙テストを撮影するか、画像・PDFを選んでください。');return}
- const ok=await loadOcrLibrary();if(!ok){document.getElementById('ocrStatus').textContent='OCRを読み込めませんでした。学校ネットワーク等で外部ライブラリが制限されている場合は手入力してください。';return}
- const btn=document.getElementById('runOcr'),prog=document.getElementById('ocrProgress'),status=document.getElementById('ocrStatus');btn.disabled=true;prog.hidden=false;prog.value=0;
- try{
-  const total=state.importPages.length;const worker=await Tesseract.createWorker('jpn+eng',1,{logger:m=>{if(m.progress!=null){const base=Number(btn.dataset.pageIndex||0);const pct=Math.round(((base+m.progress)/total)*100);prog.value=pct;status.textContent=`文字を読み取っています… ${base+1}/${total}ページ (${pct}%)`;}}});
-  const texts=[];
-  for(let i=0;i<total;i++){btn.dataset.pageIndex=String(i);const ret=await worker.recognize(state.importPages[i].src);const text=(ret.data.text||'').trim();texts.push(total>1?`--- ${i+1}ページ目 ---\n${text}`:text);prog.value=Math.round(((i+1)/total)*100);}
-  await worker.terminate();delete btn.dataset.pageIndex;document.getElementById('ocrText').value=texts.join('\n\n');status.textContent=`${total}ページの読み取りが終わりました。誤字や抜けを修正してから問題に分割してください。`;
- }catch(e){console.error(e);status.textContent='OCRに失敗しました。ページを確認するか、手入力で修正してください。';}
- finally{btn.disabled=false;prog.hidden=true;delete btn.dataset.pageIndex;}
-};
-function selectedPublisherForImportedQuestion(subject,field){
- const part=subject==='social'&&['geography','history','civics'].includes(field)?field:subject==='tech-home'&&['technology','home'].includes(field)?field:subject==='japanese'?'language':subject==='music'?'general':'main';
- const publisher=subjectAdoption(subject)?.[part]||'';return {part,publisher};
-}
-function updateImportTextbookHint(){
- const sel=document.getElementById('importTextbookScope'),hint=document.getElementById('importTextbookHint');if(!sel||!hint)return;
- const subject=document.getElementById('importSubject')?.value||'',field=document.getElementById('importField')?.value||'';const info=selectedPublisherForImportedQuestion(subject,field);
- sel.disabled=!subject||!info.publisher;if(!info.publisher&&sel.value==='current')sel.value='common';
- const materialWrap=document.getElementById('importMaterialWrap'),materialSel=document.getElementById('importMaterial');
- const supportsMaterial=['japanese','english'].includes(subject)&&!!info.publisher;
- if(materialWrap)materialWrap.hidden=!supportsMaterial;
- if(materialSel){const prev=materialSel.value;materialSel.innerHTML=supportsMaterial?materialOptionsHtml(subject,state.importGrade,info.publisher,prev):'<option value="">教材 / Unitを指定しない</option>';if(![...materialSel.options].some(o=>o.value===prev))materialSel.value='';}
- hint.textContent=info.publisher?`「現在の教科書に限定」を選ぶと ${publisherLabel(info.publisher)} の問題として登録します。${supportsMaterial?' 教材 / Unitを指定すると、その教材専用問題として優先出題されます。':''}`:'教科書設定がないため、この問題は共通問題として登録されます。';
-}
-document.getElementById('saveDraft').onclick=()=>{const draft={createdAt:new Date().toISOString(),grade:state.importGrade,subject:document.getElementById('importSubject').value,field:document.getElementById('importField').value,unit:document.getElementById('importUnit').value,text:document.getElementById('ocrText').value,questions:state.importQuestions};const drafts=JSON.parse(localStorage.getItem('paperDrafts')||'[]');drafts.push({...draft,id:crypto.randomUUID?.()||String(Date.now()),status:'draft'});localStorage.setItem('paperDrafts',JSON.stringify(drafts.slice(-50)));document.getElementById('draftStatus').textContent='編集途中の内容をこの端末に保存しました。';};
-document.getElementById('saveQuestions').onclick=()=>{const subject=document.getElementById('importSubject').value,field=document.getElementById('importField').value,unit=document.getElementById('importUnit').value;if(!subject||!unit){document.getElementById('draftStatus').textContent='学年・教科・分野・単元を選んでください。';return}const valid=state.importQuestions.filter(q=>q.question.trim()&&((q.type==='choice'&&q.choices?.every(c=>c.trim()))||(q.type==='multi'&&q.choices?.every(c=>c.trim())&&(q.answers||[]).length)||(q.type==='reorder'&&(q.items||[]).filter(Boolean).length>=2)||(q.type==='fill'&&(q.blanks||[]).length&&(q.blanks||[]).every(a=>(Array.isArray(a)?a:[a]).filter(Boolean).length))||(q.type==='word'&&acceptedTextAnswers(q).length)||(q.type==='text'&&q.modelAnswer.trim())));if(!valid.length){document.getElementById('draftStatus').textContent='問題文と、選んだ解答形式に必要な正解を入力してください。';return}const custom=loadCustomQuestions();const now=Date.now();const scope=document.getElementById('importTextbookScope')?.value||'common';const textbook=selectedPublisherForImportedQuestion(subject,field);const materialId=document.getElementById('importMaterial')?.value||'';valid.forEach((q,i)=>{const item={id:`custom-${now}-${i}`,grades:[state.importGrade],subject,field,unit,type:q.type,difficulty:1,question:q.question.trim(),explanation:q.explanation.trim()||'紙テストから登録した問題です。',source:'paper',createdAt:new Date().toISOString(),textbookPublisher:(scope==='current'||materialId)&&textbook.publisher?textbook.publisher:'common'};if((scope==='current'||materialId)&&textbook.publisher)item.textbookComponent=textbook.part;if(materialId)item.materialIds=[materialId];if(q.type==='choice')Object.assign(item,{choices:q.choices.map(c=>c.trim()),answer:q.answer});else if(q.type==='multi')Object.assign(item,{choices:q.choices.map(c=>c.trim()),answers:(q.answers||[]).map(Number)});else if(q.type==='reorder'){const items=(q.items||[]).map(x=>x.trim()).filter(Boolean);Object.assign(item,{items,answerOrder:items.map((_,i)=>i)});}else if(q.type==='fill')Object.assign(item,{blanks:(q.blanks||[]).map(a=>(Array.isArray(a)?a:[a]).map(x=>String(x).trim()).filter(Boolean))});else if(q.type==='word')Object.assign(item,{answers:acceptedTextAnswers(q)});else Object.assign(item,{modelAnswer:q.modelAnswer.trim()});custom.push(item)});saveCustomQuestions(custom);document.getElementById('draftStatus').textContent=`${valid.length}問を問題バンクへ登録しました。${scope==='current'&&textbook.publisher?` ${publisherLabel(textbook.publisher)}専用として保存しました。`:''} 登録問題の管理から編集・削除できます。`;state.importQuestions=[];renderImportQuestions();};
-
-function fillManageSubjects(){const sel=document.getElementById('manageSubject');if(!sel||!state.curriculum)return;sel.innerHTML='<option value="all">すべての教科</option>';state.curriculum.subjects.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=`${s.icon} ${s.name}`;sel.append(o)});sel.onchange=renderManageQuestions;}
-function openManage(){showView('manageView');renderManageQuestions();}
-function unitNameFor(q){for(const s of state.curriculum.subjects){for(const f of s.fields){const u=f.units.find(x=>x.id===q.unit);if(u)return `${f.name} ＞ ${u.name}`}}return q.unit||'';}
-function renderManageQuestions(){const list=document.getElementById('manageQuestionList');if(!list)return;const filter=document.getElementById('manageSubject')?.value||'all';const items=loadCustomQuestions().filter(q=>filter==='all'||q.subject===filter);document.getElementById('manageSummary').textContent=`登録済み ${items.length}問`;list.innerHTML='';if(!items.length){list.innerHTML='<div class="step-card"><p class="help">登録した問題はまだありません。</p></div>';return}items.slice().reverse().forEach(q=>{const s=state.curriculum.subjects.find(x=>x.id===q.subject);const card=document.createElement('div');card.className='manage-question-card';const textbookNote=q.textbookPublisher&&q.textbookPublisher!=='common'?`・${publisherLabel(q.textbookPublisher)}限定`:'・共通';const materialNote=questionMaterialIds(q).length?`・教材「${questionMaterialIds(q).map(materialTitleById).join(' / ')}」`:'';card.innerHTML=`<div class="manage-question-meta"><span>${s?.icon||''} 中${q.grades?.[0]||''}・${escapeHtml(s?.name||q.subject)}${escapeHtml(textbookNote+materialNote)}</span><span class="type-badge">${q.type==='choice'?'単一選択':q.type==='multi'?'複数選択':q.type==='reorder'?'並べ替え':q.type==='fill'?'穴埋め':q.type==='word'?'短答':'記述'}</span></div><strong>${escapeHtml(q.question)}</strong><small>${escapeHtml(unitNameFor(q))}</small><div class="manage-actions"><button class="secondary" data-edit>編集</button><button class="danger" data-delete>削除</button></div>`;card.querySelector('[data-edit]').onclick=()=>openManageEdit(q.id);card.querySelector('[data-delete]').onclick=()=>deleteManagedQuestion(q.id);list.append(card)});}
-function deleteManagedQuestion(id){const q=loadCustomQuestions().find(x=>x.id===id);if(!q)return;if(!confirm(`「${q.question}」を削除しますか？`))return;saveCustomQuestions(loadCustomQuestions().filter(x=>x.id!==id));const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]').filter(x=>x.questionId!==id);localStorage.setItem('missedQuestions',JSON.stringify(missed));renderManageQuestions();renderQuiz();}
-function openManageEdit(id){state.manageEditId=id;showView('manageEditView');renderManageEditForm();}
-function renderManageEditForm(){const q=loadCustomQuestions().find(x=>x.id===state.manageEditId);const host=document.getElementById('manageEditForm');if(!q){host.innerHTML='<p>問題が見つかりません。</p>';return}const subjects=state.curriculum.subjects.map(s=>`<option value="${s.id}" ${s.id===q.subject?'selected':''}>${s.icon} ${s.name}</option>`).join('');host.innerHTML=`<label>学年<select id="meGrade"><option value="1" ${q.grades?.includes(1)?'selected':''}>中1</option><option value="2" ${q.grades?.includes(2)?'selected':''}>中2</option><option value="3" ${q.grades?.includes(3)?'selected':''}>中3</option></select></label><label>教科<select id="meSubject">${subjects}</select></label><label>単元<select id="meUnit"></select></label><label>教科書との関係<select id="meTextbookScope"><option value="common" ${!q.textbookPublisher||q.textbookPublisher==='common'?'selected':''}>共通問題</option><option value="current" ${q.textbookPublisher&&q.textbookPublisher!=='common'?'selected':''}>現在設定中の教科書に限定</option></select></label><p id="meTextbookHint" class="help"></p><label id="meMaterialWrap"><strong>教材 / Unit（任意）</strong><select id="meMaterial"><option value="">教材 / Unitを指定しない</option></select></label><label>解答形式<select id="meType"><option value="choice" ${q.type==='choice'?'selected':''}>単一選択</option><option value="multi" ${q.type==='multi'?'selected':''}>複数選択</option><option value="reorder" ${q.type==='reorder'?'selected':''}>並べ替え</option><option value="fill" ${q.type==='fill'?'selected':''}>穴埋め</option><option value="word" ${q.type==='word'?'selected':''}>単語・短答</option><option value="text" ${q.type==='text'?'selected':''}>文章・記述</option></select></label><label>問題文<textarea id="meQuestion" rows="4">${escapeHtml(q.question)}</textarea></label><div id="meAnswerArea"></div><label>解説<textarea id="meExplanation" rows="3">${escapeHtml(q.explanation||'')}</textarea></label>`;const updateMeTextbook=()=>{const sid=document.getElementById('meSubject').value,unit=document.getElementById('meUnit').value,field=fieldIdForUnit(sid,unit),grade=Number(document.getElementById('meGrade').value);const info=selectedPublisherForImportedQuestion(sid,field);const scope=document.getElementById('meTextbookScope'),hint=document.getElementById('meTextbookHint'),material=document.getElementById('meMaterial'),wrap=document.getElementById('meMaterialWrap');if(scope){scope.disabled=!info.publisher;if(!info.publisher&&scope.value==='current')scope.value='common';}const supports=['japanese','english'].includes(sid)&&!!info.publisher;if(wrap)wrap.hidden=!supports;if(material){const current=material.value||questionMaterialIds(q)[0]||'';material.innerHTML=supports?materialOptionsHtml(sid,grade,info.publisher,current):'<option value="">教材 / Unitを指定しない</option>';if([...material.options].some(o=>o.value===current))material.value=current;}if(hint)hint.textContent=info.publisher?`限定すると ${publisherLabel(info.publisher)} の問題として保存します。${supports?' 教材 / Unitを指定すると専用問題になります。':''}`:'現在の教科書設定がないため共通問題として保存します。';};const populateUnits=()=>{const sid=document.getElementById('meSubject').value,g=Number(document.getElementById('meGrade').value),sel=document.getElementById('meUnit');sel.innerHTML='';const sub=state.curriculum.subjects.find(s=>s.id===sid);sub?.fields.forEach(f=>f.units.filter(u=>u.grades.includes(g)).forEach(u=>{const o=document.createElement('option');o.value=u.id;o.textContent=`${f.name} ＞ ${u.name}`;if(u.id===q.unit)o.selected=true;sel.append(o)}));sel.onchange=updateMeTextbook;updateMeTextbook();};const renderAns=()=>{const a=document.getElementById('meAnswerArea'),t=document.getElementById('meType').value;
- if(t==='choice'){const choices=q.choices||['','','',''];a.innerHTML=`<p><strong>選択肢・正解</strong></p>${choices.map((c,i)=>`<label class="manage-choice"><input type="radio" name="meAns" value="${i}" ${(q.answer??0)===i?'checked':''}><input type="text" data-me-choice="${i}" value="${escapeAttr(c)}"></label>`).join('')}`;}
- else if(t==='multi'){const choices=q.choices||['','','',''];const ans=new Set((q.answers||[]).filter(Number.isInteger));a.innerHTML=`<p><strong>選択肢・正解（複数チェック可）</strong></p>${choices.map((c,i)=>`<label class="manage-choice"><input type="checkbox" data-me-multi="${i}" ${ans.has(i)?'checked':''}><input type="text" data-me-choice="${i}" value="${escapeAttr(c)}"></label>`).join('')}`;}
- else if(t==='reorder'){a.innerHTML=`<label>正しい順番の語句（ | 区切り）<input id="meReorder" type="text" value="${escapeAttr((q.items||[]).join(' | '))}"></label>`;}
- else if(t==='fill'){a.innerHTML=`<label>空欄ごとの正解（空欄は ;、別解は |）<input id="meFill" type="text" value="${escapeAttr((q.blanks||[]).map(v=>(Array.isArray(v)?v:[v]).join(' | ')).join(' ; '))}"></label>`;}
- else if(t==='word'){a.innerHTML=`<label>正解（ | 区切り）<input id="meWords" type="text" value="${escapeAttr(acceptedTextAnswers(q).join(' | '))}"></label>`;}
- else{a.innerHTML=`<label>模範解答<textarea id="meModel" rows="4">${escapeHtml(q.modelAnswer||'')}</textarea></label>`;}};document.getElementById('meSubject').onchange=populateUnits;document.getElementById('meGrade').onchange=populateUnits;document.getElementById('meType').onchange=renderAns;document.getElementById('meTextbookScope').onchange=updateMeTextbook;populateUnits();renderAns();}
-document.getElementById('cancelManageEdit').onclick=document.getElementById('cancelManageEditTop').onclick=()=>{state.manageEditId=null;openManage();};
-document.getElementById('saveManagedQuestion').onclick=()=>{const items=loadCustomQuestions(),q=items.find(x=>x.id===state.manageEditId);if(!q)return;const type=document.getElementById('meType').value,question=document.getElementById('meQuestion').value.trim(),unit=document.getElementById('meUnit').value;if(!question||!unit){document.getElementById('manageEditStatus').textContent='問題文と単元を入力してください。';return}q.grades=[Number(document.getElementById('meGrade').value)];q.subject=document.getElementById('meSubject').value;q.unit=unit;q.field=fieldIdForUnit(q.subject,unit);q.type=type;q.question=question;q.explanation=document.getElementById('meExplanation').value.trim();const meScope=document.getElementById('meTextbookScope').value;const meBook=selectedPublisherForImportedQuestion(q.subject,q.field);const meMaterial=document.getElementById('meMaterial')?.value||'';q.textbookPublisher=(meScope==='current'||meMaterial)&&meBook.publisher?meBook.publisher:'common';if(q.textbookPublisher!=='common')q.textbookComponent=meBook.part;else delete q.textbookComponent;if(meMaterial)q.materialIds=[meMaterial];else delete q.materialIds;delete q.materialId;delete q.choices;delete q.answer;delete q.answers;delete q.answerText;delete q.modelAnswer;delete q.items;delete q.answerOrder;delete q.blanks;if(type==='choice'){q.choices=[...document.querySelectorAll('[data-me-choice]')].map(x=>x.value.trim());q.answer=Number(document.querySelector('input[name="meAns"]:checked')?.value||0);if(q.choices.some(x=>!x)){document.getElementById('manageEditStatus').textContent='4つの選択肢を入力してください。';return}}
- else if(type==='multi'){q.choices=[...document.querySelectorAll('[data-me-choice]')].map(x=>x.value.trim());q.answers=[...document.querySelectorAll('[data-me-multi]:checked')].map(x=>Number(x.dataset.meMulti));if(q.choices.some(x=>!x)||!q.answers.length){document.getElementById('manageEditStatus').textContent='4つの選択肢と正解を1つ以上設定してください。';return}}
- else if(type==='reorder'){q.items=document.getElementById('meReorder').value.split('|').map(x=>x.trim()).filter(Boolean);q.answerOrder=q.items.map((_,i)=>i);if(q.items.length<2){document.getElementById('manageEditStatus').textContent='並べ替える語句を2つ以上入力してください。';return}}
- else if(type==='fill'){q.blanks=document.getElementById('meFill').value.split(';').map(part=>part.split('|').map(x=>x.trim()).filter(Boolean)).filter(a=>a.length);if(!q.blanks.length){document.getElementById('manageEditStatus').textContent='穴埋めの正解を入力してください。';return}}
- else if(type==='word'){q.answers=document.getElementById('meWords').value.split('|').map(x=>x.trim()).filter(Boolean);if(!q.answers.length){document.getElementById('manageEditStatus').textContent='正解を入力してください。';return}}
- else{q.modelAnswer=document.getElementById('meModel').value.trim();if(!q.modelAnswer){document.getElementById('manageEditStatus').textContent='模範解答を入力してください。';return}}q.updatedAt=new Date().toISOString();saveCustomQuestions(items);renderQuiz();document.getElementById('manageEditStatus').textContent='保存しました。';setTimeout(()=>openManage(),350);};
-
-
-function renderEnvironmentCheck(){
- const box=document.getElementById('environmentCheck');
- if(!box)return;
- const secure=window.isSecureContext===true;
- const https=location.protocol==='https:';
- const localhost=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
- const fileMode=location.protocol==='file:';
- const rows=[
-  {ok:https||localhost,label:'HTTPS / 安全な接続',detail:https?'HTTPSで接続中':(localhost?'localhostで開いています':'HTTPSではありません')},
-  {ok:secure,label:'カメラ利用条件',detail:secure?'安全なコンテキストです':'カメラはHTTPSで利用してください'},
-  {ok:!fileMode,label:'起動方法',detail:fileMode?'index.htmlの直接起動はPDF/OCR非対応です':'Webサーバー経由で起動しています'}
- ];
- box.innerHTML=rows.map(r=>`<div class="env-row ${r.ok?'ok':'ng'}"><span>${r.ok?'✓':'!'}</span><div><strong>${r.label}</strong><small>${r.detail}</small></div></div>`).join('');
- const notice=document.getElementById('runtimeNotice');
- if(fileMode&&notice){notice.classList.add('warning');notice.textContent='この画面は file:// で直接開かれています。PDF/OCR/カメラは正常動作しないため、Cloudflare PagesのHTTPS URLから利用してください。';}
-}
-
-init();
-['importSubject','importField'].forEach(id=>document.getElementById(id)?.addEventListener('change',updateImportTextbookHint));document.getElementById('importTextbookScope')?.addEventListener('change',updateImportTextbookHint);updateImportTextbookHint();
-renderEnvironmentCheck();
-const envBtn=document.getElementById('runEnvironmentCheck');if(envBtn)envBtn.onclick=renderEnvironmentCheck;
-
-
-// PWA / home-screen install
-let deferredInstallPrompt = null;
-function isStandaloneMode(){
- return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
-}
-function isIosDevice(){return /iphone|ipad|ipod/i.test(navigator.userAgent)}
-function isAndroidDevice(){return /android/i.test(navigator.userAgent)}
-function updateInstallCard(){
- const card=document.getElementById('installCard');
- if(!card)return;
- if(isStandaloneMode()){card.hidden=true;return;}
- const mobile=isIosDevice()||isAndroidDevice()||window.matchMedia?.('(max-width: 820px)').matches;
- card.hidden=!mobile;
-}
-function showInstallInstructions(){
- const modal=document.getElementById('installModal');
- const box=document.getElementById('installInstructions');
- if(!modal||!box)return;
- if(isIosDevice()){
-  box.innerHTML='<p><strong>iPhone / iPad</strong></p><ol><li>Safariでこのサイトを開きます。</li><li>画面下の「共有」ボタンを押します。</li><li>「ホーム画面に追加」を選びます。</li><li>右上の「追加」を押します。</li></ol><p class="help">Chromeなどで開いている場合は、Safariで開いてから追加してください。</p>';
- }else{
-  box.innerHTML='<p><strong>ホーム画面への追加方法</strong></p><ol><li>ブラウザのメニューを開きます。</li><li>「アプリをインストール」または「ホーム画面に追加」を選びます。</li><li>確認画面で追加します。</li></ol>';
- }
- modal.hidden=false;document.body.style.overflow='hidden';
-}
-function closeInstallInstructions(){const modal=document.getElementById('installModal');if(modal)modal.hidden=true;document.body.style.overflow='';}
-window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event;updateInstallCard();});
-window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;updateInstallCard();});
-document.getElementById('installApp')?.addEventListener('click',async()=>{
- if(deferredInstallPrompt){
-  deferredInstallPrompt.prompt();
-  try{await deferredInstallPrompt.userChoice}catch(_){ }
-  deferredInstallPrompt=null;updateInstallCard();
- }else showInstallInstructions();
-});
-document.getElementById('closeInstallModal')?.addEventListener('click',closeInstallInstructions);
-document.getElementById('installModal')?.addEventListener('click',e=>{if(e.target.id==='installModal')closeInstallInstructions();});
-updateInstallCard();
-
-if('serviceWorker' in navigator && location.protocol === 'https:'){
- window.addEventListener('load',async()=>{
-  try{
-   const reg=await navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'});
-   await reg.update();
-  }catch(err){console.warn('Service Worker registration failed',err)}
- });
-}
-
-
-// Data backup / transfer (v0.15)
-const BACKUP_KEYS=[
- 'lastQuizSelection','missedQuestions','studyHistory','examStudyLogs','examPlans','mockExamResults',
- 'customQuestions','lastStudyDate','streakDays','paperDrafts','schoolTextbookPreference','textbookStudyRanges'
-];
-let pendingBackupData=null;
-function safeJsonParse(value,fallback){try{return JSON.parse(value)}catch{return fallback}}
-function backupDataSnapshot(){
- const data={};
- BACKUP_KEYS.forEach(key=>{const value=localStorage.getItem(key);if(value!==null)data[key]=value;});
- return data;
-}
-function backupSummaryFromData(data){
- const readArray=(key)=>{const v=data?.[key];if(v==null)return[];return safeJsonParse(v,[])||[]};
- return {
-  history:readArray('studyHistory').length,
-  missed:readArray('missedQuestions').length,
-  custom:readArray('customQuestions').length,
-  exams:readArray('examPlans').length,
-  drafts:readArray('paperDrafts').length
- };
-}
-function openBackup(){showView('backupView');pendingBackupData=null;const p=document.getElementById('backupPreview');if(p)p.hidden=true;const a=document.getElementById('backupImportActions');if(a)a.hidden=true;const f=document.getElementById('backupFile');if(f)f.value='';document.getElementById('importBackupStatus').textContent='';}
-function downloadBackup(){
- const payload={app:'30min-study',schemaVersion:1,appVersion:'0.29',exportedAt:new Date().toISOString(),data:backupDataSnapshot()};
- const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
- const url=URL.createObjectURL(blob);const a=document.createElement('a');const d=new Date();const ymd=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
- a.href=url;a.download=`study-backup-${ymd}.json`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
- const sum=backupSummaryFromData(payload.data);document.getElementById('exportBackupStatus').textContent=`保存しました：学習履歴${sum.history}件・登録問題${sum.custom}問・定期テスト${sum.exams}件`;
-}
-function validateBackup(obj){
- if(!obj||obj.app!=='30min-study'||obj.schemaVersion!==1||typeof obj.data!=='object'||Array.isArray(obj.data))throw new Error('このアプリのバックアップ形式ではありません。');
- for(const key of Object.keys(obj.data)){if(!BACKUP_KEYS.includes(key))continue;if(typeof obj.data[key]!=='string')throw new Error('バックアップ内容が壊れています。');}
- return obj;
-}
-function renderBackupPreview(payload){
- const sum=backupSummaryFromData(payload.data);const el=document.getElementById('backupPreview');const when=payload.exportedAt?new Date(payload.exportedAt).toLocaleString('ja-JP'):'日時不明';
- el.innerHTML=`<strong>バックアップを確認</strong><dl class="backup-summary"><div><dt>作成日時</dt><dd>${escapeHtml(when)}</dd></div><div><dt>学習履歴</dt><dd>${sum.history}件</dd></div><div><dt>苦手問題</dt><dd>${sum.missed}問</dd></div><div><dt>登録問題</dt><dd>${sum.custom}問</dd></div><div><dt>定期テスト</dt><dd>${sum.exams}件</dd></div><div><dt>紙テスト下書き</dt><dd>${sum.drafts}件</dd></div></dl>`;
- el.hidden=false;document.getElementById('backupImportActions').hidden=false;
-}
-function uniqueMerge(current,incoming,keyFn){const map=new Map();[...current,...incoming].forEach(item=>{const key=keyFn(item);if(key!=null&&!map.has(key))map.set(key,item);else if(key==null)map.set(`anon-${map.size}`,item)});return [...map.values()]}
-function mergeBackupData(data){
- const arrayKeys={
-  missedQuestions:x=>x?.questionId,
-  customQuestions:x=>x?.id,
-  examPlans:x=>x?.id,
-  examStudyLogs:x=>x?.id||`${x?.examId||''}|${x?.at||''}`,
-  paperDrafts:x=>x?.id,
-  mockExamResults:x=>x?.id||`${x?.examId||''}|${x?.at||''}`,
-  studyHistory:x=>`${x?.at||''}|${x?.mode||''}|${x?.score??''}|${(x?.questionIds||[]).join(',')}`
- };
- Object.entries(arrayKeys).forEach(([key,keyFn])=>{const incoming=safeJsonParse(data[key]||'[]',[]);if(!Array.isArray(incoming)||!incoming.length)return;const current=safeJsonParse(localStorage.getItem(key)||'[]',[]);localStorage.setItem(key,JSON.stringify(uniqueMerge(current,incoming,keyFn).slice(key==='studyHistory'||key==='examStudyLogs'?-300:0)));});
- if(!localStorage.getItem('lastQuizSelection')&&data.lastQuizSelection)localStorage.setItem('lastQuizSelection',data.lastQuizSelection);
- if(!localStorage.getItem('schoolTextbookPreference')&&data.schoolTextbookPreference)localStorage.setItem('schoolTextbookPreference',data.schoolTextbookPreference);
- const curDate=localStorage.getItem('lastStudyDate')||'';const inDate=data.lastStudyDate||'';if(inDate>curDate){localStorage.setItem('lastStudyDate',inDate);if(data.streakDays)localStorage.setItem('streakDays',data.streakDays)}
-}
-function replaceBackupData(data){BACKUP_KEYS.forEach(k=>localStorage.removeItem(k));BACKUP_KEYS.forEach(k=>{if(typeof data[k]==='string')localStorage.setItem(k,data[k])});}
-function refreshAfterBackup(){refreshQuestionBank();migrateTextbookPreference();initSchoolTextbookSettings();renderTextbookSettings();renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;}
-document.getElementById('exportBackup')?.addEventListener('click',downloadBackup);
-document.getElementById('backupFile')?.addEventListener('change',async e=>{
- const file=e.target.files?.[0];if(!file)return;try{if(file.size>5*1024*1024)throw new Error('バックアップファイルが大きすぎます（上限5MB）。');const text=await file.text();const obj=validateBackup(JSON.parse(text));pendingBackupData=obj;renderBackupPreview(obj);document.getElementById('importBackupStatus').textContent='内容を確認して、追加または置き換えを選んでください。';}catch(err){pendingBackupData=null;document.getElementById('backupPreview').hidden=true;document.getElementById('backupImportActions').hidden=true;document.getElementById('importBackupStatus').textContent=`読み込めませんでした：${err.message}`;}
-});
-document.getElementById('mergeBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;mergeBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent='現在のデータにバックアップを追加しました。';});
-document.getElementById('replaceBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;if(!confirm('この端末に現在保存されている学習データを、選択したバックアップの内容で置き換えます。続けますか？'))return;replaceBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent='バックアップの内容でこの端末のデータを置き換えました。';});

@@ -1,10 +1,10 @@
-const CACHE_NAME = 'study-app-shell-v0.44.5';
+const CACHE_NAME = 'study-app-shell-v0.44.6';
 const APP_SHELL = [
   '/',
   '/index.html',
-  '/style.css?v=0.44.5',
-  '/reorder-grading.js?v=0.44.5',
-  '/app.js?v=0.44.5',
+  '/style.css?v=0.44.6',
+  '/reorder-grading.js?v=0.44.6',
+  '/app.js?v=0.44.6',
   '/manifest.webmanifest',
   '/data/curriculum.js',
   '/data/questions.js',

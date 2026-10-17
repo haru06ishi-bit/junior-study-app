@@ -18,6 +18,18 @@ def run():
     parser.add_argument("--minimum", type=int, default=15)
     args = parser.parse_args()
     questions = json.loads((ROOT / "data/questions.json").read_text(encoding="utf-8"))["questions"]
+    supplement_path = ROOT / "data/question-supplement-v0449.js"
+    if supplement_path.exists():
+        raw = supplement_path.read_text(encoding="utf-8").strip()
+        prefix = "window.QUESTION_SUPPLEMENT = "
+        if not raw.startswith(prefix) or not raw.endswith(";"):
+            raise ValueError("Unexpected supplemental question format")
+        extras = json.loads(raw[len(prefix):-1]).get("questions", [])
+        existing = {q["id"] for q in questions}
+        overlap = existing.intersection(q["id"] for q in extras)
+        if overlap or len({q["id"] for q in extras}) != len(extras):
+            raise ValueError("Duplicate supplement question IDs")
+        questions.extend(extras)
     curriculum = json.loads((ROOT / "data/curriculum.json").read_text(encoding="utf-8"))
     adoption = json.loads((ROOT / "data/textbooks.json").read_text(encoding="utf-8"))
     district = next(d for d in adoption["districts"] if d["id"] == "shizuoka")

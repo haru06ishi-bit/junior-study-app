@@ -2,7 +2,8 @@
 import json,re,sys,collections,unicodedata,difflib
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
-Q=json.load(open(R/'data/questions.json',encoding='utf-8'))['questions']
+from question_bank_loader import load_questions
+Q=load_questions()
 C=json.load(open(R/'data/curriculum.json',encoding='utf-8'))
 UF={}
 for s in C['subjects']:

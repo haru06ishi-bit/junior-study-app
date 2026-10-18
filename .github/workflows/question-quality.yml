@@ -38,3 +38,4 @@ jobs:
       - run: node scripts/test_reorder_grading.js
       - run: node scripts/test_exam_scope.js
       - run: node scripts/test_supplement_parity.js
+      - run: python scripts/report_question_coverage.py --json > /dev/null

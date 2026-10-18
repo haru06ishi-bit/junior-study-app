@@ -30,6 +30,8 @@ def run():
         if overlap or len({q["id"] for q in extras}) != len(extras):
             raise ValueError("Duplicate supplement question IDs")
         questions.extend(extras)
+    from question_bank_loader import load_questions
+    questions = load_questions()
     curriculum = json.loads((ROOT / "data/curriculum.json").read_text(encoding="utf-8"))
     adoption = json.loads((ROOT / "data/textbooks.json").read_text(encoding="utf-8"))
     district = next(d for d in adoption["districts"] if d["id"] == "shizuoka")

@@ -7,10 +7,10 @@ const APP_SHELL = [
   '/app.js?v=0.45.0',
   '/exam-scope.js?v=0.45.0',
   '/manifest.webmanifest',
-  '/data/curriculum.js',
-  '/data/questions.js',
-  '/data/question-supplement-v0449.js',
-  '/data/question-supplement-v0450.js',
+  '/data/curriculum.js?v=0.45.0',
+  '/data/questions.js?v=0.45.0',
+  '/data/question-supplement-v0449.js?v=0.45.0',
+  '/data/question-supplement-v0450.js?v=0.45.0',
   '/icons/icon-192.png',
   '/icons/icon-512.png'
 ];

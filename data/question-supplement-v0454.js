@@ -12,7 +12,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "choice",
-      "difficulty": 2,
+      "difficulty": 1,
       "stimulusTitle": "Library desk",
       "passage": "A: Where are the history books?\nB: Next to the art books.\nA: I need a book about old castles.\nB: Look near the window.",
       "question": "Where are the history books?",
@@ -23,7 +23,7 @@ window.QUESTION_SUPPLEMENTS.push({
         "Inside the music room."
       ],
       "answer": 0,
-      "explanation": "教科書を探している場所を正しく答える。",
+      "explanation": "歴史の本の場所は、art booksの隣と説明されている。",
       "source": "original-v0.45.4"
     },
     {
@@ -39,9 +39,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "Library desk",
       "passage": "A: Where are the history books?\nB: Next to the art books.\nA: I need a book about old castles.\nB: Look near the window.",
-      "question": "Write an English sentence explaining where the history books are.",
-      "modelAnswer": "They are next to the art books.",
-      "explanation": "採点観点：①本文の内容と一致 ②英文として自然な語順 ③主語と動詞がある。例：They are next to the art books.",
+      "question": "Where can A find a book about old castles? Answer in one English sentence.",
+      "modelAnswer": "A can find it near the window.",
+      "explanation": "採点観点：①Aまたはthe bookを主語にする ②near the windowの位置を示す ③主語・動詞がある英文。",
       "source": "original-v0.45.4"
     },
     {
@@ -59,7 +59,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "passage": "A: Can you help us with rehearsal on Thursday?\nB: I have club practice until four.\nA: We meet at four thirty in the music room.\nB: Great. I can come then.",
       "question": "Why can B come to the rehearsal?",
       "choices": [
-        "Club practice ends before it begins.",
+        "Club practice ends before the rehearsal starts.",
         "Club practice ends after it begins.",
         "There is no club practice on Thursday.",
         "The rehearsal begins before school."
@@ -82,8 +82,8 @@ window.QUESTION_SUPPLEMENTS.push({
       "stimulusTitle": "Music rehearsal",
       "passage": "A: Can you help us with rehearsal on Thursday?\nB: I have club practice until four.\nA: We meet at four thirty in the music room.\nB: Great. I can come then.",
       "question": "Write an English sentence about when B can join the rehearsal.",
-      "modelAnswer": "I can come after club practice.",
-      "explanation": "採点観点：①本文の内容と一致 ②英文として自然な語順 ③主語と動詞がある。例：I can come after club practice.",
+      "modelAnswer": "B can join the rehearsal at four thirty.",
+      "explanation": "採点観点：①Bを主語にする ②joinまたはcomeを使う ③at four thirtyまたはafter club practiceの時を示す。",
       "source": "original-v0.45.4"
     },
     {
@@ -102,9 +102,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "question": "What would help visitors understand the display?",
       "choices": [
         "Short explanations of the photos.",
-        "A schedule for sports practice.",
-        "A map of the school building.",
-        "The museum's lunch menu."
+        "Old photos with their dates removed.",
+        "Photos showing the river today.",
+        "Interviews about the river today."
       ],
       "answer": 0,
       "explanation": "展示意図を説明する。",
@@ -124,8 +124,8 @@ window.QUESTION_SUPPLEMENTS.push({
       "stimulusTitle": "Museum exhibition",
       "passage": "A: Our museum wants photos of the river in the past.\nB: We can ask older residents about their memories.\nA: We should also explain each photo.\nB: That's a good idea for visitors.",
       "question": "Write an English sentence explaining what visitors can learn from the photo display.",
-      "modelAnswer": "We should explain each photo to visitors.",
-      "explanation": "採点観点：①本文の内容と一致 ②英文として自然な語順 ③主語と動詞がある。例：We should explain each photo to visitors.",
+      "modelAnswer": "Visitors can learn how the river looked in the past.",
+      "explanation": "採点観点：①visitorsを主語にする ②learnなど学ぶことを示す動詞 ③昔の川の様子を表す。",
       "source": "original-v0.45.4"
     },
     {

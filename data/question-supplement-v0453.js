@@ -115,8 +115,8 @@ window.QUESTION_SUPPLEMENTS.push({
       "choices": [
         "One.",
         "Two.",
-        "Three.",
-        "None."
+        "Zero.",
+        "Three."
       ],
       "answer": 0,
       "explanation": "One model was made by local students とあるので一つ。",

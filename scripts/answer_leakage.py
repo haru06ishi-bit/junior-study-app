@@ -13,8 +13,8 @@ def passage_overlap(answer, passage):
     # Require the copied verbal phrase plus a matching continuation cue.
     generic = {("i","want","to"), ("it","is","a"), ("i","have","a")}
     for line in str(passage).splitlines():
-        line = re.sub(r"^[A-Za-z]:\\s*", "", line)
-        for clause in re.split(r"[.!?]+\\s*", line):
+        line = re.sub(r"^[A-Za-z]:\s*", "", line)
+        for clause in re.split(r"[.!?]+\s*", line):
             w = words(clause)
             if len(w) >= 4 and len(a) >= 5 and tuple(a[:3]) not in generic:
                 if a[:3] == w[:3] and (a[3] in w[3:] or (len(w)==4 and w[3] in ("then","now","today"))):

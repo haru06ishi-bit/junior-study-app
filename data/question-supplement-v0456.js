@@ -104,7 +104,7 @@ window.QUESTION_SUPPLEMENTS.push({
         "The meeting day and activities.",
         "The price of new cameras.",
         "The members' home addresses.",
-        "The name of every teacher."
+        "The names of the teachers."
       ],
       "answer": 0,
       "explanation": "本文から活動日と内容が分かる。機材価格、住所、教師全員の名前は参加案内に示されない。",
@@ -207,9 +207,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "Reusing a theater",
       "passage": "An old theater was closed for many years. Volunteers cleaned its rooms last winter. Now local groups use the building for plays and music. They hope more families will visit next year.",
-      "question": "現在その建物を使っている団体と目的を英語1文で説明しなさい。",
-      "modelAnswer": "Local groups use the theater for plays and music.",
-      "explanation": "採点観点：①local groupsを主語にする ②use the theater ③plays and musicを説明する。",
+      "question": "地域の人々が古い劇場を使い続ける利点を、本文から考えて英語で1文書きなさい。",
+      "modelAnswer": "People can enjoy cultural events together in a familiar place.",
+      "explanation": "採点観点：①劇場利用の利点を述べる ②地域の人々の交流や文化活動に触れる ③本文の丸写しではない英文。",
       "source": "original-v0.45.6"
     },
     {
@@ -291,9 +291,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "Rainy-day plans",
       "passage": "The forecast says the wind may be strong tomorrow. Our class will visit the museum instead of the mountain. We should bring notebooks to record what we see.",
-      "question": "明日風が強くなるかもしれないという英文を、mayを使って1文書きなさい。",
-      "modelAnswer": "The wind may be strong tomorrow.",
-      "explanation": "採点観点：①windを主語にする ②may be ③strong tomorrowで可能性と時を示す。",
+      "question": "明日の風の強さに不確実性があるため、外出前に天気を確認したい、という意味の英文をmayを使って1文書きなさい。",
+      "modelAnswer": "The wind may be strong, so I want to check the weather.",
+      "explanation": "採点観点：①mayで可能性 ②soなどで天気確認の理由 ③自然な英文。",
       "source": "original-v0.45.6"
     },
     {
@@ -333,9 +333,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "A bird shelter project",
       "passage": "Rina enjoys helping at an animal shelter. She wants to make a quiet room for injured birds. Her friends plan to collect soft cloth and boxes.",
-      "question": "本文のRinaの活動について、enjoyを使い英語で1文書きなさい。",
-      "modelAnswer": "Rina enjoys helping at the shelter.",
-      "explanation": "採点観点：①Rina主語 ②enjoys＋動名詞 ③helping at the shelter。",
+      "question": "Rinaが保護施設での活動を楽しみ、傷ついた鳥を助けたいことをenjoyとwant toを使い英語1文で説明しなさい。",
+      "modelAnswer": "Rina enjoys volunteering and wants to help injured birds.",
+      "explanation": "採点観点：①enjoys＋動名詞 ②wants to＋動詞 ③鳥を助けたい気持ち。",
       "source": "original-v0.45.6"
     },
     {
@@ -375,9 +375,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "Museum volunteering",
       "passage": "If I were the museum director, I would offer free workshops for children. My friend says she would create audio guides for visitors.",
-      "question": "自分が館長なら子ども向けの講座を開くのに、という英文を仮定法で1文書きなさい。",
-      "modelAnswer": "If I were the director, I would hold workshops for children.",
-      "explanation": "採点観点：①If I were ②would＋動詞原形 ③子ども向け講座の意味。",
+      "question": "もし自分が博物館の館長なら、子どもたちに無料で学べる場所をつくるのに、という意味を仮定法で英語1文にしなさい。",
+      "modelAnswer": "If I were in charge of the museum, I would create a free learning space for children.",
+      "explanation": "採点観点：①If I were ②would＋動詞の原形 ③無料で学べる場所の意味。",
       "source": "original-v0.45.6"
     },
     {

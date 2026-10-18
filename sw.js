@@ -1,19 +1,20 @@
-const CACHE_NAME = 'study-app-shell-v0.45.3';
+const CACHE_NAME = 'study-app-shell-v0.45.4';
 const APP_SHELL = [
   '/',
   '/index.html',
-  '/style.css?v=0.45.3',
-  '/reorder-grading.js?v=0.45.3',
-  '/app.js?v=0.45.3',
-  '/exam-scope.js?v=0.45.3',
+  '/style.css?v=0.45.4',
+  '/reorder-grading.js?v=0.45.4',
+  '/app.js?v=0.45.4',
+  '/exam-scope.js?v=0.45.4',
   '/manifest.webmanifest',
-  '/data/curriculum.js?v=0.45.3',
-  '/data/questions.js?v=0.45.3',
-  '/data/question-supplement-v0449.js?v=0.45.3',
-  '/data/question-supplement-v0450.js?v=0.45.3',
-  '/data/question-supplement-v0451.js?v=0.45.3',
-  '/data/question-supplement-v0452.js?v=0.45.3',
-  '/data/question-supplement-v0453.js?v=0.45.3',
+  '/data/curriculum.js?v=0.45.4',
+  '/data/questions.js?v=0.45.4',
+  '/data/question-supplement-v0449.js?v=0.45.4',
+  '/data/question-supplement-v0450.js?v=0.45.4',
+  '/data/question-supplement-v0451.js?v=0.45.4',
+  '/data/question-supplement-v0452.js?v=0.45.4',
+  '/data/question-supplement-v0453.js?v=0.45.4',
+  '/data/question-supplement-v0454.js?v=0.45.4',
   '/icons/icon-192.png',
   '/icons/icon-512.png'
 ];

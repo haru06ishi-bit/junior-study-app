@@ -39,7 +39,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "Library desk",
       "passage": "A: Where are the history books?\nB: Next to the art books.\nA: I need a book about old castles.\nB: Look near the window.",
-      "question": "Write one English sentence about what the speakers decide or explain.",
+      "question": "Write an English sentence explaining where the history books are.",
       "modelAnswer": "They are next to the art books.",
       "explanation": "採点観点：①本文の内容と一致 ②英文として自然な語順 ③主語と動詞がある。例：They are next to the art books.",
       "source": "original-v0.45.4"
@@ -81,7 +81,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "Music rehearsal",
       "passage": "A: Can you help us with rehearsal on Thursday?\nB: I have club practice until four.\nA: We meet at four thirty in the music room.\nB: Great. I can come then.",
-      "question": "Write one English sentence about what the speakers decide or explain.",
+      "question": "Write an English sentence about when B can join the rehearsal.",
       "modelAnswer": "I can come after club practice.",
       "explanation": "採点観点：①本文の内容と一致 ②英文として自然な語順 ③主語と動詞がある。例：I can come after club practice.",
       "source": "original-v0.45.4"
@@ -123,7 +123,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "Museum exhibition",
       "passage": "A: Our museum wants photos of the river in the past.\nB: We can ask older residents about their memories.\nA: We should also explain each photo.\nB: That's a good idea for visitors.",
-      "question": "Write one English sentence about what the speakers decide or explain.",
+      "question": "Write an English sentence explaining what visitors can learn from the photo display.",
       "modelAnswer": "We should explain each photo to visitors.",
       "explanation": "採点観点：①本文の内容と一致 ②英文として自然な語順 ③主語と動詞がある。例：We should explain each photo to visitors.",
       "source": "original-v0.45.4"

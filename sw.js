@@ -7,9 +7,9 @@ const APP_SHELL = [
   '/app.js?v=0.44.9',
   '/exam-scope.js?v=0.44.9',
   '/manifest.webmanifest',
-  '/data/curriculum.js',
-  '/data/questions.js',
-  '/data/question-supplement-v0449.js',
+  '/data/curriculum.js?v=0.44.9',
+  '/data/questions.js?v=0.44.9',
+  '/data/question-supplement-v0449.js?v=0.44.9',
   '/icons/icon-192.png',
   '/icons/icon-512.png'
 ];

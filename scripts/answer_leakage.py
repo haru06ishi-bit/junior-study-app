@@ -9,7 +9,12 @@ def passage_overlap(answer, passage):
     a, p = words(answer), words(passage)
     if len(a) < 4 or len(p) < 4:
         return None
-    # Short dialogue lines: three-word copied opening plus changed ending.\n    # Diagnostic-only to catch cases like "I can come then" -> "I can come after ...".\n    for line in str(passage).splitlines():\n        line_words = words(re.sub(r"^[A-Za-z]:\\s*", "", line))\n        if 4 <= len(line_words) <= 6 and len(a) >= 5 and a[:3] == line_words[:3]:\n            return " ".join(a[:3])
+    # Short dialogue lines: three-word copied opening plus changed ending.
+    # Diagnostic-only to catch cases like "I can come then" -> "I can come after ...".
+    for line in str(passage).splitlines():
+        line_words = words(re.sub(r"^[A-Za-z]:\s*", "", line))
+        if 4 <= len(line_words) <= 6 and len(a) >= 5 and a[:3] == line_words[:3]:
+            return " ".join(a[:3])
     for i in range(len(a)-3):
         four = a[i:i+4]
         for j in range(len(p)-3):

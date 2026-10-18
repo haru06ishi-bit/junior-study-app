@@ -165,9 +165,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 2,
       "stimulusTitle": "English practice 4",
       "passage": "This bridge was designed by local engineers. It is longer than the old bridge.",
-      "question": "Translate: この橋は地域の技術者によって設計されました。",
-      "modelAnswer": "This bridge was designed by local engineers.",
-      "explanation": "採点観点：①正しい文法。②意味が伝わる語順・語彙。was/were + 過去分詞を使い、行為者はbyで示す。",
+      "question": "Translate into English: この寺は約300年前に建てられました。",
+      "modelAnswer": "This temple was built about 300 years ago.",
+      "explanation": "採点観点：①This templeを主語にする。②was builtの受け身を使う。③about 300 years agoで時期を示す。",
       "source": "original-v0.45.2"
     },
     {

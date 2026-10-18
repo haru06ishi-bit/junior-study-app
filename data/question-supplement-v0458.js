@@ -3,7 +3,7 @@ window.QUESTION_SUPPLEMENTS.push({
   "version": "0.45.8",
   "questions": [
     {
-      "id": "v0458_ja_g3_material_1_1",
+      "id": "v0458_ja_g3_material_0_1",
       "subject": "japanese",
       "field": "reading",
       "unit": "poetry",
@@ -12,7 +12,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-1"
+        "j-sanseido-3-0"
       ],
       "type": "choice",
       "difficulty": 2,
@@ -30,7 +30,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_1_2",
+      "id": "v0458_ja_g3_material_0_2",
       "subject": "japanese",
       "field": "reading",
       "unit": "poetry",
@@ -39,7 +39,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-1"
+        "j-sanseido-3-0"
       ],
       "type": "text",
       "difficulty": 3,
@@ -51,7 +51,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_3_1",
+      "id": "v0458_ja_g3_material_2_1",
       "subject": "japanese",
       "field": "reading",
       "unit": "expository",
@@ -60,7 +60,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-3"
+        "j-sanseido-3-2"
       ],
       "type": "choice",
       "difficulty": 2,
@@ -78,7 +78,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_3_2",
+      "id": "v0458_ja_g3_material_2_2",
       "subject": "japanese",
       "field": "reading",
       "unit": "expository",
@@ -87,7 +87,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-3"
+        "j-sanseido-3-2"
       ],
       "type": "text",
       "difficulty": 3,
@@ -99,7 +99,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_4_1",
+      "id": "v0458_ja_g3_material_3_1",
       "subject": "japanese",
       "field": "reading",
       "unit": "expository",
@@ -108,7 +108,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-4"
+        "j-sanseido-3-3"
       ],
       "type": "choice",
       "difficulty": 2,
@@ -126,7 +126,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_4_2",
+      "id": "v0458_ja_g3_material_3_2",
       "subject": "japanese",
       "field": "reading",
       "unit": "expository",
@@ -135,7 +135,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-4"
+        "j-sanseido-3-3"
       ],
       "type": "text",
       "difficulty": 3,
@@ -147,7 +147,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_5_1",
+      "id": "v0458_ja_g3_material_4_1",
       "subject": "japanese",
       "field": "reading",
       "unit": "poetry",
@@ -156,7 +156,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-5"
+        "j-sanseido-3-4"
       ],
       "type": "choice",
       "difficulty": 2,
@@ -174,7 +174,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_5_2",
+      "id": "v0458_ja_g3_material_4_2",
       "subject": "japanese",
       "field": "reading",
       "unit": "poetry",
@@ -183,7 +183,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-5"
+        "j-sanseido-3-4"
       ],
       "type": "text",
       "difficulty": 3,
@@ -195,7 +195,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_6_1",
+      "id": "v0458_ja_g3_material_5_1",
       "subject": "japanese",
       "field": "reading",
       "unit": "literature",
@@ -204,7 +204,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-6"
+        "j-sanseido-3-5"
       ],
       "type": "choice",
       "difficulty": 2,
@@ -222,7 +222,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_6_2",
+      "id": "v0458_ja_g3_material_5_2",
       "subject": "japanese",
       "field": "reading",
       "unit": "literature",
@@ -231,7 +231,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-6"
+        "j-sanseido-3-5"
       ],
       "type": "text",
       "difficulty": 3,
@@ -243,7 +243,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_7_1",
+      "id": "v0458_ja_g3_material_6_1",
       "subject": "japanese",
       "field": "reading",
       "unit": "expository",
@@ -252,7 +252,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-7"
+        "j-sanseido-3-6"
       ],
       "type": "choice",
       "difficulty": 2,
@@ -270,7 +270,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_7_2",
+      "id": "v0458_ja_g3_material_6_2",
       "subject": "japanese",
       "field": "reading",
       "unit": "expository",
@@ -279,7 +279,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-7"
+        "j-sanseido-3-6"
       ],
       "type": "text",
       "difficulty": 3,
@@ -291,7 +291,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_11_1",
+      "id": "v0458_ja_g3_material_10_1",
       "subject": "japanese",
       "field": "reading",
       "unit": "poetry",
@@ -300,7 +300,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-11"
+        "j-sanseido-3-10"
       ],
       "type": "choice",
       "difficulty": 2,
@@ -318,7 +318,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_11_2",
+      "id": "v0458_ja_g3_material_10_2",
       "subject": "japanese",
       "field": "reading",
       "unit": "poetry",
@@ -327,7 +327,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-11"
+        "j-sanseido-3-10"
       ],
       "type": "text",
       "difficulty": 3,
@@ -339,7 +339,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_13_1",
+      "id": "v0458_ja_g3_material_12_1",
       "subject": "japanese",
       "field": "reading",
       "unit": "expository",
@@ -348,7 +348,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-13"
+        "j-sanseido-3-12"
       ],
       "type": "choice",
       "difficulty": 2,
@@ -366,7 +366,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "source": "original-v0.45.8"
     },
     {
-      "id": "v0458_ja_g3_material_13_2",
+      "id": "v0458_ja_g3_material_12_2",
       "subject": "japanese",
       "field": "reading",
       "unit": "expository",
@@ -375,7 +375,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "sanseido",
       "materialIds": [
-        "j-sanseido-3-13"
+        "j-sanseido-3-12"
       ],
       "type": "text",
       "difficulty": 3,

@@ -63,13 +63,21 @@ def run():
                         },
                     }
                     matched = [q for q in selected_items[(sid, grade, unit.get("id"))] if (q.get("textbookPublisher") or "common") in ("common", selected)]
-                    row["difficulty"] = dict(collections.Counter(str(q.get("difficulty", "unknown")) for q in matched))
-                    row["question_types"] = dict(collections.Counter(q.get("type", "unknown") for q in matched))
-                    row["with_stimulus"] = sum(bool(q.get("passage") or q.get("table") or q.get("figure")) for q in matched)
                     reachable = [q for q in matched if not q.get("materialIds")]
                     gated = [q for q in matched if q.get("materialIds")]
                     row["shizuoka_unit_reachable_count"] = len(reachable)
                     row["material_gated_count"] = len(gated)
+                    def metrics(items):
+                        return {
+                            "difficulty": dict(collections.Counter(str(q.get("difficulty", "unknown")) for q in items)),
+                            "question_types": dict(collections.Counter(q.get("type", "unknown") for q in items)),
+                            "with_stimulus": sum(bool(q.get("passage") or q.get("table") or q.get("figure")) for q in items),
+                        }
+                    reach_metrics = metrics(reachable)
+                    gated_metrics = metrics(gated)
+                    row.update(reach_metrics)
+                    row["material_gated_metrics"] = gated_metrics
+                    row["reachable_metrics"] = reach_metrics
                     row["shortfall"] = max(0, args.minimum - len(reachable))
                     row["below_minimum"] = len(reachable) < args.minimum
                     rows.append(row)
@@ -110,7 +118,7 @@ def run():
         print(json.dumps(output, ensure_ascii=False, indent=2))
     else:
         print(f"Total questions: {len(questions)}")
-        print(f"Shizuoka eligible unit/grade rows below {args.minimum}: {output['below_minimum_units']}/{len(rows)}")
+        print(f"Reachable (no material selected) rows below {args.minimum}: {output['below_minimum_units']}/{len(rows)}")
         print(f"Unit/grade shortfall: {output['shortfall']} (multi-grade questions may cover multiple rows; not unique questions required)")
         for r in rows:
             pub = ", ".join(f"{p}={n}" for p, n in r["publishers"].items())

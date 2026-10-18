@@ -111,15 +111,15 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 2,
       "stimulusTitle": "Ship models",
       "passage": "At the museum, visitors compared two models of an ancient ship. One model was made by local students. The other was made by a professional artist. Both models showed the same ship.",
-      "question": "Which model was made by students?",
+      "question": "How many of the models were made by students?",
       "choices": [
-        "One of the two ship models.",
-        "The original ancient ship.",
-        "Both of the ship models.",
-        "Neither of the ship models."
+        "One.",
+        "Two.",
+        "Three.",
+        "None."
       ],
       "answer": 0,
-      "explanation": "One model was made by local students. と書かれている。",
+      "explanation": "One model was made by local students とあるので一つ。",
       "source": "original-v0.45.3"
     },
     {
@@ -134,8 +134,8 @@ window.QUESTION_SUPPLEMENTS.push({
       "type": "text",
       "difficulty": 3,
       "question": "Write 12–20 English words about a hobby. Include when you do it and why you enjoy it.",
-      "modelAnswer": "I enjoy drawing birds on weekends because I can learn about their different colors and shapes.",
-      "explanation": "採点観点：①12〜20語、②趣味を明記、③時を示す表現、④理由をbecauseなどで説明。",
+      "modelAnswer": "I draw birds on weekends. I like birds because they are beautiful.",
+      "explanation": "採点観点：①12〜20語 ②趣味を表す現在形 ③whenを示すon weekends ④becauseで理由を述べる。",
       "source": "original-v0.45.3"
     },
     {
@@ -150,8 +150,8 @@ window.QUESTION_SUPPLEMENTS.push({
       "type": "text",
       "difficulty": 3,
       "question": "Write 18–30 English words inviting a friend to a local art exhibition. Include a date and one reason to go.",
-      "modelAnswer": "Would you like to visit the local art exhibition with me next Sunday? We can see paintings made by students from our town.",
-      "explanation": "採点観点：①18〜30語、②招待、③日付、④参加する理由、⑤意味が通る文法。",
+      "modelAnswer": "Would you like to visit the local art exhibition with me next Sunday? We can see many beautiful pictures by artists from our town.",
+      "explanation": "採点観点：①18〜30語 ②丁寧な招待 ③next Sundayなどの日時 ④絵を見られるなど参加の理由 ⑤中2までの文法。",
       "source": "original-v0.45.3"
     },
     {
@@ -165,9 +165,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "textbookPublisher": "common",
       "type": "text",
       "difficulty": 3,
-      "question": "Write one English sentence (8–16 words) using the passive voice to explain that the wooden bridge was repaired last year.",
-      "modelAnswer": "The wooden bridge was repaired by local workers last year.",
-      "explanation": "採点観点：①8〜16語、②主語がwooden bridge、③was repairedという受け身、④last year。",
+      "question": "「その木の橋は昨年、地元の大工さんたちによって修理されました。」を、受け身を使って8〜16語の英語で書きなさい。",
+      "modelAnswer": "The wooden bridge was repaired by local carpenters last year.",
+      "explanation": "採点観点：①8〜16語 ②主語the wooden bridge ③was repairedの受け身 ④by local carpentersで行為者 ⑤last yearで時期を示す。",
       "source": "original-v0.45.3"
     },
     {
@@ -181,7 +181,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "textbookPublisher": "common",
       "type": "reorder",
       "difficulty": 2,
-      "question": "並べ替えて、弟の日課を表す英文を完成させなさい。",
+      "question": "「弟はよく放課後にチェスをします。」を、頻度を表すoftenを一般動詞の前に置いて並べ替えなさい。",
       "items": [
         "My",
         "brother",

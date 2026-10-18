@@ -23,7 +23,8 @@ window.QUESTION_SUPPLEMENTS.push({
         "She was opening the door."
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "本文ではYuiが5時に地図を描いていた。読書をしていたのは弟で、夕食は母親が帰宅した後なので異なる。"
     },
     {
       "id": "v0455_en_g1_past_progressive_2",
@@ -35,18 +36,19 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "choice",
-      "difficulty": 2,
+      "difficulty": 1,
       "stimulusTitle": "A rainy afternoon",
       "passage": "Yesterday at five, Yui was drawing a map. Her brother was reading a book. Their mother came home at six. Then they had dinner together.",
       "question": "Who was reading at five?",
       "choices": [
         "Yui's brother.",
+        "Yui.",
         "Yui's mother.",
-        "Yui's teacher.",
-        "Yui's friend."
+        "Their father."
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "本文で5時に本を読んでいたのはYuiの弟。Yuiは地図を描いており、母親は6時に帰宅する。教師や友人は登場しない。"
     },
     {
       "id": "v0455_en_g1_past_progressive_3",
@@ -61,15 +63,16 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "A rainy afternoon",
       "passage": "Yesterday at five, Yui was drawing a map. Her brother was reading a book. Their mother came home at six. Then they had dinner together.",
-      "question": "Why is 'was drawing' used instead of 'drew' in the first sentence?",
+      "question": "なぜ最初の文では drew ではなく was drawing を使っているか。",
       "choices": [
-        "It describes an action in progress at five.",
-        "It describes a plan for next week.",
-        "It describes a repeated morning habit.",
-        "It describes a request to another person."
+        "過去のある時刻に進行中だった動作を示すため。",
+        "これから行う予定を示すため。",
+        "普段繰り返す習慣を説明するため。",
+        "相手に何かを頼むため。"
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "was drawingは過去の5時に動作が進行していたことを表す。将来の予定や習慣、依頼を示す形ではない。"
     },
     {
       "id": "v0455_en_g1_past_progressive_4",
@@ -84,10 +87,11 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "A rainy afternoon",
       "passage": "Yesterday at five, Yui was drawing a map. Her brother was reading a book. Their mother came home at six. Then they had dinner together.",
-      "question": "Write one English sentence about what Yui's brother was doing at five, using the word 'quietly'.",
-      "modelAnswer": "Yui's brother was quietly enjoying his book at five.",
-      "explanation": "採点観点：①兄弟を主語にする ②was＋-ingで過去進行中を表す ③quietlyを自然な位置に入れる ④at fiveを使う。",
-      "source": "original-v0.45.5"
+      "question": "Write one English sentence about what Yui's brother was doing at five.",
+      "modelAnswer": "Yui's brother was reading a book at five.",
+      "explanation": "採点観点：①Yui's brotherを主語にする ②was readingで過去進行形を表す ③a bookとat fiveを含める。本文の事実に沿った表現の一致は許容する。",
+      "source": "original-v0.45.5",
+      "leakageReviewed": "本文の動作を過去進行形で再現するのが学習目標のため、was reading a bookの一致を許容。"
     },
     {
       "id": "v0455_en_g3_reading_1",
@@ -106,11 +110,12 @@ window.QUESTION_SUPPLEMENTS.push({
       "choices": [
         "To help people discuss safety.",
         "To change the club's schedule.",
-        "To choose colors for the station.",
-        "To organize a sports competition."
+        "To report the amount of rain to a news station.",
+        "To decide where to move the weather station."
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "雨量の記録を教師に共有し安全対策を議論したと本文にある。クラブの日程変更や機器の装飾、競技の企画は目的として述べられていない。"
     },
     {
       "id": "v0455_en_g3_reading_2",
@@ -133,7 +138,8 @@ window.QUESTION_SUPPLEMENTS.push({
         "The teachers left school."
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "本文では大雨の観測後に校庭が冠水した。屋根の工事や機器の停止、教師の帰宅は記述されていない。"
     },
     {
       "id": "v0455_en_g3_reading_3",
@@ -156,7 +162,8 @@ window.QUESTION_SUPPLEMENTS.push({
         "The playground."
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "直前に導入されたweather stationが雨量を毎時記録したので、Itは観測装置を指す。club・roof・playgroundではない。"
     },
     {
       "id": "v0455_en_g3_reading_4",
@@ -197,7 +204,8 @@ window.QUESTION_SUPPLEMENTS.push({
         "A worker repairing the library."
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "冒頭のA student who loves historyが写真の発見者。来場者・教師・修理作業員が発見したとは書かれていない。"
     },
     {
       "id": "v0455_en_g3_relative_clauses_2",
@@ -220,7 +228,8 @@ window.QUESTION_SUPPLEMENTS.push({
         "The town library."
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "that no longer existsは直前のbuildingを説明する関係代名詞節。festivalやinterview、libraryを指さない。"
     },
     {
       "id": "v0455_en_g3_relative_clauses_3",
@@ -243,7 +252,8 @@ window.QUESTION_SUPPLEMENTS.push({
         "I know a person where repairs clocks."
       ],
       "answer": 0,
-      "source": "original-v0.45.5"
+      "source": "original-v0.45.5",
+      "explanation": "先行詞personは人なのでwhoを用い、単数主語に対応してrepairsとする。which/whereやrepairはこの文では不適切。"
     },
     {
       "id": "v0455_en_g3_relative_clauses_4",

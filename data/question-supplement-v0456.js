@@ -65,7 +65,7 @@ window.QUESTION_SUPPLEMENTS.push({
         "It has a long tail."
       ],
       "answer": 0,
-      "explanation": "本文はnot heavyを飛びやすい理由に挙げている。色・作成した曜日・長い尾が理由とは述べられていない。",
+      "explanation": "本文はnot heavyと述べた後でflies wellと説明しているため、軽さが飛びやすさの理由だと分かる。色・作成日・尾の長さを理由とは述べていない。",
       "source": "original-v0.45.6"
     },
     {
@@ -419,7 +419,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "stimulusTitle": "A community garden proposal",
       "passage": "The community garden has an empty corner. Students suggest planting native flowers there. They believe the flowers could attract butterflies and make the garden more welcoming.",
       "question": "地域の庭で自分が改善したいことを理由とともに英語で20〜35語で書きなさい。",
-      "modelAnswer": "I would put some benches near the entrance because older visitors could rest and enjoy the garden after walking around.",
+      "modelAnswer": "I would put several comfortable benches near the garden entrance because older visitors could take a break, enjoy the view, and talk with their friends there.",
       "explanation": "採点観点：①20〜35語 ②自分の改善案 ③becauseなどで理由 ④英文の整合性 ⑤本文の生徒たちの提案をそのまま使わない。",
       "source": "original-v0.45.6"
     }

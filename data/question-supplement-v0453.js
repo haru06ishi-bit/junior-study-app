@@ -62,16 +62,16 @@ window.QUESTION_SUPPLEMENTS.push({
       "type": "choice",
       "difficulty": 2,
       "stimulusTitle": "Birdwatching notebook",
-      "passage": "Hana keeps a notebook about the birds near her house. Every Sunday she draws one bird and writes where she saw it. Last week she found a bird she had never seen before. She will ask her grandfather its name.",
-      "question": "What will Hana do next?",
+      "passage": "Hana keeps a notebook about birds near her house. On Sundays she draws a bird and writes where she sees it. Today she sees a new bird. She asks her grandfather its name.",
+      "question": "Who does Hana ask about the bird?",
       "choices": [
-        "Ask her grandfather about the bird.",
-        "Draw the same bird every weekday.",
-        "Stop writing in her notebook.",
-        "Move to a different neighborhood."
+        "Her grandfather.",
+        "Her science teacher.",
+        "Her younger brother.",
+        "Her school friend."
       ],
       "answer": 0,
-      "explanation": "最後の文の will ask が今後することを示す。",
+      "explanation": "最後の文で祖父に鳥の名前を尋ねている。",
       "source": "original-v0.45.3"
     },
     {

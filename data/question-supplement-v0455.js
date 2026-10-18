@@ -65,7 +65,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "choices": [
         "It describes an action in progress at five.",
         "It describes a plan for next week.",
-        "It describes a habit every morning.",
+        "It describes a repeated morning habit.",
         "It describes a request to another person."
       ],
       "answer": 0,
@@ -84,9 +84,9 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 3,
       "stimulusTitle": "A rainy afternoon",
       "passage": "Yesterday at five, Yui was drawing a map. Her brother was reading a book. Their mother came home at six. Then they had dinner together.",
-      "question": "Write one English sentence about what Yui's brother was doing at five. Use 'at five'.",
-      "modelAnswer": "Yui's brother was reading a book at five.",
-      "explanation": "採点観点：①brotherを主語にする ②was readingを用いる ③at fiveで時刻を示す。",
+      "question": "Write one English sentence about what Yui's brother was doing at five, using the word 'quietly'.",
+      "modelAnswer": "Yui's brother was quietly enjoying his book at five.",
+      "explanation": "採点観点：①兄弟を主語にする ②was＋-ingで過去進行中を表す ③quietlyを自然な位置に入れる ④at fiveを使う。",
       "source": "original-v0.45.5"
     },
     {

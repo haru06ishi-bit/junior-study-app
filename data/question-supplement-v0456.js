@@ -12,18 +12,18 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "choice",
-      "difficulty": 2,
+      "difficulty": 1,
       "stimulusTitle": "Community pool",
       "passage": "A: What time does the pool open on Sunday?\nB: It opens at ten.\nA: Is the swimming lesson at ten too?\nB: No, it begins at eleven.",
-      "question": "Why can A arrive before the lesson?",
+      "question": "How long before the lesson does the pool open?",
       "choices": [
-        "The pool opens an hour earlier.",
-        "The lesson begins before the pool opens.",
-        "The pool and lesson begin together.",
-        "The lesson begins on Saturday."
+        "One hour earlier.",
+        "Half an hour earlier.",
+        "At the same time.",
+        "One hour later."
       ],
       "answer": 0,
-      "explanation": "プールは10時に開くが、講習は11時に始まる。講習が先に始まる・同時に始まる・土曜日という誤答は本文と違う。",
+      "explanation": "プールは10時、講習は11時に始まるので開場は1時間前。30分前・同時・1時間後という選択肢は時間の差が違う。",
       "source": "original-v0.45.6"
     },
     {
@@ -36,7 +36,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "text",
-      "difficulty": 3,
+      "difficulty": 2,
       "stimulusTitle": "Community pool",
       "passage": "A: What time does the pool open on Sunday?\nB: It opens at ten.\nA: Is the swimming lesson at ten too?\nB: No, it begins at eleven.",
       "question": "友達に日曜日の講習の開始時刻を伝える英文を1文で書きなさい。",
@@ -54,18 +54,18 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "choice",
-      "difficulty": 2,
+      "difficulty": 1,
       "stimulusTitle": "Making a kite",
-      "passage": "Tomo likes making kites. He uses light paper and small sticks. On Saturday, he makes a blue kite with his father. It flies well because it is not heavy.",
+      "passage": "Tomo likes making kites. He uses light paper and small sticks. On Saturday, he makes a blue kite with his father. It is not heavy. It flies well.",
       "question": "Why does Tomo's kite fly well?",
       "choices": [
         "It is light.",
         "It has many colors.",
         "It is made on Sunday.",
-        "It has a large engine."
+        "It has a long tail."
       ],
       "answer": 0,
-      "explanation": "本文はnot heavyを理由としている。色・曜日・エンジンは飛びやすさの理由として示されない。",
+      "explanation": "本文はnot heavyを飛びやすい理由に挙げている。色・作成した曜日・長い尾が理由とは述べられていない。",
       "source": "original-v0.45.6"
     },
     {
@@ -78,9 +78,9 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "text",
-      "difficulty": 3,
+      "difficulty": 2,
       "stimulusTitle": "Making a kite",
-      "passage": "Tomo likes making kites. He uses light paper and small sticks. On Saturday, he makes a blue kite with his father. It flies well because it is not heavy.",
+      "passage": "Tomo likes making kites. He uses light paper and small sticks. On Saturday, he makes a blue kite with his father. It is not heavy. It flies well.",
       "question": "紙と棒を使って作るものを、英語で1文で説明しなさい。",
       "modelAnswer": "Tomo makes a kite with paper and sticks.",
       "explanation": "採点観点：①Tomoを主語にする ②makes a kiteと表す ③paper and sticksを含む。",
@@ -96,7 +96,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "choice",
-      "difficulty": 2,
+      "difficulty": 1,
       "stimulusTitle": "Photo club notice",
       "passage": "Our photo club meets every Friday. We take pictures of old houses and flowers. New students can join us after school.",
       "question": "What information would help a new student join?",
@@ -167,7 +167,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "passage": "A: My bicycle light is broken.\nB: The repair café is open this afternoon.\nA: Can they fix it today?\nB: They can check it, but new parts arrive tomorrow.",
       "question": "部品が届くのが明日であることを英語で1文書きなさい。",
       "modelAnswer": "The new parts will arrive tomorrow.",
-      "explanation": "採点観点：①partsを主語にする ②will arriveで未来 ③tomorrowを付ける。",
+      "explanation": "採点観点：①new partsなど部品を主語にする ②tomorrowを含める ③will arriveの未来表現、または予定を表す現在形arriveも正解とする。",
       "source": "original-v0.45.6"
     },
     {
@@ -292,9 +292,10 @@ window.QUESTION_SUPPLEMENTS.push({
       "stimulusTitle": "Rainy-day plans",
       "passage": "The forecast says the wind may be strong tomorrow. Our class will visit the museum instead of the mountain. We should bring notebooks to record what we see.",
       "question": "明日の風の強さに不確実性があるため、外出前に天気を確認したい、という意味の英文をmayを使って1文書きなさい。",
-      "modelAnswer": "The wind may be strong, so I want to check the weather.",
-      "explanation": "採点観点：①mayで可能性 ②soなどで天気確認の理由 ③自然な英文。",
-      "source": "original-v0.45.6"
+      "modelAnswer": "The wind may be strong tomorrow, so I want to check the weather before I go out.",
+      "explanation": "採点観点：①mayで可能性 ②tomorrowで明日 ③before I go outで外出前 ④soなどで天気確認の理由。",
+      "source": "original-v0.45.6",
+      "leakageReviewed": "may be strongは可能性を表す助動詞mayの用法を練習するため必要な一致。本文の説明を丸写しすることが目的ではない。"
     },
     {
       "id": "v0456_en_g2_infinitive_gerund_choice",
@@ -359,7 +360,7 @@ window.QUESTION_SUPPLEMENTS.push({
         "Recording an audio guide already."
       ],
       "answer": 0,
-      "explanation": "If I wereは現在の事実と異なる仮定。昨日の体験やすでに完成した音声ガイドではない。",
+      "explanation": "If I were the museum directorは現実とは異なる立場を仮定している。昨日ワークショップを訪れたこと、実際の館長と会うこと、すでに音声案内を録音したことは本文にない。",
       "source": "original-v0.45.6"
     },
     {
@@ -418,8 +419,8 @@ window.QUESTION_SUPPLEMENTS.push({
       "stimulusTitle": "A community garden proposal",
       "passage": "The community garden has an empty corner. Students suggest planting native flowers there. They believe the flowers could attract butterflies and make the garden more welcoming.",
       "question": "地域の庭で自分が改善したいことを理由とともに英語で20〜35語で書きなさい。",
-      "modelAnswer": "I would plant more native flowers near the entrance because they can help butterflies and make the garden a pleasant place for visitors.",
-      "explanation": "採点観点：①20〜35語 ②改善内容 ③becauseなどで理由 ④英文の整合性。",
+      "modelAnswer": "I would put some benches near the entrance because older visitors could rest and enjoy the garden after walking around.",
+      "explanation": "採点観点：①20〜35語 ②自分の改善案 ③becauseなどで理由 ④英文の整合性 ⑤本文の生徒たちの提案をそのまま使わない。",
       "source": "original-v0.45.6"
     }
   ]

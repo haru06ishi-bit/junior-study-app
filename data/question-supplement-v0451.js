@@ -613,6 +613,468 @@ window.QUESTION_SUPPLEMENTS.push({
       "modelAnswer": "意見の違いがあっても不正への反発などを通して協力し、主人公の価値観を浮かび上がらせる。",
       "explanation": "意見の違いがあっても不正への反発などを通して協力し、主人公の価値観を浮かび上がらせる。",
       "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_math_g3_1_1",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 1,
+      "stimulusTitle": "放物線と直線の交点",
+      "passage": "座標平面で放物線 y=x² と直線 y=2x+3 を考える。交点をA、Bとし、x座標が小さい方をAとする。",
+      "question": "二つのグラフの交点のx座標を求める方程式はどれか。",
+      "choices": [
+        "x²=2x+3",
+        "x²=2x-3",
+        "x²+2x=3",
+        "x²+3x=2"
+      ],
+      "answer": 0,
+      "explanation": "x²=2x+3 と置く。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_math_g3_1_2",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 2,
+      "stimulusTitle": "放物線と直線の交点",
+      "passage": "座標平面で放物線 y=x² と直線 y=2x+3 を考える。交点をA、Bとし、x座標が小さい方をAとする。",
+      "question": "交点Aの座標はどれか。",
+      "choices": [
+        "(-1,1)",
+        "(1,1)",
+        "(-3,9)",
+        "(3,3)"
+      ],
+      "answer": 0,
+      "explanation": "x²-2x-3=(x-3)(x+1)で、A=(-1,1)。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_math_g3_1_3",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 3,
+      "stimulusTitle": "放物線と直線の交点",
+      "passage": "座標平面で放物線 y=x² と直線 y=2x+3 を考える。交点をA、Bとし、x座標が小さい方をAとする。",
+      "question": "線分ABの中点の座標はどれか。",
+      "choices": [
+        "(1,5)",
+        "(2,5)",
+        "(1,4)",
+        "(2,4)"
+      ],
+      "answer": 0,
+      "explanation": "A=(-1,1), B=(3,9)の中点は(1,5)。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_math_g3_1_4",
+      "subject": "math",
+      "field": "functions",
+      "unit": "quadratic-function",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "text",
+      "difficulty": 3,
+      "stimulusTitle": "放物線と直線の交点",
+      "passage": "座標平面で放物線 y=x² と直線 y=2x+3 を考える。交点をA、Bとし、x座標が小さい方をAとする。",
+      "question": "交点A、Bを求める計算の過程を説明しなさい。",
+      "modelAnswer": "x²=2x+3 を整理して (x-3)(x+1)=0 とし、x=-1,3をそれぞれ代入してA=(-1,1)、B=(3,9)。",
+      "explanation": "x²=2x+3 を整理して (x-3)(x+1)=0 とし、x=-1,3をそれぞれ代入してA=(-1,1)、B=(3,9)。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_science_g3_2_1",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 1,
+      "stimulusTitle": "坂道での台車実験",
+      "passage": "同じ台車を一定の斜面で静かに放し、連続する同じ長さの区間A・B・Cの通過時間を測った。摩擦などの影響は小さいものとする。",
+      "table": {
+        "headers": [
+          "計測区間",
+          "区間の長さ(m)",
+          "通過時間(s)"
+        ],
+        "rows": [
+          [
+            "A",
+            "0.20",
+            "0.40"
+          ],
+          [
+            "B",
+            "0.20",
+            "0.25"
+          ],
+          [
+            "C",
+            "0.20",
+            "0.20"
+          ]
+        ]
+      },
+      "question": "区間Aの平均の速さは何m/sか。",
+      "choices": [
+        "0.50",
+        "0.40",
+        "0.80",
+        "0.20"
+      ],
+      "answer": 0,
+      "explanation": "0.20÷0.40=0.50m/s。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_science_g3_2_2",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 2,
+      "stimulusTitle": "坂道での台車実験",
+      "passage": "同じ台車を一定の斜面で静かに放し、連続する同じ長さの区間A・B・Cの通過時間を測った。摩擦などの影響は小さいものとする。",
+      "table": {
+        "headers": [
+          "計測区間",
+          "区間の長さ(m)",
+          "通過時間(s)"
+        ],
+        "rows": [
+          [
+            "A",
+            "0.20",
+            "0.40"
+          ],
+          [
+            "B",
+            "0.20",
+            "0.25"
+          ],
+          [
+            "C",
+            "0.20",
+            "0.20"
+          ]
+        ]
+      },
+      "question": "AからCへ進むと台車の速さはどう変わるか。",
+      "choices": [
+        "速くなる",
+        "一定となる",
+        "遅くなる",
+        "いったん止まる"
+      ],
+      "answer": 0,
+      "explanation": "同じ距離の所要時間が短くなっている。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_science_g3_2_3",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 3,
+      "stimulusTitle": "坂道での台車実験",
+      "passage": "同じ台車を一定の斜面で静かに放し、連続する同じ長さの区間A・B・Cの通過時間を測った。摩擦などの影響は小さいものとする。",
+      "table": {
+        "headers": [
+          "計測区間",
+          "区間の長さ(m)",
+          "通過時間(s)"
+        ],
+        "rows": [
+          [
+            "A",
+            "0.20",
+            "0.40"
+          ],
+          [
+            "B",
+            "0.20",
+            "0.25"
+          ],
+          [
+            "C",
+            "0.20",
+            "0.20"
+          ]
+        ]
+      },
+      "question": "この実験の結果を比較する上でそろえている条件はどれか。",
+      "choices": [
+        "各区間の長さ",
+        "各区間の通過時間",
+        "各区間の平均の速さ",
+        "各区間の位置エネルギー"
+      ],
+      "answer": 0,
+      "explanation": "等距離の区間なので時間の違いを比較できる。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_science_g3_2_4",
+      "subject": "science",
+      "field": "physics",
+      "unit": "motion-energy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "text",
+      "difficulty": 3,
+      "stimulusTitle": "坂道での台車実験",
+      "passage": "同じ台車を一定の斜面で静かに放し、連続する同じ長さの区間A・B・Cの通過時間を測った。摩擦などの影響は小さいものとする。",
+      "table": {
+        "headers": [
+          "計測区間",
+          "区間の長さ(m)",
+          "通過時間(s)"
+        ],
+        "rows": [
+          [
+            "A",
+            "0.20",
+            "0.40"
+          ],
+          [
+            "B",
+            "0.20",
+            "0.25"
+          ],
+          [
+            "C",
+            "0.20",
+            "0.20"
+          ]
+        ]
+      },
+      "question": "表の値を根拠に、台車の運動の特徴を説明しなさい。",
+      "modelAnswer": "同じ0.20mを進む時間がAの0.40秒からCの0.20秒へ短くなるので、台車の速さは増している。",
+      "explanation": "同じ0.20mを進む時間がAの0.40秒からCの0.20秒へ短くなるので、台車の速さは増している。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_social_g3_3_1",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 1,
+      "stimulusTitle": "地域図書館の予算資料",
+      "passage": "自治体の図書館運営費に関する一部の予算資料である。単位は万円。表にない人件費などを含めた総予算は示されていない。",
+      "table": {
+        "headers": [
+          "年度",
+          "蔵書購入費(万円)",
+          "施設維持費(万円)"
+        ],
+        "rows": [
+          [
+            "1年目",
+            "240",
+            "360"
+          ],
+          [
+            "2年目",
+            "270",
+            "350"
+          ],
+          [
+            "3年目",
+            "260",
+            "390"
+          ]
+        ]
+      },
+      "question": "1年目の表内2項目の合計は何万円か。",
+      "choices": [
+        "600",
+        "590",
+        "610",
+        "630"
+      ],
+      "answer": 0,
+      "explanation": "240+360=600万円。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_social_g3_3_2",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 2,
+      "stimulusTitle": "地域図書館の予算資料",
+      "passage": "自治体の図書館運営費に関する一部の予算資料である。単位は万円。表にない人件費などを含めた総予算は示されていない。",
+      "table": {
+        "headers": [
+          "年度",
+          "蔵書購入費(万円)",
+          "施設維持費(万円)"
+        ],
+        "rows": [
+          [
+            "1年目",
+            "240",
+            "360"
+          ],
+          [
+            "2年目",
+            "270",
+            "350"
+          ],
+          [
+            "3年目",
+            "260",
+            "390"
+          ]
+        ]
+      },
+      "question": "3年間で施設維持費が最も高い年度はどれか。",
+      "choices": [
+        "3年目",
+        "2年目",
+        "1年目",
+        "すべて同額"
+      ],
+      "answer": 0,
+      "explanation": "360,350,390のうち390が最大。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_social_g3_3_3",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "choice",
+      "difficulty": 3,
+      "stimulusTitle": "地域図書館の予算資料",
+      "passage": "自治体の図書館運営費に関する一部の予算資料である。単位は万円。表にない人件費などを含めた総予算は示されていない。",
+      "table": {
+        "headers": [
+          "年度",
+          "蔵書購入費(万円)",
+          "施設維持費(万円)"
+        ],
+        "rows": [
+          [
+            "1年目",
+            "240",
+            "360"
+          ],
+          [
+            "2年目",
+            "270",
+            "350"
+          ],
+          [
+            "3年目",
+            "260",
+            "390"
+          ]
+        ]
+      },
+      "question": "この資料から判断できることはどれか。",
+      "choices": [
+        "3年目は1年目より表内2項目の合計が50万円多い",
+        "3年目は1年目より自治体の総予算が50万円多い",
+        "3年目は1年目より利用者が50人増えた",
+        "3年目は1年目より人件費が50万円増えた"
+      ],
+      "answer": 0,
+      "explanation": "3年目650万円、1年目600万円で表内合計は50万円増。総予算等は不明。",
+      "source": "original-v0.45.1"
+    },
+    {
+      "id": "v0451_social_g3_3_4",
+      "subject": "social",
+      "field": "civics",
+      "unit": "economy",
+      "grades": [
+        3
+      ],
+      "textbookPublisher": "common",
+      "type": "text",
+      "difficulty": 3,
+      "stimulusTitle": "地域図書館の予算資料",
+      "passage": "自治体の図書館運営費に関する一部の予算資料である。単位は万円。表にない人件費などを含めた総予算は示されていない。",
+      "table": {
+        "headers": [
+          "年度",
+          "蔵書購入費(万円)",
+          "施設維持費(万円)"
+        ],
+        "rows": [
+          [
+            "1年目",
+            "240",
+            "360"
+          ],
+          [
+            "2年目",
+            "270",
+            "350"
+          ],
+          [
+            "3年目",
+            "260",
+            "390"
+          ]
+        ]
+      },
+      "question": "この表だけで図書館の運営費全体が増えたと断定できない理由を説明しなさい。",
+      "modelAnswer": "表にあるのは蔵書購入費と施設維持費だけで、人件費などを含む全体の数値がないため。",
+      "explanation": "表にあるのは蔵書購入費と施設維持費だけで、人件費などを含む全体の数値がないため。",
+      "source": "original-v0.45.1"
     }
   ]
 });

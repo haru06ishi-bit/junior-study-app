@@ -242,17 +242,17 @@ async function init(){
    // index.html を直接開いた場合でも動くよう、同梱JSデータを優先する。
    if(window.CURRICULUM_DATA && window.QUESTION_DATA){
      state.curriculum=window.CURRICULUM_DATA;
-     state.builtInQuestions=[...(window.QUESTION_DATA.questions||[]),...(window.QUESTION_SUPPLEMENT?.questions||[])];refreshQuestionBank();
+     state.builtInQuestions=[...(window.QUESTION_DATA.questions||[]),...(window.QUESTION_SUPPLEMENTS||[]).flatMap(s=>s.questions||[])];refreshQuestionBank();
      renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
-     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}+${window.QUESTION_SUPPLEMENT?.version||'なし'}`;
+     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}+${(window.QUESTION_SUPPLEMENTS||[]).map(s=>s.version).join('+')||'なし'}`;
    }else{
      const [cr,qr]=await Promise.all([fetch('data/curriculum.json'),fetch('data/questions.json')]);
      if(!cr.ok||!qr.ok)throw new Error('data load failed');
      state.curriculum=await cr.json();
      const qdata=await qr.json();
-     state.builtInQuestions=[...(qdata.questions||[]),...(window.QUESTION_SUPPLEMENT?.questions||[])];refreshQuestionBank();
+     state.builtInQuestions=[...(qdata.questions||[]),...(window.QUESTION_SUPPLEMENTS||[]).flatMap(s=>s.questions||[])];refreshQuestionBank();
      renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
-     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${qdata.version}+${window.QUESTION_SUPPLEMENT?.version||'なし'}`;
+     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${qdata.version}+${(window.QUESTION_SUPPLEMENTS||[]).map(s=>s.version).join('+')||'なし'}`;
    }
  }catch(error){
    console.error(error);

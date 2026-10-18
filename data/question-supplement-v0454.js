@@ -36,7 +36,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "text",
-      "difficulty": 3,
+      "difficulty": 2,
       "stimulusTitle": "Library desk",
       "passage": "A: Where are the history books?\nB: Next to the art books.\nA: I need a book about old castles.\nB: Look near the window.",
       "question": "Where can A find a book about old castles? Answer in one English sentence.",
@@ -60,12 +60,12 @@ window.QUESTION_SUPPLEMENTS.push({
       "question": "Why can B come to the rehearsal?",
       "choices": [
         "Club practice ends before the rehearsal starts.",
-        "Club practice ends after it begins.",
+        "Club practice ends after the rehearsal begins.",
         "There is no club practice on Thursday.",
         "The rehearsal begins before school."
       ],
       "answer": 0,
-      "explanation": "活動時間の前後を理解する。",
+      "explanation": "Bの部活動は4時に終わり、リハーサルは4時30分開始なので、参加できる。",
       "source": "original-v0.45.4"
     },
     {
@@ -107,7 +107,7 @@ window.QUESTION_SUPPLEMENTS.push({
         "Interviews about the river today."
       ],
       "answer": 0,
-      "explanation": "展示意図を説明する。",
+      "explanation": "Aは写真について説明を付けようと提案し、Bは来場者にとってよい考えだと応じている。",
       "source": "original-v0.45.4"
     },
     {

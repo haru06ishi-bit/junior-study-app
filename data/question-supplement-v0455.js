@@ -24,7 +24,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "answer": 0,
       "source": "original-v0.45.5",
-      "explanation": "本文ではYuiが5時に地図を描いていた。読書をしていたのは弟で、夕食は母親が帰宅した後なので異なる。"
+      "explanation": "5時に地図を描いていたのはYui。読書はYuiのbrother（兄か弟かは不明）がしていた。夕食は母親が6時に帰宅した後で、ドアを開けていた記述はない。"
     },
     {
       "id": "v0455_en_g1_past_progressive_2",
@@ -48,7 +48,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "answer": 0,
       "source": "original-v0.45.5",
-      "explanation": "本文で5時に本を読んでいたのはYuiの弟。Yuiは地図を描いており、母親は6時に帰宅する。教師や友人は登場しない。"
+      "explanation": "5時に本を読んでいたのはYuiのbrother（兄か弟かは不明）。Yuiは地図を描き、母親は6時に帰宅した。父親は本文に登場しない。"
     },
     {
       "id": "v0455_en_g1_past_progressive_3",
@@ -60,7 +60,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "textbookPublisher": "common",
       "type": "choice",
-      "difficulty": 3,
+      "difficulty": 2,
       "stimulusTitle": "A rainy afternoon",
       "passage": "Yesterday at five, Yui was drawing a map. Her brother was reading a book. Their mother came home at six. Then they had dinner together.",
       "question": "なぜ最初の文では drew ではなく was drawing を使っているか。",
@@ -115,7 +115,7 @@ window.QUESTION_SUPPLEMENTS.push({
       ],
       "answer": 0,
       "source": "original-v0.45.5",
-      "explanation": "雨量の記録を教師に共有し安全対策を議論したと本文にある。クラブの日程変更や機器の装飾、競技の企画は目的として述べられていない。"
+      "explanation": "観測した雨量の情報を教師と共有し、安全を改善する方法を話し合ったと本文にある。クラブ予定の変更、報道機関への報告、観測所の移動先の決定は書かれていない。"
     },
     {
       "id": "v0455_en_g3_reading_2",

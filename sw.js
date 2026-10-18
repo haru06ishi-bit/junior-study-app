@@ -12,6 +12,7 @@ const APP_SHELL = [
   '/data/question-supplement-v0449.js?v=0.45.3',
   '/data/question-supplement-v0450.js?v=0.45.3',
   '/data/question-supplement-v0451.js?v=0.45.3',
+  '/data/question-supplement-v0452.js?v=0.45.3',
   '/data/question-supplement-v0453.js?v=0.45.3',
   '/icons/icon-192.png',
   '/icons/icon-512.png'

@@ -1,0 +1,37 @@
+name: Question quality
+on:
+  push:
+    paths:
+      - 'data/questions.json'
+      - 'data/questions.js'
+      - 'scripts/**'
+      - 'app.js'
+      - 'index.html'
+      - 'reorder-grading.js'
+      - 'exam-scope.js'
+      - '.github/workflows/question-quality.yml'
+  pull_request:
+    paths:
+      - 'data/questions.json'
+      - 'data/questions.js'
+      - 'scripts/**'
+      - 'app.js'
+      - 'index.html'
+      - 'reorder-grading.js'
+      - '.github/workflows/question-quality.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: python scripts/validate_questions.py
+      - run: python scripts/audit_shizuoka.py
+      - run: python scripts/check_question_quality_regressions.py
+      - run: node scripts/test_reorder_grading.js
+      - run: node scripts/test_exam_scope.js

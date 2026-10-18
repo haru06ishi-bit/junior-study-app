@@ -1,4 +1,4 @@
-const APP_VERSION='0.41.0';
+const APP_VERSION='0.44.9';
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
@@ -242,17 +242,17 @@ async function init(){
    // index.html を直接開いた場合でも動くよう、同梱JSデータを優先する。
    if(window.CURRICULUM_DATA && window.QUESTION_DATA){
      state.curriculum=window.CURRICULUM_DATA;
-     state.builtInQuestions=[...(window.QUESTION_DATA.questions||[])];refreshQuestionBank();
+     state.builtInQuestions=[...(window.QUESTION_DATA.questions||[]),...(window.QUESTION_SUPPLEMENT?.questions||[])];refreshQuestionBank();
      renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
-     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}`;
+     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${window.QUESTION_DATA.version}+${window.QUESTION_SUPPLEMENT?.version||'なし'}`;
    }else{
      const [cr,qr]=await Promise.all([fetch('data/curriculum.json'),fetch('data/questions.json')]);
      if(!cr.ok||!qr.ok)throw new Error('data load failed');
      state.curriculum=await cr.json();
      const qdata=await qr.json();
-     state.builtInQuestions=[...(qdata.questions||[])];refreshQuestionBank();
+     state.builtInQuestions=[...(qdata.questions||[]),...(window.QUESTION_SUPPLEMENT?.questions||[])];refreshQuestionBank();
      renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();
-     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${qdata.version}`;
+     document.getElementById('dataVersion').textContent=`アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${qdata.version}+${window.QUESTION_SUPPLEMENT?.version||'なし'}`;
    }
  }catch(error){
    console.error(error);
@@ -570,6 +570,29 @@ function renderReferencePages(q){
  const items=rows.slice(0,3).map(r=>`<div><strong>📖 ${escapeHtml(r.title)}</strong><span>${escapeHtml(publisherLabel(r.publisher))}・中${r.grade}${r.pages?`・${escapeHtml(r.pages)}`:'・ページ情報未登録'}</span></div>`).join('');
  box.innerHTML=`<p>教科書参照</p>${items}`;box.hidden=false;
 }
+
+function shuffledIndexedChoices(q){
+ const key=q.id||q.question||'';
+ if(!state.choiceOrders)state.choiceOrders={};
+ if(!state.choiceOrders[key]){
+  const arr=(q.choices||[]).map((text,index)=>({text,index}));
+  if(!q.preserveChoiceOrder){
+   for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}
+  }
+  state.choiceOrders[key]=arr;
+ }
+ return state.choiceOrders[key];
+}
+function renderQuestionStimulus(q){
+ const host=document.getElementById('questionStimulus');if(!host)return;host.innerHTML='';host.hidden=true;
+ const hasPassage=!!q.passage, hasTable=!!q.table, hasFigure=!!q.figure;if(!hasPassage&&!hasTable&&!hasFigure)return;
+ if(q.stimulusTitle){const h=document.createElement('h3');h.className='stimulus-title';h.textContent=q.stimulusTitle;host.append(h);}
+ if(hasPassage){const p=document.createElement('div');p.className='stimulus-passage';String(q.passage).split('\n').forEach(line=>{const para=document.createElement('p');para.textContent=line||'　';p.append(para)});host.append(p);}
+ if(hasTable){const wrap=document.createElement('div');wrap.className='stimulus-table-wrap';const t=document.createElement('table');t.className='stimulus-table';const head=document.createElement('thead');const hr=document.createElement('tr');(q.table.headers||[]).forEach(v=>{const th=document.createElement('th');th.textContent=v;hr.append(th)});head.append(hr);t.append(head);const body=document.createElement('tbody');(q.table.rows||[]).forEach(row=>{const tr=document.createElement('tr');row.forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});body.append(tr)});t.append(body);wrap.append(t);host.append(wrap);}
+ if(hasFigure&&q.figure.type==='bar'){const fig=document.createElement('div');fig.className='stimulus-bars';const max=Math.max(...(q.figure.values||[1]).map(Number),1);(q.figure.labels||[]).forEach((label,i)=>{const row=document.createElement('div');row.className='stimulus-bar-row';const l=document.createElement('span');l.textContent=label;const bar=document.createElement('span');bar.className='stimulus-bar';bar.style.width=`${Math.max(4,(Number(q.figure.values?.[i]||0)/max)*100)}%`;const v=document.createElement('strong');v.textContent=String(q.figure.values?.[i]??'');row.append(l,bar,v);fig.append(row)});host.append(fig);}
+ host.hidden=false;
+}
+
 function renderQuestion(){
  if(state.sessionContext?.mode==='mockExam'){renderMockExamQuestion();return;}
  const q=state.session[state.index];if(!q){finishQuiz();return}
@@ -577,11 +600,12 @@ function renderQuestion(){
  document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length}`;
  document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)}`;
  renderReferencePages(q);
+ renderQuestionStimulus(q);
  document.getElementById('questionText').textContent=q.question;
  document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
  const area=document.getElementById('answerArea');
  if(q.type==='choice'){
-   (q.choices||[]).forEach((c,i)=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=c;b.onclick=()=>gradeChoiceAnswer(i,b);area.append(b)});
+   shuffledIndexedChoices(q).forEach(({text,index})=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=text;b.dataset.originalIndex=String(index);b.onclick=()=>gradeChoiceAnswer(index,b);area.append(b)});
  }else if(q.type==='multi'){
    renderMultiAnswer(area,q,false);
  }else if(q.type==='reorder'){
@@ -660,7 +684,7 @@ function reorderCorrectText(q){const items=q.items||[];const order=Array.isArray
 function renderMultiAnswer(area,q,mock=false){
  const selected=new Set();const note=document.createElement('p');note.className='answer-instruction';note.textContent='正しいものをすべて選んでください。';area.append(note);
  const list=document.createElement('div');list.className='multi-choice-list';
- (q.choices||[]).forEach((c,i)=>{const label=document.createElement('label');label.className='multi-choice-item';const input=document.createElement('input');input.type='checkbox';input.value=String(i);const span=document.createElement('span');span.textContent=c;input.onchange=()=>{input.checked?selected.add(i):selected.delete(i)};label.append(input,span);list.append(label)});area.append(list);
+ shuffledIndexedChoices(q).forEach(({text,index})=>{const label=document.createElement('label');label.className='multi-choice-item';const input=document.createElement('input');input.type='checkbox';input.value=String(index);const span=document.createElement('span');span.textContent=text;input.onchange=()=>{input.checked?selected.add(index):selected.delete(index)};label.append(input,span);list.append(label)});area.append(list);
  const submit=document.createElement('button');submit.className='primary wide';submit.type='button';submit.textContent=mock?'解答して次へ':'答える';submit.onclick=()=>mock?submitMockAnswer({multi:[...selected],answerLabel:[...selected].map(i=>q.choices?.[i]).join(' / ')}):gradeMultiAnswer([...selected]);area.append(submit);
 }
 function renderReorderAnswer(area,q,mock=false){
@@ -674,9 +698,10 @@ function renderFillAnswer(area,q,mock=false){
  const submit=document.createElement('button');submit.className='primary wide';submit.type='button';submit.textContent=mock?'解答して次へ':'答える';submit.onclick=()=>{const values=inputs.map(x=>x.value);mock?submitMockAnswer({fills:values,answerLabel:values.join(' / ')}):gradeFillAnswer(values)};inputs.forEach(inp=>inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&inputs.length===1){e.preventDefault();submit.click()}}));area.append(submit);setTimeout(()=>inputs[0]?.focus(),0);
 }
 function gradeMultiAnswer(values,dontKnow=false){const q=state.session[state.index];const a=[...(q.answers||[])].map(Number).sort((x,y)=>x-y),b=[...values].map(Number).sort((x,y)=>x-y);const correct=!dontKnow&&a.length===b.length&&a.every((x,i)=>x===b[i]);document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
-function gradeReorderAnswer(values,dontKnow=false){const q=state.session[state.index];const a=Array.isArray(q.answerOrder)&&q.answerOrder.length?q.answerOrder:(q.items||[]).map((_,i)=>i);const correct=!dontKnow&&a.length===values.length&&a.every((x,i)=>Number(x)===Number(values[i]));document.querySelectorAll('#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
+const isCorrectReorder=(q,values)=>ReorderGrading.isCorrectReorder(q,values);
+function gradeReorderAnswer(values,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&isCorrectReorder(q,values);document.querySelectorAll('#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
 function gradeFillAnswer(values,dontKnow=false){const q=state.session[state.index];const blanks=q.blanks||[];const correct=!dontKnow&&blanks.length===values.length&&blanks.every((a,i)=>(Array.isArray(a)?a:[a]).filter(Boolean).some(v=>normalizeText(v)===normalizeText(values[i])));document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
-function gradeChoiceAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&answer===q.answer;document.querySelectorAll('.answer-btn').forEach((b,i)=>{b.disabled=true;if(i===q.answer)b.classList.add('correct');if(button===b&&!correct)b.classList.add('wrong')});finishAnswer(correct,dontKnow);}
+function gradeChoiceAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&answer===q.answer;document.querySelectorAll('.answer-btn').forEach(b=>{b.disabled=true;if(Number(b.dataset.originalIndex)===Number(q.answer))b.classList.add('correct');if(button===b&&!correct)b.classList.add('wrong')});finishAnswer(correct,dontKnow);}
 function gradeWordAnswer(value,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(value));document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
 function showTextSelfCheck(userText){const q=state.session[state.index];document.querySelectorAll('#answerArea textarea,#answerArea button').forEach(x=>x.disabled=true);document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えと比べて判定してください。</p><div class="self-check-row"><button id="selfOk" class="primary" type="button">できた</button><button id="selfNg" class="secondary" type="button">できなかった</button></div>`;appendAiExplanationControl(fb,q);document.getElementById('selfOk').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(true,false)};document.getElementById('selfNg').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(false,false)};}
 function gradeAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];if(q.type==='choice')gradeChoiceAnswer(answer,button,dontKnow);else if(q.type==='multi')gradeMultiAnswer([],dontKnow);else if(q.type==='reorder')gradeReorderAnswer([],dontKnow);else if(q.type==='fill')gradeFillAnswer([],dontKnow);else if(q.type==='word')gradeWordAnswer('',dontKnow);else finishAnswer(false,true);}
@@ -752,8 +777,8 @@ function saveExamPlans(items){localStorage.setItem('examPlans',JSON.stringify(it
 function loadExamStudyLogs(){try{return JSON.parse(localStorage.getItem('examStudyLogs')||'[]')}catch{return[]}}
 function dateOnlyLocal(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`;}
 function daysUntil(dateStr){if(!dateStr)return null;const [y,m,d]=dateStr.split('-').map(Number);const target=new Date(y,m-1,d);const now=new Date();const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());return Math.round((target-today)/86400000);}
-function examUnitIds(plan){return new Set((plan.units||[]).map(k=>k.split('/')[2]));}
-function examQuestionPool(plan){const ids=examUnitIds(plan),materials=new Set(plan.materials||[]);return state.questionBank.filter(q=>ids.has(q.unit)&&q.grades.includes(plan.grade)&&matchesSelectedTextbook(q)&&questionMatchesMaterials(q,materials));}
+function examUnitIds(plan){return ExamScope.scopesFromPlan(plan);}
+function examQuestionPool(plan){const ids=examUnitIds(plan),materials=new Set(plan.materials||[]);return state.questionBank.filter(q=>ExamScope.questionMatchesScopes(q,ids)&&q.grades.includes(plan.grade)&&matchesSelectedTextbook(q)&&questionMatchesMaterials(q,materials));}
 function subjectForUnitKey(key){return key.split('/')[0];}
 function examSubjectCount(plan){return new Set((plan.units||[]).map(subjectForUnitKey)).size;}
 function examProgress(plan){
@@ -815,7 +840,7 @@ function renderExamRanges(){
   el.append(details);
  });
 }
-function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=new Set([...state.exam.units].map(k=>k.split('/')[2]));const qCount=state.questionBank.filter(q=>ids.has(q.unit)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択${state.exam.materials.size?` / 教材・Unit候補 ${state.exam.materials.size}件`:''} / 現在${qCount}問出題可能`;}
+function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=ExamScope.scopesFromPlan({units:[...state.exam.units]});const qCount=state.questionBank.filter(q=>ExamScope.questionMatchesScopes(q,ids)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択${state.exam.materials.size?` / 教材・Unit候補 ${state.exam.materials.size}件`:''} / 現在${qCount}問出題可能`;}
 function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],textbookYear:state.exam.textbookYear,materials:[...state.exam.materials],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
 function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)return;if(!confirm(`「${p.name}」を削除しますか？`))return;saveExamPlans(loadExamPlans().filter(x=>x.id!==id));localStorage.setItem('examStudyLogs',JSON.stringify(loadExamStudyLogs().filter(x=>x.examId!==id)));}
 function buildExamSession(plan,count=20){
@@ -856,13 +881,13 @@ function startMockExamRetry(resultId){
  state.sessionContext={mode:'mockExam',examId:result.examId,examName:result.examName,materials:result.materials||[],textbookYear:result.textbookYear||null,points,minutes,startedAt:new Date().toISOString(),deadline:Date.now()+minutes*60000,retryOf:result.id,rootAttemptId:result.rootAttemptId||result.id};document.getElementById('mockResultDetails').hidden=true;showView('playView');startMockTimer();renderQuestion();
 }
 function stopMockTimer(){if(mockTimerId){clearInterval(mockTimerId);mockTimerId=null;}const box=document.getElementById('mockTimerBox');if(box)box.hidden=true;}
-function mockExamAutoPool(plan){return examQuestionPool(plan).filter(q=>['choice','word','multi','reorder','fill'].includes(q.type));}
+function mockExamAutoPool(plan){return examQuestionPool(plan).filter(q=>['choice','word','multi','reorder','fill','text'].includes(q.type));}
 function balancedMockQuestions(plan,count){
  const pool=mockExamAutoPool(plan);if(!pool.length)return[];
  const n=Math.min(count==='all'?pool.length:Number(count)||20,pool.length);
  const materials=new Set(plan.materials||[]),preferred=materialPriorityOrder(pool,materials);
- const typeOrder=['choice','fill','reorder','multi','word'];
- const typeRatio={choice:.35,fill:.20,reorder:.15,multi:.15,word:.15};
+ const typeOrder=['choice','fill','reorder','multi','word','text'];
+ const typeRatio={choice:.30,fill:.18,reorder:.12,multi:.12,word:.13,text:.15};
  const typeTarget={};let assigned=0;
  typeOrder.forEach(t=>{typeTarget[t]=Math.floor(n*typeRatio[t]);assigned+=typeTarget[t];});
  const fractions=typeOrder.map((t,i)=>({t,f:n*typeRatio[t]-Math.floor(n*typeRatio[t]),i})).sort((a,b)=>b.f-a.f||a.i-b.i);
@@ -886,7 +911,7 @@ function balancedMockQuestions(plan,count){
  return selected.slice(0,n).sort(()=>Math.random()-.5);
 }
 function mockTypeMixText(n){
- const ratios=[['単一選択',.35],['穴埋め',.20],['並べ替え',.15],['複数選択',.15],['短答',.15]];
+ const ratios=[['単一選択',.30],['穴埋め',.18],['並べ替え',.12],['複数選択',.12],['短答',.13],['記述',.15]];
  const vals=ratios.map(([name,r])=>({name,r,count:Math.floor(n*r),frac:n*r-Math.floor(n*r)}));let assigned=vals.reduce((s,x)=>s+x.count,0);
  vals.slice().sort((a,b)=>b.frac-a.frac).forEach(x=>{if(assigned<n){x.count++;assigned++;}});
  return vals.filter(x=>x.count).map(x=>`${x.name}${x.count}問`).join('・');
@@ -896,7 +921,7 @@ function openMockExamSetup(id){
  state.mockExam.planId=id;state.mockExam.count=20;state.mockExam.minutes=30;showView('mockExamSetupView');
  const pool=mockExamAutoPool(plan);const total=examQuestionPool(plan).length;
  document.getElementById('mockExamName').textContent=plan.name||'定期テスト';
- document.getElementById('mockExamMeta').textContent=`中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元 / 自動採点可能 ${pool.length}問（範囲全体 ${total}問）`;
+ document.getElementById('mockExamMeta').textContent=`中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元 / 模擬テスト対象 ${pool.length}問（範囲全体 ${total}問）`;
  renderMockSetupChoices();updateMockSetupSummary();
 }
 function renderMockSetupChoices(){
@@ -909,7 +934,7 @@ function updateMockSetupSummary(){
 }
 function startMockExam(){
  const plan=loadExamPlans().find(x=>x.id===state.mockExam.planId);if(!plan)return;const session=balancedMockQuestions(plan,state.mockExam.count);
- if(!session.length){alert('この範囲には自動採点できる問題がありません。');return;}
+ if(!session.length){alert('この範囲には模擬テストに出題できる問題がありません。');return;}
  const base=Math.floor(100/session.length),rem=100-base*session.length;const points={};session.forEach((q,i)=>points[q.id]=base+(i<rem?1:0));
  state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;
  state.sessionContext={mode:'mockExam',examId:plan.id,examName:plan.name,materials:plan.materials||[],textbookYear:plan.textbookYear||null,points,minutes:state.mockExam.minutes,startedAt:new Date().toISOString(),deadline:Date.now()+state.mockExam.minutes*60000};
@@ -920,24 +945,30 @@ function renderMockExamQuestion(){
  const q=state.session[state.index];if(!q){finishMockExam(false);return;}const s=state.curriculum.subjects.find(x=>x.id===q.subject);const pts=state.sessionContext?.points?.[q.id]||0;
  document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length} ・ ${pts}点`;
  document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)} ・ 模擬テスト`;
- renderReferencePages(q);document.getElementById('questionText').textContent=q.question;document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
+ renderReferencePages(q);renderQuestionStimulus(q);document.getElementById('questionText').textContent=q.question;document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
  const area=document.getElementById('answerArea');
  if(q.type==='choice'){
-  (q.choices||[]).forEach((c,i)=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=c;b.onclick=()=>submitMockAnswer({choice:i,answerLabel:c});area.append(b)});
+  shuffledIndexedChoices(q).forEach(({text,index})=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=text;b.dataset.originalIndex=String(index);b.onclick=()=>submitMockAnswer({choice:index,answerLabel:text});area.append(b)});
  }else if(q.type==='multi')renderMultiAnswer(area,q,true);
  else if(q.type==='reorder')renderReorderAnswer(area,q,true);
  else if(q.type==='fill')renderFillAnswer(area,q,true);
- else{
+ else if(q.type==='text'){
+  const ta=document.createElement('textarea');ta.rows=5;ta.className='answer-textarea';ta.placeholder='文章で答えを書いてください。';
+  const check=document.createElement('button');check.className='primary';check.type='button';check.textContent='模範解答を確認';
+  check.onclick=()=>{ta.disabled=true;check.disabled=true;document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えに必要な内容が含まれているか確認してください。</p><div class="self-check-row"><button id="mockSelfOk" class="primary" type="button">できた</button><button id="mockSelfNg" class="secondary" type="button">できなかった</button></div>`;document.getElementById('mockSelfOk').onclick=()=>submitMockAnswer({manualCorrect:true,answerLabel:ta.value});document.getElementById('mockSelfNg').onclick=()=>submitMockAnswer({manualCorrect:false,answerLabel:ta.value});};
+  area.append(ta,check);
+ }else{
   const input=document.createElement('input');input.type='text';input.className='answer-input';input.placeholder='答えを入力';input.autocomplete='off';const submit=document.createElement('button');submit.className='primary';submit.type='button';submit.textContent='解答して次へ';submit.onclick=()=>submitMockAnswer({text:input.value,answerLabel:input.value});input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submit.click()}});area.append(input,submit);setTimeout(()=>input.focus(),0);
  }
 }
-function submitMockAnswer({choice=null,text='',multi=[],order=[],fills=[],answerLabel='',dontKnow=false}={}){
+function submitMockAnswer({choice=null,text='',multi=[],order=[],fills=[],answerLabel='',dontKnow=false,manualCorrect=null}={}){
  const q=state.session[state.index];if(!q)return;let correct=false;
  if(!dontKnow){
   if(q.type==='choice')correct=choice===q.answer;
   else if(q.type==='multi'){const a=[...(q.answers||[])].map(Number).sort((x,y)=>x-y),b=[...multi].map(Number).sort((x,y)=>x-y);correct=a.length===b.length&&a.every((x,i)=>x===b[i]);}
-  else if(q.type==='reorder'){const a=Array.isArray(q.answerOrder)&&q.answerOrder.length?q.answerOrder:(q.items||[]).map((_,i)=>i);correct=a.length===order.length&&a.every((x,i)=>Number(x)===Number(order[i]));}
+  else if(q.type==='reorder'){correct=isCorrectReorder(q,order);}
   else if(q.type==='fill'){const blanks=q.blanks||[];correct=blanks.length===fills.length&&blanks.every((a,i)=>(Array.isArray(a)?a:[a]).filter(Boolean).some(v=>normalizeText(v)===normalizeText(fills[i])));}
+  else if(q.type==='text')correct=manualCorrect===true;
   else correct=acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(text));
  }
  const pts=state.sessionContext?.points?.[q.id]||0;if(correct)state.score+=pts;

@@ -15,7 +15,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 2,
       "stimulusTitle": "様態と伝聞",
       "passage": "雨が降るそうだ。空が暗く、雨が降りそうだ。",
-      "question": "この『そうだ』の意味はどれか。",
+      "question": "『降りそうだ』の『そうだ』の意味はどれか。",
       "choices": [
         "様態",
         "伝聞",
@@ -99,7 +99,7 @@ window.QUESTION_SUPPLEMENTS.push({
       "difficulty": 2,
       "stimulusTitle": "尊敬と自発",
       "passage": "校長先生が会場に来られた。昔のことが思い出される。",
-      "question": "この『られ』の意味として最も適切なのはどれか。",
+      "question": "『来られた』の『られ』の意味として最も適切なのはどれか。",
       "choices": [
         "尊敬",
         "受け身",

@@ -146,6 +146,28 @@ for q in A:
   if 2 in grades and re.search(r'\b(?:was|were)\s+being\s+\w+(?:ed|en)\b',passage,re.I):
     errors.append(f"passive progressive in G2 passage: {q['id']}")
 
+
+# English constructed responses: flag five consecutive answer words copied from
+# the passage or prompt. This is diagnostic, not an automatic error because
+# quoting a source may occasionally be a legitimate learning objective.
+for q in A:
+  if q.get('subject') != 'english' or q.get('type') != 'text':
+    continue
+  answer = q.get('modelAnswer') or q.get('answerText') or ''
+  def english_words(value):
+    return re.findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", str(value).lower())
+  aw = english_words(answer)
+  if len(aw) < 5:
+    continue
+  for location in ('passage', 'question'):
+    source_words = english_words(q.get(location) or '')
+    if len(source_words) < 5:
+      continue
+    fivegrams = {tuple(source_words[i:i+5]) for i in range(len(source_words)-4)}
+    overlap = next((' '.join(aw[i:i+5]) for i in range(len(aw)-4) if tuple(aw[i:i+5]) in fivegrams), None)
+    if overlap:
+      warnings.append(f"possible five-word constructed-answer leakage in {location}: {q['id']} ({overlap})")
+
 # Unit-volume diagnostics. This is a warning because content expansion is handled in the next phase.
 unit_counts=collections.Counter()
 for q in A:

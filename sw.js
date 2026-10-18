@@ -1,18 +1,19 @@
-const CACHE_NAME = 'study-app-shell-v0.45.2';
+const CACHE_NAME = 'study-app-shell-v0.45.3';
 const APP_SHELL = [
   '/',
   '/index.html',
-  '/style.css?v=0.45.2',
-  '/reorder-grading.js?v=0.45.2',
-  '/app.js?v=0.45.2',
-  '/exam-scope.js?v=0.45.2',
+  '/style.css?v=0.45.3',
+  '/reorder-grading.js?v=0.45.3',
+  '/app.js?v=0.45.3',
+  '/exam-scope.js?v=0.45.3',
   '/manifest.webmanifest',
-  '/data/curriculum.js?v=0.45.2',
-  '/data/questions.js?v=0.45.2',
-  '/data/question-supplement-v0449.js?v=0.45.2',
-  '/data/question-supplement-v0450.js?v=0.45.2',
-  '/data/question-supplement-v0451.js?v=0.45.2',
-  '/data/question-supplement-v0452.js?v=0.45.2',
+  '/data/curriculum.js?v=0.45.3',
+  '/data/questions.js?v=0.45.3',
+  '/data/question-supplement-v0449.js?v=0.45.3',
+  '/data/question-supplement-v0450.js?v=0.45.3',
+  '/data/question-supplement-v0451.js?v=0.45.3',
+  '/data/question-supplement-v0452.js?v=0.45.3',
+  '/data/question-supplement-v0453.js?v=0.45.3',
   '/icons/icon-192.png',
   '/icons/icon-512.png'
 ];

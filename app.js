@@ -1,4 +1,4 @@
-const APP_VERSION='0.46.1';
+const APP_VERSION='0.46.2';
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
@@ -597,7 +597,7 @@ function displayQuestionText(q){
  const raw=String(q?.question||'');
  if(q?.type!=='fill'||!Array.isArray(q.blanks)||!q.blanks.length)return raw;
  // 出題本文と入力欄の番号を明示的に対応させる。全角・半角括弧に対応。
- return raw.replace(/[（(]\\s*([0-9０-９]+)\\s*[）)]/g,(full,n)=>{
+ return raw.replace(/[（(]\s*([0-9０-９]+)\s*[）)]/g,(full,n)=>{
   const i=Number(String(n).replace(/[０-９]/g,c=>String(c.charCodeAt(0)-0xFF10)));
   return i>=1&&i<=q.blanks.length?`【空欄${i}】`:full;
  });

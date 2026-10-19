@@ -1,4 +1,4 @@
-const APP_VERSION='0.46.1';
+const APP_VERSION='0.46.2';
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
 
 const TEXTBOOK_CANDIDATES={
@@ -587,12 +587,21 @@ function renderQuestionStimulus(q){
  const host=document.getElementById('questionStimulus');if(!host)return;host.innerHTML='';host.hidden=true;
  const hasPassage=!!q.passage, hasTable=!!q.table, hasFigure=!!q.figure;if(!hasPassage&&!hasTable&&!hasFigure)return;
  if(q.stimulusTitle){const h=document.createElement('h3');h.className='stimulus-title';h.textContent=q.stimulusTitle;host.append(h);}
- if(hasPassage){const p=document.createElement('div');p.className='stimulus-passage';String(q.passage).split('\n').forEach(line=>{const para=document.createElement('p');para.textContent=line||'　';p.append(para)});host.append(p);}
+ if(hasPassage){const p=document.createElement('div');p.className='stimulus-passage';String(q.passage).split('\n').forEach(line=>{const para=document.createElement('p');para.textContent=line?displayQuestionText({...q,question:line}):'　';p.append(para)});host.append(p);}
  if(hasTable){const wrap=document.createElement('div');wrap.className='stimulus-table-wrap';const t=document.createElement('table');t.className='stimulus-table';const head=document.createElement('thead');const hr=document.createElement('tr');(q.table.headers||[]).forEach(v=>{const th=document.createElement('th');th.textContent=v;hr.append(th)});head.append(hr);t.append(head);const body=document.createElement('tbody');(q.table.rows||[]).forEach(row=>{const tr=document.createElement('tr');row.forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});body.append(tr)});t.append(body);wrap.append(t);host.append(wrap);}
  if(hasFigure&&q.figure.type==='bar'){const fig=document.createElement('div');fig.className='stimulus-bars';const max=Math.max(...(q.figure.values||[1]).map(Number),1);(q.figure.labels||[]).forEach((label,i)=>{const row=document.createElement('div');row.className='stimulus-bar-row';const l=document.createElement('span');l.textContent=label;const bar=document.createElement('span');bar.className='stimulus-bar';bar.style.width=`${Math.max(4,(Number(q.figure.values?.[i]||0)/max)*100)}%`;const v=document.createElement('strong');v.textContent=String(q.figure.values?.[i]??'');row.append(l,bar,v);fig.append(row)});host.append(fig);}
  host.hidden=false;
 }
 
+function displayQuestionText(q){
+ const raw=String(q?.question||'');
+ if(q?.type!=='fill'||!Array.isArray(q.blanks)||!q.blanks.length)return raw;
+ // 出題本文と入力欄の番号を明示的に対応させる。全角・半角括弧に対応。
+ return raw.replace(/[（(]\s*([0-9０-９]+)\s*[）)]/g,(full,n)=>{
+  const i=Number(String(n).replace(/[０-９]/g,c=>String(c.charCodeAt(0)-0xFF10)));
+  return i>=1&&i<=q.blanks.length?`【空欄${i}】`:full;
+ });
+}
 function renderQuestion(){
  if(state.sessionContext?.mode==='mockExam'){renderMockExamQuestion();return;}
  const q=state.session[state.index];if(!q){finishQuiz();return}
@@ -601,7 +610,7 @@ function renderQuestion(){
  document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)}`;
  renderReferencePages(q);
  renderQuestionStimulus(q);
- document.getElementById('questionText').textContent=q.question;
+ document.getElementById('questionText').textContent=displayQuestionText(q);
  document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
  const area=document.getElementById('answerArea');
  if(q.type==='choice'){
@@ -693,7 +702,7 @@ function renderReorderAnswer(area,q,mock=false){
  area.append(note,built,pool);refresh();const actions=document.createElement('div');actions.className='reorder-actions';const reset=document.createElement('button');reset.type='button';reset.className='secondary';reset.textContent='やり直す';reset.onclick=()=>{answer.splice(0);refresh()};const submit=document.createElement('button');submit.type='button';submit.className='primary';submit.textContent=mock?'解答して次へ':'答える';submit.onclick=()=>mock?submitMockAnswer({order:[...answer],answerLabel:answer.map(i=>q.items?.[i]).join(' ')}):gradeReorderAnswer([...answer]);actions.append(reset,submit);area.append(actions);
 }
 function renderFillAnswer(area,q,mock=false){
- const blanks=(q.blanks||[]).map(a=>Array.isArray(a)?a:[a]);const note=document.createElement('p');note.className='answer-instruction';note.textContent=blanks.length>1?'空欄ごとに答えを入力してください。':'空欄に入る答えを入力してください。';area.append(note);const inputs=[];
+ const blanks=(q.blanks||[]).map(a=>Array.isArray(a)?a:[a]);const note=document.createElement('p');note.className='answer-instruction';note.textContent=blanks.length>1?'問題文の【空欄1】【空欄2】…に対応する番号の欄へ、それぞれ入力してください。':'問題文の空欄に入る答えを入力してください。';area.append(note);const inputs=[];
  blanks.forEach((_,i)=>{const label=document.createElement('label');label.className='fill-label';label.innerHTML=`<span>（${i+1}）</span>`;const input=document.createElement('input');input.type='text';input.className='answer-input';input.placeholder=`空欄 ${i+1}`;input.autocomplete='off';label.append(input);area.append(label);inputs.push(input)});
  const submit=document.createElement('button');submit.className='primary wide';submit.type='button';submit.textContent=mock?'解答して次へ':'答える';submit.onclick=()=>{const values=inputs.map(x=>x.value);mock?submitMockAnswer({fills:values,answerLabel:values.join(' / ')}):gradeFillAnswer(values)};inputs.forEach(inp=>inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&inputs.length===1){e.preventDefault();submit.click()}}));area.append(submit);setTimeout(()=>inputs[0]?.focus(),0);
 }
@@ -945,7 +954,7 @@ function renderMockExamQuestion(){
  const q=state.session[state.index];if(!q){finishMockExam(false);return;}const s=state.curriculum.subjects.find(x=>x.id===q.subject);const pts=state.sessionContext?.points?.[q.id]||0;
  document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length} ・ ${pts}点`;
  document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)} ・ 模擬テスト`;
- renderReferencePages(q);renderQuestionStimulus(q);document.getElementById('questionText').textContent=q.question;document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
+ renderReferencePages(q);renderQuestionStimulus(q);document.getElementById('questionText').textContent=displayQuestionText(q);document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
  const area=document.getElementById('answerArea');
  if(q.type==='choice'){
   shuffledIndexedChoices(q).forEach(({text,index})=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=text;b.dataset.originalIndex=String(index);b.onclick=()=>submitMockAnswer({choice:index,answerLabel:text});area.append(b)});

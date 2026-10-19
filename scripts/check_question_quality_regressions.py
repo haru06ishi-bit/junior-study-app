@@ -146,6 +146,17 @@ for q in A:
   if 2 in grades and re.search(r'\b(?:was|were)\s+being\s+\w+(?:ed|en)\b',passage,re.I):
     errors.append(f"passive progressive in G2 passage: {q['id']}")
 
+
+# English written answers: passage copying checks; stem overlap is excluded
+# because instruction phrasing often legitimately overlaps the response.
+from answer_leakage import passage_overlap
+for q in A:
+  if q.get('subject')!='english' or q.get('type')!='text':
+    continue
+  evidence=passage_overlap(q.get('modelAnswer') or q.get('answerText') or '', q.get('passage') or '')
+  if evidence:
+    warnings.append(f"possible passage answer leakage: {q['id']} ({evidence})")
+
 # Unit-volume diagnostics. This is a warning because content expansion is handled in the next phase.
 unit_counts=collections.Counter()
 for q in A:

@@ -1,0 +1,14 @@
+const assert=require('node:assert/strict');const fs=require('node:fs'),vm=require('node:vm');
+const src=fs.readFileSync('app.js','utf8');const css=fs.readFileSync('style.css','utf8');
+const i=src.indexOf('function formatDataVersion(base){'),j=src.indexOf('const state=',i);
+assert(i>=0&&j>i,'footer formatter exists before state initialization');
+const context={window:{QUESTION_SUPPLEMENTS:Array.from({length:20},(_,i)=>({version:'0.44.'+i}))},APP_VERSION:'0.46.5',state:{curriculum:{version:'2026'}}};
+vm.runInNewContext(src.slice(i,j)+'\n globalThis.output=formatDataVersion("0.44.7");',context);
+const result=context.output;
+assert(result.includes('アプリ 0.46.5'),'current app version displayed');
+assert(result.includes('補充20件'),'supplement count displayed');
+assert(result.includes('最新 0.44.19'),'newest supplemental version displayed');
+assert(!/\S{41}/u.test(result),'version footer must not contain an unbroken run of >40 chars');
+assert.equal((src.match(/textContent=formatDataVersion\(/g)||[]).length,2,'both load branches use formatter');
+assert(/\.data-version\{[^}]*overflow-wrap:anywhere/.test(css),'mobile footer wraps');
+console.log('PASS dataVersion mobile overflow regression');

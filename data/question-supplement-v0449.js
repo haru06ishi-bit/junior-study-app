@@ -1,4 +1,5 @@
-window.QUESTION_SUPPLEMENT = {
+window.QUESTION_SUPPLEMENTS = window.QUESTION_SUPPLEMENTS || [];
+window.QUESTION_SUPPLEMENTS.push({
   "version": "0.44.9",
   "questions": [
     {
@@ -407,4 +408,5 @@ window.QUESTION_SUPPLEMENT = {
       "source": "original-v0.44.9"
     }
   ]
-};
+}
+);

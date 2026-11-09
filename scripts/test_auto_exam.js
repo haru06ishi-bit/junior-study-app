@@ -27,6 +27,25 @@ assert.equal(ctx.examQuestionPool({grade:2,units:['english/f/shared'],materials:
 assert.equal(ctx.examQuestionPool({grade:2,units:['japanese/f/shared'],materials:['book']}).length,0,'manual nonmatching material excluded');
 for(const corrupt of ['null','{}','[null,1]','{broken']){store.set('examPlans',corrupt);assert.equal(ctx.loadExamPlans().length,0,'corrupt plan data: '+corrupt);}
 store.set('examPlans',JSON.stringify([{id:'old',grade:2,units:['english/f/shared']} ]));assert.equal(ctx.loadExamPlans().length,1,'legacy plans retained');
+const validLegacy={id:'old',grade:2,date:'2026-11-23',units:['english/f/shared']};
+for(const invalid of [
+ {units:[null]},{units:[123]},{units:[{}]},{units:['english/shared']},{units:['english//shared']},{units:['english/f/ ']},
+ {materials:123},{materials:{}},{materials:[null]},{materials:[3]},{materials:['']},{date:123},{grade:0},
+]){
+ store.set('examPlans',JSON.stringify([{...validLegacy,...invalid},validLegacy]));
+ const plans=ctx.loadExamPlans();assert.equal(plans.length,1,'malformed plan excluded: '+JSON.stringify(invalid));
+ assert.equal(ctx.examQuestionPool(plans[0]).length,2,'valid legacy plan stays usable beside corrupt plan');
+}
+const targetPlan={...validLegacy,id:'auto-edited',name:'original',auto:true,purpose:'review',dateIsTarget:true};
+store.set('examPlans',JSON.stringify([targetPlan]));
+const editFields={examName:{value:'renamed'},examDate:{value:targetPlan.date}};
+ctx.document={getElementById:id=>editFields[id]};ctx.saveExamPlans=plans=>store.set('examPlans',JSON.stringify(plans));ctx.openExamPlans=()=>{};
+state.exam={editId:targetPlan.id,grade:2,units:new Set(targetPlan.units),materials:new Set(),textbookYear:2026};
+vm.runInNewContext(source('saveCurrentExamPlan'),ctx);ctx.saveCurrentExamPlan();
+assert.equal(ctx.loadExamPlans()[0].dateIsTarget,true,'renaming retains automatically chosen target date');
+state.exam.editId=targetPlan.id;editFields.examDate.value='2026-11-30';ctx.saveCurrentExamPlan();
+assert.equal(ctx.loadExamPlans()[0].dateIsTarget,false,'manually changed date stops being labeled automatic target date');
+assert.equal(ctx.loadExamPlans()[0].purpose,'review','editing preserves auto-plan metadata');
 // Real bank smoke check: each school grade has usable English/Japanese auto plans.
 state.questionBank=JSON.parse(fs.readFileSync('data/questions.json','utf8')).questions;
 state.curriculum=JSON.parse(fs.readFileSync('data/curriculum.json','utf8'));

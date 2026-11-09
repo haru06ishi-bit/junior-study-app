@@ -940,7 +940,14 @@ function updateReviewSummary(){const n=filteredReviewPool().length;document.getE
 document.getElementById('startFilteredReview').onclick=()=>{const pool=filteredReviewPool();if(!pool.length){alert('この条件に復習問題はありません。');return}const limit=state.review.count==='all'?'all':Math.min(state.review.count,pool.length);state.session=pickSmartQuestions(pool,limit);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'review'};showView('playView');renderQuestion();};
 
 
-function loadExamPlans(){try{const data=JSON.parse(localStorage.getItem('examPlans')||'[]');return Array.isArray(data)?data.filter(p=>p&&typeof p==='object'&&Array.isArray(p.units)):[]}catch{return[]}}
+function loadExamPlans(){
+ try{
+  const data=JSON.parse(localStorage.getItem('examPlans')||'[]');if(!Array.isArray(data))return[];
+  return data.filter(p=>p&&typeof p==='object'&&!Array.isArray(p)&&[1,2,3].includes(Number(p.grade))&&
+   (p.date==null||typeof p.date==='string')&&Array.isArray(p.units)&&p.units.every(key=>typeof key==='string'&&key.split('/').length===3&&key.split('/').every(part=>part.trim().length>0))&&
+   (p.materials==null||(Array.isArray(p.materials)&&p.materials.every(id=>typeof id==='string'&&id.trim().length>0)))).map(p=>({...p,grade:Number(p.grade),materials:p.materials||[]}));
+ }catch{return[]}
+}
 function saveExamPlans(items){localStorage.setItem('examPlans',JSON.stringify(items));renderExamPlanList();renderDailyPlanPreview();}
 function loadExamStudyLogs(){try{return JSON.parse(localStorage.getItem('examStudyLogs')||'[]')}catch{return[]}}
 function dateOnlyLocal(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`;}
@@ -1030,7 +1037,7 @@ function renderExamRanges(){
  });
 }
 function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=ExamScope.scopesFromPlan({units:[...state.exam.units]});const qCount=state.questionBank.filter(q=>ExamScope.questionMatchesScopes(q,ids)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択${state.exam.materials.size?` / 教材・Unit候補 ${state.exam.materials.size}件`:''} / 現在${qCount}問出題可能`;}
-function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],textbookYear:state.exam.textbookYear,materials:[...state.exam.materials],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
+function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],textbookYear:state.exam.textbookYear,materials:[...state.exam.materials],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item,...(plans[i].auto&&plans[i].date!==date?{dateIsTarget:false}:{})};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
 function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)return;if(!confirm(`「${p.name}」を削除しますか？`))return;saveExamPlans(loadExamPlans().filter(x=>x.id!==id));localStorage.setItem('examStudyLogs',JSON.stringify(loadExamStudyLogs().filter(x=>x.examId!==id)));}
 function buildExamSession(plan,count=20){
  const pool=examQuestionPool(plan);if(!pool.length)return[];const ordered=materialPriorityOrder(pool,new Set(plan.materials||[]));if(plan.auto&&plan.purpose==='basics')ordered.sort((a,b)=>questionDifficulty(a)-questionDifficulty(b));return ordered.slice(0,Math.min(count,pool.length));

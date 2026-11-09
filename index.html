@@ -10,8 +10,9 @@
   <meta name="apple-mobile-web-app-title" content="30分スタディ" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  <link rel="icon" href="/icons/icon-192.png" type="image/png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.47.1" />
+  <link rel="stylesheet" href="style.css?v=0.47.2" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -145,6 +146,10 @@
           <button class="chip" data-count="10">10問</button>
           <button class="chip" data-count="20">20問</button>
           <button class="chip" data-count="all">全部</button>
+        </div>
+        <div id="japaneseDifficultyRow" class="recall-toggle" hidden>
+          <label><input type="checkbox" id="japaneseHardStart" /> <span><strong>難しめから</strong>（国語）</span></label>
+          <p class="help">初めての単元を標準レベルから始めます。各単元で3問続けて正解すると、次の問題を一段難しくします。教材を選ばないときは、選んだ単元の全教材から出題します。</p>
         </div>
         <div id="recallToggleRow" class="recall-toggle" hidden>
           <label><input type="checkbox" id="recallPractice" /> <span><strong>思い出す練習</strong>（選択肢を見る前に、まず自分で答える）</span></label>
@@ -515,25 +520,25 @@
   </div>
 
   <canvas id="captureCanvas" hidden></canvas>
-  <script src="data/curriculum.js?v=0.47.1"></script>
-  <script src="data/questions.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0449.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0450.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0451.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0452.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0453.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0454.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0455.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0456.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0457.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0458.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0459.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0460.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0461.js?v=0.47.1"></script>
-  <script src="data/question-supplement-v0464.js?v=0.47.1"></script>
-  <script src="reorder-grading.js?v=0.47.1"></script>
-  <script src="exam-scope.js?v=0.47.1"></script>
-  <script src="recall-ladder.js?v=0.47.1"></script>
-  <script src="app.js?v=0.47.1"></script>
+  <script src="data/curriculum.js?v=0.47.2"></script>
+  <script src="data/questions.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0449.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0450.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0451.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0452.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0453.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0454.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0455.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0456.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0457.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0458.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0459.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0460.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0461.js?v=0.47.2"></script>
+  <script src="data/question-supplement-v0464.js?v=0.47.2"></script>
+  <script src="reorder-grading.js?v=0.47.2"></script>
+  <script src="exam-scope.js?v=0.47.2"></script>
+  <script src="recall-ladder.js?v=0.47.2"></script>
+  <script src="app.js?v=0.47.2"></script>
 </body>
 </html>

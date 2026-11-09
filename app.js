@@ -1,4 +1,4 @@
-const APP_VERSION='0.47.1';
+const APP_VERSION='0.47.2';
 function formatDataVersion(base){
  const versions=(window.QUESTION_SUPPLEMENTS||[]).map(s=>s.version);
  return `アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${base} + 補充${versions.length}件（最新 ${versions.at(-1)||'なし'}）`;
@@ -410,12 +410,12 @@ function questionMatchesMaterials(q,materialIds){
  const selected=materialIds instanceof Set?materialIds:new Set(materialIds||[]);
  const tagged=questionMaterialIds(q);
  if(!tagged.length)return true;
- if(!selected.size)return false;
+ if(!selected.size)return q.subject==='japanese';
  return tagged.some(id=>selected.has(id));
 }
 function materialPriorityOrder(pool,materialIds){
  const selected=materialIds instanceof Set?materialIds:new Set(materialIds||[]);
- if(!selected.size)return smartQuestionOrder(pool.filter(q=>questionMaterialIds(q).length===0));
+ if(!selected.size)return smartQuestionOrder(pool.filter(q=>q.subject==='japanese'||questionMaterialIds(q).length===0));
  const dedicated=pool.filter(q=>questionMaterialIds(q).some(id=>selected.has(id)));
  const common=pool.filter(q=>questionMaterialIds(q).length===0);
  return [...smartQuestionOrder(dedicated),...smartQuestionOrder(common)];
@@ -497,6 +497,25 @@ function availableQuestions(){
 
 function questionDifficulty(q){const d=Number(q?.difficulty)||1;return Math.max(1,Math.min(3,d));}
 function difficultyLabel(q){return({1:'基礎',2:'標準',3:'応用'})[questionDifficulty(q)]||'基礎';}
+function validJapaneseLearningPrefs(value){return value&&typeof value==='object'&&!Array.isArray(value)&&typeof value.hardStart==='boolean'?{hardStart:value.hardStart}:null;}
+function loadJapaneseLearningPrefs(){try{return validJapaneseLearningPrefs(JSON.parse(localStorage.getItem('japaneseLearningPrefs')||'null'))||{hardStart:false}}catch{return{hardStart:false}}}
+function setJapaneseHardStart(on){try{localStorage.setItem('japaneseLearningPrefs',JSON.stringify({hardStart:!!on}))}catch(err){console.warn('Japanese preference save failed',err)}}
+function renderJapaneseDifficultyToggle(){const row=document.getElementById('japaneseDifficultyRow'),box=document.getElementById('japaneseHardStart');if(!row||!box)return;row.hidden=state.subject!=='japanese';box.checked=loadJapaneseLearningPrefs().hardStart;}
+function japaneseCorrectStreaks(){
+ const qmap=new Map(state.questionBank.map(q=>[q.id,q])),out=new Map();
+ const saved=studyHistory().flatMap(h=>h.answerResults||[]),seen=new Set(saved.map(a=>`${a.questionId}|${a.answeredAt||''}`));
+ const answers=[...saved,...(state.answers||[]).filter(a=>!seen.has(`${a.questionId}|${a.answeredAt||''}`))];
+ for(const a of answers){const q=qmap.get(a.questionId);if(q?.subject!=='japanese')continue;const key=`${q.subject}/${q.unit}`;const independent=a.correct&&!a.dontKnow&&!a.selfJudged&&a.assist!=='hint'&&a.assist!=='none'&&!(a.recallMode&&a.assist==='choice');out.set(key,independent?(out.get(key)||0)+1:0);}
+ return out;
+}
+function japaneseDifficultyTarget(accuracy,streak=0,hardStart=false){const initial=accuracy==null?(hardStart?2:1):accuracy<0.6?1:accuracy<0.8?2:3;return Math.min(3,initial+Math.floor(streak/3));}
+function adaptRemainingJapaneseQuiz(){
+ if(state.sessionContext?.mode!=='quiz'||state.subject!=='japanese')return;
+ const remaining=state.session.length-state.index-1;if(remaining<=0)return;
+ const used=new Set(state.session.slice(0,state.index+1).map(q=>q.id));
+ const pool=availableQuestions().filter(q=>!used.has(q.id));
+ state.session.splice(state.index+1,remaining,...pickQuestionsForMaterials(pool,remaining,state.quizMaterials));
+}
 function questionAttemptStats(){
  const map=new Map();
  for(const h of studyHistory()){
@@ -513,12 +532,12 @@ function unitAccuracyMap(){
  const out=new Map();for(const [k,x] of groups)out.set(k,x.total?x.correct/x.total:null);return out;
 }
 function smartQuestionOrder(pool){
- const attempts=questionAttemptStats(), mastery=unitAccuracyMap();
+ const attempts=questionAttemptStats(), mastery=unitAccuracyMap(),japaneseStreaks=japaneseCorrectStreaks(),japanesePrefs=loadJapaneseLearningPrefs();
  const missed=new Map((JSON.parse(localStorage.getItem('missedQuestions')||'[]')||[]).map(x=>[x.questionId,x]));
  const now=Date.now();const recallRecords=loadRecallRecords();
  return [...pool].map(q=>{
   const st=attempts.get(q.id)||{attempts:0,correct:0,lastAt:null};const acc=mastery.get(`${q.subject}/${q.unit}`);
-  const target=acc==null?1:acc<0.6?1:acc<0.8?2:3;const diff=questionDifficulty(q);
+  const target=q.subject==='japanese'?japaneseDifficultyTarget(acc,japaneseStreaks.get(`${q.subject}/${q.unit}`)||0,japanesePrefs.hardStart):(acc==null?1:acc<0.6?1:acc<0.8?2:3);const diff=questionDifficulty(q);
   let score=0;
   if(missed.has(q.id))score+=58+Math.min(12,(missed.get(q.id).count||1)*2);
   if(!st.attempts)score+=42;
@@ -533,17 +552,19 @@ function smartQuestionOrder(pool){
 function pickSmartQuestions(pool,count){const ordered=smartQuestionOrder(pool);return count==='all'?ordered:ordered.slice(0,Math.min(Number(count)||0,ordered.length));}
 function updateSummary(){
  renderRecallToggle();
+ renderJapaneseDifficultyToggle();
  const s=state.curriculum?.subjects.find(x=>x.id===state.subject);const n=availableQuestions().length;
  const district=selectedTextbookDistrict();const book=district?`・${district.name}地区`:'';const mats=[...state.quizMaterials].map(materialTitleById);const matText=mats.length?`・教材/Unit ${mats.length}件（${mats.map(x=>`「${x}」`).join('、')}）`:'';document.getElementById('selectionSummary').textContent=s?`中${state.grade}・${s.name}${book}・${state.units.size}単元${matText} / 現在${n}問出題可能`:'学年・教科・単元を選んでください。';
 }
 document.getElementById('unitSearch').addEventListener('input',renderUnits);
 document.getElementById('recallPractice')?.addEventListener('change',e=>{if(state.subject)setRecallPractice(state.subject,e.target.checked);});
+document.getElementById('japaneseHardStart')?.addEventListener('change',e=>setJapaneseHardStart(e.target.checked));
 document.getElementById('countChoices').addEventListener('click',e=>{const b=e.target.closest('[data-count]');if(!b)return;document.querySelectorAll('[data-count]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');state.count=b.dataset.count==='all'?'all':Number(b.dataset.count);updateSummary()});
 document.getElementById('startQuiz').onclick=()=>{
  if(!state.subject||!state.units.size){alert('教科と単元を選んでください。');return}
  const pool=availableQuestions();if(!pool.length){alert('選んだ単元には、まだ問題が登録されていません。別の単元を選ぶか、紙テストから問題を追加してください。');return}
  const limit=state.count==='all'?'all':Math.min(state.count,pool.length);
- state.session=pickQuestionsForMaterials(pool,limit,state.quizMaterials);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'quiz',materials:[...state.quizMaterials],textbookYear:state.quizTextbookYear,recall:recallPracticeEnabled(state.subject)};resetRecallSessionState();
+ state.answers=[];state.session=pickQuestionsForMaterials(pool,limit,state.quizMaterials);state.index=0;state.score=0;state.sessionContext={mode:'quiz',materials:[...state.quizMaterials],textbookYear:state.quizTextbookYear,recall:recallPracticeEnabled(state.subject)};resetRecallSessionState();
  localStorage.setItem('lastQuizSelection',JSON.stringify({grade:state.grade,subject:state.subject,units:[...state.units],count:state.count,textbookYear:state.quizTextbookYear,materials:[...state.quizMaterials]}));
  showView('playView');renderQuestion();
 };
@@ -648,6 +669,7 @@ function finishAnswer(correct,dontKnow=false,answerLabel='',meta={}){
  const assist=meta.assist||(recall?RecallLadder.assistFor({correct,dontKnow,hintsUsed:step.hintsUsed||0,choicesShown:!!step.choicesShown}):(dontKnow||!correct?'none':(RecallLadder.isProductionType(q)?'free':'choice')));
  const entry={questionId:q.id,correct,dontKnow,answeredAt:new Date().toISOString(),assist};if(recall)entry.recallMode=true;if(meta.selfJudged)entry.selfJudged=true;
  if(retry){(state.retryAnswers||(state.retryAnswers=[])).push(entry);}else{if(correct)state.score++;state.answers.push(entry);}
+ if(!retry&&q.subject==='japanese')adaptRemainingJapaneseQuiz();
  // 選択肢が見えている状態での正解は「思い出せた」記録にしない（監査指摘1）。自己判定は自力正解として数えない。
  const record=recallCapable&&RecallLadder.isRecallSubject(q.subject)?recordRecallResult(q,{correct,assist:meta.selfJudged&&assist==='free'?'hint':assist,recallCapable:true}):null;
  const queued=!retry&&recall&&RecallLadder.shouldRetryInSession({correct,assist})?queueRecallRetry(q):false;
@@ -820,7 +842,7 @@ function gradeReorderAnswer(values,dontKnow=false){const q=state.session[state.i
 function gradeFillAnswer(values,dontKnow=false){const q=state.session[state.index];const blanks=q.blanks||[];const correct=!dontKnow&&blanks.length===values.length&&blanks.every((a,i)=>(Array.isArray(a)?a:[a]).filter(Boolean).some(v=>normalizeText(v)===normalizeText(values[i])));document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
 function gradeChoiceAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&answer===q.answer;document.querySelectorAll('.answer-btn').forEach(b=>{b.disabled=true;if(Number(b.dataset.originalIndex)===Number(q.answer))b.classList.add('correct');if(button===b&&!correct)b.classList.add('wrong')});finishAnswer(correct,dontKnow);}
 function gradeWordAnswer(value,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(value));document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
-function showTextSelfCheck(userText){const q=state.session[state.index];document.querySelectorAll('#answerArea textarea,#answerArea button').forEach(x=>x.disabled=true);document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えと比べて判定してください。</p><div class="self-check-row"><button id="selfOk" class="primary" type="button">できた</button><button id="selfNg" class="secondary" type="button">できなかった</button></div>`;appendAiExplanationControl(fb,q);document.getElementById('selfOk').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(true,false)};document.getElementById('selfNg').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(false,false)};}
+function showTextSelfCheck(userText){const q=state.session[state.index];document.querySelectorAll('#answerArea textarea,#answerArea button').forEach(x=>x.disabled=true);document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えと比べて判定してください。</p><div class="self-check-row"><button id="selfOk" class="primary" type="button">できた</button><button id="selfNg" class="secondary" type="button">できなかった</button></div>`;appendAiExplanationControl(fb,q);document.getElementById('selfOk').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(true,false,'',{selfJudged:true})};document.getElementById('selfNg').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(false,false)};}
 function gradeAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];if(q.type==='choice')gradeChoiceAnswer(answer,button,dontKnow);else if(q.type==='multi')gradeMultiAnswer([],dontKnow);else if(q.type==='reorder')gradeReorderAnswer([],dontKnow);else if(q.type==='fill')gradeFillAnswer([],dontKnow);else if(q.type==='word')gradeWordAnswer('',dontKnow);else finishAnswer(false,true);}
 function saveMissed(q,dontKnow){const arr=JSON.parse(localStorage.getItem('missedQuestions')||'[]');const old=arr.find(x=>x.questionId===q.id);if(old){old.count=(old.count||1)+1;old.lastAt=new Date().toISOString();old.dontKnow=old.dontKnow||dontKnow}else arr.push({questionId:q.id,count:1,lastAt:new Date().toISOString(),dontKnow});localStorage.setItem('missedQuestions',JSON.stringify(arr));}
 document.getElementById('dontKnow').onclick=()=>{if(state.sessionContext?.mode==='mockExam')submitMockAnswer({dontKnow:true});else gradeAnswer(null,null,true)};
@@ -1664,7 +1686,7 @@ if('serviceWorker' in navigator && location.protocol === 'https:'){
 const BACKUP_KEYS=[
  'lastQuizSelection','missedQuestions','studyHistory','examStudyLogs','examPlans','mockExamResults',
  'customQuestions','lastStudyDate','streakDays','paperDrafts','schoolTextbookPreference','textbookStudyRanges',
- 'recallRecords','recallPracticePrefs'
+ 'recallRecords','recallPracticePrefs','japaneseLearningPrefs'
 ];
 let pendingBackupData=null;
 function safeJsonParse(value,fallback){try{return JSON.parse(value)}catch{return fallback}}
@@ -1716,6 +1738,7 @@ function mergeBackupData(data){
  if(!localStorage.getItem('lastQuizSelection')&&data.lastQuizSelection)localStorage.setItem('lastQuizSelection',data.lastQuizSelection);
  if(data.recallRecords){const merged=RecallLadder.mergeRecords(safeJsonParse(localStorage.getItem('recallRecords')||'{}',{}),safeJsonParse(data.recallRecords,{}));localStorage.setItem('recallRecords',JSON.stringify(merged));}
  if(!localStorage.getItem('recallPracticePrefs')&&data.recallPracticePrefs)localStorage.setItem('recallPracticePrefs',data.recallPracticePrefs);
+ if(data.japaneseLearningPrefs){try{const current=validJapaneseLearningPrefs(safeJsonParse(localStorage.getItem('japaneseLearningPrefs')||'null',null));const incoming=validJapaneseLearningPrefs(safeJsonParse(data.japaneseLearningPrefs,null));if(!current&&incoming)localStorage.setItem('japaneseLearningPrefs',JSON.stringify(incoming));}catch(err){console.warn('Japanese preference merge skipped',err)}}
  if(!localStorage.getItem('schoolTextbookPreference')&&data.schoolTextbookPreference)localStorage.setItem('schoolTextbookPreference',data.schoolTextbookPreference);
  const curDate=localStorage.getItem('lastStudyDate')||'';const inDate=data.lastStudyDate||'';if(inDate>curDate){localStorage.setItem('lastStudyDate',inDate);if(data.streakDays)localStorage.setItem('streakDays',data.streakDays)}
 }

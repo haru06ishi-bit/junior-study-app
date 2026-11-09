@@ -47,6 +47,7 @@ jobs:
       - run: node scripts/test_exam_scope.js
       - run: node scripts/test_fill_blank_visibility.js
       - run: node scripts/test_known_fill_answers.js
+      - run: node scripts/test_japanese_learning.js
       - run: node scripts/test_data_version_footer.js
       - run: node scripts/test_supplement_parity.js
       - run: node scripts/test_recall_ladder.js

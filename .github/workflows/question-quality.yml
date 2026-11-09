@@ -64,3 +64,4 @@ jobs:
       - run: npm install --no-save --no-package-lock playwright@1.48.2
       - run: npx playwright install --with-deps chromium
       - run: node scripts/e2e_recall_practice.js
+      - run: node scripts/e2e_learning_updates.js

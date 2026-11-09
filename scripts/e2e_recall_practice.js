@@ -6,8 +6,8 @@ const root=path.resolve(__dirname,'..');const PORT=Number(process.env.E2E_PORT||
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function waitServer(url){for(let i=0;i<50;i++){try{const r=await fetch(url);if(r.ok)return;}catch{}await sleep(100);}throw new Error('server did not start');}
 async function run(width){
-  const browser=await chromium.launch();const page=await browser.newPage({viewport:{width,height:780}});
-  const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+  const browser=await chromium.launch(process.env.E2E_BROWSER_CHANNEL?{channel:process.env.E2E_BROWSER_CHANNEL}:{});const page=await browser.newPage({viewport:{width,height:780}});
+  const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(`${m.text()} (${m.location().url})`)});
   const base=`http://127.0.0.1:${PORT}/`;
   await page.goto(base);await page.evaluate(()=>{localStorage.clear();});await page.reload();
   await page.click('[data-action=quiz]');

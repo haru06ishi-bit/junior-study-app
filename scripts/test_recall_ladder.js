@@ -40,7 +40,7 @@ t('priority bonus',()=>{assert(R.priorityBonus({stage:1,due:0},T0)>0);assert(R.p
 t('default prefs',()=>{assert.equal(R.defaultPref('social',{}),true);assert.equal(R.defaultPref('science',{}),false);assert.equal(R.defaultPref('social',{social:false}),false);});
 // 実データ：社会・理科で一定数が対応し、対応問題のヒントが答えそのものにならないこと。
 const py='import json,sys;sys.path.insert(0,"scripts");from question_bank_loader import load_questions;print(json.dumps(load_questions(),ensure_ascii=False))';
-let out;for(const cmd of['python3','python']){const r=cp.spawnSync(cmd,['-c',py],{cwd:root,encoding:'utf8',maxBuffer:64*1024*1024});if(!r.error&&r.status===0){out=r.stdout;break;}}
+let out;for(const cmd of['python3','python']){const r=cp.spawnSync(cmd,['-c',py],{cwd:root,encoding:'utf8',env:{...process.env,PYTHONIOENCODING:'utf-8'},maxBuffer:64*1024*1024});if(!r.error&&r.status===0){out=r.stdout;break;}}
 assert(out,'python loader unavailable');
 const qs=JSON.parse(out);
 t('real data coverage and no hint leakage',()=>{const soc=qs.filter(q=>q.subject==='social'&&R.supportsRecallMode(q));const sci=qs.filter(q=>q.subject==='science'&&R.supportsRecallMode(q));assert(soc.length>=100,`social recall-capable ${soc.length}`);assert(sci.length>=50,`science recall-capable ${sci.length}`);

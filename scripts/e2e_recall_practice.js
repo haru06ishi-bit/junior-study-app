@@ -97,7 +97,8 @@ async function run(width){
   return seen;
 }
 (async()=>{
-  const server=cp.spawn('python3',['-m','http.server',String(PORT),'--bind','127.0.0.1'],{cwd:root,stdio:'ignore'});
+  const python=process.env.PYTHON||(process.platform==='win32'?'python':'python3');
+  const server=cp.spawn(python,['-m','http.server',String(PORT),'--bind','127.0.0.1'],{cwd:root,stdio:'ignore'});
   try{await waitServer(`http://127.0.0.1:${PORT}/index.html`);for(const w of[320,375]){const s=await run(w);console.log(`PASS e2e recall practice @${w}px`,JSON.stringify(s));}}
   finally{server.kill();}
 })().catch(e=>{console.error(e);process.exit(1);});

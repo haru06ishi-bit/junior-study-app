@@ -31,6 +31,18 @@ for(const bad of [{correct:false},{correct:true,dontKnow:true},{correct:true,ass
 }
 ctx.history=[{answerResults:[{...good,answeredAt:'2026-11-09T00:00:00Z'}]}];state.answers=[{...good,answeredAt:'2026-11-09T00:00:00Z'}];
 assert.equal(ctx.japaneseCorrectStreaks().get('japanese/grammar'),1,'persisted current answers are not counted twice');
+state.answers=[];
+ctx.history=[
+ {at:'2026-11-09T12:00:00+09:00',answerResults:[{...good,correct:false}]},
+ {at:'2026-11-06T12:00:00+09:00',answerResults:[good]},
+ {at:'2026-11-07T12:00:00+09:00',answerResults:[good]},
+ {at:'2026-11-08T12:00:00+09:00',answerResults:[good]},
+];
+assert.equal(ctx.japaneseCorrectStreaks().get('japanese/grammar'),0,'reverse-order backup history uses actual dates, not appended array order');
+ctx.history[0].answerResults[0].answeredAt='2026-11-05T12:00:00+09:00';
+assert.equal(ctx.japaneseCorrectStreaks().get('japanese/grammar'),3,'per-answer timestamp takes precedence over history timestamp');
+ctx.history=[{at:'invalid',answerResults:[good,{...good,correct:false},good]}];
+assert.equal(ctx.japaneseCorrectStreaks().get('japanese/grammar'),1,'undated legacy entries retain stable order');
 ctx.history=[];state.questionBank=fresh;state.answers=Array.from({length:3},()=>({questionId:'fresh-2',correct:true,assist:'choice'}));
 assert.equal(ctx.smartQuestionOrder(fresh)[0].difficulty,3,'three correct answers actually prioritize harder problems');
 state.subject='japanese';state.sessionContext={mode:'quiz'};state.session=[japanese,{id:'old'},{id:'old2'}];state.index=0;ctx.pool=[japanese,{id:'new-standard'},{id:'new-hard'}];
@@ -40,6 +52,12 @@ assert(app.match(/const BACKUP_KEYS=\[[\s\S]*?'japaneseLearningPrefs'/),'prefere
 const merge=app.slice(app.indexOf('function mergeBackupData('),app.indexOf('function replaceBackupData('));
 assert(merge.includes('validJapaneseLearningPrefs')&&merge.includes('data.japaneseLearningPrefs'),'validated preference merge');
 vm.runInNewContext(functionSource('safeJsonParse'),ctx);vm.runInNewContext(functionSource('mergeBackupData'),ctx);
+vm.runInNewContext(functionSource('uniqueMerge'),ctx);
+storage.set('studyHistory',JSON.stringify([{at:'2026-11-09T12:00:00+09:00',answerResults:[{...good,correct:false}]}]));
+ctx.mergeBackupData({studyHistory:JSON.stringify([6,7,8].map(day=>({at:`2026-11-0${day}T12:00:00+09:00`,answerResults:[good]})))});
+ctx.history=JSON.parse(storage.get('studyHistory'));state.questionBank=[japanese];state.answers=[];
+assert.equal(ctx.history.length,4,'older histories really merged after current history');
+assert.equal(ctx.japaneseCorrectStreaks().get('japanese/grammar'),0,'real reverse-date backup merge cannot create a false promotion');
 storage.set('japaneseLearningPrefs','{broken');ctx.mergeBackupData({japaneseLearningPrefs:'{"hardStart":true}'});assert.equal(ctx.loadJapaneseLearningPrefs().hardStart,true,'merge repairs corrupt preference with validated incoming value');
 ctx.mergeBackupData({japaneseLearningPrefs:'{"hardStart":false}'});assert.equal(ctx.loadJapaneseLearningPrefs().hardStart,true,'merge preserves current valid preference');
 storage.delete('japaneseLearningPrefs');ctx.mergeBackupData({japaneseLearningPrefs:'{"hardStart":"true"}'});assert.equal(storage.has('japaneseLearningPrefs'),false,'merge ignores invalid shape');

@@ -503,8 +503,10 @@ function setJapaneseHardStart(on){try{localStorage.setItem('japaneseLearningPref
 function renderJapaneseDifficultyToggle(){const row=document.getElementById('japaneseDifficultyRow'),box=document.getElementById('japaneseHardStart');if(!row||!box)return;row.hidden=state.subject!=='japanese';box.checked=loadJapaneseLearningPrefs().hardStart;}
 function japaneseCorrectStreaks(){
  const qmap=new Map(state.questionBank.map(q=>[q.id,q])),out=new Map();
- const saved=studyHistory().flatMap(h=>h.answerResults||[]),seen=new Set(saved.map(a=>`${a.questionId}|${a.answeredAt||''}`));
- const answers=[...saved,...(state.answers||[]).filter(a=>!seen.has(`${a.questionId}|${a.answeredAt||''}`))];
+ const saved=studyHistory().flatMap(h=>(h.answerResults||[]).map(a=>({...a,answeredAt:a.answeredAt||h.at}))),seen=new Set(saved.map(a=>`${a.questionId}|${a.answeredAt||''}`));
+ // Imported histories may be appended in reverse date order. Invalid/undated
+ // legacy entries go first; equal timestamps preserve their original order.
+ const answers=[...saved,...(state.answers||[]).filter(a=>!seen.has(`${a.questionId}|${a.answeredAt||''}`))].map((a,order)=>({a,order,time:Date.parse(a.answeredAt)||0})).sort((x,y)=>x.time-y.time||x.order-y.order).map(x=>x.a);
  for(const a of answers){const q=qmap.get(a.questionId);if(q?.subject!=='japanese')continue;const key=`${q.subject}/${q.unit}`;const independent=a.correct&&!a.dontKnow&&!a.selfJudged&&a.assist!=='hint'&&a.assist!=='none'&&!(a.recallMode&&a.assist==='choice');out.set(key,independent?(out.get(key)||0)+1:0);}
  return out;
 }

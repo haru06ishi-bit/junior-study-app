@@ -169,3 +169,8 @@ progress{width:100%;height:12px;margin:10px 0}.import-question-editor{display:gr
 .recall-stat-legend{list-style:none;padding:0;margin:10px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;font-size:14px}
 .recall-stat-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
 .result-recall[hidden],.recall-toggle[hidden],.recall-hint[hidden]{display:none}
+.auto-exam-card{overflow-wrap:anywhere}
+.auto-exam-card summary{cursor:pointer;line-height:1.6}
+.auto-exam-card label{display:grid;gap:6px;margin:14px 0;min-width:0}
+.auto-exam-card select{width:100%;min-width:0;max-width:100%}
+.auto-exam-card button{white-space:normal;max-width:100%}

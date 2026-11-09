@@ -1,4 +1,4 @@
-const APP_VERSION='0.47.2';
+const APP_VERSION='0.47.3';
 function formatDataVersion(base){
  const versions=(window.QUESTION_SUPPLEMENTS||[]).map(s=>s.version);
  return `アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${base} + 補充${versions.length}件（最新 ${versions.at(-1)||'なし'}）`;
@@ -489,6 +489,11 @@ function renderUnits(){
  if(!el.children.length)el.innerHTML='<p class="help">検索条件に一致する単元がありません。</p>';
 }
 function selectedUnitIds(){return [...state.units].map(k=>k.split('/')[2]);}
+function selectWholeGradeRange(){
+ if(!state.subject){document.getElementById('selectionSummary').textContent='先に教科を選んでください。';return;}
+ const sub=state.curriculum.subjects.find(s=>s.id===state.subject);state.units=new Set((sub?.fields||[]).flatMap(f=>f.units.filter(u=>u.grades.includes(state.grade)).map(u=>unitKey(sub.id,f.id,u.id))));
+ state.quizMaterials.clear();const search=document.getElementById('unitSearch');if(search)search.value='';renderQuiz();
+}
 function availableQuestions(){
  if(!state.subject)return[];
  const ids=new Set(selectedUnitIds());
@@ -559,6 +564,7 @@ function updateSummary(){
  const district=selectedTextbookDistrict();const book=district?`・${district.name}地区`:'';const mats=[...state.quizMaterials].map(materialTitleById);const matText=mats.length?`・教材/Unit ${mats.length}件（${mats.map(x=>`「${x}」`).join('、')}）`:'';document.getElementById('selectionSummary').textContent=s?`中${state.grade}・${s.name}${book}・${state.units.size}単元${matText} / 現在${n}問出題可能`:'学年・教科・単元を選んでください。';
 }
 document.getElementById('unitSearch').addEventListener('input',renderUnits);
+document.getElementById('selectWholeGradeRange')?.addEventListener('click',selectWholeGradeRange);
 document.getElementById('recallPractice')?.addEventListener('change',e=>{if(state.subject)setRecallPractice(state.subject,e.target.checked);});
 document.getElementById('japaneseHardStart')?.addEventListener('change',e=>setJapaneseHardStart(e.target.checked));
 document.getElementById('countChoices').addEventListener('click',e=>{const b=e.target.closest('[data-count]');if(!b)return;document.querySelectorAll('[data-count]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');state.count=b.dataset.count==='all'?'all':Number(b.dataset.count);updateSummary()});
@@ -934,7 +940,7 @@ function updateReviewSummary(){const n=filteredReviewPool().length;document.getE
 document.getElementById('startFilteredReview').onclick=()=>{const pool=filteredReviewPool();if(!pool.length){alert('この条件に復習問題はありません。');return}const limit=state.review.count==='all'?'all':Math.min(state.review.count,pool.length);state.session=pickSmartQuestions(pool,limit);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'review'};showView('playView');renderQuestion();};
 
 
-function loadExamPlans(){try{return JSON.parse(localStorage.getItem('examPlans')||'[]')}catch{return[]}}
+function loadExamPlans(){try{const data=JSON.parse(localStorage.getItem('examPlans')||'[]');return Array.isArray(data)?data.filter(p=>p&&typeof p==='object'&&Array.isArray(p.units)):[]}catch{return[]}}
 function saveExamPlans(items){localStorage.setItem('examPlans',JSON.stringify(items));renderExamPlanList();renderDailyPlanPreview();}
 function loadExamStudyLogs(){try{return JSON.parse(localStorage.getItem('examStudyLogs')||'[]')}catch{return[]}}
 function dateOnlyLocal(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`;}
@@ -948,7 +954,27 @@ function examProgress(plan){
  const ids=new Set(pool.map(q=>q.id));const attempted=new Set();loadExamStudyLogs().filter(x=>x.examId===plan.id).forEach(l=>(l.questionIds||[]).forEach(id=>{if(ids.has(id))attempted.add(id)}));
  return{attempted:attempted.size,total:pool.length,percent:Math.round(attempted.size/pool.length*100)};
 }
-function openExamPlans(){showView('examView');renderExamPlanList();}
+function autoExamPurpose(value){const goals={basics:{name:'基礎固め',days:7},review:{name:'全体の復習',days:14},mock:{name:'模擬テストで力試し',days:3}};return Object.hasOwn(goals,value)?goals[value]:null;}
+function buildAutoExamPlan(grade,subject,purpose,now=new Date()){
+ grade=Number(grade);const goal=autoExamPurpose(purpose),sub=state.curriculum?.subjects.find(s=>s.id===subject);
+ if(![1,2,3].includes(grade)||!sub||!goal)throw new Error('学年・教科・目的を選んでください。');
+ const units=sub.fields.flatMap(f=>f.units.filter(u=>u.grades.includes(grade)).map(u=>unitKey(subject,f.id,u.id)));
+ const provisional={grade,units,materials:[]};const pool=examQuestionPool(provisional),available=new Set(pool.map(q=>`${q.subject}/${q.unit}`));
+ const selected=units.filter(key=>available.has(ExamScope.scopeFromPlanKey(key)));
+ if(!pool.length||!selected.length)throw new Error('この学年・教科には出題できる問題がありません。別の条件を選んでください。');
+ const date=new Date(now);date.setDate(date.getDate()+goal.days);
+ return{id:crypto.randomUUID?.()||`auto-${Date.now()}`,name:`おまかせ・${sub.name} ${goal.name}`,date:dateOnlyLocal(date),grade,units:selected,materials:[],textbookYear:now.getFullYear(),auto:true,purpose,preparationDays:goal.days,dateIsTarget:true,createdAt:now.toISOString(),updatedAt:now.toISOString()};
+}
+function renderAutoExamOptions(){
+ const select=document.getElementById('autoExamSubject');if(!select||!state.curriculum)return;const previous=select.value||state.subject||'japanese';
+ select.innerHTML=state.curriculum.subjects.map(s=>`<option value="${escapeAttr(s.id)}">${escapeHtml(s.name)}</option>`).join('');select.value=previous;
+}
+function createAutoExamPlan(){
+ const status=document.getElementById('autoExamStatus');
+ try{const plan=buildAutoExamPlan(document.getElementById('autoExamGrade').value,document.getElementById('autoExamSubject').value,document.getElementById('autoExamPurpose').value);saveExamPlans([...loadExamPlans(),plan]);status.textContent=`「${plan.name}」を作りました。${plan.date}は学習の目標日です。学校のテスト日・範囲が分かったら「編集」で変更できます。`;}
+ catch(err){status.textContent=err.message;}
+}
+function openExamPlans(){showView('examView');renderAutoExamOptions();renderExamPlanList();}
 function renderExamPlanList(){
  const el=document.getElementById('examPlanList');if(!el||!state.curriculum)return;const plans=loadExamPlans().sort((a,b)=>String(a.date).localeCompare(String(b.date)));el.innerHTML='';
  if(!plans.length){el.innerHTML='<div class="empty-card"><strong>まだ定期テストが登録されていません</strong><p>テスト日と範囲を登録すると、今日やる問題を自動で作れます。</p></div>';return}
@@ -956,6 +982,7 @@ function renderExamPlanList(){
   const dayLabel=days===0?'今日':days>0?`あと${days}日`:`${Math.abs(days)}日前に終了`;
   card.innerHTML=`<div class="exam-plan-top"><div><p class="eyebrow">${escapeHtml(plan.date||'日付未設定')}</p><h3>${escapeHtml(plan.name||'定期テスト')}</h3></div><span class="exam-countdown ${days<0?'past':''}">${dayLabel}</span></div><p class="help">中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元${(plan.materials||[]).length?`・教材/Unit ${(plan.materials||[]).map(materialTitleById).map(x=>`「${escapeHtml(x)}」`).join('、')}`:''}</p><div class="progress-track"><span style="width:${prog.percent}%"></span></div><p class="exam-progress">このテスト向け学習 ${prog.attempted}/${prog.total}問</p><div class="exam-card-actions"><button class="primary exam-study" type="button">今日の学習を始める</button><button class="secondary exam-mock" type="button">模擬テスト</button><button class="secondary exam-edit" type="button">編集</button><button class="secondary exam-delete" type="button">削除</button></div>`;
   card.querySelector('.exam-study').disabled=days<0;card.querySelector('.exam-study').onclick=()=>startExamStudy(plan.id);card.querySelector('.exam-mock').onclick=()=>openMockExamSetup(plan.id);card.querySelector('.exam-edit').onclick=()=>openExamEditor(plan.id);card.querySelector('.exam-delete').onclick=()=>deleteExamPlan(plan.id);el.append(card);
+  if(plan.auto){const note=document.createElement('p');note.className='help';note.textContent=`おまかせ練習計画${autoExamPurpose(plan.purpose)?`・${autoExamPurpose(plan.purpose).name}`:''}。学校のテスト範囲を推定したものではありません。${plan.dateIsTarget?'日付は学習の目標日です。':''}範囲が分かったら編集してください。`;card.insertBefore(note,card.querySelector('.progress-track'));}
  });
 }
 function openExamEditor(id=null){
@@ -1006,7 +1033,7 @@ function updateExamEditSummary(){const el=document.getElementById('examEditSumma
 function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],textbookYear:state.exam.textbookYear,materials:[...state.exam.materials],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
 function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)return;if(!confirm(`「${p.name}」を削除しますか？`))return;saveExamPlans(loadExamPlans().filter(x=>x.id!==id));localStorage.setItem('examStudyLogs',JSON.stringify(loadExamStudyLogs().filter(x=>x.examId!==id)));}
 function buildExamSession(plan,count=20){
- const pool=examQuestionPool(plan);if(!pool.length)return[];return pickQuestionsForMaterials(pool,Math.min(count,pool.length),new Set(plan.materials||[]));
+ const pool=examQuestionPool(plan);if(!pool.length)return[];const ordered=materialPriorityOrder(pool,new Set(plan.materials||[]));if(plan.auto&&plan.purpose==='basics')ordered.sort((a,b)=>questionDifficulty(a)-questionDifficulty(b));return ordered.slice(0,Math.min(count,pool.length));
 }
 
 let mockTimerId=null;
@@ -1192,6 +1219,7 @@ function startDailyStudy(){
  const built=buildDailySession(20);if(!built.session.length){alert('出題できる問題がありません。');return}state.session=built.session;state.index=0;state.score=0;state.answers=[];state.grade=built.plan?.grade||state.grade;state.subject=null;state.sessionContext={mode:'daily',examId:built.plan?.id||null};showView('playView');renderQuestion();
 }
 document.getElementById('createExamPlan').onclick=()=>openExamEditor();
+document.getElementById('createAutoExamPlan')?.addEventListener('click',createAutoExamPlan);
 document.getElementById('cancelExamEditTop').onclick=openExamPlans;document.getElementById('cancelExamEdit').onclick=openExamPlans;document.getElementById('saveExamPlan').onclick=saveCurrentExamPlan;document.getElementById('clearExamUnits').onclick=()=>{state.exam.units.clear();state.exam.materials.clear();state.exam.openSubjects.clear();renderExamTextbookCandidates();renderExamRanges();updateExamEditSummary();};
 document.getElementById('cancelMockExam')?.addEventListener('click',openExamPlans);document.getElementById('startMockExam')?.addEventListener('click',startMockExam);document.getElementById('mockCountChoices')?.addEventListener('click',e=>{const b=e.target.closest('[data-mock-count]');if(!b)return;state.mockExam.count=b.dataset.mockCount==='all'?'all':Number(b.dataset.mockCount);renderMockSetupChoices();updateMockSetupSummary();});document.getElementById('mockMinuteChoices')?.addEventListener('click',e=>{const b=e.target.closest('[data-mock-minutes]');if(!b)return;state.mockExam.minutes=Number(b.dataset.mockMinutes);renderMockSetupChoices();updateMockSetupSummary();});
 

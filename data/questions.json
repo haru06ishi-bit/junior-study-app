@@ -3873,7 +3873,7 @@
       ],
       "topic": "現在完了・完了",
       "type": "fill",
-      "question": "次の英文の（1）（2）に入る語を書きなさい。 She （1） already （2） her homework.",
+      "question": "次の英文の（1）（2）に入る語を書きなさい。 She （1） already （2） her homework.\n日本語：彼女はもう宿題を終えています。（各空欄は1語）",
       "blanks": [
         [
           "has"
@@ -3894,7 +3894,7 @@
       ],
       "topic": "仮定法",
       "type": "fill",
-      "question": "次の英文の（1）（2）に入る語を書きなさい。 If I （1） you, I （2） study harder.",
+      "question": "次の英文の（1）（2）に入る語を書きなさい。 If I （1） you, I （2） study harder.\n日本語：もし私があなたなら、もっと一生懸命勉強するでしょう。（各空欄は1語）",
       "blanks": [
         [
           "were"
@@ -4052,7 +4052,7 @@
       ],
       "topic": "受け身",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 These pictures （1） taken in Kenya.",
+      "question": "空欄に入る語を書きなさい。 These pictures （1） taken in Kenya.\n日本語：これらの写真はケニアで撮られました。（各空欄は1語）",
       "blanks": [
         [
           "were"
@@ -4074,7 +4074,7 @@
       ],
       "topic": "let / help + 人 + 動詞の原形",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 My teacher helped me （1） the map.",
+      "question": "空欄に入る語を書きなさい。 My teacher helped me （1） the map.\n日本語：先生は私が地図を読むのを手伝ってくれました。（各空欄は1語）",
       "blanks": [
         [
           "read"
@@ -4192,7 +4192,7 @@
       ],
       "topic": "現在完了・完了",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have （1） finished my homework.",
+      "question": "空欄に入る語を書きなさい。 I have （1） finished my homework.\n日本語：私はちょうど宿題を終えたところです。（各空欄は1語）",
       "blanks": [
         [
           "just"
@@ -4214,7 +4214,7 @@
       ],
       "topic": "現在完了・経験",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Have you （1） visited Nara?",
+      "question": "空欄に入る語を書きなさい。 Have you （1） visited Nara?\n日本語：あなたは今までに奈良を訪れたことがありますか。（各空欄は1語）",
       "blanks": [
         [
           "ever"
@@ -4336,7 +4336,7 @@
       ],
       "topic": "現在完了・継続",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 We have lived here （1） 2022.",
+      "question": "空欄に入る語を書きなさい。 We have lived here （1） 2022.\n日本語：私たちは2022年からずっとここに住んでいます。（各空欄は1語）",
       "blanks": [
         [
           "since"
@@ -4358,10 +4358,11 @@
       ],
       "topic": "現在完了進行形",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She has been （1） English for two hours.",
+      "question": "空欄に入る語を書きなさい。 She has been （1） English for two hours.\n日本語：彼女は2時間ずっと英語を勉強しています。（各空欄は1語）",
       "blanks": [
         [
-          "studying"
+          "studying",
+          "learning"
         ]
       ],
       "explanation": "has been + 動詞ing で現在完了進行形になります.",
@@ -4515,7 +4516,7 @@
       ],
       "topic": "関係代名詞・主格",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I know a girl （1） speaks French.",
+      "question": "空欄に入る語を書きなさい。 I know a girl （1） speaks French.\n日本語：私はフランス語を話す女の子を知っています。（各空欄は1語）",
       "blanks": [
         [
           "who",
@@ -4538,7 +4539,7 @@
       ],
       "topic": "関係代名詞・主格",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is a robot （1） can carry boxes.",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） can carry boxes.\n日本語：これは箱を運べるロボットです。（各空欄は1語）",
       "blanks": [
         [
           "which",
@@ -4665,7 +4666,7 @@
       ],
       "topic": "関係代名詞・目的格",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is the song （1） I like best.",
+      "question": "空欄に入る語を書きなさい。 This is the song （1） I like best.\n日本語：これは私がいちばん好きな歌です。（各空欄は1語）",
       "blanks": [
         [
           "that",
@@ -4688,7 +4689,7 @@
       ],
       "topic": "関係代名詞・目的格",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.\n日本語：私たちが会ったその人は親切でした。（各空欄は1語）",
       "blanks": [
         [
           "who",
@@ -4814,7 +4815,7 @@
       ],
       "topic": "現在分詞の後置修飾",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Look at the boy （1） near the door.",
+      "question": "空欄に入る語を書きなさい。 Look at the boy （1） near the door.\n日本語：ドアの近くに立っている男の子を見てください。（各空欄は1語）",
       "blanks": [
         [
           "standing"
@@ -4836,7 +4837,7 @@
       ],
       "topic": "過去分詞の後置修飾",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I like the song （1） by this singer.",
+      "question": "空欄に入る語を書きなさい。 I like the song （1） by this singer.\n日本語：私はこの歌手によって書かれた歌が好きです。（各空欄は1語）",
       "blanks": [
         [
           "written"
@@ -4988,7 +4989,7 @@
       ],
       "topic": "I wish + 仮定法",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I wish I （1） play the piano well.",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） play the piano well.\n日本語：ピアノを上手に弾けたらいいのに。（各空欄は1語）",
       "blanks": [
         [
           "could"
@@ -5142,7 +5143,7 @@
       ],
       "topic": "手紙の表現",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Thank you （1） helping me this year.",
+      "question": "空欄に入る語を書きなさい。 Thank you （1） helping me this year.\n日本語：今年私を助けてくれてありがとう。（各空欄は1語）",
       "blanks": [
         [
           "for"
@@ -5164,7 +5165,7 @@
       ],
       "topic": "手紙の結び",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I hope we can see each other （1）.",
+      "question": "空欄に入る語を書きなさい。 I hope we can see each other （1）.\n日本語：私たちがまた会えることを願っています。（各空欄は1語）",
       "blanks": [
         [
           "again"
@@ -6505,7 +6506,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have （1） this movie twice.",
+      "question": "空欄に入る語を書きなさい。 I have （1） this movie twice.\n日本語：私はこの映画を2回見たことがあります。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-0"
@@ -6514,7 +6515,8 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "seen"
+          "seen",
+          "watched"
         ]
       ],
       "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
@@ -6527,7 +6529,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She has （1） finished her homework.",
+      "question": "空欄に入る語を書きなさい。 She has （1） finished her homework.\n日本語：彼女はちょうど宿題を終えたところです。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-0"
@@ -6670,7 +6672,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.\n日本語：私は2時間ずっと英語を勉強しています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-1"
@@ -6679,7 +6681,8 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "studying"
+          "studying",
+          "learning"
         ]
       ],
       "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
@@ -6692,7 +6695,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?\n日本語：あなたはどのくらいの間ここで待ち続けていますか。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-1"
@@ -6844,7 +6847,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This bridge was （1） in 2010.",
+      "question": "空欄に入る語を書きなさい。 This bridge was （1） in 2010.\n日本語：この橋は2010年に建てられました。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-2"
@@ -6866,7 +6869,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 English is （1） in many countries.",
+      "question": "空欄に入る語を書きなさい。 English is （1） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-2"
@@ -7012,7 +7015,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Look at the girl （1） by the window.",
+      "question": "空欄に入る語を書きなさい。 Look at the girl （1） by the window.\n日本語：窓のそばに立っている女の子を見てください。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-3"
@@ -7034,7 +7037,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is a picture （1） by my sister.",
+      "question": "空欄に入る語を書きなさい。 This is a picture （1） by my sister.\n日本語：これは私の姉（妹）によって描かれた絵です。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-3"
@@ -7043,7 +7046,8 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "painted"
+          "painted",
+          "drawn"
         ]
       ],
       "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
@@ -7186,7 +7190,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.",
+      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.\n日本語：私はフランス語を話せる男の子を知っています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-4"
@@ -7209,7 +7213,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.\n日本語：これは人々を助けるロボットです。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-4"
@@ -7364,7 +7368,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.\n日本語：これは私が昨日買った本です。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-5"
@@ -7387,7 +7391,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.\n日本語：私たちが会ったその人は親切でした。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-5"
@@ -7539,7 +7543,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.\n日本語：もしもっと時間があれば、私はもっと本を読むでしょう。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-6"
@@ -7561,7 +7565,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.\n日本語：もっと速く泳げたらいいのに。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-6"
@@ -7715,7 +7719,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?\n日本語：あなたは彼女がどこに住んでいるか知っていますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-7"
@@ -7737,7 +7741,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.\n日本語：彼が何を欲しがっているか私に教えてください。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-7"
@@ -7882,7 +7886,7 @@
     {
       "id": "v034_tok_e3_u0_01",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She （1） soccer every Sunday.",
+      "question": "空欄に入る語を書きなさい。 She （1） soccer every Sunday.\n日本語：彼女は毎週日曜日にサッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -7971,7 +7975,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?",
+      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?\n日本語：あなたは今までに外国ですしを食べたことがありますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-1"
@@ -7993,7 +7997,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.",
+      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.\n日本語：彼女は一度もカナダへ行ったことがありません。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-1"
@@ -8142,7 +8146,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.\n日本語：私は2時間ずっと英語を勉強しています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-2"
@@ -8151,7 +8155,8 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "studying"
+          "studying",
+          "learning"
         ]
       ],
       "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
@@ -8164,7 +8169,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?\n日本語：あなたはどのくらいの間ここで待ち続けていますか。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-2"
@@ -8316,7 +8321,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 It is important for us （1） help animals.",
+      "question": "空欄に入る語を書きなさい。 It is important for us （1） help animals.\n日本語：私たちが動物を助けることは大切です。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-3"
@@ -8338,7 +8343,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I want you （1） read this book.",
+      "question": "空欄に入る語を書きなさい。 I want you （1） read this book.\n日本語：私はあなたにこの本を読んでほしいです。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-3"
@@ -8486,7 +8491,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?\n日本語：あなたは彼女がどこに住んでいるか知っていますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-4"
@@ -8508,7 +8513,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.\n日本語：彼が何を欲しがっているか私に教えてください。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-4"
@@ -8658,7 +8663,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.\n日本語：これは私が昨日買った本です。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-5"
@@ -8681,7 +8686,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.\n日本語：私たちが会ったその人は親切でした。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-5"
@@ -8833,7 +8838,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.\n日本語：もしもっと時間があれば、私はもっと本を読むでしょう。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-6"
@@ -8855,7 +8860,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.\n日本語：もっと速く泳げたらいいのに。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-6"
@@ -9009,7 +9014,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?",
+      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?\n日本語：あなたは今までに外国ですしを食べたことがありますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-0"
@@ -9031,7 +9036,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.",
+      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.\n日本語：彼女は一度もカナダへ行ったことがありません。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-0"
@@ -9180,7 +9185,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.\n日本語：私は2時間ずっと英語を勉強しています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-1"
@@ -9189,7 +9194,8 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "studying"
+          "studying",
+          "learning"
         ]
       ],
       "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
@@ -9202,7 +9208,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?\n日本語：あなたはどのくらいの間ここで待ち続けていますか。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-1"
@@ -9354,7 +9360,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 My mother told me （1） she was busy.",
+      "question": "空欄に入る語を書きなさい。 My mother told me （1） she was busy.\n日本語：母は私に、忙しいと言いました。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-2"
@@ -9376,7 +9382,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The news made me （1） happy.",
+      "question": "空欄に入る語を書きなさい。 The news made me （1） happy.\n日本語：その知らせで私は幸せだと感じました。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-2"
@@ -9504,10 +9510,9 @@
       ],
       "answers": [
         0,
-        1,
-        2
+        1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "call + 人 + 名詞は「人を～と呼ぶ」、make + 人 + 動詞の原形は「人に～させる」。tell + 人 + that節は内容を伝える表現で、補語や動詞原形をとる形ではありません。make + 人 + to + 動詞もこの意味では使えません。"
     },
     {
       "id": "v034_kai_e3_p4_01",
@@ -9517,7 +9522,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?\n日本語：あなたは彼女がどこに住んでいるか知っていますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-3"
@@ -9539,7 +9544,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.\n日本語：彼が何を欲しがっているか私に教えてください。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-3"
@@ -9689,7 +9694,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.",
+      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.\n日本語：私はフランス語を話せる男の子を知っています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-4"
@@ -9712,7 +9717,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.\n日本語：これは人々を助けるロボットです。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-4"
@@ -9867,7 +9872,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.\n日本語：これは私が昨日買った本です。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-5"
@@ -9890,7 +9895,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.\n日本語：私たちが会ったその人は親切でした。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-5"
@@ -10042,7 +10047,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.\n日本語：もしもっと時間があれば、私はもっと本を読むでしょう。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-6"
@@ -10064,7 +10069,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.\n日本語：もっと速く泳げたらいいのに。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-6"
@@ -13674,7 +13679,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 1 About Me」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "question": "「Lesson 1 About Me」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.\n日本語：私はユキです。初めまして。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -13720,7 +13725,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 2 My Hero」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.",
+      "question": "「Lesson 2 My Hero」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.\n日本語：彼は速く走ることができます。（各空欄は1語）",
       "blanks": [
         [
           "run"
@@ -13766,7 +13771,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 3 My Treasure」に関連する英語練習。次の（1）に入る語を書きなさい。 This is （1） treasure.",
+      "question": "「Lesson 3 My Treasure」に関連する英語練習。次の（1）に入る語を書きなさい。 This is （1） treasure.\n日本語：これは私の宝物です。（各空欄は1語）",
       "blanks": [
         [
           "my"
@@ -13812,7 +13817,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 4 My Summer Plans」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.",
+      "question": "「Lesson 4 My Summer Plans」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "visit"
@@ -13858,7 +13863,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 5 Ms. Brown's Family」に関連する英語練習。次の（1）に入る語を書きなさい。 She is （1） sister.",
+      "question": "「Lesson 5 Ms. Brown's Family」に関連する英語練習。次の（1）に入る語を書きなさい。 She is （1） sister.\n日本語：彼女は私の姉（妹）です。（各空欄は1語）",
       "blanks": [
         [
           "my"
@@ -13904,7 +13909,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 6 School Life in the U.S.A.」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） soccer after school.",
+      "question": "「Lesson 6 School Life in the U.S.A.」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） soccer after school.\n日本語：私は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "play"
@@ -13950,7 +13955,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 7 Athletes with Spirit」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.",
+      "question": "「Lesson 7 Athletes with Spirit」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.\n日本語：彼は速く走ることができます。（各空欄は1語）",
       "blanks": [
         [
           "run"
@@ -13996,10 +14001,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 8 Discover Japan」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Japanese festivals.",
+      "question": "「Lesson 8 Discover Japan」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Japanese festivals.\n日本語：私は日本のお祭りが好きです。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "I like ... で「私は〜が好きです」と表せます。",
@@ -14042,7 +14048,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 9 Emergency Food」に関連する英語練習。次の（1）に入る語を書きなさい。 You should （1） careful.",
+      "question": "「Lesson 9 Emergency Food」に関連する英語練習。次の（1）に入る語を書きなさい。 You should （1） careful.\n日本語：あなたは注意するべきです。（各空欄は1語）",
       "blanks": [
         [
           "be"
@@ -14088,7 +14094,7 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 1 Meet New Friends」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "question": "「Lesson 1 Meet New Friends」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.\n日本語：私はユキです。初めまして。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -14134,7 +14140,7 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 2 Fun with Books」に関連する英語練習。次の（1）に入る語を書きなさい。 I like （1） books.",
+      "question": "「Lesson 2 Fun with Books」に関連する英語練習。次の（1）に入る語を書きなさい。 I like （1） books.\n日本語：私は本を読むことが好きです。（各空欄は1語）",
       "blanks": [
         [
           "reading"
@@ -14180,7 +14186,7 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 3 My Dream」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.",
+      "question": "「Lesson 3 My Dream」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "visit"
@@ -14226,10 +14232,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14272,10 +14279,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14318,10 +14326,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14364,10 +14373,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14410,10 +14420,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14456,10 +14467,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14502,10 +14514,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14548,10 +14561,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14594,10 +14608,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14640,10 +14655,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14686,10 +14702,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14732,10 +14749,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14778,10 +14796,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14824,10 +14843,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14870,10 +14890,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14916,10 +14937,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14962,10 +14984,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15008,10 +15031,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15054,10 +15078,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15100,10 +15125,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15146,10 +15172,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15192,10 +15219,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15238,10 +15266,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Get Ready 1-6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Get Ready 1-6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15284,10 +15313,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15330,10 +15360,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15376,10 +15407,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15422,10 +15454,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15468,10 +15501,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15514,10 +15548,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15560,10 +15595,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15606,10 +15642,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15652,7 +15689,7 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 1 New Start」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "question": "「PROGRAM 1 New Start」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.\n日本語：私はユキです。初めまして。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -15698,10 +15735,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15744,10 +15782,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15790,10 +15829,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15836,10 +15876,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15882,10 +15923,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15928,10 +15970,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15974,10 +16017,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -24771,7 +24815,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 1 About Me」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 1 About Me」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24793,7 +24837,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 2 My Hero」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 2 My Hero」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24815,7 +24859,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 3 My Treasure」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 3 My Treasure」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24837,7 +24881,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 4 My Summer Plans」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 4 My Summer Plans」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24859,7 +24903,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 5 Ms. Brown's Family」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 5 Ms. Brown's Family」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24905,7 +24949,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 7 Athletes with Spirit」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Lesson 7 Athletes with Spirit」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -24928,7 +24972,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 8 Discover Japan」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Lesson 8 Discover Japan」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -24951,7 +24995,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 9 Emergency Food」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Lesson 9 Emergency Food」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -24974,7 +25018,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 1 Meet New Friends」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Lesson 1 Meet New Friends」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -24997,7 +25041,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 2 Fun with Books」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「Lesson 2 Fun with Books」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25019,7 +25063,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 3 My Dream」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「Lesson 3 My Dream」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25041,7 +25085,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「Lesson 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25063,7 +25107,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 5」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「Lesson 5」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25163,7 +25207,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 0」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 0」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25185,7 +25229,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 1」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 1」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25207,7 +25251,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 2」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 2」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25229,7 +25273,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 3」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 3」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25251,7 +25295,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 4」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 4」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25297,7 +25341,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 6」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Unit 6」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25320,7 +25364,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 7」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Unit 7」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25343,7 +25387,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 8」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Unit 8」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25366,7 +25410,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 0」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Unit 0」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25389,7 +25433,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 1」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「Unit 1」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25411,7 +25455,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 2」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「Unit 2」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25433,7 +25477,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 3」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「Unit 3」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25455,7 +25499,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「Unit 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25555,7 +25599,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Get Ready 1-6」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Get Ready 1-6」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25577,7 +25621,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 1」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「PROGRAM 1」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25599,7 +25643,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 2」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「PROGRAM 2」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25621,7 +25665,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 3」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「PROGRAM 3」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25643,7 +25687,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 4」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「PROGRAM 4」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25689,7 +25733,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 6」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「PROGRAM 6」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25712,7 +25756,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 7」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「PROGRAM 7」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25735,7 +25779,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 8」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「PROGRAM 8」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25758,7 +25802,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 1 New Start」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「PROGRAM 1 New Start」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25781,7 +25825,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 2」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「PROGRAM 2」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25803,7 +25847,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 3」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「PROGRAM 3」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25825,7 +25869,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「PROGRAM 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25847,7 +25891,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 5」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「PROGRAM 5」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -48198,7 +48242,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 1 About Me」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 1 About Me」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48273,7 +48317,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 2 My Hero」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 2 My Hero」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48348,7 +48392,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 3 My Treasure」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 3 My Treasure」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48423,7 +48467,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 4 My Summer Plans」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 4 My Summer Plans」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48498,7 +48542,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 5 Ms. Brown's Family」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 5 Ms. Brown's Family」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48597,11 +48641,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 6 School Life in the U.S.A.」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「Lesson 6 School Life in the U.S.A.」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -48648,7 +48694,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 7 Athletes with Spirit」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Lesson 7 Athletes with Spirit」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -48730,7 +48776,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 8 Discover Japan」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Lesson 8 Discover Japan」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -48812,7 +48858,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 9 Emergency Food」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Lesson 9 Emergency Food」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -48894,7 +48940,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 1 Meet New Friends」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Lesson 1 Meet New Friends」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -48976,7 +49022,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 2 Fun with Books」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「Lesson 2 Fun with Books」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -49058,7 +49104,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 3 My Dream」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「Lesson 3 My Dream」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -49140,7 +49186,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「Lesson 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -49214,7 +49260,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 5」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「Lesson 5」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -49312,11 +49358,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 6」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「Lesson 6」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -49363,7 +49411,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「Lesson 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -49440,7 +49488,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 8」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「Lesson 8」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -49517,7 +49565,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 0」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 0」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49592,7 +49640,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 1」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 1」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49667,7 +49715,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 2」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 2」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49742,7 +49790,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 3」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 3」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49817,7 +49865,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 4」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 4」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49916,11 +49964,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「Unit 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -49967,7 +50017,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 6」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Unit 6」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -50049,7 +50099,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 7」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Unit 7」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -50131,7 +50181,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 8」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Unit 8」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -50213,7 +50263,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 0」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Unit 0」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -50295,7 +50345,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 1」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「Unit 1」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -50377,7 +50427,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 2」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「Unit 2」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -50459,7 +50509,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 3」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「Unit 3」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -50533,7 +50583,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「Unit 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -50631,11 +50681,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「Unit 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -50682,7 +50734,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 6」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「Unit 6」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -50759,7 +50811,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「Unit 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -50912,7 +50964,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Get Ready 1-6」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Get Ready 1-6」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -50987,7 +51039,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「PROGRAM 1」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「PROGRAM 1」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -51062,7 +51114,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「PROGRAM 2」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「PROGRAM 2」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -51137,7 +51189,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「PROGRAM 3」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「PROGRAM 3」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -51212,7 +51264,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「PROGRAM 4」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「PROGRAM 4」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -51311,11 +51363,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「PROGRAM 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -51362,7 +51416,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 6」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「PROGRAM 6」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -51444,7 +51498,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 7」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「PROGRAM 7」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -51526,7 +51580,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 8」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「PROGRAM 8」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -51608,7 +51662,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 1 New Start」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「PROGRAM 1 New Start」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -51690,7 +51744,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 2」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「PROGRAM 2」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -51772,7 +51826,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 3」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「PROGRAM 3」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -51854,7 +51908,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「PROGRAM 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -51928,7 +51982,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 5」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「PROGRAM 5」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -52026,11 +52080,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 6」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「PROGRAM 6」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -52077,7 +52133,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「PROGRAM 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -52154,7 +52210,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 8」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「PROGRAM 8」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"

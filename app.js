@@ -1,4 +1,4 @@
-const APP_VERSION='0.47.0';
+const APP_VERSION='0.47.1';
 function formatDataVersion(base){
  const versions=(window.QUESTION_SUPPLEMENTS||[]).map(s=>s.version);
  return `アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${base} + 補充${versions.length}件（最新 ${versions.at(-1)||'なし'}）`;
@@ -865,7 +865,7 @@ function loadCustomQuestions(){
 }
 function saveCustomQuestions(items){localStorage.setItem('customQuestions',JSON.stringify(items));refreshQuestionBank();}
 function refreshQuestionBank(){state.questionBank=[...state.builtInQuestions,...loadCustomQuestions()];}
-function normalizeText(v){return String(v??'').normalize('NFKC').trim().replace(/\s+/g,'').toLowerCase();}
+function normalizeText(v){return String(v??'').normalize('NFKC').trim().replace(/[’‘]/g,"'").replace(/\.+$/,'').replace(/\s+/g,'').toLowerCase();}
 function acceptedTextAnswers(q){return (q.answers?.length?q.answers:[q.answerText]).filter(Boolean);}
 function getMissedPool(){
  const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]');

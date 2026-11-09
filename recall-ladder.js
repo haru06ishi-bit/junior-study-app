@@ -10,7 +10,11 @@
   // 選択肢を見ないと答えが一つに決まらない、または語句で答えられない問い方。
   const SELECTION_PATTERN=/次の|どれ|選|正し|誤|適切|あてはま|当てはま|ふさわし|組み合わせ|記号|ア〜|ア～|説明|理由|どのよう|どう|なぜ|特徴|順|グラフ|表|図|資料|地図|写真|文章|下線|含まれ|一つ|ひとつ|例|いくつ|すべて|全て|以外|不適|共通/;
   const ANSWER_PUNCT=/[。、・,，／/（）()「」『』\s〜～]/;
-  const MAX_ANSWER_CHARS=14;
+  const MAX_ANSWER_CHARS=10;
+  // 独立監査で「選択肢なしでは正解が一つに決まらない」と確認した問題（自力入力の対象外）。
+  const NON_UNIQUE_IDS=new Set(['v04_025','v042_social_kyoikushuppan_g2_contemporary_06','v04_042','v041_social_kyoikushuppan_g2_earlymodern_05']);
+  // 書き方の違いとして許容する語尾（「愛知」と「愛知県」、「60」と「60度」など）。
+  const OPTIONAL_SUFFIX=/(県|府|都|道|度|年|天皇|時代|世紀|%|％)$/;
   const DAY=86400000;
   const INTERVAL_DAYS=[1,3,7,14,30];
   const IMPROVED_STAGE=2; // 別の日に2回、自力で正解 → 苦手リストから外す
@@ -26,6 +30,9 @@
     if(q.passage||q.table||q.figure||q.stimulusTitle)return false;
     const a=correctChoiceText(q);const n=chars(a).length;
     if(!n||n>MAX_ANSWER_CHARS||ANSWER_PUNCT.test(a))return false;
+    if(NON_UNIQUE_IDS.has(q.id))return false;
+    // 文や句（「上がりやすい」「短時間の強い雨」など）は語句として思い出す問題ではない。
+    if(/[ぁ-ん]$/.test(a)||(n>=6&&/[のをがにへで]/.test(a)))return false;
     if(SELECTION_PATTERN.test(String(q.question||'')))return false;
     // 選択肢どうしが同じ正規化結果になると自力入力の判定が一意にならない。
     const norm=q.choices.map(normalize);if(new Set(norm).size!==norm.length)return false;
@@ -58,15 +65,24 @@
     const ans=primaryAnswers(q).filter(a=>a!=='');if(!ans.length)return[];
     const multi=ans.length>1;const label=i=>multi?`（${i+1}）`:'';
     const steps=[ans.map((a,i)=>`${label(i)}${chars(a).length}文字`).join('　')+(multi?'':'の語句です')];
-    if(ans.some(a=>chars(a).length>=3)){
-      steps.push(ans.map((a,i)=>chars(a).length>=3?`${label(i)}最初の文字は「${chars(a)[0]}」`:`${label(i)}（短い語句のため省略）`).join('　'));
+    const firstOk=a=>chars(a).length>=3&&!/^[0-9０-９A-Za-zＡ-Ｚａ-ｚ]/.test(a);
+    if(ans.some(firstOk)){
+      steps.push(ans.map((a,i)=>firstOk(a)?`${label(i)}最初の文字は「${chars(a)[0]}」`:`${label(i)}（このヒントはありません）`).join('　'));
     }
     return steps;
   }
   function matchesRecall(q,values){
     const vals=Array.isArray(values)?values:[values];const acc=acceptedFor(q);
     if(!acc.length||vals.length!==acc.length)return false;
-    return acc.every((list,i)=>list.some(a=>normalize(a)!==''&&normalize(a)===normalize(vals[i])));
+    return acc.every((list,i)=>list.some(a=>variantsOf(a).has(normalize(vals[i]))));
+  }
+  // 正解として受け付ける表記：語尾の有無、「AとB」の順序違い。
+  function variantsOf(answer){
+    const base=normalize(answer);const out=new Set();if(!base)return out;
+    const add=v=>{if(v){out.add(v);const stripped=v.replace(OPTIONAL_SUFFIX,'');if(stripped&&stripped!==v)out.add(stripped);}};
+    add(base);
+    const parts=base.split('と');if(parts.length===2&&parts[0]&&parts[1])add(parts[1]+'と'+parts[0]);
+    return out;
   }
   function assistFor({correct,dontKnow,hintsUsed=0,choicesShown=false}){
     if(dontKnow||!correct)return'none';
@@ -78,7 +94,8 @@
     if(!correct)return false;
     return recallCapable?assist==='free':true;
   }
-  function dayKey(now){return new Date(now).toISOString().slice(0,10);}
+  // 「別の日」は利用者の端末の暦日で判定する（日本では0時で切り替わる）。
+  function dayKey(now){const d=new Date(now);return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
   function emptyRecord(){return{stage:0,due:0,attempts:0,solid:0,lastAt:null,lastAssist:null,lastCorrect:null,lastSolidDay:null};}
   function updateRecord(prev,{correct,assist,recallCapable},now=Date.now()){
     const r={...emptyRecord(),...(prev&&typeof prev==='object'?prev:{})};
@@ -125,5 +142,5 @@
     if(prefs&&typeof prefs==='object'&&typeof prefs[subject]==='boolean')return prefs[subject];
     return!!DEFAULT_PREFS[subject];
   }
-  return{RECALL_SUBJECTS,INTERVAL_DAYS,IMPROVED_STAGE,MASTERED_STAGE,normalize,correctChoiceText,isRecallSubject,isRecallableChoice,supportsRecallMode,isProductionType,primaryAnswers,hintSteps,matchesRecall,assistFor,isSolid,updateRecord,isDue,isImproved,isMastered,shouldRetryInSession,sanitizeRecords,mergeRecords,priorityBonus,defaultPref};
+  return{RECALL_SUBJECTS,variantsOf,dayKey,INTERVAL_DAYS,IMPROVED_STAGE,MASTERED_STAGE,normalize,correctChoiceText,isRecallSubject,isRecallableChoice,supportsRecallMode,isProductionType,primaryAnswers,hintSteps,matchesRecall,assistFor,isSolid,updateRecord,isDue,isImproved,isMastered,shouldRetryInSession,sanitizeRecords,mergeRecords,priorityBonus,defaultPref};
 });

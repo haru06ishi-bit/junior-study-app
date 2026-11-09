@@ -71,7 +71,19 @@ async function run(width){
   assert(stored.h.answerResults.some(a=>a.assist==='hint'&&a.recallMode),'assist recorded');
   assert(stored.h.retryResults.length>=1,'retry results stored separately');
   // 学習記録
-  await page.click('#backHomeResult');await page.click('[data-action=stats]');
+  // もう一度挑戦：再挑戦用のコピーが残らない（監査指摘2）
+  await page.click('#retryQuiz');
+  const again=await page.evaluate(()=>({copies:state.session.filter(q=>q.__retryOf).length,len:state.session.length,retry:(state.retryAnswers||[]).length}));
+  assert.deepEqual(again,{copies:0,len:10,retry:0},'retryQuiz resets recall session');
+  // 選択肢が出たあとでも、書いた答えを自己判定できる（監査指摘3）
+  for(let k=0;k<12;k++){const ok=await page.evaluate(()=>{const q=state.session[state.index];return recallActiveFor(q)&&q.type==='choice'&&RecallLadder.hintSteps(q).length>0});if(ok)break;await page.click('#dontKnow');await page.click('#nextQuestion');}
+  const steps=await page.evaluate(()=>RecallLadder.hintSteps(state.session[state.index]).length);
+  for(let k=0;k<=steps;k++){await page.fill('#answerArea input.answer-input','べつのかきかた');await page.locator('#answerArea button',{hasText:'答える'}).click();}
+  await page.locator('.recall-claim').click();await page.locator('.recall-self-judge button',{hasText:'同じ意味だった'}).click();
+  assert.match(await page.locator('#feedback strong').textContent(),/自己判定/);
+  const rec=await page.evaluate(()=>{const q=state.session[state.index];return JSON.parse(localStorage.getItem('recallRecords'))[q.id]});
+  assert.notEqual(rec.lastAssist,'free','self-judged answer is not counted as unaided');
+  await page.evaluate(()=>goHome());await page.click('[data-action=stats]');
   assert.match(await page.locator('#recallStats').textContent(),/自力で正解 \d+問/);
   // バックアップに含まれる
   const snap=await page.evaluate(()=>Object.keys(backupDataSnapshot()));assert(snap.includes('recallRecords'),'backup includes recallRecords');

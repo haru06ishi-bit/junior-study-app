@@ -90,8 +90,13 @@ async function run(width){
   await noOverflow(page,'Auto exam mock result');
   await page.evaluate(()=>openExamPlans());await page.locator('.exam-plan-card .exam-edit').click();
   await page.fill('#examName','範囲確認後の練習');await page.click('#saveExamPlan');
-  const edited=await page.evaluate(()=>loadExamPlans()[0]);assert.equal(edited.id,plan.id);assert.equal(edited.name,'範囲確認後の練習');
-  await page.reload();await page.click('[data-action=exam]');assert.match(await page.locator('.exam-plan-card').textContent(),/範囲確認後の練習/);
+  const edited=await page.evaluate(()=>loadExamPlans()[0]);assert.equal(edited.id,plan.id);assert.equal(edited.name,'範囲確認後の練習');assert.equal(edited.dateIsTarget,true,'renaming preserves the target date meaning');
+  await page.locator('.exam-plan-card .exam-edit').click();
+  const schoolDate=await page.evaluate(()=>{const d=new Date(loadExamPlans()[0].date+'T12:00:00');d.setDate(d.getDate()+1);return dateOnlyLocal(d);});
+  await page.fill('#examDate',schoolDate);await page.click('#saveExamPlan');
+  assert.equal(await page.evaluate(()=>loadExamPlans()[0].dateIsTarget),false,'manual date changes replace the generated target date');
+  await page.evaluate(()=>{const valid=loadExamPlans()[0];localStorage.setItem('examPlans',JSON.stringify([valid,{id:'bad-unit',grade:2,date:valid.date,units:[null]},{id:'bad-material',grade:2,date:valid.date,units:['english/f/reading'],materials:123}]));});
+  await page.reload();await page.click('[data-action=exam]');assert.equal(await page.locator('.exam-plan-card',{hasText:'範囲確認後の練習'}).count(),1,'valid legacy plan survives alongside corrupt fields');
   assert.deepEqual(errors,[],'browser errors');
   console.log(`PASS learning updates browser @${width}px (English aliases, Japanese selection, prefs, auto exam, mock, editing, no overflow)`);
  }finally{await browser.close();}

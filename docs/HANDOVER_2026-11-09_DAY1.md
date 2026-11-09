@@ -12,7 +12,7 @@
 ## 2. コードの状態
 - 最新の作業ブランチ：**`codex/v0.47.5-multi-select-distractors`**（アプリ v0.47.5）
 - 積み重ね：`origin/review/v0.44.7-full`（`e57a05a`、GitHub上にある）→ 元パッチ6つ → v0.47.1〜v0.47.3 → `codex/v0.47.4-english-explanations` → `codex/v0.47.5-multi-select-distractors`
-- `e57a05a` より後の23コミット（この文書を含む）は、**このPCにしかない**（GitHubには未push）。移す方法は「4. 移し方」を参照。
+- `e57a05a` より後の23コミット（この文書を含む）は、ユーザーの承認を得て、2026-11-09 に **GitHub の `origin/codex/v0.47.5-multi-select-distractors`（`8ac96ef`）へpush した**。途中のブランチ（`codex/v0.47.1-english`〜`codex/v0.47.4-english-explanations`）はpushしていないが、その内容はすべてこのブランチの履歴に含まれている。
 - main・本番は変更していない（本番は前環境の記録では v0.44.9。今回は再確認していない）。
 
 ## 3. Day 1 の成果（詳細は DAILY_IMPROVEMENT_LOG）
@@ -29,8 +29,18 @@
 - データ検証の警告：517件
 - 品質回帰の警告：85件
 
-## 4. 移し方（どちらか一つ）
-- **A. パッチファイル（Git bundle は使わない）**
+## 4. 移し方
+- **GitHub から取得する（推奨）**
+
+  ```
+  git clone https://github.com/haru06ishi-bit/junior-study-app.git
+  cd junior-study-app
+  git switch codex/v0.47.5-multi-select-distractors
+  git log --oneline -2   # 「Record push …」とその前の「Add handover for continuing on another PC」（8ac96ef）
+  ```
+
+  push後、GitHub Actions と Cloudflare Pages のプレビューがどうなったかは確認していない。Draft PR も作っていない。
+- **予備：パッチファイル（Git bundle は使わない）**。GitHub が使えない場合だけ使う。
   1. このPCの `transfer/2026-11-09-day1/` に、`e57a05a` 以降の全23コミット（この引き継ぎ文書のコミットを含む）を `git format-patch` で出力した。この中には0001〜0023と `SHA256SUMS.txt` がある。フォルダはGitの対象外。
   2. フォルダごとUSBなどで別PCへ渡す。
   3. 別PCで次を実行する。
@@ -45,7 +55,7 @@
      ```
 
   コミットのハッシュは別PCで変わる。件名と内容で照合する。途中のブランチ（v0.47.1〜v0.47.4）が必要なら、該当するコミットから作り直す。
-- **B. GitHubへpush**：ユーザーの承認を得てから行う。feature ブランチへのpushでも、Cloudflare Pages がプレビューを公開する可能性がある。今回は実行していない。
+  パッチは `8ac96ef` までの内容で、これより後の文書更新は含まない。
 
 ## 5. 引き継ぎ先で最初にやること
 1. `git status`、ブランチ、`git log --oneline -3` を確認する。既存の変更は上書きしない。

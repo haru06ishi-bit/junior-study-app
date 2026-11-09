@@ -3879,7 +3879,9 @@
           "has"
         ],
         [
-          "finished"
+          "finished",
+          "done",
+          "completed"
         ]
       ],
       "explanation": "主語が She なので has、finish の過去分詞 finished を使います。",
@@ -6856,7 +6858,8 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "built"
+          "built",
+          "constructed"
         ]
       ],
       "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
@@ -7984,7 +7987,8 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "eaten"
+          "eaten",
+          "had"
         ]
       ],
       "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
@@ -9023,7 +9027,8 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "eaten"
+          "eaten",
+          "had"
         ]
       ],
       "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"

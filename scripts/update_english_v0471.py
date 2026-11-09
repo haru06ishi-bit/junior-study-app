@@ -67,6 +67,9 @@ MEANINGS = {
     'English （1） （2） in many countries.': '英語は多くの国で話されています。',
 }
 ALIASES = {
+    'She （1） already （2） her homework.': [['has'], ['finished', 'done', 'completed']],
+    'Have you ever （1） sushi abroad?': [['eaten', 'had']],
+    'This bridge was （1） in 2010.': [['built', 'constructed']],
     'I want to （1） English more.': [['study', 'learn']],
     'She has been （1） English for two hours.': [['studying', 'learning']],
     'I have been （1） English for two hours.': [['studying', 'learning']],
@@ -82,12 +85,12 @@ def correct(payload):
     count = 0
     for q in payload['questions']:
         if q['subject'] == 'english' and q['type'] == 'fill':
+            sentence = q['question'].split('\n日本語：')[0].split('。')[-1].strip()
             if '\n日本語：' not in q['question']:
-                sentence = q['question'].split('。')[-1].strip()
                 q['question'] += '\n日本語：' + MEANINGS[sentence] + '（各空欄は1語）'
-                if sentence in ALIASES:
-                    q['blanks'] = ALIASES[sentence]
                 count += 1
+            if sentence in ALIASES:
+                q['blanks'] = ALIASES[sentence]
         if q['id'] == 'v034_kai_e3_p3_06':
             q['answers'] = [0, 1]
             q['explanation'] = 'call + 人 + 名詞は「人を～と呼ぶ」、make + 人 + 動詞の原形は「人に～させる」。tell + 人 + that節は内容を伝える表現で、補語や動詞原形をとる形ではありません。make + 人 + to + 動詞もこの意味では使えません。'

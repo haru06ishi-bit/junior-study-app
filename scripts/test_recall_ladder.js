@@ -1,0 +1,48 @@
+// 想起練習（recall-ladder.js）と app.js への組み込みの回帰テスト。
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');
+const root=path.resolve(__dirname,'..');
+const R=require(path.join(root,'recall-ladder.js'));
+let n=0;const t=(name,fn)=>{fn();n++;};
+const choice={id:'x1',subject:'social',type:'choice',question:'鎌倉幕府を開いた人物は？',choices:['源頼朝','足利尊氏','徳川家康','平清盛'],answer:0};
+t('recallable short-term choice',()=>assert.equal(R.isRecallableChoice(choice),true));
+t('selection phrasing excluded',()=>assert.equal(R.isRecallableChoice({...choice,question:'次のうち正しいものはどれ？'}),false));
+t('non-unique phrasing excluded',()=>assert.equal(R.isRecallableChoice({...choice,question:'日本国憲法の基本原理に含まれるものは？'}),false));
+t('sentence answers excluded',()=>assert.equal(R.isRecallableChoice({...choice,choices:['武士が政治を行った。','b','c','d']}),false));
+t('passage questions excluded',()=>assert.equal(R.isRecallableChoice({...choice,passage:'...'}),false));
+t('other subjects not in recall mode',()=>assert.equal(R.supportsRecallMode({...choice,subject:'japanese'}),false));
+t('fill supported',()=>assert.equal(R.supportsRecallMode({subject:'social',type:'fill',blanks:[['平和主義']]}),true));
+t('typed match normalizes width/space',()=>assert.equal(R.matchesRecall(choice,' 源頼朝 '),true));
+t('typed mismatch',()=>assert.equal(R.matchesRecall(choice,'源義経'),false));
+t('empty never matches',()=>assert.equal(R.matchesRecall({...choice,choices:['','a']},''),false));
+t('word aliases',()=>assert.equal(R.matchesRecall({subject:'social',type:'word',answers:['経線','子午線']},'子午線'),true));
+t('fill multi blanks',()=>{const q={subject:'social',type:'fill',blanks:[['国会'],['内閣']]};assert.equal(R.matchesRecall(q,['国会','内閣']),true);assert.equal(R.matchesRecall(q,['国会']),false);});
+t('hints: length then first char',()=>{const h=R.hintSteps(choice);assert.equal(h.length,2);assert.match(h[0],/3文字/);assert.match(h[1],/「源」/);});
+t('short answers never reveal first char',()=>{const h=R.hintSteps({...choice,choices:['国会','a','b','c']});assert.equal(h.length,1);assert(!h.join('').includes('国'));});
+t('assist levels',()=>{assert.equal(R.assistFor({correct:true}),'free');assert.equal(R.assistFor({correct:true,hintsUsed:1}),'hint');assert.equal(R.assistFor({correct:true,hintsUsed:1,choicesShown:true}),'choice');assert.equal(R.assistFor({correct:false}),'none');assert.equal(R.assistFor({correct:true,dontKnow:true}),'none');});
+t('retry unless free-correct',()=>{assert.equal(R.shouldRetryInSession({correct:true,assist:'free'}),false);assert.equal(R.shouldRetryInSession({correct:true,assist:'choice'}),true);assert.equal(R.shouldRetryInSession({correct:false,assist:'none'}),true);});
+t('choice-assisted correct is not solid when recall possible',()=>{assert.equal(R.isSolid({correct:true,assist:'choice',recallCapable:true}),false);assert.equal(R.isSolid({correct:true,assist:'choice',recallCapable:false}),true);});
+const DAY=86400000,T0=Date.UTC(2026,10,1,9);
+t('spaced schedule: same-day repeats do not advance',()=>{let r=R.updateRecord(null,{correct:true,assist:'free',recallCapable:true},T0);assert.equal(r.stage,1);r=R.updateRecord(r,{correct:true,assist:'free',recallCapable:true},T0+3600e3);assert.equal(r.stage,1);});
+t('spaced schedule: mastery needs three spaced days',()=>{let r=R.updateRecord(null,{correct:true,assist:'free',recallCapable:true},T0);r=R.updateRecord(r,{correct:true,assist:'free',recallCapable:true},T0+DAY);assert.equal(r.stage,2);assert.equal(R.isImproved(r),true);assert.equal(R.isMastered(r),false);
+  const early=R.updateRecord(r,{correct:true,assist:'free',recallCapable:true},T0+2*DAY);assert.equal(early.stage,2,'before due must not advance');
+  r=R.updateRecord(r,{correct:true,assist:'free',recallCapable:true},T0+4*DAY);assert.equal(R.isMastered(r),true);});
+t('miss resets and is due now',()=>{let r=R.updateRecord(null,{correct:true,assist:'free',recallCapable:true},T0);r=R.updateRecord(r,{correct:false,assist:'none',recallCapable:true},T0+DAY);assert.equal(r.stage,0);assert.equal(R.isDue(r,T0+DAY),true);});
+t('assisted correct steps back and is due tomorrow',()=>{let r={stage:2,due:0};r=R.updateRecord(r,{correct:true,assist:'hint',recallCapable:true},T0);assert.equal(r.stage,1);assert.equal(r.due,T0+DAY);});
+t('sanitize drops corrupt entries',()=>{const x=R.sanitizeRecords({a:{stage:2,due:5},b:null,c:'x',d:{stage:'zz'},e:{stage:99}});assert.deepEqual(Object.keys(x).sort(),['a','e']);assert.equal(x.e.stage,R.INTERVAL_DAYS.length);assert.deepEqual(R.sanitizeRecords([1,2]),{});assert.deepEqual(R.sanitizeRecords(null),{});});
+t('merge keeps newer record',()=>{const m=R.mergeRecords({a:{stage:1,lastAt:'2026-01-01'}},{a:{stage:3,lastAt:'2026-02-01'},b:{stage:0}});assert.equal(m.a.stage,3);assert('b' in m);});
+t('priority bonus',()=>{assert(R.priorityBonus({stage:1,due:0},T0)>0);assert(R.priorityBonus({stage:3,due:T0+DAY},T0)<0);assert.equal(R.priorityBonus(undefined,T0),0);});
+t('default prefs',()=>{assert.equal(R.defaultPref('social',{}),true);assert.equal(R.defaultPref('science',{}),false);assert.equal(R.defaultPref('social',{social:false}),false);});
+// 実データ：社会・理科で一定数が対応し、対応問題のヒントが答えそのものにならないこと。
+const py='import json,sys;sys.path.insert(0,"scripts");from question_bank_loader import load_questions;print(json.dumps(load_questions(),ensure_ascii=False))';
+let out;for(const cmd of['python3','python']){const r=cp.spawnSync(cmd,['-c',py],{cwd:root,encoding:'utf8',maxBuffer:64*1024*1024});if(!r.error&&r.status===0){out=r.stdout;break;}}
+assert(out,'python loader unavailable');
+const qs=JSON.parse(out);
+t('real data coverage and no hint leakage',()=>{const soc=qs.filter(q=>q.subject==='social'&&R.supportsRecallMode(q));const sci=qs.filter(q=>q.subject==='science'&&R.supportsRecallMode(q));assert(soc.length>=100,`social recall-capable ${soc.length}`);assert(sci.length>=50,`science recall-capable ${sci.length}`);
+  for(const q of[...soc,...sci]){const ans=R.primaryAnswers(q);const hints=R.hintSteps(q).join(' ');for(const a of ans){if(Array.from(a).length>=2)assert(!hints.includes(a),`hint leaks answer ${q.id}`);}if(q.type==='choice'){const others=q.choices.filter((_,i)=>i!==q.answer);assert(!others.some(o=>R.normalize(o)===R.normalize(R.correctChoiceText(q))),`ambiguous choices ${q.id}`);}}});
+// app.js / index.html / sw.js への組み込み
+const app=fs.readFileSync(path.join(root,'app.js'),'utf8'),html=fs.readFileSync(path.join(root,'index.html'),'utf8'),sw=fs.readFileSync(path.join(root,'sw.js'),'utf8');
+t('wiring',()=>{assert(app.includes('if(recallActiveFor(q)){renderRecallAnswer(area,q);return;}'));assert(app.includes("'recallRecords','recallPracticePrefs'"),'backup keys');assert(app.includes('RecallLadder.mergeRecords('),'backup merge');assert(app.includes('RecallLadder.priorityBonus('),'smart order');assert(/questionIds:primary\.map/.test(app),'retries excluded from totals');
+  const v=app.match(/const APP_VERSION='([^']+)'/)[1];assert(html.includes(`recall-ladder.js?v=${v}`),'html loads module');assert(sw.includes(`'/recall-ladder.js?v=${v}'`),'sw precaches module');assert(sw.includes(`study-app-shell-v${v}`),'sw cache name bumped');
+  assert(html.indexOf('recall-ladder.js')<html.indexOf('app.js?v='),'module before app.js');assert(html.includes('id="recallPractice"')&&html.includes('id="recallStats"')&&html.includes('id="resultRecall"'));});
+console.log(`recall ladder tests: ${n}/${n} PASS`);

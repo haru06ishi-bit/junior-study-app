@@ -1,4 +1,4 @@
-const APP_VERSION='0.46.5';
+const APP_VERSION='0.47.0';
 function formatDataVersion(base){
  const versions=(window.QUESTION_SUPPLEMENTS||[]).map(s=>s.version);
  return `アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${base} + 補充${versions.length}件（最新 ${versions.at(-1)||'なし'}）`;
@@ -515,7 +515,7 @@ function unitAccuracyMap(){
 function smartQuestionOrder(pool){
  const attempts=questionAttemptStats(), mastery=unitAccuracyMap();
  const missed=new Map((JSON.parse(localStorage.getItem('missedQuestions')||'[]')||[]).map(x=>[x.questionId,x]));
- const now=Date.now();
+ const now=Date.now();const recallRecords=loadRecallRecords();
  return [...pool].map(q=>{
   const st=attempts.get(q.id)||{attempts:0,correct:0,lastAt:null};const acc=mastery.get(`${q.subject}/${q.unit}`);
   const target=acc==null?1:acc<0.6?1:acc<0.8?2:3;const diff=questionDifficulty(q);
@@ -525,22 +525,25 @@ function smartQuestionOrder(pool){
   score+=Math.max(0,14-Math.abs(diff-target)*7);
   if(st.lastAt){const days=Math.max(0,(now-new Date(st.lastAt).getTime())/86400000);score+=Math.min(18,days);if(days<1)score-=38;else if(days<3)score-=20;else if(days<7)score-=8;}
   score-=Math.min(12,st.attempts*2);
+  score+=RecallLadder.priorityBonus(recallRecords[q.id],now);
   score+=Math.random()*5;
   return{q,score};
  }).sort((a,b)=>b.score-a.score).map(x=>x.q);
 }
 function pickSmartQuestions(pool,count){const ordered=smartQuestionOrder(pool);return count==='all'?ordered:ordered.slice(0,Math.min(Number(count)||0,ordered.length));}
 function updateSummary(){
+ renderRecallToggle();
  const s=state.curriculum?.subjects.find(x=>x.id===state.subject);const n=availableQuestions().length;
  const district=selectedTextbookDistrict();const book=district?`・${district.name}地区`:'';const mats=[...state.quizMaterials].map(materialTitleById);const matText=mats.length?`・教材/Unit ${mats.length}件（${mats.map(x=>`「${x}」`).join('、')}）`:'';document.getElementById('selectionSummary').textContent=s?`中${state.grade}・${s.name}${book}・${state.units.size}単元${matText} / 現在${n}問出題可能`:'学年・教科・単元を選んでください。';
 }
 document.getElementById('unitSearch').addEventListener('input',renderUnits);
+document.getElementById('recallPractice')?.addEventListener('change',e=>{if(state.subject)setRecallPractice(state.subject,e.target.checked);});
 document.getElementById('countChoices').addEventListener('click',e=>{const b=e.target.closest('[data-count]');if(!b)return;document.querySelectorAll('[data-count]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');state.count=b.dataset.count==='all'?'all':Number(b.dataset.count);updateSummary()});
 document.getElementById('startQuiz').onclick=()=>{
  if(!state.subject||!state.units.size){alert('教科と単元を選んでください。');return}
  const pool=availableQuestions();if(!pool.length){alert('選んだ単元には、まだ問題が登録されていません。別の単元を選ぶか、紙テストから問題を追加してください。');return}
  const limit=state.count==='all'?'all':Math.min(state.count,pool.length);
- state.session=pickQuestionsForMaterials(pool,limit,state.quizMaterials);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'quiz',materials:[...state.quizMaterials],textbookYear:state.quizTextbookYear};
+ state.session=pickQuestionsForMaterials(pool,limit,state.quizMaterials);state.index=0;state.score=0;state.answers=[];state.sessionContext={mode:'quiz',materials:[...state.quizMaterials],textbookYear:state.quizTextbookYear,recall:recallPracticeEnabled(state.subject)};resetRecallSessionState();
  localStorage.setItem('lastQuizSelection',JSON.stringify({grade:state.grade,subject:state.subject,units:[...state.units],count:state.count,textbookYear:state.quizTextbookYear,materials:[...state.quizMaterials]}));
  showView('playView');renderQuestion();
 };
@@ -610,13 +613,15 @@ function renderQuestion(){
  if(state.sessionContext?.mode==='mockExam'){renderMockExamQuestion();return;}
  const q=state.session[state.index];if(!q){finishQuiz();return}
  const s=state.curriculum.subjects.find(x=>x.id===q.subject);
- document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length}`;
+ document.getElementById('quizProgress').textContent=`${state.index+1} / ${state.session.length}${q.__retryOf?' ・ ヒントなしで再挑戦':''}`;
  document.getElementById('quizSubject').textContent=`${s?.icon||''} ${s?.name||''} ・ ${difficultyLabel(q)}`;
  renderReferencePages(q);
  renderQuestionStimulus(q);
  document.getElementById('questionText').textContent=displayQuestionText(q);
  document.getElementById('answerArea').innerHTML='';document.getElementById('feedback').hidden=true;document.getElementById('nextQuestion').hidden=true;document.getElementById('dontKnow').disabled=false;
  const area=document.getElementById('answerArea');
+ state.recallStep=null;
+ if(recallActiveFor(q)){renderRecallAnswer(area,q);return;}
  if(q.type==='choice'){
    shuffledIndexedChoices(q).forEach(({text,index})=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=text;b.dataset.originalIndex=String(index);b.onclick=()=>gradeChoiceAnswer(index,b);area.append(b)});
  }else if(q.type==='multi'){
@@ -636,13 +641,109 @@ function renderQuestion(){
    area.innerHTML='<p class="help">この問題形式にはまだ対応していません。</p>';
  }
 }
-function finishAnswer(correct,dontKnow=false,answerLabel=''){
- const q=state.session[state.index];if(correct)state.score++;
- state.answers.push({questionId:q.id,correct,dontKnow,answeredAt:new Date().toISOString()});
- document.getElementById('dontKnow').disabled=true;
+function finishAnswer(correct,dontKnow=false,answerLabel='',meta={}){
+ const q=state.session[state.index];const retry=!!q.__retryOf;
+ const recall=recallActiveFor(q),recallCapable=recallCapableInSession(q);
+ const step=state.recallStep||{};
+ const assist=meta.assist||(recall?RecallLadder.assistFor({correct,dontKnow,hintsUsed:step.hintsUsed||0,choicesShown:!!step.choicesShown}):(dontKnow||!correct?'none':(RecallLadder.isProductionType(q)?'free':'choice')));
+ const entry={questionId:q.id,correct,dontKnow,answeredAt:new Date().toISOString(),assist};if(recall)entry.recallMode=true;if(meta.selfJudged)entry.selfJudged=true;
+ if(retry){(state.retryAnswers||(state.retryAnswers=[])).push(entry);}else{if(correct)state.score++;state.answers.push(entry);}
+ const record=recordRecallResult(q,{correct,assist,recallCapable});
+ const queued=!retry&&recall&&RecallLadder.shouldRetryInSession({correct,assist})?queueRecallRetry(q):false;
+ document.getElementById('dontKnow').disabled=true;if(recall)document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);
  const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback '+(correct?'ok':'ng');
- const label=answerLabel||formatCorrectAnswer(q);fb.innerHTML=`<strong>${correct?'正解！':'復習しよう'}</strong><p>答え：${escapeHtml(label)}</p><p>${escapeHtml(q.explanation||'')}</p>`;appendAiExplanationControl(fb,q);
+ const label=answerLabel||formatCorrectAnswer(q);
+ fb.innerHTML=`<strong>${escapeHtml(feedbackHeadline(correct,assist,recall))}</strong><p>答え：${escapeHtml(label)}</p><p>${escapeHtml(q.explanation||'')}</p>`;
+ const notes=[];
+ if(queued)notes.push('少しあとで、ヒントなしでもう一度出題します。');
+ if(correct&&record&&RecallLadder.isImproved(record)&&removeMissedQuestion(q.id))notes.push('別の日にも自力で正解できたので「苦手を復習」から外しました。');
+ notes.forEach(t=>{const p=document.createElement('p');p.className='recall-note';p.textContent=t;fb.append(p)});
+ appendAiExplanationControl(fb,q);
  document.getElementById('nextQuestion').hidden=false;if(!correct)saveMissed(q,dontKnow);
+}
+function feedbackHeadline(correct,assist,recall){
+ if(!correct)return'復習しよう';
+ if(!recall)return'正解！';
+ if(assist==='free')return'正解！自力で思い出せた';
+ if(assist==='hint')return'正解（ヒントあり）';
+ if(assist==='choice')return'正解（選択肢を見て）';
+ return'正解！';
+}
+// ---- 想起練習（v0.47.0）：まず自力で思い出す → 段階ヒント → 選択肢 → 時間を空けてヒントなしで再挑戦 ----
+function loadRecallPrefs(){try{const x=JSON.parse(localStorage.getItem('recallPracticePrefs')||'{}');return x&&typeof x==='object'&&!Array.isArray(x)?x:{}}catch{return{}}}
+function recallPracticeEnabled(subject){return RecallLadder.isRecallSubject(subject)&&RecallLadder.defaultPref(subject,loadRecallPrefs());}
+function setRecallPractice(subject,on){const p=loadRecallPrefs();p[subject]=!!on;try{localStorage.setItem('recallPracticePrefs',JSON.stringify(p))}catch(err){console.warn('recall pref save failed',err)}}
+function renderRecallToggle(){
+ const row=document.getElementById('recallToggleRow'),box=document.getElementById('recallPractice');if(!row||!box)return;
+ const ok=RecallLadder.isRecallSubject(state.subject);row.hidden=!ok;if(!ok)return;
+ box.checked=recallPracticeEnabled(state.subject);
+ const c=document.getElementById('recallToggleCount');if(c){const n=state.units.size?availableQuestions().filter(q=>RecallLadder.supportsRecallMode(q)).length:null;c.textContent=n==null?'':`選んだ範囲のうち${n}問が対応しています。`;}
+}
+function recallActiveFor(q){return!!(state.sessionContext?.recall&&state.sessionContext?.mode==='quiz'&&RecallLadder.supportsRecallMode(q));}
+function recallCapableInSession(q){return recallActiveFor(q)||RecallLadder.isProductionType(q);}
+function resetRecallSessionState(){state.retryQueued=new Set();state.retryAnswers=[];state.recallStep=null;}
+function loadRecallRecords(){try{return RecallLadder.sanitizeRecords(JSON.parse(localStorage.getItem('recallRecords')||'{}'))}catch{return{}}}
+function recordRecallResult(q,result){
+ if(!q?.id)return null;
+ try{const all=loadRecallRecords();all[q.id]=RecallLadder.updateRecord(all[q.id],result);localStorage.setItem('recallRecords',JSON.stringify(all));return all[q.id];}
+ catch(err){console.warn('recall record save failed',err);return null}
+}
+function removeMissedQuestion(id){
+ try{const arr=JSON.parse(localStorage.getItem('missedQuestions')||'[]');if(!Array.isArray(arr))return false;const next=arr.filter(x=>x?.questionId!==id);if(next.length===arr.length)return false;localStorage.setItem('missedQuestions',JSON.stringify(next));return true;}catch{return false}
+}
+function queueRecallRetry(q){
+ if(!state.retryQueued)state.retryQueued=new Set();if(state.retryQueued.has(q.id))return false;state.retryQueued.add(q.id);
+ const pos=Math.min(state.index+4,state.session.length);state.session.splice(pos,0,{...q,__retryOf:q.id});return true;
+}
+function renderRecallAnswer(area,q){
+ const retry=!!q.__retryOf;const steps=retry?[]:RecallLadder.hintSteps(q);
+ const st=state.recallStep={hintsUsed:0,choicesShown:false,typed:[],steps};
+ const note=document.createElement('p');note.className='answer-instruction';note.textContent=retry?'ヒントなしで、もう一度思い出してみよう。':(q.type==='choice'?'選択肢を見る前に、まず自分で思い出して書いてみよう。':'まず何も見ずに思い出して書いてみよう。');area.append(note);
+ const hintBox=document.createElement('div');hintBox.className='recall-hint';hintBox.hidden=true;hintBox.setAttribute('aria-live','polite');
+ const msg=document.createElement('p');msg.className='recall-message';msg.setAttribute('aria-live','polite');
+ const count=q.type==='fill'?RecallLadder.primaryAnswers(q).length:1;const inputs=[];
+ for(let i=0;i<count;i++){
+  const input=document.createElement('input');input.type='text';input.className='answer-input';input.autocomplete='off';input.placeholder=count>1?`空欄 ${i+1}`:'思い出した答えを入力';
+  if(count>1){const label=document.createElement('label');label.className='fill-label';label.innerHTML=`<span>（${i+1}）</span>`;label.append(input);area.append(label)}else area.append(input);
+  inputs.push(input);
+ }
+ const actions=document.createElement('div');actions.className='recall-actions';
+ const submit=document.createElement('button');submit.type='button';submit.className='primary';submit.textContent='答える';
+ const hintBtn=document.createElement('button');hintBtn.type='button';hintBtn.className='secondary';hintBtn.textContent='ヒントを見る';hintBtn.hidden=!steps.length;
+ const choiceBtn=document.createElement('button');choiceBtn.type='button';choiceBtn.className='secondary';choiceBtn.textContent='選択肢を見る';choiceBtn.hidden=retry||q.type!=='choice';
+ actions.append(submit,hintBtn,choiceBtn);area.append(hintBox,msg,actions);
+ const choiceArea=document.createElement('div');choiceArea.className='recall-choices';area.append(choiceArea);
+ const showHint=()=>{if(st.hintsUsed>=steps.length)return false;st.hintsUsed++;hintBox.hidden=false;hintBox.innerHTML=steps.slice(0,st.hintsUsed).map((t,i)=>`<p>ヒント${i+1}：${escapeHtml(t)}</p>`).join('');if(st.hintsUsed>=steps.length)hintBtn.hidden=true;return true;};
+ const lockInputs=()=>{inputs.forEach(x=>x.disabled=true);submit.disabled=true;hintBtn.disabled=true;};
+ const showChoices=()=>{
+  if(st.choicesShown)return;st.choicesShown=true;lockInputs();choiceBtn.hidden=true;msg.textContent='選択肢から選んでください。';
+  shuffledIndexedChoices(q).forEach(({text,index})=>{const b=document.createElement('button');b.className='answer-btn';b.textContent=text;b.dataset.originalIndex=String(index);
+   b.onclick=()=>{const correct=index===q.answer;choiceArea.querySelectorAll('.answer-btn').forEach(x=>{x.disabled=true;if(Number(x.dataset.originalIndex)===Number(q.answer))x.classList.add('correct');if(x===b&&!correct)x.classList.add('wrong')});finishAnswer(correct,false,'',{assist:correct?'choice':'none'})};
+   choiceArea.append(b)});
+ };
+ const selfJudge=values=>{
+  lockInputs();choiceBtn.disabled=true;document.getElementById('dontKnow').disabled=true;
+  const box=document.createElement('div');box.className='recall-self-judge';box.innerHTML=`<p>正解：<strong>${escapeHtml(formatCorrectAnswer(q))}</strong></p><p>あなたの答え：${escapeHtml(values.join(' / '))}</p><p class="help">書き方が違うだけで同じ意味なら「同じ意味だった」を押してください。</p>`;
+  const ok=document.createElement('button');ok.type='button';ok.className='primary';ok.textContent='同じ意味だった';
+  const ng=document.createElement('button');ng.type='button';ng.className='secondary';ng.textContent='違った';
+  ok.onclick=()=>{box.remove();finishAnswer(true,false,'',{assist:st.hintsUsed?'hint':'free',selfJudged:true})};
+  ng.onclick=()=>{box.remove();finishAnswer(false,false,'',{assist:'none'})};
+  const row=document.createElement('div');row.className='self-check-row';row.append(ok,ng);box.append(row);area.append(box);
+ };
+ submit.onclick=()=>{
+  const values=inputs.map(x=>x.value);
+  if(values.every(v=>!String(v).trim())){msg.textContent='答えを入力するか、「ヒントを見る」「わからない」を使ってください。';return;}
+  st.typed.push(values);
+  if(RecallLadder.matchesRecall(q,values)){lockInputs();choiceBtn.disabled=true;finishAnswer(true,false,'',{assist:st.hintsUsed?'hint':'free'});return;}
+  if(retry){selfJudge(values);return;}
+  if(showHint()){msg.textContent='ちがうようです。ヒントを見て、もう一度書いてみよう。';inputs.forEach(x=>{x.value=''});inputs[0]?.focus();return;}
+  if(q.type==='choice'){showChoices();return;}
+  selfJudge(values);
+ };
+ hintBtn.onclick=()=>{showHint();inputs[0]?.focus();};
+ choiceBtn.onclick=showChoices;
+ inputs.forEach(inp=>inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&inputs.length===1){e.preventDefault();submit.click()}}));
+ setTimeout(()=>inputs[0]?.focus(),0);
 }
 function formatCorrectAnswer(q){
  if(q.type==='choice')return q.choices?.[q.answer]??'';
@@ -726,11 +827,32 @@ function finishQuiz(){
  if(state.sessionContext?.mode==='mockExam'){finishMockExam(false);return;}
  document.getElementById('mockResultDetails').hidden=true;
  document.getElementById('resultEyebrow').textContent=state.sessionContext?.mode==='mockReview'?'模擬テスト復習完了':'小テスト完了';document.getElementById('retryQuiz').textContent='もう一度挑戦';document.getElementById('backHomeResult').textContent='ホームへ戻る';
- const total=state.session.length;const rate=total?Math.round(state.score/total*100):0;
- document.getElementById('resultScore').textContent=`${state.score} / ${total}`;document.getElementById('resultRate').textContent=`正答率 ${rate}%`;
- const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate,mode:state.sessionContext?.mode||'quiz',examId:state.sessionContext?.examId||null,materials:state.sessionContext?.materials||[],textbookYear:state.sessionContext?.textbookYear||null,questionIds:state.session.map(q=>q.id),answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt}))});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-300)));
- if(state.sessionContext?.examId){const logs=loadExamStudyLogs();logs.push({id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,at:new Date().toISOString(),questionIds:state.session.map(q=>q.id),score:state.score,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));}
+ const primary=state.session.filter(q=>!q.__retryOf);const total=primary.length;const rate=total?Math.round(state.score/total*100):0;
+ document.getElementById('resultScore').textContent=`${state.score} / ${total}`;document.getElementById('resultRate').textContent=`正答率 ${rate}%`;renderRecallResultSummary();
+ const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate,mode:state.sessionContext?.mode||'quiz',examId:state.sessionContext?.examId||null,materials:state.sessionContext?.materials||[],textbookYear:state.sessionContext?.textbookYear||null,questionIds:primary.map(q=>q.id),answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt,...(a.assist?{assist:a.assist}:{}),...(a.recallMode?{recallMode:true}:{}),...(a.selfJudged?{selfJudged:true}:{})})),...(state.sessionContext?.recall?{recall:true,retryResults:(state.retryAnswers||[]).map(a=>({questionId:a.questionId,correct:!!a.correct,assist:a.assist,answeredAt:a.answeredAt}))}:{})});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-300)));
+ if(state.sessionContext?.examId){const logs=loadExamStudyLogs();logs.push({id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,at:new Date().toISOString(),questionIds:primary.map(q=>q.id),score:state.score,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));}
  updateStreak();showView('resultView');
+}
+function renderRecallResultSummary(){
+ const el=document.getElementById('resultRecall');if(!el)return;
+ const recall=state.sessionContext?.mode==='quiz'&&state.sessionContext?.recall;
+ const rows=recall?state.answers.filter(a=>a.recallMode):[];
+ if(!rows.length){el.hidden=true;el.textContent='';return;}
+ const c={free:0,hint:0,choice:0,none:0};rows.forEach(a=>{const k=a.correct?a.assist:'none';c[k]=(c[k]||0)+1});
+ const retry=state.retryAnswers||[];const retryOk=retry.filter(a=>a.correct).length;
+ el.hidden=false;el.innerHTML=`<strong>思い出す練習の結果</strong><span>自力で正解 ${c.free}問・ヒントで正解 ${c.hint}問・選択肢で正解 ${c.choice}問・不正解 ${c.none}問</span>${retry.length?`<span>ヒントなしの再挑戦：${retryOk}/${retry.length}問 正解</span>`:''}<span class="help">ヒントや選択肢で正解した問題は、日を空けてもう一度出題されやすくなります。</span>`;
+}
+function recallStatsSummary(){
+ const c={free:0,hint:0,choice:0,none:0};
+ for(const h of studyHistory()){if(!h.recall)continue;for(const a of h.answerResults||[]){if(!a.recallMode||!a.assist)continue;const k=a.correct?a.assist:'none';c[k]=(c[k]||0)+1;}}
+ const records=loadRecallRecords();const vals=Object.values(records);
+ return{counts:c,total:c.free+c.hint+c.choice+c.none,mastered:vals.filter(RecallLadder.isMastered).length,due:vals.filter(r=>!RecallLadder.isMastered(r)&&RecallLadder.isDue(r)).length};
+}
+function renderRecallStats(){
+ const el=document.getElementById('recallStats');if(!el)return;const x=recallStatsSummary();
+ if(!x.total){el.innerHTML='<p class="help">社会・理科の小テストで「思い出す練習」を使うと、ここに記録されます。</p>';return;}
+ const pct=n=>Math.round(n/x.total*100);
+ el.innerHTML=`<div class="recall-stat-bar" role="img" aria-label="自力${pct(x.counts.free)}%、ヒント${pct(x.counts.hint)}%、選択肢${pct(x.counts.choice)}%、不正解${pct(x.counts.none)}%"><span class="free" style="width:${pct(x.counts.free)}%"></span><span class="hint" style="width:${pct(x.counts.hint)}%"></span><span class="choice" style="width:${pct(x.counts.choice)}%"></span><span class="none" style="width:${pct(x.counts.none)}%"></span></div><ul class="recall-stat-legend"><li><i class="free"></i>自力で正解 ${x.counts.free}問</li><li><i class="hint"></i>ヒントで正解 ${x.counts.hint}問</li><li><i class="choice"></i>選択肢なら正解 ${x.counts.choice}問</li><li><i class="none"></i>不正解 ${x.counts.none}問</li></ul><p class="help">定着した問題（日を空けて3回自力で正解）：${x.mastered}問 ／ 今日の復習予定：${x.due}問</p>`;
 }
 function updateStreak(){const today=new Date().toISOString().slice(0,10);const last=localStorage.getItem('lastStudyDate');let streak=Number(localStorage.getItem('streakDays')||0);if(last!==today){const y=new Date();y.setDate(y.getDate()-1);streak=last===y.toISOString().slice(0,10)?streak+1:1;localStorage.setItem('lastStudyDate',today);localStorage.setItem('streakDays',streak)}document.getElementById('streakDays').textContent=streak;renderDailyPlanPreview();}
 document.getElementById('backHomeResult').onclick=()=>{if(state.sessionContext?.mode==='mockExamHistory'){openStats();return;}goHome();};
@@ -1079,7 +1201,7 @@ function renderStatsDashboard(){
  const streak=Number(localStorage.getItem('streakDays')||0);const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]').length;
  const summary=document.getElementById('statsSummary');
  summary.innerHTML=`<div class="stats-summary-card"><small>解いた問題</small><strong>${total}</strong><span>問</span></div><div class="stats-summary-card"><small>正答率</small><strong>${rate}</strong><span>%</span></div><div class="stats-summary-card"><small>連続学習</small><strong>${streak}</strong><span>日</span></div><div class="stats-summary-card"><small>苦手問題</small><strong>${missed}</strong><span>問</span></div>`;
- renderWeeklyStudy(history);renderSubjectStats();renderWeakUnitStats();renderMockExamHistory();renderMockTrendStats();renderRecentHistory(history);
+ renderWeeklyStudy(history);renderRecallStats();renderSubjectStats();renderWeakUnitStats();renderMockExamHistory();renderMockTrendStats();renderRecentHistory(history);
 }
 function renderWeeklyStudy(history){
  const days=[];const now=new Date();now.setHours(0,0,0,0);
@@ -1538,7 +1660,8 @@ if('serviceWorker' in navigator && location.protocol === 'https:'){
 // Data backup / transfer (v0.15)
 const BACKUP_KEYS=[
  'lastQuizSelection','missedQuestions','studyHistory','examStudyLogs','examPlans','mockExamResults',
- 'customQuestions','lastStudyDate','streakDays','paperDrafts','schoolTextbookPreference','textbookStudyRanges'
+ 'customQuestions','lastStudyDate','streakDays','paperDrafts','schoolTextbookPreference','textbookStudyRanges',
+ 'recallRecords','recallPracticePrefs'
 ];
 let pendingBackupData=null;
 function safeJsonParse(value,fallback){try{return JSON.parse(value)}catch{return fallback}}
@@ -1588,6 +1711,8 @@ function mergeBackupData(data){
  };
  Object.entries(arrayKeys).forEach(([key,keyFn])=>{const incoming=safeJsonParse(data[key]||'[]',[]);if(!Array.isArray(incoming)||!incoming.length)return;const current=safeJsonParse(localStorage.getItem(key)||'[]',[]);localStorage.setItem(key,JSON.stringify(uniqueMerge(current,incoming,keyFn).slice(key==='studyHistory'||key==='examStudyLogs'?-300:0)));});
  if(!localStorage.getItem('lastQuizSelection')&&data.lastQuizSelection)localStorage.setItem('lastQuizSelection',data.lastQuizSelection);
+ if(data.recallRecords){const merged=RecallLadder.mergeRecords(safeJsonParse(localStorage.getItem('recallRecords')||'{}',{}),safeJsonParse(data.recallRecords,{}));localStorage.setItem('recallRecords',JSON.stringify(merged));}
+ if(!localStorage.getItem('recallPracticePrefs')&&data.recallPracticePrefs)localStorage.setItem('recallPracticePrefs',data.recallPracticePrefs);
  if(!localStorage.getItem('schoolTextbookPreference')&&data.schoolTextbookPreference)localStorage.setItem('schoolTextbookPreference',data.schoolTextbookPreference);
  const curDate=localStorage.getItem('lastStudyDate')||'';const inDate=data.lastStudyDate||'';if(inDate>curDate){localStorage.setItem('lastStudyDate',inDate);if(data.streakDays)localStorage.setItem('streakDays',data.streakDays)}
 }

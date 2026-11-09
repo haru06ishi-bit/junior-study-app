@@ -10,6 +10,9 @@ on:
       - 'index.html'
       - 'reorder-grading.js'
       - 'exam-scope.js'
+      - 'recall-ladder.js'
+      - 'style.css'
+      - 'sw.js'
       - '.github/workflows/question-quality.yml'
   pull_request:
     paths:
@@ -20,6 +23,10 @@ on:
       - 'app.js'
       - 'index.html'
       - 'reorder-grading.js'
+      - 'exam-scope.js'
+      - 'recall-ladder.js'
+      - 'style.css'
+      - 'sw.js'
       - '.github/workflows/question-quality.yml'
 jobs:
   validate:
@@ -42,5 +49,16 @@ jobs:
       - run: node scripts/test_known_fill_answers.js
       - run: node scripts/test_data_version_footer.js
       - run: node scripts/test_supplement_parity.js
+      - run: node scripts/test_recall_ladder.js
       - run: python scripts/report_question_coverage.py --json > coverage.json
       - run: python -c "import json; d=json.load(open('coverage.json')); print({k:d[k] for k in ('total_questions','below_minimum_units','shortfall')}); print('zero_materials',sum(m['count']==0 for m in d['material_catalog']))"
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install --no-save --no-package-lock playwright@1.48.2
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/e2e_recall_practice.js

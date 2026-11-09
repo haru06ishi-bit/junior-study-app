@@ -729,7 +729,7 @@ function renderRecallAnswer(area,q){
   const box=document.createElement('div');box.className='recall-self-judge';box.innerHTML=`<p>正解：<strong>${escapeHtml(formatCorrectAnswer(q))}</strong></p><p>あなたの答え：${escapeHtml(values.join(' / '))}</p><p class="help">書き方が違うだけで同じ意味なら「同じ意味だった」を押してください。</p>`;
   const ok=document.createElement('button');ok.type='button';ok.className='primary';ok.textContent='同じ意味だった';
   const ng=document.createElement('button');ng.type='button';ng.className='secondary';ng.textContent='違った';
-  ok.onclick=()=>{box.remove();finishAnswer(true,false,'',{assist:st.hintsUsed?'hint':'free',selfJudged:true})};
+  ok.onclick=()=>{box.remove();finishAnswer(true,false,'',{assist:st.choicesShown?'choice':(st.hintsUsed?'hint':'free'),selfJudged:true})};
   ng.onclick=()=>{box.remove();finishAnswer(false,false,'',{assist:'none'})};
   const row=document.createElement('div');row.className='self-check-row';row.append(ok,ng);box.append(row);area.append(box);
  };

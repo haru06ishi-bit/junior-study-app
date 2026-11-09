@@ -14,7 +14,10 @@
   // 独立監査で「選択肢なしでは正解が一つに決まらない」と確認した問題（自力入力の対象外）。
   const NON_UNIQUE_IDS=new Set(['v04_025','v042_social_kyoikushuppan_g2_contemporary_06','v04_042','v041_social_kyoikushuppan_g2_earlymodern_05']);
   // 書き方の違いとして許容する語尾（「愛知」と「愛知県」、「60」と「60度」など）。
-  const OPTIONAL_SUFFIX=/(県|府|都|道|度|年|天皇|時代|世紀|%|％)$/;
+  // 数字の後の単位、47都道府県名の県/府/都、2文字以上の名前に付く天皇/時代だけを外す（「廃藩置県」→「廃藩置」などの誤受理を防ぐ）。
+  const NUMERIC_UNIT=/^([0-9]+)(度|年|世紀|%|％)$/;
+  const PREFECTURES=['青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
+  const NAME_SUFFIX=/^(.{2,})(天皇|時代)$/;
   const DAY=86400000;
   const INTERVAL_DAYS=[1,3,7,14,30];
   const IMPROVED_STAGE=2; // 別の日に2回、自力で正解 → 苦手リストから外す
@@ -79,7 +82,10 @@
   // 正解として受け付ける表記：語尾の有無、「AとB」の順序違い。
   function variantsOf(answer){
     const base=normalize(answer);const out=new Set();if(!base)return out;
-    const add=v=>{if(v){out.add(v);const stripped=v.replace(OPTIONAL_SUFFIX,'');if(stripped&&stripped!==v)out.add(stripped);}};
+    const add=v=>{if(!v)return;out.add(v);
+      const num=v.match(NUMERIC_UNIT);if(num)out.add(num[1]);
+      if(PREFECTURES.includes(v))out.add(v.slice(0,-1));
+      const name=v.match(NAME_SUFFIX);if(name)out.add(name[1]);};
     add(base);
     const parts=base.split('と');if(parts.length===2&&parts[0]&&parts[1])add(parts[1]+'と'+parts[0]);
     return out;

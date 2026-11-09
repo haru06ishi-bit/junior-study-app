@@ -3919,15 +3919,15 @@
       "type": "multi",
       "question": "受け身の文をすべて選びなさい。",
       "choices": [
-        "This book was written by Soseki.",
         "She was writing a letter then.",
+        "They have opened the window.",
         "I wrote a letter yesterday.",
         "English is spoken in many countries.",
-        "They have opened the window."
+        "This book was written by Soseki."
       ],
       "answers": [
-        0,
-        3
+        3,
+        4
       ],
       "explanation": "受け身は be動詞＋過去分詞で、was written と is spoken が当てはまります。was writing は過去進行形、wrote は過去形、have opened は現在完了で、どれも主語が動作をする能動態の文です。",
       "difficulty": 2
@@ -3943,15 +3943,15 @@
       "type": "multi",
       "question": "現在完了が使われている文をすべて選びなさい。",
       "choices": [
-        "I have visited Kyoto twice.",
+        "I have a lot of homework today.",
         "He has to finish his homework.",
         "She has just finished lunch.",
-        "I have a lot of homework today.",
+        "I have visited Kyoto twice.",
         "We have lived here since April."
       ],
       "answers": [
-        0,
         2,
+        3,
         4
       ],
       "explanation": "現在完了は have/has＋過去分詞で、have visited・has finished・have lived が当てはまります。has to は「〜しなければならない」、I have a lot of homework の have は「持っている」という意味の一般動詞です。",
@@ -4034,14 +4034,14 @@
       "question": "√12 と等しい表し方をすべて選びなさい。",
       "choices": [
         "2√3",
-        "4√3",
         "√4×√3",
-        "3√2",
-        "√6+√6"
+        "√6+√6",
+        "4√3",
+        "3√2"
       ],
       "answers": [
         0,
-        2
+        1
       ],
       "explanation": "√12＝√(4×3)＝√4×√3＝2√3 です。4√3＝√48、3√2＝√18、√6+√6＝2√6＝√24 なので、どれも √12 とは等しくありません。",
       "difficulty": 2
@@ -4169,16 +4169,16 @@
       "type": "multi",
       "question": "文法的に正しい文をすべて選びなさい。",
       "choices": [
-        "Let me show you the way.",
-        "Let me to show you the way.",
         "She helped me carry the box.",
-        "She helped me carried the box.",
-        "Let him try it."
+        "Let me to show you the way.",
+        "Let him try it.",
+        "Let me show you the way.",
+        "She helped me carried the box."
       ],
       "answers": [
         0,
         2,
-        4
+        3
       ],
       "explanation": "let・help は「人＋動詞の原形」をとるので、Let me show・helped me carry・Let him try が正しい文です。Let me to show は to が不要で、helped me carried は過去形ではなく原形 carry にします。",
       "difficulty": 3,
@@ -4314,13 +4314,13 @@
       "type": "multi",
       "question": "現在完了の文をすべて選びなさい。",
       "choices": [
-        "She has already eaten lunch.",
-        "She was eating lunch at noon.",
+        "She has to eat lunch now.",
         "I usually have lunch at noon.",
-        "She has to eat lunch now."
+        "She has already eaten lunch.",
+        "She was eating lunch at noon."
       ],
       "answers": [
-        0
+        2
       ],
       "explanation": "現在完了は have/has＋過去分詞なので has already eaten が当てはまります。was eating は過去進行形、have lunch の have は「食べる」という一般動詞、has to は「〜しなければならない」です。",
       "difficulty": 2,
@@ -6654,14 +6654,14 @@
       "textbookPublisher": "sanseido",
       "source": "official-plan-aligned-original",
       "choices": [
-        "ever",
         "ago",
-        "just",
+        "ever",
         "already",
+        "just",
         "last week"
       ],
       "answers": [
-        0,
+        1,
         2,
         3
       ],
@@ -8132,15 +8132,17 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "official-plan-aligned-original",
       "choices": [
-        "just",
-        "ever",
         "since",
-        "already"
+        "once",
+        "already",
+        "ever",
+        "just"
       ],
       "answers": [
-        1
+        1,
+        3
       ],
-      "explanation": "ever「今までに」は Have you ever＋過去分詞〜? のように経験用法で使います。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語です。"
+      "explanation": "ever「今までに」と once「一度」は経験用法でよく使う語です。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語なので、経験用法の目印ではありません。"
     },
     {
       "id": "v034_tok_e3_u2_01",
@@ -9171,15 +9173,17 @@
       "textbookPublisher": "kairyudo",
       "source": "official-plan-aligned-original",
       "choices": [
-        "just",
-        "ever",
         "since",
-        "already"
+        "once",
+        "already",
+        "ever",
+        "just"
       ],
       "answers": [
-        1
+        1,
+        3
       ],
-      "explanation": "ever「今までに」は Have you ever＋過去分詞〜? のように経験用法で使います。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語です。"
+      "explanation": "ever「今までに」と once「一度」は経験用法でよく使う語です。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語なので、経験用法の目印ではありません。"
     },
     {
       "id": "v034_kai_e3_p2_01",
@@ -16100,13 +16104,13 @@
         "緯度は赤道を0度として南北をはかる",
         "緯度は南北それぞれ180度まである",
         "経度は本初子午線を0度として東西をはかる",
-        "赤道は経度0度を示す線である",
-        "本初子午線はイギリスのロンドンを通る"
+        "本初子午線はイギリスのロンドンを通る",
+        "赤道は経度0度を示す線である"
       ],
       "answers": [
         0,
         2,
-        4
+        3
       ],
       "explanation": "緯度は赤道を0度として南北を各90度、経度はロンドンを通る本初子午線を0度として東西を各180度ではかります。緯度は180度まではなく、赤道は緯度0度の線です。",
       "difficulty": 2
@@ -16197,13 +16201,13 @@
         "緯度は赤道を0度として南北をはかる",
         "緯度は南北それぞれ180度まである",
         "経度は本初子午線を0度として東西をはかる",
-        "赤道は経度0度を示す線である",
-        "本初子午線はイギリスのロンドンを通る"
+        "本初子午線はイギリスのロンドンを通る",
+        "赤道は経度0度を示す線である"
       ],
       "answers": [
         0,
         2,
-        4
+        3
       ],
       "explanation": "緯度は赤道を0度として南北を各90度、経度はロンドンを通る本初子午線を0度として東西を各180度ではかります。緯度は180度まではなく、赤道は緯度0度の線です。",
       "difficulty": 2
@@ -16269,16 +16273,16 @@
       "type": "multi",
       "question": "アジア州に属する国をすべて選びなさい。",
       "choices": [
-        "インド",
-        "エジプト",
-        "中国",
         "オーストラリア",
-        "サウジアラビア"
+        "中国",
+        "サウジアラビア",
+        "インド",
+        "エジプト"
       ],
       "answers": [
-        0,
+        1,
         2,
-        4
+        3
       ],
       "explanation": "インド・中国・サウジアラビアはアジア州の国です（サウジアラビアは西アジア）。エジプトはアフリカ州、オーストラリアはオセアニア州に属します。",
       "difficulty": 2
@@ -16390,16 +16394,16 @@
       "type": "multi",
       "question": "アジア州に属する国をすべて選びなさい。",
       "choices": [
-        "インド",
-        "エジプト",
-        "中国",
         "オーストラリア",
-        "サウジアラビア"
+        "中国",
+        "サウジアラビア",
+        "インド",
+        "エジプト"
       ],
       "answers": [
-        0,
+        1,
         2,
-        4
+        3
       ],
       "explanation": "インド・中国・サウジアラビアはアジア州の国です（サウジアラビアは西アジア）。エジプトはアフリカ州、オーストラリアはオセアニア州に属します。",
       "difficulty": 2
@@ -16466,15 +16470,15 @@
       "question": "日本の領域に含まれるものをすべて選びなさい。",
       "choices": [
         "領土",
-        "排他的経済水域",
         "領海",
-        "公海",
-        "領空"
+        "排他的経済水域",
+        "領空",
+        "公海"
       ],
       "answers": [
         0,
-        2,
-        4
+        1,
+        3
       ],
       "explanation": "国の領域は領土・領海・領空からなります。排他的経済水域は沿岸国が水産資源や鉱産資源を利用できる水域ですが領域ではなく、公海はどの国の領域にも属しません。",
       "difficulty": 2
@@ -16587,15 +16591,15 @@
       "question": "日本の領域に含まれるものをすべて選びなさい。",
       "choices": [
         "領土",
-        "排他的経済水域",
         "領海",
-        "公海",
-        "領空"
+        "排他的経済水域",
+        "領空",
+        "公海"
       ],
       "answers": [
         0,
-        2,
-        4
+        1,
+        3
       ],
       "explanation": "国の領域は領土・領海・領空からなります。排他的経済水域は沿岸国が水産資源や鉱産資源を利用できる水域ですが領域ではなく、公海はどの国の領域にも属しません。",
       "difficulty": 2
@@ -16661,14 +16665,14 @@
       "type": "multi",
       "question": "日本の三大都市圏の中心となる都市をすべて選びなさい。",
       "choices": [
-        "大阪",
-        "福岡",
         "名古屋",
-        "仙台"
+        "福岡",
+        "仙台",
+        "大阪"
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。福岡や仙台は地方の政治・経済の中心となる地方中枢都市ですが、三大都市圏には含まれません。",
       "difficulty": 2
@@ -16780,14 +16784,14 @@
       "type": "multi",
       "question": "日本の三大都市圏の中心となる都市をすべて選びなさい。",
       "choices": [
-        "大阪",
-        "福岡",
         "名古屋",
-        "仙台"
+        "福岡",
+        "仙台",
+        "大阪"
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。福岡や仙台は地方の政治・経済の中心となる地方中枢都市ですが、三大都市圏には含まれません。",
       "difficulty": 2
@@ -16854,9 +16858,9 @@
       "question": "地域調査で使う地形図について正しいものをすべて選びなさい。",
       "choices": [
         "2万5千分の1では1cmが250mにあたる",
-        "2万5千分の1では1cmが2.5kmにあたる",
         "等高線の間隔が広いほど傾斜は急である",
-        "縮尺が大きいほど広い範囲を表せる"
+        "縮尺が大きいほど広い範囲を表せる",
+        "2万5千分の1では1cmが2.5kmにあたる"
       ],
       "answers": [
         0
@@ -16972,9 +16976,9 @@
       "question": "地域調査で使う地形図について正しいものをすべて選びなさい。",
       "choices": [
         "2万5千分の1では1cmが250mにあたる",
-        "2万5千分の1では1cmが2.5kmにあたる",
         "等高線の間隔が広いほど傾斜は急である",
-        "縮尺が大きいほど広い範囲を表せる"
+        "縮尺が大きいほど広い範囲を表せる",
+        "2万5千分の1では1cmが2.5kmにあたる"
       ],
       "answers": [
         0
@@ -17043,15 +17047,15 @@
       "type": "multi",
       "question": "古代の日本に関係するものをすべて選びなさい。",
       "choices": [
-        "大化の改新",
-        "御成敗式目",
         "律令制度",
         "勘合貿易",
+        "御成敗式目",
+        "大化の改新",
         "遣唐使"
       ],
       "answers": [
         0,
-        2,
+        3,
         4
       ],
       "explanation": "大化の改新・律令制度・遣唐使は飛鳥〜平安時代の古代のことがらです。御成敗式目は鎌倉時代、勘合貿易は室町時代の中世のことがらです。",
@@ -17164,15 +17168,15 @@
       "type": "multi",
       "question": "古代の日本に関係するものをすべて選びなさい。",
       "choices": [
-        "大化の改新",
-        "御成敗式目",
         "律令制度",
         "勘合貿易",
+        "御成敗式目",
+        "大化の改新",
         "遣唐使"
       ],
       "answers": [
         0,
-        2,
+        3,
         4
       ],
       "explanation": "大化の改新・律令制度・遣唐使は飛鳥〜平安時代の古代のことがらです。御成敗式目は鎌倉時代、勘合貿易は室町時代の中世のことがらです。",
@@ -17434,15 +17438,15 @@
       "type": "multi",
       "question": "江戸時代の鎖国中の対外関係として正しいものをすべて選びなさい。",
       "choices": [
-        "長崎でオランダと交易した",
-        "長崎でイギリスと交易した",
-        "朝鮮通信使が来日した",
         "ポルトガル船の来航を認めた",
-        "中国とは交易しなかった"
+        "長崎でオランダと交易した",
+        "中国とは交易しなかった",
+        "長崎でイギリスと交易した",
+        "朝鮮通信使が来日した"
       ],
       "answers": [
-        0,
-        2
+        1,
+        4
       ],
       "explanation": "鎖国中も長崎でオランダや中国と交易し、朝鮮通信使も来日しました。イギリスは鎖国前に平戸の商館を閉じて去り、ポルトガル船は島原・天草一揆の後に来航を禁止されました。",
       "difficulty": 2
@@ -17554,15 +17558,15 @@
       "type": "multi",
       "question": "江戸時代の鎖国中の対外関係として正しいものをすべて選びなさい。",
       "choices": [
-        "長崎でオランダと交易した",
-        "長崎でイギリスと交易した",
-        "朝鮮通信使が来日した",
         "ポルトガル船の来航を認めた",
-        "中国とは交易しなかった"
+        "長崎でオランダと交易した",
+        "中国とは交易しなかった",
+        "長崎でイギリスと交易した",
+        "朝鮮通信使が来日した"
       ],
       "answers": [
-        0,
-        2
+        1,
+        4
       ],
       "explanation": "鎖国中も長崎でオランダや中国と交易し、朝鮮通信使も来日しました。イギリスは鎖国前に平戸の商館を閉じて去り、ポルトガル船は島原・天草一揆の後に来航を禁止されました。",
       "difficulty": 2
@@ -17629,15 +17633,15 @@
       "question": "明治時代の近代化に関係するものをすべて選びなさい。",
       "choices": [
         "学制",
+        "刀狩",
         "太閤検地",
         "徴兵令",
-        "地租改正",
-        "刀狩"
+        "地租改正"
       ],
       "answers": [
         0,
-        2,
-        3
+        3,
+        4
       ],
       "explanation": "学制・徴兵令・地租改正は明治政府による近代化の政策です。太閤検地と刀狩は豊臣秀吉の政策で、土地や武器に関係するため明治の改革と混同しないようにします。",
       "difficulty": 2
@@ -17750,15 +17754,15 @@
       "question": "明治時代の近代化に関係するものをすべて選びなさい。",
       "choices": [
         "学制",
+        "刀狩",
         "太閤検地",
         "徴兵令",
-        "地租改正",
-        "刀狩"
+        "地租改正"
       ],
       "answers": [
         0,
-        2,
-        3
+        3,
+        4
       ],
       "explanation": "学制・徴兵令・地租改正は明治政府による近代化の政策です。太閤検地と刀狩は豊臣秀吉の政策で、土地や武器に関係するため明治の改革と混同しないようにします。",
       "difficulty": 2
@@ -17824,15 +17828,15 @@
       "type": "multi",
       "question": "戦後の日本に関係するものをすべて選びなさい。",
       "choices": [
-        "高度経済成長",
-        "国際連盟への加盟",
         "日本国憲法の施行",
         "大日本帝国憲法の発布",
-        "国際連合への加盟"
+        "国際連盟への加盟",
+        "国際連合への加盟",
+        "高度経済成長"
       ],
       "answers": [
         0,
-        2,
+        3,
         4
       ],
       "explanation": "高度経済成長、日本国憲法の施行（1947年）、国際連合への加盟（1956年）は戦後です。国際連盟への加盟（1920年）と大日本帝国憲法の発布（1889年）は戦前です。",
@@ -17945,15 +17949,15 @@
       "type": "multi",
       "question": "戦後の日本に関係するものをすべて選びなさい。",
       "choices": [
-        "高度経済成長",
-        "国際連盟への加盟",
         "日本国憲法の施行",
         "大日本帝国憲法の発布",
-        "国際連合への加盟"
+        "国際連盟への加盟",
+        "国際連合への加盟",
+        "高度経済成長"
       ],
       "answers": [
         0,
-        2,
+        3,
         4
       ],
       "explanation": "高度経済成長、日本国憲法の施行（1947年）、国際連合への加盟（1956年）は戦後です。国際連盟への加盟（1920年）と大日本帝国憲法の発布（1889年）は戦前です。",
@@ -18063,14 +18067,14 @@
       "type": "multi",
       "question": "現代の日本社会のようすとして正しいものをすべて選びなさい。",
       "choices": [
-        "65歳以上の人の割合が高まっている",
-        "日本の総人口が増え続けている",
         "三世代で暮らす世帯が増えている",
-        "情報通信技術の発達で情報化が進んでいる"
+        "情報通信技術の発達で情報化が進んでいる",
+        "65歳以上の人の割合が高まっている",
+        "日本の総人口が増え続けている"
       ],
       "answers": [
-        0,
-        3
+        1,
+        2
       ],
       "explanation": "日本では65歳以上の人の割合が高まり、情報通信技術の発達で情報化も進んでいます。総人口は減少しており、三世代世帯は減って核家族や一人暮らしの世帯が増えています。",
       "difficulty": 2
@@ -18134,14 +18138,14 @@
       "type": "multi",
       "question": "現代の日本社会のようすとして正しいものをすべて選びなさい。",
       "choices": [
-        "65歳以上の人の割合が高まっている",
-        "日本の総人口が増え続けている",
         "三世代で暮らす世帯が増えている",
-        "情報通信技術の発達で情報化が進んでいる"
+        "情報通信技術の発達で情報化が進んでいる",
+        "65歳以上の人の割合が高まっている",
+        "日本の総人口が増え続けている"
       ],
       "answers": [
-        0,
-        3
+        1,
+        2
       ],
       "explanation": "日本では65歳以上の人の割合が高まり、情報通信技術の発達で情報化も進んでいます。総人口は減少しており、三世代世帯は減って核家族や一人暮らしの世帯が増えています。",
       "difficulty": 2
@@ -18205,14 +18209,14 @@
       "type": "multi",
       "question": "現代の日本社会のようすとして正しいものをすべて選びなさい。",
       "choices": [
-        "65歳以上の人の割合が高まっている",
-        "日本の総人口が増え続けている",
         "三世代で暮らす世帯が増えている",
-        "情報通信技術の発達で情報化が進んでいる"
+        "情報通信技術の発達で情報化が進んでいる",
+        "65歳以上の人の割合が高まっている",
+        "日本の総人口が増え続けている"
       ],
       "answers": [
-        0,
-        3
+        1,
+        2
       ],
       "explanation": "日本では65歳以上の人の割合が高まり、情報通信技術の発達で情報化も進んでいます。総人口は減少しており、三世代世帯は減って核家族や一人暮らしの世帯が増えています。",
       "difficulty": 2
@@ -18296,15 +18300,15 @@
       "type": "multi",
       "question": "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
       "choices": [
-        "生存権",
-        "選挙権",
-        "教育を受ける権利",
         "表現の自由",
-        "裁判を受ける権利"
+        "選挙権",
+        "生存権",
+        "裁判を受ける権利",
+        "教育を受ける権利"
       ],
       "answers": [
-        0,
-        2
+        2,
+        4
       ],
       "explanation": "社会権は人間らしい生活を保障する権利で、生存権や教育を受ける権利が含まれます。選挙権は参政権、表現の自由は自由権、裁判を受ける権利は請求権に分類されます。",
       "difficulty": 2
@@ -18367,15 +18371,15 @@
       "type": "multi",
       "question": "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
       "choices": [
-        "生存権",
-        "選挙権",
-        "教育を受ける権利",
         "表現の自由",
-        "裁判を受ける権利"
+        "選挙権",
+        "生存権",
+        "裁判を受ける権利",
+        "教育を受ける権利"
       ],
       "answers": [
-        0,
-        2
+        2,
+        4
       ],
       "explanation": "社会権は人間らしい生活を保障する権利で、生存権や教育を受ける権利が含まれます。選挙権は参政権、表現の自由は自由権、裁判を受ける権利は請求権に分類されます。",
       "difficulty": 2
@@ -18438,15 +18442,15 @@
       "type": "multi",
       "question": "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
       "choices": [
-        "生存権",
-        "選挙権",
-        "教育を受ける権利",
         "表現の自由",
-        "裁判を受ける権利"
+        "選挙権",
+        "生存権",
+        "裁判を受ける権利",
+        "教育を受ける権利"
       ],
       "answers": [
-        0,
-        2
+        2,
+        4
       ],
       "explanation": "社会権は人間らしい生活を保障する権利で、生存権や教育を受ける権利が含まれます。選挙権は参政権、表現の自由は自由権、裁判を受ける権利は請求権に分類されます。",
       "difficulty": 2
@@ -18553,16 +18557,16 @@
       "type": "multi",
       "question": "三権分立の三つの権力をすべて選びなさい。",
       "choices": [
-        "立法",
         "国民主権",
+        "地方自治",
         "行政",
         "司法",
-        "地方自治"
+        "立法"
       ],
       "answers": [
-        0,
         2,
-        3
+        3,
+        4
       ],
       "explanation": "三権分立は国の権力を立法（国会）・行政（内閣）・司法（裁判所）に分けるしくみです。国民主権は日本国憲法の基本原則、地方自治は住民による地域の政治で、三権ではありません。",
       "difficulty": 2
@@ -18625,16 +18629,16 @@
       "type": "multi",
       "question": "三権分立の三つの権力をすべて選びなさい。",
       "choices": [
-        "立法",
         "国民主権",
+        "地方自治",
         "行政",
         "司法",
-        "地方自治"
+        "立法"
       ],
       "answers": [
-        0,
         2,
-        3
+        3,
+        4
       ],
       "explanation": "三権分立は国の権力を立法（国会）・行政（内閣）・司法（裁判所）に分けるしくみです。国民主権は日本国憲法の基本原則、地方自治は住民による地域の政治で、三権ではありません。",
       "difficulty": 2
@@ -18697,16 +18701,16 @@
       "type": "multi",
       "question": "三権分立の三つの権力をすべて選びなさい。",
       "choices": [
-        "立法",
         "国民主権",
+        "地方自治",
         "行政",
         "司法",
-        "地方自治"
+        "立法"
       ],
       "answers": [
-        0,
         2,
-        3
+        3,
+        4
       ],
       "explanation": "三権分立は国の権力を立法（国会）・行政（内閣）・司法（裁判所）に分けるしくみです。国民主権は日本国憲法の基本原則、地方自治は住民による地域の政治で、三権ではありません。",
       "difficulty": 2
@@ -18813,15 +18817,15 @@
       "type": "multi",
       "question": "労働三権に含まれるものをすべて選びなさい。",
       "choices": [
-        "団結権",
+        "請願権",
+        "団体行動権",
         "勤労の権利",
         "団体交渉権",
-        "請願権",
-        "団体行動権"
+        "団結権"
       ],
       "answers": [
-        0,
-        2,
+        1,
+        3,
         4
       ],
       "explanation": "労働三権は団結権・団体交渉権・団体行動権（争議権）です。勤労の権利は社会権の一つですが労働三権には含まれず、請願権は国や地方公共団体に要望を伝える権利です。",
@@ -18885,15 +18889,15 @@
       "type": "multi",
       "question": "労働三権に含まれるものをすべて選びなさい。",
       "choices": [
-        "団結権",
+        "請願権",
+        "団体行動権",
         "勤労の権利",
         "団体交渉権",
-        "請願権",
-        "団体行動権"
+        "団結権"
       ],
       "answers": [
-        0,
-        2,
+        1,
+        3,
         4
       ],
       "explanation": "労働三権は団結権・団体交渉権・団体行動権（争議権）です。勤労の権利は社会権の一つですが労働三権には含まれず、請願権は国や地方公共団体に要望を伝える権利です。",
@@ -18957,15 +18961,15 @@
       "type": "multi",
       "question": "労働三権に含まれるものをすべて選びなさい。",
       "choices": [
-        "団結権",
+        "請願権",
+        "団体行動権",
         "勤労の権利",
         "団体交渉権",
-        "請願権",
-        "団体行動権"
+        "団結権"
       ],
       "answers": [
-        0,
-        2,
+        1,
+        3,
         4
       ],
       "explanation": "労働三権は団結権・団体交渉権・団体行動権（争議権）です。勤労の権利は社会権の一つですが労働三権には含まれず、請願権は国や地方公共団体に要望を伝える権利です。",
@@ -19073,14 +19077,14 @@
       "type": "multi",
       "question": "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
       "choices": [
-        "ODA－政府開発援助",
-        "WHO－世界貿易機関",
-        "NGO－非政府組織",
         "UNICEF－国連教育科学文化機関",
+        "ODA－政府開発援助",
+        "NGO－非政府組織",
+        "WHO－世界貿易機関",
         "PKO－国連平和維持活動"
       ],
       "answers": [
-        0,
+        1,
         2,
         4
       ],
@@ -19145,14 +19149,14 @@
       "type": "multi",
       "question": "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
       "choices": [
-        "ODA－政府開発援助",
-        "WHO－世界貿易機関",
-        "NGO－非政府組織",
         "UNICEF－国連教育科学文化機関",
+        "ODA－政府開発援助",
+        "NGO－非政府組織",
+        "WHO－世界貿易機関",
         "PKO－国連平和維持活動"
       ],
       "answers": [
-        0,
+        1,
         2,
         4
       ],
@@ -19217,14 +19221,14 @@
       "type": "multi",
       "question": "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
       "choices": [
-        "ODA－政府開発援助",
-        "WHO－世界貿易機関",
-        "NGO－非政府組織",
         "UNICEF－国連教育科学文化機関",
+        "ODA－政府開発援助",
+        "NGO－非政府組織",
+        "WHO－世界貿易機関",
         "PKO－国連平和維持活動"
       ],
       "answers": [
-        0,
+        1,
         2,
         4
       ],
@@ -19290,15 +19294,15 @@
       "question": "力の三要素をすべて選びなさい。",
       "choices": [
         "力の大きさ",
-        "物体の質量",
-        "力の向き",
         "作用点",
-        "物体の速さ"
+        "力の向き",
+        "物体の速さ",
+        "物体の質量"
       ],
       "answers": [
         0,
-        2,
-        3
+        1,
+        2
       ],
       "explanation": "力は矢印で表し、作用点（力がはたらく点）・力の向き・力の大きさの三つを示します。物体の質量や速さは物体の性質や運動のようすで、力の三要素ではありません。",
       "difficulty": 2
@@ -19405,10 +19409,10 @@
       "type": "multi",
       "question": "電流がつくる磁界について正しいものをすべて選びなさい。",
       "choices": [
-        "電流の向きを逆にすると磁界も逆向きになる",
-        "導線から離れるほど磁界は強くなっていく",
         "コイルの巻数を増やすと磁界は強くなる",
-        "電流を止めても、磁界はそのまま残り続ける"
+        "電流を止めても、磁界はそのまま残り続ける",
+        "電流の向きを逆にすると磁界も逆向きになる",
+        "導線から離れるほど磁界は強くなっていく"
       ],
       "answers": [
         0,
@@ -19659,14 +19663,14 @@
       "type": "multi",
       "question": "気体の集め方について正しいものをすべて選びなさい。",
       "choices": [
-        "水に溶けにくい気体は水上置換法で集める",
         "水に溶けやすく空気より重い気体は上方置換法で集める",
+        "アンモニアは水上置換法で集める",
         "水に溶けやすく空気より軽い気体は上方置換法で集める",
-        "アンモニアは水上置換法で集める"
+        "水に溶けにくい気体は水上置換法で集める"
       ],
       "answers": [
-        0,
-        2
+        2,
+        3
       ],
       "explanation": "水に溶けにくい気体は水上置換法、水に溶けやすく空気より軽い気体は上方置換法、空気より重い気体は下方置換法で集めます。アンモニアは水に非常に溶けやすいので上方置換法です。",
       "difficulty": 2
@@ -19773,15 +19777,17 @@
       "type": "multi",
       "question": "化学変化に当てはまるものをすべて選びなさい。",
       "choices": [
-        "鉄がさびる",
-        "水が凍る",
         "砂糖が水に溶ける",
-        "ドライアイスが気体になる"
+        "木が燃える",
+        "ドライアイスが気体になる",
+        "水が凍る",
+        "鉄がさびる"
       ],
       "answers": [
-        0
+        1,
+        4
       ],
-      "explanation": "鉄がさびるのは鉄が酸素と結びついて別の物質になる化学変化です。水が凍る・ドライアイスが気体になるのは状態変化、砂糖が水に溶けるのは溶解で、どれも新しい物質はできません。",
+      "explanation": "鉄がさびる・木が燃えるのは、酸素と結びついて別の物質ができる化学変化です。水が凍る・ドライアイスが気体になるのは状態変化、砂糖が水に溶けるのは溶解で、新しい物質はできません。",
       "difficulty": 2
     },
     {
@@ -19887,14 +19893,14 @@
       "question": "電解質について正しいものをすべて選びなさい。",
       "choices": [
         "食塩は電解質である",
-        "砂糖は電解質である",
-        "電解質の水溶液は電流を通す",
         "エタノールは電解質である",
-        "電解質は水に溶けると電離する"
+        "砂糖は電解質である",
+        "電解質は水に溶けると電離する",
+        "電解質の水溶液は電流を通す"
       ],
       "answers": [
         0,
-        2,
+        3,
         4
       ],
       "explanation": "食塩（塩化ナトリウム）は水に溶けると陽イオンと陰イオンに電離する電解質で、その水溶液は電流を通します。砂糖やエタノールは電離しない非電解質です。",
@@ -19993,9 +19999,9 @@
       "id": "v036sci_tokyoshoseki_plantsanimals_3",
       "subject": "science",
       "field": "biology",
-      "unit": "plants-animals",
+      "unit": "cells-body",
       "grades": [
-        1
+        2
       ],
       "textbookPublisher": "tokyo-shoseki",
       "textbookComponent": "main",
@@ -20003,14 +20009,14 @@
       "type": "multi",
       "question": "植物と動物の細胞の両方に見られるものをすべて選びなさい。",
       "choices": [
-        "核",
+        "葉緑体",
         "細胞壁",
         "細胞膜",
-        "葉緑体"
+        "核"
       ],
       "answers": [
-        0,
-        2
+        2,
+        3
       ],
       "explanation": "核と細胞膜は植物と動物の細胞の両方にあります。細胞壁と葉緑体は植物の細胞に見られるつくりで、動物の細胞にはありません。",
       "difficulty": 2
@@ -20118,10 +20124,10 @@
       "type": "multi",
       "question": "血液の成分とそのはたらきの組み合わせとして正しいものをすべて選びなさい。",
       "choices": [
-        "赤血球－酸素を運ぶ",
-        "白血球－出血した血液を固める",
         "血しょう－養分や不要物を運ぶ",
-        "血小板－細菌などを分解する"
+        "血小板－細菌などを分解する",
+        "赤血球－酸素を運ぶ",
+        "白血球－出血した血液を固める"
       ],
       "answers": [
         0,
@@ -20232,14 +20238,14 @@
       "type": "multi",
       "question": "無性生殖によるふえ方をすべて選びなさい。",
       "choices": [
-        "ゾウリムシが分裂してふえる",
+        "アブラナが受粉して種子でふえる",
         "カエルが受精卵からふえる",
         "ジャガイモのいもから芽が出てふえる",
-        "アブラナが受粉して種子でふえる"
+        "ゾウリムシが分裂してふえる"
       ],
       "answers": [
-        0,
-        2
+        2,
+        3
       ],
       "explanation": "分裂やいもから芽が出てふえるのは、受精を行わない無性生殖です。カエルの受精卵やアブラナの種子は、卵（卵細胞）と精子（精細胞）の受精でできるので有性生殖です。",
       "difficulty": 2
@@ -20325,13 +20331,13 @@
       "type": "multi",
       "question": "地層ができた当時の環境を知る手がかりとなる示相化石をすべて選びなさい。",
       "choices": [
+        "サンヨウチュウ",
         "サンゴ",
-        "アンモナイト",
         "シジミ",
-        "サンヨウチュウ"
+        "アンモナイト"
       ],
       "answers": [
-        0,
+        1,
         2
       ],
       "explanation": "サンゴはあたたかくて浅い海、シジミは河口や湖のような水域で地層ができたことを示す示相化石です。アンモナイトやサンヨウチュウは地層ができた時代を示す示準化石です。",
@@ -20440,9 +20446,9 @@
       "type": "multi",
       "question": "温暖前線による天気の変化として正しいものをすべて選びなさい。",
       "choices": [
-        "広い範囲に弱い雨が長く降る",
-        "積乱雲が発達し、強い雨が短時間降る",
         "通過後は暖気におおわれ気温が上がる",
+        "積乱雲が発達し、強い雨が短時間降る",
+        "広い範囲に弱い雨が長く降る",
         "通過後は北寄りの風になり気温が下がる"
       ],
       "answers": [
@@ -20556,15 +20562,15 @@
       "question": "太陽系の惑星をすべて選びなさい。",
       "choices": [
         "金星",
-        "月",
-        "木星",
         "冥王星",
-        "火星"
+        "木星",
+        "火星",
+        "月"
       ],
       "answers": [
         0,
         2,
-        4
+        3
       ],
       "explanation": "金星・木星・火星は太陽のまわりを公転する惑星です。月は地球のまわりを回る衛星で、冥王星は現在は惑星ではなく準惑星に分類されています。",
       "difficulty": 2
@@ -20672,15 +20678,15 @@
       "question": "持続可能な社会のために利用が進められている再生可能エネルギーをすべて選びなさい。",
       "choices": [
         "太陽光",
-        "原子力",
-        "風力",
         "天然ガス",
-        "地熱"
+        "地熱",
+        "風力",
+        "原子力"
       ],
       "answers": [
         0,
         2,
-        4
+        3
       ],
       "explanation": "太陽光・風力・地熱は自然の中でくり返し利用でき、なくならない再生可能エネルギーです。天然ガスは化石燃料、原子力はウランを燃料とし、どちらも資源に限りがあります。",
       "difficulty": 2
@@ -22274,15 +22280,15 @@
       "question": "三角形の合同条件に含まれるものをすべて選びなさい。",
       "choices": [
         "3組の辺がそれぞれ等しい",
-        "2組の辺とその間の角がそれぞれ等しい",
-        "1組の辺と1つの角がそれぞれ等しい",
         "1組の辺とその両端の角がそれぞれ等しい",
-        "3組の角がそれぞれ等しい"
+        "3組の角がそれぞれ等しい",
+        "1組の辺と1つの角がそれぞれ等しい",
+        "2組の辺とその間の角がそれぞれ等しい"
       ],
       "answers": [
         0,
         1,
-        3
+        4
       ],
       "explanation": "合同条件は、3組の辺、2組の辺とその間の角、1組の辺とその両端の角がそれぞれ等しいことの3つです。3組の角が等しくても大きさが違う場合があり、1組の辺と1つの角では形が決まりません。",
       "difficulty": 2
@@ -22344,15 +22350,15 @@
       "question": "三角形の合同条件に含まれるものをすべて選びなさい。",
       "choices": [
         "3組の辺がそれぞれ等しい",
-        "2組の辺とその間の角がそれぞれ等しい",
-        "1組の辺と1つの角がそれぞれ等しい",
         "1組の辺とその両端の角がそれぞれ等しい",
-        "3組の角がそれぞれ等しい"
+        "3組の角がそれぞれ等しい",
+        "1組の辺と1つの角がそれぞれ等しい",
+        "2組の辺とその間の角がそれぞれ等しい"
       ],
       "answers": [
         0,
         1,
-        3
+        4
       ],
       "explanation": "合同条件は、3組の辺、2組の辺とその間の角、1組の辺とその両端の角がそれぞれ等しいことの3つです。3組の角が等しくても大きさが違う場合があり、1組の辺と1つの角では形が決まりません。",
       "difficulty": 2
@@ -26122,14 +26128,14 @@
       "question": "三角形の合同条件として正しいものをすべて選びなさい。",
       "explanation": "3組の辺、2組の辺とその間の角がそれぞれ等しければ合同です。3組の角が等しくても大きさが違う場合があり、2組の辺とその間にない角では三角形が1つに決まらないので合同条件ではありません。",
       "choices": [
-        "3組の辺がそれぞれ等しい",
-        "3組の角がそれぞれ等しい",
         "2組の辺とその間の角がそれぞれ等しい",
-        "2組の辺とその間にない角がそれぞれ等しい"
+        "3組の角がそれぞれ等しい",
+        "2組の辺とその間にない角がそれぞれ等しい",
+        "3組の辺がそれぞれ等しい"
       ],
       "answers": [
         0,
-        2
+        3
       ]
     },
     {
@@ -26839,14 +26845,14 @@
       "question": "三角形の合同条件として正しいものをすべて選びなさい。",
       "explanation": "3組の辺、2組の辺とその間の角がそれぞれ等しければ合同です。3組の角が等しくても大きさが違う場合があり、2組の辺とその間にない角では三角形が1つに決まらないので合同条件ではありません。",
       "choices": [
-        "3組の辺がそれぞれ等しい",
-        "3組の角がそれぞれ等しい",
         "2組の辺とその間の角がそれぞれ等しい",
-        "2組の辺とその間にない角がそれぞれ等しい"
+        "3組の角がそれぞれ等しい",
+        "2組の辺とその間にない角がそれぞれ等しい",
+        "3組の辺がそれぞれ等しい"
       ],
       "answers": [
         0,
-        2
+        3
       ]
     },
     {
@@ -48677,15 +48683,15 @@
       "difficulty": 2,
       "question": "「Lesson 6 School Life in the U.S.A.」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "Pardon?",
-        "Sounds good.",
         "One more time, please.",
+        "Me, too.",
         "You're welcome.",
-        "Me, too."
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_sanseido_1_05_3",
@@ -49243,15 +49249,15 @@
       "difficulty": 2,
       "question": "「Lesson 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "I will visit my aunt tomorrow.",
-        "I will visited my aunt tomorrow.",
-        "We are going to play tennis next Sunday.",
+        "We going to play tennis next Sunday.",
         "She is going to plays the piano.",
-        "We going to play tennis next Sunday."
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        2
+        3,
+        4
       ],
       "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_sanseido_2_03_3",
@@ -49317,15 +49323,15 @@
       "difficulty": 2,
       "question": "「Lesson 5」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "I will visit my aunt tomorrow.",
-        "I will visited my aunt tomorrow.",
-        "We are going to play tennis next Sunday.",
+        "We going to play tennis next Sunday.",
         "She is going to plays the piano.",
-        "We going to play tennis next Sunday."
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        2
+        3,
+        4
       ],
       "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_sanseido_2_04_3",
@@ -49394,15 +49400,15 @@
       "difficulty": 2,
       "question": "「Lesson 6」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "Pardon?",
-        "Sounds good.",
         "One more time, please.",
+        "Me, too.",
         "You're welcome.",
-        "Me, too."
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_sanseido_2_05_3",
@@ -49473,13 +49479,13 @@
       "choices": [
         "This book was written in English.",
         "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "Ken is more tall than Aki.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_sanseido_2_06_3",
@@ -49550,13 +49556,13 @@
       "choices": [
         "This book was written in English.",
         "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "Ken is more tall than Aki.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_sanseido_2_07_3",
@@ -50000,15 +50006,15 @@
       "difficulty": 2,
       "question": "「Unit 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "Pardon?",
-        "Sounds good.",
         "One more time, please.",
+        "Me, too.",
         "You're welcome.",
-        "Me, too."
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_tokyo-shoseki_1_05_3",
@@ -50566,15 +50572,15 @@
       "difficulty": 2,
       "question": "「Unit 3」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "I will visit my aunt tomorrow.",
-        "I will visited my aunt tomorrow.",
-        "We are going to play tennis next Sunday.",
+        "We going to play tennis next Sunday.",
         "She is going to plays the piano.",
-        "We going to play tennis next Sunday."
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        2
+        3,
+        4
       ],
       "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_tokyo-shoseki_2_03_3",
@@ -50640,15 +50646,15 @@
       "difficulty": 2,
       "question": "「Unit 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "I will visit my aunt tomorrow.",
-        "I will visited my aunt tomorrow.",
-        "We are going to play tennis next Sunday.",
+        "We going to play tennis next Sunday.",
         "She is going to plays the piano.",
-        "We going to play tennis next Sunday."
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        2
+        3,
+        4
       ],
       "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_tokyo-shoseki_2_04_3",
@@ -50717,15 +50723,15 @@
       "difficulty": 2,
       "question": "「Unit 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "Pardon?",
-        "Sounds good.",
         "One more time, please.",
+        "Me, too.",
         "You're welcome.",
-        "Me, too."
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_tokyo-shoseki_2_05_3",
@@ -50796,13 +50802,13 @@
       "choices": [
         "This book was written in English.",
         "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "Ken is more tall than Aki.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_tokyo-shoseki_2_06_3",
@@ -50873,13 +50879,13 @@
       "choices": [
         "This book was written in English.",
         "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "Ken is more tall than Aki.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_tokyo-shoseki_2_07_3",
@@ -50923,15 +50929,17 @@
       "difficulty": 2,
       "question": "「Unit 0 Discover a New Side of Classmates」の学習に関連する英語練習。英文を正確に読むとき、前に出た語句や内容を指す語をすべて選びなさい。",
       "choices": [
-        "it",
+        "they",
         "because",
         "but",
-        "when"
+        "I",
+        "it"
       ],
       "answers": [
-        0
+        0,
+        4
       ],
-      "explanation": "it は前に出た語句や内容を指す代名詞で、何を指すかを確かめると内容を正確に読めます。because・but・when は文と文をつなぐ接続詞で、理由・逆接・時を表します。",
+      "explanation": "it や they は前に出た語句や内容を指す代名詞で、何を指すかを確かめると内容を正確に読めます。I は話し手自身を指すので前の内容は受けず、because・but は文と文をつなぐ接続詞です。",
       "id": "v040_en_tokyo-shoseki_3_00_2",
       "subject": "english",
       "unit": "reading",
@@ -51397,15 +51405,15 @@
       "difficulty": 2,
       "question": "「PROGRAM 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "Pardon?",
-        "Sounds good.",
         "One more time, please.",
+        "Me, too.",
         "You're welcome.",
-        "Me, too."
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_kairyudo_1_05_3",
@@ -51963,15 +51971,15 @@
       "difficulty": 2,
       "question": "「PROGRAM 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "I will visit my aunt tomorrow.",
-        "I will visited my aunt tomorrow.",
-        "We are going to play tennis next Sunday.",
+        "We going to play tennis next Sunday.",
         "She is going to plays the piano.",
-        "We going to play tennis next Sunday."
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        2
+        3,
+        4
       ],
       "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_kairyudo_2_03_3",
@@ -52037,15 +52045,15 @@
       "difficulty": 2,
       "question": "「PROGRAM 5」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "I will visit my aunt tomorrow.",
-        "I will visited my aunt tomorrow.",
-        "We are going to play tennis next Sunday.",
+        "We going to play tennis next Sunday.",
         "She is going to plays the piano.",
-        "We going to play tennis next Sunday."
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        2
+        3,
+        4
       ],
       "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_kairyudo_2_04_3",
@@ -52114,15 +52122,15 @@
       "difficulty": 2,
       "question": "「PROGRAM 6」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "Pardon?",
-        "Sounds good.",
         "One more time, please.",
+        "Me, too.",
         "You're welcome.",
-        "Me, too."
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_kairyudo_2_05_3",
@@ -52193,13 +52201,13 @@
       "choices": [
         "This book was written in English.",
         "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "Ken is more tall than Aki.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_kairyudo_2_06_3",
@@ -52270,13 +52278,13 @@
       "choices": [
         "This book was written in English.",
         "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "Ken is more tall than Aki.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        2
+        3
       ],
       "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_kairyudo_2_07_3",

@@ -6,8 +6,9 @@ a varied number of correct choices (1-3) and an explanation of every choice.
 
 Reproducible and idempotent. Only the IDs listed below are touched; IDs, type, subject,
 unit, grades and materialIds never change. Questions that were identical stay identical.
-Each ID must currently be in its ORIGINAL state or already in the NEW state, otherwise the
-script refuses to write. Writes data/questions.json (indent=2, ensure_ascii=False) and
+Each ID must currently be in its ORIGINAL state (8aade56~1), the PREVIOUS state published in
+commit 8aade56, or already in the NEW state, otherwise the script refuses to write. Prompts are
+pinned per ID in PROMPTS; choice display order is frozen in CHOICE_ORDER; MOVES fixes a unit/grade. Writes data/questions.json (indent=2, ensure_ascii=False) and
 regenerates data/questions.js.
 """
 import json
@@ -79,9 +80,13 @@ GROUPS = [
         'old': {'choices': ["ever", "never", "once", "last night"],
                 'answers': [0, 1, 2],
                 'explanation': "ever「今までに」・never「一度も〜ない」・once「一度」は経験用法の目印です。last night は過去の時点を表すので現在完了とは使えません。"},
-        'new': {'choices': ["just", "ever", "since", "already"],
-                'answers': [1],
-                'explanation': "ever「今までに」は Have you ever＋過去分詞〜? のように経験用法で使います。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語です。"},
+        # 8aade56 state: "ever" was the lone 経験 marker among just/already/since (reverse odd-one-out).
+        'prev': {'choices': ["just", "ever", "since", "already"],
+                 'answers': [1],
+                 'explanation': "ever「今までに」は Have you ever＋過去分詞〜? のように経験用法で使います。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語です。"},
+        'new': {'choices': ["ever", "just", "once", "already", "since"],
+                'answers': [0, 2],
+                'explanation': "ever「今までに」と once「一度」は経験用法でよく使う語です。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語なので、経験用法の目印ではありません。"},
     },
     {   # social / latitude, longitude
         'ids': ['v036soc_tokyoshoseki_worldoverview_3', 'v036soc_kyoikushuppan_worldoverview_3'],
@@ -260,9 +265,13 @@ GROUPS = [
         'old': {'choices': ["鉄がさびる", "炭酸水素ナトリウムを加熱する", "水が凍る", "木が燃える"],
                 'answers': [0, 1, 3],
                 'explanation': "水が凍るのは状態変化で、新しい物質はできません。"},
-        'new': {'choices': ["鉄がさびる", "水が凍る", "砂糖が水に溶ける", "ドライアイスが気体になる"],
-                'answers': [0],
-                'explanation': "鉄がさびるのは鉄が酸素と結びついて別の物質になる化学変化です。水が凍る・ドライアイスが気体になるのは状態変化、砂糖が水に溶けるのは溶解で、どれも新しい物質はできません。"},
+        # 8aade56 state: the only chemical change among three physical changes (reverse odd-one-out).
+        'prev': {'choices': ["鉄がさびる", "水が凍る", "砂糖が水に溶ける", "ドライアイスが気体になる"],
+                 'answers': [0],
+                 'explanation': "鉄がさびるのは鉄が酸素と結びついて別の物質になる化学変化です。水が凍る・ドライアイスが気体になるのは状態変化、砂糖が水に溶けるのは溶解で、どれも新しい物質はできません。"},
+        'new': {'choices': ["鉄がさびる", "水が凍る", "木が燃える", "砂糖が水に溶ける", "ドライアイスが気体になる"],
+                'answers': [0, 2],
+                'explanation': "鉄がさびる・木が燃えるのは、酸素と結びついて別の物質ができる化学変化です。水が凍る・ドライアイスが気体になるのは状態変化、砂糖が水に溶けるのは溶解で、新しい物質はできません。"},
     },
     {   # science / electrolytes
         'ids': ['v036sci_tokyoshoseki_ions_3'],
@@ -397,9 +406,13 @@ GROUPS = [
         'old': {'choices': ["代名詞が指す内容", "接続語", "時制", "文字の色だけ"],
                 'answers': [0, 1, 2],
                 'explanation': "代名詞・接続語・時制は文や段落の関係を捉える重要な手がかりです。"},
-        'new': {'choices': ["it", "because", "but", "when"],
-                'answers': [0],
-                'explanation': "it は前に出た語句や内容を指す代名詞で、何を指すかを確かめると内容を正確に読めます。because・but・when は文と文をつなぐ接続詞で、理由・逆接・時を表します。"},
+        # 8aade56 state: "it" was the lone pronoun among three conjunctions (reverse odd-one-out).
+        'prev': {'choices': ["it", "because", "but", "when"],
+                 'answers': [0],
+                 'explanation': "it は前に出た語句や内容を指す代名詞で、何を指すかを確かめると内容を正確に読めます。because・but・when は文と文をつなぐ接続詞で、理由・逆接・時を表します。"},
+        'new': {'choices': ["it", "because", "they", "I", "but"],
+                'answers': [0, 2],
+                'explanation': "it や they は前に出た語句や内容を指す代名詞で、何を指すかを確かめると内容を正確に読めます。I は話し手自身を指すので前の内容は受けず、because・but は文と文をつなぐ接続詞です。"},
     },
 ]
 
@@ -412,20 +425,160 @@ REPLACED_ABSURD_DISTRACTORS = [
     "was + 動詞ing だけ", "文字の色だけ",
 ]
 
-UPDATES = {}   # id -> new {question, choices, answers, explanation}, filled by build()
-ORIGINAL = {}  # id -> original {question?, choices, answers, explanation}
+# Display order of the authored new choices, per group (keyed by the first id).
+# Stored choices = [authored[i] for i in order]; answers are remapped. Generated once with
+# random.Random('v0475-order-a:' + first_id).shuffle and frozen here, so the keyed position varies.
+CHOICE_ORDER = {
+    'v030_en_multi_01': [1, 4, 2, 3, 0],
+    'v030_en_multi_02': [3, 1, 2, 0, 4],
+    'v030_ma_multi_01': [0, 2, 4, 1, 3],
+    'v031_hw3_u1_multi_02': [2, 1, 4, 0, 3],
+    'v031_hw3_u2_multi_01': [3, 2, 0, 1],
+    'v034_san_e3_l1_06': [1, 0, 3, 2, 4],
+    'v034_tok_e3_u1_06': [4, 2, 3, 0, 1],
+    'v036soc_tokyoshoseki_worldoverview_3': [0, 1, 2, 4, 3],
+    'v036soc_tokyoshoseki_worldregions_3': [3, 2, 4, 0, 1],
+    'v036soc_tokyoshoseki_japanoverview_3': [0, 2, 1, 4, 3],
+    'v036soc_tokyoshoseki_japanregions_3': [2, 1, 3, 0],
+    'v036soc_tokyoshoseki_regionalstudy_3': [0, 2, 3, 1],
+    'v036soc_tokyoshoseki_ancient_3': [2, 3, 1, 0, 4],
+    'v036soc_tokyoshoseki_medieval_3': [0, 1, 2, 3],
+    'v036soc_tokyoshoseki_earlymodern_3': [3, 0, 4, 1, 2],
+    'v036soc_tokyoshoseki_modern_3': [0, 4, 1, 2, 3],
+    'v036soc_tokyoshoseki_contemporary_3': [2, 3, 1, 4, 0],
+    'v036soc_teikoku_modernsociety_3': [2, 3, 0, 1],
+    'v036soc_teikoku_constitution_3': [3, 1, 0, 4, 2],
+    'v036soc_teikoku_politics_3': [1, 4, 2, 3, 0],
+    'v036soc_teikoku_economy_3': [3, 4, 1, 2, 0],
+    'v036soc_teikoku_international_3': [3, 0, 2, 1, 4],
+    'v036sci_tokyoshoseki_lightsoundforce_3': [0, 3, 2, 4, 1],
+    'v036sci_tokyoshoseki_electricity_3': [2, 3, 0, 1],
+    'v036sci_tokyoshoseki_substances_3': [1, 3, 2, 0],
+    'v036sci_tokyoshoseki_chemicalchange_3': [3, 2, 4, 1, 0],
+    'v036sci_tokyoshoseki_ions_3': [0, 3, 1, 4, 2],
+    'v036sci_tokyoshoseki_plantsanimals_3': [3, 1, 2, 0],
+    'v036sci_tokyoshoseki_cellsbody_3': [2, 3, 0, 1],
+    'v036sci_tokyoshoseki_reproductiongenetics_3': [3, 1, 2, 0],
+    'v036sci_tokyoshoseki_earthchange_3': [3, 0, 2, 1],
+    'v036sci_tokyoshoseki_weather_3': [2, 1, 0, 3],
+    'v036sci_tokyoshoseki_earthspace_3': [0, 3, 2, 4, 1],
+    'v036sci_tokyoshoseki_naturehuman_3': [0, 3, 4, 2, 1],
+    'v036math_gakkotosho_congruence_1': [0, 3, 4, 2, 1],
+    'v037_math_gakko_tosho_g2_congruence_03': [2, 1, 3, 0],
+    'v040_en_sanseido_1_05_3': [2, 4, 3, 0, 1],
+    'v040_en_sanseido_2_03_3': [4, 3, 1, 0, 2],
+    'v040_en_sanseido_2_06_3': [0, 1, 4, 2, 3],
+    'v040_en_tokyo-shoseki_3_00_2': [2, 1, 4, 3, 0],
+}
+
+# Full expected prompt for every id (pinned; includes textbook prefixes and unchanged prompts).
+PROMPTS = {
+    'v030_en_multi_01': "受け身の文をすべて選びなさい。",
+    'v030_en_multi_02': "現在完了が使われている文をすべて選びなさい。",
+    'v030_ma_multi_01': "√12 と等しい表し方をすべて選びなさい。",
+    'v031_hw3_u1_multi_02': "文法的に正しい文をすべて選びなさい。",
+    'v031_hw3_u2_multi_01': "現在完了の文をすべて選びなさい。",
+    'v034_san_e3_l1_06': "現在完了でよく使う語をすべて選びなさい。",
+    'v034_tok_e3_u1_06': "経験用法とよく使う表現をすべて選びなさい。",
+    'v034_kai_e3_p1_06': "経験用法とよく使う表現をすべて選びなさい。",
+    'v036soc_tokyoshoseki_worldoverview_3': "緯度と経度について正しいものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_worldoverview_3': "緯度と経度について正しいものをすべて選びなさい。",
+    'v036soc_tokyoshoseki_worldregions_3': "アジア州に属する国をすべて選びなさい。",
+    'v036soc_kyoikushuppan_worldregions_3': "アジア州に属する国をすべて選びなさい。",
+    'v036soc_tokyoshoseki_japanoverview_3': "日本の領域に含まれるものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_japanoverview_3': "日本の領域に含まれるものをすべて選びなさい。",
+    'v036soc_tokyoshoseki_japanregions_3': "日本の三大都市圏の中心となる都市をすべて選びなさい。",
+    'v036soc_kyoikushuppan_japanregions_3': "日本の三大都市圏の中心となる都市をすべて選びなさい。",
+    'v036soc_tokyoshoseki_regionalstudy_3': "地域調査で使う地形図について正しいものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_regionalstudy_3': "地域調査で使う地形図について正しいものをすべて選びなさい。",
+    'v036soc_tokyoshoseki_ancient_3': "古代の日本に関係するものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_ancient_3': "古代の日本に関係するものをすべて選びなさい。",
+    'v036soc_tokyoshoseki_medieval_3': "室町時代に関係するものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_medieval_3': "室町時代に関係するものをすべて選びなさい。",
+    'v036soc_tokyoshoseki_earlymodern_3': "江戸時代の鎖国中の対外関係として正しいものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_earlymodern_3': "江戸時代の鎖国中の対外関係として正しいものをすべて選びなさい。",
+    'v036soc_tokyoshoseki_modern_3': "明治時代の近代化に関係するものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_modern_3': "明治時代の近代化に関係するものをすべて選びなさい。",
+    'v036soc_tokyoshoseki_contemporary_3': "戦後の日本に関係するものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_contemporary_3': "戦後の日本に関係するものをすべて選びなさい。",
+    'v036soc_teikoku_modernsociety_3': "現代の日本社会のようすとして正しいものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_modernsociety_3': "現代の日本社会のようすとして正しいものをすべて選びなさい。",
+    'v036soc_nihonbunkyo_modernsociety_3': "現代の日本社会のようすとして正しいものをすべて選びなさい。",
+    'v036soc_teikoku_constitution_3': "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_constitution_3': "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
+    'v036soc_nihonbunkyo_constitution_3': "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
+    'v036soc_teikoku_politics_3': "三権分立の三つの権力をすべて選びなさい。",
+    'v036soc_kyoikushuppan_politics_3': "三権分立の三つの権力をすべて選びなさい。",
+    'v036soc_nihonbunkyo_politics_3': "三権分立の三つの権力をすべて選びなさい。",
+    'v036soc_teikoku_economy_3': "労働三権に含まれるものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_economy_3': "労働三権に含まれるものをすべて選びなさい。",
+    'v036soc_nihonbunkyo_economy_3': "労働三権に含まれるものをすべて選びなさい。",
+    'v036soc_teikoku_international_3': "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
+    'v036soc_kyoikushuppan_international_3': "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
+    'v036soc_nihonbunkyo_international_3': "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
+    'v036sci_tokyoshoseki_lightsoundforce_3': "力の三要素をすべて選びなさい。",
+    'v036sci_tokyoshoseki_electricity_3': "電流がつくる磁界について正しいものをすべて選びなさい。",
+    'v036sci_tokyoshoseki_substances_3': "気体の集め方について正しいものをすべて選びなさい。",
+    'v036sci_tokyoshoseki_chemicalchange_3': "化学変化に当てはまるものをすべて選びなさい。",
+    'v036sci_tokyoshoseki_ions_3': "電解質について正しいものをすべて選びなさい。",
+    'v036sci_tokyoshoseki_plantsanimals_3': "植物と動物の細胞の両方に見られるものをすべて選びなさい。",
+    'v036sci_tokyoshoseki_cellsbody_3': "血液の成分とそのはたらきの組み合わせとして正しいものをすべて選びなさい。",
+    'v036sci_tokyoshoseki_reproductiongenetics_3': "無性生殖によるふえ方をすべて選びなさい。",
+    'v036sci_tokyoshoseki_earthchange_3': "地層ができた当時の環境を知る手がかりとなる示相化石をすべて選びなさい。",
+    'v036sci_tokyoshoseki_weather_3': "温暖前線による天気の変化として正しいものをすべて選びなさい。",
+    'v036sci_tokyoshoseki_earthspace_3': "太陽系の惑星をすべて選びなさい。",
+    'v036sci_tokyoshoseki_naturehuman_3': "持続可能な社会のために利用が進められている再生可能エネルギーをすべて選びなさい。",
+    'v036math_gakkotosho_congruence_1': "三角形の合同条件に含まれるものをすべて選びなさい。",
+    'v036math_kyoikushuppan_congruence_1': "三角形の合同条件に含まれるものをすべて選びなさい。",
+    'v037_math_gakko_tosho_g2_congruence_03': "三角形の合同条件として正しいものをすべて選びなさい。",
+    'v037_math_kyoiku_shuppan_g2_congruence_03': "三角形の合同条件として正しいものをすべて選びなさい。",
+    'v040_en_sanseido_1_05_3': "「Lesson 6 School Life in the U.S.A.」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
+    'v040_en_sanseido_2_05_3': "「Lesson 6」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
+    'v040_en_tokyo-shoseki_1_05_3': "「Unit 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
+    'v040_en_tokyo-shoseki_2_05_3': "「Unit 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
+    'v040_en_kairyudo_1_05_3': "「PROGRAM 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
+    'v040_en_kairyudo_2_05_3': "「PROGRAM 6」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
+    'v040_en_sanseido_2_03_3': "「Lesson 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
+    'v040_en_sanseido_2_04_3': "「Lesson 5」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
+    'v040_en_tokyo-shoseki_2_03_3': "「Unit 3」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
+    'v040_en_tokyo-shoseki_2_04_3': "「Unit 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
+    'v040_en_kairyudo_2_03_3': "「PROGRAM 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
+    'v040_en_kairyudo_2_04_3': "「PROGRAM 5」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
+    'v040_en_sanseido_2_06_3': "「Lesson 7」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
+    'v040_en_sanseido_2_07_3': "「Lesson 8」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
+    'v040_en_tokyo-shoseki_2_06_3': "「Unit 6」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
+    'v040_en_tokyo-shoseki_2_07_3': "「Unit 7」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
+    'v040_en_kairyudo_2_06_3': "「PROGRAM 7」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
+    'v040_en_kairyudo_2_07_3': "「PROGRAM 8」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
+    'v040_en_tokyo-shoseki_3_00_2': "「Unit 0 Discover a New Side of Classmates」の学習に関連する英語練習。英文を正確に読むとき、前に出た語句や内容を指す語をすべて選びなさい。",
+}
+
+# Unit/grade moves: (original value, new value). 細胞のつくり is 中2 content (cells-body), not 中1 plants-animals.
+MOVES = {
+    'v036sci_tokyoshoseki_plantsanimals_3': {'unit': ('plants-animals', 'cells-body'), 'grades': ([1], [2])},
+}
+
+UPDATES = {}   # id -> new {choices, answers, explanation} in display order, filled by build()
+PREVIOUS = {}  # id -> state published in commit 8aade56 (authored order; 'prev' where redesigned)
+ORIGINAL = {}  # id -> original {choices, answers, explanation, stem?}
 
 
-def build(by_id=None):
-    """Expand GROUPS into per-ID dicts. The question text is derived from the bank when needed."""
+def build():
+    """Expand GROUPS into per-ID dicts, applying CHOICE_ORDER to the authored new content."""
     for g in GROUPS:
+        order = CHOICE_ORDER[g['ids'][0]]
+        new = g['new']
+        if sorted(order) != list(range(len(new['choices']))):
+            raise SystemExit(f"{g['ids'][0]}: bad CHOICE_ORDER")
+        shown = {'choices': [new['choices'][i] for i in order],
+                 'answers': sorted(order.index(a) for a in new['answers']),
+                 'explanation': new['explanation']}
         for qid in g['ids']:
             ORIGINAL[qid] = dict(g['old'])
-            UPDATES[qid] = dict(g['new'])
+            PREVIOUS[qid] = dict(g.get('prev', new))
+            UPDATES[qid] = dict(shown)
             if 'stem' in g:
-                old_stem, new_stem = g['stem']
-                ORIGINAL[qid]['stem'] = old_stem
-                UPDATES[qid]['stem'] = new_stem
+                ORIGINAL[qid]['stem'], UPDATES[qid]['stem'] = g['stem']
 
 
 build()
@@ -433,16 +586,16 @@ IDS = list(UPDATES)
 
 
 def new_question_text(q, qid):
-    """Return the new prompt for qid given the current question (original or already new)."""
-    if 'stem' not in UPDATES[qid]:
-        return q['question']
-    old_stem, new_stem = ORIGINAL[qid]['stem'], UPDATES[qid]['stem']
+    """Return the pinned prompt for qid; the current text must be the original or the pinned one."""
     text = q['question']
-    if text.endswith(new_stem):
-        return text
-    if not text.endswith(old_stem):
-        sys.exit(f'{qid}: unexpected question text, refusing to overwrite: {text!r}')
-    return text[: -len(old_stem)] + new_stem
+    target = PROMPTS[qid]
+    if text == target:
+        return target
+    if 'stem' in UPDATES[qid]:
+        old_stem, new_stem = ORIGINAL[qid]['stem'], UPDATES[qid]['stem']
+        if text.endswith(old_stem) and text[: -len(old_stem)] + new_stem == target:
+            return target
+    sys.exit(f'{qid}: unexpected question text, refusing to overwrite: {text!r}')
 
 
 def state_of(q, qid):
@@ -450,6 +603,8 @@ def state_of(q, qid):
         return all(q.get(k) == ref[k] for k in ('choices', 'answers', 'explanation'))
     if same(UPDATES[qid]):
         return 'new'
+    if same(PREVIOUS[qid]):
+        return 'previous'
     if same(ORIGINAL[qid]):
         return 'original'
     return None
@@ -472,6 +627,10 @@ def main():
         if state_of(q, qid) is None:
             sys.exit(f'{qid}: unexpected current choices/answers/explanation, refusing to overwrite')
         plan[qid] = new_question_text(q, qid)
+    for qid, fields in MOVES.items():
+        for field, (old, new) in fields.items():
+            if by_id[qid].get(field) not in (old, new):
+                sys.exit(f'{qid}: unexpected {field}, refusing to overwrite')
     changed = 0
     for qid in IDS:
         q = by_id[qid]
@@ -480,6 +639,11 @@ def main():
                              ('answers', new['answers']), ('explanation', new['explanation'])):
             if q.get(field) != value:
                 q[field] = list(value) if isinstance(value, list) else value
+                changed += 1
+    for qid, fields in MOVES.items():
+        for field, (_, new) in fields.items():
+            if by_id[qid].get(field) != new:
+                by_id[qid][field] = list(new) if isinstance(new, list) else new
                 changed += 1
     path.write_text(json.dumps(base, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (ROOT / 'data/questions.js').write_text(

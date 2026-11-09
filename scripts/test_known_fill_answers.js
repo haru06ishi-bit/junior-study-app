@@ -29,8 +29,8 @@ for(const [id,words] of [
   ['v034_san_e3_l1_01',['seen','watched']],
   ['v034_san_e3_l2_01',['studying','learning']],
   ['v034_san_e3_l4_02',['painted','drawn']],
-  ['v034_tok_e3_u1_01',['eaten','had']],
-  ['v034_kai_e3_p1_01',['eaten','had']],
+  ['v034_tok_e3_u1_01',['eaten','had','tried']],
+  ['v034_kai_e3_p1_01',['eaten','had','tried']],
   ['v034_san_e3_l3_01',['built','constructed']],
   ['v040_en_sanseido_1_05_2',['Can','Could','Will','Would']],
 ]) for(const word of words)assert(accepts(id,word),`${id}: ${word}`);

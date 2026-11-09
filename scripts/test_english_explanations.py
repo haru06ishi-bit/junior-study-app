@@ -74,8 +74,43 @@ if q.get('choices', [None])[0] != 'The dog running over there is mine.' or 'I sa
     errors.append('v034_san_e3_l4_05: ambiguous SVOC choice still present')
 if q.get('answers') != [0, 1]:
     errors.append('v034_san_e3_l4_05: answer key changed unexpectedly')
-if set(EXPECTED) | {'v034_san_e3_l4_05'} != set(upd.CORRECTIONS):
+for qid in ('v034_tok_e3_u1_01', 'v034_kai_e3_p1_01'):
+    if by_id.get(qid, {}).get('blanks') != [['eaten', 'had', 'tried']]:
+        errors.append(f'{qid}: tried alias not accepted (eaten must stay first)')
+if set(EXPECTED) | {'v034_san_e3_l4_05', 'v034_tok_e3_u1_01', 'v034_kai_e3_p1_01'} != set(upd.CORRECTIONS):
     errors.append('CORRECTIONS in update script and this test are out of sync')
+
+# 4b. Audit follow-ups stay in the explanations.
+NOTES = {
+    'v034_san_e3_l1_03': '※この問題では once を文末に置く',
+    'v034_tok_e3_u1_03': '※この問題では twice を文末に置く',
+    'v034_kai_e3_p1_03': '※この問題では twice を文末に置く',
+    'v034_tok_e3_u3_04': 'helped me to carry',
+    'v034_tok_e3_u3_05': 'to＋原形',
+    'v034_tok_e3_u3_06': 'to＋原形',
+    'v034_san_e3_l7_06': 'was ではなく were',
+    'v034_tok_e3_u6_06': 'was ではなく were',
+    'v034_kai_e3_p7_06': 'was ではなく were',
+}
+for qid, phrase in NOTES.items():
+    if phrase not in by_id.get(qid, {}).get('explanation', ''):
+        errors.append(f'{qid}: explanation lost audit note {phrase!r}')
+
+# 4c. Answer keys of all 125 IDs are frozen at the audited commit 6d313dd
+#     (only the deliberate tried alias is allowed on top of that snapshot).
+snapshot = json.loads((ROOT / 'scripts/english_explanations_v0474_keys.json').read_text(encoding='utf-8'))
+ALLOWED_KEY_CHANGES = {
+    'v034_tok_e3_u1_01': {'blanks': [['eaten', 'had', 'tried']]},
+    'v034_kai_e3_p1_01': {'blanks': [['eaten', 'had', 'tried']]},
+}
+if set(snapshot) != set(upd.EXPLANATIONS):
+    errors.append('key snapshot ids differ from rewritten ids')
+for qid, keys in snapshot.items():
+    q = by_id.get(qid, {})
+    expected = {**keys, **ALLOWED_KEY_CHANGES.get(qid, {})}
+    for field, value in expected.items():
+        if q.get(field) != value:
+            errors.append(f'{qid}: {field} differs from audited snapshot')
 
 # 5. questions.js mirrors questions.json.
 base = json.loads((ROOT / 'data/questions.json').read_text(encoding='utf-8'))

@@ -6576,7 +6576,7 @@
         4,
         5
       ],
-      "explanation": "経験を表す現在完了は I have＋過去分詞 visited の順です。回数を表す once「一度」は、ふつう目的語 Kyoto の後の文末に置きます。"
+      "explanation": "経験を表す現在完了は I have＋過去分詞 visited の順です。回数を表す once「一度」は目的語 Kyoto の後に置きます。※この問題では once を文末に置く形で答えます。"
     },
     {
       "id": "v034_san_e3_l1_04",
@@ -7712,7 +7712,7 @@
         0,
         2
       ],
-      "explanation": "仮定法は If I were you, I would… のように後半に would を使い、I wish の後も過去形 had にします。will apologize や I wish I have は仮定法の形になっていません。"
+      "explanation": "仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。"
     },
     {
       "id": "v034_san_e3_l8_01",
@@ -7988,10 +7988,11 @@
       "blanks": [
         [
           "eaten",
-          "had"
+          "had",
+          "tried"
         ]
       ],
-      "explanation": "経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten（have の過去分詞 had も可）を入れます。"
+      "explanation": "経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten を入れます（have の過去分詞 had や、「食べてみた」の tried も可）。"
     },
     {
       "id": "v034_tok_e3_u1_02",
@@ -8050,7 +8051,7 @@
         6,
         7
       ],
-      "explanation": "「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に、回数を表す twice を文末に置きます。"
+      "explanation": "「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に回数 twice を置きます。※この問題では twice を文末に置く形で答えます。"
     },
     {
       "id": "v034_tok_e3_u1_04",
@@ -8431,7 +8432,7 @@
         5,
         6
       ],
-      "explanation": "「help＋人＋動詞の原形」で「人が〜するのを手伝う」を表します。helped me の後に原形 carry を置き、目的語 the box を続けます。"
+      "explanation": "「help＋人＋動詞の原形」で「人が〜するのを手伝う」を表します。helped me の後に原形 carry を置き、the box を続けます（help は to を付けて helped me to carry とも言えます）。"
     },
     {
       "id": "v034_tok_e3_u3_05",
@@ -8458,7 +8459,7 @@
         0,
         1
       ],
-      "explanation": "want＋人＋to〜 と It is … for 人 to〜 は正しい形です。let と help の後は動詞の原形を使うので、let me to go と helped me carried は誤りです。"
+      "explanation": "want＋人＋to〜 と It is … for 人 to〜 は正しい形です。let の後は原形なので let me to go は誤り、help の後は原形か to＋原形なので過去形の helped me carried も誤りです。"
     },
     {
       "id": "v034_tok_e3_u3_06",
@@ -8485,7 +8486,7 @@
         0,
         1
       ],
-      "explanation": "let と help は「人＋動詞の原形」をとります。want と ask は「人＋to＋動詞の原形」をとるので、原形を直接続けるのは誤りです。"
+      "explanation": "let と help は「人＋動詞の原形」をとります（help は to＋原形も可）。want と ask は「人＋to＋動詞の原形」をとるので、原形を直接続けるのは誤りです。"
     },
     {
       "id": "v034_tok_e3_u4_01",
@@ -9008,7 +9009,7 @@
         0,
         2
       ],
-      "explanation": "仮定法は If I were you, I would… のように後半に would を使い、I wish の後も過去形 had にします。will apologize や I wish I have は仮定法の形になっていません。"
+      "explanation": "仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。"
     },
     {
       "id": "v034_kai_e3_p1_01",
@@ -9028,10 +9029,11 @@
       "blanks": [
         [
           "eaten",
-          "had"
+          "had",
+          "tried"
         ]
       ],
-      "explanation": "経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten（have の過去分詞 had も可）を入れます。"
+      "explanation": "経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten を入れます（have の過去分詞 had や、「食べてみた」の tried も可）。"
     },
     {
       "id": "v034_kai_e3_p1_02",
@@ -9090,7 +9092,7 @@
         6,
         7
       ],
-      "explanation": "「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に、回数を表す twice を文末に置きます。"
+      "explanation": "「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に回数 twice を置きます。※この問題では twice を文末に置く形で答えます。"
     },
     {
       "id": "v034_kai_e3_p1_04",
@@ -10218,7 +10220,7 @@
         0,
         2
       ],
-      "explanation": "仮定法は If I were you, I would… のように後半に would を使い、I wish の後も過去形 had にします。will apologize や I wish I have は仮定法の形になっていません。"
+      "explanation": "仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。"
     },
     {
       "id": "v034_jp_mitsumura_g3_00_1",

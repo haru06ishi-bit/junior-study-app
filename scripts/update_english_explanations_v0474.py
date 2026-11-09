@@ -14,7 +14,7 @@ PLACEHOLDER = 'この教材で扱う文法・表現に合わせたオリジナ�
 EXPLANATIONS = {
     'v034_san_e3_l1_01': '現在完了「have＋過去分詞」の経験用法です。twice「2回」が経験の目印なので、see の過去分詞 seen（watched も可）を入れます。',
     'v034_san_e3_l1_02': '現在完了の完了用法です。「ちょうど」は just で表し、has と過去分詞 finished の間に置きます。',
-    'v034_san_e3_l1_03': '経験を表す現在完了は I have＋過去分詞 visited の順です。回数を表す once「一度」は、ふつう目的語 Kyoto の後の文末に置きます。',
+    'v034_san_e3_l1_03': '経験を表す現在完了は I have＋過去分詞 visited の順です。回数を表す once「一度」は目的語 Kyoto の後に置きます。※この問題では once を文末に置く形で答えます。',
     'v034_san_e3_l1_04': '現在完了の疑問文は Have を主語の前に出し、Have you＋過去分詞 eaten の順にします。疑問文の「もう」は yet で、文末に置きます。',
     'v034_san_e3_l1_05': '現在完了は have/has＋過去分詞です。主語が He なら has を使うので He have seen は誤りです。yesterday のように過去の一点を示す文は過去形で、現在完了ではありません。',
     'v034_san_e3_l1_06': 'ever「今までに」・just「ちょうど」・already「もう」は現在完了とよく使う語です。yesterday は過去の時点を表すので現在完了とは使えず、過去形で使います。',
@@ -53,16 +53,16 @@ EXPLANATIONS = {
     'v034_san_e3_l7_03': '仮定法過去では be動詞は主語に関係なく were を使い、If I were you とします。コンマの後に I would＋原形 agree with the idea を続けます。',
     'v034_san_e3_l7_04': 'I wish＋仮定法過去で、今かなわない願いを表します。be動詞は were を使って I wish I were taller とします。',
     'v034_san_e3_l7_05': 'If I had…, I would… と I wish I could… は事実と違うことを過去形で表す仮定法です。If it rains… と if I have time は実際に起こりうることを表す普通の条件の文です。',
-    'v034_san_e3_l7_06': '仮定法は If I were you, I would… のように後半に would を使い、I wish の後も過去形 had にします。will apologize や I wish I have は仮定法の形になっていません。',
+    'v034_san_e3_l7_06': '仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。',
     'v034_san_e3_l8_01': '間接疑問では疑問詞 where の後を「主語＋動詞」の語順にします。主語 she は3人称単数なので、live に s を付けて lives です。',
     'v034_san_e3_l8_02': '間接疑問 what he wants は「疑問詞＋主語＋動詞」の順です。does は使わず、主語 he に合わせて want に3単現の s を付けます。',
     'v034_san_e3_l8_03': '文の中に疑問文を入れる間接疑問なので、when の後は he will come の「主語＋動詞」の順にします。will he come とはしません。',
     'v034_san_e3_l8_04': 'tell me の後に間接疑問 where the station is を置きます。疑問詞の後は主語 the station＋動詞 is の順です。',
     'v034_san_e3_l8_05': '間接疑問は「疑問詞＋主語＋動詞」の順なので where she lives・what he wants が正しい形です。does を入れて疑問文の語順にした2つは誤りです。',
     'v034_san_e3_l8_06': '間接疑問は where や what などの疑問詞の後に「主語＋動詞」を続けます。do/does は置かず、主語と動詞を入れかえる倒置もしません。',
-    'v034_tok_e3_u1_01': '経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten（have の過去分詞 had も可）を入れます。',
+    'v034_tok_e3_u1_01': '経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten を入れます（have の過去分詞 had や、「食べてみた」の tried も可）。',
     'v034_tok_e3_u1_02': '「〜へ行ったことがある」は have been to で表します。never と組み合わせた has never been to で「一度も行ったことがない」になります。',
-    'v034_tok_e3_u1_03': '「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に、回数を表す twice を文末に置きます。',
+    'v034_tok_e3_u1_03': '「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に回数 twice を置きます。※この問題では twice を文末に置く形で答えます。',
     'v034_tok_e3_u1_04': '経験をたずねる疑問文は「Have＋主語＋ever＋過去分詞」の順です。ever は過去分詞 made の前に置き、その後に this dish を続けます。',
     'v034_tok_e3_u1_05': '経験用法は have＋過去分詞で、three times や never が経験の目印です。finished…yesterday は過去形、is studying は現在進行形の文です。',
     'v034_tok_e3_u1_06': 'ever「今までに」・never「一度も〜ない」・once「一度」は経験用法の目印です。last night は過去の時点を表すので現在完了とは使えません。',
@@ -75,9 +75,9 @@ EXPLANATIONS = {
     'v034_tok_e3_u3_01': '「It is … for 人 to＋動詞の原形」で「人が〜することは…だ」を表します。for us の後に to を置いて to help とします。',
     'v034_tok_e3_u3_02': '「want＋人＋to＋動詞の原形」で「人に〜してほしい」を表します。you の後に to を置いて to read とします。',
     'v034_tok_e3_u3_03': '「let＋人＋動詞の原形」で「人に〜させてあげる（許す）」を表します。let us の後は to を付けず、原形 open を続けます。',
-    'v034_tok_e3_u3_04': '「help＋人＋動詞の原形」で「人が〜するのを手伝う」を表します。helped me の後に原形 carry を置き、目的語 the box を続けます。',
-    'v034_tok_e3_u3_05': 'want＋人＋to〜 と It is … for 人 to〜 は正しい形です。let と help の後は動詞の原形を使うので、let me to go と helped me carried は誤りです。',
-    'v034_tok_e3_u3_06': 'let と help は「人＋動詞の原形」をとります。want と ask は「人＋to＋動詞の原形」をとるので、原形を直接続けるのは誤りです。',
+    'v034_tok_e3_u3_04': '「help＋人＋動詞の原形」で「人が〜するのを手伝う」を表します。helped me の後に原形 carry を置き、the box を続けます（help は to を付けて helped me to carry とも言えます）。',
+    'v034_tok_e3_u3_05': 'want＋人＋to〜 と It is … for 人 to〜 は正しい形です。let の後は原形なので let me to go は誤り、help の後は原形か to＋原形なので過去形の helped me carried も誤りです。',
+    'v034_tok_e3_u3_06': 'let と help は「人＋動詞の原形」をとります（help は to＋原形も可）。want と ask は「人＋to＋動詞の原形」をとるので、原形を直接続けるのは誤りです。',
     'v034_tok_e3_u4_01': '間接疑問では疑問詞 where の後を「主語＋動詞」の語順にします。主語 she は3人称単数なので、live に s を付けて lives です。',
     'v034_tok_e3_u4_02': '間接疑問 what he wants は「疑問詞＋主語＋動詞」の順です。does は使わず、主語 he に合わせて want に3単現の s を付けます。',
     'v034_tok_e3_u4_03': '文の中に疑問文を入れる間接疑問なので、when の後は he will come の「主語＋動詞」の順にします。will he come とはしません。',
@@ -95,10 +95,10 @@ EXPLANATIONS = {
     'v034_tok_e3_u6_03': '仮定法過去では be動詞は主語に関係なく were を使い、If I were you とします。コンマの後に I would＋原形 agree with the idea を続けます。',
     'v034_tok_e3_u6_04': 'I wish＋仮定法過去で、今かなわない願いを表します。be動詞は were を使って I wish I were taller とします。',
     'v034_tok_e3_u6_05': 'If I had…, I would… と I wish I could… は事実と違うことを過去形で表す仮定法です。If it rains… と if I have time は実際に起こりうることを表す普通の条件の文です。',
-    'v034_tok_e3_u6_06': '仮定法は If I were you, I would… のように後半に would を使い、I wish の後も過去形 had にします。will apologize や I wish I have は仮定法の形になっていません。',
-    'v034_kai_e3_p1_01': '経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten（have の過去分詞 had も可）を入れます。',
+    'v034_tok_e3_u6_06': '仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。',
+    'v034_kai_e3_p1_01': '経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten を入れます（have の過去分詞 had や、「食べてみた」の tried も可）。',
     'v034_kai_e3_p1_02': '「〜へ行ったことがある」は have been to で表します。never と組み合わせた has never been to で「一度も行ったことがない」になります。',
-    'v034_kai_e3_p1_03': '「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に、回数を表す twice を文末に置きます。',
+    'v034_kai_e3_p1_03': '「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に回数 twice を置きます。※この問題では twice を文末に置く形で答えます。',
     'v034_kai_e3_p1_04': '経験をたずねる疑問文は「Have＋主語＋ever＋過去分詞」の順です。ever は過去分詞 made の前に置き、その後に this dish を続けます。',
     'v034_kai_e3_p1_05': '経験用法は have＋過去分詞で、three times や never が経験の目印です。finished…yesterday は過去形、is studying は現在進行形の文です。',
     'v034_kai_e3_p1_06': 'ever「今までに」・never「一度も〜ない」・once「一度」は経験用法の目印です。last night は過去の時点を表すので現在完了とは使えません。',
@@ -136,11 +136,31 @@ EXPLANATIONS = {
     'v034_kai_e3_p7_03': '仮定法過去では be動詞は主語に関係なく were を使い、If I were you とします。コンマの後に I would＋原形 agree with the idea を続けます。',
     'v034_kai_e3_p7_04': 'I wish＋仮定法過去で、今かなわない願いを表します。be動詞は were を使って I wish I were taller とします。',
     'v034_kai_e3_p7_05': 'If I had…, I would… と I wish I could… は事実と違うことを過去形で表す仮定法です。If it rains… と if I have time は実際に起こりうることを表す普通の条件の文です。',
+    'v034_kai_e3_p7_06': '仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。',
+}
+
+# Texts published in commit 6d313dd that were later revised after the independent audit;
+# accepted as a valid starting state so the script stays idempotent from either state.
+PREVIOUS_EXPLANATIONS = {
+    'v034_san_e3_l1_03': '経験を表す現在完了は I have＋過去分詞 visited の順です。回数を表す once「一度」は、ふつう目的語 Kyoto の後の文末に置きます。',
+    'v034_tok_e3_u1_03': '「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に、回数を表す twice を文末に置きます。',
+    'v034_tok_e3_u1_01': '経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten（have の過去分詞 had も可）を入れます。',
+    'v034_tok_e3_u3_04': '「help＋人＋動詞の原形」で「人が〜するのを手伝う」を表します。helped me の後に原形 carry を置き、目的語 the box を続けます。',
+    'v034_tok_e3_u3_05': 'want＋人＋to〜 と It is … for 人 to〜 は正しい形です。let と help の後は動詞の原形を使うので、let me to go と helped me carried は誤りです。',
+    'v034_tok_e3_u3_06': 'let と help は「人＋動詞の原形」をとります。want と ask は「人＋to＋動詞の原形」をとるので、原形を直接続けるのは誤りです。',
+    'v034_san_e3_l7_06': '仮定法は If I were you, I would… のように後半に would を使い、I wish の後も過去形 had にします。will apologize や I wish I have は仮定法の形になっていません。',
+    'v034_kai_e3_p1_03': '「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に、回数を表す twice を文末に置きます。',
+    'v034_kai_e3_p1_01': '経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten（have の過去分詞 had も可）を入れます。',
+    'v034_tok_e3_u6_06': '仮定法は If I were you, I would… のように後半に would を使い、I wish の後も過去形 had にします。will apologize や I wish I have は仮定法の形になっていません。',
     'v034_kai_e3_p7_06': '仮定法は If I were you, I would… のように後半に would を使い、I wish の後も過去形 had にします。will apologize や I wish I have は仮定法の形になっていません。',
 }
 
 # Content corrections found during the teacher review. Answer keys (answers/answerOrder/blanks) are unchanged.
 CORRECTIONS = {
+    # 「食べてみたことがある」の意味で Have you ever tried sushi? も自然な正解なので tried を追加（元の eaten を先頭に維持）
+    'v034_tok_e3_u1_01': {'blanks': [["eaten", "had", "tried"]]},
+    # 同上（v034_tok_e3_u1_01 と同一問題）
+    'v034_kai_e3_p1_01': {'blanks': [["eaten", "had", "tried"]]},
     # has lived は「状態」の継続で「動作」ではないため、旧文「動作を表せる文」では正解 [0,1] と矛盾した
     'v034_san_e3_l2_06': {'question': "過去から今まで続いている動作や状態を表す文をすべて選びなさい。"},
     # 正解の「疑問詞を使える」は語順の特徴ではないため、旧文「正しい語順の特徴」と合っていなかった
@@ -174,7 +194,7 @@ def main():
         q = by_id[qid]
         if q.get('subject') != 'english' or 3 not in q.get('grades', []):
             sys.exit(f'{qid}: not a grade-3 English question')
-        if q.get('explanation') not in (PLACEHOLDER, text):
+        if q.get('explanation') not in (PLACEHOLDER, PREVIOUS_EXPLANATIONS.get(qid), text):
             sys.exit(f'{qid}: unexpected existing explanation, refusing to overwrite')
         if q.get('explanation') != text:
             q['explanation'] = text

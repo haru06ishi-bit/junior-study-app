@@ -44,6 +44,7 @@ jobs:
       - run: python scripts/check_question_quality_regressions.py
       - run: python scripts/test_answer_leakage.py
       - run: python scripts/test_english_explanations.py
+      - run: python scripts/test_multi_distractors.py
       - run: node scripts/test_reorder_grading.js
       - run: node scripts/test_exam_scope.js
       - run: node scripts/test_fill_blank_visibility.js

@@ -12,7 +12,15 @@ spec = importlib.util.spec_from_file_location('upd', ROOT / 'scripts/update_engl
 upd = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(upd)
 
+spec5 = importlib.util.spec_from_file_location('upd5', ROOT / 'scripts/update_multi_distractors_v0475.py')
+upd5 = importlib.util.module_from_spec(spec5)
+spec5.loader.exec_module(upd5)
+# Rebuilt in v0.47.5 (weak multi-select distractors); checked against that script instead.
+SUPERSEDED = set(upd.SUPERSEDED_BY_V0475)
+
 errors = []
+if not SUPERSEDED <= set(upd5.UPDATES):
+    errors.append('SUPERSEDED_BY_V0475 ids are not all in update_multi_distractors_v0475.py')
 questions = load_questions()
 by_id = {q['id']: q for q in questions}
 
@@ -32,6 +40,8 @@ for qid, text in upd.EXPLANATIONS.items():
     exp = q.get('explanation', '')
     if len(exp) < 25:
         errors.append(f'{qid}: explanation shorter than 25 chars')
+    if qid in SUPERSEDED:
+        text = upd5.UPDATES[qid]['explanation']
     if exp != text:
         errors.append(f'{qid}: explanation differs from update script (run scripts/update_english_explanations_v0474.py)')
 
@@ -108,6 +118,8 @@ if set(snapshot) != set(upd.EXPLANATIONS):
 for qid, keys in snapshot.items():
     q = by_id.get(qid, {})
     expected = {**keys, **ALLOWED_KEY_CHANGES.get(qid, {})}
+    if qid in SUPERSEDED:
+        expected = {'type': 'multi', 'choices': upd5.UPDATES[qid]['choices'], 'answers': upd5.UPDATES[qid]['answers']}
     for field, value in expected.items():
         if q.get(field) != value:
             errors.append(f'{qid}: {field} differs from audited snapshot')

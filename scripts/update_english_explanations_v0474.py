@@ -182,6 +182,11 @@ CORRECTIONS = {
 }
 
 
+# Multi-select items whose choices, answers and explanation were rebuilt in v0.47.5
+# (scripts/update_multi_distractors_v0475.py). This script no longer touches them.
+SUPERSEDED_BY_V0475 = {'v034_san_e3_l1_06', 'v034_tok_e3_u1_06', 'v034_kai_e3_p1_06'}
+
+
 def main():
     path = ROOT / 'data/questions.json'
     base = json.loads(path.read_text(encoding='utf-8'))
@@ -191,6 +196,8 @@ def main():
         sys.exit(f'missing ids: {missing}')
     changed = 0
     for qid, text in EXPLANATIONS.items():
+        if qid in SUPERSEDED_BY_V0475:
+            continue
         q = by_id[qid]
         if q.get('subject') != 'english' or 3 not in q.get('grades', []):
             sys.exit(f'{qid}: not a grade-3 English question')

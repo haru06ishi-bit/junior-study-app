@@ -1,4 +1,4 @@
-const APP_VERSION='0.47.4';
+const APP_VERSION='0.47.5';
 function formatDataVersion(base){
  const versions=(window.QUESTION_SUPPLEMENTS||[]).map(s=>s.version);
  return `アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${base} + 補充${versions.length}件（最新 ${versions.at(-1)||'なし'}）`;

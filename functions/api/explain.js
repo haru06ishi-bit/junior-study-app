@@ -30,8 +30,23 @@ function sameOrigin(request,url){
   // Origin がない場合は、ブラウザの Sec-Fetch-Site で同一オリジンと分かるときだけ許可する。
   return request.headers.get('Sec-Fetch-Site')==='same-origin';
 }
-function clientKey(request){
-  return request.headers.get('CF-Connecting-IP')||request.headers.get('X-Forwarded-For')?.split(',')[0]?.trim()||'unknown';
+export function clientKey(request){
+  // 本番では Cloudflare が付ける CF-Connecting-IP だけを使う（X-Forwarded-For は偽装できるため使わない）。
+  const ip=(request.headers.get('CF-Connecting-IP')||'unknown').trim().toLowerCase();
+  // IPv6 は1契約に /64 がまとめて割り当てられることが多いので、/64 単位で数える。
+  if(ip.includes(':')){
+    const [head]=ip.split('::');const parts=head.split(':').filter(Boolean);
+    const full=ip.includes('::')?[...parts,...Array(Math.max(0,4-parts.length)).fill('0')].slice(0,4):ip.split(':').slice(0,4);
+    return 'v6:'+full.map(x=>x.replace(/^0+(?=.)/,'')).join(':');
+  }
+  return ip;
+}
+async function readLimited(request,max){
+  if(!request.body)return'';
+  const reader=request.body.getReader();const chunks=[];let size=0;
+  for(;;){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>max){try{await reader.cancel();}catch{}return null;}chunks.push(value);}
+  const all=new Uint8Array(size);let o=0;for(const c of chunks){all.set(c,o);o+=c.byteLength;}
+  return new TextDecoder().decode(all);
 }
 function prune(list,now,windowMs){while(list.length&&now-list[0]>windowMs)list.shift();return list;}
 export function checkLocalRateLimit(key,now=Date.now()){
@@ -76,8 +91,8 @@ export async function onRequestPost(context){
     if(!type.includes('application/json')){logUsage({status:415});return json({error:'JSON only.'},415);}
     const declared=Number(request.headers.get('content-length'));
     if(Number.isFinite(declared)&&declared>MAX_BODY_BYTES){logUsage({status:413});return json({error:'Request too large.'},413);}
-    const raw=await request.text();
-    if(new TextEncoder().encode(raw).length>MAX_BODY_BYTES){logUsage({status:413});return json({error:'Request too large.'},413);}
+    const raw=await readLimited(request,MAX_BODY_BYTES);
+    if(raw===null){logUsage({status:413});return json({error:'Request too large.'},413);}
     let body;try{body=JSON.parse(raw);}catch{logUsage({status:400,reason:'json'});return json({error:'Invalid JSON.'},400);}
     if(!body||typeof body!=='object'||Array.isArray(body)){logUsage({status:400});return json({error:'Invalid request.'},400);}
     const question=text(body.question,1200);

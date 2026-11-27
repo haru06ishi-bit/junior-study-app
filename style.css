@@ -184,3 +184,4 @@ progress{width:100%;height:12px;margin:10px 0}.import-question-editor{display:gr
 .data-repair-banner p{margin:6px 0 10px}
 .data-repair-actions{display:grid;gap:8px}
 .backup-warning{margin:8px 0 0;color:#b42318;font-weight:700}
+.replace-undo{margin-top:10px}.replace-undo[hidden]{display:none}

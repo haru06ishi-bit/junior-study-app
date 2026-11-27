@@ -48,7 +48,8 @@ function checkStoredDataIntegrity(){
  return issues;
 }
 function repairStoredData(){
- const issues=StorageGuard.audit(localStorage,StorageGuard.GUARDED_KEYS);quarantineCorruptValues(issues);
+ const issues=StorageGuard.audit(localStorage,StorageGuard.GUARDED_KEYS);
+ if(!quarantineCorruptValues(issues)&&issues.some(i=>i.raw!=null)&&!confirm('壊れたデータの控えを端末に保存できませんでした（容量不足）。このまま修復すると、読めなかった部分は端末から消えます。先に「壊れたデータを保存」でファイルに保存することをおすすめします。それでも修復しますか？'))return false;
  let ok=true;for(const it of issues){ok=storeWrite(it.key,StorageGuard.serialize(it.key,it.value))&&ok;}
  pendingStorageIssues=StorageGuard.audit(localStorage,StorageGuard.GUARDED_KEYS);
  const banner=document.getElementById('dataRepairBanner');
@@ -1358,7 +1359,7 @@ function renderWeakUnitStats(){
  rows.forEach(x=>{const row=document.createElement('div');row.className='weak-unit-row';row.innerHTML=`<div><strong>${x.subject.icon} ${escapeHtml(x.unit.name)}</strong><small>${escapeHtml(x.subject.name)} ＞ ${escapeHtml(x.field.name)}</small></div><span>${x.count}問</span>`;el.append(row)});
 }
 function mockResultMetricForQuestions(result,questionIds){const ids=new Set(questionIds),answerMap=new Map((result.answers||[]).map(a=>[a.questionId,a]));let earned=0,max=0,count=0,correct=0;for(const qid of result.questionIds||[]){if(!ids.has(qid))continue;const pts=mockQuestionPoints(result,qid),a=answerMap.get(qid);max+=pts;count++;if(a?.correct){earned+=Number(a.points)||pts;correct++;}}return{earned,max,count,correct,rate:max?Math.round(earned/max*100):0};}
-function renderMockExamHistory(){const el=document.getElementById('mockExamHistory');if(!el)return;const rows=loadMockExamResults().sort((a,b)=>new Date(b.at)-new Date(a.at)).slice(0,12);el.innerHTML='';if(!rows.length){el.innerHTML='<p class="help">まだ模擬テストの結果がありません。</p>';return;}rows.forEach(r=>{const growth=mockGrowthText(r),row=document.createElement('div');row.className='mock-history-row';row.innerHTML=`<div><strong>${escapeHtml(r.examName||'模擬テスト')}</strong><small>${escapeHtml(formatStudyDate(r.at))}${r.retryOf?'・再挑戦':''}${growth?`・${escapeHtml(growth)}`:''}</small></div><span>${Number(r.score)||0}点</span><button class="secondary" type="button" data-open-mock-result="${escapeHtml(r.id)}">結果</button>`;el.append(row)});el.querySelectorAll('[data-open-mock-result]').forEach(b=>b.addEventListener('click',()=>openStoredMockResult(b.dataset.openMockResult)));}
+function renderMockExamHistory(){const el=document.getElementById('mockExamHistory');if(!el)return;const rows=loadMockExamResults().sort((a,b)=>new Date(b.at)-new Date(a.at)).slice(0,12);el.innerHTML='';if(!rows.length){el.innerHTML='<p class="help">まだ模擬テストの結果がありません。</p>';return;}rows.forEach(r=>{const growth=mockGrowthText(r),row=document.createElement('div');row.className='mock-history-row';row.innerHTML=`<div><strong>${escapeHtml(r.examName||'模擬テスト')}</strong><small>${escapeHtml(formatStudyDate(r.at))}${r.retryOf?'・再挑戦':''}${growth?`・${escapeHtml(growth)}`:''}</small></div><span>${Number(r.score)||0}点</span><button class="secondary" type="button" data-open-mock-result="${escapeAttr(r.id)}">結果</button>`;el.append(row)});el.querySelectorAll('[data-open-mock-result]').forEach(b=>b.addEventListener('click',()=>openStoredMockResult(b.dataset.openMockResult)));}
 function mockTrendValues(results,selector){const out=[];for(const r of results){const qids=(r.questionIds||[]).filter(id=>{const q=state.questionBank.find(x=>x.id===id);return q&&selector(q)});if(!qids.length)continue;const m=mockResultMetricForQuestions(r,qids);if(m.max)out.push({at:r.at,rate:m.rate});}return out.slice(-6);}
 function trendText(values){return values.map(x=>`${x.rate}%`).join(' → ');}
 function renderMockTrendStats(){const subjectEl=document.getElementById('mockSubjectTrends'),unitEl=document.getElementById('mockUnitTrends');if(!subjectEl||!unitEl)return;const results=loadMockExamResults().sort((a,b)=>new Date(a.at)-new Date(b.at));subjectEl.innerHTML='';unitEl.innerHTML='';if(!results.length){subjectEl.innerHTML='<p class="help">模擬テストを受けると教科別の推移が表示されます。</p>';unitEl.innerHTML='<p class="help">模擬テストを受けると単元別の推移が表示されます。</p>';return;}
@@ -1486,8 +1487,9 @@ function renderImportQuestions(){const el=document.getElementById('importQuestio
   else if(q.type==='word'){a.innerHTML=`<label>正解（複数ある場合は | で区切る）<input type="text" data-answer-word value="${escapeAttr((q.answers||[]).filter(x=>typeof x==='string').join(' | '))}" placeholder="例：源頼朝 | みなもとのよりとも"></label>`;a.querySelector('[data-answer-word]').oninput=e=>q.answers=e.target.value.split('|').map(x=>x.trim()).filter(Boolean);}
   else{a.innerHTML=`<label>模範解答<textarea data-model-answer rows="4" placeholder="文章・記述問題の模範解答">${escapeHtml(q.modelAnswer||'')}</textarea></label>`;a.querySelector('[data-model-answer]').oninput=e=>q.modelAnswer=e.target.value;}};
  card.querySelector('[data-iq="question"]').oninput=e=>q.question=e.target.value;card.querySelector('[data-iq="explanation"]').oninput=e=>q.explanation=e.target.value;card.querySelector('[data-iq="type"]').onchange=e=>{q.type=e.target.value;renderType()};card.querySelector('.remove-question').onclick=()=>{state.importQuestions.splice(idx,1);renderImportQuestions()};renderType();el.append(card)});}
-function escapeHtml(v){return String(v).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]))}
-function escapeAttr(v){return escapeHtml(v).replace(/"/g,'&quot;')}
+// 本文・属性のどちらに入れても安全なよう、引用符もエスケープする（v0.47.6 監査指摘）。
+function escapeHtml(v){return String(v??'').replace(/[&<>"'`]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','`':'&#96;'}[m]))}
+function escapeAttr(v){return escapeHtml(v)}
 document.getElementById('splitQuestions').onclick=splitRecognizedText;document.getElementById('addImportQuestion').onclick=()=>{state.importQuestions.push(newImportQuestion());renderImportQuestions()};
 function releaseImportedObjectUrls(){importedObjectUrls.forEach(url=>URL.revokeObjectURL(url));importedObjectUrls=[];}
 function renderImportPreview(message='取り込んだページを確認してください。文字がぼやけている場合は撮り直してください。'){
@@ -1813,7 +1815,7 @@ function backupSummaryFromData(data){
   drafts:readArray('paperDrafts').length
  };
 }
-function openBackup(){showView('backupView');pendingBackupData=null;const p=document.getElementById('backupPreview');if(p)p.hidden=true;const a=document.getElementById('backupImportActions');if(a)a.hidden=true;const f=document.getElementById('backupFile');if(f)f.value='';document.getElementById('importBackupStatus').textContent='';}
+function openBackup(){showView('backupView');renderReplaceUndo();pendingBackupData=null;const p=document.getElementById('backupPreview');if(p)p.hidden=true;const a=document.getElementById('backupImportActions');if(a)a.hidden=true;const f=document.getElementById('backupFile');if(f)f.value='';document.getElementById('importBackupStatus').textContent='';}
 function downloadBackup(){
  const payload={app:'30min-study',schemaVersion:1,appVersion:APP_VERSION,exportedAt:new Date().toISOString(),data:backupDataSnapshot()};
  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
@@ -1834,7 +1836,7 @@ function renderBackupPreview(payload){
  el.innerHTML=`<strong>バックアップを確認</strong><dl class="backup-summary"><div><dt>作成日時</dt><dd>${escapeHtml(when)}</dd></div><div><dt>学習履歴</dt><dd>${Number(sum.history)}件</dd></div><div><dt>苦手問題</dt><dd>${Number(sum.missed)}問</dd></div><div><dt>登録問題</dt><dd>${Number(sum.custom)}問</dd></div><div><dt>定期テスト</dt><dd>${Number(sum.exams)}件</dd></div><div><dt>紙テスト下書き</dt><dd>${Number(sum.drafts)}件</dd></div></dl>`;
  if(corrupt.length||repaired.length){const p=document.createElement('p');p.className='backup-warning';p.textContent=`注意：${corrupt.length?`壊れていて読めない項目が${corrupt.length}種類あります（取り込みません）。`:''}${repaired.length?`不正な記録${repaired.reduce((n,i)=>n+i.dropped,0)}件を除外しました。`:''}`;el.append(p);}
  el.hidden=false;document.getElementById('backupImportActions').hidden=false;
- const rep=document.getElementById('replaceBackup');if(rep){rep.disabled=corrupt.length>0;rep.title=corrupt.length?'壊れた項目があるため、置き換えはできません（追加は可能です）。':'';}
+ const block=replaceBlockReason(payload);const rep=document.getElementById('replaceBackup');if(rep){rep.disabled=!!block;rep.title=block||'';}if(block){const p=document.createElement('p');p.className='help';p.textContent=`置き換えはできません：${block}（「追加」は使えます）`;el.append(p);}
 }
 function uniqueMerge(current,incoming,keyFn){const map=new Map();[...current,...incoming].forEach(item=>{const key=keyFn(item);if(key!=null&&!map.has(key))map.set(key,item);else if(key==null)map.set(`anon-${map.size}`,item)});return [...map.values()]}
 const BACKUP_MERGE_KEYS={
@@ -1860,6 +1862,17 @@ function mergeBackupData(data){
  const curDate=storeRead('lastStudyDate')||'';const inDate=StorageGuard.inspectRaw('lastStudyDate',data.lastStudyDate||'').value||'';if(inDate>curDate){ok=storeWrite('lastStudyDate',inDate)&&ok;if(data.streakDays)ok=storeWrite('streakDays',StorageGuard.inspectRaw('streakDays',data.streakDays).value)&&ok;}
  return ok;
 }
+// 置き換えは既存データを消すため、バックアップが完全に正常で、学習記録を含む場合だけ許可する。
+const RECORD_KEYS=['studyHistory','missedQuestions','customQuestions','examPlans','mockExamResults','examStudyLogs','paperDrafts'];
+function countRecords(data,keys=RECORD_KEYS){let n=0;for(const k of keys){if(typeof data?.[k]!=='string')continue;const v=StorageGuard.inspectRaw(k,data[k]).value;if(Array.isArray(v))n+=v.length;}return n;}
+function replaceBlockReason(payload){
+ const issues=payload?.issues||[];
+ if(issues.some(i=>i.status==='corrupt'))return'壊れていて読めない項目があります';
+ if(issues.some(i=>i.status==='repaired'))return'不正な記録が含まれています';
+ const incoming=countRecords(payload?.data);const current=countRecords(backupDataSnapshot());
+ if(incoming===0&&current>0)return'このバックアップには学習記録が入っていません';
+ return'';
+}
 const REPLACE_SNAPSHOT_KEY='studyDataBeforeReplace';
 function replaceBackupData(data){
  // 置き換え前の状態を端末内に1世代だけ控える。控えを保存できない場合は中止する。
@@ -1874,10 +1887,25 @@ function replaceBackupData(data){
  if(!ok){BACKUP_KEYS.forEach(k=>storeRemove(k));Object.entries(before).forEach(([k,v])=>{try{localStorage.setItem(k,v)}catch{}});showAppNotice('置き換えを保存できなかったため、元のデータに戻しました。','error');return false;}
  return true;
 }
-function refreshAfterBackup(){refreshQuestionBank();migrateTextbookPreference();initSchoolTextbookSettings();renderTextbookSettings();renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();document.getElementById('streakDays').textContent=storeRead('streakDays')||0;checkStoredDataIntegrity();}
+function renderReplaceUndo(){
+ const box=document.getElementById('replaceUndo');if(!box)return;let snap=null;try{snap=JSON.parse(localStorage.getItem(REPLACE_SNAPSHOT_KEY)||'null');}catch{}
+ const ok=snap&&typeof snap==='object'&&snap.data&&typeof snap.data==='object';box.hidden=!ok;if(!ok)return;
+ const t=new Date(snap.at);box.querySelector('[data-undo-when]').textContent=Number.isNaN(t.getTime())?'':t.toLocaleString('ja-JP');
+}
+function undoReplace(){
+ let snap=null;try{snap=JSON.parse(localStorage.getItem(REPLACE_SNAPSHOT_KEY)||'null');}catch{}
+ if(!snap?.data||typeof snap.data!=='object')return;
+ const {clean,issues}=StorageGuard.validateBackupData(snap.data,BACKUP_KEYS);
+ if(!confirm('置き換える前のデータに戻します。現在のデータは、置き換え前のデータで上書きされます。続けますか？'))return;
+ const before=backupDataSnapshot();BACKUP_KEYS.forEach(k=>storeRemove(k));let ok=true;Object.entries(clean).forEach(([k,v])=>{ok=storeWrite(k,v)&&ok});
+ if(!ok){BACKUP_KEYS.forEach(k=>storeRemove(k));Object.entries(before).forEach(([k,v])=>{try{localStorage.setItem(k,v)}catch{}});showAppNotice('元に戻せませんでした。保存容量を確認してください。','error');return;}
+ storeRemove(REPLACE_SNAPSHOT_KEY);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=`置き換える前のデータに戻しました${issues.length?'（読めない部分は除きました）':''}。`;
+}
+document.getElementById('undoReplaceBackup')?.addEventListener('click',undoReplace);
+function refreshAfterBackup(){renderReplaceUndo();refreshQuestionBank();migrateTextbookPreference();initSchoolTextbookSettings();renderTextbookSettings();renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();document.getElementById('streakDays').textContent=storeRead('streakDays')||0;checkStoredDataIntegrity();}
 document.getElementById('exportBackup')?.addEventListener('click',downloadBackup);
 document.getElementById('backupFile')?.addEventListener('change',async e=>{
  const file=e.target.files?.[0];if(!file)return;try{if(file.size>5*1024*1024)throw new Error('バックアップファイルが大きすぎます（上限5MB）。');const text=await file.text();let parsed;try{parsed=JSON.parse(text);}catch{throw new Error('JSONとして読み込めません。');}const obj=validateBackup(parsed);pendingBackupData=obj;renderBackupPreview(obj);document.getElementById('importBackupStatus').textContent='内容を確認して、追加または置き換えを選んでください。';}catch(err){pendingBackupData=null;document.getElementById('backupPreview').hidden=true;document.getElementById('backupImportActions').hidden=true;document.getElementById('importBackupStatus').textContent=`読み込めませんでした：${err.message}`;}
 });
 document.getElementById('mergeBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;const ok=mergeBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=ok?'現在のデータにバックアップを追加しました。':'一部を保存できませんでした。保存容量を確認してください。';});
-document.getElementById('replaceBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;if((pendingBackupData.issues||[]).some(i=>i.status==='corrupt')){document.getElementById('importBackupStatus').textContent='壊れた項目があるため、置き換えはできません。';return;}if(!confirm('この端末に現在保存されている学習データを、選択したバックアップの内容で置き換えます。続けますか？'))return;const ok=replaceBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=ok?'バックアップの内容でこの端末のデータを置き換えました（置き換え前のデータは端末内に1世代控えています）。':'置き換えを中止しました。';});
+document.getElementById('replaceBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;const block=replaceBlockReason(pendingBackupData);if(block){document.getElementById('importBackupStatus').textContent=`置き換えはできません：${block}`;return;}if(!confirm('この端末に現在保存されている学習データを、選択したバックアップの内容で置き換えます。続けますか？'))return;const ok=replaceBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=ok?'バックアップの内容でこの端末のデータを置き換えました（置き換え前のデータは端末内に1世代控えています）。':'置き換えを中止しました。';});

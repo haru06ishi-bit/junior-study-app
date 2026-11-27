@@ -18,8 +18,8 @@ function evilData(realIds,wellTyped=false){
  const now=new Date().toISOString(),day=new Date(Date.now()+10*864e5).toISOString().slice(0,10);
  const s=v=>JSON.stringify(v);
  return {
-  examPlans:s([{id:'e1',name:P,date:day,grade:2,units:['social/geography/world-overview'],materials:[P],purpose:P,auto:true},{id:'e2',name:P2,date:P,grade:P,units:[P]}]),
-  mockExamResults:s([{id:'m1',examId:'e1',examName:P,at:now,grade:P,score:P,totalPoints:P,correct:P,total:P,rate:P,minutes:P,questionIds:realIds,answers:[{questionId:realIds[0],correct:false,answer:P}],pointsByQuestion:{[realIds[0]]:P}},{id:'m2',examId:'e1',examName:P2,at:now,grade:2,score:P,totalPoints:100,correct:1,total:2,rate:50,questionIds:realIds,answers:[],retryOf:'m1',rootAttemptId:'m1'}]),
+  examPlans:s([{id:'e1',name:P,date:day,grade:2,units:['social/geography/world-overview'],materials:[P],purpose:P,auto:true},...(wellTyped?[]:[{id:'e2',name:P2,date:P,grade:P,units:[P]}])]),
+  mockExamResults:s([{id:'x" onclick="window.__xss=(window.__xss||0)+1" onfocus="window.__xss=(window.__xss||0)+1" autofocus="',examId:'e1',examName:P,at:now,questionIds:realIds,answers:[]},{id:'m1',examId:'e1',examName:P,at:now,grade:P,score:P,totalPoints:P,correct:P,total:P,rate:P,minutes:P,questionIds:realIds,answers:[{questionId:realIds[0],correct:false,answer:P}],pointsByQuestion:{[realIds[0]]:P}},{id:'m2',examId:'e1',examName:P2,at:now,grade:2,score:P,totalPoints:100,correct:1,total:2,rate:50,questionIds:realIds,answers:[],retryOf:'m1',rootAttemptId:'m1'}]),
   customQuestions:s([{id:'custom-x1',subject:'social',unit:'world-overview',field:'geography',grades:[P,1],type:'choice',question:P,choices:[P,P2,'c','d'],answer:0,explanation:P,textbookPublisher:P,materialIds:[P]},{id:'custom-x2',subject:P,unit:P,grades:[2],type:'text',question:P2,modelAnswer:P,explanation:P}]),
   studyHistory:s([{at:now,grade:P,subject:P,total:P,score:P,rate:P,mode:P,questionIds:[P],answerResults:[{questionId:P,correct:true,assist:P}],examId:P}]),
   missedQuestions:s([{questionId:P,count:P,lastAt:P}]),
@@ -38,7 +38,7 @@ async function visitAll(page){
  await go('quiz');await page.locator('#subjectChoices .subject-btn',{hasText:'社会'}).click();
  const box=page.locator('#unitChoices input[type=checkbox]');if(await box.count())await box.first().check();
  await go('exam');if(await page.locator('.exam-plan-card .exam-edit').count()){await page.locator('.exam-plan-card .exam-edit').first().click();}
- await go('stats');const hist=page.locator('#mockExamHistory button, #mockExamHistory [data-result-id], #mockExamHistory .mock-history-item');if(await hist.count())await hist.first().click().catch(()=>{});
+ await go('stats');for(let i=0;i<await page.locator('[data-open-mock-result]').count();i++){await page.evaluate(()=>goHome());await page.click('[data-action=stats]');await page.locator('[data-open-mock-result]').nth(i).click().catch(()=>{});}
  await page.evaluate(()=>{const r=loadMockExamResults();if(r.length&&typeof showMockExamResultDetails==='function'){try{showMockExamResultDetails(r[r.length-1].id)}catch(e){}}});
  await go('manage');const edit=page.locator('#manageQuestionList [data-edit]');if(await edit.count())await edit.first().click();
  await go('textbooks');await go('backup');
@@ -48,7 +48,7 @@ async function visitAll(page){
  await page.evaluate(()=>goHome());
 }
 async function assertNoXss(page,label){
- const r=await page.evaluate(()=>({flag:window.__xss||0,nodes:document.querySelectorAll('[data-xss]').length}));
+ const r=await page.evaluate(()=>({flag:window.__xss||0,nodes:document.querySelectorAll('[data-xss],[onclick],[onfocus],[onerror],[onload],[autofocus]').length}));
  assert.deepEqual(r,{flag:0,nodes:0},`${label}: XSS executed or injected markup present`);
 }
 async function importBackup(page,data,mode){
@@ -158,7 +158,22 @@ async function run(width){
     assert.match(await page.locator('#importBackupStatus').textContent(),/読み込めませんでした/);
     assert.equal(await page.locator('#backupImportActions').isVisible(),false,'actions hidden for rejected file');
    }
-   assert.deepEqual(errors,[]);await ctx.close();results.push('merge-order');
+   // 置き換えは、不正な記録を含む／学習記録が空のバックアップでは使えない（既存データを守る）
+   for(const data of[{studyHistory:'[{"foo":1}]',customQuestions:'[{"x":1}]'},{streakDays:'abc'},{studyHistory:'[]'}]){
+    await page.evaluate(()=>{document.getElementById('importBackupStatus').textContent='';});
+    const f=path.join(TMP,`rep-${Math.random().toString(36).slice(2)}.json`);fs.writeFileSync(f,JSON.stringify({app:'30min-study',schemaVersion:1,data}));await page.setInputFiles('#backupFile',f);
+    await page.waitForSelector('#backupPreview:not([hidden])');await page.waitForFunction(()=>document.getElementById('replaceBackup').disabled===true,null,{timeout:8000});
+   }
+   assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('studyHistory')).length),300,'existing history untouched');
+   // 正常なバックアップで置き換え → 元に戻す
+   const f2=path.join(TMP,`rep-ok-${Date.now()}.json`);fs.writeFileSync(f2,JSON.stringify({app:'30min-study',schemaVersion:1,data:{studyHistory:JSON.stringify([mk(0,5000)])}}));
+   await page.setInputFiles('#backupFile',f2);await page.waitForFunction(()=>document.getElementById('replaceBackup').disabled===false,null,{timeout:8000});await page.click('#replaceBackup');
+   await page.waitForFunction(()=>JSON.parse(localStorage.getItem('studyHistory')).length===1);
+   assert.equal(await page.locator('#replaceUndo').isVisible(),true,'undo offered after replace');
+   await page.click('#undoReplaceBackup');
+   await page.waitForFunction(()=>JSON.parse(localStorage.getItem('studyHistory')).length===300,null,{timeout:8000});
+   assert.equal(await page.locator('#replaceUndo').isVisible(),false);
+   assert.deepEqual(errors,[]);await ctx.close();results.push('merge-order','replace-guard','undo-replace');
   }
   // ---- 5. 通常利用のデータを誤判定しない（互換性） ----
   {

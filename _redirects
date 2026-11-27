@@ -1,1 +1,2 @@
-/* /index.html 200
+# v0.47.6: 以前の "/* /index.html 200" は、wrangler（Cloudflare Pages のローカル実行環境）で「無限ループのため無視」と判定されたため削除した。
+# 存在しないパスは、404.html がない場合 Pages が index.html を返す（SPA と同じ動き。ローカル環境で確認）。

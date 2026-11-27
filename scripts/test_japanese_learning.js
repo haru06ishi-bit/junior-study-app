@@ -3,6 +3,7 @@ const app=fs.readFileSync('app.js','utf8');
 function functionSource(name){const start=app.indexOf(`function ${name}(`);assert(start>=0,name);let end=app.indexOf('\nfunction ',start+1);if(end<0)end=app.length;return app.slice(start,end).split('\ndocument.')[0];}
 const storage=new Map(),state={questionBank:[],answers:[],index:0,session:[]};
 const ctx={state,console,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,String(v))},studyHistory:()=>ctx.history||[],pickQuestionsForMaterials:(pool,count)=>pool.slice(0,count),availableQuestions:()=>ctx.pool||[]};
+ctx.StorageGuard=require(require('node:path').join(__dirname,'..','storage-guard.js'));ctx.notifyStorageFailure=()=>{};for(const n of ['storeRaw','storeRead','storeWrite','storeRemove'])vm.runInNewContext(functionSource(n),ctx);
 for(const name of ['questionMaterialIds','questionMatchesMaterials','validJapaneseLearningPrefs','loadJapaneseLearningPrefs','setJapaneseHardStart','japaneseCorrectStreaks','japaneseDifficultyTarget','adaptRemainingJapaneseQuiz'])vm.runInNewContext(functionSource(name),ctx);
 assert.equal(ctx.loadJapaneseLearningPrefs().hardStart,false);
 for(const value of ['{bad','null','[]','{"hardStart":"true"}','{"hardStart":1}']){storage.set('japaneseLearningPrefs',value);assert.equal(ctx.loadJapaneseLearningPrefs().hardStart,false,value);}

@@ -6,7 +6,7 @@
 
 ## 構成
 - 静的PWA（Cloudflare Pages）。ビルドはない。
-- 読み込み順：`index.html` → `data/*.js` → `reorder-grading.js` / `exam-scope.js` / `recall-ladder.js` → `app.js`。
+- 読み込み順：`index.html` → `data/*.js` → `reorder-grading.js` / `exam-scope.js` / `recall-ladder.js` / `storage-guard.js` → `app.js`。
 - 問題データ：`data/questions.json`（`questions.js` と同じ内容）＋ `data/question-supplement-v*.js`。Python 側は `scripts/question_bank_loader.py` で読み込む。
 - 学習記録はすべて端末の localStorage にある。キーを追加したら `BACKUP_KEYS` と `mergeBackupData` にも追加する。
 - `/api/explain`（functions/api）は Cloudflare Workers AI を使う。
@@ -25,9 +25,11 @@
 
 ## 検査（すべて成功させること）
 ```
-python3 scripts/validate_questions.py && python3 scripts/audit_shizuoka.py && python3 scripts/check_question_quality_regressions.py && python3 scripts/test_answer_leakage.py && node scripts/test_reorder_grading.js && node scripts/test_exam_scope.js && node scripts/test_fill_blank_visibility.js && node scripts/test_known_fill_answers.js && node scripts/test_data_version_footer.js && node scripts/test_supplement_parity.js && python3 scripts/report_question_coverage.py --json >/dev/null && node scripts/test_recall_ladder.js
-node scripts/e2e_recall_practice.js   # 実ブラウザ。Playwright＋Chromium が必要（npm i --no-save playwright && npx playwright install chromium）
+scripts/run_all_checks.sh          # 全検査（CI と同じ。ブラウザ検査は Playwright＋Chromium が必要）
+scripts/run_all_checks.sh --quick  # ブラウザ検査を除いた高速版
 ```
+Claude Code では `.claude/settings.json` のフックにより、`git commit` の前に `--quick` が自動実行される。
+安全性の方針と Cloudflare 側の未実施作業：`docs/SECURITY_V0476.md`。localStorage の読み書きは `storeRead`／`storeWrite`（`storage-guard.js`）を使う。
 
 ## ブランチ運用と承認
 - 基準ブランチは `review/v0.44.7-full`。機能ごとにブランチを作り、Draft PR を出す。

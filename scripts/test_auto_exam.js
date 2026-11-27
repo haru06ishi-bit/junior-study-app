@@ -9,6 +9,7 @@ const state={curriculum:{subjects},questionBank:[
  {id:'ja',subject:'japanese',unit:'shared',grades:[1,2,3],difficulty:1,materialIds:['other-book']},
 ]};
 let uid=0;const store=new Map();const ctx={state,ExamScope,crypto:{randomUUID:()=>`auto-${++uid}`},matchesSelectedTextbook:()=>true,smartQuestionOrder:pool=>pool,localStorage:{getItem:k=>store.get(k)||null}};
+ctx.StorageGuard=require(require('node:path').join(__dirname,'..','storage-guard.js'));ctx.notifyStorageFailure=()=>{};for(const n of ['storeRaw','storeRead','storeWrite','storeRemove'])vm.runInNewContext(source(n),ctx);
 for(const name of ['unitKey','questionMaterialIds','questionMatchesMaterials','materialPriorityOrder','questionDifficulty','dateOnlyLocal','examUnitIds','examQuestionPool','autoExamPurpose','buildAutoExamPlan','buildExamSession','loadExamPlans'])vm.runInNewContext(source(name),ctx);
 const now=new Date(2026,10,9,12);
 for(const [purpose,day] of [['basics',16],['review',23],['mock',12]]){

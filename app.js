@@ -1,9 +1,69 @@
-const APP_VERSION='0.47.5';
+const APP_VERSION='0.47.6';
 function formatDataVersion(base){
  const versions=(window.QUESTION_SUPPLEMENTS||[]).map(s=>s.version);
  return `アプリ ${APP_VERSION} / 単元 ${state.curriculum.version} / 問題 ${base} + 補充${versions.length}件（最新 ${versions.at(-1)||'なし'}）`;
 }
 const state={grade:2,subject:null,units:new Set(),quizMaterials:new Set(),count:5,quizTextbookYear:2026,curriculum:null,builtInQuestions:[],questionBank:[],session:[],index:0,score:0,answers:[],sessionContext:null,review:{grade:'all',subject:'all',field:'',units:new Set(),count:5},exam:{editId:null,grade:2,units:new Set(),textbookYear:2026,materials:new Set(),openSubjects:new Set()},mockExam:{planId:null,count:20,minutes:30,lastResultId:null},importGrade:2,importQuestions:[],importPages:[],manageEditId:null,pdfAssetBase:null,pdfWorkerUrl:null,ocrScriptUrl:null,textbookData:null};
+// ---- 端末データの安全な読み書き（v0.47.6） ----
+// 読み込みは StorageGuard で型を検証・正規化し、壊れていてもアプリを止めない。
+// 書き込みは容量不足などで失敗しても例外を投げず、利用者に知らせる。
+function storeRaw(key){return StorageGuard.safeGet(localStorage,key);}
+function storeRead(key){return StorageGuard.read(localStorage,key);}
+function storeWrite(key,value){
+ try{localStorage.setItem(key,typeof value==='string'?value:StorageGuard.serialize(key,value));return true;}
+ catch(err){console.warn('storage write failed',key,err);notifyStorageFailure(err);return false;}
+}
+function storeRemove(key){try{localStorage.removeItem(key);return true;}catch(err){console.warn('storage remove failed',key,err);return false;}}
+let storageFailureShownAt=0;
+function notifyStorageFailure(err){
+ const now=Date.now();if(now-storageFailureShownAt<4000)return;storageFailureShownAt=now;
+ const quota=/quota/i.test(String(err?.name||''))||/quota/i.test(String(err?.message||''))||err?.code===22;
+ showAppNotice(quota?'端末の保存容量が足りないため、学習記録を保存できませんでした。「データを引き継ぐ」からバックアップを保存し、不要なデータを整理してください。':'学習記録を保存できませんでした。ブラウザの設定（プライベートモードなど）を確認してください。','error');
+}
+function showAppNotice(message,kind='info'){
+ const el=document.getElementById('appNotice');if(!el){console.warn(message);return;}
+ el.hidden=false;el.className=`app-notice ${kind}`;el.querySelector('[data-notice-text]').textContent=message;
+}
+document.getElementById('appNotice')?.querySelector('[data-notice-close]')?.addEventListener('click',()=>{document.getElementById('appNotice').hidden=true;});
+// 起動時の点検：壊れたキーを見つけたら、まず元の値を別キーへ写し（消さない）、修復ボタンを出す。
+const QUARANTINE_KEY='studyDataQuarantine';
+let pendingStorageIssues=[];
+function quarantineCorruptValues(issues){
+ if(!issues.length)return false;
+ let box={};try{const raw=localStorage.getItem(QUARANTINE_KEY);const parsed=raw?JSON.parse(raw):{};if(parsed&&typeof parsed==='object'&&!Array.isArray(parsed))box=parsed;}catch{}
+ const at=new Date().toISOString();
+ for(const it of issues){if(it.raw==null)continue;const list=Array.isArray(box[it.key])?box[it.key]:[];if(list.some(x=>x?.raw===it.raw))continue;list.push({at,status:it.status,raw:it.raw});box[it.key]=list.slice(-3);}
+ try{localStorage.setItem(QUARANTINE_KEY,JSON.stringify(box));return true;}catch(err){console.warn('quarantine save failed',err);return false;}
+}
+function checkStoredDataIntegrity(){
+ let issues=[];try{issues=StorageGuard.audit(localStorage,StorageGuard.GUARDED_KEYS);}catch(err){console.warn('integrity check failed',err);}
+ pendingStorageIssues=issues;
+ const banner=document.getElementById('dataRepairBanner');if(!banner)return issues;
+ if(!issues.length){banner.hidden=true;return issues;}
+ const saved=quarantineCorruptValues(issues);
+ const labels={studyHistory:'学習履歴',missedQuestions:'苦手問題',examPlans:'定期テスト',examStudyLogs:'定期テストの学習記録',mockExamResults:'模擬テスト結果',customQuestions:'登録問題',paperDrafts:'紙テスト下書き',textbookStudyRanges:'教科書の学習範囲',recallRecords:'思い出す練習の記録',streakDays:'連続学習日数',lastStudyDate:'最終学習日'};
+ const names=[...new Set(issues.map(i=>labels[i.key]||'設定'))].join('・');
+ banner.hidden=false;
+ banner.querySelector('[data-repair-text]').textContent=`一部の学習データ（${names}）が壊れていたため、読める部分だけで動かしています。${saved?'元のデータは端末内に控えを残しました。':'控えを保存できなかったので、先に「壊れたデータを保存」を押してください。'}正常なデータは消していません。`;
+ return issues;
+}
+function repairStoredData(){
+ const issues=StorageGuard.audit(localStorage,StorageGuard.GUARDED_KEYS);quarantineCorruptValues(issues);
+ let ok=true;for(const it of issues){ok=storeWrite(it.key,StorageGuard.serialize(it.key,it.value))&&ok;}
+ pendingStorageIssues=StorageGuard.audit(localStorage,StorageGuard.GUARDED_KEYS);
+ const banner=document.getElementById('dataRepairBanner');
+ if(!pendingStorageIssues.length){banner.hidden=true;showAppNotice('壊れていた部分を修復しました。正常な学習データはそのまま残っています。','info');}
+ else if(!ok){showAppNotice('修復した内容を保存できませんでした。保存容量を確認してください。','error');}
+ return ok;
+}
+function downloadQuarantinedData(){
+ const issues=pendingStorageIssues.length?pendingStorageIssues:StorageGuard.audit(localStorage,StorageGuard.GUARDED_KEYS);
+ let box={};try{box=JSON.parse(localStorage.getItem(QUARANTINE_KEY)||'{}')||{};}catch{}
+ const payload={app:'30min-study',kind:'corrupt-data',exportedAt:new Date().toISOString(),current:Object.fromEntries(issues.map(i=>[i.key,i.raw])),quarantine:box};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='study-corrupt-data.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+document.getElementById('repairStoredData')?.addEventListener('click',repairStoredData);
+document.getElementById('downloadCorruptData')?.addEventListener('click',downloadQuarantinedData);
 
 const TEXTBOOK_CANDIDATES={
  version:'r7-2025-2028',validYears:[2025,2026,2027,2028],
@@ -239,6 +299,7 @@ function handleAction(action){
 }
 
 async function init(){
+ checkStoredDataIntegrity();
  state.textbookData=SHIZUOKA_TEXTBOOK_FALLBACK;
  migrateTextbookPreference();
  initSchoolTextbookSettings();
@@ -262,18 +323,18 @@ async function init(){
    console.error(error);
    document.getElementById('selectionSummary').textContent='学習データを読み込めませんでした。';
  }
- document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;
+ document.getElementById('streakDays').textContent=storeRead('streakDays')||0;
 }
 function renderQuiz(){if(!state.curriculum)return;renderGrades();renderSubjects();renderSubjectTextbookPanel();renderQuizTextbookCandidates();renderQuizSelectedMaterials();renderUnits();updateSummary();}
 function renderGrades(){const el=document.getElementById('gradeChoices');el.innerHTML='';[1,2,3].forEach(g=>{const b=document.createElement('button');b.className='chip'+(state.grade===g?' selected':'');b.textContent=`中${g}`;b.onclick=()=>{state.grade=g;state.units.clear();state.quizMaterials.clear();renderQuiz()};el.append(b)})}
 function renderSubjects(){const el=document.getElementById('subjectChoices');el.innerHTML='';state.curriculum.subjects.forEach(s=>{const b=document.createElement('button');b.className='subject-btn'+(state.subject===s.id?' selected':'');b.innerHTML=`<span>${s.icon}</span><strong>${s.name}</strong>`;b.onclick=()=>{state.subject=s.id;state.units.clear();state.quizMaterials.clear();renderQuiz()};el.append(b)})}
 function loadSchoolTextbookPreference(){
- try{const p=JSON.parse(localStorage.getItem('schoolTextbookPreference')||'{}')||{};if(!p.overrides||typeof p.overrides!=='object')p.overrides={};return p}catch{return{district:'',overrides:{}}}
+ try{const p=storeRead('schoolTextbookPreference')||{};if(!p.overrides||typeof p.overrides!=='object')p.overrides={};return p}catch{return{district:'',overrides:{}}}
 }
-function saveSchoolTextbookPreference(pref){if(!pref.overrides||typeof pref.overrides!=='object')pref.overrides={};localStorage.setItem('schoolTextbookPreference',JSON.stringify(pref));}
+function saveSchoolTextbookPreference(pref){if(!pref.overrides||typeof pref.overrides!=='object')pref.overrides={};storeWrite('schoolTextbookPreference',JSON.stringify(pref));}
 function migrateTextbookPreference(){
- if(localStorage.getItem('schoolTextbookPreference'))return;
- try{const old=JSON.parse(localStorage.getItem('japaneseTextbookPreference')||'{}');if(old?.district)saveSchoolTextbookPreference({district:old.district});}catch{}
+ if(storeRaw('schoolTextbookPreference'))return;
+ try{const old=storeRead('japaneseTextbookPreference');if(old?.district)saveSchoolTextbookPreference({district:old.district});}catch{}
 }
 function selectedTextbookDistrict(){const id=loadSchoolTextbookPreference().district||'';return state.textbookData?.districts?.find(d=>d.id===id)||null;}
 function publisherLabel(id){return state.textbookData?.publishers?.[id]?.name||id||'';}
@@ -356,8 +417,8 @@ function renderTextbookSettings(){
  document.querySelectorAll('[data-textbook-subject]').forEach(sel=>{sel.onchange=()=>setTextbookOverride(sel.dataset.textbookSubject,sel.dataset.textbookPart,sel.value);});
 }
 
-function loadTextbookStudyRanges(){try{const x=JSON.parse(localStorage.getItem('textbookStudyRanges')||'[]');return Array.isArray(x)?x:[]}catch{return[]}}
-function saveTextbookStudyRanges(items){localStorage.setItem('textbookStudyRanges',JSON.stringify(items.slice(-200)));}
+function loadTextbookStudyRanges(){try{const x=storeRead('textbookStudyRanges');return Array.isArray(x)?x:[]}catch{return[]}}
+function saveTextbookStudyRanges(items){storeWrite('textbookStudyRanges',JSON.stringify(items.slice(-200)));}
 function rangePublisher(subjectId){const part=subjectId==='japanese'?'language':'main';return subjectAdoption(subjectId)?.[part]||'';}
 function rangeEligibleUnits(subjectId,grade){const sub=state.curriculum?.subjects?.find(s=>s.id===subjectId);const out=[];(sub?.fields||[]).forEach(f=>(f.units||[]).filter(u=>u.grades.includes(Number(grade))).forEach(u=>out.push({key:unitKey(subjectId,f.id,u.id),field:f.name,unit:u.name})));return out;}
 function renderTextbookRangeManager(){
@@ -503,8 +564,8 @@ function availableQuestions(){
 function questionDifficulty(q){const d=Number(q?.difficulty)||1;return Math.max(1,Math.min(3,d));}
 function difficultyLabel(q){return({1:'基礎',2:'標準',3:'応用'})[questionDifficulty(q)]||'基礎';}
 function validJapaneseLearningPrefs(value){return value&&typeof value==='object'&&!Array.isArray(value)&&typeof value.hardStart==='boolean'?{hardStart:value.hardStart}:null;}
-function loadJapaneseLearningPrefs(){try{return validJapaneseLearningPrefs(JSON.parse(localStorage.getItem('japaneseLearningPrefs')||'null'))||{hardStart:false}}catch{return{hardStart:false}}}
-function setJapaneseHardStart(on){try{localStorage.setItem('japaneseLearningPrefs',JSON.stringify({hardStart:!!on}))}catch(err){console.warn('Japanese preference save failed',err)}}
+function loadJapaneseLearningPrefs(){try{return validJapaneseLearningPrefs(storeRead('japaneseLearningPrefs'))||{hardStart:false}}catch{return{hardStart:false}}}
+function setJapaneseHardStart(on){try{storeWrite('japaneseLearningPrefs',JSON.stringify({hardStart:!!on}))}catch(err){console.warn('Japanese preference save failed',err)}}
 function renderJapaneseDifficultyToggle(){const row=document.getElementById('japaneseDifficultyRow'),box=document.getElementById('japaneseHardStart');if(!row||!box)return;row.hidden=state.subject!=='japanese';box.checked=loadJapaneseLearningPrefs().hardStart;}
 function japaneseCorrectStreaks(){
  const qmap=new Map(state.questionBank.map(q=>[q.id,q])),out=new Map();
@@ -540,7 +601,7 @@ function unitAccuracyMap(){
 }
 function smartQuestionOrder(pool){
  const attempts=questionAttemptStats(), mastery=unitAccuracyMap(),japaneseStreaks=japaneseCorrectStreaks(),japanesePrefs=loadJapaneseLearningPrefs();
- const missed=new Map((JSON.parse(localStorage.getItem('missedQuestions')||'[]')||[]).map(x=>[x.questionId,x]));
+ const missed=new Map((storeRead('missedQuestions')||[]).map(x=>[x.questionId,x]));
  const now=Date.now();const recallRecords=loadRecallRecords();
  return [...pool].map(q=>{
   const st=attempts.get(q.id)||{attempts:0,correct:0,lastAt:null};const acc=mastery.get(`${q.subject}/${q.unit}`);
@@ -573,7 +634,7 @@ document.getElementById('startQuiz').onclick=()=>{
  const pool=availableQuestions();if(!pool.length){alert('選んだ単元には、まだ問題が登録されていません。別の単元を選ぶか、紙テストから問題を追加してください。');return}
  const limit=state.count==='all'?'all':Math.min(state.count,pool.length);
  state.answers=[];state.session=pickQuestionsForMaterials(pool,limit,state.quizMaterials);state.index=0;state.score=0;state.sessionContext={mode:'quiz',materials:[...state.quizMaterials],textbookYear:state.quizTextbookYear,recall:recallPracticeEnabled(state.subject)};resetRecallSessionState();
- localStorage.setItem('lastQuizSelection',JSON.stringify({grade:state.grade,subject:state.subject,units:[...state.units],count:state.count,textbookYear:state.quizTextbookYear,materials:[...state.quizMaterials]}));
+ storeWrite('lastQuizSelection',JSON.stringify({grade:state.grade,subject:state.subject,units:[...state.units],count:state.count,textbookYear:state.quizTextbookYear,materials:[...state.quizMaterials]}));
  showView('playView');renderQuestion();
 };
 
@@ -701,9 +762,9 @@ function feedbackHeadline(correct,assist,recall){
  return'正解！';
 }
 // ---- 想起練習（v0.47.0）：まず自力で思い出す → 段階ヒント → 選択肢 → 時間を空けてヒントなしで再挑戦 ----
-function loadRecallPrefs(){try{const x=JSON.parse(localStorage.getItem('recallPracticePrefs')||'{}');return x&&typeof x==='object'&&!Array.isArray(x)?x:{}}catch{return{}}}
+function loadRecallPrefs(){try{const x=storeRead('recallPracticePrefs');return x&&typeof x==='object'&&!Array.isArray(x)?x:{}}catch{return{}}}
 function recallPracticeEnabled(subject){return RecallLadder.isRecallSubject(subject)&&RecallLadder.defaultPref(subject,loadRecallPrefs());}
-function setRecallPractice(subject,on){const p=loadRecallPrefs();p[subject]=!!on;try{localStorage.setItem('recallPracticePrefs',JSON.stringify(p))}catch(err){console.warn('recall pref save failed',err)}}
+function setRecallPractice(subject,on){const p=loadRecallPrefs();p[subject]=!!on;try{storeWrite('recallPracticePrefs',JSON.stringify(p))}catch(err){console.warn('recall pref save failed',err)}}
 function renderRecallToggle(){
  const row=document.getElementById('recallToggleRow'),box=document.getElementById('recallPractice');if(!row||!box)return;
  const ok=RecallLadder.isRecallSubject(state.subject);row.hidden=!ok;if(!ok)return;
@@ -713,14 +774,14 @@ function renderRecallToggle(){
 function recallActiveFor(q){return!!(state.sessionContext?.recall&&state.sessionContext?.mode==='quiz'&&RecallLadder.supportsRecallMode(q));}
 function recallCapableInSession(q){return recallActiveFor(q)||['word','fill'].includes(q?.type);}
 function resetRecallSessionState(){state.retryQueued=new Set();state.retryAnswers=[];state.recallStep=null;}
-function loadRecallRecords(){try{return RecallLadder.sanitizeRecords(JSON.parse(localStorage.getItem('recallRecords')||'{}'))}catch{return{}}}
+function loadRecallRecords(){try{return RecallLadder.sanitizeRecords(storeRead('recallRecords'))}catch{return{}}}
 function recordRecallResult(q,result){
  if(!q?.id)return null;
- try{const all=loadRecallRecords();all[q.id]=RecallLadder.updateRecord(all[q.id],result);localStorage.setItem('recallRecords',JSON.stringify(all));return all[q.id];}
+ try{const all=loadRecallRecords();all[q.id]=RecallLadder.updateRecord(all[q.id],result);storeWrite('recallRecords',JSON.stringify(all));return all[q.id];}
  catch(err){console.warn('recall record save failed',err);return null}
 }
 function removeMissedQuestion(id){
- try{const arr=JSON.parse(localStorage.getItem('missedQuestions')||'[]');if(!Array.isArray(arr))return false;const next=arr.filter(x=>x?.questionId!==id);if(next.length===arr.length)return false;localStorage.setItem('missedQuestions',JSON.stringify(next));return true;}catch{return false}
+ try{const arr=storeRead('missedQuestions');if(!Array.isArray(arr))return false;const next=arr.filter(x=>x?.questionId!==id);if(next.length===arr.length)return false;storeWrite('missedQuestions',JSON.stringify(next));return true;}catch{return false}
 }
 function queueRecallRetry(q){
  if(!state.retryQueued)state.retryQueued=new Set();if(state.retryQueued.has(q.id))return false;state.retryQueued.add(q.id);
@@ -805,18 +866,28 @@ function renderAiExplanation(target,text){
   list=null;const p=document.createElement('p');p.textContent=line;target.append(p);
  }
 }
+// AI解説の端末ごとの1日上限（サーバー側の制限とは別の、使いすぎ防止）。学習データではないのでバックアップ対象外。
+const AI_EXPLAIN_DAILY_LIMIT=30;
+function consumeAiExplainQuota(){
+ const today=dateOnlyLocal(new Date());let u={};try{const x=JSON.parse(localStorage.getItem('aiExplainUsage')||'{}');if(x&&typeof x==='object')u=x;}catch{}
+ const count=u.date===today?Number(u.count)||0:0;if(count>=AI_EXPLAIN_DAILY_LIMIT)return false;
+ try{localStorage.setItem('aiExplainUsage',JSON.stringify({date:today,count:count+1}));}catch{}
+ return true;
+}
 function appendAiExplanationControl(host,q){
  const wrap=document.createElement('div');wrap.className='ai-explain-box';
  const btn=document.createElement('button');btn.type='button';btn.className='secondary ai-explain-btn';btn.textContent='✨ AIで詳しく解説';
  const note=document.createElement('p');note.className='ai-privacy-note';note.textContent='押したときだけ、問題文と正解をCloudflare Workers AIへ送信します。氏名・テスト名・学習履歴は送信しません。';
  const out=document.createElement('div');out.className='ai-explain-result';out.hidden=true;
  btn.onclick=async()=>{
+  if(!consumeAiExplainQuota()){out.hidden=false;out.textContent=`AI解説は1日${AI_EXPLAIN_DAILY_LIMIT}回までです。通常の解説を読んで、明日また使ってください。`;return;}
   btn.disabled=true;btn.textContent='AIが考えています…';out.hidden=false;out.textContent='解説を作成しています。';
   try{
    const subject=state.curriculum?.subjects.find(x=>x.id===q.subject)?.name||'';
    const payload={grade:Number(q.grades?.[0]||state.grade||2),subject,question:String(q.question||'').slice(0,1200),answer:String(formatCorrectAnswer(q)||'').slice(0,800),choices:Array.isArray(q.choices)?q.choices.slice(0,8).map(x=>String(x).slice(0,300)):(Array.isArray(q.items)?q.items.slice(0,12).map(x=>String(x).slice(0,200)):[])};
    const res=await fetch('/api/explain',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
    const data=await res.json().catch(()=>({}));
+   if(res.status===429){out.textContent='AI解説の利用が集中しています。少し時間をおいてから試してください。';btn.textContent='もう一度試す';btn.disabled=false;return;}
    if(!res.ok)throw new Error(data.error||`HTTP ${res.status}`);
    renderAiExplanation(out,data.explanation||'AI解説を取得できませんでした。');
    btn.textContent='AI解説を更新';btn.disabled=false;
@@ -852,7 +923,7 @@ function gradeChoiceAnswer(answer,button=null,dontKnow=false){const q=state.sess
 function gradeWordAnswer(value,dontKnow=false){const q=state.session[state.index];const correct=!dontKnow&&acceptedTextAnswers(q).some(a=>normalizeText(a)===normalizeText(value));document.querySelectorAll('#answerArea input,#answerArea button').forEach(x=>x.disabled=true);finishAnswer(correct,dontKnow);}
 function showTextSelfCheck(userText){const q=state.session[state.index];document.querySelectorAll('#answerArea textarea,#answerArea button').forEach(x=>x.disabled=true);document.getElementById('dontKnow').disabled=true;const fb=document.getElementById('feedback');fb.hidden=false;fb.className='feedback';fb.innerHTML=`<strong>模範解答</strong><p>${escapeHtml(q.modelAnswer||q.answerText||'')}</p><p>${escapeHtml(q.explanation||'')}</p><p class="help">自分の答えと比べて判定してください。</p><div class="self-check-row"><button id="selfOk" class="primary" type="button">できた</button><button id="selfNg" class="secondary" type="button">できなかった</button></div>`;appendAiExplanationControl(fb,q);document.getElementById('selfOk').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(true,false,'',{selfJudged:true})};document.getElementById('selfNg').onclick=()=>{fb.querySelector('.self-check-row').remove();finishAnswer(false,false)};}
 function gradeAnswer(answer,button=null,dontKnow=false){const q=state.session[state.index];if(q.type==='choice')gradeChoiceAnswer(answer,button,dontKnow);else if(q.type==='multi')gradeMultiAnswer([],dontKnow);else if(q.type==='reorder')gradeReorderAnswer([],dontKnow);else if(q.type==='fill')gradeFillAnswer([],dontKnow);else if(q.type==='word')gradeWordAnswer('',dontKnow);else finishAnswer(false,true);}
-function saveMissed(q,dontKnow){const arr=JSON.parse(localStorage.getItem('missedQuestions')||'[]');const old=arr.find(x=>x.questionId===q.id);if(old){old.count=(old.count||1)+1;old.lastAt=new Date().toISOString();old.dontKnow=old.dontKnow||dontKnow}else arr.push({questionId:q.id,count:1,lastAt:new Date().toISOString(),dontKnow});localStorage.setItem('missedQuestions',JSON.stringify(arr));}
+function saveMissed(q,dontKnow){const arr=storeRead('missedQuestions');const old=arr.find(x=>x.questionId===q.id);if(old){old.count=(old.count||1)+1;old.lastAt=new Date().toISOString();old.dontKnow=old.dontKnow||dontKnow}else arr.push({questionId:q.id,count:1,lastAt:new Date().toISOString(),dontKnow});storeWrite('missedQuestions',JSON.stringify(arr));}
 document.getElementById('dontKnow').onclick=()=>{if(state.sessionContext?.mode==='mockExam')submitMockAnswer({dontKnow:true});else gradeAnswer(null,null,true)};
 document.getElementById('nextQuestion').onclick=()=>{state.index++;renderQuestion()};
 document.getElementById('quitQuiz').onclick=()=>{const label=state.sessionContext?.mode==='mockExam'?'模擬テスト':'小テスト';if(confirm(`この${label}を終了しますか？`))goHome()};
@@ -862,8 +933,8 @@ function finishQuiz(){
  document.getElementById('resultEyebrow').textContent=state.sessionContext?.mode==='mockReview'?'模擬テスト復習完了':'小テスト完了';document.getElementById('retryQuiz').textContent='もう一度挑戦';document.getElementById('backHomeResult').textContent='ホームへ戻る';
  const primary=state.session.filter(q=>!q.__retryOf);const total=primary.length;const rate=total?Math.round(state.score/total*100):0;
  document.getElementById('resultScore').textContent=`${state.score} / ${total}`;document.getElementById('resultRate').textContent=`正答率 ${rate}%`;renderRecallResultSummary();
- const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate,mode:state.sessionContext?.mode||'quiz',examId:state.sessionContext?.examId||null,materials:state.sessionContext?.materials||[],textbookYear:state.sessionContext?.textbookYear||null,questionIds:primary.map(q=>q.id),answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt,...(a.assist?{assist:a.assist}:{}),...(a.recallMode?{recallMode:true}:{}),...(a.selfJudged?{selfJudged:true}:{})})),...(state.sessionContext?.recall?{recall:true,retryResults:(state.retryAnswers||[]).map(a=>({questionId:a.questionId,correct:!!a.correct,assist:a.assist,answeredAt:a.answeredAt}))}:{})});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-300)));
- if(state.sessionContext?.examId){const logs=loadExamStudyLogs();logs.push({id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,at:new Date().toISOString(),questionIds:primary.map(q=>q.id),score:state.score,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));}
+ const history=storeRead('studyHistory');history.push({at:new Date().toISOString(),grade:state.grade,subject:state.subject,total,score:state.score,rate,mode:state.sessionContext?.mode||'quiz',examId:state.sessionContext?.examId||null,materials:state.sessionContext?.materials||[],textbookYear:state.sessionContext?.textbookYear||null,questionIds:primary.map(q=>q.id),answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt,...(a.assist?{assist:a.assist}:{}),...(a.recallMode?{recallMode:true}:{}),...(a.selfJudged?{selfJudged:true}:{})})),...(state.sessionContext?.recall?{recall:true,retryResults:(state.retryAnswers||[]).map(a=>({questionId:a.questionId,correct:!!a.correct,assist:a.assist,answeredAt:a.answeredAt}))}:{})});storeWrite('studyHistory',JSON.stringify(history.slice(-300)));
+ if(state.sessionContext?.examId){const logs=loadExamStudyLogs();logs.push({id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,at:new Date().toISOString(),questionIds:primary.map(q=>q.id),score:state.score,total,rate});storeWrite('examStudyLogs',JSON.stringify(logs.slice(-300)));}
  updateStreak();showView('resultView');
 }
 function renderRecallResultSummary(){
@@ -887,18 +958,18 @@ function renderRecallStats(){
  const pct=n=>Math.round(n/x.total*100);
  el.innerHTML=`<div class="recall-stat-bar" role="img" aria-label="自力${pct(x.counts.free)}%、ヒント${pct(x.counts.hint)}%、選択肢${pct(x.counts.choice)}%、不正解${pct(x.counts.none)}%"><span class="free" style="width:${pct(x.counts.free)}%"></span><span class="hint" style="width:${pct(x.counts.hint)}%"></span><span class="choice" style="width:${pct(x.counts.choice)}%"></span><span class="none" style="width:${pct(x.counts.none)}%"></span></div><ul class="recall-stat-legend"><li><i class="free"></i>自力で正解 ${x.counts.free}問</li><li><i class="hint"></i>ヒントで正解 ${x.counts.hint}問</li><li><i class="choice"></i>選択肢なら正解 ${x.counts.choice}問</li><li><i class="none"></i>不正解 ${x.counts.none}問</li></ul><p class="help">定着した問題（日を空けて3回自力で正解）：${x.mastered}問 ／ 今日の復習予定：${x.due}問</p>`;
 }
-function updateStreak(){const today=new Date().toISOString().slice(0,10);const last=localStorage.getItem('lastStudyDate');let streak=Number(localStorage.getItem('streakDays')||0);if(last!==today){const y=new Date();y.setDate(y.getDate()-1);streak=last===y.toISOString().slice(0,10)?streak+1:1;localStorage.setItem('lastStudyDate',today);localStorage.setItem('streakDays',streak)}document.getElementById('streakDays').textContent=streak;renderDailyPlanPreview();}
+function updateStreak(){const today=new Date().toISOString().slice(0,10);const last=storeRead('lastStudyDate');let streak=Number(storeRead('streakDays')||0);if(last!==today){const y=new Date();y.setDate(y.getDate()-1);streak=last===y.toISOString().slice(0,10)?streak+1:1;storeWrite('lastStudyDate',today);storeWrite('streakDays',streak)}document.getElementById('streakDays').textContent=streak;renderDailyPlanPreview();}
 document.getElementById('backHomeResult').onclick=()=>{if(state.sessionContext?.mode==='mockExamHistory'){openStats();return;}goHome();};
 document.getElementById('retryQuiz').onclick=()=>{if(state.sessionContext?.mode==='mockExam'||state.sessionContext?.mode==='mockExamHistory'){const id=state.sessionContext?.resultId||state.mockExam.lastResultId;if(id){startMockExamRetry(id);return;}openMockExamSetup(state.sessionContext?.examId);return;}state.index=0;state.score=0;state.answers=[];state.session=state.session.filter(q=>!q.__retryOf).sort(()=>Math.random()-.5);resetRecallSessionState();showView('playView');renderQuestion()};
 function loadCustomQuestions(){
- try{return JSON.parse(localStorage.getItem('customQuestions')||'[]')}catch{return []}
+ try{return storeRead('customQuestions')}catch{return []}
 }
-function saveCustomQuestions(items){localStorage.setItem('customQuestions',JSON.stringify(items));refreshQuestionBank();}
+function saveCustomQuestions(items){storeWrite('customQuestions',JSON.stringify(items));refreshQuestionBank();}
 function refreshQuestionBank(){state.questionBank=[...state.builtInQuestions,...loadCustomQuestions()];}
 function normalizeText(v){return String(v??'').normalize('NFKC').trim().replace(/[’‘]/g,"'").replace(/\.+$/,'').replace(/\s+/g,'').toLowerCase();}
 function acceptedTextAnswers(q){return (q.answers?.length?q.answers:[q.answerText]).filter(Boolean);}
 function getMissedPool(){
- const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]');
+ const missed=storeRead('missedQuestions');
  const ids=new Set(missed.map(x=>x.questionId));
  return state.questionBank.filter(q=>ids.has(q.id));
 }
@@ -942,14 +1013,14 @@ document.getElementById('startFilteredReview').onclick=()=>{const pool=filteredR
 
 function loadExamPlans(){
  try{
-  const data=JSON.parse(localStorage.getItem('examPlans')||'[]');if(!Array.isArray(data))return[];
+  const data=storeRead('examPlans');if(!Array.isArray(data))return[];
   return data.filter(p=>p&&typeof p==='object'&&!Array.isArray(p)&&[1,2,3].includes(Number(p.grade))&&
    (p.date==null||typeof p.date==='string')&&Array.isArray(p.units)&&p.units.every(key=>typeof key==='string'&&key.split('/').length===3&&key.split('/').every(part=>part.trim().length>0))&&
    (p.materials==null||(Array.isArray(p.materials)&&p.materials.every(id=>typeof id==='string'&&id.trim().length>0)))).map(p=>({...p,grade:Number(p.grade),materials:p.materials||[]}));
  }catch{return[]}
 }
-function saveExamPlans(items){localStorage.setItem('examPlans',JSON.stringify(items));renderExamPlanList();renderDailyPlanPreview();}
-function loadExamStudyLogs(){try{return JSON.parse(localStorage.getItem('examStudyLogs')||'[]')}catch{return[]}}
+function saveExamPlans(items){storeWrite('examPlans',JSON.stringify(items));renderExamPlanList();renderDailyPlanPreview();}
+function loadExamStudyLogs(){try{return storeRead('examStudyLogs')}catch{return[]}}
 function dateOnlyLocal(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`;}
 function daysUntil(dateStr){if(!dateStr)return null;const [y,m,d]=dateStr.split('-').map(Number);const target=new Date(y,m-1,d);const now=new Date();const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());return Math.round((target-today)/86400000);}
 function examUnitIds(plan){return ExamScope.scopesFromPlan(plan);}
@@ -987,7 +1058,7 @@ function renderExamPlanList(){
  if(!plans.length){el.innerHTML='<div class="empty-card"><strong>まだ定期テストが登録されていません</strong><p>テスト日と範囲を登録すると、今日やる問題を自動で作れます。</p></div>';return}
  plans.forEach(plan=>{const days=daysUntil(plan.date);const prog=examProgress(plan);const card=document.createElement('article');card.className='exam-plan-card';
   const dayLabel=days===0?'今日':days>0?`あと${days}日`:`${Math.abs(days)}日前に終了`;
-  card.innerHTML=`<div class="exam-plan-top"><div><p class="eyebrow">${escapeHtml(plan.date||'日付未設定')}</p><h3>${escapeHtml(plan.name||'定期テスト')}</h3></div><span class="exam-countdown ${days<0?'past':''}">${dayLabel}</span></div><p class="help">中${plan.grade}・${examSubjectCount(plan)}教科・${(plan.units||[]).length}単元${(plan.materials||[]).length?`・教材/Unit ${(plan.materials||[]).map(materialTitleById).map(x=>`「${escapeHtml(x)}」`).join('、')}`:''}</p><div class="progress-track"><span style="width:${prog.percent}%"></span></div><p class="exam-progress">このテスト向け学習 ${prog.attempted}/${prog.total}問</p><div class="exam-card-actions"><button class="primary exam-study" type="button">今日の学習を始める</button><button class="secondary exam-mock" type="button">模擬テスト</button><button class="secondary exam-edit" type="button">編集</button><button class="secondary exam-delete" type="button">削除</button></div>`;
+  card.innerHTML=`<div class="exam-plan-top"><div><p class="eyebrow">${escapeHtml(plan.date||'日付未設定')}</p><h3>${escapeHtml(plan.name||'定期テスト')}</h3></div><span class="exam-countdown ${days<0?'past':''}">${escapeHtml(dayLabel)}</span></div><p class="help">中${Number(plan.grade)||''}・${Number(examSubjectCount(plan))||0}教科・${(plan.units||[]).length}単元${(plan.materials||[]).length?`・教材/Unit ${(plan.materials||[]).map(materialTitleById).map(x=>`「${escapeHtml(x)}」`).join('、')}`:''}</p><div class="progress-track"><span style="width:${Math.max(0,Math.min(100,Number(prog.percent)||0))}%"></span></div><p class="exam-progress">このテスト向け学習 ${Number(prog.attempted)||0}/${Number(prog.total)||0}問</p><div class="exam-card-actions"><button class="primary exam-study" type="button">今日の学習を始める</button><button class="secondary exam-mock" type="button">模擬テスト</button><button class="secondary exam-edit" type="button">編集</button><button class="secondary exam-delete" type="button">削除</button></div>`;
   card.querySelector('.exam-study').disabled=days<0;card.querySelector('.exam-study').onclick=()=>startExamStudy(plan.id);card.querySelector('.exam-mock').onclick=()=>openMockExamSetup(plan.id);card.querySelector('.exam-edit').onclick=()=>openExamEditor(plan.id);card.querySelector('.exam-delete').onclick=()=>deleteExamPlan(plan.id);el.append(card);
   if(plan.auto){const note=document.createElement('p');note.className='help';note.textContent=`おまかせ練習計画${autoExamPurpose(plan.purpose)?`・${autoExamPurpose(plan.purpose).name}`:''}。学校のテスト範囲を推定したものではありません。${plan.dateIsTarget?'日付は学習の目標日です。':''}範囲が分かったら編集してください。`;card.insertBefore(note,card.querySelector('.progress-track'));}
  });
@@ -1038,14 +1109,14 @@ function renderExamRanges(){
 }
 function updateExamEditSummary(){const el=document.getElementById('examEditSummary');if(!el)return;const subjectCount=new Set([...state.exam.units].map(subjectForUnitKey)).size;const ids=ExamScope.scopesFromPlan({units:[...state.exam.units]});const qCount=state.questionBank.filter(q=>ExamScope.questionMatchesScopes(q,ids)&&q.grades.includes(state.exam.grade)).length;el.textContent=`${subjectCount}教科・${state.exam.units.size}単元を選択${state.exam.materials.size?` / 教材・Unit候補 ${state.exam.materials.size}件`:''} / 現在${qCount}問出題可能`;}
 function saveCurrentExamPlan(){const name=document.getElementById('examName').value.trim();const date=document.getElementById('examDate').value;if(!name){alert('テスト名を入力してください。');return}if(!date){alert('テスト日を選んでください。');return}if(!state.exam.units.size){alert('出題範囲を1単元以上選んでください。');return}let plans=loadExamPlans();const item={id:state.exam.editId||crypto.randomUUID?.()||String(Date.now()),name,date,grade:state.exam.grade,units:[...state.exam.units],textbookYear:state.exam.textbookYear,materials:[...state.exam.materials],updatedAt:new Date().toISOString()};const i=plans.findIndex(x=>x.id===item.id);if(i>=0)plans[i]={...plans[i],...item,...(plans[i].auto&&plans[i].date!==date?{dateIsTarget:false}:{})};else plans.push({...item,createdAt:new Date().toISOString()});saveExamPlans(plans);state.exam.editId=null;openExamPlans();}
-function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)return;if(!confirm(`「${p.name}」を削除しますか？`))return;saveExamPlans(loadExamPlans().filter(x=>x.id!==id));localStorage.setItem('examStudyLogs',JSON.stringify(loadExamStudyLogs().filter(x=>x.examId!==id)));}
+function deleteExamPlan(id){const p=loadExamPlans().find(x=>x.id===id);if(!p)return;if(!confirm(`「${p.name}」を削除しますか？`))return;saveExamPlans(loadExamPlans().filter(x=>x.id!==id));storeWrite('examStudyLogs',JSON.stringify(loadExamStudyLogs().filter(x=>x.examId!==id)));}
 function buildExamSession(plan,count=20){
  const pool=examQuestionPool(plan);if(!pool.length)return[];const ordered=materialPriorityOrder(pool,new Set(plan.materials||[]));if(plan.auto&&plan.purpose==='basics')ordered.sort((a,b)=>questionDifficulty(a)-questionDifficulty(b));return ordered.slice(0,Math.min(count,pool.length));
 }
 
 let mockTimerId=null;
-function loadMockExamResults(){try{return JSON.parse(localStorage.getItem('mockExamResults')||'[]')}catch{return[]}}
-function saveMockExamResult(item){const arr=loadMockExamResults();arr.push(item);localStorage.setItem('mockExamResults',JSON.stringify(arr.slice(-100)));}
+function loadMockExamResults(){try{return storeRead('mockExamResults')}catch{return[]}}
+function saveMockExamResult(item){const arr=loadMockExamResults();arr.push(item);storeWrite('mockExamResults',JSON.stringify(arr.slice(-100)));}
 function findMockExamResult(id){return loadMockExamResults().find(x=>x.id===id)||null;}
 function mockQuestionPoints(result,qid){
  if(result?.pointsByQuestion&&Number.isFinite(Number(result.pointsByQuestion[qid])))return Number(result.pointsByQuestion[qid]);
@@ -1182,7 +1253,7 @@ function renderMockResultDetails(result,{historical=false}={}){
  const breakdownMap={};for(const qid of result.questionIds||[]){const q=qmap.get(qid);if(!q)continue;const sub=state.curriculum.subjects.find(s=>s.id===q.subject);const a=answerMap.get(qid);const row=breakdownMap[q.subject]??={name:sub?.name||q.subject,icon:sub?.icon||'',correct:0,total:0,points:0,max:0};const max=mockQuestionPoints(result,qid);row.total++;row.max+=max;if(a?.correct)row.correct++;row.points+=a?.correct?(Number(a.points)||max):0;breakdownMap[q.subject]=row;}
  const breakdown=Object.values(breakdownMap),weakMap={};for(const qid of mockWrongQuestionIds(result)){const q=qmap.get(qid);if(!q)continue;const key=`${q.subject}/${q.unit}`;weakMap[key]??={label:questionInfoLabel(q),miss:0};weakMap[key].miss++;}const weak=Object.values(weakMap).sort((a,b)=>b.miss-a.miss).slice(0,5);
  const growth=mockGrowthText(result),wrongCount=mockWrongQuestionIds(result).length,similarCount=relatedQuestionsForMockResult(result,Math.min(12,Math.max(1,wrongCount))).length;const chain=mockAttemptChain(result);
- const box=document.getElementById('mockResultDetails');box.hidden=false;box.innerHTML=`${growth?`<div class="mock-growth"><strong>📈 ${escapeHtml(growth)}</strong>${Number(result.score)>Number(mockPreviousAttempt(result)?.score||0)?'<span>成長しています！</span>':''}</div>`:''}<div class="mock-result-grid">${breakdown.map(r=>`<div class="mock-result-stat"><strong>${r.icon} ${escapeHtml(r.name)}</strong><span>${r.points}/${r.max}点</span><small>${r.correct}/${r.total}問正解</small></div>`).join('')}</div><div class="mock-analysis"><h3>復習優先</h3>${weak.length?weak.map(x=>`<p>・${escapeHtml(x.label)} <strong>${x.miss}問ミス</strong></p>`).join(''):'<p>全問正解です。この範囲はよく仕上がっています。</p>'}</div>${chain.length>1?`<div class="mock-attempt-chain"><strong>挑戦履歴</strong><span>${chain.map((x,i)=>`${i+1}回目 ${x.score}点`).join(' → ')}</span></div>`:''}<div class="mock-result-actions">${wrongCount?`<button class="primary" type="button" data-mock-review="mistakes">このテストの間違いだけ復習</button>`:''}${wrongCount&&similarCount?`<button class="secondary" type="button" data-mock-review="similar">間違えた単元の類題も解く（${similarCount}問）</button>`:''}</div><details class="mock-review"><summary>問題ごとの結果を見る</summary>${(result.questionIds||[]).map((qid,i)=>{const q=qmap.get(qid);if(!q)return'';const a=answerMap.get(qid);const sub=state.curriculum.subjects.find(s=>s.id===q.subject);return `<article class="mock-review-item ${a?.correct?'ok':'ng'}"><strong>問${i+1} ${sub?.icon||''} ${escapeHtml(sub?.name||'')} ${mockQuestionPoints(result,qid)}点</strong><p>${escapeHtml(q.question)}</p><p>あなたの答え：${escapeHtml(a?.answer||'未解答')}</p><p>正解：${escapeHtml(formatCorrectAnswer(q))}</p><small>${escapeHtml(q.explanation||'')}</small></article>`}).join('')}</details>`;
+ const box=document.getElementById('mockResultDetails');box.hidden=false;box.innerHTML=`${growth?`<div class="mock-growth"><strong>📈 ${escapeHtml(growth)}</strong>${Number(result.score)>Number(mockPreviousAttempt(result)?.score||0)?'<span>成長しています！</span>':''}</div>`:''}<div class="mock-result-grid">${breakdown.map(r=>`<div class="mock-result-stat"><strong>${r.icon} ${escapeHtml(r.name)}</strong><span>${Number(r.points)||0}/${Number(r.max)||0}点</span><small>${Number(r.correct)||0}/${Number(r.total)||0}問正解</small></div>`).join('')}</div><div class="mock-analysis"><h3>復習優先</h3>${weak.length?weak.map(x=>`<p>・${escapeHtml(x.label)} <strong>${Number(x.miss)||0}問ミス</strong></p>`).join(''):'<p>全問正解です。この範囲はよく仕上がっています。</p>'}</div>${chain.length>1?`<div class="mock-attempt-chain"><strong>挑戦履歴</strong><span>${chain.map((x,i)=>`${i+1}回目 ${Number(x.score)||0}点`).join(' → ')}</span></div>`:''}<div class="mock-result-actions">${wrongCount?`<button class="primary" type="button" data-mock-review="mistakes">このテストの間違いだけ復習</button>`:''}${wrongCount&&similarCount?`<button class="secondary" type="button" data-mock-review="similar">間違えた単元の類題も解く（${similarCount}問）</button>`:''}</div><details class="mock-review"><summary>問題ごとの結果を見る</summary>${(result.questionIds||[]).map((qid,i)=>{const q=qmap.get(qid);if(!q)return'';const a=answerMap.get(qid);const sub=state.curriculum.subjects.find(s=>s.id===q.subject);return `<article class="mock-review-item ${a?.correct?'ok':'ng'}"><strong>問${i+1} ${sub?.icon||''} ${escapeHtml(sub?.name||'')} ${Number(mockQuestionPoints(result,qid))||0}点</strong><p>${escapeHtml(q.question)}</p><p>あなたの答え：${escapeHtml(a?.answer||'未解答')}</p><p>正解：${escapeHtml(formatCorrectAnswer(q))}</p><small>${escapeHtml(q.explanation||'')}</small></article>`}).join('')}</details>`;
  box.querySelector('[data-mock-review="mistakes"]')?.addEventListener('click',()=>startMockMistakeReview(result.id,false));box.querySelector('[data-mock-review="similar"]')?.addEventListener('click',()=>startMockMistakeReview(result.id,true));
  if(historical){document.getElementById('retryQuiz').textContent='この模擬テストに再挑戦';document.getElementById('backHomeResult').textContent='学習記録へ戻る';}
 }
@@ -1190,20 +1261,20 @@ function finishMockExam(timeUp=false){
  if(state.sessionContext?.mode!=='mockExam')return;stopMockTimer();const total=state.session.length,correct=state.answers.filter(a=>a.correct).length,score=Math.round(state.score),rate=total?Math.round(correct/total*100):0;const unanswered=Math.max(0,total-state.answers.length);
  const item={id:crypto.randomUUID?.()||String(Date.now()),examId:state.sessionContext.examId,examName:state.sessionContext.examName,at:new Date().toISOString(),grade:state.grade,score,totalPoints:100,correct,total,rate,timeUp,minutes:state.sessionContext.minutes,questionIds:state.session.map(q=>q.id),pointsByQuestion:{...(state.sessionContext.points||{})},answers:state.answers,materials:state.sessionContext.materials||[],textbookYear:state.sessionContext.textbookYear||null,retryOf:state.sessionContext.retryOf||null,rootAttemptId:state.sessionContext.rootAttemptId||null};if(!item.rootAttemptId)item.rootAttemptId=item.id;saveMockExamResult(item);state.mockExam.lastResultId=item.id;state.sessionContext.resultId=item.id;state.sessionContext.rootAttemptId=item.rootAttemptId;
  document.getElementById('resultEyebrow').textContent=timeUp?'時間終了・模擬テスト完了':'模擬テスト完了';document.getElementById('resultScore').textContent=`${score} / 100点`;document.getElementById('resultRate').textContent=`${correct}/${total}問正解・正答率 ${rate}%${unanswered?`・未解答 ${unanswered}問`:''}`;document.getElementById('retryQuiz').textContent='同じ問題に再挑戦';document.getElementById('backHomeResult').textContent='ホームへ戻る';renderMockResultDetails(item);
- const history=JSON.parse(localStorage.getItem('studyHistory')||'[]');history.push({at:item.at,grade:state.grade,subject:null,total,score:correct,rate,mode:'mockExam',examId:item.examId,materials:item.materials||[],textbookYear:item.textbookYear||null,questionIds:item.questionIds,answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt}))});localStorage.setItem('studyHistory',JSON.stringify(history.slice(-300)));
- const logs=loadExamStudyLogs();logs.push({id:item.id,examId:item.examId,at:item.at,questionIds:state.answers.map(a=>a.questionId),score:correct,total,rate});localStorage.setItem('examStudyLogs',JSON.stringify(logs.slice(-300)));updateStreak();showView('resultView');
+ const history=storeRead('studyHistory');history.push({at:item.at,grade:state.grade,subject:null,total,score:correct,rate,mode:'mockExam',examId:item.examId,materials:item.materials||[],textbookYear:item.textbookYear||null,questionIds:item.questionIds,answerResults:state.answers.map(a=>({questionId:a.questionId,correct:!!a.correct,dontKnow:!!a.dontKnow,answeredAt:a.answeredAt}))});storeWrite('studyHistory',JSON.stringify(history.slice(-300)));
+ const logs=loadExamStudyLogs();logs.push({id:item.id,examId:item.examId,at:item.at,questionIds:state.answers.map(a=>a.questionId),score:correct,total,rate});storeWrite('examStudyLogs',JSON.stringify(logs.slice(-300)));updateStreak();showView('resultView');
 }
 function openStoredMockResult(id){const result=findMockExamResult(id);if(!result)return;stopMockTimer();state.mockExam.lastResultId=result.id;state.sessionContext={mode:'mockExamHistory',examId:result.examId,resultId:result.id};document.getElementById('resultEyebrow').textContent='過去の模擬テスト';document.getElementById('resultScore').textContent=`${Number(result.score)||0} / 100点`;document.getElementById('resultRate').textContent=`${Number(result.correct)||0}/${Number(result.total)||0}問正解・正答率 ${Number(result.rate)||0}%`;renderMockResultDetails(result,{historical:true});showView('resultView');}
 
 function startExamStudy(id){const plan=loadExamPlans().find(x=>x.id===id);if(!plan)return;const session=buildExamSession(plan,20);if(!session.length){alert('このテスト範囲には出題できる問題がありません。');return}state.session=session;state.index=0;state.score=0;state.answers=[];state.grade=plan.grade;state.subject=null;state.sessionContext={mode:'exam',examId:plan.id};showView('playView');renderQuestion();}
-function studyHistory(){try{return JSON.parse(localStorage.getItem('studyHistory')||'[]')}catch{return[]}}
+function studyHistory(){try{return storeRead('studyHistory')}catch{return[]}}
 function answeredQuestionIds(){const ids=new Set();studyHistory().forEach(h=>(h.questionIds||[]).forEach(id=>ids.add(id)));return ids;}
 function shuffleCopy(items){return [...items].sort(()=>Math.random()-.5)}
 function takeUnique(target,source,count,used,materials=null){const ordered=materials?materialPriorityOrder(source,materials):smartQuestionOrder(source);for(const q of ordered){if(target.length>=count)break;if(used.has(q.id))continue;used.add(q.id);target.push(q)}}
 function buildDailySession(count=20){
  const future=loadExamPlans().filter(p=>daysUntil(p.date)>=0).sort((a,b)=>String(a.date).localeCompare(String(b.date)));
  const plan=future[0]||null;const pool=plan?examQuestionPool(plan):state.questionBank;if(!pool.length)return{plan:null,session:[],stats:{missed:0,unseen:0,review:0}};
- const missedIds=new Set((JSON.parse(localStorage.getItem('missedQuestions')||'[]')||[]).map(x=>x.questionId));
+ const missedIds=new Set((storeRead('missedQuestions')||[]).map(x=>x.questionId));
  const seen=plan?new Set(loadExamStudyLogs().filter(x=>x.examId===plan.id).flatMap(x=>x.questionIds||[])):answeredQuestionIds();
  const missed=pool.filter(q=>missedIds.has(q.id));const unseen=pool.filter(q=>!missedIds.has(q.id)&&!seen.has(q.id));const review=pool.filter(q=>!missedIds.has(q.id)&&seen.has(q.id));
  const target=Math.min(count,pool.length),session=[],used=new Set(),materials=plan?new Set(plan.materials||[]):null;
@@ -1260,7 +1331,7 @@ function renderStatsDashboard(){
  if(!state.curriculum)return;
  const history=studyHistory();
  const total=history.reduce((n,h)=>n+(Number(h.total)||0),0),correct=history.reduce((n,h)=>n+(Number(h.score)||0),0),rate=total?Math.round(correct/total*100):0;
- const streak=Number(localStorage.getItem('streakDays')||0);const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]').length;
+ const streak=Number(storeRead('streakDays')||0);const missed=storeRead('missedQuestions').length;
  const summary=document.getElementById('statsSummary');
  summary.innerHTML=`<div class="stats-summary-card"><small>解いた問題</small><strong>${total}</strong><span>問</span></div><div class="stats-summary-card"><small>正答率</small><strong>${rate}</strong><span>%</span></div><div class="stats-summary-card"><small>連続学習</small><strong>${streak}</strong><span>日</span></div><div class="stats-summary-card"><small>苦手問題</small><strong>${missed}</strong><span>問</span></div>`;
  renderWeeklyStudy(history);renderRecallStats();renderSubjectStats();renderWeakUnitStats();renderMockExamHistory();renderMockTrendStats();renderRecentHistory(history);
@@ -1280,7 +1351,7 @@ function renderSubjectStats(){
  rows.forEach(([sid,x])=>{const rate=x.total?Math.round(x.correct/x.total*100):0;const row=document.createElement('div');row.className='subject-stat-row';row.innerHTML=`<div class="subject-stat-head"><strong>${escapeHtml(statsSubjectName(sid))}</strong><span>${x.correct}/${x.total}問・${rate}%</span></div><div class="progress-track"><span style="width:${rate}%"></span></div>`;el.append(row)});
 }
 function renderWeakUnitStats(){
- const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]'),map=statsQuestionMap(),groups=new Map();
+ const missed=storeRead('missedQuestions'),map=statsQuestionMap(),groups=new Map();
  for(const m of missed){const q=map.get(m.questionId),info=statsUnitInfo(q);if(!q||!info)continue;const key=`${q.subject}/${q.unit}`;const x=groups.get(key)||{count:0,subject:info.subject,field:info.field,unit:info.unit};x.count++;groups.set(key,x);}
  const el=document.getElementById('weakUnitStats');el.innerHTML='';const rows=[...groups.values()].sort((a,b)=>b.count-a.count).slice(0,8);
  if(!rows.length){el.innerHTML='<p class="help">現在、苦手として登録されている問題はありません。</p>';return;}
@@ -1622,14 +1693,14 @@ function updateImportTextbookHint(){
  if(materialSel){const prev=materialSel.value;materialSel.innerHTML=supportsMaterial?materialOptionsHtml(subject,state.importGrade,info.publisher,prev):'<option value="">教材 / Unitを指定しない</option>';if(![...materialSel.options].some(o=>o.value===prev))materialSel.value='';}
  hint.textContent=info.publisher?`「現在の教科書に限定」を選ぶと ${publisherLabel(info.publisher)} の問題として登録します。${supportsMaterial?' 教材 / Unitを指定すると、その教材専用問題として優先出題されます。':''}`:'教科書設定がないため、この問題は共通問題として登録されます。';
 }
-document.getElementById('saveDraft').onclick=()=>{const draft={createdAt:new Date().toISOString(),grade:state.importGrade,subject:document.getElementById('importSubject').value,field:document.getElementById('importField').value,unit:document.getElementById('importUnit').value,text:document.getElementById('ocrText').value,questions:state.importQuestions};const drafts=JSON.parse(localStorage.getItem('paperDrafts')||'[]');drafts.push({...draft,id:crypto.randomUUID?.()||String(Date.now()),status:'draft'});localStorage.setItem('paperDrafts',JSON.stringify(drafts.slice(-50)));document.getElementById('draftStatus').textContent='編集途中の内容をこの端末に保存しました。';};
+document.getElementById('saveDraft').onclick=()=>{const draft={createdAt:new Date().toISOString(),grade:state.importGrade,subject:document.getElementById('importSubject').value,field:document.getElementById('importField').value,unit:document.getElementById('importUnit').value,text:document.getElementById('ocrText').value,questions:state.importQuestions};const drafts=storeRead('paperDrafts');drafts.push({...draft,id:crypto.randomUUID?.()||String(Date.now()),status:'draft'});storeWrite('paperDrafts',JSON.stringify(drafts.slice(-50)));document.getElementById('draftStatus').textContent='編集途中の内容をこの端末に保存しました。';};
 document.getElementById('saveQuestions').onclick=()=>{const subject=document.getElementById('importSubject').value,field=document.getElementById('importField').value,unit=document.getElementById('importUnit').value;if(!subject||!unit){document.getElementById('draftStatus').textContent='学年・教科・分野・単元を選んでください。';return}const valid=state.importQuestions.filter(q=>q.question.trim()&&((q.type==='choice'&&q.choices?.every(c=>c.trim()))||(q.type==='multi'&&q.choices?.every(c=>c.trim())&&(q.answers||[]).length)||(q.type==='reorder'&&(q.items||[]).filter(Boolean).length>=2)||(q.type==='fill'&&(q.blanks||[]).length&&(q.blanks||[]).every(a=>(Array.isArray(a)?a:[a]).filter(Boolean).length))||(q.type==='word'&&acceptedTextAnswers(q).length)||(q.type==='text'&&q.modelAnswer.trim())));if(!valid.length){document.getElementById('draftStatus').textContent='問題文と、選んだ解答形式に必要な正解を入力してください。';return}const custom=loadCustomQuestions();const now=Date.now();const scope=document.getElementById('importTextbookScope')?.value||'common';const textbook=selectedPublisherForImportedQuestion(subject,field);const materialId=document.getElementById('importMaterial')?.value||'';valid.forEach((q,i)=>{const item={id:`custom-${now}-${i}`,grades:[state.importGrade],subject,field,unit,type:q.type,difficulty:1,question:q.question.trim(),explanation:q.explanation.trim()||'紙テストから登録した問題です。',source:'paper',createdAt:new Date().toISOString(),textbookPublisher:(scope==='current'||materialId)&&textbook.publisher?textbook.publisher:'common'};if((scope==='current'||materialId)&&textbook.publisher)item.textbookComponent=textbook.part;if(materialId)item.materialIds=[materialId];if(q.type==='choice')Object.assign(item,{choices:q.choices.map(c=>c.trim()),answer:q.answer});else if(q.type==='multi')Object.assign(item,{choices:q.choices.map(c=>c.trim()),answers:(q.answers||[]).map(Number)});else if(q.type==='reorder'){const items=(q.items||[]).map(x=>x.trim()).filter(Boolean);Object.assign(item,{items,answerOrder:items.map((_,i)=>i)});}else if(q.type==='fill')Object.assign(item,{blanks:(q.blanks||[]).map(a=>(Array.isArray(a)?a:[a]).map(x=>String(x).trim()).filter(Boolean))});else if(q.type==='word')Object.assign(item,{answers:acceptedTextAnswers(q)});else Object.assign(item,{modelAnswer:q.modelAnswer.trim()});custom.push(item)});saveCustomQuestions(custom);document.getElementById('draftStatus').textContent=`${valid.length}問を問題バンクへ登録しました。${scope==='current'&&textbook.publisher?` ${publisherLabel(textbook.publisher)}専用として保存しました。`:''} 登録問題の管理から編集・削除できます。`;state.importQuestions=[];renderImportQuestions();};
 
 function fillManageSubjects(){const sel=document.getElementById('manageSubject');if(!sel||!state.curriculum)return;sel.innerHTML='<option value="all">すべての教科</option>';state.curriculum.subjects.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=`${s.icon} ${s.name}`;sel.append(o)});sel.onchange=renderManageQuestions;}
 function openManage(){showView('manageView');renderManageQuestions();}
 function unitNameFor(q){for(const s of state.curriculum.subjects){for(const f of s.fields){const u=f.units.find(x=>x.id===q.unit);if(u)return `${f.name} ＞ ${u.name}`}}return q.unit||'';}
-function renderManageQuestions(){const list=document.getElementById('manageQuestionList');if(!list)return;const filter=document.getElementById('manageSubject')?.value||'all';const items=loadCustomQuestions().filter(q=>filter==='all'||q.subject===filter);document.getElementById('manageSummary').textContent=`登録済み ${items.length}問`;list.innerHTML='';if(!items.length){list.innerHTML='<div class="step-card"><p class="help">登録した問題はまだありません。</p></div>';return}items.slice().reverse().forEach(q=>{const s=state.curriculum.subjects.find(x=>x.id===q.subject);const card=document.createElement('div');card.className='manage-question-card';const textbookNote=q.textbookPublisher&&q.textbookPublisher!=='common'?`・${publisherLabel(q.textbookPublisher)}限定`:'・共通';const materialNote=questionMaterialIds(q).length?`・教材「${questionMaterialIds(q).map(materialTitleById).join(' / ')}」`:'';card.innerHTML=`<div class="manage-question-meta"><span>${s?.icon||''} 中${q.grades?.[0]||''}・${escapeHtml(s?.name||q.subject)}${escapeHtml(textbookNote+materialNote)}</span><span class="type-badge">${q.type==='choice'?'単一選択':q.type==='multi'?'複数選択':q.type==='reorder'?'並べ替え':q.type==='fill'?'穴埋め':q.type==='word'?'短答':'記述'}</span></div><strong>${escapeHtml(q.question)}</strong><small>${escapeHtml(unitNameFor(q))}</small><div class="manage-actions"><button class="secondary" data-edit>編集</button><button class="danger" data-delete>削除</button></div>`;card.querySelector('[data-edit]').onclick=()=>openManageEdit(q.id);card.querySelector('[data-delete]').onclick=()=>deleteManagedQuestion(q.id);list.append(card)});}
-function deleteManagedQuestion(id){const q=loadCustomQuestions().find(x=>x.id===id);if(!q)return;if(!confirm(`「${q.question}」を削除しますか？`))return;saveCustomQuestions(loadCustomQuestions().filter(x=>x.id!==id));const missed=JSON.parse(localStorage.getItem('missedQuestions')||'[]').filter(x=>x.questionId!==id);localStorage.setItem('missedQuestions',JSON.stringify(missed));renderManageQuestions();renderQuiz();}
+function renderManageQuestions(){const list=document.getElementById('manageQuestionList');if(!list)return;const filter=document.getElementById('manageSubject')?.value||'all';const items=loadCustomQuestions().filter(q=>filter==='all'||q.subject===filter);document.getElementById('manageSummary').textContent=`登録済み ${items.length}問`;list.innerHTML='';if(!items.length){list.innerHTML='<div class="step-card"><p class="help">登録した問題はまだありません。</p></div>';return}items.slice().reverse().forEach(q=>{const s=state.curriculum.subjects.find(x=>x.id===q.subject);const card=document.createElement('div');card.className='manage-question-card';const textbookNote=q.textbookPublisher&&q.textbookPublisher!=='common'?`・${publisherLabel(q.textbookPublisher)}限定`:'・共通';const materialNote=questionMaterialIds(q).length?`・教材「${questionMaterialIds(q).map(materialTitleById).join(' / ')}」`:'';card.innerHTML=`<div class="manage-question-meta"><span>${escapeHtml(s?.icon||'')} 中${Number(q.grades?.[0])||''}・${escapeHtml(s?.name||q.subject)}${escapeHtml(textbookNote+materialNote)}</span><span class="type-badge">${q.type==='choice'?'単一選択':q.type==='multi'?'複数選択':q.type==='reorder'?'並べ替え':q.type==='fill'?'穴埋め':q.type==='word'?'短答':'記述'}</span></div><strong>${escapeHtml(q.question)}</strong><small>${escapeHtml(unitNameFor(q))}</small><div class="manage-actions"><button class="secondary" data-edit>編集</button><button class="danger" data-delete>削除</button></div>`;card.querySelector('[data-edit]').onclick=()=>openManageEdit(q.id);card.querySelector('[data-delete]').onclick=()=>deleteManagedQuestion(q.id);list.append(card)});}
+function deleteManagedQuestion(id){const q=loadCustomQuestions().find(x=>x.id===id);if(!q)return;if(!confirm(`「${q.question}」を削除しますか？`))return;saveCustomQuestions(loadCustomQuestions().filter(x=>x.id!==id));const missed=storeRead('missedQuestions').filter(x=>x.questionId!==id);storeWrite('missedQuestions',JSON.stringify(missed));renderManageQuestions();renderQuiz();}
 function openManageEdit(id){state.manageEditId=id;showView('manageEditView');renderManageEditForm();}
 function renderManageEditForm(){const q=loadCustomQuestions().find(x=>x.id===state.manageEditId);const host=document.getElementById('manageEditForm');if(!q){host.innerHTML='<p>問題が見つかりません。</p>';return}const subjects=state.curriculum.subjects.map(s=>`<option value="${s.id}" ${s.id===q.subject?'selected':''}>${s.icon} ${s.name}</option>`).join('');host.innerHTML=`<label>学年<select id="meGrade"><option value="1" ${q.grades?.includes(1)?'selected':''}>中1</option><option value="2" ${q.grades?.includes(2)?'selected':''}>中2</option><option value="3" ${q.grades?.includes(3)?'selected':''}>中3</option></select></label><label>教科<select id="meSubject">${subjects}</select></label><label>単元<select id="meUnit"></select></label><label>教科書との関係<select id="meTextbookScope"><option value="common" ${!q.textbookPublisher||q.textbookPublisher==='common'?'selected':''}>共通問題</option><option value="current" ${q.textbookPublisher&&q.textbookPublisher!=='common'?'selected':''}>現在設定中の教科書に限定</option></select></label><p id="meTextbookHint" class="help"></p><label id="meMaterialWrap"><strong>教材 / Unit（任意）</strong><select id="meMaterial"><option value="">教材 / Unitを指定しない</option></select></label><label>解答形式<select id="meType"><option value="choice" ${q.type==='choice'?'selected':''}>単一選択</option><option value="multi" ${q.type==='multi'?'selected':''}>複数選択</option><option value="reorder" ${q.type==='reorder'?'selected':''}>並べ替え</option><option value="fill" ${q.type==='fill'?'selected':''}>穴埋め</option><option value="word" ${q.type==='word'?'selected':''}>単語・短答</option><option value="text" ${q.type==='text'?'selected':''}>文章・記述</option></select></label><label>問題文<textarea id="meQuestion" rows="4">${escapeHtml(q.question)}</textarea></label><div id="meAnswerArea"></div><label>解説<textarea id="meExplanation" rows="3">${escapeHtml(q.explanation||'')}</textarea></label>`;const updateMeTextbook=()=>{const sid=document.getElementById('meSubject').value,unit=document.getElementById('meUnit').value,field=fieldIdForUnit(sid,unit),grade=Number(document.getElementById('meGrade').value);const info=selectedPublisherForImportedQuestion(sid,field);const scope=document.getElementById('meTextbookScope'),hint=document.getElementById('meTextbookHint'),material=document.getElementById('meMaterial'),wrap=document.getElementById('meMaterialWrap');if(scope){scope.disabled=!info.publisher;if(!info.publisher&&scope.value==='current')scope.value='common';}const supports=['japanese','english'].includes(sid)&&!!info.publisher;if(wrap)wrap.hidden=!supports;if(material){const current=material.value||questionMaterialIds(q)[0]||'';material.innerHTML=supports?materialOptionsHtml(sid,grade,info.publisher,current):'<option value="">教材 / Unitを指定しない</option>';if([...material.options].some(o=>o.value===current))material.value=current;}if(hint)hint.textContent=info.publisher?`限定すると ${publisherLabel(info.publisher)} の問題として保存します。${supports?' 教材 / Unitを指定すると専用問題になります。':''}`:'現在の教科書設定がないため共通問題として保存します。';};const populateUnits=()=>{const sid=document.getElementById('meSubject').value,g=Number(document.getElementById('meGrade').value),sel=document.getElementById('meUnit');sel.innerHTML='';const sub=state.curriculum.subjects.find(s=>s.id===sid);sub?.fields.forEach(f=>f.units.filter(u=>u.grades.includes(g)).forEach(u=>{const o=document.createElement('option');o.value=u.id;o.textContent=`${f.name} ＞ ${u.name}`;if(u.id===q.unit)o.selected=true;sel.append(o)}));sel.onchange=updateMeTextbook;updateMeTextbook();};const renderAns=()=>{const a=document.getElementById('meAnswerArea'),t=document.getElementById('meType').value;
  if(t==='choice'){const choices=q.choices||['','','',''];a.innerHTML=`<p><strong>選択肢・正解</strong></p>${choices.map((c,i)=>`<label class="manage-choice"><input type="radio" name="meAns" value="${i}" ${(q.answer??0)===i?'checked':''}><input type="text" data-me-choice="${i}" value="${escapeAttr(c)}"></label>`).join('')}`;}
@@ -1659,7 +1730,7 @@ function renderEnvironmentCheck(){
   {ok:secure,label:'カメラ利用条件',detail:secure?'安全なコンテキストです':'カメラはHTTPSで利用してください'},
   {ok:!fileMode,label:'起動方法',detail:fileMode?'index.htmlの直接起動はPDF/OCR非対応です':'Webサーバー経由で起動しています'}
  ];
- box.innerHTML=rows.map(r=>`<div class="env-row ${r.ok?'ok':'ng'}"><span>${r.ok?'✓':'!'}</span><div><strong>${r.label}</strong><small>${r.detail}</small></div></div>`).join('');
+ box.innerHTML=rows.map(r=>`<div class="env-row ${r.ok?'ok':'ng'}"><span>${r.ok?'✓':'!'}</span><div><strong>${escapeHtml(r.label)}</strong><small>${escapeHtml(r.detail)}</small></div></div>`).join('');
  const notice=document.getElementById('runtimeNotice');
  if(fileMode&&notice){notice.classList.add('warning');notice.textContent='この画面は file:// で直接開かれています。PDF/OCR/カメラは正常動作しないため、Cloudflare PagesのHTTPS URLから利用してください。';}
 }
@@ -1729,7 +1800,7 @@ let pendingBackupData=null;
 function safeJsonParse(value,fallback){try{return JSON.parse(value)}catch{return fallback}}
 function backupDataSnapshot(){
  const data={};
- BACKUP_KEYS.forEach(key=>{const value=localStorage.getItem(key);if(value!==null)data[key]=value;});
+ BACKUP_KEYS.forEach(key=>{const value=storeRaw(key);if(value!==null)data[key]=value;});
  return data;
 }
 function backupSummaryFromData(data){
@@ -1744,46 +1815,69 @@ function backupSummaryFromData(data){
 }
 function openBackup(){showView('backupView');pendingBackupData=null;const p=document.getElementById('backupPreview');if(p)p.hidden=true;const a=document.getElementById('backupImportActions');if(a)a.hidden=true;const f=document.getElementById('backupFile');if(f)f.value='';document.getElementById('importBackupStatus').textContent='';}
 function downloadBackup(){
- const payload={app:'30min-study',schemaVersion:1,appVersion:'0.29',exportedAt:new Date().toISOString(),data:backupDataSnapshot()};
+ const payload={app:'30min-study',schemaVersion:1,appVersion:APP_VERSION,exportedAt:new Date().toISOString(),data:backupDataSnapshot()};
  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
  const url=URL.createObjectURL(blob);const a=document.createElement('a');const d=new Date();const ymd=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
  a.href=url;a.download=`study-backup-${ymd}.json`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
  const sum=backupSummaryFromData(payload.data);document.getElementById('exportBackupStatus').textContent=`保存しました：学習履歴${sum.history}件・登録問題${sum.custom}問・定期テスト${sum.exams}件`;
 }
 function validateBackup(obj){
- if(!obj||obj.app!=='30min-study'||obj.schemaVersion!==1||typeof obj.data!=='object'||Array.isArray(obj.data))throw new Error('このアプリのバックアップ形式ではありません。');
- for(const key of Object.keys(obj.data)){if(!BACKUP_KEYS.includes(key))continue;if(typeof obj.data[key]!=='string')throw new Error('バックアップ内容が壊れています。');}
- return obj;
+ if(!obj||obj.app!=='30min-study'||obj.schemaVersion!==1||typeof obj.data!=='object'||obj.data===null||Array.isArray(obj.data))throw new Error('このアプリのバックアップ形式ではありません。');
+ // キーごとに型を検証し、壊れたキーは取り込まない。正常なキーは正規化した値だけを使う。
+ const {clean,issues}=StorageGuard.validateBackupData(obj.data,BACKUP_KEYS);
+ if(!Object.keys(clean).length)throw new Error('取り込めるデータがありません。ファイルが壊れている可能性があります。');
+ return {app:obj.app,schemaVersion:1,exportedAt:typeof obj.exportedAt==='string'?obj.exportedAt:'',data:clean,issues};
 }
 function renderBackupPreview(payload){
- const sum=backupSummaryFromData(payload.data);const el=document.getElementById('backupPreview');const when=payload.exportedAt?new Date(payload.exportedAt).toLocaleString('ja-JP'):'日時不明';
- el.innerHTML=`<strong>バックアップを確認</strong><dl class="backup-summary"><div><dt>作成日時</dt><dd>${escapeHtml(when)}</dd></div><div><dt>学習履歴</dt><dd>${sum.history}件</dd></div><div><dt>苦手問題</dt><dd>${sum.missed}問</dd></div><div><dt>登録問題</dt><dd>${sum.custom}問</dd></div><div><dt>定期テスト</dt><dd>${sum.exams}件</dd></div><div><dt>紙テスト下書き</dt><dd>${sum.drafts}件</dd></div></dl>`;
+ const sum=backupSummaryFromData(payload.data);const el=document.getElementById('backupPreview');const t=payload.exportedAt?new Date(payload.exportedAt):null;const when=t&&!Number.isNaN(t.getTime())?t.toLocaleString('ja-JP'):'日時不明';
+ const corrupt=(payload.issues||[]).filter(i=>i.status==='corrupt'),repaired=(payload.issues||[]).filter(i=>i.status==='repaired');
+ el.innerHTML=`<strong>バックアップを確認</strong><dl class="backup-summary"><div><dt>作成日時</dt><dd>${escapeHtml(when)}</dd></div><div><dt>学習履歴</dt><dd>${Number(sum.history)}件</dd></div><div><dt>苦手問題</dt><dd>${Number(sum.missed)}問</dd></div><div><dt>登録問題</dt><dd>${Number(sum.custom)}問</dd></div><div><dt>定期テスト</dt><dd>${Number(sum.exams)}件</dd></div><div><dt>紙テスト下書き</dt><dd>${Number(sum.drafts)}件</dd></div></dl>`;
+ if(corrupt.length||repaired.length){const p=document.createElement('p');p.className='backup-warning';p.textContent=`注意：${corrupt.length?`壊れていて読めない項目が${corrupt.length}種類あります（取り込みません）。`:''}${repaired.length?`不正な記録${repaired.reduce((n,i)=>n+i.dropped,0)}件を除外しました。`:''}`;el.append(p);}
  el.hidden=false;document.getElementById('backupImportActions').hidden=false;
+ const rep=document.getElementById('replaceBackup');if(rep){rep.disabled=corrupt.length>0;rep.title=corrupt.length?'壊れた項目があるため、置き換えはできません（追加は可能です）。':'';}
 }
 function uniqueMerge(current,incoming,keyFn){const map=new Map();[...current,...incoming].forEach(item=>{const key=keyFn(item);if(key!=null&&!map.has(key))map.set(key,item);else if(key==null)map.set(`anon-${map.size}`,item)});return [...map.values()]}
+const BACKUP_MERGE_KEYS={
+ missedQuestions:x=>x?.questionId,
+ customQuestions:x=>x?.id,
+ examPlans:x=>x?.id,
+ examStudyLogs:x=>x?.id||`${x?.examId||''}|${x?.at||''}`,
+ paperDrafts:x=>x?.id,
+ mockExamResults:x=>x?.id||`${x?.examId||''}|${x?.at||''}`,
+ studyHistory:x=>`${x?.at||''}|${x?.mode||''}|${x?.score??''}|${(x?.questionIds||[]).join(',')}`,
+ textbookStudyRanges:x=>x?.id||x?.key||JSON.stringify(x)
+};
+const BACKUP_LIMITS={studyHistory:300,examStudyLogs:300,mockExamResults:100,textbookStudyRanges:200};
 function mergeBackupData(data){
- const arrayKeys={
-  missedQuestions:x=>x?.questionId,
-  customQuestions:x=>x?.id,
-  examPlans:x=>x?.id,
-  examStudyLogs:x=>x?.id||`${x?.examId||''}|${x?.at||''}`,
-  paperDrafts:x=>x?.id,
-  mockExamResults:x=>x?.id||`${x?.examId||''}|${x?.at||''}`,
-  studyHistory:x=>`${x?.at||''}|${x?.mode||''}|${x?.score??''}|${(x?.questionIds||[]).join(',')}`
- };
- Object.entries(arrayKeys).forEach(([key,keyFn])=>{const incoming=safeJsonParse(data[key]||'[]',[]);if(!Array.isArray(incoming)||!incoming.length)return;const current=safeJsonParse(localStorage.getItem(key)||'[]',[]);localStorage.setItem(key,JSON.stringify(uniqueMerge(current,incoming,keyFn).slice(key==='studyHistory'||key==='examStudyLogs'?-300:0)));});
- if(!localStorage.getItem('lastQuizSelection')&&data.lastQuizSelection)localStorage.setItem('lastQuizSelection',data.lastQuizSelection);
- if(data.recallRecords){const merged=RecallLadder.mergeRecords(safeJsonParse(localStorage.getItem('recallRecords')||'{}',{}),safeJsonParse(data.recallRecords,{}));localStorage.setItem('recallRecords',JSON.stringify(merged));}
- if(!localStorage.getItem('recallPracticePrefs')&&data.recallPracticePrefs)localStorage.setItem('recallPracticePrefs',data.recallPracticePrefs);
- if(data.japaneseLearningPrefs){try{const current=validJapaneseLearningPrefs(safeJsonParse(localStorage.getItem('japaneseLearningPrefs')||'null',null));const incoming=validJapaneseLearningPrefs(safeJsonParse(data.japaneseLearningPrefs,null));if(!current&&incoming)localStorage.setItem('japaneseLearningPrefs',JSON.stringify(incoming));}catch(err){console.warn('Japanese preference merge skipped',err)}}
- if(!localStorage.getItem('schoolTextbookPreference')&&data.schoolTextbookPreference)localStorage.setItem('schoolTextbookPreference',data.schoolTextbookPreference);
- const curDate=localStorage.getItem('lastStudyDate')||'';const inDate=data.lastStudyDate||'';if(inDate>curDate){localStorage.setItem('lastStudyDate',inDate);if(data.streakDays)localStorage.setItem('streakDays',data.streakDays)}
+ // 履歴は日時順に並べてから新しい分を残す（取り込み順で新しい記録が消えないように）。
+ let ok=true;
+ Object.entries(BACKUP_MERGE_KEYS).forEach(([key,keyFn])=>{if(typeof data[key]!=='string')return;const incoming=StorageGuard.inspectRaw(key,data[key]).value;if(!Array.isArray(incoming)||!incoming.length)return;const current=storeRead(key);const merged=BACKUP_LIMITS[key]?StorageGuard.mergeByTime(current,incoming,keyFn,BACKUP_LIMITS[key]):uniqueMerge(current,incoming,keyFn);ok=storeWrite(key,JSON.stringify(merged))&&ok;});
+ if(!storeRaw('lastQuizSelection')&&data.lastQuizSelection)ok=storeWrite('lastQuizSelection',data.lastQuizSelection)&&ok;
+ if(data.recallRecords){const merged=RecallLadder.mergeRecords(storeRead('recallRecords'),safeJsonParse(data.recallRecords,{}));ok=storeWrite('recallRecords',JSON.stringify(merged))&&ok;}
+ if(!storeRaw('recallPracticePrefs')&&data.recallPracticePrefs)ok=storeWrite('recallPracticePrefs',data.recallPracticePrefs)&&ok;
+ if(data.japaneseLearningPrefs){try{const current=validJapaneseLearningPrefs(storeRead('japaneseLearningPrefs'));const incoming=validJapaneseLearningPrefs(safeJsonParse(data.japaneseLearningPrefs,null));if(!current&&incoming)ok=storeWrite('japaneseLearningPrefs',JSON.stringify(incoming))&&ok;}catch(err){console.warn('Japanese preference merge skipped',err)}}
+ if(!storeRaw('schoolTextbookPreference')&&data.schoolTextbookPreference)ok=storeWrite('schoolTextbookPreference',data.schoolTextbookPreference)&&ok;
+ const curDate=storeRead('lastStudyDate')||'';const inDate=StorageGuard.inspectRaw('lastStudyDate',data.lastStudyDate||'').value||'';if(inDate>curDate){ok=storeWrite('lastStudyDate',inDate)&&ok;if(data.streakDays)ok=storeWrite('streakDays',StorageGuard.inspectRaw('streakDays',data.streakDays).value)&&ok;}
+ return ok;
 }
-function replaceBackupData(data){BACKUP_KEYS.forEach(k=>localStorage.removeItem(k));BACKUP_KEYS.forEach(k=>{if(typeof data[k]==='string')localStorage.setItem(k,data[k])});}
-function refreshAfterBackup(){refreshQuestionBank();migrateTextbookPreference();initSchoolTextbookSettings();renderTextbookSettings();renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();document.getElementById('streakDays').textContent=localStorage.getItem('streakDays')||0;}
+const REPLACE_SNAPSHOT_KEY='studyDataBeforeReplace';
+function replaceBackupData(data){
+ // 置き換え前の状態を端末内に1世代だけ控える。控えを保存できない場合は中止する。
+ const snapshot=JSON.stringify({at:new Date().toISOString(),data:backupDataSnapshot()});
+ try{localStorage.setItem(REPLACE_SNAPSHOT_KEY,snapshot);}catch(err){
+  if(!confirm('端末の容量が足りないため、置き換え前のデータの控えを保存できません。先に「バックアップを保存」でファイルに保存することをおすすめします。それでも置き換えますか？'))return false;
+ }
+ // 書き込みに失敗したら元に戻す。
+ const before=backupDataSnapshot();
+ BACKUP_KEYS.forEach(k=>storeRemove(k));
+ let ok=true;BACKUP_KEYS.forEach(k=>{if(typeof data[k]==='string')ok=storeWrite(k,data[k])&&ok});
+ if(!ok){BACKUP_KEYS.forEach(k=>storeRemove(k));Object.entries(before).forEach(([k,v])=>{try{localStorage.setItem(k,v)}catch{}});showAppNotice('置き換えを保存できなかったため、元のデータに戻しました。','error');return false;}
+ return true;
+}
+function refreshAfterBackup(){refreshQuestionBank();migrateTextbookPreference();initSchoolTextbookSettings();renderTextbookSettings();renderQuiz();fillImportSubjects();fillManageSubjects();renderExamPlanList();renderDailyPlanPreview();document.getElementById('streakDays').textContent=storeRead('streakDays')||0;checkStoredDataIntegrity();}
 document.getElementById('exportBackup')?.addEventListener('click',downloadBackup);
 document.getElementById('backupFile')?.addEventListener('change',async e=>{
- const file=e.target.files?.[0];if(!file)return;try{if(file.size>5*1024*1024)throw new Error('バックアップファイルが大きすぎます（上限5MB）。');const text=await file.text();const obj=validateBackup(JSON.parse(text));pendingBackupData=obj;renderBackupPreview(obj);document.getElementById('importBackupStatus').textContent='内容を確認して、追加または置き換えを選んでください。';}catch(err){pendingBackupData=null;document.getElementById('backupPreview').hidden=true;document.getElementById('backupImportActions').hidden=true;document.getElementById('importBackupStatus').textContent=`読み込めませんでした：${err.message}`;}
+ const file=e.target.files?.[0];if(!file)return;try{if(file.size>5*1024*1024)throw new Error('バックアップファイルが大きすぎます（上限5MB）。');const text=await file.text();let parsed;try{parsed=JSON.parse(text);}catch{throw new Error('JSONとして読み込めません。');}const obj=validateBackup(parsed);pendingBackupData=obj;renderBackupPreview(obj);document.getElementById('importBackupStatus').textContent='内容を確認して、追加または置き換えを選んでください。';}catch(err){pendingBackupData=null;document.getElementById('backupPreview').hidden=true;document.getElementById('backupImportActions').hidden=true;document.getElementById('importBackupStatus').textContent=`読み込めませんでした：${err.message}`;}
 });
-document.getElementById('mergeBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;mergeBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent='現在のデータにバックアップを追加しました。';});
-document.getElementById('replaceBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;if(!confirm('この端末に現在保存されている学習データを、選択したバックアップの内容で置き換えます。続けますか？'))return;replaceBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent='バックアップの内容でこの端末のデータを置き換えました。';});
+document.getElementById('mergeBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;const ok=mergeBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=ok?'現在のデータにバックアップを追加しました。':'一部を保存できませんでした。保存容量を確認してください。';});
+document.getElementById('replaceBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;if((pendingBackupData.issues||[]).some(i=>i.status==='corrupt')){document.getElementById('importBackupStatus').textContent='壊れた項目があるため、置き換えはできません。';return;}if(!confirm('この端末に現在保存されている学習データを、選択したバックアップの内容で置き換えます。続けますか？'))return;const ok=replaceBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=ok?'バックアップの内容でこの端末のデータを置き換えました（置き換え前のデータは端末内に1世代控えています）。':'置き換えを中止しました。';});

@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <link rel="icon" href="/icons/icon-192.png" type="image/png" />
   <title>30分スタディ</title>
-  <link rel="stylesheet" href="style.css?v=0.47.5" />
+  <link rel="stylesheet" href="style.css?v=0.47.6" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin />
@@ -27,6 +27,15 @@
   </header>
 
   <main>
+    <div id="appNotice" class="app-notice" role="alert" hidden><p data-notice-text></p><button type="button" class="secondary" data-notice-close>閉じる</button></div>
+    <section id="dataRepairBanner" class="data-repair-banner" role="alert" hidden>
+      <strong>学習データの一部が壊れていました</strong>
+      <p data-repair-text></p>
+      <div class="data-repair-actions">
+        <button id="repairStoredData" class="primary" type="button">壊れた部分を修復する</button>
+        <button id="downloadCorruptData" class="secondary" type="button">壊れたデータを保存</button>
+      </div>
+    </section>
     <section id="homeView" class="view active">
       <button class="hero-card" data-action="daily">
         <span class="hero-icon">⏱️</span>
@@ -530,25 +539,26 @@
   </div>
 
   <canvas id="captureCanvas" hidden></canvas>
-  <script src="data/curriculum.js?v=0.47.5"></script>
-  <script src="data/questions.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0449.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0450.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0451.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0452.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0453.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0454.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0455.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0456.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0457.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0458.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0459.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0460.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0461.js?v=0.47.5"></script>
-  <script src="data/question-supplement-v0464.js?v=0.47.5"></script>
-  <script src="reorder-grading.js?v=0.47.5"></script>
-  <script src="exam-scope.js?v=0.47.5"></script>
-  <script src="recall-ladder.js?v=0.47.5"></script>
-  <script src="app.js?v=0.47.5"></script>
+  <script src="data/curriculum.js?v=0.47.6"></script>
+  <script src="data/questions.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0449.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0450.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0451.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0452.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0453.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0454.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0455.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0456.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0457.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0458.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0459.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0460.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0461.js?v=0.47.6"></script>
+  <script src="data/question-supplement-v0464.js?v=0.47.6"></script>
+  <script src="reorder-grading.js?v=0.47.6"></script>
+  <script src="exam-scope.js?v=0.47.6"></script>
+  <script src="recall-ladder.js?v=0.47.6"></script>
+  <script src="storage-guard.js?v=0.47.6"></script>
+  <script src="app.js?v=0.47.6"></script>
 </body>
 </html>

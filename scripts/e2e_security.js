@@ -173,7 +173,20 @@ async function run(width){
    await page.click('#undoReplaceBackup');
    await page.waitForFunction(()=>JSON.parse(localStorage.getItem('studyHistory')).length===300,null,{timeout:8000});
    assert.equal(await page.locator('#replaceUndo').isVisible(),false);
-   assert.deepEqual(errors,[]);await ctx.close();results.push('merge-order','replace-guard','undo-replace');
+   // 壊れた控え（data が配列・記録0件）では「元に戻す」を出さない
+   for(const snap of[{at:'2026-01-01',data:[]},{at:'2026-01-01',data:{studyHistory:'[]'}},{at:'2026-01-01',data:{studyHistory:'{oops'}}]){
+    await page.evaluate(v=>localStorage.setItem('studyDataBeforeReplace',JSON.stringify(v)),snap);
+    await page.evaluate(()=>goHome());await page.click('[data-action=backup]');
+    assert.equal(await page.locator('#replaceUndo').isVisible(),false,'undo hidden for unusable snapshot '+JSON.stringify(snap));
+   }
+   // 控えの保存に失敗したら古い控えを消す（古い時点へ戻ってしまわない）
+   await page.evaluate(()=>{localStorage.setItem('studyDataBeforeReplace',JSON.stringify({at:'2025-01-01',data:{studyHistory:JSON.stringify([{at:'2025-01-01T00:00:00Z',questionIds:['ANCIENT'],total:1,score:1,rate:100,mode:'quiz'}])}}));const orig=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(k==='studyDataBeforeReplace'){Storage.prototype.setItem=orig;throw new DOMException('quota','QuotaExceededError');}return orig.call(this,k,v);};});
+   const f3=path.join(TMP,`rep-new-${Date.now()}.json`);fs.writeFileSync(f3,JSON.stringify({app:'30min-study',schemaVersion:1,data:{studyHistory:JSON.stringify([mk(0,7000)])}}));
+   await page.setInputFiles('#backupFile',f3);await page.waitForFunction(()=>document.getElementById('replaceBackup').disabled===false,null,{timeout:8000});await page.click('#replaceBackup');
+   await page.waitForFunction(()=>JSON.parse(localStorage.getItem('studyHistory')).length===1);
+   assert.equal(await page.evaluate(()=>localStorage.getItem('studyDataBeforeReplace')),null,'stale snapshot removed when new snapshot cannot be saved');
+   assert.equal(await page.locator('#replaceUndo').isVisible(),false,'no undo to an unrelated older state');
+   assert.deepEqual(errors,[]);await ctx.close();results.push('merge-order','replace-guard','undo-replace','snapshot-safety');
   }
   // ---- 5. 通常利用のデータを誤判定しない（互換性） ----
   {

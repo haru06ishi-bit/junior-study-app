@@ -1878,6 +1878,8 @@ function replaceBackupData(data){
  // 置き換え前の状態を端末内に1世代だけ控える。控えを保存できない場合は中止する。
  const snapshot=JSON.stringify({at:new Date().toISOString(),data:backupDataSnapshot()});
  try{localStorage.setItem(REPLACE_SNAPSHOT_KEY,snapshot);}catch(err){
+  // 古い控えが残ると「元に戻す」で別の時点のデータに戻ってしまうため、必ず消す（再監査指摘）。
+  storeRemove(REPLACE_SNAPSHOT_KEY);
   if(!confirm('端末の容量が足りないため、置き換え前のデータの控えを保存できません。先に「バックアップを保存」でファイルに保存することをおすすめします。それでも置き換えますか？'))return false;
  }
  // 書き込みに失敗したら元に戻す。
@@ -1887,15 +1889,22 @@ function replaceBackupData(data){
  if(!ok){BACKUP_KEYS.forEach(k=>storeRemove(k));Object.entries(before).forEach(([k,v])=>{try{localStorage.setItem(k,v)}catch{}});showAppNotice('置き換えを保存できなかったため、元のデータに戻しました。','error');return false;}
  return true;
 }
+function loadReplaceSnapshot(){
+ let snap=null;try{snap=JSON.parse(localStorage.getItem(REPLACE_SNAPSHOT_KEY)||'null');}catch{return null}
+ if(!snap||typeof snap!=='object'||Array.isArray(snap)||!snap.data||typeof snap.data!=='object'||Array.isArray(snap.data))return null;
+ const {clean,issues}=StorageGuard.validateBackupData(snap.data,BACKUP_KEYS);
+ // 置き換えと同じ基準：壊れた項目がある／記録が0件なのに端末には記録がある、という控えでは戻さない。
+ if(replaceBlockReason({data:clean,issues}))return null;
+ return {at:snap.at,data:clean,issues};
+}
 function renderReplaceUndo(){
- const box=document.getElementById('replaceUndo');if(!box)return;let snap=null;try{snap=JSON.parse(localStorage.getItem(REPLACE_SNAPSHOT_KEY)||'null');}catch{}
- const ok=snap&&typeof snap==='object'&&snap.data&&typeof snap.data==='object';box.hidden=!ok;if(!ok)return;
+ const box=document.getElementById('replaceUndo');if(!box)return;const snap=loadReplaceSnapshot();
+ const ok=!!snap;box.hidden=!ok;if(!ok)return;
  const t=new Date(snap.at);box.querySelector('[data-undo-when]').textContent=Number.isNaN(t.getTime())?'':t.toLocaleString('ja-JP');
 }
 function undoReplace(){
- let snap=null;try{snap=JSON.parse(localStorage.getItem(REPLACE_SNAPSHOT_KEY)||'null');}catch{}
- if(!snap?.data||typeof snap.data!=='object')return;
- const {clean,issues}=StorageGuard.validateBackupData(snap.data,BACKUP_KEYS);
+ const snap=loadReplaceSnapshot();if(!snap){renderReplaceUndo();showAppNotice('置き換える前のデータの控えが読めないため、元に戻せません。','error');return;}
+ const {data:clean,issues}=snap;
  if(!confirm('置き換える前のデータに戻します。現在のデータは、置き換え前のデータで上書きされます。続けますか？'))return;
  const before=backupDataSnapshot();BACKUP_KEYS.forEach(k=>storeRemove(k));let ok=true;Object.entries(clean).forEach(([k,v])=>{ok=storeWrite(k,v)&&ok});
  if(!ok){BACKUP_KEYS.forEach(k=>storeRemove(k));Object.entries(before).forEach(([k,v])=>{try{localStorage.setItem(k,v)}catch{}});showAppNotice('元に戻せませんでした。保存容量を確認してください。','error');return;}

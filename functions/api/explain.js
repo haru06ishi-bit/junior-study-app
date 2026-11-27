@@ -34,12 +34,20 @@ export function clientKey(request){
   // 本番では Cloudflare が付ける CF-Connecting-IP だけを使う（X-Forwarded-For は偽装できるため使わない）。
   const ip=(request.headers.get('CF-Connecting-IP')||'unknown').trim().toLowerCase();
   // IPv6 は1契約に /64 がまとめて割り当てられることが多いので、/64 単位で数える。
-  if(ip.includes(':')){
-    const [head]=ip.split('::');const parts=head.split(':').filter(Boolean);
-    const full=ip.includes('::')?[...parts,...Array(Math.max(0,4-parts.length)).fill('0')].slice(0,4):ip.split(':').slice(0,4);
-    return 'v6:'+full.map(x=>x.replace(/^0+(?=.)/,'')).join(':');
-  }
+  if(ip.includes(':')){const g=expandIPv6(ip);return g?'v6:'+g.slice(0,4).join(':'):ip;}
   return ip;
+}
+// "::" 省略や IPv4 埋め込みを含む IPv6 表記を8グループに展開する（不正な表記は null）。
+export function expandIPv6(ip){
+  let addr=ip.split('%')[0];
+  const v4=addr.match(/(\d+)\.(\d+)\.(\d+)\.(\d+)$/);
+  if(v4){const n=v4.slice(1).map(Number);if(n.some(x=>x>255))return null;addr=addr.slice(0,-v4[0].length)+((n[0]<<8)|n[1]).toString(16)+':'+((n[2]<<8)|n[3]).toString(16);}
+  const halves=addr.split('::');if(halves.length>2)return null;
+  const left=halves[0]?halves[0].split(':'):[],right=halves.length===2&&halves[1]?halves[1].split(':'):[];
+  const fill=halves.length===2?8-left.length-right.length:0;if(fill<0||(halves.length===1&&left.length!==8))return null;
+  const groups=[...left,...Array(fill).fill('0'),...right];
+  if(groups.length!==8||groups.some(x=>!/^[0-9a-f]{1,4}$/.test(x)))return null;
+  return groups.map(x=>parseInt(x,16).toString(16));
 }
 async function readLimited(request,max){
   if(!request.body)return'';

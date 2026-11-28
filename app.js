@@ -1893,8 +1893,9 @@ function loadReplaceSnapshot(){
  let snap=null;try{snap=JSON.parse(localStorage.getItem(REPLACE_SNAPSHOT_KEY)||'null');}catch{return null}
  if(!snap||typeof snap!=='object'||Array.isArray(snap)||!snap.data||typeof snap.data!=='object'||Array.isArray(snap.data))return null;
  const {clean,issues}=StorageGuard.validateBackupData(snap.data,BACKUP_KEYS);
- // 置き換えと同じ基準：壊れた項目がある／記録が0件なのに端末には記録がある、という控えでは戻さない。
- if(replaceBlockReason({data:clean,issues}))return null;
+ // 修復済みの記録は戻せる。壊れた項目がある控えや、現在の記録を空にする控えは使わない。
+ if(issues.some(i=>i.status==='corrupt'))return null;
+ if(countRecords(clean)===0&&countRecords(backupDataSnapshot())>0)return null;
  return {at:snap.at,data:clean,issues};
 }
 function renderReplaceUndo(){
@@ -1917,4 +1918,4 @@ document.getElementById('backupFile')?.addEventListener('change',async e=>{
  const file=e.target.files?.[0];if(!file)return;try{if(file.size>5*1024*1024)throw new Error('バックアップファイルが大きすぎます（上限5MB）。');const text=await file.text();let parsed;try{parsed=JSON.parse(text);}catch{throw new Error('JSONとして読み込めません。');}const obj=validateBackup(parsed);pendingBackupData=obj;renderBackupPreview(obj);document.getElementById('importBackupStatus').textContent='内容を確認して、追加または置き換えを選んでください。';}catch(err){pendingBackupData=null;document.getElementById('backupPreview').hidden=true;document.getElementById('backupImportActions').hidden=true;document.getElementById('importBackupStatus').textContent=`読み込めませんでした：${err.message}`;}
 });
 document.getElementById('mergeBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;const ok=mergeBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=ok?'現在のデータにバックアップを追加しました。':'一部を保存できませんでした。保存容量を確認してください。';});
-document.getElementById('replaceBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;const block=replaceBlockReason(pendingBackupData);if(block){document.getElementById('importBackupStatus').textContent=`置き換えはできません：${block}`;return;}if(!confirm('この端末に現在保存されている学習データを、選択したバックアップの内容で置き換えます。続けますか？'))return;const ok=replaceBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=ok?'バックアップの内容でこの端末のデータを置き換えました（置き換え前のデータは端末内に1世代控えています）。':'置き換えを中止しました。';});
+document.getElementById('replaceBackup')?.addEventListener('click',()=>{if(!pendingBackupData)return;const block=replaceBlockReason(pendingBackupData);if(block){document.getElementById('importBackupStatus').textContent=`置き換えはできません：${block}`;return;}if(!confirm('この端末に現在保存されている学習データを、選択したバックアップの内容で置き換えます。続けますか？'))return;const ok=replaceBackupData(pendingBackupData.data);refreshAfterBackup();document.getElementById('importBackupStatus').textContent=ok?`バックアップの内容でこの端末のデータを置き換えました${loadReplaceSnapshot()?'（置き換え前のデータは端末内に1世代控えています）':''}。`:'置き換えを中止しました。';});

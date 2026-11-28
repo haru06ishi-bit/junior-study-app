@@ -173,6 +173,20 @@ async function run(width){
    await page.click('#undoReplaceBackup');
    await page.waitForFunction(()=>JSON.parse(localStorage.getItem('studyHistory')).length===300,null,{timeout:8000});
    assert.equal(await page.locator('#replaceUndo').isVisible(),false);
+   // 定期テスト計画に不正な記録が混じっていても、正常な計画と学習履歴は戻せる
+   const previousHistory=[{...mk(0,6000),examId:null}];
+   const validPlan={id:'keep-plan',name:'定期テスト',date:'2026-12-02',grade:2,units:[]};
+   await page.evaluate(({history,plan})=>{
+    localStorage.setItem('studyHistory',JSON.stringify(history));
+    localStorage.setItem('examPlans',JSON.stringify([plan,{id:'invalid-plan',grade:0,units:[]}]));
+   },{history:previousHistory,plan:validPlan});
+   await importBackup(page,{studyHistory:JSON.stringify([mk(0,6500)])},'replace');
+   assert.match(await page.locator('#importBackupStatus').textContent(),/1世代控えています/);
+   assert.equal(await page.locator('#replaceUndo').isVisible(),true,'undo offered for a repaired snapshot');
+   await page.click('#undoReplaceBackup');
+   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('studyHistory'))),previousHistory,'undo restores valid study history');
+   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('examPlans'))),[validPlan],'undo keeps only valid exam plans');
+   assert.equal(await page.locator('#replaceUndo').isVisible(),false);
    // 壊れた控え（data が配列・記録0件）では「元に戻す」を出さない
    for(const snap of[{at:'2026-01-01',data:[]},{at:'2026-01-01',data:{studyHistory:'[]'}},{at:'2026-01-01',data:{studyHistory:'{oops'}}]){
     await page.evaluate(v=>localStorage.setItem('studyDataBeforeReplace',JSON.stringify(v)),snap);
@@ -186,6 +200,7 @@ async function run(width){
    await page.waitForFunction(()=>JSON.parse(localStorage.getItem('studyHistory')).length===1);
    assert.equal(await page.evaluate(()=>localStorage.getItem('studyDataBeforeReplace')),null,'stale snapshot removed when new snapshot cannot be saved');
    assert.equal(await page.locator('#replaceUndo').isVisible(),false,'no undo to an unrelated older state');
+   assert.equal(await page.locator('#importBackupStatus').textContent(),'バックアップの内容でこの端末のデータを置き換えました。');
    assert.deepEqual(errors,[]);await ctx.close();results.push('merge-order','replace-guard','undo-replace','snapshot-safety');
   }
   // ---- 5. 通常利用のデータを誤判定しない（互換性） ----

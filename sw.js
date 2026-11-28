@@ -1,28 +1,30 @@
-const CACHE_NAME = 'study-app-shell-v0.46.5';
+const CACHE_NAME = 'study-app-shell-v0.47.6';
 const APP_SHELL = [
   '/',
   '/index.html',
-  '/style.css?v=0.46.5',
-  '/reorder-grading.js?v=0.46.5',
-  '/app.js?v=0.46.5',
-  '/exam-scope.js?v=0.46.5',
+  '/style.css?v=0.47.6',
+  '/reorder-grading.js?v=0.47.6',
+  '/app.js?v=0.47.6',
+  '/exam-scope.js?v=0.47.6',
+  '/recall-ladder.js?v=0.47.6',
+  '/storage-guard.js?v=0.47.6',
   '/manifest.webmanifest',
-  '/data/curriculum.js?v=0.46.5',
-  '/data/questions.js?v=0.46.5',
-  '/data/question-supplement-v0449.js?v=0.46.5',
-  '/data/question-supplement-v0450.js?v=0.46.5',
-  '/data/question-supplement-v0451.js?v=0.46.5',
-  '/data/question-supplement-v0452.js?v=0.46.5',
-  '/data/question-supplement-v0453.js?v=0.46.5',
-  '/data/question-supplement-v0454.js?v=0.46.5',
-  '/data/question-supplement-v0455.js?v=0.46.5',
-  '/data/question-supplement-v0456.js?v=0.46.5',
-  '/data/question-supplement-v0457.js?v=0.46.5',
-  '/data/question-supplement-v0458.js?v=0.46.5',
-  '/data/question-supplement-v0459.js?v=0.46.5',
-  '/data/question-supplement-v0460.js?v=0.46.5',
-  '/data/question-supplement-v0461.js?v=0.46.5',
-  '/data/question-supplement-v0464.js?v=0.46.5',
+  '/data/curriculum.js?v=0.47.6',
+  '/data/questions.js?v=0.47.6',
+  '/data/question-supplement-v0449.js?v=0.47.6',
+  '/data/question-supplement-v0450.js?v=0.47.6',
+  '/data/question-supplement-v0451.js?v=0.47.6',
+  '/data/question-supplement-v0452.js?v=0.47.6',
+  '/data/question-supplement-v0453.js?v=0.47.6',
+  '/data/question-supplement-v0454.js?v=0.47.6',
+  '/data/question-supplement-v0455.js?v=0.47.6',
+  '/data/question-supplement-v0456.js?v=0.47.6',
+  '/data/question-supplement-v0457.js?v=0.47.6',
+  '/data/question-supplement-v0458.js?v=0.47.6',
+  '/data/question-supplement-v0459.js?v=0.47.6',
+  '/data/question-supplement-v0460.js?v=0.47.6',
+  '/data/question-supplement-v0461.js?v=0.47.6',
+  '/data/question-supplement-v0464.js?v=0.47.6',
   '/icons/icon-192.png',
   '/icons/icon-512.png'
 ];
@@ -49,8 +51,11 @@ self.addEventListener('fetch', event => {
   if (req.mode === 'navigate') {
     event.respondWith(
       fetch(req).then(res => {
-        const copy = res.clone();
-        caches.open(CACHE_NAME).then(c => c.put('/index.html', copy));
+        // 404/500 などをオフライン用の画面として保存しない（v0.47.6）
+        if (res.ok && url.pathname === '/') {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then(c => c.put('/index.html', copy));
+        }
         return res;
       }).catch(() => caches.match('/index.html'))
     );

@@ -20,7 +20,7 @@ const extras=(sandbox.window.QUESTION_SUPPLEMENTS||[]).flatMap(s=>s.questions||[
 const pyCode='import json,sys;sys.path.insert(0,"scripts");from question_bank_loader import load_questions;print(json.dumps([q["id"] for q in load_questions()],ensure_ascii=False))';
 let output;
 for(const cmd of ['python','python3']){
-  const r=cp.spawnSync(cmd,['-c',pyCode],{cwd:root,encoding:'utf8'});
+  const r=cp.spawnSync(cmd,['-c',pyCode],{cwd:root,encoding:'utf8',env:{...process.env,PYTHONIOENCODING:'utf-8'}});
   if(!r.error){if(r.status!==0)throw new Error(r.stderr||'Python loader failed');output=r.stdout;break;}
 }
 if(!output)throw new Error('Python executable unavailable');

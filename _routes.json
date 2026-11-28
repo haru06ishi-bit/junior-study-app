@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/",
+    "/index.html",
+    "/app.js",
+    "/exam-scope.js",
+    "/recall-ladder.js",
+    "/reorder-grading.js",
+    "/storage-guard.js",
+    "/sw.js",
+    "/style.css",
+    "/manifest.webmanifest",
+    "/data/curriculum.js",
+    "/data/curriculum.json",
+    "/data/question-supplement-v0449.js",
+    "/data/question-supplement-v0450.js",
+    "/data/question-supplement-v0451.js",
+    "/data/question-supplement-v0452.js",
+    "/data/question-supplement-v0453.js",
+    "/data/question-supplement-v0454.js",
+    "/data/question-supplement-v0455.js",
+    "/data/question-supplement-v0456.js",
+    "/data/question-supplement-v0457.js",
+    "/data/question-supplement-v0458.js",
+    "/data/question-supplement-v0459.js",
+    "/data/question-supplement-v0460.js",
+    "/data/question-supplement-v0461.js",
+    "/data/question-supplement-v0464.js",
+    "/data/questions.js",
+    "/data/questions.json",
+    "/data/textbooks.js",
+    "/data/textbooks.json",
+    "/icons/icon-192.png",
+    "/icons/icon-512.png",
+    "/icons/icon-maskable-192.png",
+    "/icons/icon-maskable-512.png"
+  ]
+}

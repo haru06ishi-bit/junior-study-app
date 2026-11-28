@@ -149,4 +149,39 @@ progress{width:100%;height:12px;margin:10px 0}.import-question-editor{display:gr
 .stimulus-bars{display:grid;gap:9px;margin-top:8px}
 .stimulus-bar-row{display:grid;grid-template-columns:minmax(70px,auto) 1fr auto;gap:8px;align-items:center}
 .stimulus-bar{display:block;min-height:16px;border-radius:999px;background:currentColor;opacity:.22}
-@media (max-width:540px){.question-stimulus{padding:13px}.stimulus-table{font-size:.88rem}}
+@media (max-width:540px){.question-stimulus{padding:13px}.stimulus-table{font-size:.88rem}}/* v0.47.0 想起練習 */
+.recall-toggle{margin-top:14px;padding:12px;border:1px solid #c7d2fe;border-radius:12px;background:#eef2ff}
+.recall-toggle label{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.5;cursor:pointer}
+.recall-toggle input{width:22px;height:22px;flex:0 0 auto;margin-top:1px}
+.recall-toggle .help{margin:8px 0 0}
+.recall-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.recall-actions button{flex:1 1 90px;min-height:44px;white-space:nowrap;padding-left:10px;padding-right:10px}
+.recall-hint{margin-top:10px;padding:10px 12px;border-radius:10px;background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12}
+.recall-hint p{margin:2px 0}
+.recall-message{min-height:1.4em;margin:8px 0 0;color:#9a3412;font-weight:600}
+.recall-choices{display:grid;gap:8px;margin-top:10px}
+.recall-self-judge{margin-top:12px;padding:12px;border-radius:12px;background:#f1f5f9;overflow-wrap:anywhere}
+.recall-note{font-weight:600;color:#3730a3}
+.result-recall{display:flex;flex-direction:column;gap:4px;margin:8px 0;padding:10px;border-radius:12px;background:#eef2ff;font-size:14px;overflow-wrap:anywhere}
+.recall-stat-bar{display:flex;height:16px;border-radius:999px;overflow:hidden;background:#e2e8f0}
+.recall-stat-bar span{display:block;height:100%}
+.recall-stats .free{background:#16a34a}.recall-stats .hint{background:#f59e0b}.recall-stats .choice{background:#60a5fa}.recall-stats .none{background:#ef4444}
+.recall-stat-legend{list-style:none;padding:0;margin:10px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;font-size:14px}
+.recall-stat-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.result-recall[hidden],.recall-toggle[hidden],.recall-hint[hidden]{display:none}
+.auto-exam-card{overflow-wrap:anywhere}
+.auto-exam-card summary{cursor:pointer;line-height:1.6}
+.auto-exam-card label{display:grid;gap:6px;margin:14px 0;min-width:0}
+.auto-exam-card select{width:100%;min-width:0;max-width:100%}
+.auto-exam-card button{white-space:normal;max-width:100%}
+/* v0.47.6 安全性：保存失敗の通知・データ修復・バックアップ */
+.app-notice{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;margin:0 0 12px;padding:12px 14px;border-radius:14px;background:#eef2ff;border:1px solid #c7d2fe;overflow-wrap:anywhere}
+.app-notice.error{background:#fef3f2;border-color:#fecdca;color:#7a271a}
+.app-notice p{margin:0;flex:1}
+.app-notice button{flex:0 0 auto;min-height:44px;padding:8px 12px}
+.app-notice[hidden],.data-repair-banner[hidden],.backup-actions[hidden]{display:none}
+.data-repair-banner{margin:0 0 12px;padding:14px;border-radius:16px;background:#fffaeb;border:1px solid #fedf89;overflow-wrap:anywhere}
+.data-repair-banner p{margin:6px 0 10px}
+.data-repair-actions{display:grid;gap:8px}
+.backup-warning{margin:8px 0 0;color:#b42318;font-weight:700}
+.replace-undo{margin-top:10px}.replace-undo[hidden]{display:none}

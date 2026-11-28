@@ -2,10 +2,14 @@ const assert=require('node:assert/strict');const fs=require('node:fs'),vm=requir
 const src=fs.readFileSync('app.js','utf8');const css=fs.readFileSync('style.css','utf8');
 const i=src.indexOf('function formatDataVersion(base){'),j=src.indexOf('const state=',i);
 assert(i>=0&&j>i,'footer formatter exists before state initialization');
-const context={window:{QUESTION_SUPPLEMENTS:Array.from({length:20},(_,i)=>({version:'0.44.'+i}))},APP_VERSION:'0.46.5',state:{curriculum:{version:'2026'}}};
+const version=src.match(/^const APP_VERSION='([^']+)'/)[1];
+const context={window:{QUESTION_SUPPLEMENTS:Array.from({length:20},(_,i)=>({version:'0.44.'+i}))},APP_VERSION:version,state:{curriculum:{version:'2026'}}};
 vm.runInNewContext(src.slice(i,j)+'\n globalThis.output=formatDataVersion("0.44.7");',context);
 const result=context.output;
-assert(result.includes('アプリ 0.46.5'),'current app version displayed');
+assert(result.includes(`アプリ ${version}`),'current app version displayed');
+const html=fs.readFileSync('index.html','utf8'),sw=fs.readFileSync('sw.js','utf8');
+assert(sw.includes(`study-app-shell-v${version}`),'service worker cache version matches');
+for(const query of [...html.matchAll(/\?v=([\d.]+)/g),...sw.matchAll(/\?v=([\d.]+)/g)])assert.equal(query[1],version,'shell asset version matches app');
 assert(result.includes('補充20件'),'supplement count displayed');
 assert(result.includes('最新 0.44.19'),'newest supplemental version displayed');
 assert(!/\S{41}/u.test(result),'version footer must not contain an unbroken run of >40 chars');

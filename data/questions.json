@@ -810,7 +810,7 @@
       ],
       "answer": 0,
       "explanation": "「〜のようだ」などを用いてたとえる表現は比喩です。",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": "v04_013",
@@ -3873,13 +3873,15 @@
       ],
       "topic": "現在完了・完了",
       "type": "fill",
-      "question": "次の英文の（1）（2）に入る語を書きなさい。 She （1） already （2） her homework.",
+      "question": "次の英文の（1）（2）に入る語を書きなさい。 She （1） already （2） her homework.\n日本語：彼女はもう宿題を終えています。（各空欄は1語）",
       "blanks": [
         [
           "has"
         ],
         [
-          "finished"
+          "finished",
+          "done",
+          "completed"
         ]
       ],
       "explanation": "主語が She なので has、finish の過去分詞 finished を使います。",
@@ -3894,7 +3896,7 @@
       ],
       "topic": "仮定法",
       "type": "fill",
-      "question": "次の英文の（1）（2）に入る語を書きなさい。 If I （1） you, I （2） study harder.",
+      "question": "次の英文の（1）（2）に入る語を書きなさい。 If I （1） you, I （2） study harder.\n日本語：もし私があなたなら、もっと一生懸命勉強するでしょう。（各空欄は1語）",
       "blanks": [
         [
           "were"
@@ -3917,17 +3919,17 @@
       "type": "multi",
       "question": "受け身の文をすべて選びなさい。",
       "choices": [
-        "This book was written by Soseki.",
+        "She was writing a letter then.",
+        "They have opened the window.",
         "I wrote a letter yesterday.",
         "English is spoken in many countries.",
-        "The window was opened this morning."
+        "This book was written by Soseki."
       ],
       "answers": [
-        0,
-        2,
-        3
+        3,
+        4
       ],
-      "explanation": "be動詞 + 過去分詞で表す受け身は was written、is spoken、was opened です。",
+      "explanation": "受け身は be動詞＋過去分詞で、was written と is spoken が当てはまります。was writing は過去進行形、wrote は過去形、have opened は現在完了で、どれも主語が動作をする能動態の文です。",
       "difficulty": 2
     },
     {
@@ -3941,17 +3943,18 @@
       "type": "multi",
       "question": "現在完了が使われている文をすべて選びなさい。",
       "choices": [
-        "I have visited Kyoto twice.",
-        "We played soccer yesterday.",
+        "I have a lot of homework today.",
+        "He has to finish his homework.",
         "She has just finished lunch.",
+        "I have visited Kyoto twice.",
         "We have lived here since April."
       ],
       "answers": [
-        0,
         2,
-        3
+        3,
+        4
       ],
-      "explanation": "have/has + 過去分詞の形になっている3文が現在完了です。played は過去形です。",
+      "explanation": "現在完了は have/has＋過去分詞で、have visited・has finished・have lived が当てはまります。has to は「〜しなければならない」、I have a lot of homework の have は「持っている」という意味の一般動詞です。",
       "difficulty": 2
     },
     {
@@ -4032,15 +4035,15 @@
       "choices": [
         "2√3",
         "√4×√3",
-        "3√2",
-        "√3+√3"
+        "√6+√6",
+        "4√3",
+        "3√2"
       ],
       "answers": [
         0,
-        1,
-        3
+        1
       ],
-      "explanation": "√12=2√3です。√4×√3=2√3、√3+√3=2√3なので3つが等しい表し方です。",
+      "explanation": "√12＝√(4×3)＝√4×√3＝2√3 です。4√3＝√48、3√2＝√18、√6+√6＝2√6＝√24 なので、どれも √12 とは等しくありません。",
       "difficulty": 2
     },
     {
@@ -4052,7 +4055,7 @@
       ],
       "topic": "受け身",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 These pictures （1） taken in Kenya.",
+      "question": "空欄に入る語を書きなさい。 These pictures （1） taken in Kenya.\n日本語：これらの写真はケニアで撮られました。（各空欄は1語）",
       "blanks": [
         [
           "were"
@@ -4074,7 +4077,7 @@
       ],
       "topic": "let / help + 人 + 動詞の原形",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 My teacher helped me （1） the map.",
+      "question": "空欄に入る語を書きなさい。 My teacher helped me （1） the map.\n日本語：先生は私が地図を読むのを手伝ってくれました。（各空欄は1語）",
       "blanks": [
         [
           "read"
@@ -4166,17 +4169,18 @@
       "type": "multi",
       "question": "文法的に正しい文をすべて選びなさい。",
       "choices": [
-        "Let me show you the way.",
-        "Let me to show you the way.",
         "She helped me carry the box.",
-        "Let him try it."
+        "Let me to show you the way.",
+        "Let him try it.",
+        "Let me show you the way.",
+        "She helped me carried the box."
       ],
       "answers": [
         0,
         2,
         3
       ],
-      "explanation": "let + 人 + 動詞の原形、help + 人 + 動詞の原形の形が正しい文です。",
+      "explanation": "let・help は「人＋動詞の原形」をとるので、Let me show・helped me carry・Let him try が正しい文です。Let me to show は to が不要で、helped me carried は過去形ではなく原形 carry にします。",
       "difficulty": 3,
       "materialIds": [
         "e-mitsumura-3-0"
@@ -4192,7 +4196,7 @@
       ],
       "topic": "現在完了・完了",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have （1） finished my homework.",
+      "question": "空欄に入る語を書きなさい。 I have （1） finished my homework.\n日本語：私はちょうど宿題を終えたところです。（各空欄は1語）",
       "blanks": [
         [
           "just"
@@ -4214,7 +4218,7 @@
       ],
       "topic": "現在完了・経験",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Have you （1） visited Nara?",
+      "question": "空欄に入る語を書きなさい。 Have you （1） visited Nara?\n日本語：あなたは今までに奈良を訪れたことがありますか。（各空欄は1語）",
       "blanks": [
         [
           "ever"
@@ -4310,17 +4314,15 @@
       "type": "multi",
       "question": "現在完了の文をすべて選びなさい。",
       "choices": [
+        "She has to eat lunch now.",
+        "I usually have lunch at noon.",
         "She has already eaten lunch.",
-        "She ate lunch at noon.",
-        "I have never seen that movie.",
-        "We have lived here since April."
+        "She was eating lunch at noon."
       ],
       "answers": [
-        0,
-        2,
-        3
+        2
       ],
-      "explanation": "has eaten、have seen、have lived が have/has + 過去分詞の現在完了です。",
+      "explanation": "現在完了は have/has＋過去分詞なので has already eaten が当てはまります。was eating は過去進行形、have lunch の have は「食べる」という一般動詞、has to は「〜しなければならない」です。",
       "difficulty": 2,
       "materialIds": [
         "e-mitsumura-3-1"
@@ -4336,7 +4338,7 @@
       ],
       "topic": "現在完了・継続",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 We have lived here （1） 2022.",
+      "question": "空欄に入る語を書きなさい。 We have lived here （1） 2022.\n日本語：私たちは2022年からずっとここに住んでいます。（各空欄は1語）",
       "blanks": [
         [
           "since"
@@ -4358,10 +4360,11 @@
       ],
       "topic": "現在完了進行形",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She has been （1） English for two hours.",
+      "question": "空欄に入る語を書きなさい。 She has been （1） English for two hours.\n日本語：彼女は2時間ずっと英語を勉強しています。（各空欄は1語）",
       "blanks": [
         [
-          "studying"
+          "studying",
+          "learning"
         ]
       ],
       "explanation": "has been + 動詞ing で現在完了進行形になります.",
@@ -4515,7 +4518,7 @@
       ],
       "topic": "関係代名詞・主格",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I know a girl （1） speaks French.",
+      "question": "空欄に入る語を書きなさい。 I know a girl （1） speaks French.\n日本語：私はフランス語を話す女の子を知っています。（各空欄は1語）",
       "blanks": [
         [
           "who",
@@ -4538,7 +4541,7 @@
       ],
       "topic": "関係代名詞・主格",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is a robot （1） can carry boxes.",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） can carry boxes.\n日本語：これは箱を運べるロボットです。（各空欄は1語）",
       "blanks": [
         [
           "which",
@@ -4665,7 +4668,7 @@
       ],
       "topic": "関係代名詞・目的格",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is the song （1） I like best.",
+      "question": "空欄に入る語を書きなさい。 This is the song （1） I like best.\n日本語：これは私がいちばん好きな歌です。（各空欄は1語）",
       "blanks": [
         [
           "that",
@@ -4688,7 +4691,7 @@
       ],
       "topic": "関係代名詞・目的格",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.\n日本語：私たちが会ったその人は親切でした。（各空欄は1語）",
       "blanks": [
         [
           "who",
@@ -4814,7 +4817,7 @@
       ],
       "topic": "現在分詞の後置修飾",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Look at the boy （1） near the door.",
+      "question": "空欄に入る語を書きなさい。 Look at the boy （1） near the door.\n日本語：ドアの近くに立っている男の子を見てください。（各空欄は1語）",
       "blanks": [
         [
           "standing"
@@ -4836,7 +4839,7 @@
       ],
       "topic": "過去分詞の後置修飾",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I like the song （1） by this singer.",
+      "question": "空欄に入る語を書きなさい。 I like the song （1） by this singer.\n日本語：私はこの歌手によって書かれた歌が好きです。（各空欄は1語）",
       "blanks": [
         [
           "written"
@@ -4988,7 +4991,7 @@
       ],
       "topic": "I wish + 仮定法",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I wish I （1） play the piano well.",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） play the piano well.\n日本語：ピアノを上手に弾けたらいいのに。（各空欄は1語）",
       "blanks": [
         [
           "could"
@@ -5142,7 +5145,7 @@
       ],
       "topic": "手紙の表現",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Thank you （1） helping me this year.",
+      "question": "空欄に入る語を書きなさい。 Thank you （1） helping me this year.\n日本語：今年私を助けてくれてありがとう。（各空欄は1語）",
       "blanks": [
         [
           "for"
@@ -5164,7 +5167,7 @@
       ],
       "topic": "手紙の結び",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I hope we can see each other （1）.",
+      "question": "空欄に入る語を書きなさい。 I hope we can see each other （1）.\n日本語：私たちがまた会えることを願っています。（各空欄は1語）",
       "blanks": [
         [
           "again"
@@ -6505,7 +6508,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have （1） this movie twice.",
+      "question": "空欄に入る語を書きなさい。 I have （1） this movie twice.\n日本語：私はこの映画を2回見たことがあります。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-0"
@@ -6514,10 +6517,11 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "seen"
+          "seen",
+          "watched"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了「have＋過去分詞」の経験用法です。twice「2回」が経験の目印なので、see の過去分詞 seen（watched も可）を入れます。"
     },
     {
       "id": "v034_san_e3_l1_02",
@@ -6527,7 +6531,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She has （1） finished her homework.",
+      "question": "空欄に入る語を書きなさい。 She has （1） finished her homework.\n日本語：彼女はちょうど宿題を終えたところです。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-0"
@@ -6539,7 +6543,7 @@
           "just"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了の完了用法です。「ちょうど」は just で表し、has と過去分詞 finished の間に置きます。"
     },
     {
       "id": "v034_san_e3_l1_03",
@@ -6572,7 +6576,7 @@
         4,
         5
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "経験を表す現在完了は I have＋過去分詞 visited の順です。回数を表す once「一度」は目的語 Kyoto の後に置きます。※この問題では once を文末に置く形で答えます。"
     },
     {
       "id": "v034_san_e3_l1_04",
@@ -6605,7 +6609,7 @@
         4,
         5
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了の疑問文は Have を主語の前に出し、Have you＋過去分詞 eaten の順にします。疑問文の「もう」は yet で、文末に置きます。"
     },
     {
       "id": "v034_san_e3_l1_05",
@@ -6632,7 +6636,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了は have/has＋過去分詞です。主語が He なら has を使うので He have seen は誤りです。yesterday のように過去の一点を示す文は過去形で、現在完了ではありません。"
     },
     {
       "id": "v034_san_e3_l1_06",
@@ -6650,17 +6654,18 @@
       "textbookPublisher": "sanseido",
       "source": "official-plan-aligned-original",
       "choices": [
+        "ago",
         "ever",
-        "just",
         "already",
-        "yesterday"
+        "just",
+        "last week"
       ],
       "answers": [
-        0,
         1,
-        2
+        2,
+        3
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "ever「今までに」・just「ちょうど」・already「もう」は現在完了とよく使う語です。ago「〜前に」と last week「先週」は過去の時点を表すので、現在完了ではなく過去形と使います。"
     },
     {
       "id": "v034_san_e3_l2_01",
@@ -6670,7 +6675,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.\n日本語：私は2時間ずっと英語を勉強しています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-1"
@@ -6679,10 +6684,11 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "studying"
+          "studying",
+          "learning"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形「have been＋〜ing」です。for two hours「2時間」から動作が続いているとわかるので、study の ing形 studying（learning も可）を入れます。"
     },
     {
       "id": "v034_san_e3_l2_02",
@@ -6692,7 +6698,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?\n日本語：あなたはどのくらいの間ここで待ち続けていますか。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-1"
@@ -6704,7 +6710,7 @@
           "waiting"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "How long have you been 〜ing? で「どのくらいの間〜し続けているか」をたずねます。been の後なので wait の ing形 waiting を入れます。"
     },
     {
       "id": "v034_san_e3_l2_03",
@@ -6743,7 +6749,7 @@
         7,
         8
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形 has been practicing で「ずっと練習している」を表します。「朝から」は起点を表す since を使って since morning とし、文末に置きます。"
     },
     {
       "id": "v034_san_e3_l2_04",
@@ -6780,7 +6786,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "期間をたずねる How long を文頭に置き、その後に疑問文の語順 have you been playing を続けます。現在完了進行形の疑問文です。"
     },
     {
       "id": "v034_san_e3_l2_05",
@@ -6807,7 +6813,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形は have/has been＋〜ing の形です。has being は being ではなく been、have been play は play を ing形 playing にする必要があります。"
     },
     {
       "id": "v034_san_e3_l2_06",
@@ -6817,7 +6823,7 @@
         3
       ],
       "type": "multi",
-      "question": "過去から今まで続いている動作を表せる文をすべて選びなさい。",
+      "question": "過去から今まで続いている動作や状態を表す文をすべて選びなさい。",
       "difficulty": 3,
       "materialIds": [
         "e-sanseido-3-1"
@@ -6834,7 +6840,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "have been waiting は動作の継続、has lived for five years は状態の継続を表します。went と ate は yesterday・at noon が示す過去の出来事で、今まで続いていません。"
     },
     {
       "id": "v034_san_e3_l3_01",
@@ -6844,7 +6850,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This bridge was （1） in 2010.",
+      "question": "空欄に入る語を書きなさい。 This bridge was （1） in 2010.\n日本語：この橋は2010年に建てられました。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-2"
@@ -6853,10 +6859,11 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "built"
+          "built",
+          "constructed"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "受け身は be動詞＋過去分詞です。was と in 2010 から過去の受け身とわかるので、build の過去分詞 built（constructed も可）を入れます。"
     },
     {
       "id": "v034_san_e3_l3_02",
@@ -6866,7 +6873,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 English is （1） in many countries.",
+      "question": "空欄に入る語を書きなさい。 English is （1） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-2"
@@ -6878,7 +6885,7 @@
           "spoken"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "受け身 is＋過去分詞で「話されている」を表します。speak は不規則動詞で speak-spoke-spoken と変化するので spoken です。"
     },
     {
       "id": "v034_san_e3_l3_03",
@@ -6915,7 +6922,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "受け身 is loved で「愛されている」を表し、その後に行為者を by many people「多くの人によって」で示します。"
     },
     {
       "id": "v034_san_e3_l3_04",
@@ -6948,7 +6955,7 @@
         4,
         5
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "過去の受け身は was＋過去分詞です。take の過去分詞 taken を使い、時を表す yesterday は文末に置きます。"
     },
     {
       "id": "v034_san_e3_l3_05",
@@ -6975,7 +6982,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "受け身は be動詞＋過去分詞なので、is cleaned と was written の文が受け身です。They clean… と She wrote… は主語が自分で動作をする能動態の文です。"
     },
     {
       "id": "v034_san_e3_l3_06",
@@ -7002,7 +7009,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "受け身の基本形は「be動詞＋過去分詞」の2つでできています。時制は be動詞で表すので、必ず未来形や進行形にする必要はありません。"
     },
     {
       "id": "v034_san_e3_l4_01",
@@ -7012,7 +7019,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Look at the girl （1） by the window.",
+      "question": "空欄に入る語を書きなさい。 Look at the girl （1） by the window.\n日本語：窓のそばに立っている女の子を見てください。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-3"
@@ -7024,7 +7031,7 @@
           "standing"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在分詞 standing が「立っている」という意味で、by the window とひとまとまりになって後ろから the girl を説明しています。"
     },
     {
       "id": "v034_san_e3_l4_02",
@@ -7034,7 +7041,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is a picture （1） by my sister.",
+      "question": "空欄に入る語を書きなさい。 This is a picture （1） by my sister.\n日本語：これは私の姉（妹）によって描かれた絵です。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-3"
@@ -7043,10 +7050,11 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "painted"
+          "painted",
+          "drawn"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "過去分詞 painted（drawn も可）が「描かれた」という意味で、by my sister とひとまとまりになって後ろから a picture を説明しています。"
     },
     {
       "id": "v034_san_e3_l4_03",
@@ -7085,7 +7093,7 @@
         7,
         8
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "running in the park「公園で走っている」が後ろから the boy を説明します。I know the boy の後に分詞のまとまりを続けます。"
     },
     {
       "id": "v034_san_e3_l4_04",
@@ -7122,7 +7130,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "過去分詞 made「作られた」が in Japan とまとまり、後ろから a car を説明します。This is a car の後にこのまとまりを置きます。"
     },
     {
       "id": "v034_san_e3_l4_05",
@@ -7140,7 +7148,7 @@
       "textbookPublisher": "sanseido",
       "source": "official-plan-aligned-original",
       "choices": [
-        "I saw a dog running fast.",
+        "The dog running over there is mine.",
         "This is a cake made by Ken.",
         "She runs every day.",
         "Ken made a cake."
@@ -7149,7 +7157,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "running over there が The dog を、made by Ken が a cake を後ろから説明しています。She runs every day. と Ken made a cake. は分詞で名詞を説明していません。"
     },
     {
       "id": "v034_san_e3_l4_06",
@@ -7176,7 +7184,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「〜している」は現在分詞 playing、「〜された」は過去分詞 written で名詞を後ろから説明します。原形の play や make のままでは名詞を説明できません。"
     },
     {
       "id": "v034_san_e3_l5_01",
@@ -7186,7 +7194,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.",
+      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.\n日本語：私はフランス語を話せる男の子を知っています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-4"
@@ -7199,7 +7207,7 @@
           "that"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 a boy は人で、空欄の後に動詞 can speak が続くので、主格の関係代名詞 who（that も可）を入れます。"
     },
     {
       "id": "v034_san_e3_l5_02",
@@ -7209,7 +7217,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.\n日本語：これは人々を助けるロボットです。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-4"
@@ -7222,7 +7230,7 @@
           "which"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 a robot は物で、空欄の後に動詞 helps が続くので、主格の関係代名詞 that（which も可）を入れます。"
     },
     {
       "id": "v034_san_e3_l5_03",
@@ -7263,7 +7271,7 @@
         8,
         9
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "主格の関係代名詞 that の直後に動詞 comes を続け、that comes here every day で the dog を後ろから説明します。"
     },
     {
       "id": "v034_san_e3_l5_04",
@@ -7300,7 +7308,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 a woman は人なので関係代名詞は who を使い、who teaches English が後ろから a woman を説明します。"
     },
     {
       "id": "v034_san_e3_l5_05",
@@ -7327,7 +7335,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "who plays・that is のように関係代名詞の直後に動詞が来るのが主格です。who I met は後ろに主語 I がある目的格、the book I bought は目的格の省略なので主格ではありません。"
     },
     {
       "id": "v034_san_e3_l5_06",
@@ -7354,7 +7362,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞が人のときの主格は who か that です。which は物や動物に使い、where は場所を表す関係副詞なので使えません。"
     },
     {
       "id": "v034_san_e3_l6_01",
@@ -7364,7 +7372,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.\n日本語：これは私が昨日買った本です。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-5"
@@ -7377,7 +7385,7 @@
           "which"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 the book は物で、空欄の後に主語 I＋動詞 bought が続くので、目的格の関係代名詞 that（which も可）を入れます。"
     },
     {
       "id": "v034_san_e3_l6_02",
@@ -7387,7 +7395,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.\n日本語：私たちが会ったその人は親切でした。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-5"
@@ -7401,7 +7409,7 @@
           "whom"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 The person は人で、空欄の後に we met（主語＋動詞）が続くので目的格です。who・that・whom のどれも使えます。"
     },
     {
       "id": "v034_san_e3_l6_03",
@@ -7440,7 +7448,7 @@
         7,
         8
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "目的格の関係代名詞 that の後に主語＋動詞 I saw を続け、that I saw yesterday で the movie を後ろから説明します。"
     },
     {
       "id": "v034_san_e3_l6_04",
@@ -7475,7 +7483,7 @@
         5,
         6
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "目的格の関係代名詞が省略された形です。you made が後ろから The food を説明し、そのまとまり全体が主語となって was delicious が続きます。"
     },
     {
       "id": "v034_san_e3_l6_05",
@@ -7502,7 +7510,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "that I read・which we watched は後ろに主語＋動詞が続く目的格なので省略できます。who runs・that barks は直後に動詞が続く主格なので省略できません。"
     },
     {
       "id": "v034_san_e3_l6_06",
@@ -7529,7 +7537,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "The book (that) I bought が主語のまとまりです。bought の目的語は関係代名詞が受け持つので it を重ねるのは誤りで、that bought I は語順が誤りです。"
     },
     {
       "id": "v034_san_e3_l7_01",
@@ -7539,7 +7547,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.\n日本語：もしもっと時間があれば、私はもっと本を読むでしょう。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-6"
@@ -7551,7 +7559,7 @@
           "had"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在の事実と違う仮定は「If＋主語＋過去形, 主語＋would＋原形」で表します。後半の would が目印なので、have の過去形 had を入れます。"
     },
     {
       "id": "v034_san_e3_l7_02",
@@ -7561,7 +7569,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.\n日本語：もっと速く泳げたらいいのに。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-6"
@@ -7573,7 +7581,7 @@
           "could"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "I wish の後は仮定法で、動詞や助動詞を過去形にします。「泳げたら」なので can の過去形 could を入れて could swim とします。"
     },
     {
       "id": "v034_san_e3_l7_03",
@@ -7618,7 +7626,7 @@
         10,
         11
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "仮定法過去では be動詞は主語に関係なく were を使い、If I were you とします。コンマの後に I would＋原形 agree with the idea を続けます。"
     },
     {
       "id": "v034_san_e3_l7_04",
@@ -7651,7 +7659,7 @@
         4,
         5
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "I wish＋仮定法過去で、今かなわない願いを表します。be動詞は were を使って I wish I were taller とします。"
     },
     {
       "id": "v034_san_e3_l7_05",
@@ -7678,7 +7686,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "If I had…, I would… と I wish I could… は事実と違うことを過去形で表す仮定法です。If it rains… と if I have time は実際に起こりうることを表す普通の条件の文です。"
     },
     {
       "id": "v034_san_e3_l7_06",
@@ -7705,7 +7713,7 @@
         0,
         2
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。"
     },
     {
       "id": "v034_san_e3_l8_01",
@@ -7715,7 +7723,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?\n日本語：あなたは彼女がどこに住んでいるか知っていますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-sanseido-3-7"
@@ -7727,7 +7735,7 @@
           "lives"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問では疑問詞 where の後を「主語＋動詞」の語順にします。主語 she は3人称単数なので、live に s を付けて lives です。"
     },
     {
       "id": "v034_san_e3_l8_02",
@@ -7737,7 +7745,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.\n日本語：彼が何を欲しがっているか私に教えてください。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-sanseido-3-7"
@@ -7749,7 +7757,7 @@
           "wants"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問 what he wants は「疑問詞＋主語＋動詞」の順です。does は使わず、主語 he に合わせて want に3単現の s を付けます。"
     },
     {
       "id": "v034_san_e3_l8_03",
@@ -7786,7 +7794,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "文の中に疑問文を入れる間接疑問なので、when の後は he will come の「主語＋動詞」の順にします。will he come とはしません。"
     },
     {
       "id": "v034_san_e3_l8_04",
@@ -7823,7 +7831,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "tell me の後に間接疑問 where the station is を置きます。疑問詞の後は主語 the station＋動詞 is の順です。"
     },
     {
       "id": "v034_san_e3_l8_05",
@@ -7850,7 +7858,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問は「疑問詞＋主語＋動詞」の順なので where she lives・what he wants が正しい形です。does を入れて疑問文の語順にした2つは誤りです。"
     },
     {
       "id": "v034_san_e3_l8_06",
@@ -7860,7 +7868,7 @@
         3
       ],
       "type": "multi",
-      "question": "間接疑問文で正しい語順の特徴をすべて選びなさい。",
+      "question": "間接疑問文の特徴として正しいものをすべて選びなさい。",
       "difficulty": 3,
       "materialIds": [
         "e-sanseido-3-7"
@@ -7877,12 +7885,12 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問は where や what などの疑問詞の後に「主語＋動詞」を続けます。do/does は置かず、主語と動詞を入れかえる倒置もしません。"
     },
     {
       "id": "v034_tok_e3_u0_01",
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She （1） soccer every Sunday.",
+      "question": "空欄に入る語を書きなさい。 She （1） soccer every Sunday.\n日本語：彼女は毎週日曜日にサッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -7971,7 +7979,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?",
+      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?\n日本語：あなたは今までに外国ですしを食べたことがありますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-1"
@@ -7980,10 +7988,12 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "eaten"
+          "eaten",
+          "had",
+          "tried"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten を入れます（have の過去分詞 had や、「食べてみた」の tried も可）。"
     },
     {
       "id": "v034_tok_e3_u1_02",
@@ -7993,7 +8003,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.",
+      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.\n日本語：彼女は一度もカナダへ行ったことがありません。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-1"
@@ -8005,7 +8015,7 @@
           "been"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「〜へ行ったことがある」は have been to で表します。never と組み合わせた has never been to で「一度も行ったことがない」になります。"
     },
     {
       "id": "v034_tok_e3_u1_03",
@@ -8042,7 +8052,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に回数 twice を置きます。※この問題では twice を文末に置く形で答えます。"
     },
     {
       "id": "v034_tok_e3_u1_04",
@@ -8077,7 +8087,7 @@
         5,
         6
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "経験をたずねる疑問文は「Have＋主語＋ever＋過去分詞」の順です。ever は過去分詞 made の前に置き、その後に this dish を続けます。"
     },
     {
       "id": "v034_tok_e3_u1_05",
@@ -8104,7 +8114,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "経験用法は have＋過去分詞で、three times や never が経験の目印です。finished…yesterday は過去形、is studying は現在進行形の文です。"
     },
     {
       "id": "v034_tok_e3_u1_06",
@@ -8122,17 +8132,17 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "official-plan-aligned-original",
       "choices": [
-        "ever",
-        "never",
+        "since",
         "once",
-        "last night"
+        "already",
+        "ever",
+        "just"
       ],
       "answers": [
-        0,
         1,
-        2
+        3
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "ever「今までに」と once「一度」は経験用法でよく使う語です。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語なので、経験用法の目印ではありません。"
     },
     {
       "id": "v034_tok_e3_u2_01",
@@ -8142,7 +8152,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.\n日本語：私は2時間ずっと英語を勉強しています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-2"
@@ -8151,10 +8161,11 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "studying"
+          "studying",
+          "learning"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形「have been＋〜ing」です。for two hours「2時間」から動作が続いているとわかるので、study の ing形 studying（learning も可）を入れます。"
     },
     {
       "id": "v034_tok_e3_u2_02",
@@ -8164,7 +8175,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?\n日本語：あなたはどのくらいの間ここで待ち続けていますか。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-2"
@@ -8176,7 +8187,7 @@
           "waiting"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "How long have you been 〜ing? で「どのくらいの間〜し続けているか」をたずねます。been の後なので wait の ing形 waiting を入れます。"
     },
     {
       "id": "v034_tok_e3_u2_03",
@@ -8215,7 +8226,7 @@
         7,
         8
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形 has been practicing で「ずっと練習している」を表します。「朝から」は起点を表す since を使って since morning とし、文末に置きます。"
     },
     {
       "id": "v034_tok_e3_u2_04",
@@ -8252,7 +8263,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "期間をたずねる How long を文頭に置き、その後に疑問文の語順 have you been playing を続けます。現在完了進行形の疑問文です。"
     },
     {
       "id": "v034_tok_e3_u2_05",
@@ -8279,7 +8290,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形は have/has been＋〜ing の形です。has being は being ではなく been、have been play は play を ing形 playing にする必要があります。"
     },
     {
       "id": "v034_tok_e3_u2_06",
@@ -8289,7 +8300,7 @@
         3
       ],
       "type": "multi",
-      "question": "過去から今まで続いている動作を表せる文をすべて選びなさい。",
+      "question": "過去から今まで続いている動作や状態を表す文をすべて選びなさい。",
       "difficulty": 3,
       "materialIds": [
         "e-tokyo-shoseki-3-2"
@@ -8306,7 +8317,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "have been waiting は動作の継続、has lived for five years は状態の継続を表します。went と ate は yesterday・at noon が示す過去の出来事で、今まで続いていません。"
     },
     {
       "id": "v034_tok_e3_u3_01",
@@ -8316,7 +8327,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 It is important for us （1） help animals.",
+      "question": "空欄に入る語を書きなさい。 It is important for us （1） help animals.\n日本語：私たちが動物を助けることは大切です。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-3"
@@ -8328,7 +8339,7 @@
           "to"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「It is … for 人 to＋動詞の原形」で「人が〜することは…だ」を表します。for us の後に to を置いて to help とします。"
     },
     {
       "id": "v034_tok_e3_u3_02",
@@ -8338,7 +8349,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I want you （1） read this book.",
+      "question": "空欄に入る語を書きなさい。 I want you （1） read this book.\n日本語：私はあなたにこの本を読んでほしいです。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-3"
@@ -8350,7 +8361,7 @@
           "to"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「want＋人＋to＋動詞の原形」で「人に〜してほしい」を表します。you の後に to を置いて to read とします。"
     },
     {
       "id": "v034_tok_e3_u3_03",
@@ -8360,7 +8371,7 @@
         3
       ],
       "type": "reorder",
-      "question": "「先生は私たちに窓を開けさせました。」になるように並べ替えなさい。",
+      "question": "「先生は私たちに窓を開けさせてくれました。」になるように並べ替えなさい。",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-3"
@@ -8387,7 +8398,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「let＋人＋動詞の原形」で「人に〜させてあげる（許す）」を表します。let us の後は to を付けず、原形 open を続けます。"
     },
     {
       "id": "v034_tok_e3_u3_04",
@@ -8397,7 +8408,7 @@
         3
       ],
       "type": "reorder",
-      "question": "「彼は私が荷物を運ぶのを手伝ってくれました。」になるように並べ替えなさい。",
+      "question": "「彼は私が箱を運ぶのを手伝ってくれました。」になるように並べ替えなさい。",
       "difficulty": 3,
       "materialIds": [
         "e-tokyo-shoseki-3-3"
@@ -8422,7 +8433,7 @@
         5,
         6
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「help＋人＋動詞の原形」で「人が〜するのを手伝う」を表します。helped me の後に原形 carry を置き、the box を続けます（help は to を付けて helped me to carry とも言えます）。"
     },
     {
       "id": "v034_tok_e3_u3_05",
@@ -8449,7 +8460,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "want＋人＋to〜 と It is … for 人 to〜 は正しい形です。let の後は原形なので let me to go は誤り、help の後は原形か to＋原形なので過去形の helped me carried も誤りです。"
     },
     {
       "id": "v034_tok_e3_u3_06",
@@ -8476,7 +8487,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "let と help は「人＋動詞の原形」をとります（help は to＋原形も可）。want と ask は「人＋to＋動詞の原形」をとるので、原形を直接続けるのは誤りです。"
     },
     {
       "id": "v034_tok_e3_u4_01",
@@ -8486,7 +8497,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?\n日本語：あなたは彼女がどこに住んでいるか知っていますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-4"
@@ -8498,7 +8509,7 @@
           "lives"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問では疑問詞 where の後を「主語＋動詞」の語順にします。主語 she は3人称単数なので、live に s を付けて lives です。"
     },
     {
       "id": "v034_tok_e3_u4_02",
@@ -8508,7 +8519,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.\n日本語：彼が何を欲しがっているか私に教えてください。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-4"
@@ -8520,7 +8531,7 @@
           "wants"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問 what he wants は「疑問詞＋主語＋動詞」の順です。does は使わず、主語 he に合わせて want に3単現の s を付けます。"
     },
     {
       "id": "v034_tok_e3_u4_03",
@@ -8557,7 +8568,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "文の中に疑問文を入れる間接疑問なので、when の後は he will come の「主語＋動詞」の順にします。will he come とはしません。"
     },
     {
       "id": "v034_tok_e3_u4_04",
@@ -8594,7 +8605,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "tell me の後に間接疑問 where the station is を置きます。疑問詞の後は主語 the station＋動詞 is の順です。"
     },
     {
       "id": "v034_tok_e3_u4_05",
@@ -8621,7 +8632,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問は「疑問詞＋主語＋動詞」の順なので where she lives・what he wants が正しい形です。does を入れて疑問文の語順にした2つは誤りです。"
     },
     {
       "id": "v034_tok_e3_u4_06",
@@ -8631,7 +8642,7 @@
         3
       ],
       "type": "multi",
-      "question": "間接疑問文で正しい語順の特徴をすべて選びなさい。",
+      "question": "間接疑問文の特徴として正しいものをすべて選びなさい。",
       "difficulty": 3,
       "materialIds": [
         "e-tokyo-shoseki-3-4"
@@ -8648,7 +8659,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問は where や what などの疑問詞の後に「主語＋動詞」を続けます。do/does は置かず、主語と動詞を入れかえる倒置もしません。"
     },
     {
       "id": "v034_tok_e3_u5_01",
@@ -8658,7 +8669,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.\n日本語：これは私が昨日買った本です。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-5"
@@ -8671,7 +8682,7 @@
           "which"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 the book は物で、空欄の後に主語 I＋動詞 bought が続くので、目的格の関係代名詞 that（which も可）を入れます。"
     },
     {
       "id": "v034_tok_e3_u5_02",
@@ -8681,7 +8692,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.\n日本語：私たちが会ったその人は親切でした。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-5"
@@ -8695,7 +8706,7 @@
           "whom"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 The person は人で、空欄の後に we met（主語＋動詞）が続くので目的格です。who・that・whom のどれも使えます。"
     },
     {
       "id": "v034_tok_e3_u5_03",
@@ -8734,7 +8745,7 @@
         7,
         8
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "目的格の関係代名詞 that の後に主語＋動詞 I saw を続け、that I saw yesterday で the movie を後ろから説明します。"
     },
     {
       "id": "v034_tok_e3_u5_04",
@@ -8769,7 +8780,7 @@
         5,
         6
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "目的格の関係代名詞が省略された形です。you made が後ろから The food を説明し、そのまとまり全体が主語となって was delicious が続きます。"
     },
     {
       "id": "v034_tok_e3_u5_05",
@@ -8796,7 +8807,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "that I read・which we watched は後ろに主語＋動詞が続く目的格なので省略できます。who runs・that barks は直後に動詞が続く主格なので省略できません。"
     },
     {
       "id": "v034_tok_e3_u5_06",
@@ -8823,7 +8834,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "The book (that) I bought が主語のまとまりです。bought の目的語は関係代名詞が受け持つので it を重ねるのは誤りで、that bought I は語順が誤りです。"
     },
     {
       "id": "v034_tok_e3_u6_01",
@@ -8833,7 +8844,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.\n日本語：もしもっと時間があれば、私はもっと本を読むでしょう。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-tokyo-shoseki-3-6"
@@ -8845,7 +8856,7 @@
           "had"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在の事実と違う仮定は「If＋主語＋過去形, 主語＋would＋原形」で表します。後半の would が目印なので、have の過去形 had を入れます。"
     },
     {
       "id": "v034_tok_e3_u6_02",
@@ -8855,7 +8866,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.\n日本語：もっと速く泳げたらいいのに。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-tokyo-shoseki-3-6"
@@ -8867,7 +8878,7 @@
           "could"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "I wish の後は仮定法で、動詞や助動詞を過去形にします。「泳げたら」なので can の過去形 could を入れて could swim とします。"
     },
     {
       "id": "v034_tok_e3_u6_03",
@@ -8912,7 +8923,7 @@
         10,
         11
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "仮定法過去では be動詞は主語に関係なく were を使い、If I were you とします。コンマの後に I would＋原形 agree with the idea を続けます。"
     },
     {
       "id": "v034_tok_e3_u6_04",
@@ -8945,7 +8956,7 @@
         4,
         5
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "I wish＋仮定法過去で、今かなわない願いを表します。be動詞は were を使って I wish I were taller とします。"
     },
     {
       "id": "v034_tok_e3_u6_05",
@@ -8972,7 +8983,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "If I had…, I would… と I wish I could… は事実と違うことを過去形で表す仮定法です。If it rains… と if I have time は実際に起こりうることを表す普通の条件の文です。"
     },
     {
       "id": "v034_tok_e3_u6_06",
@@ -8999,7 +9010,7 @@
         0,
         2
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。"
     },
     {
       "id": "v034_kai_e3_p1_01",
@@ -9009,7 +9020,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?",
+      "question": "空欄に入る語を書きなさい。 Have you ever （1） sushi abroad?\n日本語：あなたは今までに外国ですしを食べたことがありますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-0"
@@ -9018,10 +9029,12 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "eaten"
+          "eaten",
+          "had",
+          "tried"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "経験をたずねる Have you ever＋過去分詞の文です。eat の過去分詞 eaten を入れます（have の過去分詞 had や、「食べてみた」の tried も可）。"
     },
     {
       "id": "v034_kai_e3_p1_02",
@@ -9031,7 +9044,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.",
+      "question": "空欄に入る語を書きなさい。 She has never （1） to Canada.\n日本語：彼女は一度もカナダへ行ったことがありません。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-0"
@@ -9043,7 +9056,7 @@
           "been"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「〜へ行ったことがある」は have been to で表します。never と組み合わせた has never been to で「一度も行ったことがない」になります。"
     },
     {
       "id": "v034_kai_e3_p1_03",
@@ -9080,7 +9093,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「〜へ行ったことがある」は have been to〜で表します。I have been to the festival の後に回数 twice を置きます。※この問題では twice を文末に置く形で答えます。"
     },
     {
       "id": "v034_kai_e3_p1_04",
@@ -9115,7 +9128,7 @@
         5,
         6
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "経験をたずねる疑問文は「Have＋主語＋ever＋過去分詞」の順です。ever は過去分詞 made の前に置き、その後に this dish を続けます。"
     },
     {
       "id": "v034_kai_e3_p1_05",
@@ -9142,7 +9155,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "経験用法は have＋過去分詞で、three times や never が経験の目印です。finished…yesterday は過去形、is studying は現在進行形の文です。"
     },
     {
       "id": "v034_kai_e3_p1_06",
@@ -9160,17 +9173,17 @@
       "textbookPublisher": "kairyudo",
       "source": "official-plan-aligned-original",
       "choices": [
-        "ever",
-        "never",
+        "since",
         "once",
-        "last night"
+        "already",
+        "ever",
+        "just"
       ],
       "answers": [
-        0,
         1,
-        2
+        3
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "ever「今までに」と once「一度」は経験用法でよく使う語です。just「ちょうど」と already「もう」は完了用法、since「〜から」は継続用法でよく使う語なので、経験用法の目印ではありません。"
     },
     {
       "id": "v034_kai_e3_p2_01",
@@ -9180,7 +9193,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.",
+      "question": "空欄に入る語を書きなさい。 I have been （1） English for two hours.\n日本語：私は2時間ずっと英語を勉強しています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-1"
@@ -9189,10 +9202,11 @@
       "source": "official-plan-aligned-original",
       "blanks": [
         [
-          "studying"
+          "studying",
+          "learning"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形「have been＋〜ing」です。for two hours「2時間」から動作が続いているとわかるので、study の ing形 studying（learning も可）を入れます。"
     },
     {
       "id": "v034_kai_e3_p2_02",
@@ -9202,7 +9216,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?",
+      "question": "空欄に入る語を書きなさい。 How long have you been （1） here?\n日本語：あなたはどのくらいの間ここで待ち続けていますか。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-1"
@@ -9214,7 +9228,7 @@
           "waiting"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "How long have you been 〜ing? で「どのくらいの間〜し続けているか」をたずねます。been の後なので wait の ing形 waiting を入れます。"
     },
     {
       "id": "v034_kai_e3_p2_03",
@@ -9253,7 +9267,7 @@
         7,
         8
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形 has been practicing で「ずっと練習している」を表します。「朝から」は起点を表す since を使って since morning とし、文末に置きます。"
     },
     {
       "id": "v034_kai_e3_p2_04",
@@ -9290,7 +9304,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "期間をたずねる How long を文頭に置き、その後に疑問文の語順 have you been playing を続けます。現在完了進行形の疑問文です。"
     },
     {
       "id": "v034_kai_e3_p2_05",
@@ -9317,7 +9331,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在完了進行形は have/has been＋〜ing の形です。has being は being ではなく been、have been play は play を ing形 playing にする必要があります。"
     },
     {
       "id": "v034_kai_e3_p2_06",
@@ -9327,7 +9341,7 @@
         3
       ],
       "type": "multi",
-      "question": "過去から今まで続いている動作を表せる文をすべて選びなさい。",
+      "question": "過去から今まで続いている動作や状態を表す文をすべて選びなさい。",
       "difficulty": 3,
       "materialIds": [
         "e-kairyudo-3-1"
@@ -9344,7 +9358,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "have been waiting は動作の継続、has lived for five years は状態の継続を表します。went と ate は yesterday・at noon が示す過去の出来事で、今まで続いていません。"
     },
     {
       "id": "v034_kai_e3_p3_01",
@@ -9354,7 +9368,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 My mother told me （1） she was busy.",
+      "question": "空欄に入る語を書きなさい。 My mother told me （1） she was busy.\n日本語：母は私に、忙しいと言いました。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-2"
@@ -9366,7 +9380,7 @@
           "that"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「tell＋人＋that＋文」で「人に〜だと言う」を表します。told me の後に接続詞 that を置き、she was busy を続けます。"
     },
     {
       "id": "v034_kai_e3_p3_02",
@@ -9376,7 +9390,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The news made me （1） happy.",
+      "question": "空欄に入る語を書きなさい。 The news made me （1） happy.\n日本語：その知らせで私は幸せだと感じました。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-2"
@@ -9388,7 +9402,7 @@
           "feel"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「make＋人＋動詞の原形」で「人に〜させる」を表します。「感じました」なので原形 feel を入れ、made me feel happy とします。"
     },
     {
       "id": "v034_kai_e3_p3_03",
@@ -9419,7 +9433,7 @@
         3,
         4
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「call＋A＋B」で「AをBと呼ぶ」を表します。動詞 call の後に目的語 him、その後に呼び名 Ken を置きます。"
     },
     {
       "id": "v034_kai_e3_p3_04",
@@ -9452,7 +9466,7 @@
         4,
         5
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "「make＋人＋動詞の原形」で「人に〜させる」を表します。made me の後に to を付けず原形 laugh を続けます。"
     },
     {
       "id": "v034_kai_e3_p3_05",
@@ -9479,7 +9493,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "tell＋人＋that〜 と call＋A＋B は正しい形です。make＋人の後は原形なので made me cried は誤り、told の直後には人を置くので told that me も誤りです。"
     },
     {
       "id": "v034_kai_e3_p3_06",
@@ -9504,10 +9518,9 @@
       ],
       "answers": [
         0,
-        1,
-        2
+        1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "call + 人 + 名詞は「人を～と呼ぶ」、make + 人 + 動詞の原形は「人に～させる」。tell + 人 + that節は内容を伝える表現で、補語や動詞原形をとる形ではありません。make + 人 + to + 動詞もこの意味では使えません。"
     },
     {
       "id": "v034_kai_e3_p4_01",
@@ -9517,7 +9530,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?",
+      "question": "空欄に入る語を書きなさい。 Do you know where she （1）?\n日本語：あなたは彼女がどこに住んでいるか知っていますか。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-3"
@@ -9529,7 +9542,7 @@
           "lives"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問では疑問詞 where の後を「主語＋動詞」の語順にします。主語 she は3人称単数なので、live に s を付けて lives です。"
     },
     {
       "id": "v034_kai_e3_p4_02",
@@ -9539,7 +9552,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.",
+      "question": "空欄に入る語を書きなさい。 Please tell me what he （1）.\n日本語：彼が何を欲しがっているか私に教えてください。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-3"
@@ -9551,7 +9564,7 @@
           "wants"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問 what he wants は「疑問詞＋主語＋動詞」の順です。does は使わず、主語 he に合わせて want に3単現の s を付けます。"
     },
     {
       "id": "v034_kai_e3_p4_03",
@@ -9588,7 +9601,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "文の中に疑問文を入れる間接疑問なので、when の後は he will come の「主語＋動詞」の順にします。will he come とはしません。"
     },
     {
       "id": "v034_kai_e3_p4_04",
@@ -9625,7 +9638,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "tell me の後に間接疑問 where the station is を置きます。疑問詞の後は主語 the station＋動詞 is の順です。"
     },
     {
       "id": "v034_kai_e3_p4_05",
@@ -9652,7 +9665,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問は「疑問詞＋主語＋動詞」の順なので where she lives・what he wants が正しい形です。does を入れて疑問文の語順にした2つは誤りです。"
     },
     {
       "id": "v034_kai_e3_p4_06",
@@ -9662,7 +9675,7 @@
         3
       ],
       "type": "multi",
-      "question": "間接疑問文で正しい語順の特徴をすべて選びなさい。",
+      "question": "間接疑問文の特徴として正しいものをすべて選びなさい。",
       "difficulty": 3,
       "materialIds": [
         "e-kairyudo-3-3"
@@ -9679,7 +9692,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "間接疑問は where や what などの疑問詞の後に「主語＋動詞」を続けます。do/does は置かず、主語と動詞を入れかえる倒置もしません。"
     },
     {
       "id": "v034_kai_e3_p5_01",
@@ -9689,7 +9702,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.",
+      "question": "空欄に入る語を書きなさい。 I know a boy （1） can speak French.\n日本語：私はフランス語を話せる男の子を知っています。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-4"
@@ -9702,7 +9715,7 @@
           "that"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 a boy は人で、空欄の後に動詞 can speak が続くので、主格の関係代名詞 who（that も可）を入れます。"
     },
     {
       "id": "v034_kai_e3_p5_02",
@@ -9712,7 +9725,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.",
+      "question": "空欄に入る語を書きなさい。 This is a robot （1） helps people.\n日本語：これは人々を助けるロボットです。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-4"
@@ -9725,7 +9738,7 @@
           "which"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 a robot は物で、空欄の後に動詞 helps が続くので、主格の関係代名詞 that（which も可）を入れます。"
     },
     {
       "id": "v034_kai_e3_p5_03",
@@ -9766,7 +9779,7 @@
         8,
         9
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "主格の関係代名詞 that の直後に動詞 comes を続け、that comes here every day で the dog を後ろから説明します。"
     },
     {
       "id": "v034_kai_e3_p5_04",
@@ -9803,7 +9816,7 @@
         6,
         7
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 a woman は人なので関係代名詞は who を使い、who teaches English が後ろから a woman を説明します。"
     },
     {
       "id": "v034_kai_e3_p5_05",
@@ -9830,7 +9843,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "who plays・that is のように関係代名詞の直後に動詞が来るのが主格です。who I met は後ろに主語 I がある目的格、the book I bought は目的格の省略なので主格ではありません。"
     },
     {
       "id": "v034_kai_e3_p5_06",
@@ -9857,7 +9870,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞が人のときの主格は who か that です。which は物や動物に使い、where は場所を表す関係副詞なので使えません。"
     },
     {
       "id": "v034_kai_e3_p6_01",
@@ -9867,7 +9880,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.",
+      "question": "空欄に入る語を書きなさい。 This is the book （1） I bought yesterday.\n日本語：これは私が昨日買った本です。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-5"
@@ -9880,7 +9893,7 @@
           "which"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 the book は物で、空欄の後に主語 I＋動詞 bought が続くので、目的格の関係代名詞 that（which も可）を入れます。"
     },
     {
       "id": "v034_kai_e3_p6_02",
@@ -9890,7 +9903,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.",
+      "question": "空欄に入る語を書きなさい。 The person （1） we met was kind.\n日本語：私たちが会ったその人は親切でした。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-5"
@@ -9904,7 +9917,7 @@
           "whom"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "先行詞 The person は人で、空欄の後に we met（主語＋動詞）が続くので目的格です。who・that・whom のどれも使えます。"
     },
     {
       "id": "v034_kai_e3_p6_03",
@@ -9943,7 +9956,7 @@
         7,
         8
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "目的格の関係代名詞 that の後に主語＋動詞 I saw を続け、that I saw yesterday で the movie を後ろから説明します。"
     },
     {
       "id": "v034_kai_e3_p6_04",
@@ -9978,7 +9991,7 @@
         5,
         6
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "目的格の関係代名詞が省略された形です。you made が後ろから The food を説明し、そのまとまり全体が主語となって was delicious が続きます。"
     },
     {
       "id": "v034_kai_e3_p6_05",
@@ -10005,7 +10018,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "that I read・which we watched は後ろに主語＋動詞が続く目的格なので省略できます。who runs・that barks は直後に動詞が続く主格なので省略できません。"
     },
     {
       "id": "v034_kai_e3_p6_06",
@@ -10032,7 +10045,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "The book (that) I bought が主語のまとまりです。bought の目的語は関係代名詞が受け持つので it を重ねるのは誤りで、that bought I は語順が誤りです。"
     },
     {
       "id": "v034_kai_e3_p7_01",
@@ -10042,7 +10055,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.",
+      "question": "空欄に入る語を書きなさい。 If I （1） more time, I would read more books.\n日本語：もしもっと時間があれば、私はもっと本を読むでしょう。（各空欄は1語）",
       "difficulty": 1,
       "materialIds": [
         "e-kairyudo-3-6"
@@ -10054,7 +10067,7 @@
           "had"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "現在の事実と違う仮定は「If＋主語＋過去形, 主語＋would＋原形」で表します。後半の would が目印なので、have の過去形 had を入れます。"
     },
     {
       "id": "v034_kai_e3_p7_02",
@@ -10064,7 +10077,7 @@
         3
       ],
       "type": "fill",
-      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.",
+      "question": "空欄に入る語を書きなさい。 I wish I （1） swim faster.\n日本語：もっと速く泳げたらいいのに。（各空欄は1語）",
       "difficulty": 2,
       "materialIds": [
         "e-kairyudo-3-6"
@@ -10076,7 +10089,7 @@
           "could"
         ]
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "I wish の後は仮定法で、動詞や助動詞を過去形にします。「泳げたら」なので can の過去形 could を入れて could swim とします。"
     },
     {
       "id": "v034_kai_e3_p7_03",
@@ -10121,7 +10134,7 @@
         10,
         11
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "仮定法過去では be動詞は主語に関係なく were を使い、If I were you とします。コンマの後に I would＋原形 agree with the idea を続けます。"
     },
     {
       "id": "v034_kai_e3_p7_04",
@@ -10154,7 +10167,7 @@
         4,
         5
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "I wish＋仮定法過去で、今かなわない願いを表します。be動詞は were を使って I wish I were taller とします。"
     },
     {
       "id": "v034_kai_e3_p7_05",
@@ -10181,7 +10194,7 @@
         0,
         1
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "If I had…, I would… と I wish I could… は事実と違うことを過去形で表す仮定法です。If it rains… と if I have time は実際に起こりうることを表す普通の条件の文です。"
     },
     {
       "id": "v034_kai_e3_p7_06",
@@ -10208,7 +10221,7 @@
         0,
         2
       ],
-      "explanation": "この教材で扱う文法・表現に合わせたオリジナル練習問題です。"
+      "explanation": "仮定法では be動詞は was ではなく were を使うのが基本で、後半は would＋原形にします。I wish の後も過去形 had です。will apologize や I wish I have は仮定法の形ではありません。"
     },
     {
       "id": "v034_jp_mitsumura_g3_00_1",
@@ -13674,7 +13687,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 1 About Me」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "question": "「Lesson 1 About Me」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.\n日本語：私はユキです。初めまして。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -13720,7 +13733,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 2 My Hero」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.",
+      "question": "「Lesson 2 My Hero」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.\n日本語：彼は速く走ることができます。（各空欄は1語）",
       "blanks": [
         [
           "run"
@@ -13766,7 +13779,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 3 My Treasure」に関連する英語練習。次の（1）に入る語を書きなさい。 This is （1） treasure.",
+      "question": "「Lesson 3 My Treasure」に関連する英語練習。次の（1）に入る語を書きなさい。 This is （1） treasure.\n日本語：これは私の宝物です。（各空欄は1語）",
       "blanks": [
         [
           "my"
@@ -13812,7 +13825,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 4 My Summer Plans」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.",
+      "question": "「Lesson 4 My Summer Plans」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "visit"
@@ -13858,7 +13871,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 5 Ms. Brown's Family」に関連する英語練習。次の（1）に入る語を書きなさい。 She is （1） sister.",
+      "question": "「Lesson 5 Ms. Brown's Family」に関連する英語練習。次の（1）に入る語を書きなさい。 She is （1） sister.\n日本語：彼女は私の姉（妹）です。（各空欄は1語）",
       "blanks": [
         [
           "my"
@@ -13904,7 +13917,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 6 School Life in the U.S.A.」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） soccer after school.",
+      "question": "「Lesson 6 School Life in the U.S.A.」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） soccer after school.\n日本語：私は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "play"
@@ -13950,7 +13963,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 7 Athletes with Spirit」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.",
+      "question": "「Lesson 7 Athletes with Spirit」に関連する英語練習。次の（1）に入る語を書きなさい。 He can （1） fast.\n日本語：彼は速く走ることができます。（各空欄は1語）",
       "blanks": [
         [
           "run"
@@ -13996,10 +14009,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 8 Discover Japan」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Japanese festivals.",
+      "question": "「Lesson 8 Discover Japan」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Japanese festivals.\n日本語：私は日本のお祭りが好きです。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "I like ... で「私は〜が好きです」と表せます。",
@@ -14042,7 +14056,7 @@
         1
       ],
       "type": "fill",
-      "question": "「Lesson 9 Emergency Food」に関連する英語練習。次の（1）に入る語を書きなさい。 You should （1） careful.",
+      "question": "「Lesson 9 Emergency Food」に関連する英語練習。次の（1）に入る語を書きなさい。 You should （1） careful.\n日本語：あなたは注意するべきです。（各空欄は1語）",
       "blanks": [
         [
           "be"
@@ -14088,7 +14102,7 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 1 Meet New Friends」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "question": "「Lesson 1 Meet New Friends」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.\n日本語：私はユキです。初めまして。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -14134,7 +14148,7 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 2 Fun with Books」に関連する英語練習。次の（1）に入る語を書きなさい。 I like （1） books.",
+      "question": "「Lesson 2 Fun with Books」に関連する英語練習。次の（1）に入る語を書きなさい。 I like （1） books.\n日本語：私は本を読むことが好きです。（各空欄は1語）",
       "blanks": [
         [
           "reading"
@@ -14180,7 +14194,7 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 3 My Dream」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.",
+      "question": "「Lesson 3 My Dream」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "visit"
@@ -14226,10 +14240,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14272,10 +14287,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14318,10 +14334,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14364,10 +14381,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14410,10 +14428,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Lesson 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Lesson 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14456,10 +14475,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14502,10 +14522,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14548,10 +14569,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14594,10 +14616,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14640,10 +14663,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14686,10 +14710,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14732,10 +14757,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14778,10 +14804,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14824,10 +14851,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Unit 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Unit 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -14870,10 +14898,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 0」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14916,10 +14945,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 1」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -14962,10 +14992,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15008,10 +15039,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15054,10 +15086,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15100,10 +15133,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15146,10 +15180,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15192,10 +15227,11 @@
         2
       ],
       "type": "fill",
-      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「Unit 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15238,10 +15274,11 @@
         1
       ],
       "type": "fill",
-      "question": "「Get Ready 1-6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「Get Ready 1-6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15284,10 +15321,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 1」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15330,10 +15368,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15376,10 +15415,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15422,10 +15462,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15468,10 +15509,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15514,10 +15556,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15560,10 +15603,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15606,10 +15650,11 @@
         1
       ],
       "type": "fill",
-      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?",
+      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 Do you （1） music?\n日本語：あなたは音楽が好きですか。（各空欄は1語）",
       "blanks": [
         [
-          "like"
+          "like",
+          "love"
         ]
       ],
       "explanation": "一般動詞の疑問文では Do + 主語 + 動詞の原形を使います。",
@@ -15652,7 +15697,7 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 1 New Start」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.",
+      "question": "「PROGRAM 1 New Start」に関連する英語練習。次の（1）に入る語を書きなさい。 I （1） Yuki. Nice to meet you.\n日本語：私はユキです。初めまして。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -15698,10 +15743,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 2」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15744,10 +15790,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 3」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15790,10 +15837,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 4」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15836,10 +15884,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 5」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15882,10 +15931,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 6」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15928,10 +15978,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 7」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -15974,10 +16025,11 @@
         2
       ],
       "type": "fill",
-      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.",
+      "question": "「PROGRAM 8」に関連する英語練習。次の（1）に入る語を書きなさい。 I want to （1） English more.\n日本語：私はもっと英語を勉強したいです。（各空欄は1語）",
       "blanks": [
         [
-          "study"
+          "study",
+          "learn"
         ]
       ],
       "explanation": "want to + 動詞の原形で希望を表せます。",
@@ -16047,19 +16099,20 @@
       "textbookComponent": "geography",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "世界の位置を表すときに使うものをすべて選びなさい。",
+      "question": "緯度と経度について正しいものをすべて選びなさい。",
       "choices": [
-        "緯度",
-        "経度",
-        "標高だけ",
-        "方位"
+        "緯度は赤道を0度として南北をはかる",
+        "緯度は南北それぞれ180度まである",
+        "経度は本初子午線を0度として東西をはかる",
+        "本初子午線はイギリスのロンドンを通る",
+        "赤道は経度0度を示す線である"
       ],
       "answers": [
         0,
-        1,
+        2,
         3
       ],
-      "explanation": "緯度・経度・方位は位置を表す基本的な情報です。",
+      "explanation": "緯度は赤道を0度として南北を各90度、経度はロンドンを通る本初子午線を0度として東西を各180度ではかります。緯度は180度まではなく、赤道は緯度0度の線です。",
       "difficulty": 2
     },
     {
@@ -16143,19 +16196,20 @@
       "textbookComponent": "geography",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "世界の位置を表すときに使うものをすべて選びなさい。",
+      "question": "緯度と経度について正しいものをすべて選びなさい。",
       "choices": [
-        "緯度",
-        "経度",
-        "標高だけ",
-        "方位"
+        "緯度は赤道を0度として南北をはかる",
+        "緯度は南北それぞれ180度まである",
+        "経度は本初子午線を0度として東西をはかる",
+        "本初子午線はイギリスのロンドンを通る",
+        "赤道は経度0度を示す線である"
       ],
       "answers": [
         0,
-        1,
+        2,
         3
       ],
-      "explanation": "緯度・経度・方位は位置を表す基本的な情報です。",
+      "explanation": "緯度は赤道を0度として南北を各90度、経度はロンドンを通る本初子午線を0度として東西を各180度ではかります。緯度は180度まではなく、赤道は緯度0度の線です。",
       "difficulty": 2
     },
     {
@@ -16217,19 +16271,20 @@
       "textbookComponent": "geography",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "アジア州で人口が多い国をすべて選びなさい。",
+      "question": "アジア州に属する国をすべて選びなさい。",
       "choices": [
-        "インド",
+        "オーストラリア",
         "中国",
-        "日本",
-        "ブラジル"
+        "サウジアラビア",
+        "インド",
+        "エジプト"
       ],
       "answers": [
-        0,
         1,
-        2
+        2,
+        3
       ],
-      "explanation": "インド・中国・日本はいずれもアジア州にあります。",
+      "explanation": "インド・中国・サウジアラビアはアジア州の国です（サウジアラビアは西アジア）。エジプトはアフリカ州、オーストラリアはオセアニア州に属します。",
       "difficulty": 2
     },
     {
@@ -16337,19 +16392,20 @@
       "textbookComponent": "geography",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "アジア州で人口が多い国をすべて選びなさい。",
+      "question": "アジア州に属する国をすべて選びなさい。",
       "choices": [
-        "インド",
+        "オーストラリア",
         "中国",
-        "日本",
-        "ブラジル"
+        "サウジアラビア",
+        "インド",
+        "エジプト"
       ],
       "answers": [
-        0,
         1,
-        2
+        2,
+        3
       ],
-      "explanation": "インド・中国・日本はいずれもアジア州にあります。",
+      "explanation": "インド・中国・サウジアラビアはアジア州の国です（サウジアラビアは西アジア）。エジプトはアフリカ州、オーストラリアはオセアニア州に属します。",
       "difficulty": 2
     },
     {
@@ -16415,15 +16471,16 @@
       "choices": [
         "領土",
         "領海",
+        "排他的経済水域",
         "領空",
-        "公海すべて"
+        "公海"
       ],
       "answers": [
         0,
         1,
-        2
+        3
       ],
-      "explanation": "国家の領域は領土・領海・領空からなります。",
+      "explanation": "国の領域は領土・領海・領空からなります。排他的経済水域は沿岸国が水産資源や鉱産資源を利用できる水域ですが領域ではなく、公海はどの国の領域にも属しません。",
       "difficulty": 2
     },
     {
@@ -16535,15 +16592,16 @@
       "choices": [
         "領土",
         "領海",
+        "排他的経済水域",
         "領空",
-        "公海すべて"
+        "公海"
       ],
       "answers": [
         0,
         1,
-        2
+        3
       ],
-      "explanation": "国家の領域は領土・領海・領空からなります。",
+      "explanation": "国の領域は領土・領海・領空からなります。排他的経済水域は沿岸国が水産資源や鉱産資源を利用できる水域ですが領域ではなく、公海はどの国の領域にも属しません。",
       "difficulty": 2
     },
     {
@@ -16605,19 +16663,18 @@
       "textbookComponent": "geography",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "日本の三大都市圏に含まれるものをすべて選びなさい。",
+      "question": "日本の三大都市圏の中心となる都市をすべて選びなさい。",
       "choices": [
-        "東京大都市圏",
-        "大阪大都市圏",
-        "名古屋大都市圏",
-        "札幌大都市圏"
+        "名古屋",
+        "福岡",
+        "仙台",
+        "大阪"
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。",
+      "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。福岡や仙台は地方の政治・経済の中心となる地方中枢都市ですが、三大都市圏には含まれません。",
       "difficulty": 2
     },
     {
@@ -16725,19 +16782,18 @@
       "textbookComponent": "geography",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "日本の三大都市圏に含まれるものをすべて選びなさい。",
+      "question": "日本の三大都市圏の中心となる都市をすべて選びなさい。",
       "choices": [
-        "東京大都市圏",
-        "大阪大都市圏",
-        "名古屋大都市圏",
-        "札幌大都市圏"
+        "名古屋",
+        "福岡",
+        "仙台",
+        "大阪"
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。",
+      "explanation": "三大都市圏は東京・大阪・名古屋を中心とする都市圏です。福岡や仙台は地方の政治・経済の中心となる地方中枢都市ですが、三大都市圏には含まれません。",
       "difficulty": 2
     },
     {
@@ -16799,19 +16855,17 @@
       "textbookComponent": "geography",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "地域調査で資料として利用できるものをすべて選びなさい。",
+      "question": "地域調査で使う地形図について正しいものをすべて選びなさい。",
       "choices": [
-        "統計資料",
-        "地形図",
-        "聞き取り調査",
-        "根拠のないうわさ"
+        "2万5千分の1では1cmが250mにあたる",
+        "等高線の間隔が広いほど傾斜は急である",
+        "縮尺が大きいほど広い範囲を表せる",
+        "2万5千分の1では1cmが2.5kmにあたる"
       ],
       "answers": [
-        0,
-        1,
-        2
+        0
       ],
-      "explanation": "統計・地図・聞き取りなど複数の資料を組み合わせます。",
+      "explanation": "2万5千分の1では1cm×25000＝250mで、2.5kmではありません。等高線の間隔がせまいほど傾斜は急で、縮尺が大きい地図ほどせまい範囲をくわしく表します。",
       "difficulty": 2
     },
     {
@@ -16919,19 +16973,17 @@
       "textbookComponent": "geography",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "地域調査で資料として利用できるものをすべて選びなさい。",
+      "question": "地域調査で使う地形図について正しいものをすべて選びなさい。",
       "choices": [
-        "統計資料",
-        "地形図",
-        "聞き取り調査",
-        "根拠のないうわさ"
+        "2万5千分の1では1cmが250mにあたる",
+        "等高線の間隔が広いほど傾斜は急である",
+        "縮尺が大きいほど広い範囲を表せる",
+        "2万5千分の1では1cmが2.5kmにあたる"
       ],
       "answers": [
-        0,
-        1,
-        2
+        0
       ],
-      "explanation": "統計・地図・聞き取りなど複数の資料を組み合わせます。",
+      "explanation": "2万5千分の1では1cm×25000＝250mで、2.5kmではありません。等高線の間隔がせまいほど傾斜は急で、縮尺が大きい地図ほどせまい範囲をくわしく表します。",
       "difficulty": 2
     },
     {
@@ -16995,17 +17047,18 @@
       "type": "multi",
       "question": "古代の日本に関係するものをすべて選びなさい。",
       "choices": [
-        "大化の改新",
         "律令制度",
-        "遣唐使",
-        "参勤交代"
+        "勘合貿易",
+        "御成敗式目",
+        "大化の改新",
+        "遣唐使"
       ],
       "answers": [
         0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "参勤交代は江戸時代の制度です。",
+      "explanation": "大化の改新・律令制度・遣唐使は飛鳥〜平安時代の古代のことがらです。御成敗式目は鎌倉時代、勘合貿易は室町時代の中世のことがらです。",
       "difficulty": 2
     },
     {
@@ -17115,17 +17168,18 @@
       "type": "multi",
       "question": "古代の日本に関係するものをすべて選びなさい。",
       "choices": [
-        "大化の改新",
         "律令制度",
-        "遣唐使",
-        "参勤交代"
+        "勘合貿易",
+        "御成敗式目",
+        "大化の改新",
+        "遣唐使"
       ],
       "answers": [
         0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "参勤交代は江戸時代の制度です。",
+      "explanation": "大化の改新・律令制度・遣唐使は飛鳥〜平安時代の古代のことがらです。御成敗式目は鎌倉時代、勘合貿易は室町時代の中世のことがらです。",
       "difficulty": 2
     },
     {
@@ -17190,17 +17244,16 @@
       "type": "multi",
       "question": "室町時代に関係するものをすべて選びなさい。",
       "choices": [
-        "足利氏",
+        "元寇",
         "勘合貿易",
-        "応仁の乱",
-        "参勤交代"
+        "御成敗式目",
+        "応仁の乱"
       ],
       "answers": [
-        0,
         1,
-        2
+        3
       ],
-      "explanation": "参勤交代は江戸時代です。",
+      "explanation": "勘合貿易（足利義満による日明貿易）と応仁の乱は室町時代のできごとです。元寇と御成敗式目は鎌倉時代のことがらなので、室町時代には当てはまりません。",
       "difficulty": 2
     },
     {
@@ -17312,17 +17365,16 @@
       "type": "multi",
       "question": "室町時代に関係するものをすべて選びなさい。",
       "choices": [
-        "足利氏",
+        "元寇",
         "勘合貿易",
-        "応仁の乱",
-        "参勤交代"
+        "御成敗式目",
+        "応仁の乱"
       ],
       "answers": [
-        0,
         1,
-        2
+        3
       ],
-      "explanation": "参勤交代は江戸時代です。",
+      "explanation": "勘合貿易（足利義満による日明貿易）と応仁の乱は室町時代のできごとです。元寇と御成敗式目は鎌倉時代のことがらなので、室町時代には当てはまりません。",
       "difficulty": 2
     },
     {
@@ -17384,19 +17436,19 @@
       "textbookComponent": "history",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "江戸時代の対外関係として正しいものをすべて選びなさい。",
+      "question": "江戸時代の鎖国中の対外関係として正しいものをすべて選びなさい。",
       "choices": [
+        "ポルトガル船の来航を認めた",
         "長崎でオランダと交易した",
-        "朝鮮通信使が来日した",
-        "琉球王国を通じた交流があった",
-        "外国との交流を完全にゼロにした"
+        "中国とは交易しなかった",
+        "長崎でイギリスと交易した",
+        "朝鮮通信使が来日した"
       ],
       "answers": [
-        0,
         1,
-        2
+        4
       ],
-      "explanation": "鎖国下でも複数の窓口を通じて対外交流が続きました。",
+      "explanation": "鎖国中も長崎でオランダや中国と交易し、朝鮮通信使も来日しました。イギリスは鎖国前に平戸の商館を閉じて去り、ポルトガル船は島原・天草一揆の後に来航を禁止されました。",
       "difficulty": 2
     },
     {
@@ -17504,19 +17556,19 @@
       "textbookComponent": "history",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "江戸時代の対外関係として正しいものをすべて選びなさい。",
+      "question": "江戸時代の鎖国中の対外関係として正しいものをすべて選びなさい。",
       "choices": [
+        "ポルトガル船の来航を認めた",
         "長崎でオランダと交易した",
-        "朝鮮通信使が来日した",
-        "琉球王国を通じた交流があった",
-        "外国との交流を完全にゼロにした"
+        "中国とは交易しなかった",
+        "長崎でイギリスと交易した",
+        "朝鮮通信使が来日した"
       ],
       "answers": [
-        0,
         1,
-        2
+        4
       ],
-      "explanation": "鎖国下でも複数の窓口を通じて対外交流が続きました。",
+      "explanation": "鎖国中も長崎でオランダや中国と交易し、朝鮮通信使も来日しました。イギリスは鎖国前に平戸の商館を閉じて去り、ポルトガル船は島原・天草一揆の後に来航を禁止されました。",
       "difficulty": 2
     },
     {
@@ -17581,16 +17633,17 @@
       "question": "明治時代の近代化に関係するものをすべて選びなさい。",
       "choices": [
         "学制",
+        "刀狩",
+        "太閤検地",
         "徴兵令",
-        "地租改正",
-        "鎖国令"
+        "地租改正"
       ],
       "answers": [
         0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "鎖国令は江戸時代の対外政策に関係します。",
+      "explanation": "学制・徴兵令・地租改正は明治政府による近代化の政策です。太閤検地と刀狩は豊臣秀吉の政策で、土地や武器に関係するため明治の改革と混同しないようにします。",
       "difficulty": 2
     },
     {
@@ -17701,16 +17754,17 @@
       "question": "明治時代の近代化に関係するものをすべて選びなさい。",
       "choices": [
         "学制",
+        "刀狩",
+        "太閤検地",
         "徴兵令",
-        "地租改正",
-        "鎖国令"
+        "地租改正"
       ],
       "answers": [
         0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "鎖国令は江戸時代の対外政策に関係します。",
+      "explanation": "学制・徴兵令・地租改正は明治政府による近代化の政策です。太閤検地と刀狩は豊臣秀吉の政策で、土地や武器に関係するため明治の改革と混同しないようにします。",
       "difficulty": 2
     },
     {
@@ -17774,17 +17828,18 @@
       "type": "multi",
       "question": "戦後の日本に関係するものをすべて選びなさい。",
       "choices": [
-        "高度経済成長",
         "日本国憲法の施行",
+        "大日本帝国憲法の発布",
+        "国際連盟への加盟",
         "国際連合への加盟",
-        "廃藩置県"
+        "高度経済成長"
       ],
       "answers": [
         0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "廃藩置県は明治時代です。",
+      "explanation": "高度経済成長、日本国憲法の施行（1947年）、国際連合への加盟（1956年）は戦後です。国際連盟への加盟（1920年）と大日本帝国憲法の発布（1889年）は戦前です。",
       "difficulty": 2
     },
     {
@@ -17894,17 +17949,18 @@
       "type": "multi",
       "question": "戦後の日本に関係するものをすべて選びなさい。",
       "choices": [
-        "高度経済成長",
         "日本国憲法の施行",
+        "大日本帝国憲法の発布",
+        "国際連盟への加盟",
         "国際連合への加盟",
-        "廃藩置県"
+        "高度経済成長"
       ],
       "answers": [
         0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "廃藩置県は明治時代です。",
+      "explanation": "高度経済成長、日本国憲法の施行（1947年）、国際連合への加盟（1956年）は戦後です。国際連盟への加盟（1920年）と大日本帝国憲法の発布（1889年）は戦前です。",
       "difficulty": 2
     },
     {
@@ -18009,19 +18065,18 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "現代社会の課題として考えられるものをすべて選びなさい。",
+      "question": "現代の日本社会のようすとして正しいものをすべて選びなさい。",
       "choices": [
-        "少子高齢化",
-        "情報格差",
-        "環境問題",
-        "身分制度の固定"
+        "三世代で暮らす世帯が増えている",
+        "情報通信技術の発達で情報化が進んでいる",
+        "65歳以上の人の割合が高まっている",
+        "日本の総人口が増え続けている"
       ],
       "answers": [
-        0,
         1,
         2
       ],
-      "explanation": "少子高齢化・情報格差・環境問題などが現代的課題です。",
+      "explanation": "日本では65歳以上の人の割合が高まり、情報通信技術の発達で情報化も進んでいます。総人口は減少しており、三世代世帯は減って核家族や一人暮らしの世帯が増えています。",
       "difficulty": 2
     },
     {
@@ -18081,19 +18136,18 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "現代社会の課題として考えられるものをすべて選びなさい。",
+      "question": "現代の日本社会のようすとして正しいものをすべて選びなさい。",
       "choices": [
-        "少子高齢化",
-        "情報格差",
-        "環境問題",
-        "身分制度の固定"
+        "三世代で暮らす世帯が増えている",
+        "情報通信技術の発達で情報化が進んでいる",
+        "65歳以上の人の割合が高まっている",
+        "日本の総人口が増え続けている"
       ],
       "answers": [
-        0,
         1,
         2
       ],
-      "explanation": "少子高齢化・情報格差・環境問題などが現代的課題です。",
+      "explanation": "日本では65歳以上の人の割合が高まり、情報通信技術の発達で情報化も進んでいます。総人口は減少しており、三世代世帯は減って核家族や一人暮らしの世帯が増えています。",
       "difficulty": 2
     },
     {
@@ -18153,19 +18207,18 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "現代社会の課題として考えられるものをすべて選びなさい。",
+      "question": "現代の日本社会のようすとして正しいものをすべて選びなさい。",
       "choices": [
-        "少子高齢化",
-        "情報格差",
-        "環境問題",
-        "身分制度の固定"
+        "三世代で暮らす世帯が増えている",
+        "情報通信技術の発達で情報化が進んでいる",
+        "65歳以上の人の割合が高まっている",
+        "日本の総人口が増え続けている"
       ],
       "answers": [
-        0,
         1,
         2
       ],
-      "explanation": "少子高齢化・情報格差・環境問題などが現代的課題です。",
+      "explanation": "日本では65歳以上の人の割合が高まり、情報通信技術の発達で情報化も進んでいます。総人口は減少しており、三世代世帯は減って核家族や一人暮らしの世帯が増えています。",
       "difficulty": 2
     },
     {
@@ -18245,19 +18298,19 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "基本的人権に含まれるものをすべて選びなさい。",
+      "question": "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
       "choices": [
-        "自由権",
-        "社会権",
-        "参政権",
-        "世襲による特権"
+        "表現の自由",
+        "選挙権",
+        "生存権",
+        "裁判を受ける権利",
+        "教育を受ける権利"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        4
       ],
-      "explanation": "自由権・社会権・参政権などが基本的人権として保障されます。",
+      "explanation": "社会権は人間らしい生活を保障する権利で、生存権や教育を受ける権利が含まれます。選挙権は参政権、表現の自由は自由権、裁判を受ける権利は請求権に分類されます。",
       "difficulty": 2
     },
     {
@@ -18316,19 +18369,19 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "基本的人権に含まれるものをすべて選びなさい。",
+      "question": "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
       "choices": [
-        "自由権",
-        "社会権",
-        "参政権",
-        "世襲による特権"
+        "表現の自由",
+        "選挙権",
+        "生存権",
+        "裁判を受ける権利",
+        "教育を受ける権利"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        4
       ],
-      "explanation": "自由権・社会権・参政権などが基本的人権として保障されます。",
+      "explanation": "社会権は人間らしい生活を保障する権利で、生存権や教育を受ける権利が含まれます。選挙権は参政権、表現の自由は自由権、裁判を受ける権利は請求権に分類されます。",
       "difficulty": 2
     },
     {
@@ -18387,19 +18440,19 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "基本的人権に含まれるものをすべて選びなさい。",
+      "question": "基本的人権のうち、社会権に含まれるものをすべて選びなさい。",
       "choices": [
-        "自由権",
-        "社会権",
-        "参政権",
-        "世襲による特権"
+        "表現の自由",
+        "選挙権",
+        "生存権",
+        "裁判を受ける権利",
+        "教育を受ける権利"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        4
       ],
-      "explanation": "自由権・社会権・参政権などが基本的人権として保障されます。",
+      "explanation": "社会権は人間らしい生活を保障する権利で、生存権や教育を受ける権利が含まれます。選挙権は参政権、表現の自由は自由権、裁判を受ける権利は請求権に分類されます。",
       "difficulty": 2
     },
     {
@@ -18504,17 +18557,18 @@
       "type": "multi",
       "question": "三権分立の三つの権力をすべて選びなさい。",
       "choices": [
-        "立法",
+        "国民主権",
+        "地方自治",
         "行政",
         "司法",
-        "報道"
+        "立法"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        3,
+        4
       ],
-      "explanation": "立法・行政・司法の三権が相互に抑制します。",
+      "explanation": "三権分立は国の権力を立法（国会）・行政（内閣）・司法（裁判所）に分けるしくみです。国民主権は日本国憲法の基本原則、地方自治は住民による地域の政治で、三権ではありません。",
       "difficulty": 2
     },
     {
@@ -18575,17 +18629,18 @@
       "type": "multi",
       "question": "三権分立の三つの権力をすべて選びなさい。",
       "choices": [
-        "立法",
+        "国民主権",
+        "地方自治",
         "行政",
         "司法",
-        "報道"
+        "立法"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        3,
+        4
       ],
-      "explanation": "立法・行政・司法の三権が相互に抑制します。",
+      "explanation": "三権分立は国の権力を立法（国会）・行政（内閣）・司法（裁判所）に分けるしくみです。国民主権は日本国憲法の基本原則、地方自治は住民による地域の政治で、三権ではありません。",
       "difficulty": 2
     },
     {
@@ -18646,17 +18701,18 @@
       "type": "multi",
       "question": "三権分立の三つの権力をすべて選びなさい。",
       "choices": [
-        "立法",
+        "国民主権",
+        "地方自治",
         "行政",
         "司法",
-        "報道"
+        "立法"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        3,
+        4
       ],
-      "explanation": "立法・行政・司法の三権が相互に抑制します。",
+      "explanation": "三権分立は国の権力を立法（国会）・行政（内閣）・司法（裁判所）に分けるしくみです。国民主権は日本国憲法の基本原則、地方自治は住民による地域の政治で、三権ではありません。",
       "difficulty": 2
     },
     {
@@ -18759,19 +18815,20 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "労働者の権利に関係するものをすべて選びなさい。",
+      "question": "労働三権に含まれるものをすべて選びなさい。",
       "choices": [
-        "団結権",
-        "団体交渉権",
+        "請願権",
         "団体行動権",
-        "納税免除権"
+        "勤労の権利",
+        "団体交渉権",
+        "団結権"
       ],
       "answers": [
-        0,
         1,
-        2
+        3,
+        4
       ],
-      "explanation": "労働三権は団結権・団体交渉権・団体行動権です。",
+      "explanation": "労働三権は団結権・団体交渉権・団体行動権（争議権）です。勤労の権利は社会権の一つですが労働三権には含まれず、請願権は国や地方公共団体に要望を伝える権利です。",
       "difficulty": 2
     },
     {
@@ -18830,19 +18887,20 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "労働者の権利に関係するものをすべて選びなさい。",
+      "question": "労働三権に含まれるものをすべて選びなさい。",
       "choices": [
-        "団結権",
-        "団体交渉権",
+        "請願権",
         "団体行動権",
-        "納税免除権"
+        "勤労の権利",
+        "団体交渉権",
+        "団結権"
       ],
       "answers": [
-        0,
         1,
-        2
+        3,
+        4
       ],
-      "explanation": "労働三権は団結権・団体交渉権・団体行動権です。",
+      "explanation": "労働三権は団結権・団体交渉権・団体行動権（争議権）です。勤労の権利は社会権の一つですが労働三権には含まれず、請願権は国や地方公共団体に要望を伝える権利です。",
       "difficulty": 2
     },
     {
@@ -18901,19 +18959,20 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "労働者の権利に関係するものをすべて選びなさい。",
+      "question": "労働三権に含まれるものをすべて選びなさい。",
       "choices": [
-        "団結権",
-        "団体交渉権",
+        "請願権",
         "団体行動権",
-        "納税免除権"
+        "勤労の権利",
+        "団体交渉権",
+        "団結権"
       ],
       "answers": [
-        0,
         1,
-        2
+        3,
+        4
       ],
-      "explanation": "労働三権は団結権・団体交渉権・団体行動権です。",
+      "explanation": "労働三権は団結権・団体交渉権・団体行動権（争議権）です。勤労の権利は社会権の一つですが労働三権には含まれず、請願権は国や地方公共団体に要望を伝える権利です。",
       "difficulty": 2
     },
     {
@@ -19016,19 +19075,20 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "国際協力に関係するものをすべて選びなさい。",
+      "question": "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
       "choices": [
-        "ODA",
-        "NGO",
-        "国際連合",
-        "鎖国"
+        "UNICEF－国連教育科学文化機関",
+        "ODA－政府開発援助",
+        "NGO－非政府組織",
+        "WHO－世界貿易機関",
+        "PKO－国連平和維持活動"
       ],
       "answers": [
-        0,
         1,
-        2
+        2,
+        4
       ],
-      "explanation": "ODA・NGO・国連はいずれも国際協力と関係します。",
+      "explanation": "ODAは政府開発援助、NGOは非政府組織、PKOは国連平和維持活動です。WHOは世界保健機関（世界貿易機関はWTO）、UNICEFは国連児童基金（国連教育科学文化機関はUNESCO）です。",
       "difficulty": 2
     },
     {
@@ -19087,19 +19147,20 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "国際協力に関係するものをすべて選びなさい。",
+      "question": "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
       "choices": [
-        "ODA",
-        "NGO",
-        "国際連合",
-        "鎖国"
+        "UNICEF－国連教育科学文化機関",
+        "ODA－政府開発援助",
+        "NGO－非政府組織",
+        "WHO－世界貿易機関",
+        "PKO－国連平和維持活動"
       ],
       "answers": [
-        0,
         1,
-        2
+        2,
+        4
       ],
-      "explanation": "ODA・NGO・国連はいずれも国際協力と関係します。",
+      "explanation": "ODAは政府開発援助、NGOは非政府組織、PKOは国連平和維持活動です。WHOは世界保健機関（世界貿易機関はWTO）、UNICEFは国連児童基金（国連教育科学文化機関はUNESCO）です。",
       "difficulty": 2
     },
     {
@@ -19158,19 +19219,20 @@
       "textbookComponent": "civics",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "国際協力に関係するものをすべて選びなさい。",
+      "question": "国際協力に関係する略称と日本語名の組み合わせとして正しいものをすべて選びなさい。",
       "choices": [
-        "ODA",
-        "NGO",
-        "国際連合",
-        "鎖国"
+        "UNICEF－国連教育科学文化機関",
+        "ODA－政府開発援助",
+        "NGO－非政府組織",
+        "WHO－世界貿易機関",
+        "PKO－国連平和維持活動"
       ],
       "answers": [
-        0,
         1,
-        2
+        2,
+        4
       ],
-      "explanation": "ODA・NGO・国連はいずれも国際協力と関係します。",
+      "explanation": "ODAは政府開発援助、NGOは非政府組織、PKOは国連平和維持活動です。WHOは世界保健機関（世界貿易機関はWTO）、UNICEFは国連児童基金（国連教育科学文化機関はUNESCO）です。",
       "difficulty": 2
     },
     {
@@ -19232,16 +19294,17 @@
       "question": "力の三要素をすべて選びなさい。",
       "choices": [
         "力の大きさ",
-        "力の向き",
         "作用点",
-        "物体の色"
+        "力の向き",
+        "物体の速さ",
+        "物体の質量"
       ],
       "answers": [
         0,
         1,
         2
       ],
-      "explanation": "力は大きさ・向き・作用点で表します。",
+      "explanation": "力は矢印で表し、作用点（力がはたらく点）・力の向き・力の大きさの三つを示します。物体の質量や速さは物体の性質や運動のようすで、力の三要素ではありません。",
       "difficulty": 2
     },
     {
@@ -19346,17 +19409,16 @@
       "type": "multi",
       "question": "電流がつくる磁界について正しいものをすべて選びなさい。",
       "choices": [
-        "電流の向きで磁界の向きが変わる",
-        "コイルに電流を流すと磁界ができる",
-        "電流が大きいほど磁界は強くなりやすい",
-        "磁界は電流と無関係である"
+        "コイルの巻数を増やすと磁界は強くなる",
+        "電流を止めても、磁界はそのまま残り続ける",
+        "電流の向きを逆にすると磁界も逆向きになる",
+        "導線から離れるほど磁界は強くなっていく"
       ],
       "answers": [
         0,
-        1,
         2
       ],
-      "explanation": "電流と磁界には密接な関係があります。",
+      "explanation": "電流の向きを逆にすると磁界も逆向きになり、コイルの巻数を増やすと磁界は強くなります。磁界は導線に近いほど強く、離れるほど弱くなります。電流を止めると磁界は消えます。",
       "difficulty": 2
     },
     {
@@ -19599,19 +19661,18 @@
       "textbookComponent": "main",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "気体を集める方法をすべて選びなさい。",
+      "question": "気体の集め方について正しいものをすべて選びなさい。",
       "choices": [
-        "水上置換法",
-        "上方置換法",
-        "下方置換法",
-        "蒸留法"
+        "水に溶けやすく空気より重い気体は上方置換法で集める",
+        "アンモニアは水上置換法で集める",
+        "水に溶けやすく空気より軽い気体は上方置換法で集める",
+        "水に溶けにくい気体は水上置換法で集める"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        3
       ],
-      "explanation": "気体の性質に応じて三つの置換法を使い分けます。",
+      "explanation": "水に溶けにくい気体は水上置換法、水に溶けやすく空気より軽い気体は上方置換法、空気より重い気体は下方置換法で集めます。アンモニアは水に非常に溶けやすいので上方置換法です。",
       "difficulty": 2
     },
     {
@@ -19716,17 +19777,17 @@
       "type": "multi",
       "question": "化学変化に当てはまるものをすべて選びなさい。",
       "choices": [
-        "鉄がさびる",
-        "炭酸水素ナトリウムを加熱する",
+        "砂糖が水に溶ける",
+        "木が燃える",
+        "ドライアイスが気体になる",
         "水が凍る",
-        "木が燃える"
+        "鉄がさびる"
       ],
       "answers": [
-        0,
         1,
-        3
+        4
       ],
-      "explanation": "水が凍るのは状態変化で、新しい物質はできません。",
+      "explanation": "鉄がさびる・木が燃えるのは、酸素と結びついて別の物質ができる化学変化です。水が凍る・ドライアイスが気体になるのは状態変化、砂糖が水に溶けるのは溶解で、新しい物質はできません。",
       "difficulty": 2
     },
     {
@@ -19831,17 +19892,18 @@
       "type": "multi",
       "question": "電解質について正しいものをすべて選びなさい。",
       "choices": [
-        "水溶液が電流を通す",
-        "水中でイオンに分かれる物質がある",
         "食塩は電解質である",
-        "砂糖水は強い電解質である"
+        "エタノールは電解質である",
+        "砂糖は電解質である",
+        "電解質は水に溶けると電離する",
+        "電解質の水溶液は電流を通す"
       ],
       "answers": [
         0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "砂糖は水に溶けてもほとんどイオンにならないため非電解質です。",
+      "explanation": "食塩（塩化ナトリウム）は水に溶けると陽イオンと陰イオンに電離する電解質で、その水溶液は電流を通します。砂糖やエタノールは電離しない非電解質です。",
       "difficulty": 2
     },
     {
@@ -19937,9 +19999,9 @@
       "id": "v036sci_tokyoshoseki_plantsanimals_3",
       "subject": "science",
       "field": "biology",
-      "unit": "plants-animals",
+      "unit": "cells-body",
       "grades": [
-        1
+        2
       ],
       "textbookPublisher": "tokyo-shoseki",
       "textbookComponent": "main",
@@ -19947,17 +20009,16 @@
       "type": "multi",
       "question": "植物と動物の細胞の両方に見られるものをすべて選びなさい。",
       "choices": [
-        "核",
+        "葉緑体",
+        "細胞壁",
         "細胞膜",
-        "細胞質",
-        "葉緑体"
+        "核"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        3
       ],
-      "explanation": "葉緑体は主に植物細胞に見られます。",
+      "explanation": "核と細胞膜は植物と動物の細胞の両方にあります。細胞壁と葉緑体は植物の細胞に見られるつくりで、動物の細胞にはありません。",
       "difficulty": 2
     },
     {
@@ -20061,19 +20122,18 @@
       "textbookComponent": "main",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "血液の成分をすべて選びなさい。",
+      "question": "血液の成分とそのはたらきの組み合わせとして正しいものをすべて選びなさい。",
       "choices": [
-        "赤血球",
-        "白血球",
-        "血小板",
-        "胆汁"
+        "血しょう－養分や不要物を運ぶ",
+        "血小板－細菌などを分解する",
+        "赤血球－酸素を運ぶ",
+        "白血球－出血した血液を固める"
       ],
       "answers": [
         0,
-        1,
         2
       ],
-      "explanation": "胆汁は消化液で、血液の成分ではありません。",
+      "explanation": "赤血球は酸素を運び、血しょうは養分や二酸化炭素などの不要物を運びます。出血した血液を固めるのは血小板、細菌などを分解するのは白血球なので、残りの2つは組み合わせが誤りです。",
       "difficulty": 2
     },
     {
@@ -20176,19 +20236,18 @@
       "textbookComponent": "main",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "無性生殖の特徴として正しいものをすべて選びなさい。",
+      "question": "無性生殖によるふえ方をすべて選びなさい。",
       "choices": [
-        "一個体から子ができる場合がある",
-        "子は親と同じ遺伝情報をもちやすい",
-        "受精を必要としない",
-        "必ず雌雄二個体が必要"
+        "アブラナが受粉して種子でふえる",
+        "カエルが受精卵からふえる",
+        "ジャガイモのいもから芽が出てふえる",
+        "ゾウリムシが分裂してふえる"
       ],
       "answers": [
-        0,
-        1,
-        2
+        2,
+        3
       ],
-      "explanation": "無性生殖では基本的に受精を行いません。",
+      "explanation": "分裂やいもから芽が出てふえるのは、受精を行わない無性生殖です。カエルの受精卵やアブラナの種子は、卵（卵細胞）と精子（精細胞）の受精でできるので有性生殖です。",
       "difficulty": 2
     },
     {
@@ -20270,19 +20329,18 @@
       "textbookComponent": "main",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "地層から過去の環境を考える手がかりになるものをすべて選びなさい。",
+      "question": "地層ができた当時の環境を知る手がかりとなる示相化石をすべて選びなさい。",
       "choices": [
-        "化石",
-        "堆積物",
-        "地層の重なり",
-        "現在の天気予報だけ"
+        "サンヨウチュウ",
+        "サンゴ",
+        "シジミ",
+        "アンモナイト"
       ],
       "answers": [
-        0,
         1,
         2
       ],
-      "explanation": "化石や堆積物、地層の重なりから過去の環境を推定します。",
+      "explanation": "サンゴはあたたかくて浅い海、シジミは河口や湖のような水域で地層ができたことを示す示相化石です。アンモナイトやサンヨウチュウは地層ができた時代を示す示準化石です。",
       "difficulty": 2
     },
     {
@@ -20386,19 +20444,18 @@
       "textbookComponent": "main",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "温暖前線が近づくときに見られやすい特徴をすべて選びなさい。",
+      "question": "温暖前線による天気の変化として正しいものをすべて選びなさい。",
       "choices": [
-        "広い範囲で弱い雨が続くことがある",
-        "層状の雲が現れやすい",
-        "通過後に気温が上がることがある",
-        "必ず快晴になる"
+        "通過後は暖気におおわれ気温が上がる",
+        "積乱雲が発達し、強い雨が短時間降る",
+        "広い範囲に弱い雨が長く降る",
+        "通過後は北寄りの風になり気温が下がる"
       ],
       "answers": [
         0,
-        1,
         2
       ],
-      "explanation": "温暖前線では比較的穏やかな天気変化が見られます。",
+      "explanation": "温暖前線では乱層雲などの層状の雲が広がり、広い範囲に弱い雨が長く降り、通過後は気温が上がります。積乱雲による短時間の強い雨や、通過後の北寄りの風と気温低下は寒冷前線の特徴です。",
       "difficulty": 2
     },
     {
@@ -20504,17 +20561,18 @@
       "type": "multi",
       "question": "太陽系の惑星をすべて選びなさい。",
       "choices": [
-        "地球",
-        "火星",
+        "金星",
+        "冥王星",
         "木星",
+        "火星",
         "月"
       ],
       "answers": [
         0,
-        1,
-        2
+        2,
+        3
       ],
-      "explanation": "月は地球の衛星で、惑星ではありません。",
+      "explanation": "金星・木星・火星は太陽のまわりを公転する惑星です。月は地球のまわりを回る衛星で、冥王星は現在は惑星ではなく準惑星に分類されています。",
       "difficulty": 2
     },
     {
@@ -20617,19 +20675,20 @@
       "textbookComponent": "main",
       "source": "original-publisher-balance-v036",
       "type": "multi",
-      "question": "持続可能な社会につながる行動をすべて選びなさい。",
+      "question": "持続可能な社会のために利用が進められている再生可能エネルギーをすべて選びなさい。",
       "choices": [
-        "省エネルギー",
-        "資源の再利用",
-        "生物多様性の保全",
-        "資源を無制限に使う"
+        "太陽光",
+        "天然ガス",
+        "地熱",
+        "風力",
+        "原子力"
       ],
       "answers": [
         0,
-        1,
-        2
+        2,
+        3
       ],
-      "explanation": "資源・エネルギーを適切に使い、環境を守ることが重要です。",
+      "explanation": "太陽光・風力・地熱は自然の中でくり返し利用でき、なくならない再生可能エネルギーです。天然ガスは化石燃料、原子力はウランを燃料とし、どちらも資源に限りがあります。",
       "difficulty": 2
     },
     {
@@ -22221,16 +22280,17 @@
       "question": "三角形の合同条件に含まれるものをすべて選びなさい。",
       "choices": [
         "3組の辺がそれぞれ等しい",
-        "2組の辺とその間の角がそれぞれ等しい",
-        "1組の辺だけが等しい",
-        "1組の辺とその両端の角がそれぞれ等しい"
+        "1組の辺とその両端の角がそれぞれ等しい",
+        "3組の角がそれぞれ等しい",
+        "1組の辺と1つの角がそれぞれ等しい",
+        "2組の辺とその間の角がそれぞれ等しい"
       ],
       "answers": [
         0,
         1,
-        3
+        4
       ],
-      "explanation": "三角形の代表的な合同条件は3種類です。",
+      "explanation": "合同条件は、3組の辺、2組の辺とその間の角、1組の辺とその両端の角がそれぞれ等しいことの3つです。3組の角が等しくても大きさが違う場合があり、1組の辺と1つの角では形が決まりません。",
       "difficulty": 2
     },
     {
@@ -22290,16 +22350,17 @@
       "question": "三角形の合同条件に含まれるものをすべて選びなさい。",
       "choices": [
         "3組の辺がそれぞれ等しい",
-        "2組の辺とその間の角がそれぞれ等しい",
-        "1組の辺だけが等しい",
-        "1組の辺とその両端の角がそれぞれ等しい"
+        "1組の辺とその両端の角がそれぞれ等しい",
+        "3組の角がそれぞれ等しい",
+        "1組の辺と1つの角がそれぞれ等しい",
+        "2組の辺とその間の角がそれぞれ等しい"
       ],
       "answers": [
         0,
         1,
-        3
+        4
       ],
-      "explanation": "三角形の代表的な合同条件は3種類です。",
+      "explanation": "合同条件は、3組の辺、2組の辺とその間の角、1組の辺とその両端の角がそれぞれ等しいことの3つです。3組の角が等しくても大きさが違う場合があり、1組の辺と1つの角では形が決まりません。",
       "difficulty": 2
     },
     {
@@ -24771,7 +24832,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 1 About Me」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 1 About Me」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24793,7 +24854,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 2 My Hero」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 2 My Hero」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24815,7 +24876,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 3 My Treasure」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 3 My Treasure」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24837,7 +24898,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 4 My Summer Plans」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 4 My Summer Plans」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24859,7 +24920,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 5 Ms. Brown's Family」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Lesson 5 Ms. Brown's Family」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -24905,7 +24966,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 7 Athletes with Spirit」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Lesson 7 Athletes with Spirit」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -24928,7 +24989,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 8 Discover Japan」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Lesson 8 Discover Japan」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -24951,7 +25012,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 9 Emergency Food」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Lesson 9 Emergency Food」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -24974,7 +25035,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 1 Meet New Friends」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Lesson 1 Meet New Friends」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -24997,7 +25058,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 2 Fun with Books」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「Lesson 2 Fun with Books」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25019,7 +25080,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 3 My Dream」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「Lesson 3 My Dream」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25041,7 +25102,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「Lesson 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25063,7 +25124,7 @@
       "textbookPublisher": "sanseido",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Lesson 5」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「Lesson 5」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25163,7 +25224,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 0」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 0」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25185,7 +25246,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 1」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 1」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25207,7 +25268,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 2」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 2」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25229,7 +25290,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 3」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 3」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25251,7 +25312,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 4」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Unit 4」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25297,7 +25358,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 6」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Unit 6」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25320,7 +25381,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 7」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Unit 7」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25343,7 +25404,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 8」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Unit 8」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25366,7 +25427,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 0」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「Unit 0」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25389,7 +25450,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 1」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「Unit 1」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25411,7 +25472,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 2」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「Unit 2」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25433,7 +25494,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 3」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「Unit 3」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25455,7 +25516,7 @@
       "textbookPublisher": "tokyo-shoseki",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Unit 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「Unit 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25555,7 +25616,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「Get Ready 1-6」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「Get Ready 1-6」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25577,7 +25638,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 1」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「PROGRAM 1」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25599,7 +25660,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 2」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「PROGRAM 2」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25621,7 +25682,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 3」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「PROGRAM 3」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25643,7 +25704,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 4」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.",
+      "question": "「PROGRAM 4」の学習に関連して、空欄に入る語を書きなさい。 She （1） soccer after school.\n日本語：彼女は放課後サッカーをします。（各空欄は1語）",
       "blanks": [
         [
           "plays"
@@ -25689,7 +25750,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 6」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「PROGRAM 6」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25712,7 +25773,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 7」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「PROGRAM 7」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25735,7 +25796,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 8」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「PROGRAM 8」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25758,7 +25819,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 1 New Start」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.",
+      "question": "「PROGRAM 1 New Start」の学習に関連して、空欄に入る語を書きなさい。 I was （1） dinner at seven yesterday.\n日本語：私は昨日7時に夕食を食べていました。（各空欄は1語）",
       "blanks": [
         [
           "eating",
@@ -25781,7 +25842,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 2」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「PROGRAM 2」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25803,7 +25864,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 3」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.",
+      "question": "「PROGRAM 3」の学習に関連して、空欄に入る語を書きなさい。 I want （1） learn more about Japan.\n日本語：私は日本についてもっと学びたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25825,7 +25886,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「PROGRAM 4」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -25847,7 +25908,7 @@
       "textbookPublisher": "kairyudo",
       "source": "publisher-balance-original",
       "type": "fill",
-      "question": "「PROGRAM 5」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.",
+      "question": "「PROGRAM 5」の学習に関連して、空欄に入る語を書きなさい。 I am going （1） visit Kyoto next week.\n日本語：私は来週京都を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -26065,17 +26126,16 @@
       "textbookPublisher": "gakko-tosho",
       "source": "publisher-balance-original",
       "question": "三角形の合同条件として正しいものをすべて選びなさい。",
-      "explanation": "三角形の合同条件は3組の辺、2組の辺とその間の角、1組の辺とその両端の角です。",
+      "explanation": "3組の辺、2組の辺とその間の角がそれぞれ等しければ合同です。3組の角が等しくても大きさが違う場合があり、2組の辺とその間にない角では三角形が1つに決まらないので合同条件ではありません。",
       "choices": [
-        "3組の辺がそれぞれ等しい",
         "2組の辺とその間の角がそれぞれ等しい",
-        "1組の辺とその両端の角がそれぞれ等しい",
-        "3組の角がそれぞれ等しい"
+        "3組の角がそれぞれ等しい",
+        "2組の辺とその間にない角がそれぞれ等しい",
+        "3組の辺がそれぞれ等しい"
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ]
     },
     {
@@ -26783,17 +26843,16 @@
       "textbookPublisher": "kyoiku-shuppan",
       "source": "publisher-balance-original",
       "question": "三角形の合同条件として正しいものをすべて選びなさい。",
-      "explanation": "三角形の合同条件は3組の辺、2組の辺とその間の角、1組の辺とその両端の角です。",
+      "explanation": "3組の辺、2組の辺とその間の角がそれぞれ等しければ合同です。3組の角が等しくても大きさが違う場合があり、2組の辺とその間にない角では三角形が1つに決まらないので合同条件ではありません。",
       "choices": [
-        "3組の辺がそれぞれ等しい",
         "2組の辺とその間の角がそれぞれ等しい",
-        "1組の辺とその両端の角がそれぞれ等しい",
-        "3組の角がそれぞれ等しい"
+        "3組の角がそれぞれ等しい",
+        "2組の辺とその間にない角がそれぞれ等しい",
+        "3組の辺がそれぞれ等しい"
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ]
     },
     {
@@ -48198,7 +48257,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 1 About Me」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 1 About Me」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48273,7 +48332,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 2 My Hero」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 2 My Hero」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48348,7 +48407,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 3 My Treasure」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 3 My Treasure」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48423,7 +48482,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 4 My Summer Plans」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 4 My Summer Plans」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48498,7 +48557,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Lesson 5 Ms. Brown's Family」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Lesson 5 Ms. Brown's Family」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -48597,11 +48656,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 6 School Life in the U.S.A.」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「Lesson 6 School Life in the U.S.A.」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -48620,19 +48681,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Lesson 6 School Life in the U.S.A.」の学習に関連する英語練習。会話を続けるために適切な行動をすべて選びなさい。",
+      "question": "「Lesson 6 School Life in the U.S.A.」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "相手の発言に応じて質問する",
-        "分からないとき聞き返す",
-        "相づちを使う",
-        "相手の話を無視する"
+        "One more time, please.",
+        "Me, too.",
+        "You're welcome.",
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "質問・聞き返し・相づちは、やり取りを続ける基本的な方法です。",
+      "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_sanseido_1_05_3",
       "subject": "english",
       "unit": "conversation",
@@ -48648,7 +48709,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 7 Athletes with Spirit」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Lesson 7 Athletes with Spirit」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -48730,7 +48791,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 8 Discover Japan」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Lesson 8 Discover Japan」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -48812,7 +48873,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 9 Emergency Food」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Lesson 9 Emergency Food」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -48894,7 +48955,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 1 Meet New Friends」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Lesson 1 Meet New Friends」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -48976,7 +49037,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 2 Fun with Books」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「Lesson 2 Fun with Books」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -49058,7 +49119,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 3 My Dream」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「Lesson 3 My Dream」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -49140,7 +49201,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「Lesson 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -49186,19 +49247,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Lesson 4」の学習に関連する英語練習。未来や予定について述べるとき使える表現をすべて選びなさい。",
+      "question": "「Lesson 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "will + 動詞の原形",
-        "be going to + 動詞の原形",
-        "tomorrow と未来表現",
-        "was + 動詞ing だけ"
+        "We going to play tennis next Sunday.",
+        "She is going to plays the piano.",
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "will や be going to、未来を表す時の語句を使って予定・未来を表現できます。",
+      "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_sanseido_2_03_3",
       "subject": "english",
       "unit": "future-modal",
@@ -49214,7 +49275,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 5」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「Lesson 5」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -49260,19 +49321,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Lesson 5」の学習に関連する英語練習。未来や予定について述べるとき使える表現をすべて選びなさい。",
+      "question": "「Lesson 5」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "will + 動詞の原形",
-        "be going to + 動詞の原形",
-        "tomorrow と未来表現",
-        "was + 動詞ing だけ"
+        "We going to play tennis next Sunday.",
+        "She is going to plays the piano.",
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "will や be going to、未来を表す時の語句を使って予定・未来を表現できます。",
+      "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_sanseido_2_04_3",
       "subject": "english",
       "unit": "future-modal",
@@ -49312,11 +49373,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 6」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「Lesson 6」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -49335,19 +49398,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Lesson 6」の学習に関連する英語練習。会話を続けるために適切な行動をすべて選びなさい。",
+      "question": "「Lesson 6」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "相手の発言に応じて質問する",
-        "分からないとき聞き返す",
-        "相づちを使う",
-        "相手の話を無視する"
+        "One more time, please.",
+        "Me, too.",
+        "You're welcome.",
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "質問・聞き返し・相づちは、やり取りを続ける基本的な方法です。",
+      "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_sanseido_2_05_3",
       "subject": "english",
       "unit": "conversation",
@@ -49363,7 +49426,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「Lesson 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -49415,16 +49478,16 @@
       "question": "「Lesson 7」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
       "choices": [
         "This book was written in English.",
+        "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "This is the most popular song here.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "受け身、比較級、最上級の正しい形を確認します。",
+      "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_sanseido_2_06_3",
       "subject": "english",
       "unit": "comparison-passive",
@@ -49440,7 +49503,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Lesson 8」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「Lesson 8」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -49492,16 +49555,16 @@
       "question": "「Lesson 8」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
       "choices": [
         "This book was written in English.",
+        "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "This is the most popular song here.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "受け身、比較級、最上級の正しい形を確認します。",
+      "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_sanseido_2_07_3",
       "subject": "english",
       "unit": "comparison-passive",
@@ -49517,7 +49580,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 0」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 0」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49592,7 +49655,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 1」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 1」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49667,7 +49730,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 2」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 2」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49742,7 +49805,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 3」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 3」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49817,7 +49880,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Unit 4」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Unit 4」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -49916,11 +49979,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「Unit 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -49939,19 +50004,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Unit 5」の学習に関連する英語練習。会話を続けるために適切な行動をすべて選びなさい。",
+      "question": "「Unit 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "相手の発言に応じて質問する",
-        "分からないとき聞き返す",
-        "相づちを使う",
-        "相手の話を無視する"
+        "One more time, please.",
+        "Me, too.",
+        "You're welcome.",
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "質問・聞き返し・相づちは、やり取りを続ける基本的な方法です。",
+      "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_tokyo-shoseki_1_05_3",
       "subject": "english",
       "unit": "conversation",
@@ -49967,7 +50032,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 6」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Unit 6」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -50049,7 +50114,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 7」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Unit 7」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -50131,7 +50196,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 8」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Unit 8」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -50213,7 +50278,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 0」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「Unit 0」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -50295,7 +50360,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 1」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「Unit 1」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -50377,7 +50442,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 2」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「Unit 2」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -50459,7 +50524,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 3」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「Unit 3」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -50505,19 +50570,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Unit 3」の学習に関連する英語練習。未来や予定について述べるとき使える表現をすべて選びなさい。",
+      "question": "「Unit 3」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "will + 動詞の原形",
-        "be going to + 動詞の原形",
-        "tomorrow と未来表現",
-        "was + 動詞ing だけ"
+        "We going to play tennis next Sunday.",
+        "She is going to plays the piano.",
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "will や be going to、未来を表す時の語句を使って予定・未来を表現できます。",
+      "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_tokyo-shoseki_2_03_3",
       "subject": "english",
       "unit": "future-modal",
@@ -50533,7 +50598,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「Unit 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -50579,19 +50644,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Unit 4」の学習に関連する英語練習。未来や予定について述べるとき使える表現をすべて選びなさい。",
+      "question": "「Unit 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "will + 動詞の原形",
-        "be going to + 動詞の原形",
-        "tomorrow と未来表現",
-        "was + 動詞ing だけ"
+        "We going to play tennis next Sunday.",
+        "She is going to plays the piano.",
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "will や be going to、未来を表す時の語句を使って予定・未来を表現できます。",
+      "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_tokyo-shoseki_2_04_3",
       "subject": "english",
       "unit": "future-modal",
@@ -50631,11 +50696,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「Unit 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -50654,19 +50721,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Unit 5」の学習に関連する英語練習。会話を続けるために適切な行動をすべて選びなさい。",
+      "question": "「Unit 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "相手の発言に応じて質問する",
-        "分からないとき聞き返す",
-        "相づちを使う",
-        "相手の話を無視する"
+        "One more time, please.",
+        "Me, too.",
+        "You're welcome.",
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "質問・聞き返し・相づちは、やり取りを続ける基本的な方法です。",
+      "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_tokyo-shoseki_2_05_3",
       "subject": "english",
       "unit": "conversation",
@@ -50682,7 +50749,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 6」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「Unit 6」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -50734,16 +50801,16 @@
       "question": "「Unit 6」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
       "choices": [
         "This book was written in English.",
+        "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "This is the most popular song here.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "受け身、比較級、最上級の正しい形を確認します。",
+      "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_tokyo-shoseki_2_06_3",
       "subject": "english",
       "unit": "comparison-passive",
@@ -50759,7 +50826,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「Unit 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「Unit 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -50811,16 +50878,16 @@
       "question": "「Unit 7」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
       "choices": [
         "This book was written in English.",
+        "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "This is the most popular song here.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "受け身、比較級、最上級の正しい形を確認します。",
+      "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_tokyo-shoseki_2_07_3",
       "subject": "english",
       "unit": "comparison-passive",
@@ -50860,19 +50927,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「Unit 0 Discover a New Side of Classmates」の学習に関連する英語練習。英文の内容を正確に読む手がかりをすべて選びなさい。",
+      "question": "「Unit 0 Discover a New Side of Classmates」の学習に関連する英語練習。英文を正確に読むとき、前に出た語句や内容を指す語をすべて選びなさい。",
       "choices": [
-        "代名詞が指す内容",
-        "接続語",
-        "時制",
-        "文字の色だけ"
+        "they",
+        "because",
+        "but",
+        "I",
+        "it"
       ],
       "answers": [
         0,
-        1,
-        2
+        4
       ],
-      "explanation": "代名詞・接続語・時制は文や段落の関係を捉える重要な手がかりです。",
+      "explanation": "it や they は前に出た語句や内容を指す代名詞で、何を指すかを確かめると内容を正確に読めます。I は話し手自身を指すので前の内容は受けず、because・but は文と文をつなぐ接続詞です。",
       "id": "v040_en_tokyo-shoseki_3_00_2",
       "subject": "english",
       "unit": "reading",
@@ -50912,7 +50979,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「Get Ready 1-6」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「Get Ready 1-6」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -50987,7 +51054,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「PROGRAM 1」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「PROGRAM 1」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -51062,7 +51129,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「PROGRAM 2」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「PROGRAM 2」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -51137,7 +51204,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「PROGRAM 3」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「PROGRAM 3」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -51212,7 +51279,7 @@
     {
       "type": "fill",
       "difficulty": 1,
-      "question": "「PROGRAM 4」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.",
+      "question": "「PROGRAM 4」の学習に関連する英語練習。空欄に入る語を書きなさい。 I （1） a student.\n日本語：私は生徒です。（各空欄は1語）",
       "blanks": [
         [
           "am"
@@ -51311,11 +51378,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「PROGRAM 5」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -51334,19 +51403,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「PROGRAM 5」の学習に関連する英語練習。会話を続けるために適切な行動をすべて選びなさい。",
+      "question": "「PROGRAM 5」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "相手の発言に応じて質問する",
-        "分からないとき聞き返す",
-        "相づちを使う",
-        "相手の話を無視する"
+        "One more time, please.",
+        "Me, too.",
+        "You're welcome.",
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "質問・聞き返し・相づちは、やり取りを続ける基本的な方法です。",
+      "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_kairyudo_1_05_3",
       "subject": "english",
       "unit": "conversation",
@@ -51362,7 +51431,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 6」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「PROGRAM 6」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -51444,7 +51513,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 7」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「PROGRAM 7」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -51526,7 +51595,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 8」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「PROGRAM 8」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -51608,7 +51677,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 1 New Start」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.",
+      "question": "「PROGRAM 1 New Start」の学習に関連する英語練習。「そのとき私は本を読んでいました。」になるよう空欄を埋めなさい。 I （1） （2） a book then.\n日本語：そのとき私は本を読んでいました。（各空欄は1語）",
       "blanks": [
         [
           "was"
@@ -51690,7 +51759,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 2」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「PROGRAM 2」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -51772,7 +51841,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 3」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.",
+      "question": "「PROGRAM 3」の学習に関連する英語練習。「私は京都を訪れたいです。」になるよう空欄を埋めなさい。 I want （1） （2） Kyoto.\n日本語：私は京都を訪れたいです。（各空欄は1語）",
       "blanks": [
         [
           "to"
@@ -51854,7 +51923,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「PROGRAM 4」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -51900,19 +51969,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「PROGRAM 4」の学習に関連する英語練習。未来や予定について述べるとき使える表現をすべて選びなさい。",
+      "question": "「PROGRAM 4」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "will + 動詞の原形",
-        "be going to + 動詞の原形",
-        "tomorrow と未来表現",
-        "was + 動詞ing だけ"
+        "We going to play tennis next Sunday.",
+        "She is going to plays the piano.",
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "will や be going to、未来を表す時の語句を使って予定・未来を表現できます。",
+      "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_kairyudo_2_03_3",
       "subject": "english",
       "unit": "future-modal",
@@ -51928,7 +51997,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 5」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.",
+      "question": "「PROGRAM 5」の学習に関連する英語練習。予定を表す文になるよう空欄を埋めなさい。 I am （1） to visit Osaka tomorrow.\n日本語：私は明日大阪を訪れる予定です。（各空欄は1語）",
       "blanks": [
         [
           "going"
@@ -51974,19 +52043,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「PROGRAM 5」の学習に関連する英語練習。未来や予定について述べるとき使える表現をすべて選びなさい。",
+      "question": "「PROGRAM 5」の学習に関連する英語練習。未来のことを正しく表している文をすべて選びなさい。",
       "choices": [
-        "will + 動詞の原形",
-        "be going to + 動詞の原形",
-        "tomorrow と未来表現",
-        "was + 動詞ing だけ"
+        "We going to play tennis next Sunday.",
+        "She is going to plays the piano.",
+        "I will visited my aunt tomorrow.",
+        "I will visit my aunt tomorrow.",
+        "We are going to play tennis next Sunday."
       ],
       "answers": [
-        0,
-        1,
-        2
+        3,
+        4
       ],
-      "explanation": "will や be going to、未来を表す時の語句を使って予定・未来を表現できます。",
+      "explanation": "未来は will＋動詞の原形や be going to＋動詞の原形で表します。will visited と going to plays は動詞を原形にしていないので誤り、We going to は be動詞 are が抜けています。",
       "id": "v040_en_kairyudo_2_04_3",
       "subject": "english",
       "unit": "future-modal",
@@ -52026,11 +52095,13 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 6」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?",
+      "question": "「PROGRAM 6」の学習に関連する英語練習。依頼の表現になるよう空欄を埋めなさい。 （1） you help me?\n日本語：私を手伝ってくれませんか。（各空欄は1語）",
       "blanks": [
         [
           "Can",
-          "Could"
+          "Could",
+          "Will",
+          "Would"
         ]
       ],
       "explanation": "Can you ...? / Could you ...? で相手に依頼できます。",
@@ -52049,19 +52120,19 @@
     {
       "type": "multi",
       "difficulty": 2,
-      "question": "「PROGRAM 6」の学習に関連する英語練習。会話を続けるために適切な行動をすべて選びなさい。",
+      "question": "「PROGRAM 6」の学習に関連する英語練習。相手の言ったことが聞き取れず、聞き返すときに使う表現をすべて選びなさい。",
       "choices": [
-        "相手の発言に応じて質問する",
-        "分からないとき聞き返す",
-        "相づちを使う",
-        "相手の話を無視する"
+        "One more time, please.",
+        "Me, too.",
+        "You're welcome.",
+        "Pardon?",
+        "Sounds good."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "質問・聞き返し・相づちは、やり取りを続ける基本的な方法です。",
+      "explanation": "Pardon? や One more time, please. は聞き取れなかったときに聞き返す表現です。Sounds good. は賛成、You're welcome. はお礼への返事、Me, too. は同意を表します。",
       "id": "v040_en_kairyudo_2_05_3",
       "subject": "english",
       "unit": "conversation",
@@ -52077,7 +52148,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「PROGRAM 7」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -52129,16 +52200,16 @@
       "question": "「PROGRAM 7」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
       "choices": [
         "This book was written in English.",
+        "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "This is the most popular song here.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "受け身、比較級、最上級の正しい形を確認します。",
+      "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_kairyudo_2_06_3",
       "subject": "english",
       "unit": "comparison-passive",
@@ -52154,7 +52225,7 @@
     {
       "type": "fill",
       "difficulty": 2,
-      "question": "「PROGRAM 8」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.",
+      "question": "「PROGRAM 8」の学習に関連する英語練習。受け身になるよう空欄を埋めなさい。 English （1） （2） in many countries.\n日本語：英語は多くの国で話されています。（各空欄は1語）",
       "blanks": [
         [
           "is"
@@ -52206,16 +52277,16 @@
       "question": "「PROGRAM 8」の学習に関連する英語練習。文法的に正しい文をすべて選びなさい。",
       "choices": [
         "This book was written in English.",
+        "This is the popularest song here.",
+        "English is speak in Canada.",
         "Aki is taller than Ken.",
-        "This is the most popular song here.",
-        "English is speak in Canada."
+        "Ken is more tall than Aki."
       ],
       "answers": [
         0,
-        1,
-        2
+        3
       ],
-      "explanation": "受け身、比較級、最上級の正しい形を確認します。",
+      "explanation": "受け身は be動詞＋過去分詞なので was written は正しく、is speak は is spoken にします。tall の比較級は taller、popular の最上級は the most popular で、more tall や popularest は誤りです。",
       "id": "v040_en_kairyudo_2_07_3",
       "subject": "english",
       "unit": "comparison-passive",

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+coverage.json
+node_modules/
+.codex-npm-cache/
+.test-results/
+/transfer/
+.wrangler/

@@ -1,0 +1,1861 @@
+{
+ "v034_san_e3_l1_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "seen",
+    "watched"
+   ]
+  ]
+ },
+ "v034_san_e3_l1_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "just"
+   ]
+  ]
+ },
+ "v034_san_e3_l1_03": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "have",
+   "visited",
+   "Kyoto",
+   "once",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "v034_san_e3_l1_04": {
+  "type": "reorder",
+  "items": [
+   "Have",
+   "you",
+   "eaten",
+   "lunch",
+   "yet",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "v034_san_e3_l1_05": {
+  "type": "multi",
+  "choices": [
+   "I have visited Nara twice.",
+   "She has just finished her work.",
+   "He have seen this movie.",
+   "I visited Kyoto yesterday."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l1_06": {
+  "type": "multi",
+  "choices": [
+   "ever",
+   "just",
+   "already",
+   "yesterday"
+  ],
+  "answers": [
+   0,
+   1,
+   2
+  ]
+ },
+ "v034_san_e3_l2_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "studying",
+    "learning"
+   ]
+  ]
+ },
+ "v034_san_e3_l2_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "waiting"
+   ]
+  ]
+ },
+ "v034_san_e3_l2_03": {
+  "type": "reorder",
+  "items": [
+   "She",
+   "has",
+   "been",
+   "practicing",
+   "the",
+   "piano",
+   "since",
+   "morning",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "v034_san_e3_l2_04": {
+  "type": "reorder",
+  "items": [
+   "How",
+   "long",
+   "have",
+   "you",
+   "been",
+   "playing",
+   "soccer",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_san_e3_l2_05": {
+  "type": "multi",
+  "choices": [
+   "I have been reading for an hour.",
+   "She has been studying since noon.",
+   "He has being running.",
+   "They have been play tennis."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l2_06": {
+  "type": "multi",
+  "choices": [
+   "I have been waiting for thirty minutes.",
+   "She has lived here for five years.",
+   "I went there yesterday.",
+   "He ate lunch at noon."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l3_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "built",
+    "constructed"
+   ]
+  ]
+ },
+ "v034_san_e3_l3_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "spoken"
+   ]
+  ]
+ },
+ "v034_san_e3_l3_03": {
+  "type": "reorder",
+  "items": [
+   "This",
+   "song",
+   "is",
+   "loved",
+   "by",
+   "many",
+   "people",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_san_e3_l3_04": {
+  "type": "reorder",
+  "items": [
+   "The",
+   "picture",
+   "was",
+   "taken",
+   "yesterday",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "v034_san_e3_l3_05": {
+  "type": "multi",
+  "choices": [
+   "The room is cleaned every day.",
+   "The book was written in English.",
+   "They clean the room every day.",
+   "She wrote the book."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l3_06": {
+  "type": "multi",
+  "choices": [
+   "be動詞",
+   "過去分詞",
+   "必ず未来形",
+   "必ず進行形"
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l4_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "standing"
+   ]
+  ]
+ },
+ "v034_san_e3_l4_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "painted",
+    "drawn"
+   ]
+  ]
+ },
+ "v034_san_e3_l4_03": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "know",
+   "the",
+   "boy",
+   "running",
+   "in",
+   "the",
+   "park",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "v034_san_e3_l4_04": {
+  "type": "reorder",
+  "items": [
+   "This",
+   "is",
+   "a",
+   "car",
+   "made",
+   "in",
+   "Japan",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_san_e3_l4_05": {
+  "type": "multi",
+  "choices": [
+   "The dog running over there is mine.",
+   "This is a cake made by Ken.",
+   "She runs every day.",
+   "Ken made a cake."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l4_06": {
+  "type": "multi",
+  "choices": [
+   "a boy playing soccer",
+   "a book written in English",
+   "a girl play tennis",
+   "a car make in Japan"
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l5_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "who",
+    "that"
+   ]
+  ]
+ },
+ "v034_san_e3_l5_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "that",
+    "which"
+   ]
+  ]
+ },
+ "v034_san_e3_l5_03": {
+  "type": "reorder",
+  "items": [
+   "This",
+   "is",
+   "the",
+   "dog",
+   "that",
+   "comes",
+   "here",
+   "every",
+   "day",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ]
+ },
+ "v034_san_e3_l5_04": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "know",
+   "a",
+   "woman",
+   "who",
+   "teaches",
+   "English",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_san_e3_l5_05": {
+  "type": "multi",
+  "choices": [
+   "I know a girl who plays tennis.",
+   "This is a book that is useful.",
+   "I know a girl who I met yesterday.",
+   "This is the book I bought."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l5_06": {
+  "type": "multi",
+  "choices": [
+   "who",
+   "that",
+   "which",
+   "where"
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l6_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "that",
+    "which"
+   ]
+  ]
+ },
+ "v034_san_e3_l6_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "who",
+    "that",
+    "whom"
+   ]
+  ]
+ },
+ "v034_san_e3_l6_03": {
+  "type": "reorder",
+  "items": [
+   "This",
+   "is",
+   "the",
+   "movie",
+   "that",
+   "I",
+   "saw",
+   "yesterday",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "v034_san_e3_l6_04": {
+  "type": "reorder",
+  "items": [
+   "The",
+   "food",
+   "you",
+   "made",
+   "was",
+   "delicious",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "v034_san_e3_l6_05": {
+  "type": "multi",
+  "choices": [
+   "This is the book that I read.",
+   "The movie which we watched was fun.",
+   "I know a boy who runs fast.",
+   "This is a dog that barks loudly."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l6_06": {
+  "type": "multi",
+  "choices": [
+   "The book I bought is useful.",
+   "The book that I bought is useful.",
+   "The book I bought it is useful.",
+   "The book that bought I is useful."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l7_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "had"
+   ]
+  ]
+ },
+ "v034_san_e3_l7_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "could"
+   ]
+  ]
+ },
+ "v034_san_e3_l7_03": {
+  "type": "reorder",
+  "items": [
+   "If",
+   "I",
+   "were",
+   "you",
+   ",",
+   "I",
+   "would",
+   "agree",
+   "with",
+   "the",
+   "idea",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ]
+ },
+ "v034_san_e3_l7_04": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "wish",
+   "I",
+   "were",
+   "taller",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "v034_san_e3_l7_05": {
+  "type": "multi",
+  "choices": [
+   "If I had wings, I would fly.",
+   "I wish I could speak French.",
+   "If it rains tomorrow, I will stay home.",
+   "I play tennis if I have time."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l7_06": {
+  "type": "multi",
+  "choices": [
+   "If I were you, I would apologize.",
+   "If I was you, I will apologize.",
+   "I wish I had more time.",
+   "I wish I have more time."
+  ],
+  "answers": [
+   0,
+   2
+  ]
+ },
+ "v034_san_e3_l8_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "lives"
+   ]
+  ]
+ },
+ "v034_san_e3_l8_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "wants"
+   ]
+  ]
+ },
+ "v034_san_e3_l8_03": {
+  "type": "reorder",
+  "items": [
+   "Do",
+   "you",
+   "know",
+   "when",
+   "he",
+   "will",
+   "come",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_san_e3_l8_04": {
+  "type": "reorder",
+  "items": [
+   "Please",
+   "tell",
+   "me",
+   "where",
+   "the",
+   "station",
+   "is",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_san_e3_l8_05": {
+  "type": "multi",
+  "choices": [
+   "Do you know where she lives?",
+   "Can you tell me what he wants?",
+   "Do you know where does she live?",
+   "Tell me what does he want."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_san_e3_l8_06": {
+  "type": "multi",
+  "choices": [
+   "疑問詞の後ろは主語＋動詞",
+   "疑問詞を使える",
+   "必ずdoを置く",
+   "必ず倒置する"
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u1_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "eaten",
+    "had"
+   ]
+  ]
+ },
+ "v034_tok_e3_u1_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "been"
+   ]
+  ]
+ },
+ "v034_tok_e3_u1_03": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "have",
+   "been",
+   "to",
+   "the",
+   "festival",
+   "twice",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_tok_e3_u1_04": {
+  "type": "reorder",
+  "items": [
+   "Have",
+   "you",
+   "ever",
+   "made",
+   "this",
+   "dish",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "v034_tok_e3_u1_05": {
+  "type": "multi",
+  "choices": [
+   "I have visited Osaka three times.",
+   "She has never seen snow.",
+   "I finished my homework yesterday.",
+   "He is studying now."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u1_06": {
+  "type": "multi",
+  "choices": [
+   "ever",
+   "never",
+   "once",
+   "last night"
+  ],
+  "answers": [
+   0,
+   1,
+   2
+  ]
+ },
+ "v034_tok_e3_u2_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "studying",
+    "learning"
+   ]
+  ]
+ },
+ "v034_tok_e3_u2_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "waiting"
+   ]
+  ]
+ },
+ "v034_tok_e3_u2_03": {
+  "type": "reorder",
+  "items": [
+   "She",
+   "has",
+   "been",
+   "practicing",
+   "the",
+   "piano",
+   "since",
+   "morning",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "v034_tok_e3_u2_04": {
+  "type": "reorder",
+  "items": [
+   "How",
+   "long",
+   "have",
+   "you",
+   "been",
+   "playing",
+   "soccer",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_tok_e3_u2_05": {
+  "type": "multi",
+  "choices": [
+   "I have been reading for an hour.",
+   "She has been studying since noon.",
+   "He has being running.",
+   "They have been play tennis."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u2_06": {
+  "type": "multi",
+  "choices": [
+   "I have been waiting for thirty minutes.",
+   "She has lived here for five years.",
+   "I went there yesterday.",
+   "He ate lunch at noon."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u3_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "to"
+   ]
+  ]
+ },
+ "v034_tok_e3_u3_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "to"
+   ]
+  ]
+ },
+ "v034_tok_e3_u3_03": {
+  "type": "reorder",
+  "items": [
+   "The",
+   "teacher",
+   "let",
+   "us",
+   "open",
+   "the",
+   "window",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_tok_e3_u3_04": {
+  "type": "reorder",
+  "items": [
+   "He",
+   "helped",
+   "me",
+   "carry",
+   "the",
+   "box",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "v034_tok_e3_u3_05": {
+  "type": "multi",
+  "choices": [
+   "I want you to come early.",
+   "It is easy for me to use this app.",
+   "She let me to go home.",
+   "He helped me carried the bag."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u3_06": {
+  "type": "multi",
+  "choices": [
+   "let + 人 + 動詞の原形",
+   "help + 人 + 動詞の原形",
+   "want + 人 + 動詞の原形",
+   "ask + 人 + 動詞の原形"
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u4_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "lives"
+   ]
+  ]
+ },
+ "v034_tok_e3_u4_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "wants"
+   ]
+  ]
+ },
+ "v034_tok_e3_u4_03": {
+  "type": "reorder",
+  "items": [
+   "Do",
+   "you",
+   "know",
+   "when",
+   "he",
+   "will",
+   "come",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_tok_e3_u4_04": {
+  "type": "reorder",
+  "items": [
+   "Please",
+   "tell",
+   "me",
+   "where",
+   "the",
+   "station",
+   "is",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_tok_e3_u4_05": {
+  "type": "multi",
+  "choices": [
+   "Do you know where she lives?",
+   "Can you tell me what he wants?",
+   "Do you know where does she live?",
+   "Tell me what does he want."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u4_06": {
+  "type": "multi",
+  "choices": [
+   "疑問詞の後ろは主語＋動詞",
+   "疑問詞を使える",
+   "必ずdoを置く",
+   "必ず倒置する"
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u5_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "that",
+    "which"
+   ]
+  ]
+ },
+ "v034_tok_e3_u5_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "who",
+    "that",
+    "whom"
+   ]
+  ]
+ },
+ "v034_tok_e3_u5_03": {
+  "type": "reorder",
+  "items": [
+   "This",
+   "is",
+   "the",
+   "movie",
+   "that",
+   "I",
+   "saw",
+   "yesterday",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "v034_tok_e3_u5_04": {
+  "type": "reorder",
+  "items": [
+   "The",
+   "food",
+   "you",
+   "made",
+   "was",
+   "delicious",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "v034_tok_e3_u5_05": {
+  "type": "multi",
+  "choices": [
+   "This is the book that I read.",
+   "The movie which we watched was fun.",
+   "I know a boy who runs fast.",
+   "This is a dog that barks loudly."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u5_06": {
+  "type": "multi",
+  "choices": [
+   "The book I bought is useful.",
+   "The book that I bought is useful.",
+   "The book I bought it is useful.",
+   "The book that bought I is useful."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u6_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "had"
+   ]
+  ]
+ },
+ "v034_tok_e3_u6_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "could"
+   ]
+  ]
+ },
+ "v034_tok_e3_u6_03": {
+  "type": "reorder",
+  "items": [
+   "If",
+   "I",
+   "were",
+   "you",
+   ",",
+   "I",
+   "would",
+   "agree",
+   "with",
+   "the",
+   "idea",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ]
+ },
+ "v034_tok_e3_u6_04": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "wish",
+   "I",
+   "were",
+   "taller",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "v034_tok_e3_u6_05": {
+  "type": "multi",
+  "choices": [
+   "If I had wings, I would fly.",
+   "I wish I could speak French.",
+   "If it rains tomorrow, I will stay home.",
+   "I play tennis if I have time."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_tok_e3_u6_06": {
+  "type": "multi",
+  "choices": [
+   "If I were you, I would apologize.",
+   "If I was you, I will apologize.",
+   "I wish I had more time.",
+   "I wish I have more time."
+  ],
+  "answers": [
+   0,
+   2
+  ]
+ },
+ "v034_kai_e3_p1_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "eaten",
+    "had"
+   ]
+  ]
+ },
+ "v034_kai_e3_p1_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "been"
+   ]
+  ]
+ },
+ "v034_kai_e3_p1_03": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "have",
+   "been",
+   "to",
+   "the",
+   "festival",
+   "twice",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_kai_e3_p1_04": {
+  "type": "reorder",
+  "items": [
+   "Have",
+   "you",
+   "ever",
+   "made",
+   "this",
+   "dish",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "v034_kai_e3_p1_05": {
+  "type": "multi",
+  "choices": [
+   "I have visited Osaka three times.",
+   "She has never seen snow.",
+   "I finished my homework yesterday.",
+   "He is studying now."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p1_06": {
+  "type": "multi",
+  "choices": [
+   "ever",
+   "never",
+   "once",
+   "last night"
+  ],
+  "answers": [
+   0,
+   1,
+   2
+  ]
+ },
+ "v034_kai_e3_p2_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "studying",
+    "learning"
+   ]
+  ]
+ },
+ "v034_kai_e3_p2_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "waiting"
+   ]
+  ]
+ },
+ "v034_kai_e3_p2_03": {
+  "type": "reorder",
+  "items": [
+   "She",
+   "has",
+   "been",
+   "practicing",
+   "the",
+   "piano",
+   "since",
+   "morning",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "v034_kai_e3_p2_04": {
+  "type": "reorder",
+  "items": [
+   "How",
+   "long",
+   "have",
+   "you",
+   "been",
+   "playing",
+   "soccer",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_kai_e3_p2_05": {
+  "type": "multi",
+  "choices": [
+   "I have been reading for an hour.",
+   "She has been studying since noon.",
+   "He has being running.",
+   "They have been play tennis."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p2_06": {
+  "type": "multi",
+  "choices": [
+   "I have been waiting for thirty minutes.",
+   "She has lived here for five years.",
+   "I went there yesterday.",
+   "He ate lunch at noon."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p3_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "that"
+   ]
+  ]
+ },
+ "v034_kai_e3_p3_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "feel"
+   ]
+  ]
+ },
+ "v034_kai_e3_p3_03": {
+  "type": "reorder",
+  "items": [
+   "We",
+   "call",
+   "him",
+   "Ken",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "v034_kai_e3_p3_04": {
+  "type": "reorder",
+  "items": [
+   "The",
+   "story",
+   "made",
+   "me",
+   "laugh",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "v034_kai_e3_p3_05": {
+  "type": "multi",
+  "choices": [
+   "She told me that she was tired.",
+   "We call the dog Pochi.",
+   "The movie made me cried.",
+   "He told that me he was busy."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p4_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "lives"
+   ]
+  ]
+ },
+ "v034_kai_e3_p4_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "wants"
+   ]
+  ]
+ },
+ "v034_kai_e3_p4_03": {
+  "type": "reorder",
+  "items": [
+   "Do",
+   "you",
+   "know",
+   "when",
+   "he",
+   "will",
+   "come",
+   "?"
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_kai_e3_p4_04": {
+  "type": "reorder",
+  "items": [
+   "Please",
+   "tell",
+   "me",
+   "where",
+   "the",
+   "station",
+   "is",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_kai_e3_p4_05": {
+  "type": "multi",
+  "choices": [
+   "Do you know where she lives?",
+   "Can you tell me what he wants?",
+   "Do you know where does she live?",
+   "Tell me what does he want."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p4_06": {
+  "type": "multi",
+  "choices": [
+   "疑問詞の後ろは主語＋動詞",
+   "疑問詞を使える",
+   "必ずdoを置く",
+   "必ず倒置する"
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p5_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "who",
+    "that"
+   ]
+  ]
+ },
+ "v034_kai_e3_p5_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "that",
+    "which"
+   ]
+  ]
+ },
+ "v034_kai_e3_p5_03": {
+  "type": "reorder",
+  "items": [
+   "This",
+   "is",
+   "the",
+   "dog",
+   "that",
+   "comes",
+   "here",
+   "every",
+   "day",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ]
+ },
+ "v034_kai_e3_p5_04": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "know",
+   "a",
+   "woman",
+   "who",
+   "teaches",
+   "English",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ },
+ "v034_kai_e3_p5_05": {
+  "type": "multi",
+  "choices": [
+   "I know a girl who plays tennis.",
+   "This is a book that is useful.",
+   "I know a girl who I met yesterday.",
+   "This is the book I bought."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p5_06": {
+  "type": "multi",
+  "choices": [
+   "who",
+   "that",
+   "which",
+   "where"
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p6_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "that",
+    "which"
+   ]
+  ]
+ },
+ "v034_kai_e3_p6_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "who",
+    "that",
+    "whom"
+   ]
+  ]
+ },
+ "v034_kai_e3_p6_03": {
+  "type": "reorder",
+  "items": [
+   "This",
+   "is",
+   "the",
+   "movie",
+   "that",
+   "I",
+   "saw",
+   "yesterday",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "v034_kai_e3_p6_04": {
+  "type": "reorder",
+  "items": [
+   "The",
+   "food",
+   "you",
+   "made",
+   "was",
+   "delicious",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "v034_kai_e3_p6_05": {
+  "type": "multi",
+  "choices": [
+   "This is the book that I read.",
+   "The movie which we watched was fun.",
+   "I know a boy who runs fast.",
+   "This is a dog that barks loudly."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p6_06": {
+  "type": "multi",
+  "choices": [
+   "The book I bought is useful.",
+   "The book that I bought is useful.",
+   "The book I bought it is useful.",
+   "The book that bought I is useful."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p7_01": {
+  "type": "fill",
+  "blanks": [
+   [
+    "had"
+   ]
+  ]
+ },
+ "v034_kai_e3_p7_02": {
+  "type": "fill",
+  "blanks": [
+   [
+    "could"
+   ]
+  ]
+ },
+ "v034_kai_e3_p7_03": {
+  "type": "reorder",
+  "items": [
+   "If",
+   "I",
+   "were",
+   "you",
+   ",",
+   "I",
+   "would",
+   "agree",
+   "with",
+   "the",
+   "idea",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ]
+ },
+ "v034_kai_e3_p7_04": {
+  "type": "reorder",
+  "items": [
+   "I",
+   "wish",
+   "I",
+   "were",
+   "taller",
+   "."
+  ],
+  "answerOrder": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "v034_kai_e3_p7_05": {
+  "type": "multi",
+  "choices": [
+   "If I had wings, I would fly.",
+   "I wish I could speak French.",
+   "If it rains tomorrow, I will stay home.",
+   "I play tennis if I have time."
+  ],
+  "answers": [
+   0,
+   1
+  ]
+ },
+ "v034_kai_e3_p7_06": {
+  "type": "multi",
+  "choices": [
+   "If I were you, I would apologize.",
+   "If I was you, I will apologize.",
+   "I wish I had more time.",
+   "I wish I have more time."
+  ],
+  "answers": [
+   0,
+   2
+  ]
+ }
+}
